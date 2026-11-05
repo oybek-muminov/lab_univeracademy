@@ -1,0 +1,6 @@
+127.0.0.1 - - [05/Nov/2026 17:19:49] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 17:19:49] "GET /assets/index-CYDfG7YB.css HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 17:19:49] "GET /assets/index-Dex01wFt.js HTTP/1.1" 200 -
+127.0.0.1 - - [05/Nov/2026 17:19:50] code 404, message File not found
+127.0.0.1 - - [05/Nov/2026 17:19:50] "GET /favicon.ico HTTP/1.1" 404 -
+PASS: production closed screen; no demo code/requests, no external requests or page errors

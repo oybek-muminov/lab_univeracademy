@@ -1,0 +1,209 @@
+{
+  "status": "FROZEN_UI_MOCK_FOR_INDEPENDENT_QA_NOT_RELEASE",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "destination_prefix": "qa-checkpoints/2026-11-05/mini-app/",
+  "prepared_at_utc": "2026-11-05T17:34:43.595805+00:00",
+  "remote_head_at_preflight": "f2c580508cfec9e07f383610201af28edffd854b",
+  "source_base_commit": "ee250df370c945f719cd574814cdb113c78680af",
+  "source_manifest_sha256": "614484f02f1600f82d688cb6b3609556d6fab898766e0e07d24b5d7af382c199",
+  "original_frozen_artifact_checksum_list_sha256": "991cea9b85eea4810a73f4aa3fca1631e568e132b6699435be8df6fb5c08d49d",
+  "frozen_source_count": 14,
+  "source_bytes_unchanged": true,
+  "privacy_recheck": {
+    "credential_pii_or_grading_key_findings": 0,
+    "scope": "All 14 source files and included QA report/evidence files; local scan plus earlier per-file manual review",
+    "synthetic_examples": "Names, sample-* identifiers, physics prompts and fixed result are authored UI fixtures. Public repository/bot/plugin metadata is technical provenance."
+  },
+  "excluded_transfer_files": [
+    "mini-app-source.tar.gz",
+    "mini-app.patch"
+  ],
+  "export_report_changes": [
+    "CHECKPOINT.md receives a historical/public-export preface; original body retained",
+    "ARTIFACTS.sha256 regenerated for the exported subset",
+    "PUBLICATION.json records the exact exported source/evidence inventory"
+  ],
+  "files_excluding_this_record_and_checksum_list": [
+    {
+      "path": "CHECKPOINT.md",
+      "sha256": "0231930c5582421b2ffd19c9524f3093cd60345ca14a667150903ee5e06f53b0",
+      "git_blob_sha": "620d227de86dbe7fa2831f98bce8d8ce8881205b",
+      "bytes": 8044,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "SCREEN-API-MAP.md",
+      "sha256": "0f113382dc7066b4705408aebceae7b094d5e5cef9bfa7d8057132571b6fe822",
+      "git_blob_sha": "72a4c8f3f9109a413d622d94a1f4741a87680b96",
+      "bytes": 7301,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "apps/mini-app/.gitignore",
+      "sha256": "261840b2b4fec747a1a94657ad59a75def3975456e164a353c6234f7f644dab3",
+      "git_blob_sha": "9a7111797fa076bbb012b13f35a168f8903e1ac3",
+      "bytes": 11,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/INTEGRATION-NOTES.md",
+      "sha256": "faf89ef421decb25c50804b825ce7e57ca7818f2b9edcf50bb46a5516e230631",
+      "git_blob_sha": "3828ae1649aaf903665b8559cf1bb977c0d2769b",
+      "bytes": 5892,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/README.md",
+      "sha256": "83861766b7072c0bf9134a959b42431fed0e887812d1a36a6a7d76c871b2f94f",
+      "git_blob_sha": "a16124648ddf46a7921c9c8d99599c93a9a9cecb",
+      "bytes": 2839,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/index.html",
+      "sha256": "2ef5f047b3b24c283e8a6d2b4a24f1890119918bb18423a5d4664039cbfabd8a",
+      "git_blob_sha": "c537336ef4324fa9a5c1d53d694e39f074dfa3f2",
+      "bytes": 392,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/package-lock.json",
+      "sha256": "f66c74833ac5ccf823c01af561239e1e9f1f6355a9c123e999f97c21926a6f11",
+      "git_blob_sha": "4d7246054a8c211faecad227efe5f05df8fa5e69",
+      "bytes": 39586,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/package.json",
+      "sha256": "a447d40ecda7513cd8051ee2c7d3afd3825ea18a51334f518fd4d9b956c99c37",
+      "git_blob_sha": "876fba33025c910342b87fd2c4e964a02feb5a98",
+      "bytes": 600,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/src/demo-port.ts",
+      "sha256": "5c5118d91c0eee36559b0c422a0cc634a111a200375547c61af9269dc4bc6137",
+      "git_blob_sha": "f5cdd9c9347b055ed7ad226832a65615981ac4ca",
+      "bytes": 5928,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/src/demo.tsx",
+      "sha256": "28f53901901f7eeda929dda4c508c1bc27fb3619021b92c60ffa21d66da6dd19",
+      "git_blob_sha": "ae62a050d10dafaade49bea9a3b1b219dbb688e5",
+      "bytes": 12531,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/src/flow.ts",
+      "sha256": "ea66902fab8b8d9fc290740eeee17f62ef97e78a039bd68d0c58b3ba0ee2510d",
+      "git_blob_sha": "95dc281d071d0b0231e6136e86cd1adb11aa2a3d",
+      "bytes": 7622,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/src/main.tsx",
+      "sha256": "5f334ae5555e6006768127cd08c26743678339aefb7cb239e2941d8bf695e552",
+      "git_blob_sha": "ffa152fc77eed43827511d2cf3f3b4b98edbbb18",
+      "bytes": 596,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/src/style.css",
+      "sha256": "0706e7dd7dd782069e3a73d663b510349b2a38467b46e064f598baa0945513c7",
+      "git_blob_sha": "5fea198d6d09dac533143a33758c64c11a25c88a",
+      "bytes": 8838,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-smoke.py",
+      "sha256": "8387524dc6919d492a5d7c356ffcee410e6333191b19d92553e98254dc5a42f0",
+      "git_blob_sha": "9cea7ec334733992a5ae72a044655269010e3a2f",
+      "bytes": 5198,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/tests/flow.test.mjs",
+      "sha256": "e242e6a01871027cf3bdb598f2d3a0e5ab475eaf0e789cee3f1aefc747deb5cd",
+      "git_blob_sha": "3036541ba8d97149574c14828d6447fed1149854",
+      "bytes": 4009,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "apps/mini-app/tsconfig.json",
+      "sha256": "86ccd56cd605e3df25f579b47a5a50662406cbd2cb4ae5bafb50b888ef7d9dab",
+      "git_blob_sha": "516df332602ebbf2f2b668281de1ad0cd5f7c428",
+      "bytes": 375,
+      "kind": "frozen_source"
+    },
+    {
+      "path": "evidence/browser-smoke.log",
+      "sha256": "2c259bcdd401a91d80a92d6a9e5dc360369e9fc47f7ba0fd8d46a1a259a190f9",
+      "git_blob_sha": "fbcdb8dcfa4ddd3f2e92347e639a61d9ce64c356",
+      "bytes": 126,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "evidence/node-tests.log",
+      "sha256": "6bc62e17865c025877fa7c07e6c98db1bfa5a3fcea0c0607311278ff100e125e",
+      "git_blob_sha": "9f035cb0a4a012f0586d03f78afe52f76c93d42f",
+      "bytes": 936,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "evidence/production-gate.log",
+      "sha256": "0cb45042cf60b2ce601fa3af46e0425659f563393f2337430b4b81e98a7bdb0f",
+      "git_blob_sha": "490eae0591f8d0ba2d4b2f98cde4c81accf801d0",
+      "bytes": 461,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "evidence/production-gate.py",
+      "sha256": "071744c2b6e6806874a48a5b40a67ac101a9e7f99221511ef3cdadf038875891",
+      "git_blob_sha": "eebee0edc40b8d3e20daf78e6349f4ce88c597e1",
+      "bytes": 1726,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "evidence/test-results.json",
+      "sha256": "97b6b68c9a16bf2ff3e52432f65825ebf52a46a09ccc37a0fb7716c7ee6020f4",
+      "git_blob_sha": "9f5b7baa96c3cb1a4417d657de220c80f53e6c2f",
+      "bytes": 1707,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "evidence/typecheck-builds.log",
+      "sha256": "2ea2b8aa628d2b4dfd4305b91d54ccd077da08043885240800e67da8b6c97419",
+      "git_blob_sha": "1c08086745f693ed9a02ef8fbe3fb5a47e2d8a8b",
+      "bytes": 1624,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "privacy-review.json",
+      "sha256": "1184aa1e8217e709e01e186210fcced927504f87e94218339d8f641a0f334e05",
+      "git_blob_sha": "3dee7e4f4417d420c25d3748a7b71c0816154a36",
+      "bytes": 6544,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "source-manifest.json",
+      "sha256": "614484f02f1600f82d688cb6b3609556d6fab898766e0e07d24b5d7af382c199",
+      "git_blob_sha": "c97d8d4c1865f8cfb3d8b6a6dada098299850c47",
+      "bytes": 2999,
+      "kind": "qa_evidence_or_report"
+    },
+    {
+      "path": "source.sha256",
+      "sha256": "ebfa5687c03b3dbaf256e4cfae65a8886bcd4ab39fa60cbfb10e7bf3423b69cf",
+      "git_blob_sha": "36f3a83a029e910c4a2cc36ea02d19271b3301be",
+      "bytes": 1330,
+      "kind": "qa_evidence_or_report"
+    }
+  ],
+  "integrity_check": "ARTIFACTS.sha256 covers all other published files, including this record. source.sha256 covers the 14 original source paths.",
+  "limits": [
+    "Author mock checks only; independent QA and API owner acceptance pending",
+    "No live Telegram/API/session/provider/database/deployment integration",
+    "No change to the main UniverAcademy repository"
+  ]
+}

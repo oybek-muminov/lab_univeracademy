@@ -1,0 +1,94 @@
+{
+  "status": "LOCAL_UI_MOCK_FROZEN_CHECKPOINT_NOT_RELEASE",
+  "base_commit": "ee250df370c945f719cd574814cdb113c78680af",
+  "source_tree_modified_commit_created": false,
+  "snapshot_at_utc": "2026-11-05T17:17:36.167028+00:00",
+  "files": [
+    {
+      "path": "apps/mini-app/.gitignore",
+      "change": "added",
+      "bytes": 11,
+      "sha256": "261840b2b4fec747a1a94657ad59a75def3975456e164a353c6234f7f644dab3"
+    },
+    {
+      "path": "apps/mini-app/INTEGRATION-NOTES.md",
+      "change": "added",
+      "bytes": 5892,
+      "sha256": "faf89ef421decb25c50804b825ce7e57ca7818f2b9edcf50bb46a5516e230631"
+    },
+    {
+      "path": "apps/mini-app/README.md",
+      "change": "modified",
+      "bytes": 2839,
+      "sha256": "83861766b7072c0bf9134a959b42431fed0e887812d1a36a6a7d76c871b2f94f"
+    },
+    {
+      "path": "apps/mini-app/index.html",
+      "change": "added",
+      "bytes": 392,
+      "sha256": "2ef5f047b3b24c283e8a6d2b4a24f1890119918bb18423a5d4664039cbfabd8a"
+    },
+    {
+      "path": "apps/mini-app/package-lock.json",
+      "change": "added",
+      "bytes": 39586,
+      "sha256": "f66c74833ac5ccf823c01af561239e1e9f1f6355a9c123e999f97c21926a6f11"
+    },
+    {
+      "path": "apps/mini-app/package.json",
+      "change": "added",
+      "bytes": 600,
+      "sha256": "a447d40ecda7513cd8051ee2c7d3afd3825ea18a51334f518fd4d9b956c99c37"
+    },
+    {
+      "path": "apps/mini-app/src/demo-port.ts",
+      "change": "added",
+      "bytes": 5928,
+      "sha256": "5c5118d91c0eee36559b0c422a0cc634a111a200375547c61af9269dc4bc6137"
+    },
+    {
+      "path": "apps/mini-app/src/demo.tsx",
+      "change": "added",
+      "bytes": 12531,
+      "sha256": "28f53901901f7eeda929dda4c508c1bc27fb3619021b92c60ffa21d66da6dd19"
+    },
+    {
+      "path": "apps/mini-app/src/flow.ts",
+      "change": "added",
+      "bytes": 7622,
+      "sha256": "ea66902fab8b8d9fc290740eeee17f62ef97e78a039bd68d0c58b3ba0ee2510d"
+    },
+    {
+      "path": "apps/mini-app/src/main.tsx",
+      "change": "added",
+      "bytes": 596,
+      "sha256": "5f334ae5555e6006768127cd08c26743678339aefb7cb239e2941d8bf695e552"
+    },
+    {
+      "path": "apps/mini-app/src/style.css",
+      "change": "added",
+      "bytes": 8838,
+      "sha256": "0706e7dd7dd782069e3a73d663b510349b2a38467b46e064f598baa0945513c7"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-smoke.py",
+      "change": "added",
+      "bytes": 5198,
+      "sha256": "8387524dc6919d492a5d7c356ffcee410e6333191b19d92553e98254dc5a42f0"
+    },
+    {
+      "path": "apps/mini-app/tests/flow.test.mjs",
+      "change": "added",
+      "bytes": 4009,
+      "sha256": "e242e6a01871027cf3bdb598f2d3a0e5ab475eaf0e789cee3f1aefc747deb5cd"
+    },
+    {
+      "path": "apps/mini-app/tsconfig.json",
+      "change": "added",
+      "bytes": 375,
+      "sha256": "86ccd56cd605e3df25f579b47a5a50662406cbd2cb4ae5bafb50b888ef7d9dab"
+    }
+  ],
+  "base_tree": "258770f6a136ef17a8982c5c484af4ef159945f1",
+  "freeze_verified_at_utc": "2026-11-05T17:20:57.480722+00:00"
+}

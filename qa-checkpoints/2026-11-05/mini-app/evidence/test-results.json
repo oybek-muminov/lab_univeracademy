@@ -1,0 +1,50 @@
+{
+  "verified_at_utc": "2026-11-05T17:19:50.347852+00:00",
+  "verification_actor": "Bot/Mini App author rerun; independent QA not yet performed",
+  "cwd": "apps/mini-app",
+  "runtime": {
+    "node": "24.22.1",
+    "npm": "11.9.0",
+    "python": "3.12.14",
+    "chromium": "155.0.8059.79",
+    "playwright": "1.62.0"
+  },
+  "checks": [
+    {
+      "command": "npm test",
+      "exit_code": 0,
+      "result": "6 tests passed, 0 failed",
+      "evidence": "evidence/node-tests.log"
+    },
+    {
+      "command": "npm run check && npm run build && npm run build:demo",
+      "exit_code": 0,
+      "result": "Typecheck, closed production build, separate demo build passed",
+      "evidence": "evidence/typecheck-builds.log"
+    },
+    {
+      "command": "python3 tests/browser-smoke.py",
+      "exit_code": 0,
+      "result": "Lifecycle 320/390/1280px, conflict/lost acknowledgement/new generation, deadline read passed; 0 page errors",
+      "evidence": "evidence/browser-smoke.log"
+    },
+    {
+      "command": "git apply --check mini-app.patch; git apply mini-app.patch; verify all source hashes",
+      "exit_code": 0,
+      "result": "Applied to local base in temporary directory; 14/14 exact-byte hashes reconstructed"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0,
+      "result": "No whitespace errors"
+    },
+    {
+      "command": "python3 <handoff>/evidence/production-gate.py",
+      "exit_code": 0,
+      "result": "Closed integration screen, no demo fixtures/code/requests, no external requests or page errors",
+      "evidence": "evidence/production-gate.log"
+    }
+  ],
+  "source_modified_by_checkpoint_preparation": false,
+  "external_uploads_commits_pushes": false
+}

@@ -1,0 +1,23 @@
+
+> @univeracademy/mini-app@0.0.0 test
+> node --test tests/flow.test.mjs
+
+✔ pending answer is not confirmed; clearing uses the next revision (1120.981795ms)
+✔ lost save acknowledgement requires a read before another save or submit (1086.459395ms)
+✔ CAS conflict preserves both intents until explicit selection at fresh revision (1267.22856ms)
+✔ new generation drops the old unsent draft and answers (1265.313894ms)
+✔ failed read blocks writes; local clock never declares a terminal result (1087.079582ms)
+✔ uncertain submit retains its key, blocks edits and resolves with the same key (1449.266562ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7514.854908
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice

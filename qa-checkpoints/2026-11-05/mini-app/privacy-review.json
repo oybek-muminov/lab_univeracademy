@@ -1,0 +1,135 @@
+{
+  "scope": "14 exact source files in source-manifest.json; not the entire repository or its history",
+  "method": "Local regex scan of complete UTF-8 content plus manual content review and structured lockfile URL review; no third-party upload/scanner",
+  "findings_count": 0,
+  "files": [
+    {
+      "path": "apps/mini-app/.gitignore",
+      "automated_findings": [],
+      "manual_review": "Only the dist-demo build exclusion."
+    },
+    {
+      "path": "apps/mini-app/INTEGRATION-NOTES.md",
+      "automated_findings": [],
+      "manual_review": "Technical provenance, source hashes and pending integration decisions; public repository owner/bot/plugin metadata only."
+    },
+    {
+      "path": "apps/mini-app/README.md",
+      "automated_findings": [],
+      "manual_review": "Local run/check commands and explicit mock limitations; no fixture person or credential."
+    },
+    {
+      "path": "apps/mini-app/index.html",
+      "automated_findings": [],
+      "manual_review": "Public branding and local entry script only."
+    },
+    {
+      "path": "apps/mini-app/package-lock.json",
+      "automated_findings": [],
+      "manual_review": "All 68 package entries parsed; resolved URLs are HTTPS registry.npmjs.org without userinfo/query/fragment; package metadata and integrity hashes only."
+    },
+    {
+      "path": "apps/mini-app/package.json",
+      "automated_findings": [],
+      "manual_review": "Pinned public package names/versions and local scripts; no credential configuration."
+    },
+    {
+      "path": "apps/mini-app/src/demo-port.ts",
+      "automated_findings": [],
+      "manual_review": "Four authored physics example prompts, sample-* IDs and fixed display score; no correct-answer marking, grading engine, imported test key or real student record."
+    },
+    {
+      "path": "apps/mini-app/src/demo.tsx",
+      "automated_findings": [],
+      "manual_review": "Synthetic Aziz/Karimov placeholders; runtime name fields only; no persisted/captured user record. Public @univeracademybot label only."
+    },
+    {
+      "path": "apps/mini-app/src/flow.ts",
+      "automated_findings": [],
+      "manual_review": "UI model/controller; operation keys generated at runtime, not credentials. No literal identity/session proof or grading key."
+    },
+    {
+      "path": "apps/mini-app/src/main.tsx",
+      "automated_findings": [],
+      "manual_review": "Build-mode gate and closed integration screen; no endpoint or credential."
+    },
+    {
+      "path": "apps/mini-app/src/style.css",
+      "automated_findings": [],
+      "manual_review": "CSS only; no imports, external URL, credential or data payload."
+    },
+    {
+      "path": "apps/mini-app/tests/browser-smoke.py",
+      "automated_findings": [],
+      "manual_review": "Namuna/O‘quvchi invented test input; sample selections validate UI persistence, not answer correctness. Local test URL default."
+    },
+    {
+      "path": "apps/mini-app/tests/flow.test.mjs",
+      "automated_findings": [],
+      "manual_review": "Synthetic sample-* IDs and local choices; no correctness oracle or real user record."
+    },
+    {
+      "path": "apps/mini-app/tsconfig.json",
+      "automated_findings": [],
+      "manual_review": "Compiler options only."
+    }
+  ],
+  "classification_notes": [
+    "Namuna / O‘quvchi and the Aziz / Karimov placeholders are authored synthetic examples, not fetched student records.",
+    "Four physics prompts, sample-* IDs and 6,00/8,00/75,00 are UI fixtures; no correct-option map or scoring engine. Tests assert saved selections, not correctness.",
+    "GitHub owner/repository links, public bot username, plugin identifier and pinned source hashes remain as public technical provenance. They are not student records or access credentials.",
+    "No .env, credential file, real initData, opaque/refresh token, answer-key file, browser profile, network capture, screenshot or source archive from the laboratory is included.",
+    "Absence findings are bounded local review, not a guarantee against all possible secrets or a publication approval."
+  ],
+  "handoff_artifact_review": [
+    {
+      "path": "CHECKPOINT.md",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "SCREEN-API-MAP.md",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "evidence/browser-smoke.log",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "evidence/node-tests.log",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "evidence/production-gate.log",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "evidence/production-gate.py",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "evidence/test-results.json",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "evidence/typecheck-builds.log",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "mini-app.patch",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "privacy-review.json",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "source-manifest.json",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    },
+    {
+      "path": "source.sha256",
+      "status": "No embedded credential, real student record or grading key found; synthetic examples and public technical provenance only."
+    }
+  ],
+  "archive_review": "All 14 regular-file members and their SHA-256 values match source-manifest.json; no extra members."
+}

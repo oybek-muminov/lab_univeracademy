@@ -1,0 +1,48 @@
+
+> @univeracademy/mini-app@0.0.0 check
+> tsc --noEmit
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
+
+> @univeracademy/mini-app@0.0.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.6 building client environment for production...
+transforming...
+✓ 16 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.49 kB │ gzip:  0.32 kB
+dist/assets/index-CYDfG7YB.css    7.65 kB │ gzip:  2.52 kB
+dist/assets/index-Dex01wFt.js   219.73 kB │ gzip: 68.71 kB
+
+✓ built in 234ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
+
+> @univeracademy/mini-app@0.0.0 build:demo
+> tsc --noEmit && vite build --mode demo --outDir dist-demo
+
+vite v8.3.6 building client environment for demo...
+transforming...
+✓ 19 modules transformed.
+rendering chunks...
+computing gzip size...
+dist-demo/index.html                   0.49 kB │ gzip:  0.32 kB
+dist-demo/assets/index-CYDfG7YB.css    7.65 kB │ gzip:  2.52 kB
+dist-demo/assets/demo-qOBseG8q.js     19.73 kB │ gzip:  6.10 kB
+dist-demo/assets/index-C9No6R3l.js   221.23 kB │ gzip: 69.25 kB
+
+✓ built in 247ms
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
