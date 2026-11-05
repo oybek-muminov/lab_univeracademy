@@ -1,0 +1,56 @@
+{
+  "source_css_unchanged": true,
+  "current_runtime_font_dependency": "Google Fonts API / fonts.gstatic.com",
+  "recovery_fonts_are_not_automatically_loaded": true,
+  "runtime_binary_equivalence": "NOT_VERIFIED",
+  "resources": [
+    {
+      "path": "support/fonts/onest/Onest[wght].ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/onest/Onest%5Bwght%5D.ttf",
+      "downloaded_utc": "2026-11-05T10:54:19.874814+00:00",
+      "bytes": 193056,
+      "sha256": "966c5c29b4755da84b6854d5c21dd4eaa2420225d0e9874de602de176d4a9f31",
+      "status": "PASS"
+    },
+    {
+      "path": "support/fonts/onest/OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/onest/OFL.txt",
+      "downloaded_utc": "2026-11-05T10:54:20.469081+00:00",
+      "bytes": 4384,
+      "sha256": "071195d8806e226faeee60259c28ca67b458227af5195a73f5cfcab06e3003bc",
+      "status": "PASS"
+    },
+    {
+      "path": "support/fonts/onest/METADATA.pb",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/onest/METADATA.pb",
+      "downloaded_utc": "2026-11-05T10:54:21.114736+00:00",
+      "bytes": 1009,
+      "sha256": "4cdcb62dc6cce7746ef080848a352e8ff7ac37fe543b4bde0aec6ab478e4123a",
+      "status": "PASS"
+    },
+    {
+      "path": "support/fonts/youngserif/YoungSerif-Regular.ttf",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/youngserif/YoungSerif-Regular.ttf",
+      "downloaded_utc": "2026-11-05T10:54:22.130384+00:00",
+      "bytes": 106608,
+      "sha256": "42bb2602364b28569fdce5eeb6ab3d81cf8090ba81b211f1229ed69f33155523",
+      "status": "PASS"
+    },
+    {
+      "path": "support/fonts/youngserif/OFL.txt",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/youngserif/OFL.txt",
+      "downloaded_utc": "2026-11-05T10:54:22.793772+00:00",
+      "bytes": 4398,
+      "sha256": "737d8d343b674c6894f373de71a044b6782c130f2aebf180933d63ddf7a3dc19",
+      "status": "PASS"
+    },
+    {
+      "path": "support/fonts/youngserif/METADATA.pb",
+      "url": "https://raw.githubusercontent.com/google/fonts/main/ofl/youngserif/METADATA.pb",
+      "downloaded_utc": "2026-11-05T10:54:23.399998+00:00",
+      "bytes": 818,
+      "sha256": "db1ddfcce283870fe515a57b7f75dad00b0bbe5efc3846fcb72a018b428790cb",
+      "status": "PASS"
+    }
+  ]
+}

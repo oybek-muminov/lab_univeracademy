@@ -1,0 +1,20 @@
+{
+  "artifact_type": "historical_source_fallback",
+  "current_vercel_match": "not_established",
+  "source_commit_label": "203aaa64b08407a50453ce53a4790ab7fd6b37af",
+  "original_files_verified": 46,
+  "node_version": "24.22.1",
+  "npm_version": "11.9.0",
+  "dependency_install": "passed",
+  "install_scripts": "disabled",
+  "test_passed": 48,
+  "test_failed": 0,
+  "typescript": "passed",
+  "vite_build": "passed",
+  "vite_version": "7.3.7",
+  "visual_qa": "not_run",
+  "app_environment_variable_names": [],
+  "secret_pattern_findings": [],
+  "source_modified": false,
+  "external_state_modified": false
+}

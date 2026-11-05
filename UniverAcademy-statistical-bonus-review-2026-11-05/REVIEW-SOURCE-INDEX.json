@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-05",
+  "timezone": "Asia/Tashkent",
+  "current_api_version": "0.2.7-statistical-bonus-review.1",
+  "current_master_version": "1.5-statistical-bonus-review.1",
+  "user_sources": [
+    {
+      "id": "UA-SRC-RESTORE-BONUS-20261105",
+      "file": "USER_DECISION_2026-11-05.md",
+      "platform_message_id": null,
+      "scope": "Current user Rasch freeze/bonus restoration"
+    },
+    {
+      "id": "UA-SRC-BONUS-UNANSWERED-20261105",
+      "file": "USER_DECISION_2026-11-05.md",
+      "platform_message_id": null,
+      "scope": "Current user confirms bonus unanswered=incorrect"
+    },
+    {
+      "id": "UA-SRC-GRADING-USER-20261105",
+      "file": "references/UNIVERACADEMY_GRADING_REQUIREMENTS_2026-11-05.md",
+      "sha256": "e62bcb65b52f050093302909c0d460fa1b00de420b3d3a43806abf498ab91bbb",
+      "scope": "Original bonus formula and ordinary/optional/nonpooling/one-shot/no-minimum requirements; later clarifications listed separately"
+    }
+  ],
+  "history": [
+    {
+      "id": "UA-BASE-REVIEW3",
+      "file": "references/UniverAcademy-map-review-2026-11-05-review.3.zip",
+      "sha256": "bcc9916f8dcfed50c471987a9d39a4d050cb8fa3655ba02f435b95f17e96fd0d",
+      "scope": "Full155-file history including prior source archives, registry, numerical defect and agent nonacceptance; read only"
+    },
+    {
+      "id": "UA-OLD-BONUS-API-0.2.3",
+      "file": "references/openapi-UniverAcademy-0.2.3-grading-review.1.json",
+      "sha256": "9ebe364900391b57f9c50d5261bb87bef0356c09d2a3a16439893f8d4cea6ef7",
+      "scope": "Historical wire proposal reused selectively; old unresolved choices are not current policy"
+    }
+  ],
+  "acceptance": "New bytes require new review; no historical acceptance inherited"
+}

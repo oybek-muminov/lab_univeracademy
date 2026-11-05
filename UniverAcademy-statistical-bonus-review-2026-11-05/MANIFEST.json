@@ -1,0 +1,138 @@
+{
+  "package": "UniverAcademy-statistical-bonus-review-2026-11-05",
+  "date": "2026-11-05",
+  "timezone": "Asia/Tashkent",
+  "api_version": "0.2.7-statistical-bonus-review.1",
+  "master_version": "1.5-statistical-bonus-review.1",
+  "status": "PROVISIONAL_LOCAL_VALIDATION_PASS_PENDING_BACKEND_REVIEW",
+  "active_models": [
+    "ordinary",
+    "statistical_bonus_v1"
+  ],
+  "frozen_future": [
+    "Rasch/1PL/MAP",
+    "T/levels",
+    "MR2-N01 numerical defect, not fixed"
+  ],
+  "api_owner": "Backend",
+  "product_source_ids": [
+    "UA-SRC-RESTORE-BONUS-20261105",
+    "UA-SRC-BONUS-UNANSWERED-20261105"
+  ],
+  "agent_acceptance": "Not requested/sent; no receipt claimed",
+  "validation": {
+    "full_OpenAPI_3_1": "PASS",
+    "schemas": 190,
+    "local_refs": 897,
+    "payload_cases": 155,
+    "exact_formula_cases": 9,
+    "registry_section13_byte_exact": true
+  },
+  "excluded": [
+    "MANIFEST.json",
+    "SHA256SUMS.txt"
+  ],
+  "files": [
+    {
+      "path": "BACKEND_IMPLEMENTATION_PLAN.md",
+      "bytes": 2817,
+      "sha256": "9794ab7b3d9ce7e9ed52747d49ce584ad00e94abad1442157528344c517e54b4"
+    },
+    {
+      "path": "CHANGES.md",
+      "bytes": 1325,
+      "sha256": "a9e555b2011c19d53b3ab88d8404f26504054f6bc97e835faf4899e24053524e"
+    },
+    {
+      "path": "DOT_TASK.md",
+      "bytes": 2441,
+      "sha256": "eca02edc26fd3c22adc4df03fdbe83ab0438811f476e5ef37b0ad9fcc4fe1eb5"
+    },
+    {
+      "path": "MVP_START_STATUS.md",
+      "bytes": 3437,
+      "sha256": "0f13ced80d20bc2c990a7399754f32187c054eea0c5b9d44cd412dd3dd959dc9"
+    },
+    {
+      "path": "NUMERIC_POLICY_RECOMMENDATION.md",
+      "bytes": 2332,
+      "sha256": "ff54ee0f91394034cf288785bced976435bfb0be07668e3ffb8a35f1a21f0136"
+    },
+    {
+      "path": "openapi-UniverAcademy-0.2.7-statistical-bonus-review.1.json",
+      "bytes": 424663,
+      "sha256": "d14b5a7c0a209cb12b328743983492f8434cc748887b34af7c9297ec57fa957b"
+    },
+    {
+      "path": "openapi-UniverAcademy-0.2.7-statistical-bonus-review.1.json.diff",
+      "bytes": 941040,
+      "sha256": "8f2842f9f3242b7d4bfeb07d8cfa0e15afa938800ffe1c70619aa41263174cd9"
+    },
+    {
+      "path": "QA_ACCEPTANCE_MATRIX.md",
+      "bytes": 2276,
+      "sha256": "9e14bfb2025cc0d717e6b976fef8585f8754a110f8544db8fc3a32b15364bcff"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1372,
+      "sha256": "e3e46638a2e2b105f11d63d409db8783aa99e44682a367d0fab6b8887e65e097"
+    },
+    {
+      "path": "references/openapi-UniverAcademy-0.2.3-grading-review.1.json",
+      "bytes": 435318,
+      "sha256": "9ebe364900391b57f9c50d5261bb87bef0356c09d2a3a16439893f8d4cea6ef7"
+    },
+    {
+      "path": "references/openapi-UniverAcademy-0.2.6-map-review.3.json",
+      "bytes": 459720,
+      "sha256": "6304665591af8a35a488ce06ee169288f782436cc754aa87a00b35da8cae29cf"
+    },
+    {
+      "path": "references/UniverAcademy-map-review-2026-11-05-review.3.zip",
+      "bytes": 3051046,
+      "sha256": "bcc9916f8dcfed50c471987a9d39a4d050cb8fa3655ba02f435b95f17e96fd0d"
+    },
+    {
+      "path": "references/UNIVERACADEMY_GRADING_REQUIREMENTS_2026-11-05.md",
+      "bytes": 4083,
+      "sha256": "e62bcb65b52f050093302909c0d460fa1b00de420b3d3a43806abf498ab91bbb"
+    },
+    {
+      "path": "REVIEW-SOURCE-INDEX.json",
+      "bytes": 1778,
+      "sha256": "ce37bb4427d23289fe30478aa8567b1c67fdf1b39645ab656e485d144afc608e"
+    },
+    {
+      "path": "UNIVERACADEMY-API-CONTRACT-0.2.7-statistical-bonus-review.1.md",
+      "bytes": 8585,
+      "sha256": "ea42c300dd5fb2f04666acfd579fa42be44b5e3cabb15ded8855c55dca2290df"
+    },
+    {
+      "path": "UNIVERACADEMY_MASTER_CONTEXT.md",
+      "bytes": 130532,
+      "sha256": "0b66377f6b13ac35c596779a68572866893e13549d1b22182e9fa2deb065fe52"
+    },
+    {
+      "path": "UNIVERACADEMY_MASTER_CONTEXT.md.diff",
+      "bytes": 9374,
+      "sha256": "0b384197a0c2da8c55faf7916fcd4ddbe580009df12dba0fa76978c18417951c"
+    },
+    {
+      "path": "USER_DECISION_2026-11-05.md",
+      "bytes": 2739,
+      "sha256": "c2ab75aa018275676a0fefe6f26fc80fcdba4b0fb756ed716fb9f9c90c0b6da6"
+    },
+    {
+      "path": "VALIDATION-RESULTS.json",
+      "bytes": 243565,
+      "sha256": "4cb4ee2d8ff60666c52005f9d9dbe2605d8ff40f756f5cddaa9b9bce414bf590"
+    }
+  ],
+  "not_performed": [
+    "Existing application/test/oracle/validator changes",
+    "DB/Supabase/migration/provider/GitHub/deployment changes",
+    "Dot/project-agent communication or state changes",
+    "Actual runtime integration and pilot tests"
+  ]
+}

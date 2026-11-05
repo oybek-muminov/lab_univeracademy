@@ -1,0 +1,63 @@
+
+> univeracademy-private-preview@1.0.0 test
+> node --test tests/*.test.mjs
+
+✔ sample body section order retained (3.0005ms)
+✔ sample layout dimensions retained (0.3827ms)
+✔ sample fonts and sticky translucent nav retained (0.3348ms)
+✔ national geometric hero background retained (0.3296ms)
+✔ attachment road animation geometry and exact timing retained (0.3568ms)
+✔ section navigation names, IDs and accessible active state (1.1807ms)
+✔ stacking uses native scroll with tall-panel and reduced-motion fallback (0.4164ms)
+✔ navigation supports history, resize and keyboard focus (0.2542ms)
+✔ native scroll remains continuous without forced handoff (0.2873ms)
+✔ requested map labels, halos and assessment gate retained (0.4003ms)
+✔ original subject atlas preserves the calm panels and white cards (3.6463ms)
+✔ polished hero copy and honest informational entry modes (0.4221ms)
+✔ hero entry controls are accessible icon-only touch targets (0.2013ms)
+✔ original in-page logo is 1.5x and supplied image is favicon only (5.8777ms)
+✔ hero ornament is evenly visible without fade mask (0.2147ms)
+✔ viewport panels cover dynamic viewport with fractional pixel guard (0.1721ms)
+✔ subject motion keeps native modality and bounded close lifecycle (3.4228ms)
+✔ compact learning map is desktop-only with transparent unblurred backdrop and scroll-safe height (2.3085ms)
+✔ desktop ten-percent hold is outside visible panel and disabled on phones/reduced motion (1.8821ms)
+✔ navigation measures stable outer starts while tall panels remain bottom-aware (6.4427ms)
+✔ panels share the main sticky boundary instead of releasing at each wrapper end (0.4334ms)
+✔ temporary blur is controlled, keyboard reachable, and desktop-only (1.7195ms)
+✔ editorial panel provides an honest noninteractive unavailable video (0.5031ms)
+✔ mobile pattern stays unchanged through 75 percent and fades only its bottom quarter (3.066ms)
+✔ mobile subjects use native horizontal scrolling and accessible direct controls (0.4521ms)
+✔ mobile header overlays the same hero surface with safe-area and scroll protection (4.0144ms)
+✔ mobile uses supplied stair geometry and accessible motion controls (3.8639ms)
+✔ compact mobile cards retain icons, full names and native dialog controls (0.8801ms)
+✔ stairs finish once before the above-step star appears and glows gently (2.1743ms)
+✔ mobile carousel breaks ancestor automatic minimum sizing before applying percentage cards (0.3902ms)
+✔ completion star reuses road halo motion with delayed expanding ring and static alternatives (1.9716ms)
+✔ drawer keeps shared active section stable during modal scroll lock (5.0153ms)
+✔ phone sheet is bottom anchored, bounded, scroll-safe and undimmed (1.4209ms)
+✔ mobile concept is responsive not a separate app (3.2518ms)
+✔ drawer preserves native modality and accessible names (0.3684ms)
+✔ drawer restores scroll before selected target navigation and guards repeat actions (0.3265ms)
+✔ mobile anchors reuse measured navbar without double offset or intercepted gestures (0.3829ms)
+✔ drawer restoration refreshes section geometry (1.2551ms)
+✔ all-subject demo without unsupported claims (1.6966ms)
+✔ quiz spans multiple subjects and avoids automatic advance (0.424ms)
+✔ demo account, public bot contact and unavailable services remain honest (2.2235ms)
+✔ accessible motion and quiz controls (0.3382ms)
+✔ subject cards replace start-method rows (0.2707ms)
+✔ five semantic decorative icons replace digits without removing stage labels (1.0018ms)
+✔ six illustrated subject controls open accessible native modal details (3.5389ms)
+✔ path retains its content, honest start and strict assessment gate (0.3683ms)
+✔ native dismissal restores background scroll and trigger focus (0.2141ms)
+✔ collapsed cards retain viewport height budget and two-column phones (0.163ms)
+✔ modal has outer margins, safe areas, backdrop and its own scroll area (0.3296ms)
+✔ mobile removes the hero road while retaining desktop animation (1.7428ms)
+ℹ tests 50
+ℹ suites 0
+ℹ pass 50
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 319.721
+

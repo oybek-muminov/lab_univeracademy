@@ -1,0 +1,262 @@
+{
+  "captured_utc": "2026-11-05T10:53:25.316060+00:00",
+  "source_path": "C:\\Users\\Oybek\\Documents\\Qadam\\web",
+  "branch": "local/wip-variant2-blur",
+  "head": "59069c8c37fe0aa738e80632ec8079510cad5516",
+  "git_status_porcelain_v1": [
+    " M README.md",
+    " M index.html",
+    " M package-lock.json",
+    " M package.json",
+    " M src/MobileNavigation.tsx",
+    " M src/index.css",
+    " M src/main.tsx",
+    " M tests/scope.test.mjs"
+  ],
+  "remote_names": [],
+  "deployment_identity": "NOT_VERIFIED",
+  "warning": "Local unpublished variant2+blur WIP with UniverAcademy rebrand; NOT an exact verified Vercel production backup.",
+  "excluded_directories": [
+    ".cache",
+    ".git",
+    ".openai",
+    ".sites-runtime",
+    ".vercel",
+    "dist",
+    "node_modules"
+  ],
+  "source_files": [
+    {
+      "path": ".gitignore",
+      "bytes": 42,
+      "sha256": "05585fc7c0929a92b1a6a369dec8a6a22401a3caed0b8e495163c265fdf08792"
+    },
+    {
+      "path": "components.json",
+      "bytes": 319,
+      "sha256": "c27b0de0000b43c4c7e63c374a50e573de75c1be5f3e36c0d694886fda392db0"
+    },
+    {
+      "path": "DESIGN_VARIANTS.md",
+      "bytes": 787,
+      "sha256": "558240e1a9f815778df6569813742d9b9f09a71b562ea79aff69783e859d81e5"
+    },
+    {
+      "path": "index.html",
+      "bytes": 779,
+      "sha256": "0e372b56df4f218c1fb97df3eedbd2e117a484dbf0631e3a439ba10c16c08b8b"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 106576,
+      "sha256": "d4837e59e801b3e2d48ae3cdc3f05d6fa3cbd35c7d66ed83b6dae568fc0984be"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1026,
+      "sha256": "4be01e7b4613f5195f8f70205002fc8cf00ed95bee9bb05301b9721fea799344"
+    },
+    {
+      "path": "public/brand/favicon-16.png",
+      "bytes": 761,
+      "sha256": "fa7365aef9f4c9bd52026d19e25037a93fdeac1f74bdb2d25557d13da2831234"
+    },
+    {
+      "path": "public/brand/favicon-32.png",
+      "bytes": 1781,
+      "sha256": "5c95369d95103482eb42f46d0c89af397d80aea88762e84f5ee08f55c1bd59f3"
+    },
+    {
+      "path": "public/brand/favicon-48.png",
+      "bytes": 3085,
+      "sha256": "1bf3d8976254bc285b4148df43c1838d30e26c04931574c2fb45e42088f01fb5"
+    },
+    {
+      "path": "public/brand/favicon-512.png",
+      "bytes": 107372,
+      "sha256": "913b648ffda7407ec7946d1902cd52358368dad8dbc65d537289991ef081d03d"
+    },
+    {
+      "path": "public/brand/favicon.ico",
+      "bytes": 127232,
+      "sha256": "dd30e6151d308445b808b68ec8ade0633e96ce5af759bba3e2c0888e81a9ef87"
+    },
+    {
+      "path": "public/brand/mobile-learning.svg",
+      "bytes": 1402,
+      "sha256": "18c6df36e5ad7b06ed6eca19827b6f58a5a6b3d21e36398daea0bd3dc0782dbc"
+    },
+    {
+      "path": "public/brand/qadam-staircase-book.png",
+      "bytes": 277561,
+      "sha256": "723c69e503d2e239311db88cfcca656f7c2f22b37f7b32fe04828fe6d09f0e25"
+    },
+    {
+      "path": "public/brand/subjects-atlas.svg",
+      "bytes": 2852,
+      "sha256": "ab8758d84a4af38c80f198db45af84b33ecfe71d62d8332aa97f154c472b91df"
+    },
+    {
+      "path": "public/brand/subjects-connected.svg",
+      "bytes": 1252,
+      "sha256": "f315269b65885dcb58e12be4a3741f3d79eb13095dbd4c823357d302db117477"
+    },
+    {
+      "path": "public/brand/subjects-spectrum.svg",
+      "bytes": 1771,
+      "sha256": "dcb2f8fffbb0ccf81cb1a65838323b481f11d2d97d425ac57244822bc3a0179c"
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 216,
+      "sha256": "c7f0e87416759c4a70ab8f3a9985c97e247d13e8b41aae7d367ff7c1a7a8e4ae"
+    },
+    {
+      "path": "README.md",
+      "bytes": 13496,
+      "sha256": "ed2bc4bf1d0f46082d92926978ddc369eb301780ff03751b25ac220a5b83e37d"
+    },
+    {
+      "path": "src/components/ui/accordion.tsx",
+      "bytes": 2015,
+      "sha256": "00dd6eef660f08ce85154106fa0fa4d943ed699c5ca7b06bb08732978bcebb49"
+    },
+    {
+      "path": "src/components/ui/badge.tsx",
+      "bytes": 1140,
+      "sha256": "dab689d836ad3292b41e7f4986b4e68e5d45c6903e4aeaae8972a82d4aebec29"
+    },
+    {
+      "path": "src/components/ui/button.tsx",
+      "bytes": 1902,
+      "sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84"
+    },
+    {
+      "path": "src/components/ui/card.tsx",
+      "bytes": 1828,
+      "sha256": "525c4bb2c051987be64df0e92e1d90174912b219bf541e24ffbc4a3406de49e8"
+    },
+    {
+      "path": "src/components/ui/dialog.tsx",
+      "bytes": 3850,
+      "sha256": "d0e94d5bb26085b2707174fe9452ff6a566599466025c8e2318a3ea7ab00c99f"
+    },
+    {
+      "path": "src/components/ui/sheet.tsx",
+      "bytes": 4281,
+      "sha256": "389aea04d3a2d84db4644bab9b5bfce3e12c2dc19e7a2024f6fd40a5bfcfd1f6"
+    },
+    {
+      "path": "src/index.css",
+      "bytes": 41952,
+      "sha256": "f57dfe8aa7dfb801b14251b1abea490d9227e370104441a4036b8d1909ec660d"
+    },
+    {
+      "path": "src/lib/utils.ts",
+      "bytes": 166,
+      "sha256": "0c97f5ec0478867d5369a4369f811e1b779c7f2548f671ef252f1503a6392d9d"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 9419,
+      "sha256": "9df237b9f615fb7a2338b61bc643769e977dc34a367232ce83c6d1bad4b93d30"
+    },
+    {
+      "path": "src/MobileNavigation.tsx",
+      "bytes": 3776,
+      "sha256": "19ddd5e5b7ddb11e307b80acd07c39f018a102e478e93f18a6301796a7c11d6d"
+    },
+    {
+      "path": "src/MobileStairs.tsx",
+      "bytes": 1154,
+      "sha256": "dc4683a486635afec731d810002bf56030f3c88840d8233ddbb19c9c2580cd74"
+    },
+    {
+      "path": "src/Road.tsx",
+      "bytes": 4584,
+      "sha256": "dd9c64f458047745f4640ebc379b68bc6a833d145c9951bf61da1dbe902a42ee"
+    },
+    {
+      "path": "src/SubjectArt.tsx",
+      "bytes": 2862,
+      "sha256": "90c1d9134d66e70b72e3e8cf7cd914eafe25cc58766775ee0e053b4fca981bef"
+    },
+    {
+      "path": "src/Subjects.tsx",
+      "bytes": 8303,
+      "sha256": "ad1bebfc6a020cfff31e7c901df9be12148ab2027bbf38b3aaea94ef3c6645e2"
+    },
+    {
+      "path": "src/useStackedSections.ts",
+      "bytes": 6092,
+      "sha256": "ef328d83d56bed90030b3c96fb8b83fbe3c35b69d1bb4d1fc1148b0901b50b7e"
+    },
+    {
+      "path": "tests/content.test.mjs",
+      "bytes": 6881,
+      "sha256": "2dc59a2874a48491f65b1de9d945eff61efbd9710435a87179372b273defdf67"
+    },
+    {
+      "path": "tests/desktop-dialog-map.test.mjs",
+      "bytes": 768,
+      "sha256": "f13b301376d7000fda24927ce73c1f0eb3345ed8041bea55697a3d22f193e38e"
+    },
+    {
+      "path": "tests/desktop-height.test.mjs",
+      "bytes": 1383,
+      "sha256": "e8f7f8089bef571eeaefa9b02fb703e58ee8c6b4a4b5399af8f0964a0c99153d"
+    },
+    {
+      "path": "tests/editorial-dialog.test.mjs",
+      "bytes": 1005,
+      "sha256": "f37f423b2a8f9296fcde11b6f621521576042a2750d56fbf978debb9a467e7ae"
+    },
+    {
+      "path": "tests/mobile-reference.test.mjs",
+      "bytes": 5889,
+      "sha256": "e00ce873b6ce2689fc3062e84418e433ca8879cff17bab39a6243252b77fa7f2"
+    },
+    {
+      "path": "tests/mobile-sheet.test.mjs",
+      "bytes": 650,
+      "sha256": "8a4fbcd246828b3eddcac540473bf7d04eb5f38a9c9b8ac71f3f9ab32fe5ec65"
+    },
+    {
+      "path": "tests/mobile.test.mjs",
+      "bytes": 2500,
+      "sha256": "2de5a03b72adc91412e996c6f022b4184a5d980cc95977ee66f9b853668b0be9"
+    },
+    {
+      "path": "tests/scope.test.mjs",
+      "bytes": 1829,
+      "sha256": "a5790074988220ead3be3c338c78a5a5b0996d700d5381df767e6d1a1bc529df"
+    },
+    {
+      "path": "tests/subject-stage-icons.test.mjs",
+      "bytes": 647,
+      "sha256": "a672d12c14a307f4215f3726e5746cc725124f30fb78366784c71555fcb9abb6"
+    },
+    {
+      "path": "tests/subjects.test.mjs",
+      "bytes": 2752,
+      "sha256": "aaec669a326146f4515214d036e359895196725a203539dc9738aeb9416a6081"
+    },
+    {
+      "path": "THIRD_PARTY_LICENSE_SHADCN.md",
+      "bytes": 1063,
+      "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 409,
+      "sha256": "83eb3c5e867167759b622873e2a79de005caf0856e219df32a1cc24ffd456759"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 345,
+      "sha256": "db653fe6635ab0eedcee40573ef619af40ded929e87bd550b336afb6bef608e6"
+    }
+  ],
+  "source_bytes": 767755,
+  "original_source_modified_by_export": false
+}

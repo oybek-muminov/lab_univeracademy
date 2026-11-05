@@ -1,0 +1,249 @@
+{
+  "files": [
+    {
+      "path": "ORIGINAL-SOURCE-MANIFEST.json",
+      "size_bytes": 7788,
+      "sha256": "32f7f9ec7d19daef196b32a12f311380e0b6f7b04c384b3969dfb9db303d2cfb"
+    },
+    {
+      "path": "README-RECOVERY.md",
+      "size_bytes": 4857,
+      "sha256": "ee90fe491f195ee0c59a3274368da49927694651c5d7d0c4fce0133a719a3925"
+    },
+    {
+      "path": "VALIDATION.json",
+      "size_bytes": 605,
+      "sha256": "fcf7d1ccb1b4599944e4ff2315d2188e66c2fb906ba0b775f3562b351f316870"
+    },
+    {
+      "path": "source/.gitignore",
+      "size_bytes": 42,
+      "sha256": "05585fc7c0929a92b1a6a369dec8a6a22401a3caed0b8e495163c265fdf08792"
+    },
+    {
+      "path": "source/.openai/hosting.json",
+      "size_bytes": 106,
+      "sha256": "2ac16549f50f731e85bc3e7c260e1b0ba695aa868eef03224f12d35d2915e3a1"
+    },
+    {
+      "path": "source/DESIGN_VARIANTS.md",
+      "size_bytes": 787,
+      "sha256": "558240e1a9f815778df6569813742d9b9f09a71b562ea79aff69783e859d81e5"
+    },
+    {
+      "path": "source/README.md",
+      "size_bytes": 12314,
+      "sha256": "7bc84d4630ed6e3614fae6e44935174a40eb4120b3d8759a7577890512e27f6f"
+    },
+    {
+      "path": "source/THIRD_PARTY_LICENSE_SHADCN.md",
+      "size_bytes": 1063,
+      "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+    },
+    {
+      "path": "source/components.json",
+      "size_bytes": 319,
+      "sha256": "c27b0de0000b43c4c7e63c374a50e573de75c1be5f3e36c0d694886fda392db0"
+    },
+    {
+      "path": "source/index.html",
+      "size_bytes": 763,
+      "sha256": "eac781cd6fce4745b101e715848eb5dcb308462d509118d126a085d0d8fcf548"
+    },
+    {
+      "path": "source/package-lock.json",
+      "size_bytes": 106560,
+      "sha256": "e0b14cf4bc4196407e3fdc7c491a321c406451b2b5f2ae3b29221a45c2d1a157"
+    },
+    {
+      "path": "source/package.json",
+      "size_bytes": 1018,
+      "sha256": "ad1bd53b27a81849907d08ac6c4879f4eda0c12c7505a1354371c0e9b7de1697"
+    },
+    {
+      "path": "source/public/brand/favicon-16.png",
+      "size_bytes": 761,
+      "sha256": "fa7365aef9f4c9bd52026d19e25037a93fdeac1f74bdb2d25557d13da2831234"
+    },
+    {
+      "path": "source/public/brand/favicon-32.png",
+      "size_bytes": 1781,
+      "sha256": "5c95369d95103482eb42f46d0c89af397d80aea88762e84f5ee08f55c1bd59f3"
+    },
+    {
+      "path": "source/public/brand/favicon-48.png",
+      "size_bytes": 3085,
+      "sha256": "1bf3d8976254bc285b4148df43c1838d30e26c04931574c2fb45e42088f01fb5"
+    },
+    {
+      "path": "source/public/brand/favicon-512.png",
+      "size_bytes": 107372,
+      "sha256": "913b648ffda7407ec7946d1902cd52358368dad8dbc65d537289991ef081d03d"
+    },
+    {
+      "path": "source/public/brand/favicon.ico",
+      "size_bytes": 127232,
+      "sha256": "dd30e6151d308445b808b68ec8ade0633e96ce5af759bba3e2c0888e81a9ef87"
+    },
+    {
+      "path": "source/public/brand/mobile-learning.svg",
+      "size_bytes": 1402,
+      "sha256": "18c6df36e5ad7b06ed6eca19827b6f58a5a6b3d21e36398daea0bd3dc0782dbc"
+    },
+    {
+      "path": "source/public/brand/qadam-staircase-book.png",
+      "size_bytes": 277561,
+      "sha256": "723c69e503d2e239311db88cfcca656f7c2f22b37f7b32fe04828fe6d09f0e25"
+    },
+    {
+      "path": "source/public/brand/subjects-atlas.svg",
+      "size_bytes": 2852,
+      "sha256": "ab8758d84a4af38c80f198db45af84b33ecfe71d62d8332aa97f154c472b91df"
+    },
+    {
+      "path": "source/public/brand/subjects-connected.svg",
+      "size_bytes": 1252,
+      "sha256": "f315269b65885dcb58e12be4a3741f3d79eb13095dbd4c823357d302db117477"
+    },
+    {
+      "path": "source/public/brand/subjects-spectrum.svg",
+      "size_bytes": 1771,
+      "sha256": "dcb2f8fffbb0ccf81cb1a65838323b481f11d2d97d425ac57244822bc3a0179c"
+    },
+    {
+      "path": "source/public/favicon.svg",
+      "size_bytes": 216,
+      "sha256": "c7f0e87416759c4a70ab8f3a9985c97e247d13e8b41aae7d367ff7c1a7a8e4ae"
+    },
+    {
+      "path": "source/src/MobileNavigation.tsx",
+      "size_bytes": 3768,
+      "sha256": "5f4e0d64c60ee08cdd481f30bd572a62c22040b4f210366e471b0d06670ed573"
+    },
+    {
+      "path": "source/src/MobileStairs.tsx",
+      "size_bytes": 1154,
+      "sha256": "dc4683a486635afec731d810002bf56030f3c88840d8233ddbb19c9c2580cd74"
+    },
+    {
+      "path": "source/src/Road.tsx",
+      "size_bytes": 4584,
+      "sha256": "dd9c64f458047745f4640ebc379b68bc6a833d145c9951bf61da1dbe902a42ee"
+    },
+    {
+      "path": "source/src/SubjectArt.tsx",
+      "size_bytes": 2862,
+      "sha256": "90c1d9134d66e70b72e3e8cf7cd914eafe25cc58766775ee0e053b4fca981bef"
+    },
+    {
+      "path": "source/src/Subjects.tsx",
+      "size_bytes": 7254,
+      "sha256": "62c7502971c1a9f05a39b431abc4385bfa25264b535743e565f8e7001e77a94f"
+    },
+    {
+      "path": "source/src/components/ui/accordion.tsx",
+      "size_bytes": 2015,
+      "sha256": "00dd6eef660f08ce85154106fa0fa4d943ed699c5ca7b06bb08732978bcebb49"
+    },
+    {
+      "path": "source/src/components/ui/badge.tsx",
+      "size_bytes": 1140,
+      "sha256": "dab689d836ad3292b41e7f4986b4e68e5d45c6903e4aeaae8972a82d4aebec29"
+    },
+    {
+      "path": "source/src/components/ui/button.tsx",
+      "size_bytes": 1902,
+      "sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84"
+    },
+    {
+      "path": "source/src/components/ui/card.tsx",
+      "size_bytes": 1828,
+      "sha256": "525c4bb2c051987be64df0e92e1d90174912b219bf541e24ffbc4a3406de49e8"
+    },
+    {
+      "path": "source/src/components/ui/dialog.tsx",
+      "size_bytes": 3850,
+      "sha256": "d0e94d5bb26085b2707174fe9452ff6a566599466025c8e2318a3ea7ab00c99f"
+    },
+    {
+      "path": "source/src/components/ui/sheet.tsx",
+      "size_bytes": 4281,
+      "sha256": "389aea04d3a2d84db4644bab9b5bfce3e12c2dc19e7a2024f6fd40a5bfcfd1f6"
+    },
+    {
+      "path": "source/src/index.css",
+      "size_bytes": 38908,
+      "sha256": "c354f34e9bc9b91db9de7a6745c9b3e62bf6c9e84fc87ee6b3e59b4dc30f7bc3"
+    },
+    {
+      "path": "source/src/lib/utils.ts",
+      "size_bytes": 166,
+      "sha256": "0c97f5ec0478867d5369a4369f811e1b779c7f2548f671ef252f1503a6392d9d"
+    },
+    {
+      "path": "source/src/main.tsx",
+      "size_bytes": 9258,
+      "sha256": "d71a211fb429823593673ba73ccaed400c2a643c6cf98e2123f25fe268190c13"
+    },
+    {
+      "path": "source/src/useStackedSections.ts",
+      "size_bytes": 6092,
+      "sha256": "ef328d83d56bed90030b3c96fb8b83fbe3c35b69d1bb4d1fc1148b0901b50b7e"
+    },
+    {
+      "path": "source/tests/content.test.mjs",
+      "size_bytes": 6881,
+      "sha256": "2dc59a2874a48491f65b1de9d945eff61efbd9710435a87179372b273defdf67"
+    },
+    {
+      "path": "source/tests/desktop-dialog-map.test.mjs",
+      "size_bytes": 768,
+      "sha256": "f13b301376d7000fda24927ce73c1f0eb3345ed8041bea55697a3d22f193e38e"
+    },
+    {
+      "path": "source/tests/desktop-height.test.mjs",
+      "size_bytes": 1383,
+      "sha256": "e8f7f8089bef571eeaefa9b02fb703e58ee8c6b4a4b5399af8f0964a0c99153d"
+    },
+    {
+      "path": "source/tests/mobile-reference.test.mjs",
+      "size_bytes": 5889,
+      "sha256": "e00ce873b6ce2689fc3062e84418e433ca8879cff17bab39a6243252b77fa7f2"
+    },
+    {
+      "path": "source/tests/mobile-sheet.test.mjs",
+      "size_bytes": 650,
+      "sha256": "8a4fbcd246828b3eddcac540473bf7d04eb5f38a9c9b8ac71f3f9ab32fe5ec65"
+    },
+    {
+      "path": "source/tests/mobile.test.mjs",
+      "size_bytes": 2500,
+      "sha256": "2de5a03b72adc91412e996c6f022b4184a5d980cc95977ee66f9b853668b0be9"
+    },
+    {
+      "path": "source/tests/scope.test.mjs",
+      "size_bytes": 1607,
+      "sha256": "76b4d4739889f7cfbeb901f1d40369022630ca147a9b029ab9dec0e4378d7c80"
+    },
+    {
+      "path": "source/tests/subject-stage-icons.test.mjs",
+      "size_bytes": 647,
+      "sha256": "a672d12c14a307f4215f3726e5746cc725124f30fb78366784c71555fcb9abb6"
+    },
+    {
+      "path": "source/tests/subjects.test.mjs",
+      "size_bytes": 2752,
+      "sha256": "aaec669a326146f4515214d036e359895196725a203539dc9738aeb9416a6081"
+    },
+    {
+      "path": "source/tsconfig.json",
+      "size_bytes": 409,
+      "sha256": "83eb3c5e867167759b622873e2a79de005caf0856e219df32a1cc24ffd456759"
+    },
+    {
+      "path": "source/vite.config.ts",
+      "size_bytes": 345,
+      "sha256": "db653fe6635ab0eedcee40573ef619af40ded929e87bd550b336afb6bef608e6"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+
+> univeracademy-private-preview@1.0.0 typecheck
+> tsc --noEmit
+
+

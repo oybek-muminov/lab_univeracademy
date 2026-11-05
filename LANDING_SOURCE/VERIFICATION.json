@@ -1,0 +1,87 @@
+{
+  "checked_utc": "2026-11-05T10:55:36.469483+00:00",
+  "isolated_directory": "C:\\Users\\Oybek\\Documents\\Codex\\2026-11-05\\task\\landing-export-20261105T105054Z\\verification-from-zip",
+  "source_zip": "C:\\Users\\Oybek\\Documents\\Codex\\2026-11-05\\task\\landing-export-20261105T105054Z\\candidate-source.zip",
+  "installed_fresh_node_modules": true,
+  "original_node_modules_used": false,
+  "npm_cache": "New cache inside isolated export directory; no original dependency directory reused",
+  "lifecycle_scripts": "Disabled by --ignore-scripts",
+  "checks": [
+    {
+      "check": "install",
+      "status": "PASS",
+      "command": [
+        "npm.cmd",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-05T10:54:56.108102+00:00",
+      "completed_utc": "2026-11-05T10:55:19.204801+00:00",
+      "log": "support/verification/install.log"
+    },
+    {
+      "check": "tests",
+      "status": "PASS",
+      "command": [
+        "npm.cmd",
+        "test"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-05T10:55:19.211382+00:00",
+      "completed_utc": "2026-11-05T10:55:20.399882+00:00",
+      "log": "support/verification/tests.log"
+    },
+    {
+      "check": "typecheck",
+      "status": "PASS",
+      "command": [
+        "npm.cmd",
+        "run",
+        "typecheck"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-05T10:55:20.401623+00:00",
+      "completed_utc": "2026-11-05T10:55:23.882076+00:00",
+      "log": "support/verification/typecheck.log"
+    },
+    {
+      "check": "build",
+      "status": "PASS",
+      "command": [
+        "npm.cmd",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "started_utc": "2026-11-05T10:55:23.884004+00:00",
+      "completed_utc": "2026-11-05T10:55:35.586495+00:00",
+      "log": "support/verification/build.log"
+    },
+    {
+      "check": "reconstructed_source_unchanged",
+      "status": "PASS",
+      "files_checked": 46
+    },
+    {
+      "check": "node_version",
+      "status": "PASS",
+      "version": "v24.15.0"
+    },
+    {
+      "check": "npm.cmd_version",
+      "status": "PASS",
+      "version": "11.12.1"
+    }
+  ],
+  "not_run": [
+    "Browser/visual/runtime checks",
+    "Offline font rendering",
+    "Exact Vercel deployment/source comparison",
+    "External bot/API/authentication functionality",
+    "Deployment or publication"
+  ],
+  "final_zip_note": "Final ZIP adds documentation, manifests and these logs; application source bytes must match the candidate ZIP that was freshly installed and built."
+}

@@ -1,0 +1,101 @@
+--- review.3/UNIVERACADEMY_MASTER_CONTEXT.md
++++ UNIVERACADEMY_MASTER_CONTEXT.md
+@@ -1,10 +1,10 @@
+ ---
+ title: UNIVERACADEMY_MASTER_CONTEXT
+-document_version: "1.4-map-review.3"
+-baseline_document_version: "1.4-map-review.2"
++document_version: "1.5-statistical-bonus-review.1"
++baseline_document_version: "1.4-map-review.3"
+ branding_source_message_id: Sentinel_63f6df751f0881918055f1c62dc4fdca
+-reference_status: ordinary_va_optional_rasch_bonus_bekor
+-approval_status: provisional_review_pending_backend_acceptance_open_p1_findings
++reference_status: ordinary_va_optional_statistical_bonus_rasch_frozen
++approval_status: provisional_bonus_review_pending_backend_acceptance
+ prepared_on: 2026-10-30
+ updated_on: 2026-11-05
+ branding_review_prepared_on: 2026-11-04
+@@ -13,11 +13,20 @@
+ scope: mahsulot_qarorlari_va_texnik_kontekst
+ ---
+ 
+-# UniverAcademy MASTER CONTEXT
++# UniverAcademy MASTER CONTEXT
++
++## 0.7. Amaldagi qisqa ma’lumot — 2026-11-05
++
++**Master 1.5-statistical-bonus-review.1; API 0.2.7-statistical-bonus-review.1. PROVISIONAL / Backend review kutilmoqda.** Joriy talablar §22da. §0–0.6 va16–21dagi oldingi baholash holatlari tarixiy; ularning «joriy» yoki «ochiq» degan eski iboralari yangi talabni bekor qilmaydi.
++
++Hozir **oddiy+o‘qituvchi ixtiyoridagi statistik bonus**. Rasch/1PL/MAP, T/darajalar va A/A+ xatosi keyingi bosqichga muzlatilgan. Eski bonusni olib tashlash qarori `UA-SRC-RESTORE-BONUS-20261105` bilan o‘zgardi. Javobsiz savol bonusda noto‘g‘ri: `UA-SRC-BONUS-UNANSWERED-20261105`.1–127 reyestri va asl manbalar o‘zgarmagan.
++
++GitHub/Supabase/baza/migration/provider/deploy/Dot/agentlar o‘zgartirilmadi. Yangi paket faqat mahalliy hujjat/OpenAPI review. Hech qanday oldingi API yoki agent acceptance yangi baytlarga meros qilinmaydi.
++
+ 
+ > **Tarixiy 1.0 asos nusxasining qaydi — 30 oktabr 2026, Asia/Tashkent.** Asosiy tuzilma foydalanuvchiga ma’qul; ushbu tahrir uning yakunlash topshirig‘i asosida tayyorlandi. Tasdiqlangan mahsulot qarorlari, keyingi bosqichlar va ochiq texnik masalalar alohida saqlanadi. API Contract, implementatsiya va pilotning tayyorlik holati o‘z dalillari bilan baholanadi. Ushbu ishda faqat shu fayl yangilandi; GitHub, Supabase, Dot, Telegram va Codex agentlariga o‘zgartirish kiritilmadi.
+ 
+-## 0.6. Current review.3 overlay — 2026-11-05
++## 0.6. Tarixiy review.3 overlay — 2026-11-05
+ 
+ **PROVISIONAL, NOT ACCEPTED.** Backend remains sole API owner. Current companion API is0.2.6-map-review.3. §§0–0.5 and16–20 preserve their dated history; §21 and current REVIEW-ISSUES.json govern the latest review status. Section13/1–127 remains byte-for-byte unchanged.
+ 
+@@ -68,7 +77,7 @@
+ 
+ 0.1/0.2,16 va eski17dagi bonusni saqlash talablari **tarixiy**: joriy scope18 va ushbu0.3 bilan aniqlanadi. 1–127, barcha oldingi qadam matni/UUID va manba sanalari aynan saqlandi; yangi supersession jadvali qaysi band bekorligini ko‘rsatadi.
+ 
+-## 0.4. Joriy holat — MAP va teng natija xabari tasdiqlandi, U7
++## 0.4. Tarixiy holat — MAP va teng natija xabari tasdiqlandi, U7
+ 
+ **MAP ishlatiladi. Hamma Rasch natijasi teng bo‘lib, daraja topilmasa aynan «Rasch darajasini aniqlab bo‘lmadi» ko‘rsatiladi.** [U7] `UA-SRC-MAP-CONFIRMATION-20261105`,2026-11-05. Oldingi «MAP tushuntirish kutilmoqda» va σ0 UX ochiq holati shu user qarori bilan yopildi. Z/T/level null, ordinary ball/maksimal/foiz saqlanadi. Equal raw total guard va sigma floor fake C+/T50 yaratmaydi.
+ 
+@@ -76,7 +85,7 @@
+ 
+ Faqat ordinary va Teacher optional Rasch; bonus bekor;45/editable, self-submitted-only, positive fractional ordinary points/display2/full precision, Asia/Tashkent va bir martalik immutable run o‘zgarishsiz. 1–127 va barcha keyingi reyestr matnlari aynan saqlandi, current overlay19-bo‘limda. Ilova kodi, actual baza/migration/deploy/agent holati o‘zgartirilmadi.
+ 
+-## 0.5. Amaldagi review holati — 0.2.6-map-review.2 / 1.4-map-review.2
++## 0.5. Tarixiy review holati — 0.2.6-map-review.2 / 1.4-map-review.2
+ 
+ **PROVISIONAL REVIEW, NOT ACCEPTED.** Backend yagona API egasi. MAP, exact teng-natija xabari va U5/U6ning barcha mahsulot qoidalari saqlangan; numerical1.5/2 va aynan joint/centered Gaussian varianti esa hali texnik tavsiya. User MAP usullar oilasini tasdiqlagan; unchanged profildagi method=joint_map / USER_CONFIRMED coarse metadata specific variant tasdig‘i emas. Bu paket yuborilgan ZIP asosidagi mahalliy hujjat/dalil reviewi. Kod/QA oracle/test/profile qiymatlari, DB/migration/provider/deployment va haqiqiy agent statusi o‘zgarmadi.
+ 
+@@ -836,7 +845,7 @@
+ 
+ Mantiqiy ID `UA-SRC-RASCH-USER-20261105`. Shu chatdagi **2026-11-05** foydalanuvchi xabari: «UniverAcademy — Rasch (1PL) baholash modelini joriy qilish». Aniq vaqt va platforma message UUIDsi berilmagan. Nusxa `UNIVERACADEMY_RASCH_REQUIREMENTS_2026-11-05.md`, SHA256 `b5265bb438279879b0214c91304526796e4ab9f4fad22488b6d57a92c2dd70e8`. Oldingi uch baseline faylning hash/baytlari `REVIEW-SOURCE-INDEX.json`da va referencesda saqlandi.
+ 
+-## 16. Tarixiy oddiy/bonus talablari — bonus qismi U5 bilan bekor
++## 16. Tarixiy oddiy/bonus talablari — U5 bekor qilgan, §22 qayta tiklagan
+ 
+ **Bu bo‘lim oldingi ikki hisobga tegishli.** U4 ularni saqlab, 17-bo‘limdagi haqiqiy Raschni uchinchi mustaqil mexanizm qilib qo‘shdi. Statistik bonusning javobsiz GB-01 qarori Rasch uchun tasdiqlangan javobsiz0 bilan avtomatik yopilmaydi.
+ 
+@@ -950,7 +959,7 @@
+ 
+ <a id="src-u7"></a>
+ 
+-## 19. MAP — tasdiqlangan method va asoslangan numerical tavsiya
++## 19. MAP tarixi — §22 bilan keyingi bosqichga muzlatilgan
+ 
+ [U7] mantiqiy ID `UA-SRC-MAP-CONFIRMATION-20261105`, shu chat2026-11-05. Original xabar `USER_MAP_DECISION_2026-11-05.md`, SHA256 `4e18fecfd80d4df1ff68d4694674ed1f2176e8d5139c4a0c201efd9d74f3341c`. Platforma UUID/aniq vaqt berilmagan. «Unda MAPdan foydalanamiz...» va exact teng-natija matni foydalanuvchi qarori; prior raqamlari assistantning tavsiyasi.
+ 
+@@ -1023,3 +1032,24 @@
+ - Backend/Bot-Mini App/Panel/QA: new exact-byte accept/block receipts absent. Runtime API/auth/DB/RLS/jobs/UI/pilot, migration, GitHub and deploy NOT_RUN or NOT_PERFORMED as applicable.
+ 
+ History/source exact bytes are retained under source/map-review.2 and source/review2-independent-audit. Current files and hashes are listed in MANIFEST.json and SHA256SUMS.txt.
++
++
++## 22. Statistik bonus qaytarildi, Rasch muzlatildi — amaldagi qaror
++
++### 22.1 Manba va supersession
++
++`UA-SRC-RESTORE-BONUS-20261105`: foydalanuvchi Raschni keyinga muzlatib, uning o‘rniga o‘qituvchi faollashtiradigan statistik bonusni qaytardi. `UA-SRC-BONUS-UNANSWERED-20261105`: bonusdagi javobsiz savolni noto‘g‘ri deb bevosita tasdiqladi. Aniq iqtiboslar `USER_DECISION_2026-11-05.md`da. Platforma UUIDsi taxmin qilinmadi. Oldingi U5ning bonusni olib tashlash qismi endi tarixiy; Rasch/MAP tasdig‘i bekor qilingan emas, keyingi bosqichga qoldirilgan. MR2-N01 hali ochiq, hozirgi ordinary+bonus MVPni bloklamaydi.
++
++### 22.2 Joriy baholash
++
++- Ordinary: individual initial off; off base1, on positive fractional points; correct base/wrong0; earned/max×100, terminalda saqlash,2 kasr ko‘rsatish.45 default, Teacher o‘zgartiradi.
++- Bonus: correct savol uchun base×(1+wrong/N), wrong/unanswered0. Unanswered wrong_countga va Nga kiradi. Alohida bonus total; ordinary va oddiy foiz o‘zgarmaydi. Bonus A/A+/sertifikat darajasi emas.
++- Original group/exact session/current-valid-self-submitted cohort mexanikasi saqlanadi. No-show/expired/forced/cancelled va boshqa guruhlar kirmaydi; all-zero submitted kiradi. Barcha boshlanganlar tugashi va himoyalangan Asia/Tashkent admission/recovery huquqi yakunlanishi kutiladi.
++- Teacher own group/subject optional action; Owner oldingi huquqi; Admin activation/replay yo‘q. Bir marta muzlatilgan snapshot, same/different K bir hisob. Recovery successor old bonusni olmaydi; original cancelled tarix nonofficial/immutable.
++- Minimal statistik ishtirokchi cheklovi yo‘q, N1 mumkin; N0 uchun409/no snapshot — texnik xavfsiz taklif. Small-group warning bloklamaydi; MVPda hamma guruhga N bilan izoh chiqarish tavsiya, yangi threshold qarori talab qilmaydi.
++
++### 22.3 Tayyorlik va keyingi ish
++
++Companion to‘liq OpenAPI `openapi-UniverAcademy-0.2.7-statistical-bonus-review.1.json` va kontrakt `UNIVERACADEMY-API-CONTRACT-0.2.7-statistical-bonus-review.1.md`. Bular Backend review uchun yangi draft; ordinary saqlash/yaxlitlash `NUMERIC_POLICY_RECOMMENDATION.md`dagi tavsiya. Backend numeric/transaction/wire diffni ko‘rib chiqadi; Panel/Bot/QA exact xeshlarni qabul qiladi; keyin implementation/integratsiya sinovlari bajariladi. Amaldagi kod inventari va pilot content/key/duration/roster/window mustaqil tasdiqlanmagan. Rasch tadqiqoti, priors, T boundary fixi hozirgi navbatga kiritilmaydi. Future learning/independent tests/payments va O-01/O-02 tasdiqlangan huquqlar saqlanadi. GitHub/baza/agent o‘zgarishi bajarilmagan.
++
++Yangilash qoidasi: keyingi active holat shu §22 va0.7dan davom ettirilsin; eski reyestr/source/tarixiy sanalar tahrirlanmasin. Backend qabuli, local validation va runtime/pilot dalillari alohida status bilan yuritilsin.
