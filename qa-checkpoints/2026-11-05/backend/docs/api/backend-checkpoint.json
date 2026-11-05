@@ -1,0 +1,234 @@
+{
+  "checkpoint_id": "backend-local-core-2026-11-05.1",
+  "recorded_at_utc": "2026-11-05T17:20:07.578714+00:00",
+  "status": "WIP_LOCAL_UNIT_CHECKPOINT_NOT_DEPLOYABLE_NOT_ACCEPTED",
+  "repository": "oybek-muminov/UniverAcademy",
+  "branch": "work",
+  "base_commit": "ee250df370c945f719cd574814cdb113c78680af",
+  "head_unchanged": true,
+  "api_version": "0.2.7-statistical-bonus-review.1",
+  "api_status": "PROVISIONAL_NOT_ACCEPTED",
+  "api_source_commit": "f2c580508cfec9e07f383610201af28edffd854b",
+  "api_openapi_github_lf_sha256": "51deb7a41d223559022dcb7e17ff24985bd328e51c4a87c797a02763bb801149",
+  "all_changed_paths": [
+    "docs/api/README.md",
+    "docs/api/backend-checkpoint.json",
+    "docs/api/backend-qa-checkpoint.md",
+    "docs/api/backend-start.md",
+    "docs/api/mini-app-handoff.md",
+    "supabase/functions/univeracademy-api/README.md",
+    "supabase/functions/univeracademy-api/attempts.ts",
+    "supabase/functions/univeracademy-api/fault.ts",
+    "supabase/functions/univeracademy-api/ordinary.ts",
+    "supabase/functions/univeracademy-api/telegram.ts",
+    "tests/backend/README.md",
+    "tests/backend/attempts.test.ts",
+    "tests/backend/fixtures.ts",
+    "tests/backend/telegram.test.ts"
+  ],
+  "total_changed_files": 14,
+  "excluded_from_own_hashes": [
+    "docs/api/backend-checkpoint.json"
+  ],
+  "manifest_hash_receipt": "SHA256 of this manifest is provided separately in the parent handoff; no self-hash claim.",
+  "files": [
+    {
+      "path": "docs/api/README.md",
+      "git_state": "modified_tracked",
+      "bytes": 2714,
+      "sha256": "b90df7a12bd4f68f58e2218c1cc9ac16d5409fafb69a4a465f383c3e1ccdbad5",
+      "public_review": "Documentation/source/audit metadata and marked examples; no real secrets, pupil records or exam content observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "docs/api/backend-qa-checkpoint.md",
+      "git_state": "untracked_new",
+      "bytes": 7759,
+      "sha256": "9203d728d5bf6494ee0f0dbfa85fa789f53a3a078dc65f3cc09878dcd41fc86d",
+      "public_review": "Documentation/source/audit metadata and marked examples; no real secrets, pupil records or exam content observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "docs/api/backend-start.md",
+      "git_state": "untracked_new",
+      "bytes": 9076,
+      "sha256": "38dfee186433daeace100586d9e9c28c4363d3130892b73b84b2ecf9b0787d9b",
+      "public_review": "Documentation/source/audit metadata and marked examples; no real secrets, pupil records or exam content observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "docs/api/mini-app-handoff.md",
+      "git_state": "untracked_new",
+      "bytes": 8906,
+      "sha256": "8f385ec897d4ea634c34c32a92beceded09a611b7c8957d6ffa9434387c2f888",
+      "public_review": "Documentation/source/audit metadata and marked examples; no real secrets, pupil records or exam content observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/README.md",
+      "git_state": "modified_tracked",
+      "bytes": 1739,
+      "sha256": "d49992cbb4eee58eada06c56592fcf353bc9b7cdf8c142566101f26abf96dd4d",
+      "public_review": "Documentation/source/audit metadata and marked examples; no real secrets, pupil records or exam content observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/attempts.ts",
+      "git_state": "untracked_new",
+      "bytes": 9327,
+      "sha256": "acf2906760018be9eafa7b9a7b0d57bcc1e0486d4142a6acadc62a6515a01060",
+      "public_review": "Internal algorithm/types/parameters; no embedded real credential, identity or exam key observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/fault.ts",
+      "git_state": "untracked_new",
+      "bytes": 422,
+      "sha256": "e405799dd809d8118f764e8fea8361f9117e2635b37e3afce93d63e64cafed8f",
+      "public_review": "Internal algorithm/types/parameters; no embedded real credential, identity or exam key observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/ordinary.ts",
+      "git_state": "untracked_new",
+      "bytes": 2775,
+      "sha256": "14fc961f952a2245665c5cd86308b68e49dbae462dc7e3e557fc6d1c91fbd21e",
+      "public_review": "Internal algorithm/types/parameters; no embedded real credential, identity or exam key observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/telegram.ts",
+      "git_state": "untracked_new",
+      "bytes": 3303,
+      "sha256": "415f843c5139285cbe3a4338072e05e50d33bebcbee3059362a3118281b8a3b3",
+      "public_review": "Internal algorithm/types/parameters; no embedded real credential, identity or exam key observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "tests/backend/README.md",
+      "git_state": "modified_tracked",
+      "bytes": 1140,
+      "sha256": "4132b514b64fc6462e27eb042af5b735c1a0a8fe2cc13015d68622e6b1dd008f",
+      "public_review": "Documentation/source/audit metadata and marked examples; no real secrets, pupil records or exam content observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "tests/backend/attempts.test.ts",
+      "git_state": "untracked_new",
+      "bytes": 12268,
+      "sha256": "d08f8064163321321e2d4907c520a36ff9f48a5e9edad182bbfa1f3e38d1d202",
+      "public_review": "Synthetic question/option/answer-key/identity fixtures only; no real pupil or exam data observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "tests/backend/fixtures.ts",
+      "git_state": "untracked_new",
+      "bytes": 1623,
+      "sha256": "2f86a6a75872b0a0e80e6cba3f08a69acff5bd932244bad87a67f1013189dba2",
+      "public_review": "Synthetic question/option/answer-key/identity fixtures only; no real pupil or exam data observed.",
+      "pattern_findings": []
+    },
+    {
+      "path": "tests/backend/telegram.test.ts",
+      "git_state": "untracked_new",
+      "bytes": 4254,
+      "sha256": "34d12665370bd1318686dd43b3eeb1689d4bff3a3a8a89b2fdebad842e724196",
+      "public_review": "Explicit synthetic bot HMAC key and synthetic Telegram identity; no live token or real initData. Two expected pattern matches recorded.",
+      "pattern_findings": [
+        {
+          "line": 8,
+          "category": "telegram_token_shape",
+          "classification": "explicit_synthetic_test_constant"
+        },
+        {
+          "line": 8,
+          "category": "credential_literal",
+          "classification": "explicit_synthetic_test_constant"
+        }
+      ]
+    }
+  ],
+  "secret_data_review": {
+    "method": [
+      "manual content review of each checkpoint file",
+      "bounded regex pattern scan without printing matched values"
+    ],
+    "patterns_checked": [
+      "private_key",
+      "github_token",
+      "aws_access_id",
+      "supabase_secret",
+      "telegram_token_shape",
+      "credential_url",
+      "credential_literal",
+      "email_shape"
+    ],
+    "real_secrets_observed": false,
+    "real_pupil_data_observed": false,
+    "real_exam_content_or_keys_observed": false,
+    "synthetic_auth_fixture_present": true,
+    "synthetic_answer_keys_present": true,
+    "findings": [
+      {
+        "path": "tests/backend/telegram.test.ts",
+        "line": 8,
+        "category": "telegram_token_shape",
+        "classification": "explicit_synthetic_test_constant"
+      },
+      {
+        "path": "tests/backend/telegram.test.ts",
+        "line": 8,
+        "category": "credential_literal",
+        "classification": "explicit_synthetic_test_constant"
+      }
+    ],
+    "public_permission": "NOT_GRANTED_BY_THIS_CHECKPOINT; separate user approval required before each upload",
+    "limitations": "Observational review of this exact local file set, not a guarantee for all secret formats or the wider workspace. Synthetic key is not validated against any live service."
+  },
+  "verification": {
+    "node_version": "v24.22.1",
+    "unit_tests": {
+      "command": "node --test tests/backend/*.test.ts",
+      "exit_code": 0,
+      "tests": 23,
+      "pass": 23,
+      "fail": 0,
+      "skipped": 0,
+      "scope": "pure TypeScript transitions and Telegram HMAC verifier with synthetic data; observed fresh run during this checkpoint preparation"
+    },
+    "git_diff_check": {
+      "command": "git diff --check",
+      "exit_code": 0
+    },
+    "all_checkpoint_file_whitespace": "PASS; trailing whitespace and final newline checked including untracked files"
+  },
+  "not_verified": [
+    "TypeScript static typecheck",
+    "HTTP runtime/contract serialization",
+    "real opaque sessions/consumed replay/refresh ledger",
+    "staff JWT provider",
+    "durable DB/RLS/CAS/uniqueness/idempotency",
+    "parallel DB writes or load",
+    "real Mini App/admin/Telegram integration",
+    "real physics content/key/duration/roster/window",
+    "deployment or real-pupil pilot"
+  ],
+  "external_actions_performed": {
+    "upload": false,
+    "stage": false,
+    "commit": false,
+    "push": false,
+    "provider_change": false,
+    "migration_apply": false,
+    "deploy": false
+  },
+  "plugin_state": {
+    "ponytail": "cloud skills read and applied",
+    "ecc": "not available in session; not installed"
+  },
+  "handoff_documents": [
+    "docs/api/backend-qa-checkpoint.md",
+    "docs/api/backend-start.md",
+    "docs/api/mini-app-handoff.md"
+  ]
+}
