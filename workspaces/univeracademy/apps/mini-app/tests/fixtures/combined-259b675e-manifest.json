@@ -1,0 +1,450 @@
+{
+  "status": "AUTHOR_LOCAL_HTTP_BROWSER_PASS_AWAITING_COMBINED_QA",
+  "base_candidate72_manifest_sha256": "6f3256b13ad43d63e2d896f65e807f81e6a12f6b4e7f030f6e755d73c9b61919",
+  "preserved_checkpoints": [
+    {
+      "folder": "mini-app-candidate-20261106",
+      "manifest_sha256": "6f3256b13ad43d63e2d896f65e807f81e6a12f6b4e7f030f6e755d73c9b61919",
+      "source_and_evidence_unchanged": true
+    },
+    {
+      "folder": "mini-app-one-decimal-prep-20261106",
+      "manifest_sha256": "593d7299a198252e85fd59b75cd1ed1df24ebc11233b17f8d2e71e68ab91bc18",
+      "source_and_evidence_unchanged": true
+    },
+    {
+      "folder": "mini-app-receipt01-fix-20261106",
+      "manifest_sha256": "58cd1b7c69cb9925e677d892bab82a6c7391b3e221d5e364c4a4ee6752af2e12",
+      "source_and_evidence_unchanged": true
+    }
+  ],
+  "owner_handoff_sha256": "21403a42da13c914b6c5ae2b6bd1a8d26725e75b8e73346ac4bfb2a2be64657f",
+  "owner_schema": {
+    "version": "0.2.8-student-points-candidate.1",
+    "declared_bytes": 425742,
+    "sha256": "280503a6a306c62e60dacea8a067137b37bcde151e6c2101d0beb4cbe09a25eb",
+    "full_bytes_in_handoff": false,
+    "locally_recomputed_full_schema_sha256": false
+  },
+  "backend_runtime_dependency": {
+    "path": "../backend-internal-handoff-20261106/student1dp-restored",
+    "files": [
+      {
+        "path": "package.json",
+        "bytes": 967,
+        "sha256": "5e0a8aff367d151dc87a84ef138aeac11bf2adf56fac9fd1bd89f1d8baa70bbb"
+      },
+      {
+        "path": "packages/api-client/HANDOFF.json",
+        "bytes": 6852,
+        "sha256": "21403a42da13c914b6c5ae2b6bd1a8d26725e75b8e73346ac4bfb2a2be64657f"
+      },
+      {
+        "path": "packages/api-client/student-client.ts",
+        "bytes": 6957,
+        "sha256": "9e925d1774cc32feb544bad89157d55de2f70c78f0f6e7d9c85af14dfd70cd2c"
+      },
+      {
+        "path": "packages/api-client/student-types.d.ts",
+        "bytes": 46340,
+        "sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+      },
+      {
+        "path": "tests/backend/http-fixture.ts",
+        "bytes": 7081,
+        "sha256": "b3593fb05cc32f6edf876c2120c24934338f2fbc3f3e8f658c666cbd8e2841d1"
+      },
+      {
+        "path": "runtime/local-lab.mjs",
+        "bytes": 2154,
+        "sha256": "5cc1443c0fc9e0b23a50ee8e9ca195e47f2a041099ea6feeeaf3bfbc0bd87830"
+      },
+      {
+        "path": "runtime/local-server.mjs",
+        "bytes": 2999,
+        "sha256": "f047baa75e83217550c7b4269ca9c1a72995f8d66b41523e37e5a2ad938acd8a"
+      },
+      {
+        "path": "runtime/student-smoke.mjs",
+        "bytes": 3902,
+        "sha256": "6c429ce6a4de5046c3e146f2553b599a5b6da0636e45f4b2ed6fc4617575ab5f"
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/attempts.ts",
+        "bytes": 9327,
+        "sha256": "acf2906760018be9eafa7b9a7b0d57bcc1e0486d4142a6acadc62a6515a01060"
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/fault.ts",
+        "bytes": 422,
+        "sha256": "e405799dd809d8118f764e8fea8361f9117e2635b37e3afce93d63e64cafed8f"
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/ordinary.ts",
+        "bytes": 2889,
+        "sha256": "acd083fa6874fb4c8dfd8ec7551c9b12842dca1c07c970a8c7f0f5988cf1fd52"
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/student-http.ts",
+        "bytes": 17528,
+        "sha256": "df0829e846fc2ecd7c0eb58bad35f3a378abeccbcd1b8afef2fb31d16c8c9485"
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/student-state.ts",
+        "bytes": 7255,
+        "sha256": "852d890ebdb9c5094306638d7399bd309dd9d3a5dbd5b8c1cdc8f8c6cee786b1"
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/student-wire.ts",
+        "bytes": 9974,
+        "sha256": "a43b5e043ca19c2e45cf83e1b76dddf0a89422633eeb2eefa19e647a847699af"
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/telegram.ts",
+        "bytes": 3303,
+        "sha256": "415f843c5139285cbe3a4338072e05e50d33bebcbee3059362a3118281b8a3b3"
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/individual-points.ts",
+        "bytes": 729,
+        "sha256": "49f7108ad311b45b8491fa932eefff04ec4a4422969f17b84b522ea68ee1b8c2"
+      }
+    ],
+    "source_unchanged_after_execution": true
+  },
+  "receipt_fix": {
+    "origin_transport_sha256": "b757d52306a233a6fc447d0051ae0b5be611f5feb300ac1e4c4be425bebdb105",
+    "origin_QA_status": "ARCHITECT_RELAYED_VERIFIED_FIXED_LOCAL_CANDIDATE",
+    "sendReceipt_block_sha256": "53cb3185620633f017b03cdb119222fc61e98f656b682e91257451a552c77ccb",
+    "block_unchanged": true,
+    "combined_source_QA": "NOT_RUN"
+  },
+  "files": [
+    {
+      "path": "apps/mini-app/.gitignore",
+      "bytes": 11,
+      "sha256": "261840b2b4fec747a1a94657ad59a75def3975456e164a353c6234f7f644dab3"
+    },
+    {
+      "path": "apps/mini-app/INTEGRATION-NOTES.md",
+      "bytes": 5892,
+      "sha256": "faf89ef421decb25c50804b825ce7e57ca7818f2b9edcf50bb46a5516e230631"
+    },
+    {
+      "path": "apps/mini-app/README.md",
+      "bytes": 1871,
+      "sha256": "ad6e52dc14c5bc4ae190394c04f4bfac233094c60af2b88cdb524b8414a2929f"
+    },
+    {
+      "path": "apps/mini-app/TRANSPORT-CHECKPOINT.md",
+      "bytes": 7649,
+      "sha256": "84ba0a22c09139253dc9cffac24ccfc309b8fbac6bbf93f29288b6459828741f"
+    },
+    {
+      "path": "apps/mini-app/WIRE-MAPPING.md",
+      "bytes": 3887,
+      "sha256": "40cf6e69305a7dea983316d5d95e12ff0bf8311606ba7290f52dbff84826657e"
+    },
+    {
+      "path": "apps/mini-app/index.html",
+      "bytes": 392,
+      "sha256": "2ef5f047b3b24c283e8a6d2b4a24f1890119918bb18423a5d4664039cbfabd8a"
+    },
+    {
+      "path": "apps/mini-app/package-lock.json",
+      "bytes": 39586,
+      "sha256": "f66c74833ac5ccf823c01af561239e1e9f1f6355a9c123e999f97c21926a6f11"
+    },
+    {
+      "path": "apps/mini-app/package.json",
+      "bytes": 597,
+      "sha256": "37534917fe73ad4ea012ba43a54f2aa7e10e6e0d49340f80c560c2ad77ce1d70"
+    },
+    {
+      "path": "apps/mini-app/src/demo-port.ts",
+      "bytes": 8014,
+      "sha256": "69bd43b728d491f316532a26960ea0ab4d22cf11cea5ca96a219ce5163287a6d"
+    },
+    {
+      "path": "apps/mini-app/src/demo.tsx",
+      "bytes": 15745,
+      "sha256": "ed6c4ce3bcc3839bce4493b7ea3732f4534fb92d79f703d900ea1d97b0669a3c"
+    },
+    {
+      "path": "apps/mini-app/src/display.ts",
+      "bytes": 1583,
+      "sha256": "4d230dbd83d4f797f68d5ff8976cd332a3b6b3ff86ae6f7f35335cb6809588e6"
+    },
+    {
+      "path": "apps/mini-app/src/flow.ts",
+      "bytes": 11757,
+      "sha256": "7be4a1418209828e2b95178dc86929fd103f5c37a16a3a08980538e6faeba0e7"
+    },
+    {
+      "path": "apps/mini-app/src/local-http.tsx",
+      "bytes": 2127,
+      "sha256": "edc3ad739134d3f1d2038d2cf85af5935654cb73e35af89ea21e677cf3a01c89"
+    },
+    {
+      "path": "apps/mini-app/src/local-owner-port.ts",
+      "bytes": 7618,
+      "sha256": "06d5972f4ddc5aebde19fc59419b09226d9133a56186367323248499ccea01ec"
+    },
+    {
+      "path": "apps/mini-app/src/main.tsx",
+      "bytes": 767,
+      "sha256": "4a1e363501157c493500a1250073bbf1ce3ce522dddf7b23755aff82aa219bde"
+    },
+    {
+      "path": "apps/mini-app/src/owner-client/student-client.ts",
+      "bytes": 6957,
+      "sha256": "9e925d1774cc32feb544bad89157d55de2f70c78f0f6e7d9c85af14dfd70cd2c"
+    },
+    {
+      "path": "apps/mini-app/src/owner-client/student-types.d.ts",
+      "bytes": 46340,
+      "sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+    },
+    {
+      "path": "apps/mini-app/src/style.css",
+      "bytes": 8838,
+      "sha256": "0706e7dd7dd782069e3a73d663b510349b2a38467b46e064f598baa0945513c7"
+    },
+    {
+      "path": "apps/mini-app/src/transport.ts",
+      "bytes": 15285,
+      "sha256": "fff27d8201db371f09363679757119ecb178661f9c44ad3825d34b497c6377e9"
+    },
+    {
+      "path": "apps/mini-app/src/wire-map.ts",
+      "bytes": 9274,
+      "sha256": "6af2f6c1df81aeaa5f01768b4ac5a3a02e7ef62a5a21c40d5e353163e2789548"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-http-driver.mjs",
+      "bytes": 2836,
+      "sha256": "5a94792b40346fbbfed7cba93bbe3398b7cd1f6bb02d263b4b0f90d6c04e6c94"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-http.py",
+      "bytes": 5033,
+      "sha256": "7142d7cacfd8456455b2aa8cea7f1ce0ec13b74ce9bd6623736046f9935e7c34"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-numeric.py",
+      "bytes": 3870,
+      "sha256": "cdac2e941f23c7a2e9cf4e917415ecfc2b257629f77fb24a7dac7e56c6c3abd6"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-smoke.py",
+      "bytes": 6972,
+      "sha256": "7b75b06c95f78a279fe07eab4be9fe7b4fc526b068fe31dd24d4e92770081220"
+    },
+    {
+      "path": "apps/mini-app/tests/check-wire-fixtures.py",
+      "bytes": 1501,
+      "sha256": "8dad65b65bd2a23f73e83794c31b2016568b7b9e3ceb0bd91bde9d74b3ff7b35"
+    },
+    {
+      "path": "apps/mini-app/tests/display-localization.test.mjs",
+      "bytes": 2881,
+      "sha256": "249599a29d1e21a60bae56c8ce0943e7bad1136638d35abf5f56f4e536cf50c8"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/wire.json",
+      "bytes": 24296,
+      "sha256": "203ff687f78fb428ec027ad338f5d63b6c2437f86259db3b6e99f98ca563c3e8"
+    },
+    {
+      "path": "apps/mini-app/tests/flow.test.mjs",
+      "bytes": 11194,
+      "sha256": "a70b4e5b414ac0b1f464c6883d01d35050c72256505cacd76942869df6b98977"
+    },
+    {
+      "path": "apps/mini-app/tests/http-integration.test.mjs",
+      "bytes": 11487,
+      "sha256": "2c5daef72cd2e132cde8c59c32aa8931263a9b7f8ffe96cd7258ac7a4dee3961"
+    },
+    {
+      "path": "apps/mini-app/tests/logout-receipt.test.mjs",
+      "bytes": 10288,
+      "sha256": "3a285651a38744b71330db6ba23e2fbc47b4fc77b3bf0c6a4f0ba58403d996c3"
+    },
+    {
+      "path": "apps/mini-app/tests/numeric-lab.mjs",
+      "bytes": 1126,
+      "sha256": "ea2202deff56fb8fb388642eb4a59279ec9ead47fa8688642cb848ed1a15e673"
+    },
+    {
+      "path": "apps/mini-app/tests/receipt-sync-hook.test.mjs",
+      "bytes": 6696,
+      "sha256": "e0bda0da820678aedc1e47e6504c1c667539466df6c45ec8b67766d1e30f92a2"
+    },
+    {
+      "path": "apps/mini-app/tests/transport.test.mjs",
+      "bytes": 12953,
+      "sha256": "4b01393bf07510abbaf65c2d4031a9dc6b07b2915850ddce9448a46e65084817"
+    },
+    {
+      "path": "apps/mini-app/tests/wire-map.test.mjs",
+      "bytes": 14901,
+      "sha256": "5aa42380edff07f3bbcf5cbfb73e2d797028078691fff573ed397812a1290576"
+    },
+    {
+      "path": "apps/mini-app/tsconfig.json",
+      "bytes": 375,
+      "sha256": "86ccd56cd605e3df25f579b47a5a50662406cbd2cb4ae5bafb50b888ef7d9dab"
+    },
+    {
+      "path": "apps/mini-app/vite.config.ts",
+      "bytes": 293,
+      "sha256": "f1ea01f666f3667db42ec6756772f0b058bb5b144374d3b019a4854fb5a1f428"
+    }
+  ],
+  "changes_vs72": [
+    {
+      "path": "apps/mini-app/README.md",
+      "bytes": 1871,
+      "sha256": "ad6e52dc14c5bc4ae190394c04f4bfac233094c60af2b88cdb524b8414a2929f",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/WIRE-MAPPING.md",
+      "bytes": 3887,
+      "sha256": "40cf6e69305a7dea983316d5d95e12ff0bf8311606ba7290f52dbff84826657e",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/src/demo-port.ts",
+      "bytes": 8014,
+      "sha256": "69bd43b728d491f316532a26960ea0ab4d22cf11cea5ca96a219ce5163287a6d",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/src/demo.tsx",
+      "bytes": 15745,
+      "sha256": "ed6c4ce3bcc3839bce4493b7ea3732f4534fb92d79f703d900ea1d97b0669a3c",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/src/display.ts",
+      "bytes": 1583,
+      "sha256": "4d230dbd83d4f797f68d5ff8976cd332a3b6b3ff86ae6f7f35335cb6809588e6",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/src/flow.ts",
+      "bytes": 11757,
+      "sha256": "7be4a1418209828e2b95178dc86929fd103f5c37a16a3a08980538e6faeba0e7",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/src/local-http.tsx",
+      "bytes": 2127,
+      "sha256": "edc3ad739134d3f1d2038d2cf85af5935654cb73e35af89ea21e677cf3a01c89",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/src/local-owner-port.ts",
+      "bytes": 7618,
+      "sha256": "06d5972f4ddc5aebde19fc59419b09226d9133a56186367323248499ccea01ec",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/src/main.tsx",
+      "bytes": 767,
+      "sha256": "4a1e363501157c493500a1250073bbf1ce3ce522dddf7b23755aff82aa219bde",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/src/owner-client/student-client.ts",
+      "bytes": 6957,
+      "sha256": "9e925d1774cc32feb544bad89157d55de2f70c78f0f6e7d9c85af14dfd70cd2c",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/src/owner-client/student-types.d.ts",
+      "bytes": 46340,
+      "sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/src/transport.ts",
+      "bytes": 15285,
+      "sha256": "fff27d8201db371f09363679757119ecb178661f9c44ad3825d34b497c6377e9",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/src/wire-map.ts",
+      "bytes": 9274,
+      "sha256": "6af2f6c1df81aeaa5f01768b4ac5a3a02e7ef62a5a21c40d5e353163e2789548",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-http-driver.mjs",
+      "bytes": 2836,
+      "sha256": "5a94792b40346fbbfed7cba93bbe3398b7cd1f6bb02d263b4b0f90d6c04e6c94",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-http.py",
+      "bytes": 5033,
+      "sha256": "7142d7cacfd8456455b2aa8cea7f1ce0ec13b74ce9bd6623736046f9935e7c34",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-numeric.py",
+      "bytes": 3870,
+      "sha256": "cdac2e941f23c7a2e9cf4e917415ecfc2b257629f77fb24a7dac7e56c6c3abd6",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/tests/display-localization.test.mjs",
+      "bytes": 2881,
+      "sha256": "249599a29d1e21a60bae56c8ce0943e7bad1136638d35abf5f56f4e536cf50c8",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/wire.json",
+      "bytes": 24296,
+      "sha256": "203ff687f78fb428ec027ad338f5d63b6c2437f86259db3b6e99f98ca563c3e8",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/tests/http-integration.test.mjs",
+      "bytes": 11487,
+      "sha256": "2c5daef72cd2e132cde8c59c32aa8931263a9b7f8ffe96cd7258ac7a4dee3961",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/tests/numeric-lab.mjs",
+      "bytes": 1126,
+      "sha256": "ea2202deff56fb8fb388642eb4a59279ec9ead47fa8688642cb848ed1a15e673",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/tests/receipt-sync-hook.test.mjs",
+      "bytes": 6696,
+      "sha256": "e0bda0da820678aedc1e47e6504c1c667539466df6c45ec8b67766d1e30f92a2",
+      "change": "added"
+    },
+    {
+      "path": "apps/mini-app/tests/wire-map.test.mjs",
+      "bytes": 14901,
+      "sha256": "5aa42380edff07f3bbcf5cbfb73e2d797028078691fff573ed397812a1290576",
+      "change": "modified"
+    },
+    {
+      "path": "apps/mini-app/vite.config.ts",
+      "bytes": 293,
+      "sha256": "f1ea01f666f3667db42ec6756772f0b058bb5b144374d3b019a4854fb5a1f428",
+      "change": "added"
+    }
+  ],
+  "deleted_paths": [],
+  "npm_dependency_changes": [],
+  "privacy_scan_findings": [],
+  "privacy_review": "Synthetic data only;no actual credentials,roster or answer keys found.Source tests import synthetic Backend helpers only in Node;browser signing helpers absent.No generated session/launch proofs persisted.",
+  "browser_Backend_implementation_imports": [],
+  "upload_commit_push": false
+}

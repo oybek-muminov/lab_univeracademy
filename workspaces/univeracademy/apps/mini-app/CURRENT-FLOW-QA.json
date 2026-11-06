@@ -1,0 +1,210 @@
+{
+  "status": "AUTHOR_REAL_SAME_ENVIRONMENT_LOOPBACK_BROWSER_PASS; INDEPENDENT_QA_PENDING",
+  "Backend_base_commit": "8f863e645746159466e06dabb56db3b94f26be05",
+  "source_manifest_sha256": "c5ef5c3d3c42b30b85ed1bc5e7b9c3f790f32c6d328e2f7e33a251066cdb7409",
+  "validation": {
+    "typecheck": "npm run check:PASS",
+    "production_build": "npm run build:PASS",
+    "guard_regressions": "8/8 PASS",
+    "new_browser_cases": "3/3 PASS;320/390/1280",
+    "old_successful_suites_rerun": false,
+    "guard_TAP_sha256": "83fd138ae1a42a7a840d4f3f0bb5eaa9c26887f2338dae529d43c3f9e3eaf2c8",
+    "build_log_sha256": "c787570bcc041641d67539e13f7e85950816dd7e47f708ccef67dd258ed9939b",
+    "production_bundle_signing_key_staff_proof_answer_key_scan": "PASS:absent"
+  },
+  "browser_reports": [
+    {
+      "stage": "complete",
+      "runId": "5d376459-17e6-4c62-b977-d8d3350e91bc",
+      "personId": "00000000-0000-4000-8000-000000000002",
+      "width": 320,
+      "status": "PASS",
+      "ungrouped_empty": true,
+      "membership_only_empty": true,
+      "literal_reload_saved_answer_and_same_deadline": true,
+      "new_question_from_HTTP_publication": true,
+      "display": {
+        "earned_points": "0.1",
+        "max_points": "0.3",
+        "percentage": "50.00"
+      },
+      "raw_submit_result_history_match": true,
+      "browser_errors": 0,
+      "blocked_requests": 0,
+      "backendCommit": "8f863e645746159466e06dabb56db3b94f26be05",
+      "publishedVersionId": "00000000-0000-4000-8000-000000000031",
+      "assignmentId": "00000000-0000-4000-8000-000000000060",
+      "staffActors": {
+        "authoringAndPublish": "approved Teacher",
+        "membershipAndAssignment": "scoped Admin"
+      },
+      "staffHttp": [
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/questions/00000000-0000-4000-8000-000000000300",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/questions/00000000-0000-4000-8000-000000000301",
+          "status": 200
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/publish",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/groups/00000000-0000-4000-8000-000000000041/members",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/admin/assignments",
+          "status": 201
+        }
+      ],
+      "browserAndBackendSameEnvironment": true
+    },
+    {
+      "stage": "complete",
+      "runId": "729d0f6c-652e-4899-b105-6964bddd64bf",
+      "personId": "00000000-0000-4000-8000-000000000002",
+      "width": 390,
+      "status": "PASS",
+      "ungrouped_empty": true,
+      "membership_only_empty": true,
+      "literal_reload_saved_answer_and_same_deadline": true,
+      "new_question_from_HTTP_publication": true,
+      "display": {
+        "earned_points": "0.1",
+        "max_points": "0.3",
+        "percentage": "50.00"
+      },
+      "raw_submit_result_history_match": true,
+      "browser_errors": 0,
+      "blocked_requests": 0,
+      "backendCommit": "8f863e645746159466e06dabb56db3b94f26be05",
+      "publishedVersionId": "00000000-0000-4000-8000-000000000031",
+      "assignmentId": "00000000-0000-4000-8000-000000000060",
+      "staffActors": {
+        "authoringAndPublish": "approved Teacher",
+        "membershipAndAssignment": "scoped Admin"
+      },
+      "staffHttp": [
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/questions/00000000-0000-4000-8000-000000000300",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/questions/00000000-0000-4000-8000-000000000301",
+          "status": 200
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/publish",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/groups/00000000-0000-4000-8000-000000000041/members",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/admin/assignments",
+          "status": 201
+        }
+      ],
+      "browserAndBackendSameEnvironment": true
+    },
+    {
+      "stage": "complete",
+      "runId": "ebfc34b3-2213-4ee3-b36d-a00224b7c673",
+      "personId": "00000000-0000-4000-8000-000000000002",
+      "width": 1280,
+      "status": "PASS",
+      "ungrouped_empty": true,
+      "membership_only_empty": true,
+      "literal_reload_saved_answer_and_same_deadline": true,
+      "new_question_from_HTTP_publication": true,
+      "display": {
+        "earned_points": "0.1",
+        "max_points": "0.3",
+        "percentage": "50.00"
+      },
+      "raw_submit_result_history_match": true,
+      "browser_errors": 0,
+      "blocked_requests": 0,
+      "backendCommit": "8f863e645746159466e06dabb56db3b94f26be05",
+      "publishedVersionId": "00000000-0000-4000-8000-000000000031",
+      "assignmentId": "00000000-0000-4000-8000-000000000060",
+      "staffActors": {
+        "authoringAndPublish": "approved Teacher",
+        "membershipAndAssignment": "scoped Admin"
+      },
+      "staffHttp": [
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/questions/00000000-0000-4000-8000-000000000300",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/questions/00000000-0000-4000-8000-000000000301",
+          "status": 200
+        },
+        {
+          "method": "PATCH",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/admin/versions/00000000-0000-4000-8000-000000000031/publish",
+          "status": 200
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/admin/groups/00000000-0000-4000-8000-000000000041/members",
+          "status": 200
+        },
+        {
+          "method": "POST",
+          "path": "/api/v1/admin/assignments",
+          "status": 201
+        }
+      ],
+      "browserAndBackendSameEnvironment": true
+    }
+  ],
+  "Backend_existing_44_file_hashes": "44/44 unchanged",
+  "current_authority": {
+    "content_author_and_publisher": "approved Teacher/Owner; actual fixture uses Teacher",
+    "membership_and_assignment": "scoped Admin",
+    "Admin_publish": "UNSUPPORTED; not bypassed"
+  },
+  "privacy": {
+    "credential_signature_scan": "PASS:zero matches across all new source",
+    "manual_review": "Synthetic local test data only. No real student, staff credential, answer key or private signing key is included. Staff fixture proofs stay in Backend/Node; no browser staff requests.",
+    "excluded": "node_modules,cache,build,screenshots,test-results,old archives"
+  },
+  "limitations": [
+    "Provisional review API; not production acceptance",
+    "Real Telegram/provider JWT authentication, DB/RLS, load and deploy not tested"
+  ],
+  "main_repository_DB_provider_deploy_changes": false
+}

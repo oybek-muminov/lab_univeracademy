@@ -1,0 +1,62 @@
+# Mini App: current local HTTP flow
+
+Local synthetic candidate on Backend commit
+`8f863e645746159466e06dabb56db3b94f26be05`, in the laboratory branch
+`qa/current-flow-20261106`. This is not a production Telegram/deployment build.
+
+The existing student UI is retained: test title/timer card, answered-state progress
+line, question-number dialog, server-confirmed saves and server display strings.
+`demo.tsx`, `style.css`, flow, transport and mapping source bytes are unchanged from
+the previous active-test UI candidate. The browser-side owner client is copied
+exactly from this Backend commit; full review contract SHA256 is
+`9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4`.
+
+From `workspaces/univeracademy`, provision the Backend's pinned validator tooling:
+
+```sh
+npm ci --ignore-scripts --prefix tests/backend/validator/tooling
+```
+
+Then from this `apps/mini-app` directory, install its pinned dependencies with
+`npm ci --ignore-scripts` if absent, and run:
+
+```sh
+npm run check
+npm run test:current-flow-guard
+npm run test:current-flow
+```
+
+The driver starts fresh RAM Backend and Vite servers in the same environment,
+binds loopback only, and closes its own processes. It uses Backend-owned
+`publishContentPilot` and `assignContentPilot`, without editing Backend code or
+mutating its store. Staff operations stay in Node; the browser gets fresh synthetic
+student launches and safe HTTP-derived context only.
+
+Current Backend authority is explicit: approved Teacher/Owner content operations;
+scoped Admin membership/assignment. Admin publish remains unsupported. The driver
+checks server audit actor IDs and does not label Teacher publication as Admin work.
+
+New browser cases at 320/390/1280px cover:
+
+- Fresh registration, no group/assignment, empty exams.
+- HTTP authoring and publication of new questions and 420-second duration; no
+  ready seed published version is used.
+- A pause between the owner's membership and assignment HTTP calls, so a fresh
+  same-student login observes membership with an empty exam list.
+- Late assignment ID from HTTP, pinned to the publish response's version ID.
+- New question, timer, save ACK, literal page reload/fresh login, saved answer and
+  unchanged attempt/deadline, submit, result and history.
+- Exact server display strings `0.1 / 0.3` and `50.00%`, localized lexically only.
+  Percentage is not recomputed from rounded display points.
+
+`tests/verify-backend-targets.mjs` keeps the historical combined manifest pinned
+and checks the raw current Backend manifest plus every expected file size/SHA256.
+No fallback or ignored mismatch is used. The current manifest covers all 44
+Backend-owned tracked files in this branch baseline. A Backend change requires an
+explicit new manifest/review; do not remove the guard to run a different tree.
+
+Historical tests/docs remain as reference. This publication's fresh validation is
+recorded in `CURRENT-FLOW-QA.json`; prior suite successes are not inherited as proof
+for changed Backend bytes. Screenshot/build/cache outputs are ignored and not
+included. Production mode retains the connection-pending screen; real Telegram,
+staff JWT/provider auth, DB/RLS, load and deployment remain unverified.

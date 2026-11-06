@@ -1,0 +1,225 @@
+{
+  "source_commit": "8f863e645746159466e06dabb56db3b94f26be05",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 99,
+      "sha256": "8e4c09e5149a50d6a0ec4b412baa6fdf196c3f4350d7d98e5767fc8fe20662d1"
+    },
+    {
+      "path": "BACKEND-SHA256SUMS",
+      "bytes": 4516,
+      "sha256": "5189eff514f03dbac1eda22207839f5208195325cf4f6dc47853766e73dfc535"
+    },
+    {
+      "path": "README.backend.md",
+      "bytes": 5682,
+      "sha256": "28194b53e34e4efdc5ce250fdafe3dd5845cb152ef71124097e5cfaf59df5409"
+    },
+    {
+      "path": "contracts/review-only.openapi.json",
+      "bytes": 430120,
+      "sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4"
+    },
+    {
+      "path": "docs/api/content-pilot-candidate-2026-11-06.md",
+      "bytes": 4995,
+      "sha256": "5e1890d1ce21a6858c773dd60cfbff66f66d413f5caa6bdbaa8776b42a469e61"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 15487,
+      "sha256": "817e236206157edcfc04fe56e443b011552fac199f3bda328695853af0ec31af"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1035,
+      "sha256": "b989b4481ff5d103b94c39aaaa3e3fb118e4d15488a670bee7d6946d6676b808"
+    },
+    {
+      "path": "packages/api-client/staff-openapi.json",
+      "bytes": 46045,
+      "sha256": "a1bdcd4e7177388e6eb0cf77bdde00a4a962ca7ac13fb921277f863ea0acacff"
+    },
+    {
+      "path": "packages/api-client/staff-types.d.ts",
+      "bytes": 28222,
+      "sha256": "669f574310968bb85565cedf11e3f44963438908dcd9294d60a854a02a1a9731"
+    },
+    {
+      "path": "packages/api-client/student-client.ts",
+      "bytes": 6968,
+      "sha256": "2b552cd196c9a900b9e368a5d2a3431d4d21cbe8c205531f5c4146ac749fcc11"
+    },
+    {
+      "path": "packages/api-client/student-openapi.json",
+      "bytes": 84308,
+      "sha256": "af533b41ccb5078b7c5c566209eefde26738252d37d77146afba47224ba1db89"
+    },
+    {
+      "path": "packages/api-client/student-types.d.ts",
+      "bytes": 46340,
+      "sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+    },
+    {
+      "path": "runtime/content-pilot-driver.mjs",
+      "bytes": 3294,
+      "sha256": "a118db0f7531e4005edd8388e93a25cfe2952cb223e80a752a6ddd617543466e"
+    },
+    {
+      "path": "runtime/content-pilot-lab.mjs",
+      "bytes": 2068,
+      "sha256": "4bda938261a208c9c632022a86a31e447c56e4cb38e4e209401d1c8e3b14cfee"
+    },
+    {
+      "path": "runtime/content-pilot-server.mjs",
+      "bytes": 653,
+      "sha256": "13174482a20e214d52a1e0f12033d6f609b85497cf83ae714fef945df6114c91"
+    },
+    {
+      "path": "runtime/local-lab.mjs",
+      "bytes": 2154,
+      "sha256": "5cc1443c0fc9e0b23a50ee8e9ca195e47f2a041099ea6feeeaf3bfbc0bd87830"
+    },
+    {
+      "path": "runtime/local-server.mjs",
+      "bytes": 3278,
+      "sha256": "9f9780466ee2715d4f407949d0b28b2e8788d74f64cda25ee822d9ff906acee7"
+    },
+    {
+      "path": "runtime/ungrouped-driver.mjs",
+      "bytes": 2282,
+      "sha256": "3a2ec8f1608c498b98de8e02abb5908839db51f8f13e5f95312c5dcfe5b8dab4"
+    },
+    {
+      "path": "runtime/ungrouped-fixture.mjs",
+      "bytes": 1753,
+      "sha256": "12efbe082d9db82749f2185db7f9284a51fb3e6b830aa015a5fd80e3188b5c08"
+    },
+    {
+      "path": "runtime/ungrouped-lab.mjs",
+      "bytes": 3494,
+      "sha256": "93abc2e195f37268eb0c9ccb990601c6612ae5ccd52c547fd370f44f03a1aa38"
+    },
+    {
+      "path": "runtime/ungrouped-server.mjs",
+      "bytes": 774,
+      "sha256": "3b6e687b1415dd0fd877e3589f3386fc8d07e421da000e04713e28d7b6a74611"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/attempts.ts",
+      "bytes": 9616,
+      "sha256": "b4bc54e39fef6799b6ff83a4be3c474471afd2e4c76e888767e999064a4d9e20"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/fault.ts",
+      "bytes": 422,
+      "sha256": "e405799dd809d8118f764e8fea8361f9117e2635b37e3afce93d63e64cafed8f"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/individual-points.ts",
+      "bytes": 729,
+      "sha256": "49f7108ad311b45b8491fa932eefff04ec4a4422969f17b84b522ea68ee1b8c2"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/membership-effects.ts",
+      "bytes": 3347,
+      "sha256": "e83249cec808cda4c3a66fb8bbd0dd327195737444a686eb8893391da92dd407"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/ordinary.ts",
+      "bytes": 2889,
+      "sha256": "acd083fa6874fb4c8dfd8ec7551c9b12842dca1c07c970a8c7f0f5988cf1fd52"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/pilot-provisioning.ts",
+      "bytes": 9741,
+      "sha256": "c7967d846727e2ad00ae386654d07caf81de3b7b273b57ef4832c49a22c53cd3"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-content.ts",
+      "bytes": 5127,
+      "sha256": "913a89409e68425ff664def9c76f9be80478cd47f50e4144cff21a0547d49e0e"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-http.ts",
+      "bytes": 17079,
+      "sha256": "5b8960fb74ad536416c64a2a567b7c1455d959d7a8e30c9009efb4464db81ac8"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-json.ts",
+      "bytes": 1615,
+      "sha256": "8d93c68cce2dcdaf68ad96bf8f710d3f0a379e7db62db642583dd23218089b9d"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-state.ts",
+      "bytes": 5707,
+      "sha256": "9e9e0a38a373721382dfc1e53245bf6012243e12c226c60e6bdc9a3b0545b73e"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-http.ts",
+      "bytes": 17626,
+      "sha256": "5e1e68edcbac4e1a601bbfbd2c3cf011bc827037c6c4d0e35ac096d23c932e47"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-state.ts",
+      "bytes": 7255,
+      "sha256": "852d890ebdb9c5094306638d7399bd309dd9d3a5dbd5b8c1cdc8f8c6cee786b1"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-wire.ts",
+      "bytes": 9974,
+      "sha256": "a43b5e043ca19c2e45cf83e1b76dddf0a89422633eeb2eefa19e647a847699af"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/telegram.ts",
+      "bytes": 3303,
+      "sha256": "415f843c5139285cbe3a4338072e05e50d33bebcbee3059362a3118281b8a3b3"
+    },
+    {
+      "path": "tests/backend/http-fixture.ts",
+      "bytes": 7081,
+      "sha256": "b3593fb05cc32f6edf876c2120c24934338f2fbc3f3e8f658c666cbd8e2841d1"
+    },
+    {
+      "path": "tests/backend/staff-fixture.ts",
+      "bytes": 8646,
+      "sha256": "e173224b8d323b983e6510ec1cbddd3a108d79e72056a133a38a3fa9bda0814e"
+    },
+    {
+      "path": "tests/backend/validator/ajv-config.cjs",
+      "bytes": 2461,
+      "sha256": "55865a95c45cab29495f77cbc41fb4cdfc94f83960ce6168a838c2e64f800253"
+    },
+    {
+      "path": "tests/backend/validator/base-ajv-config.cjs",
+      "bytes": 2044,
+      "sha256": "74ef231957dc1b528f73ea61206a890d8c1fa16a9d97bca42bc8195b285ff774"
+    },
+    {
+      "path": "tests/backend/validator/tooling/package-lock.json",
+      "bytes": 2789,
+      "sha256": "bf49238f558d7a6f85562a52998e31f105f9e69e66892f785da9ab8cfca9bdf7"
+    },
+    {
+      "path": "tests/backend/validator/tooling/package.json",
+      "bytes": 76,
+      "sha256": "83086e236c60ca828b6d118d35f55c5834cc70e3b5d5cb8dfc8d628ffcd21149"
+    },
+    {
+      "path": "tests/backend/validator/view-builder.cjs",
+      "bytes": 10682,
+      "sha256": "394ca91c0de19c3f29df23152d5c2269f7adfecb69de7afa5a9d0d6e1c290685"
+    },
+    {
+      "path": "tests/local-content-pilot.test.mjs",
+      "bytes": 19865,
+      "sha256": "74c29b5306d0e09ec0efcda48afac04684230ef4347339617657de7daa190f2b"
+    },
+    {
+      "path": "tools/generate-staff-contract.py",
+      "bytes": 2125,
+      "sha256": "aa5bc79040dbdc9eeb7b9b211bb8ff57c8c21adc9aa2e4a62eed3e6dcc29dc3e"
+    }
+  ]
+}

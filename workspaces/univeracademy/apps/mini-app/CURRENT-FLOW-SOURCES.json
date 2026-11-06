@@ -1,0 +1,238 @@
+{
+  "status": "CURRENT_LOCAL_SYNTHETIC_MINI_APP_SOURCE",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "qa/current-flow-20261106",
+  "Backend_base_commit": "8f863e645746159466e06dabb56db3b94f26be05",
+  "backend_runtime_manifest_sha256": "45dab2f5f56d2c0366a57d9d3d7db4bdcd36d8d0b73c6666d900d8a9da57e797",
+  "files": [
+    {
+      "path": "apps/mini-app/.gitignore",
+      "bytes": 70,
+      "sha256": "64454e0e0058cdbcf162740323917d39031f616131fbaa1568a4f9026ba22d71"
+    },
+    {
+      "path": "apps/mini-app/INTEGRATION-NOTES.md",
+      "bytes": 5892,
+      "sha256": "faf89ef421decb25c50804b825ce7e57ca7818f2b9edcf50bb46a5516e230631"
+    },
+    {
+      "path": "apps/mini-app/README.md",
+      "bytes": 3204,
+      "sha256": "fb94af3a3787000b247058437e6d0f69cd1ff90bdf9a518d0f2fdc574b5d603e"
+    },
+    {
+      "path": "apps/mini-app/TRANSPORT-CHECKPOINT.md",
+      "bytes": 7649,
+      "sha256": "84ba0a22c09139253dc9cffac24ccfc309b8fbac6bbf93f29288b6459828741f"
+    },
+    {
+      "path": "apps/mini-app/WIRE-MAPPING.md",
+      "bytes": 3887,
+      "sha256": "40cf6e69305a7dea983316d5d95e12ff0bf8311606ba7290f52dbff84826657e"
+    },
+    {
+      "path": "apps/mini-app/index.html",
+      "bytes": 392,
+      "sha256": "2ef5f047b3b24c283e8a6d2b4a24f1890119918bb18423a5d4664039cbfabd8a"
+    },
+    {
+      "path": "apps/mini-app/package-lock.json",
+      "bytes": 39586,
+      "sha256": "f66c74833ac5ccf823c01af561239e1e9f1f6355a9c123e999f97c21926a6f11"
+    },
+    {
+      "path": "apps/mini-app/package.json",
+      "bytes": 740,
+      "sha256": "21fa0d689ea181562ec02452a6806e68030321a42703315f27a258ab11339048"
+    },
+    {
+      "path": "apps/mini-app/src/demo-port.ts",
+      "bytes": 8014,
+      "sha256": "69bd43b728d491f316532a26960ea0ab4d22cf11cea5ca96a219ce5163287a6d"
+    },
+    {
+      "path": "apps/mini-app/src/demo.tsx",
+      "bytes": 17378,
+      "sha256": "a1b7ee0df60217d5f99a708d5568b6d6d45f5be2bb368a2aceebdf8482bc3639"
+    },
+    {
+      "path": "apps/mini-app/src/display.ts",
+      "bytes": 1583,
+      "sha256": "4d230dbd83d4f797f68d5ff8976cd332a3b6b3ff86ae6f7f35335cb6809588e6"
+    },
+    {
+      "path": "apps/mini-app/src/flow.ts",
+      "bytes": 11757,
+      "sha256": "7be4a1418209828e2b95178dc86929fd103f5c37a16a3a08980538e6faeba0e7"
+    },
+    {
+      "path": "apps/mini-app/src/local-http.tsx",
+      "bytes": 2127,
+      "sha256": "edc3ad739134d3f1d2038d2cf85af5935654cb73e35af89ea21e677cf3a01c89"
+    },
+    {
+      "path": "apps/mini-app/src/local-owner-port.ts",
+      "bytes": 7618,
+      "sha256": "06d5972f4ddc5aebde19fc59419b09226d9133a56186367323248499ccea01ec"
+    },
+    {
+      "path": "apps/mini-app/src/main.tsx",
+      "bytes": 767,
+      "sha256": "4a1e363501157c493500a1250073bbf1ce3ce522dddf7b23755aff82aa219bde"
+    },
+    {
+      "path": "apps/mini-app/src/owner-client/student-client.ts",
+      "bytes": 6968,
+      "sha256": "2b552cd196c9a900b9e368a5d2a3431d4d21cbe8c205531f5c4146ac749fcc11"
+    },
+    {
+      "path": "apps/mini-app/src/owner-client/student-types.d.ts",
+      "bytes": 46340,
+      "sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+    },
+    {
+      "path": "apps/mini-app/src/style.css",
+      "bytes": 10405,
+      "sha256": "ecb015daf0ee0cfe727b4155ce3e5cbd785f3cd8b159f62ac422005b568df661"
+    },
+    {
+      "path": "apps/mini-app/src/transport.ts",
+      "bytes": 15285,
+      "sha256": "fff27d8201db371f09363679757119ecb178661f9c44ad3825d34b497c6377e9"
+    },
+    {
+      "path": "apps/mini-app/src/wire-map.ts",
+      "bytes": 9274,
+      "sha256": "6af2f6c1df81aeaa5f01768b4ac5a3a02e7ef62a5a21c40d5e353163e2789548"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-active-ui-driver.mjs",
+      "bytes": 1655,
+      "sha256": "8bf7cce53cfb6a6e173809b7e1c17f75d752cc8049267f4c0e0d69b2d7e30364"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-active-ui.py",
+      "bytes": 8643,
+      "sha256": "d6ba27d741695fb1927c5bb7393b4c42dd9a1ddceab875499439a634bd202d0c"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-http-driver.mjs",
+      "bytes": 2860,
+      "sha256": "3e85b0269aa5c2b2727dbfce0d9550c2b611e72135d2ade27cc0bf16d619225c"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-http.py",
+      "bytes": 5033,
+      "sha256": "7142d7cacfd8456455b2aa8cea7f1ce0ec13b74ce9bd6623736046f9935e7c34"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-numeric.py",
+      "bytes": 3870,
+      "sha256": "cdac2e941f23c7a2e9cf4e917415ecfc2b257629f77fb24a7dac7e56c6c3abd6"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-smoke.py",
+      "bytes": 7090,
+      "sha256": "75b44b8b356b517c381b78b8206dd5684c52577c4fc9a3e16e82b5bd91eeddb4"
+    },
+    {
+      "path": "apps/mini-app/tests/check-wire-fixtures.py",
+      "bytes": 1501,
+      "sha256": "8dad65b65bd2a23f73e83794c31b2016568b7b9e3ceb0bd91bde9d74b3ff7b35"
+    },
+    {
+      "path": "apps/mini-app/tests/current-flow-browser.py",
+      "bytes": 11287,
+      "sha256": "8e39e045a116e8c6caf5cb5edbc99feed441d6be33f03ac092a3be316fa1ff1d"
+    },
+    {
+      "path": "apps/mini-app/tests/current-flow-driver.mjs",
+      "bytes": 6596,
+      "sha256": "579d0cd468b1e2e6d2c9b51fec4efbc7f2e7b54a280a11ebb1f9e8ca6c2773c1"
+    },
+    {
+      "path": "apps/mini-app/tests/current-flow-guard.test.mjs",
+      "bytes": 4056,
+      "sha256": "3688ee31a903d253c1ea5ba8f1bd5f898a7611fcac5491233463f66ce841b2d1"
+    },
+    {
+      "path": "apps/mini-app/tests/display-localization.test.mjs",
+      "bytes": 2881,
+      "sha256": "249599a29d1e21a60bae56c8ce0943e7bad1136638d35abf5f56f4e536cf50c8"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/combined-259b675e-manifest.json",
+      "bytes": 15712,
+      "sha256": "259b675e3e3ce2ad093af0029dc6252d1aad1fd6390048c2789e31cb6715e9be"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/current-flow-backend-manifest.json",
+      "bytes": 7679,
+      "sha256": "45dab2f5f56d2c0366a57d9d3d7db4bdcd36d8d0b73c6666d900d8a9da57e797"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/wire.json",
+      "bytes": 24296,
+      "sha256": "203ff687f78fb428ec027ad338f5d63b6c2437f86259db3b6e99f98ca563c3e8"
+    },
+    {
+      "path": "apps/mini-app/tests/flow.test.mjs",
+      "bytes": 11194,
+      "sha256": "a70b4e5b414ac0b1f464c6883d01d35050c72256505cacd76942869df6b98977"
+    },
+    {
+      "path": "apps/mini-app/tests/http-integration.test.mjs",
+      "bytes": 11355,
+      "sha256": "0642e72d9091605931a3d722f3367e909b73c56ba380ae8d58abc87cfcc1a914"
+    },
+    {
+      "path": "apps/mini-app/tests/logout-receipt.test.mjs",
+      "bytes": 10288,
+      "sha256": "3a285651a38744b71330db6ba23e2fbc47b4fc77b3bf0c6a4f0ba58403d996c3"
+    },
+    {
+      "path": "apps/mini-app/tests/numeric-lab.mjs",
+      "bytes": 994,
+      "sha256": "fd4bbe45a044ff3e538f58cfecfb01ee3e90dd0b860c8896e07643a950dc989c"
+    },
+    {
+      "path": "apps/mini-app/tests/receipt-sync-hook.test.mjs",
+      "bytes": 6696,
+      "sha256": "e0bda0da820678aedc1e47e6504c1c667539466df6c45ec8b67766d1e30f92a2"
+    },
+    {
+      "path": "apps/mini-app/tests/transport.test.mjs",
+      "bytes": 12953,
+      "sha256": "4b01393bf07510abbaf65c2d4031a9dc6b07b2915850ddce9448a46e65084817"
+    },
+    {
+      "path": "apps/mini-app/tests/verify-backend-targets.mjs",
+      "bytes": 1253,
+      "sha256": "d6f25d978cac922ce348777f532dd81bbac7bf7f6ba8babf19300d206e3113d7"
+    },
+    {
+      "path": "apps/mini-app/tests/wire-map.test.mjs",
+      "bytes": 14901,
+      "sha256": "5aa42380edff07f3bbcf5cbfb73e2d797028078691fff573ed397812a1290576"
+    },
+    {
+      "path": "apps/mini-app/tsconfig.json",
+      "bytes": 375,
+      "sha256": "86ccd56cd605e3df25f579b47a5a50662406cbd2cb4ae5bafb50b888ef7d9dab"
+    },
+    {
+      "path": "apps/mini-app/vite.config.ts",
+      "bytes": 293,
+      "sha256": "f1ea01f666f3667db42ec6756772f0b058bb5b144374d3b019a4854fb5a1f428"
+    }
+  ],
+  "UI_logic_and_style_preserved": {
+    "apps/mini-app/src/demo.tsx": "a1b7ee0df60217d5f99a708d5568b6d6d45f5be2bb368a2aceebdf8482bc3639",
+    "apps/mini-app/src/style.css": "ecb015daf0ee0cfe727b4155ce3e5cbd785f3cd8b159f62ac422005b568df661",
+    "apps/mini-app/src/flow.ts": "7be4a1418209828e2b95178dc86929fd103f5c37a16a3a08980538e6faeba0e7",
+    "apps/mini-app/src/transport.ts": "fff27d8201db371f09363679757119ecb178661f9c44ad3825d34b497c6377e9",
+    "apps/mini-app/src/wire-map.ts": "6af2f6c1df81aeaa5f01768b4ac5a3a02e7ef62a5a21c40d5e353163e2789548",
+    "apps/mini-app/src/local-owner-port.ts": "06d5972f4ddc5aebde19fc59419b09226d9133a56186367323248499ccea01ec"
+  },
+  "Backend_source_changes": []
+}
