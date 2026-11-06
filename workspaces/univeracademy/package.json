@@ -1,0 +1,23 @@
+{
+  "name": "univeracademy-student-points-local-candidate",
+  "version": "0.0.0-local-candidate",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "start": "node runtime/content-pilot-server.mjs",
+    "test": "node --test tests/local-content-pilot.test.mjs",
+    "test:backend-flow": "node --test tests/local-content-pilot.test.mjs",
+    "setup:validator": "npm ci --ignore-scripts --prefix tests/backend/validator/tooling",
+    "typecheck": "tsc --noEmit --allowImportingTsExtensions --target es2023 --module esnext --moduleResolution bundler --lib es2023,dom,dom.iterable --strict supabase/functions/univeracademy-api/*.ts packages/api-client/student-client.ts",
+    "generate:staff-schema": "python3 tools/generate-staff-contract.py",
+    "generate:staff-types": "openapi-typescript packages/api-client/staff-openapi.json -o packages/api-client/staff-types.d.ts"
+  },
+  "devDependencies": {
+    "openapi-typescript": "7.13.0",
+    "typescript": "5.9.3",
+    "ajv": "8.20.0"
+  }
+}
