@@ -79,27 +79,40 @@ async function exchange(tx:ClerkTransaction,proof:ClerkProof,deps:ClerkCandidate
   retireOtherSessions(state,personId,now,key);
   state.studentSessions[key]??={personId,retiredAt:null};
   for(const family of Object.values(state.domain.student.families))if(family.personId===personId&&family.revokedAt===null)revokeFamily(family,now,policy);
-  state.domain.student.families[familyId]={personId,expiresAt,revokedAt:null,logoutRetainUntil:null};
+  state.domain.student.families[familyId]={personId,expiresAt,revokedAt:null,logoutRetainUntil:null,authProvider:"clerk"};
   state.familyBindings[familyId]=id;state.consumedTokens[digest]=true;
   const proofs=await issueProofs(state.domain.student,familyId,now,policy);
   return {access_token:proofs.accessToken,refresh_token:proofs.refreshToken,expires_at:utc(proofs.expiresAt),
     refresh_expires_at:utc(proofs.refreshExpiresAt),token_type:"Bearer",profile:profileWire(person)};
 }
 async function familyHint(state:ClerkCandidateState,request:Request,raw:string):Promise<string|undefined>{
+  const path=new URL(request.url).pathname;
+  const bodyFamily=async()=>{
+    try{const body=JSON.parse(raw);return typeof body?.refresh_token==="string"?state.domain.student.refresh[await proofHash(body.refresh_token)]?.familyId:undefined;}catch{return undefined;}
+  };
+  // Refresh is body-proof only in the core handler. An unrelated Authorization
+  // header must never cause its family/provider checks to be skipped or misbound.
+  if(request.method==="POST"&&/\/auth\/refresh\/?$/.test(path))return bodyFamily();
   const authorization=request.headers.get("authorization");
   if(authorization!==null){
     const token=authorization.match(/^Bearer ([^\s]+)$/i)?.[1];
     return token?state.domain.student.access[await proofHash(token)]?.familyId:undefined;
   }
-  const path=new URL(request.url).pathname;
-  if(!/\/auth\/(refresh|logout)\/?$/.test(path))return undefined;
-  try{const body=JSON.parse(raw);return typeof body?.refresh_token==="string"?state.domain.student.refresh[await proofHash(body.refresh_token)]?.familyId:undefined;}catch{return undefined;}
+  if(request.method!=="POST"||!/\/auth\/logout\/?$/.test(path))return undefined;
+  return bodyFamily(); // Logout's bearer-first/no-fallback branch remains above.
 }
 async function guardBoundFamily(tx:ClerkTransaction,request:Request,raw:string,deps:ClerkCandidateDependencies):Promise<void>{
   const id=await familyHint(tx.state,request,raw);if(!id)return;
   const family=tx.state.domain.student.families[id],binding=tx.state.familyBindings[id],now=tx.now();
   // Core handler retains its expired/revoked proof and logout tombstone branches.
-  if(!family||family.revokedAt!==null||now>=family.expiresAt||!binding)return;
+  if(!family||family.revokedAt!==null||now>=family.expiresAt)return;
+  // Missing Clerk metadata must not be interpreted as a legacy Telegram login.
+  // Only a successful server-verified HMAC login below stamps that provenance.
+  if(family.authProvider==="telegram"){
+    if(Object.hasOwn(tx.state.familyBindings,id)||!deps.legacyTelegram?.botToken)fail("SERVICE_UNAVAILABLE",503);
+    return;
+  }
+  if(family.authProvider!=="clerk"||!binding)fail("SERVICE_UNAVAILABLE",503);
   if(binding.issuer!==deps.verifier.issuer)fail("CLERK_IDENTITY_REVOKED",401);
   const person=mapped(tx.state,binding);
   if(person.profile.person_id!==family.personId)fail("RESPONSE_INVARIANT_FAILED",500);
@@ -161,7 +174,10 @@ export function createClerkCandidateHandler(deps:ClerkCandidateDependencies){
           const oldIds=new Set(Object.keys(tx.state.domain.student.families));
           const outcome=await work({state:tx.state.domain.student,now:tx.now});
           if(path==="/api/v1/auth/telegram"&&request.method==="POST")for(const [id,family]of Object.entries(tx.state.domain.student.families))
-            if(!oldIds.has(id)&&family.revokedAt===null)retireOtherSessions(tx.state,family.personId,tx.now());
+            if(!oldIds.has(id)&&family.revokedAt===null){
+              family.authProvider="telegram";
+              retireOtherSessions(tx.state,family.personId,tx.now());
+            }
           return outcome;
         })}})(request);
     }catch(error){return errorResponse(error);}

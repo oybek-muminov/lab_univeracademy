@@ -1,0 +1,66 @@
+{
+  "status": "AUTHOR_F1_FIX_PASS; INDEPENDENT_QA_RETEST_PENDING",
+  "branch": "qa/current-flow-20261106",
+  "publication_parent": "d94cf2feb5d6050bae04d80d530fc02201caae36",
+  "preparation_source_manifest": "evidence/clerk-f1-2026-11-07/source-manifest.json",
+  "preparation_source_manifest_sha256": "3491adb3236e80e531e4b18c89c491ebc4d8acd2386371abbfdbd5c14f7901d4",
+  "preparation_verification_sha256": "b3455996b7548085270b8cac4a3ef68f07e4540abade97c3159bfff013b88d9f",
+  "preparation_status_preserved_as_historical_provenance": true,
+  "finding": "F1: synthetic server-state binding deletion; external exploit not established",
+  "before": {
+    "intact_binding_revoked_provider": {"me": 401, "refresh": 401},
+    "binding_deleted": {"me": 200, "refresh": 200, "new_proof_issued": true}
+  },
+  "post_fix_assertions_passed": {
+    "intact_binding_revoked_provider": {"me": 401, "refresh": 401},
+    "binding_deleted": {"me": 503, "refresh": 503, "new_proof_issued": false, "state_unchanged": true},
+    "unknown_or_conflicting_active_origin": "503; no proof or mutation",
+    "refresh_with_invalid_or_unrelated_bearer": "same body family as core is guarded",
+    "logout": "invalid bearer no fallback; recognized revoked-family ACK cannot activate or revoke another family"
+  },
+  "validation": {
+    "command": "node --test tests/clerk-auth/family-context.test.mjs tests/clerk-auth/http.test.mjs tests/clerk-auth/verifier.test.mjs tests/clerk-auth/contract.test.mjs tests/storage-auth/staff-jwt.test.mjs",
+    "source": "exact tested local candidate and frozen logs; no redundant rerun during upload",
+    "tests": 25,
+    "new": 5,
+    "existing": 20,
+    "pass": 25,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0,
+    "typecheck": "npm run typecheck: exit0",
+    "initial_pre_fix_red_run": "4 cases:3 failed/1 passed, expected exit1; fifth regression added later",
+    "frozen_source_and_log_bytes_verified": true
+  },
+  "compatibility_limit": "Old unmarked active families deny503. Trusted migration or fresh verified login is required; no automatic inference/backfill was performed.",
+  "mini_app": {
+    "files_preserved": 82,
+    "parent_git_tree": "d04e317f72adaf489c4601f72b7b4e3212c89f16",
+    "guard_exit": 1,
+    "guard": "BACKEND_TARGET_SIZE_MISMATCH: BACKEND-CURRENT-SHA256SUMS; still pins Backend39b2d92/108 files",
+    "guard_modified_or_bypassed": false,
+    "needed": "UI owner repins strict Backend manifest, then independent combined QA"
+  },
+  "privacy": {
+    "unreviewed_targeted_scan_matches": 0,
+    "reproduction_data": "synthetic fixture only; no real data or proof values in status reproduction",
+    "real_data_or_real_credentials_added": false,
+    "cache_build_old_archives_added": false
+  },
+  "unchanged_sha256": {
+    "clerk_verifier": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd",
+    "legacy_staff_verifier": "6b28fe7ab3c08a6f4c6b6867dd353a98dc397afd006236a510324c9e4cc3fc1b",
+    "client": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "types": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+    "api": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "dependency_lock": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503"
+  },
+  "limits": [
+    "Memory transaction double, not real DB/RLS/isolation evidence",
+    "Durable provenance/binding persistence and migration remain unimplemented",
+    "Arbitrary trusted-server record forgery and external exploitability not established",
+    "Real Clerk/DB/provider/browser/Vercel/deploy/capacity NOT_RUN",
+    "Telegram linking and staff device policy unresolved; default API remains503"
+  ],
+  "main_project_real_DB_provider_domain_deploy_changes": false
+}

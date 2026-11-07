@@ -1,0 +1,13 @@
+{
+  "base": "d94cf2feb5d6050bae04d80d530fc02201caae36",
+  "kind": "synthetic server-state fault injection; not external exploit proof",
+  "with_binding": {
+    "me": 401,
+    "refresh": 401
+  },
+  "after_binding_deleted": {
+    "me": 200,
+    "refresh": 200,
+    "new_access_proof_issued": true
+  }
+}

@@ -1,4 +1,52 @@
-# Current Backend publication — Clerk auth local candidate
+# Current Backend publication — F1 family-context safety fix
+
+Based on branch HEADd94cf2feb5d6050bae04d80d530fc02201caae36. This publication
+contains the approved local F1 fix and regression evidence, preserving all current
+Mini App and other work. No main-project, real Clerk/DB/provider, migration,
+credential/OAuth, domain or deployment operation is included.
+
+F1 was reproduced on the exact base with synthetic server-state deletion: a
+revoked provider session returned401 with its binding, but deleting that binding
+made /me and refresh200 and emitted a new proof. The cause was !binding returning
+early from the provider guard. The fix records explicit server auth provenance;
+missing/unknown/conflicting active context now fails503 without proof or mutation.
+Refresh guard now follows the same body proof as the core, even with invalid or
+unrelated Authorization; logout's bearer-first/no-fallback behavior is unchanged.
+
+**Compatibility limit:** old unmarked active families are denied503, even with a
+binding. No absence-based Telegram inference or automatic backfill is performed.
+A reviewed trusted migration or fresh verified login is required for such records.
+No migration is applied by this update. Real storage must preserve origin/binding
+atomically; current Clerk durable integration is still pending.
+
+Author validation:25/25 PASS (5 new plus20 existing auth checks), typecheck exit0.
+Exact tested source/log bytes are published without redundant test reruns.
+`evidence/clerk-f1-2026-11-07/` contains the status reproduction, expected pre-fix
+red log and final passing log. Its original local-preparation metadata remains
+frozen provenance; current publication intake is in
+`docs/api/clerk-f1-publication-verification-2026-11-07.json`. The complete root cause
+and limits are in `docs/api/clerk-f1-family-context-2026-11-07.md`.
+
+```sh
+npm ci --ignore-scripts
+npm run setup:validator
+npm run test:clerk-auth
+npm run typecheck
+```
+
+Cryptographic verifiers, core student handler, OpenAPI/proposed contract,
+client/types/locks, package scripts and Vercel entry are unchanged. The existing
+recognizable revoked-family logout ACK remains non-activating. No external exploit
+is established by this fault-injection test, and independent QA closure is pending.
+Real DB/RLS/Clerk/browser/deployment/capacity remain NOT_RUN; Telegram linking and
+staff device policy stay open; default Vercel API remains503.
+
+The Mini App guard still pins108 files from Backend39b2d92 and needs UI-owner
+repinning before combined QA. No UI/guard file is changed or bypassed here.
+BACKEND-CURRENT-SHA256SUMS identifies current Backend files; prior reports/sums
+remain provenance. No secret, real user data, cache/build or old archive is added.
+
+## Prior Backend39b2d92 publication — historical Clerk auth checkpoint
 
 Based on branch HEAD9a9dd43cd0f565bac8f8b333b044f54650919531. This update publishes
 the approved Clerk Backend candidate for laboratory QA; all current Mini App files

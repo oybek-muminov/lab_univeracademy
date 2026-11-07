@@ -1,0 +1,63 @@
+{
+  "status": "LOCAL_F1_FIX_ONLY; NOT_COMMITTED_OR_UPLOADED",
+  "base": "d94cf2feb5d6050bae04d80d530fc02201caae36",
+  "source_files_changed_or_added": 4,
+  "runtime_files_modified": 2,
+  "new_regression_tests": 5,
+  "files": [
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 13283,
+      "sha256": "570dd8fe5b952c9b0ee58e67cefdc5a6713b21dceea1c6857e56a76801816029",
+      "before": {
+        "bytes": 12407,
+        "sha256": "779cabf11343f323ff3af82dae5f05c31365a7c05df3bae869c1a76124973665"
+      }
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-state.ts",
+      "bytes": 7532,
+      "sha256": "208f220a3b72a572a37ab0ffba6763193b67beb3732aebe521f2295039333f72",
+      "before": {
+        "bytes": 7338,
+        "sha256": "9f8404d4caf65744d781eebd2931e27f2407fc3669a53b7afbfb522ad13183a1"
+      }
+    },
+    {
+      "path": "tests/clerk-auth/family-context.test.mjs",
+      "bytes": 5841,
+      "sha256": "20977f27a559fb9b2a80f21899208c660dadbaac65ac80aabdf54d3894fae7ec",
+      "before": null
+    },
+    {
+      "path": "docs/api/clerk-f1-family-context-2026-11-07.md",
+      "bytes": 5976,
+      "sha256": "9834181d9e1b65d3e2858a9046ff9d5c7ac362f730c6c8b92ae70d13f6978f1f",
+      "before": null
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/repro-before.json",
+      "bytes": 301,
+      "sha256": "23db3ea25580047c9cb671da8ca60489eee8f7a7572d1bf95ba43884fc7d5d68",
+      "before": null
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/red.log",
+      "bytes": 3678,
+      "sha256": "a56cb4eaca39dea22130d574b30a430988c52e2aec65f6489b90fedb41efa93a",
+      "before": null
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/tests.log",
+      "bytes": 3425,
+      "sha256": "4ba86b3ca17c4348a7593818c4c2954ff71de082da07d2420b9eebb9c9e51b2e",
+      "before": null
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f",
+      "before": null
+    }
+  ]
+}

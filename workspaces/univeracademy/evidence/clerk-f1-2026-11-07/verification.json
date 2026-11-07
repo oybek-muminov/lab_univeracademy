@@ -1,0 +1,81 @@
+{
+  "status": "LOCAL_FIX_PASS; INDEPENDENT_QA_RETEST_PENDING",
+  "base": "d94cf2feb5d6050bae04d80d530fc02201caae36",
+  "finding": "F1 synthetic binding-deletion fault injection; external exploit not established",
+  "root_cause": "guardBoundFamily returned early on !binding and core opaque auth ran without Clerk liveness; no independent mandatory family provenance",
+  "related_guard_issue": "refresh guard selected Authorization while core used body refresh proof; now selects same body family",
+  "before": {
+    "base": "d94cf2feb5d6050bae04d80d530fc02201caae36",
+    "kind": "synthetic server-state fault injection; not external exploit proof",
+    "with_binding": {
+      "me": 401,
+      "refresh": 401
+    },
+    "after_binding_deleted": {
+      "me": 200,
+      "refresh": 200,
+      "new_access_proof_issued": true
+    }
+  },
+  "post_fix_assertions_passed": {
+    "intact_binding_revoked_provider": {
+      "me": 401,
+      "refresh": 401
+    },
+    "binding_deleted": {
+      "me": 503,
+      "refresh": 503,
+      "new_proof_issued": false,
+      "state_unchanged": true
+    },
+    "unknown_or_conflicting_origin": "503/no proof/no mutation",
+    "invalid_or_unrelated_bearer_on_refresh": "correct body family guarded;401 or missing-context503",
+    "logout_no_fallback": "invalid bearer401; recognized revoked-family body-only ACK remains non-activating"
+  },
+  "initial_red_run": {
+    "cases": 4,
+    "pass": 1,
+    "fail": 3,
+    "exit": 1,
+    "note": "fifth guard-selection regression added after initial red reproduction"
+  },
+  "final_validation": {
+    "command": "node --test tests/clerk-auth/family-context.test.mjs tests/clerk-auth/http.test.mjs tests/clerk-auth/verifier.test.mjs tests/clerk-auth/contract.test.mjs tests/storage-auth/staff-jwt.test.mjs",
+    "tests": 25,
+    "new": 5,
+    "existing": 20,
+    "pass": 25,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0,
+    "typecheck": "npm run typecheck: exit0"
+  },
+  "source_manifest_sha256": "3491adb3236e80e531e4b18c89c491ebc4d8acd2386371abbfdbd5c14f7901d4",
+  "unchanged": {
+    "supabase/functions/univeracademy-api/clerk-auth.ts": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd",
+    "supabase/functions/univeracademy-api/staff-jwt.ts": "6b28fe7ab3c08a6f4c6b6867dd353a98dc397afd006236a510324c9e4cc3fc1b",
+    "supabase/functions/univeracademy-api/student-http.ts": "5e1e68edcbac4e1a601bbfbd2c3cf011bc827037c6c4d0e35ac096d23c932e47",
+    "contracts/review-only.openapi.json": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "contracts/clerk-auth.proposal.patch.json": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019",
+    "packages/api-client/student-client.ts": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "packages/api-client/student-types.d.ts": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+    "package-lock.json": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503",
+    "package.json": "1c8f0f50a9052a773496de0aef29817f9fec17a7dd33384353e3c33da303103c",
+    "api/index.mjs": "e8c6699dbfac16771857c2b684b1198ac53950cf71469149200b619fb9412a4b",
+    "runtime/vercel-node.mjs": "eb95ef50e999b44403f20fa2bdd51923443f1ef6038f60c7588bda1820537171"
+  },
+  "mini_app_tree_preserved": "d04e317f72adaf489c4601f72b7b4e3212c89f16",
+  "privacy": {
+    "unreviewed_matches": [],
+    "data": "synthetic only; no proof values in status reproduction, no real credentials/data"
+  },
+  "limits": [
+    "Unmarked active families deny503; trusted migration or fresh verified login needed, no automatic backfill",
+    "Future durable port must persist/protect family provenance and provider binding atomically",
+    "Global-queue memory double is not DB/RLS/isolation evidence",
+    "Arbitrary forgery of trusted server records and external exploitability not established",
+    "Real Clerk/DB/provider/browser/Vercel/deploy/capacity NOT_RUN",
+    "Telegram linking and staff device policy remain open; default Vercel still503"
+  ],
+  "main_repo_real_Clerk_DB_provider_remote_deploy_changes": false
+}

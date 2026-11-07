@@ -12,6 +12,9 @@ export type Person = { telegramId: number | null; enabled: boolean; profile: Pro
 export type Family = {
   personId: string; expiresAt: number; revokedAt: number | null;
   logoutRetainUntil: number | null;
+  // Existing standalone handlers may omit it. The Clerk candidate requires
+  // explicit provenance for every active family; missing is never "telegram".
+  authProvider?: "clerk" | "telegram";
 };
 export type AccessProof = { familyId: string; expiresAt: number; superseded: boolean };
 export type RefreshProof = { familyId: string; consumed: boolean };
