@@ -9,17 +9,21 @@ assert.equal(sha256(raw), '259b675e3e3ce2ad093af0029dc6252d1aad1fd6390048c2789e3
   'BASELINE_MANIFEST_MISMATCH');
 const baseline = JSON.parse(raw);
 assert.equal(baseline.backend_runtime_dependency.files.length, 16);
-// Both historical manifests remain pinned as provenance, never current fallbacks.
+// Historical manifests remain pinned as provenance, never current fallbacks.
 const previousRaw = readFileSync(new URL('./fixtures/current-flow-backend-manifest.json', import.meta.url));
 assert.equal(sha256(previousRaw), '45dab2f5f56d2c0366a57d9d3d7db4bdcd36d8d0b73c6666d900d8a9da57e797',
   'PREVIOUS_RUNTIME_MANIFEST_MISMATCH');
 assert.equal(JSON.parse(previousRaw).files.length, 44);
-const runtimeRaw = readFileSync(new URL('./fixtures/production-backend-manifest.json', import.meta.url));
-assert.equal(sha256(runtimeRaw), 'bb8f1a619d677826225253614771863136cab7616c16bfdf35aaaf1a12b6b669',
+const productionBaselineRaw = readFileSync(new URL('./fixtures/production-backend-manifest.json', import.meta.url));
+assert.equal(sha256(productionBaselineRaw), 'bb8f1a619d677826225253614771863136cab7616c16bfdf35aaaf1a12b6b669',
+  'PRODUCTION_BASELINE_MANIFEST_MISMATCH');
+assert.equal(JSON.parse(productionBaselineRaw).files.length, 71);
+const runtimeRaw = readFileSync(new URL('./fixtures/backend-ada6600-manifest.json', import.meta.url));
+assert.equal(sha256(runtimeRaw), '9321fe841690a3511b2399661fa7c8b860315f55dfed2389362d2c2a62f69619',
   'RUNTIME_MANIFEST_MISMATCH');
 const runtime = JSON.parse(runtimeRaw);
-assert.equal(runtime.source_commit, '1335762a8e133311849b2dad1ddc6be3ccf9bb53');
-assert.equal(runtime.files.length, 71);
+assert.equal(runtime.source_commit, 'ada6600b2cecb9c4c48932d3a452349e64a06c2f');
+assert.equal(runtime.files.length, 83);
 export const BACKEND_SOURCE_COMMIT = runtime.source_commit;
 const repo = new URL('../../../', import.meta.url);
 for (const file of runtime.files) {
