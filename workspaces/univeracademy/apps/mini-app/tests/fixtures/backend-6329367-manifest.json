@@ -1,0 +1,590 @@
+{
+  "source_commit": "6329367b7346484f58e458f1b62396cfd764e6ec",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 99,
+      "sha256": "8e4c09e5149a50d6a0ec4b412baa6fdf196c3f4350d7d98e5767fc8fe20662d1"
+    },
+    {
+      "path": "BACKEND-CURRENT-SHA256SUMS",
+      "bytes": 12527,
+      "sha256": "d7f8e4f94cd0474c37a635e7743616090f30ec901ebc70c7dc9d956f8cc830d9"
+    },
+    {
+      "path": "BACKEND-SHA256SUMS",
+      "bytes": 4516,
+      "sha256": "5189eff514f03dbac1eda22207839f5208195325cf4f6dc47853766e73dfc535"
+    },
+    {
+      "path": "CLIENT-PRODUCTION-HANDOFF.md",
+      "bytes": 2840,
+      "sha256": "212c0e72c8a3bd4c0c4eb066f2a6c7d9037981c5d28dfc281c9129e747bc201b"
+    },
+    {
+      "path": "README.backend.md",
+      "bytes": 5851,
+      "sha256": "07c7eb54e46cd6e085cd35a71cd1f94e17d47d89f3dc03d2d019cdffda96f725"
+    },
+    {
+      "path": "README.current-backend.md",
+      "bytes": 13846,
+      "sha256": "3cf46c62fc858b193a27155e0860c6f87d9b6ac9c21692fd1fde9d404a44c4ef"
+    },
+    {
+      "path": "README.enrollment-staff.md",
+      "bytes": 4254,
+      "sha256": "26b70e48719ba0de89c219019e611ac3688544a684119f2326424b389bc5889a"
+    },
+    {
+      "path": "README.persistent-http.md",
+      "bytes": 3426,
+      "sha256": "510e12bc1be2d52fa922a7dd2d511ee4b68742ee0fd9df6999e0e38612ccb231"
+    },
+    {
+      "path": "README.storage-auth.md",
+      "bytes": 1898,
+      "sha256": "1566d6ab399e25ebae0d38a5c5350c564038b4956192941906f5cf4737445630"
+    },
+    {
+      "path": "api/index.mjs",
+      "bytes": 616,
+      "sha256": "e8c6699dbfac16771857c2b684b1198ac53950cf71469149200b619fb9412a4b"
+    },
+    {
+      "path": "contracts/clerk-auth.proposal.patch.json",
+      "bytes": 7354,
+      "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019"
+    },
+    {
+      "path": "contracts/review-only.openapi.json",
+      "bytes": 430120,
+      "sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4"
+    },
+    {
+      "path": "docs/api/backend-current-verification-2026-11-07.json",
+      "bytes": 2287,
+      "sha256": "cd489421905854cd803f88e2d3ad2bdafa393558c5a7f6fe731d07f22e22d570"
+    },
+    {
+      "path": "docs/api/clerk-auth-local-proposal-2026-11-07.md",
+      "bytes": 9978,
+      "sha256": "e3aa4624d9d61bb72f82943b7b475844768bc2ce5fd5b9bcc147bf8b3994b1d2"
+    },
+    {
+      "path": "docs/api/clerk-auth-publication-verification-2026-11-07.json",
+      "bytes": 3126,
+      "sha256": "1713a952205c5986c1023c0578c06a0612fb2b07459c4fefd934fa597042365b"
+    },
+    {
+      "path": "docs/api/clerk-f1-family-context-2026-11-07.md",
+      "bytes": 5976,
+      "sha256": "9834181d9e1b65d3e2858a9046ff9d5c7ac362f730c6c8b92ae70d13f6978f1f"
+    },
+    {
+      "path": "docs/api/clerk-f1-publication-verification-2026-11-07.json",
+      "bytes": 3753,
+      "sha256": "98bf1a845ff5dfe38ef2e2d9e89028fd98a59010bd93c0086ccbd669bec6c7a5"
+    },
+    {
+      "path": "docs/api/content-pilot-candidate-2026-11-06.md",
+      "bytes": 4995,
+      "sha256": "5e1890d1ce21a6858c773dd60cfbff66f66d413f5caa6bdbaa8776b42a469e61"
+    },
+    {
+      "path": "docs/api/first-test-publication-verification-2026-11-07.json",
+      "bytes": 2717,
+      "sha256": "a16591353054ceff3e3dc86bfc3a877789f5abbe0f37f38585dfb423f20c329f"
+    },
+    {
+      "path": "docs/api/first-test-relational-local-2026-11-07.md",
+      "bytes": 7956,
+      "sha256": "21d9b02abeab25201fe637a51a6c70cce61b97a6dc312eea6bb2fd4a46ac7a6e"
+    },
+    {
+      "path": "docs/api/identity-staff-readers-2026-11-07.md",
+      "bytes": 6933,
+      "sha256": "f4aa21ad78e95fec17fe085f56d77d86b1a233fb0ece9f932353bcec7ef28bc5"
+    },
+    {
+      "path": "docs/api/persistent-http-review-2026-11-07.md",
+      "bytes": 9473,
+      "sha256": "a235062899d80e769919ceac5cd212e4eed91ad5915c13063012ec20050188ef"
+    },
+    {
+      "path": "docs/api/storage-auth-local-proposal-2026-11-06.md",
+      "bytes": 13069,
+      "sha256": "c3471587ea66dac673def00553da8cc4a6cfb8e221188e1da136e2c15e3f47d1"
+    },
+    {
+      "path": "docs/api/vercel-node-local-proposal-2026-11-07.md",
+      "bytes": 10434,
+      "sha256": "bf84218a2ce8fc7d02fc819ea24a96c18e9a47c556d1285ace710c136f4b4ccc"
+    },
+    {
+      "path": "docs/api/vercel-node-publication-verification-2026-11-07.json",
+      "bytes": 3037,
+      "sha256": "2440ef6b5fd622908cfd94871bbf2248bf839799c8d18a02eb74322780efe653"
+    },
+    {
+      "path": "evidence/clerk-auth-2026-11-07/source-manifest.json",
+      "bytes": 2750,
+      "sha256": "2b9bd03563d308abee6aa6b22c919908d19a2ca6c1a473ece9a18e02afa4223a"
+    },
+    {
+      "path": "evidence/clerk-auth-2026-11-07/tests.log",
+      "bytes": 2751,
+      "sha256": "ed91e30094f81dd094cbc1528adaf3c04efb462917b980d01839d3794afdaafc"
+    },
+    {
+      "path": "evidence/clerk-auth-2026-11-07/typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+    },
+    {
+      "path": "evidence/clerk-auth-2026-11-07/verification.json",
+      "bytes": 2842,
+      "sha256": "c65f46dd85d6d2c8e27148edced712f66713cdc80ec82deb5843dfdf8f3f2bce"
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/red.log",
+      "bytes": 3678,
+      "sha256": "a56cb4eaca39dea22130d574b30a430988c52e2aec65f6489b90fedb41efa93a"
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/repro-before.json",
+      "bytes": 301,
+      "sha256": "23db3ea25580047c9cb671da8ca60489eee8f7a7572d1bf95ba43884fc7d5d68"
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/source-manifest.json",
+      "bytes": 2065,
+      "sha256": "3491adb3236e80e531e4b18c89c491ebc4d8acd2386371abbfdbd5c14f7901d4"
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/tests.log",
+      "bytes": 3425,
+      "sha256": "4ba86b3ca17c4348a7593818c4c2954ff71de082da07d2420b9eebb9c9e51b2e"
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+    },
+    {
+      "path": "evidence/clerk-f1-2026-11-07/verification.json",
+      "bytes": 4093,
+      "sha256": "b3455996b7548085270b8cac4a3ef68f07e4540abade97c3159bfff013b88d9f"
+    },
+    {
+      "path": "evidence/first-test-2026-11-07/source-manifest.json",
+      "bytes": 2840,
+      "sha256": "483a997017c2af919521c8100134e7e6da153e7afcbeef3ab9f266c801f6342d"
+    },
+    {
+      "path": "evidence/first-test-2026-11-07/tests.log",
+      "bytes": 4202,
+      "sha256": "4507ac1809046803540c291329d448ccef2ea11415dda24c519a0533aec44cf0"
+    },
+    {
+      "path": "evidence/first-test-2026-11-07/typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+    },
+    {
+      "path": "evidence/first-test-2026-11-07/verification.json",
+      "bytes": 1750,
+      "sha256": "07053949e8cdc83432934121770f7e11c978667327696456a4e80b82f41e1e98"
+    },
+    {
+      "path": "evidence/vercel-node-2026-11-07/source-manifest.json",
+      "bytes": 2482,
+      "sha256": "bec1d1c2a0f2c747b468cdd02973807f6e5bbad88ef1a66cdf012a7ef1a90510"
+    },
+    {
+      "path": "evidence/vercel-node-2026-11-07/tests.log",
+      "bytes": 1747,
+      "sha256": "54d4e91a60c2c69110af7b0666d5939abefc008fca71c604f8c711686a009c70"
+    },
+    {
+      "path": "evidence/vercel-node-2026-11-07/typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+    },
+    {
+      "path": "evidence/vercel-node-2026-11-07/verification.json",
+      "bytes": 2163,
+      "sha256": "acca8e406b70e0d9dc692722f7787377b971d9899ec208d347d2650a1ce3ce9a"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 15897,
+      "sha256": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1712,
+      "sha256": "1c8f0f50a9052a773496de0aef29817f9fec17a7dd33384353e3c33da303103c"
+    },
+    {
+      "path": "packages/api-client/staff-openapi.json",
+      "bytes": 46045,
+      "sha256": "a1bdcd4e7177388e6eb0cf77bdde00a4a962ca7ac13fb921277f863ea0acacff"
+    },
+    {
+      "path": "packages/api-client/staff-types.d.ts",
+      "bytes": 28222,
+      "sha256": "669f574310968bb85565cedf11e3f44963438908dcd9294d60a854a02a1a9731"
+    },
+    {
+      "path": "packages/api-client/student-client.ts",
+      "bytes": 8521,
+      "sha256": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae"
+    },
+    {
+      "path": "packages/api-client/student-openapi.json",
+      "bytes": 84308,
+      "sha256": "af533b41ccb5078b7c5c566209eefde26738252d37d77146afba47224ba1db89"
+    },
+    {
+      "path": "packages/api-client/student-types.d.ts",
+      "bytes": 46340,
+      "sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+    },
+    {
+      "path": "runtime/configured-server.mjs",
+      "bytes": 2653,
+      "sha256": "c0c4747f563971e6bced723443cce86eaa1fae66c87c875f792b0baad20fec56"
+    },
+    {
+      "path": "runtime/content-pilot-driver.mjs",
+      "bytes": 3294,
+      "sha256": "a118db0f7531e4005edd8388e93a25cfe2952cb223e80a752a6ddd617543466e"
+    },
+    {
+      "path": "runtime/content-pilot-lab.mjs",
+      "bytes": 2068,
+      "sha256": "4bda938261a208c9c632022a86a31e447c56e4cb38e4e209401d1c8e3b14cfee"
+    },
+    {
+      "path": "runtime/content-pilot-server.mjs",
+      "bytes": 653,
+      "sha256": "13174482a20e214d52a1e0f12033d6f609b85497cf83ae714fef945df6114c91"
+    },
+    {
+      "path": "runtime/local-cors.mjs",
+      "bytes": 3289,
+      "sha256": "c8c7cf03b13c0b86723a64732098fe19e9fa1daa26bbcf085b64baf4d7d995c2"
+    },
+    {
+      "path": "runtime/local-lab.mjs",
+      "bytes": 2154,
+      "sha256": "5cc1443c0fc9e0b23a50ee8e9ca195e47f2a041099ea6feeeaf3bfbc0bd87830"
+    },
+    {
+      "path": "runtime/local-server.mjs",
+      "bytes": 3278,
+      "sha256": "9f9780466ee2715d4f407949d0b28b2e8788d74f64cda25ee822d9ff906acee7"
+    },
+    {
+      "path": "runtime/ungrouped-driver.mjs",
+      "bytes": 2282,
+      "sha256": "3a2ec8f1608c498b98de8e02abb5908839db51f8f13e5f95312c5dcfe5b8dab4"
+    },
+    {
+      "path": "runtime/ungrouped-fixture.mjs",
+      "bytes": 1753,
+      "sha256": "12efbe082d9db82749f2185db7f9284a51fb3e6b830aa015a5fd80e3188b5c08"
+    },
+    {
+      "path": "runtime/ungrouped-lab.mjs",
+      "bytes": 3494,
+      "sha256": "93abc2e195f37268eb0c9ccb990601c6612ae5ccd52c547fd370f44f03a1aa38"
+    },
+    {
+      "path": "runtime/ungrouped-server.mjs",
+      "bytes": 774,
+      "sha256": "3b6e687b1415dd0fd877e3589f3386fc8d07e421da000e04713e28d7b6a74611"
+    },
+    {
+      "path": "runtime/vercel-node.mjs",
+      "bytes": 4161,
+      "sha256": "eb95ef50e999b44403f20fa2bdd51923443f1ef6038f60c7588bda1820537171"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/attempts.ts",
+      "bytes": 9616,
+      "sha256": "b4bc54e39fef6799b6ff83a4be3c474471afd2e4c76e888767e999064a4d9e20"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "bytes": 4949,
+      "sha256": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 13283,
+      "sha256": "570dd8fe5b952c9b0ee58e67cefdc5a6713b21dceea1c6857e56a76801816029"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/configured-http.ts",
+      "bytes": 7704,
+      "sha256": "b68084330daccdcf1dad0fffac16c31d1621b73e5b699cdd255e61dcbb301651"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/fault.ts",
+      "bytes": 422,
+      "sha256": "e405799dd809d8118f764e8fea8361f9117e2635b37e3afce93d63e64cafed8f"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/individual-points.ts",
+      "bytes": 729,
+      "sha256": "49f7108ad311b45b8491fa932eefff04ec4a4422969f17b84b522ea68ee1b8c2"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/membership-effects.ts",
+      "bytes": 3347,
+      "sha256": "e83249cec808cda4c3a66fb8bbd0dd327195737444a686eb8893391da92dd407"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/ordinary.ts",
+      "bytes": 2889,
+      "sha256": "acd083fa6874fb4c8dfd8ec7551c9b12842dca1c07c970a8c7f0f5988cf1fd52"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/pilot-provisioning.ts",
+      "bytes": 9741,
+      "sha256": "c7967d846727e2ad00ae386654d07caf81de3b7b273b57ef4832c49a22c53cd3"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-content.ts",
+      "bytes": 5127,
+      "sha256": "913a89409e68425ff664def9c76f9be80478cd47f50e4144cff21a0547d49e0e"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-http.ts",
+      "bytes": 17079,
+      "sha256": "5b8960fb74ad536416c64a2a567b7c1455d959d7a8e30c9009efb4464db81ac8"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-json.ts",
+      "bytes": 1615,
+      "sha256": "8d93c68cce2dcdaf68ad96bf8f710d3f0a379e7db62db642583dd23218089b9d"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-jwt.ts",
+      "bytes": 3535,
+      "sha256": "6b28fe7ab3c08a6f4c6b6867dd353a98dc397afd006236a510324c9e4cc3fc1b"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-state.ts",
+      "bytes": 5721,
+      "sha256": "1b7fe85fe33f91e9be623cf716a6d6967f2291ddd73edca1bd6fa6972ddaa69b"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+      "bytes": 8740,
+      "sha256": "aab9cb3964cbb9ecc196a0400790395c1512f4418d6ce85df29117f0cb15e010"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+      "bytes": 5172,
+      "sha256": "ef86dde8e8cff64a3cd11062caaecd8eb594e6f5aad73d1a1be05d41cc25a245"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/session-rows.ts",
+      "bytes": 5865,
+      "sha256": "7dd1d7b30cf85a9f5c777e7ee0970d03723f09ac6ddbb125f87f70f3cb6128c3"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+      "bytes": 3316,
+      "sha256": "e4f8f60af5c1bffe405312c7b28417384bc67c0718d43954ae0433dbe6b81a80"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "bytes": 15766,
+      "sha256": "a14674add9c53ddf11572696d6a823381a023ba8fc98aa79e2a383219d91d025"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "bytes": 12179,
+      "sha256": "dfaec079eb86abf29fd06c88069d1dbfb8530bc2b6d1cc2100b88c1baea3f792"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+      "bytes": 3051,
+      "sha256": "ba1c07668261045f555dc2110d51eee6f74f37b19711416b13428a9068f05070"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "bytes": 3575,
+      "sha256": "263238b744240af6e62cfd14c6dc00943bf840f7fe9c6e2ed18acbd914dd38bd"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/transaction-pool-port.ts",
+      "bytes": 1102,
+      "sha256": "79b9dcf8a9c27ef1ccc3f86a9233e8988731e17b2d9bdd330e3aa3872f084153"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-http.ts",
+      "bytes": 17626,
+      "sha256": "5e1e68edcbac4e1a601bbfbd2c3cf011bc827037c6c4d0e35ac096d23c932e47"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-state.ts",
+      "bytes": 7532,
+      "sha256": "208f220a3b72a572a37ab0ffba6763193b67beb3732aebe521f2295039333f72"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-wire.ts",
+      "bytes": 9974,
+      "sha256": "a43b5e043ca19c2e45cf83e1b76dddf0a89422633eeb2eefa19e647a847699af"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/telegram.ts",
+      "bytes": 3303,
+      "sha256": "415f843c5139285cbe3a4338072e05e50d33bebcbee3059362a3118281b8a3b3"
+    },
+    {
+      "path": "tests/backend/http-fixture.ts",
+      "bytes": 7081,
+      "sha256": "b3593fb05cc32f6edf876c2120c24934338f2fbc3f3e8f658c666cbd8e2841d1"
+    },
+    {
+      "path": "tests/backend/staff-fixture.ts",
+      "bytes": 8646,
+      "sha256": "e173224b8d323b983e6510ec1cbddd3a108d79e72056a133a38a3fa9bda0814e"
+    },
+    {
+      "path": "tests/backend/validator/ajv-config.cjs",
+      "bytes": 2461,
+      "sha256": "55865a95c45cab29495f77cbc41fb4cdfc94f83960ce6168a838c2e64f800253"
+    },
+    {
+      "path": "tests/backend/validator/base-ajv-config.cjs",
+      "bytes": 2044,
+      "sha256": "74ef231957dc1b528f73ea61206a890d8c1fa16a9d97bca42bc8195b285ff774"
+    },
+    {
+      "path": "tests/backend/validator/tooling/package-lock.json",
+      "bytes": 2789,
+      "sha256": "bf49238f558d7a6f85562a52998e31f105f9e69e66892f785da9ab8cfca9bdf7"
+    },
+    {
+      "path": "tests/backend/validator/tooling/package.json",
+      "bytes": 76,
+      "sha256": "83086e236c60ca828b6d118d35f55c5834cc70e3b5d5cb8dfc8d628ffcd21149"
+    },
+    {
+      "path": "tests/backend/validator/view-builder.cjs",
+      "bytes": 10682,
+      "sha256": "394ca91c0de19c3f29df23152d5c2269f7adfecb69de7afa5a9d0d6e1c290685"
+    },
+    {
+      "path": "tests/clerk-auth/contract.test.mjs",
+      "bytes": 2639,
+      "sha256": "d1450ed5ddc892b42eea52aec84ee32c8fd9721b895ed97afb9337fd6689eb99"
+    },
+    {
+      "path": "tests/clerk-auth/family-context.test.mjs",
+      "bytes": 5841,
+      "sha256": "20977f27a559fb9b2a80f21899208c660dadbaac65ac80aabdf54d3894fae7ec"
+    },
+    {
+      "path": "tests/clerk-auth/fixture.mjs",
+      "bytes": 5512,
+      "sha256": "f80662d9193ddebf03c600638f8a2ab95ec96541c1522a5a3ebcb3cede3eb108"
+    },
+    {
+      "path": "tests/clerk-auth/http.test.mjs",
+      "bytes": 12220,
+      "sha256": "ae6549e5fb5b657fc15801529467efcd00fe82a6f986552b13747fb7a749913c"
+    },
+    {
+      "path": "tests/clerk-auth/verifier.test.mjs",
+      "bytes": 4509,
+      "sha256": "73dc09ba11d9598b3e00daaf6b8b24b9468b32d6ad6ed17bc600677f579a8628"
+    },
+    {
+      "path": "tests/enrollment/identity-staff.test.mjs",
+      "bytes": 15670,
+      "sha256": "ed14bfbd5f231463ebf2376304add8b6226645db3a4d811855a9b355e2335c0a"
+    },
+    {
+      "path": "tests/enrollment/production-client.test.mjs",
+      "bytes": 4808,
+      "sha256": "4bbe5b112b5b81f738760748dee7aa25cf141e2ab990e16aaeb06bc4b5861165"
+    },
+    {
+      "path": "tests/first-test/cors.test.mjs",
+      "bytes": 3479,
+      "sha256": "ef4ea2228157b718baa7f580bfe07403139a6d5294ed4609278dd0e3352eb6f1"
+    },
+    {
+      "path": "tests/first-test/executor.mjs",
+      "bytes": 3803,
+      "sha256": "6734a0d8221092978b7676bd4835e03124ffe18b11c323523348ec8cbef7520e"
+    },
+    {
+      "path": "tests/first-test/fixture.mjs",
+      "bytes": 7281,
+      "sha256": "6e9c113a2d754fcdf5ca54e382b949e21859beb61a77016bdebaab0be7f4f35f"
+    },
+    {
+      "path": "tests/first-test/http.test.mjs",
+      "bytes": 13002,
+      "sha256": "c1b72ff57078ca3edaff572cf9282f4a69da65a7fbe7e9c2741bc3a4daa32f57"
+    },
+    {
+      "path": "tests/local-content-pilot.test.mjs",
+      "bytes": 19865,
+      "sha256": "74c29b5306d0e09ec0efcda48afac04684230ef4347339617657de7daa190f2b"
+    },
+    {
+      "path": "tests/persistent-http/executor.mjs",
+      "bytes": 7362,
+      "sha256": "d1400af9c5f8532446ee3b91816c37719a0671638af3f14fee2e0aee212a3a5b"
+    },
+    {
+      "path": "tests/persistent-http/http.test.mjs",
+      "bytes": 17759,
+      "sha256": "ad3c1b5a1865b62c20cebc3769a7cc16f74eff45a019edb2dfc21b1335c1c260"
+    },
+    {
+      "path": "tests/storage-auth/disk-executor.mjs",
+      "bytes": 6453,
+      "sha256": "83f6c56ac9e4c7d43af218032acdca50ea53c4e8f77248cf14cbe745b90f0637"
+    },
+    {
+      "path": "tests/storage-auth/staff-jwt.test.mjs",
+      "bytes": 4981,
+      "sha256": "801baa55d2c706c5d266e88e59c4a2c4489fcd30b0e588720b32fa18e36a24d3"
+    },
+    {
+      "path": "tests/storage-auth/storage.test.mjs",
+      "bytes": 12545,
+      "sha256": "f53bcc5a001f1a1d23ea0d9732e2a0251bcefb39d7110681c29b183e36007c82"
+    },
+    {
+      "path": "tests/vercel-node/adapter.test.mjs",
+      "bytes": 11454,
+      "sha256": "a3c38ef203b6fdd39ae9cbdcebecd1dc5bf20744b9104d4f0cd075819a3d9629"
+    },
+    {
+      "path": "tests/vercel-node/pool-port.test.mjs",
+      "bytes": 3692,
+      "sha256": "8cad9affbcab42ca1daa74da7153de4f8b3d44b443120f199fb4df96216c98a2"
+    },
+    {
+      "path": "tools/generate-staff-contract.py",
+      "bytes": 2125,
+      "sha256": "aa5bc79040dbdc9eeb7b9b211bb8ff57c8c21adc9aa2e4a62eed3e6dcc29dc3e"
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 163,
+      "sha256": "29c44dcff6c14b92cdd84a68afaba6dae869577dfceba54dfd911eb2d9427148"
+    }
+  ]
+}
