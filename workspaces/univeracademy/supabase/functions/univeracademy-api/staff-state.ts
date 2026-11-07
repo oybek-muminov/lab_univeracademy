@@ -62,7 +62,7 @@ export interface StaffTransactions {
 export type VerifiedStaffProof = {
   kind: "staff_verified"; subject: string; notBefore: number; expiresAt: number;
 };
-export function currentStaff(state: StaffState, proof: VerifiedStaffProof, now: number): StaffAccessRecord {
+export function currentStaff(state: Pick<StaffState,"staff">, proof: VerifiedStaffProof, now: number): StaffAccessRecord {
   if (proof.kind !== "staff_verified" || typeof proof.subject !== "string" ||
       !Number.isSafeInteger(proof.notBefore) || !Number.isSafeInteger(proof.expiresAt) ||
       proof.notBefore > now || now >= proof.expiresAt) fail("STAFF_TOKEN_INVALID", 401);

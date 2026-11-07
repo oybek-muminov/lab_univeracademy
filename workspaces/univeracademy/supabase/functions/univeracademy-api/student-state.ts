@@ -127,6 +127,15 @@ export async function authenticate(state: StudentState, token: string, now: numb
   return { personId: family.personId, familyId: proof.familyId, person };
 }
 
+export function newQadamId(): string {
+  let value = "";
+  while (value.length < 10) {
+    const digit = crypto.getRandomValues(new Uint8Array(1))[0];
+    if (digit < 250) value += String(digit % 10);
+  }
+  return value;
+}
+
 export function studentPerson(state: StudentState, telegramId: number, firstName: string,
   lastName: string | null, policy: SessionPolicy): Person {
   const existing = Object.values(state.people).find((person) => person.telegramId === telegramId);
@@ -136,11 +145,7 @@ export function studentPerson(state: StudentState, telegramId: number, firstName
     return existing;
   }
   for (let attempt = 0; attempt < policy.identityCollisionAttempts; attempt++) {
-    let qadamId = "";
-    while (qadamId.length < 10) {
-      const digit = crypto.getRandomValues(new Uint8Array(1))[0];
-      if (digit < 250) qadamId += String(digit % 10);
-    }
+    const qadamId = newQadamId();
     if (Object.values(state.people).some((p) => p.profile.qadam_id === qadamId)) continue;
     const id = crypto.randomUUID();
     const person: Person = { telegramId, enabled: true, profile: {

@@ -1,5 +1,8 @@
 # UniverAcademy — current local Backend flow
 
+Current review publication: see [README.current-backend.md](README.current-backend.md).
+The RAM pilot/checkpoint instructions below describe the earlier8f863e6 source.
+
 This is the current RAM/synthetic Backend candidate for QA. API status is
 **PROVISIONAL / NOT ACCEPTED**. It is not a production deployment or a durable DB
 implementation. Source is published under `workspaces/univeracademy/` on

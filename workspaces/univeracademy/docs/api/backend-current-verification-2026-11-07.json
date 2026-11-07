@@ -1,0 +1,46 @@
+{
+  "status": "BACKEND_AUTHOR_VALIDATION_PASS; COMBINED_MINI_APP_QA_PENDING",
+  "base_branch_head": "3d029d0e680ea2ddf93b0e702f252781b501dd13",
+  "branch": "qa/current-flow-20261106",
+  "validation": {
+    "clean_install": "PASS: root and validator npm ci --ignore-scripts",
+    "command": "node --test tests/enrollment/*.test.mjs tests/persistent-http/*.test.mjs tests/storage-auth/*.test.mjs",
+    "tests": 39,
+    "pass": 39,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0,
+    "typecheck": "npm run typecheck: exit0"
+  },
+  "client": {
+    "module": "packages/api-client/student-client.ts",
+    "export": "createProductionStudentClient(options: ProductionStudentClientOptions): StudentClient",
+    "required_options": ["mode:production", "HTTPS /api/v1 baseUrl", "contractSha256", "explicit transport(Request):Promise<Response>"],
+    "sha256": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "types_sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+    "api_sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "api_and_generated_types_changed": false
+  },
+  "mini_app": {
+    "paths": "apps/mini-app/**",
+    "files_preserved": 46,
+    "base_git_tree": "63096e8a3f0c7ff868600d409ff406ce3f199857",
+    "guard": "FAIL: stale8f863e6 Backend byte pin; BACKEND_TARGET_SIZE_MISMATCH: README.backend.md",
+    "guard_modified_or_bypassed": false,
+    "action_needed": "Mini App owner syncs its internal client and repins the strict Backend manifest, then runs combined QA",
+    "current_combined_browser_acceptance": "NOT_CLAIMED"
+  },
+  "privacy": {
+    "targeted_secret_scan_unreviewed_matches": 0,
+    "reviewed_synthetic_match": "tests/enrollment/production-client.test.mjs contains intentional rejected URL credentials user:password; no real credential",
+    "data": "synthetic only; no real user/test/key data",
+    "excluded": ["node_modules", "cache", "build", "old archives"]
+  },
+  "limitations": [
+    "Postgres SQL executor is a test double, not real PostgreSQL/RLS proof",
+    "Actual provider/session/JWKS and deployment not tested",
+    "Full staff relational domain writers remain pending",
+    "API remains PROVISIONAL / NOT ACCEPTED"
+  ],
+  "main_project_DB_provider_deploy_changes": false
+}
