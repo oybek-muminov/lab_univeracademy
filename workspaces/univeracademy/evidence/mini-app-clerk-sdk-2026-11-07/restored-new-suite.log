@@ -1,0 +1,208 @@
+TAP version 13
+# Subtest: SDK email OTP uses public Future API, privacy-preserving signup transfer and a fresh default JWT
+ok 1 - SDK email OTP uses public Future API, privacy-preserving signup transfer and a fresh default JWT
+  ---
+  duration_ms: 21.560885
+  type: 'test'
+  ...
+# Subtest: verified missing account transfers to signup only after Clerk explicitly requests it
+ok 2 - verified missing account transfers to signup only after Clerk explicitly requests it
+  ---
+  duration_ms: 0.493924
+  type: 'test'
+  ...
+# Subtest: wrong code is sanitized and remains retryable on its current challenge
+ok 3 - wrong code is sanitized and remains retryable on its current challenge
+  ---
+  duration_ms: 1.085481
+  type: 'test'
+  ...
+# Subtest: missing or stale challenge never reaches the SDK verification
+ok 4 - missing or stale challenge never reaches the SDK verification
+  ---
+  duration_ms: 4.739968
+  type: 'test'
+  ...
+# Subtest: Google opens only a user-gesture popup and passes fixed same-origin callback URLs
+ok 5 - Google opens only a user-gesture popup and passes fixed same-origin callback URLs
+  ---
+  duration_ms: 0.674445
+  type: 'test'
+  ...
+# Subtest: popup block never attempts OAuth or returns evidence
+ok 6 - popup block never attempts OAuth or returns evidence
+  ---
+  duration_ms: 0.465231
+  type: 'test'
+  ...
+# Subtest: a verified transferable Google account signs up through the public transfer API
+ok 7 - a verified transferable Google account signs up through the public transfer API
+  ---
+  duration_ms: 0.657044
+  type: 'test'
+  ...
+# Subtest: cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry
+ok 8 - cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry
+  ---
+  duration_ms: 8.827851
+  type: 'test'
+  ...
+# Subtest: late finalize after cancel is quarantined and signs out only its captured session before new SDK auth
+ok 9 - late finalize after cancel is quarantined and signs out only its captured session before new SDK auth
+  ---
+  duration_ms: 5.279341
+  type: 'test'
+  ...
+# Subtest: cancel cleanup never signs out an unrelated SDK session activated outside the captured operation
+ok 10 - cancel cleanup never signs out an unrelated SDK session activated outside the captured operation
+  ---
+  duration_ms: 1.144896
+  type: 'test'
+  ...
+# Subtest: logout captures a specific session, waits for app receipt and never uses global SDK signout
+ok 11 - logout captures a specific session, waits for app receipt and never uses global SDK signout
+  ---
+  duration_ms: 1.312239
+  type: 'test'
+  ...
+# Subtest: failed app receipt still requests targeted provider signout without implying app ACK
+ok 12 - failed app receipt still requests targeted provider signout without implying app ACK
+  ---
+  duration_ms: 0.524507
+  type: 'test'
+  ...
+# Subtest: SDK needs_second_factor never becomes app evidence
+ok 13 - SDK needs_second_factor never becomes app evidence
+  ---
+  duration_ms: 0.406542
+  type: 'test'
+  ...
+# Subtest: SDK needs_client_trust never becomes app evidence
+ok 14 - SDK needs_client_trust never becomes app evidence
+  ---
+  duration_ms: 0.603825
+  type: 'test'
+  ...
+# Subtest: SDK needs_protect_check never becomes app evidence
+ok 15 - SDK needs_protect_check never becomes app evidence
+  ---
+  duration_ms: 0.262436
+  type: 'test'
+  ...
+# Subtest: session tasks and session changes during JWT fetch deny evidence
+ok 16 - session tasks and session changes during JWT fetch deny evidence
+  ---
+  duration_ms: 1.532561
+  type: 'test'
+  ...
+# Subtest: common config pins HTTPS app/API/Clerk host and fixed callback, with Telegram explicitly optional
+ok 17 - common config pins HTTPS app/API/Clerk host and fixed callback, with Telegram explicitly optional
+  ---
+  duration_ms: 1.884717
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY=undefined
+ok 18 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY=undefined
+  ---
+  duration_ms: 0.751143
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="not-a-key"
+ok 19 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="not-a-key"
+  ---
+  duration_ms: 0.168977
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="pk_test_b3RoZXIuZXhhbXBsZS50ZXN0JA=="
+ok 20 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="pk_test_b3RoZXIuZXhhbXBsZS50ZXN0JA=="
+  ---
+  duration_ms: 0.127099
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="http://clerk.example.test"
+ok 21 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="http://clerk.example.test"
+  ---
+  duration_ms: 0.120797
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test/path"
+ok 22 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test/path"
+  ---
+  duration_ms: 0.1031
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test?redirect=elsewhere"
+ok 23 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test?redirect=elsewhere"
+  ---
+  duration_ms: 0.427796
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test:444"
+ok 24 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test:444"
+  ---
+  duration_ms: 0.27306
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://user:synthetic@clerk.example.test"
+ok 25 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://user:synthetic@clerk.example.test"
+  ---
+  duration_ms: 0.161867
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN=" https://clerk.example.test"
+ok 26 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN=" https://clerk.example.test"
+  ---
+  duration_ms: 0.3596
+  type: 'test'
+  ...
+# Subtest: stale contract, app mismatch and callback override are rejected before provider IO
+ok 27 - stale contract, app mismatch and callback override are rejected before provider IO
+  ---
+  duration_ms: 0.626625
+  type: 'test'
+  ...
+# Subtest: public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout
+ok 28 - public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout
+  ---
+  duration_ms: 182.770805
+  type: 'test'
+  ...
+# Subtest: email SDK proof enters server-owned registration and an ungrouped student has no tests
+ok 29 - email SDK proof enters server-owned registration and an ungrouped student has no tests
+  ---
+  duration_ms: 26.561742
+  type: 'test'
+  ...
+# Subtest: Telegram WebView Google path is stopped before popup/API; email remains available
+ok 30 - Telegram WebView Google path is stopped before popup/API; email remains available
+  ---
+  duration_ms: 2.106335
+  type: 'test'
+  ...
+# Subtest: cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof
+ok 31 - cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof
+  ---
+  duration_ms: 14.501491
+  type: 'test'
+  ...
+# Subtest: logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate
+ok 32 - logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate
+  ---
+  duration_ms: 33.548408
+  type: 'test'
+  ...
+# Subtest: provider signout failure preserves an actual app ACK without claiming the SDK session was closed
+ok 33 - provider signout failure preserves an actual app ACK without claiming the SDK session was closed
+  ---
+  duration_ms: 13.68096
+  type: 'test'
+  ...
+1..33
+# tests 33
+# suites 0
+# pass 33
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1396.842199

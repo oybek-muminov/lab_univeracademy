@@ -1,0 +1,1618 @@
+TAP version 13
+# Subtest: Clerk review entry exchanges once, uses opaque proofs and completes save/clear/resume, submit/result/history and body-only logout over TCP
+ok 1 - Clerk review entry exchanges once, uses opaque proofs and completes save/clear/resume, submit/result/history and body-only logout over TCP
+  ---
+  duration_ms: 192.992141
+  type: 'test'
+  ...
+# Subtest: email evidence creates a fresh ungrouped student; canonical profile controls registration and empty exams
+ok 2 - email evidence creates a fresh ungrouped student; canonical profile controls registration and empty exams
+  ---
+  duration_ms: 28.382874
+  type: 'test'
+  ...
+# Subtest: cancelled provider completion never exchanges or replaces the newer email flow
+ok 3 - cancelled provider completion never exchanges or replaces the newer email flow
+  ---
+  duration_ms: 18.723552
+  type: 'test'
+  ...
+# Subtest: cancel after exchange headers rejects the late body and preserves a newer login even when fetch ignores abort
+ok 4 - cancel after exchange headers rejects the late body and preserves a newer login even when fetch ignores abort
+  ---
+  duration_ms: 24.643924
+  type: 'test'
+  ...
+# Subtest: cancel while profile body is pending retires the known app session and cannot expose its old payload
+ok 5 - cancel while profile body is pending retires the known app session and cannot expose its old payload
+  ---
+  duration_ms: 34.000369
+  type: 'test'
+  ...
+# Subtest: a delayed logout ACK cannot clear or alter a newer login; logout rejection remains observed
+ok 6 - a delayed logout ACK cannot clear or alter a newer login; logout rejection remains observed
+  ---
+  duration_ms: 34.453477
+  type: 'test'
+  ...
+# Subtest: lost exchange reply is not replayed, and a fresh verified proof recovers without restoring the cancelled context
+ok 7 - lost exchange reply is not replayed, and a fresh verified proof recovers without restoring the cancelled context
+  ---
+  duration_ms: 36.155643
+  type: 'test'
+  ...
+# Subtest: logout during an exchange body wait clears locally and never claims a server ACK or revives its late session
+ok 8 - logout during an exchange body wait clears locally and never claims a server ACK or revives its late session
+  ---
+  duration_ms: 20.947048
+  type: 'test'
+  ...
+# Subtest: failed logout stays locally signed out, reports uncertainty and cannot resurrect the old flow
+ok 9 - failed logout stays locally signed out, reports uncertainty and cannot resurrect the old flow
+  ---
+  duration_ms: 23.232292
+  type: 'test'
+  ...
+# Subtest: provider revocation hides the old flow; a new verified session resumes server answers and deadline
+ok 10 - provider revocation hides the old flow; a new verified session resumes server answers and deadline
+  ---
+  duration_ms: 40.884795
+  type: 'test'
+  ...
+# Subtest: local transport clear invalidates pending login and an old success without a server logout claim
+ok 11 - local transport clear invalidates pending login and an old success without a server logout claim
+  ---
+  duration_ms: 0.524106
+  type: 'test'
+  ...
+# Subtest: SDK email OTP uses public Future API, privacy-preserving signup transfer and a fresh default JWT
+ok 12 - SDK email OTP uses public Future API, privacy-preserving signup transfer and a fresh default JWT
+  ---
+  duration_ms: 6.97371
+  type: 'test'
+  ...
+# Subtest: verified missing account transfers to signup only after Clerk explicitly requests it
+ok 13 - verified missing account transfers to signup only after Clerk explicitly requests it
+  ---
+  duration_ms: 0.378942
+  type: 'test'
+  ...
+# Subtest: wrong code is sanitized and remains retryable on its current challenge
+ok 14 - wrong code is sanitized and remains retryable on its current challenge
+  ---
+  duration_ms: 0.775603
+  type: 'test'
+  ...
+# Subtest: missing or stale challenge never reaches the SDK verification
+ok 15 - missing or stale challenge never reaches the SDK verification
+  ---
+  duration_ms: 0.338815
+  type: 'test'
+  ...
+# Subtest: Google opens only a user-gesture popup and passes fixed same-origin callback URLs
+ok 16 - Google opens only a user-gesture popup and passes fixed same-origin callback URLs
+  ---
+  duration_ms: 0.580157
+  type: 'test'
+  ...
+# Subtest: popup block never attempts OAuth or returns evidence
+ok 17 - popup block never attempts OAuth or returns evidence
+  ---
+  duration_ms: 0.239162
+  type: 'test'
+  ...
+# Subtest: a verified transferable Google account signs up through the public transfer API
+ok 18 - a verified transferable Google account signs up through the public transfer API
+  ---
+  duration_ms: 0.335438
+  type: 'test'
+  ...
+# Subtest: cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry
+ok 19 - cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry
+  ---
+  duration_ms: 6.224238
+  type: 'test'
+  ...
+# Subtest: late finalize after cancel is quarantined and signs out only its captured session before new SDK auth
+ok 20 - late finalize after cancel is quarantined and signs out only its captured session before new SDK auth
+  ---
+  duration_ms: 3.765334
+  type: 'test'
+  ...
+# Subtest: cancel cleanup never signs out an unrelated SDK session activated outside the captured operation
+ok 21 - cancel cleanup never signs out an unrelated SDK session activated outside the captured operation
+  ---
+  duration_ms: 1.307953
+  type: 'test'
+  ...
+# Subtest: logout captures a specific session, waits for app receipt and never uses global SDK signout
+ok 22 - logout captures a specific session, waits for app receipt and never uses global SDK signout
+  ---
+  duration_ms: 0.826239
+  type: 'test'
+  ...
+# Subtest: failed app receipt still requests targeted provider signout without implying app ACK
+ok 23 - failed app receipt still requests targeted provider signout without implying app ACK
+  ---
+  duration_ms: 0.236759
+  type: 'test'
+  ...
+# Subtest: SDK needs_second_factor never becomes app evidence
+ok 24 - SDK needs_second_factor never becomes app evidence
+  ---
+  duration_ms: 0.34562
+  type: 'test'
+  ...
+# Subtest: SDK needs_client_trust never becomes app evidence
+ok 25 - SDK needs_client_trust never becomes app evidence
+  ---
+  duration_ms: 0.399994
+  type: 'test'
+  ...
+# Subtest: SDK needs_protect_check never becomes app evidence
+ok 26 - SDK needs_protect_check never becomes app evidence
+  ---
+  duration_ms: 0.164244
+  type: 'test'
+  ...
+# Subtest: session tasks and session changes during JWT fetch deny evidence
+ok 27 - session tasks and session changes during JWT fetch deny evidence
+  ---
+  duration_ms: 0.87243
+  type: 'test'
+  ...
+# Subtest: prototype mode is explicit; no provider or HTTP contract is inferred
+ok 28 - prototype mode is explicit; no provider or HTTP contract is inferred
+  ---
+  duration_ms: 8.862262
+  type: 'test'
+  ...
+# Subtest: Google evidence must pass separate app authorization/profile before a student flow appears
+ok 29 - Google evidence must pass separate app authorization/profile before a student flow appears
+  ---
+  duration_ms: 5.304351
+  type: 'test'
+  ...
+# Subtest: provider completion while app authorization is pending does not reveal a flow
+ok 30 - provider completion while app authorization is pending does not reveal a flow
+  ---
+  duration_ms: 14.764963
+  type: 'test'
+  ...
+# Subtest: app rejection after provider success never loads profile/exams and has no raw error message
+ok 31 - app rejection after provider success never loads profile/exams and has no raw error message
+  ---
+  duration_ms: 1.35212
+  type: 'test'
+  ...
+# Subtest: email is synthetic-only, normalized, masked in snapshots and a code uses its captured challenge
+ok 32 - email is synthetic-only, normalized, masked in snapshots and a code uses its captured challenge
+  ---
+  duration_ms: 1.781073
+  type: 'test'
+  ...
+# Subtest: non-synthetic email never reaches the provider
+ok 33 - non-synthetic email never reaches the provider
+  ---
+  duration_ms: 0.312204
+  type: 'test'
+  ...
+# Subtest: invalid code format does not call a provider
+ok 34 - invalid code format does not call a provider
+  ---
+  duration_ms: 0.415404
+  type: 'test'
+  ...
+# Subtest: wrong provider code is retryable without app authorization
+ok 35 - wrong provider code is retryable without app authorization
+  ---
+  duration_ms: 0.439606
+  type: 'test'
+  ...
+# Subtest: expired code drops challenge and cannot be reused
+ok 36 - expired code drops challenge and cannot be reused
+  ---
+  duration_ms: 0.430462
+  type: 'test'
+  ...
+# Subtest: resend replaces the old challenge explicitly
+ok 37 - resend replaces the old challenge explicitly
+  ---
+  duration_ms: 0.486042
+  type: 'test'
+  ...
+# Subtest: app authorization failure consumes the finished code step, without code replay
+ok 38 - app authorization failure consumes the finished code step, without code replay
+  ---
+  duration_ms: 0.572706
+  type: 'test'
+  ...
+# Subtest: WebView Google action is blocked before provider/app calls, while email remains available
+ok 39 - WebView Google action is blocked before provider/app calls, while email remains available
+  ---
+  duration_ms: 0.48157
+  type: 'test'
+  ...
+# Subtest: provider CANCELLED cannot authorize the app
+ok 40 - provider CANCELLED cannot authorize the app
+  ---
+  duration_ms: 0.204383
+  type: 'test'
+  ...
+# Subtest: provider VERIFICATION_REQUIRED cannot authorize the app
+ok 41 - provider VERIFICATION_REQUIRED cannot authorize the app
+  ---
+  duration_ms: 0.198148
+  type: 'test'
+  ...
+# Subtest: provider RATE_LIMITED cannot authorize the app
+ok 42 - provider RATE_LIMITED cannot authorize the app
+  ---
+  duration_ms: 0.160036
+  type: 'test'
+  ...
+# Subtest: same pending action is single-flight
+ok 43 - same pending action is single-flight
+  ---
+  duration_ms: 0.341349
+  type: 'test'
+  ...
+# Subtest: late provider success after reset cannot enter the new context
+ok 44 - late provider success after reset cannot enter the new context
+  ---
+  duration_ms: 0.348189
+  type: 'test'
+  ...
+# Subtest: late app authorization cannot change a fresh flow after reset
+ok 45 - late app authorization cannot change a fresh flow after reset
+  ---
+  duration_ms: 5.76743
+  type: 'test'
+  ...
+# Subtest: late rejection after reset does not overwrite a new ready flow
+ok 46 - late rejection after reset does not overwrite a new ready flow
+  ---
+  duration_ms: 0.931162
+  type: 'test'
+  ...
+# Subtest: profile identity mismatch is rejected before exams
+ok 47 - profile identity mismatch is rejected before exams
+  ---
+  duration_ms: 0.277984
+  type: 'test'
+  ...
+# Subtest: incomplete server profile enters registration without loading exams
+ok 48 - incomplete server profile enters registration without loading exams
+  ---
+  duration_ms: 0.354413
+  type: 'test'
+  ...
+# Subtest: empty provider evidence fails before app authorization
+ok 49 - empty provider evidence fails before app authorization
+  ---
+  duration_ms: 0.460785
+  type: 'test'
+  ...
+# Subtest: snapshots omit email, OTP, evidence and raw failures
+ok 50 - snapshots omit email, OTP, evidence and raw failures
+  ---
+  duration_ms: 0.407083
+  type: 'test'
+  ...
+# Subtest: dispose prevents late responses and further actions; no unhandled synchronous hook rejection
+ok 51 - dispose prevents late responses and further actions; no unhandled synchronous hook rejection
+  ---
+  duration_ms: 0.36398
+  type: 'test'
+  ...
+# Subtest: common config pins HTTPS app/API/Clerk host and fixed callback, with Telegram explicitly optional
+ok 52 - common config pins HTTPS app/API/Clerk host and fixed callback, with Telegram explicitly optional
+  ---
+  duration_ms: 1.909131
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY=undefined
+ok 53 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY=undefined
+  ---
+  duration_ms: 0.756068
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="not-a-key"
+ok 54 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="not-a-key"
+  ---
+  duration_ms: 0.173838
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="pk_test_b3RoZXIuZXhhbXBsZS50ZXN0JA=="
+ok 55 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="pk_test_b3RoZXIuZXhhbXBsZS50ZXN0JA=="
+  ---
+  duration_ms: 0.127181
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="http://clerk.example.test"
+ok 56 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="http://clerk.example.test"
+  ---
+  duration_ms: 0.118859
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test/path"
+ok 57 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test/path"
+  ---
+  duration_ms: 0.105278
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test?redirect=elsewhere"
+ok 58 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test?redirect=elsewhere"
+  ---
+  duration_ms: 0.184567
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test:444"
+ok 59 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test:444"
+  ---
+  duration_ms: 0.129686
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://user:synthetic@clerk.example.test"
+ok 60 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://user:synthetic@clerk.example.test"
+  ---
+  duration_ms: 4.604135
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN=" https://clerk.example.test"
+ok 61 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN=" https://clerk.example.test"
+  ---
+  duration_ms: 0.220535
+  type: 'test'
+  ...
+# Subtest: stale contract, app mismatch and callback override are rejected before provider IO
+ok 62 - stale contract, app mismatch and callback override are rejected before provider IO
+  ---
+  duration_ms: 0.584871
+  type: 'test'
+  ...
+# Subtest: public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout
+ok 63 - public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout
+  ---
+  duration_ms: 148.069983
+  type: 'test'
+  ...
+# Subtest: email SDK proof enters server-owned registration and an ungrouped student has no tests
+ok 64 - email SDK proof enters server-owned registration and an ungrouped student has no tests
+  ---
+  duration_ms: 22.330197
+  type: 'test'
+  ...
+# Subtest: Telegram WebView Google path is stopped before popup/API; email remains available
+ok 65 - Telegram WebView Google path is stopped before popup/API; email remains available
+  ---
+  duration_ms: 2.069886
+  type: 'test'
+  ...
+# Subtest: cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof
+ok 66 - cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof
+  ---
+  duration_ms: 16.153874
+  type: 'test'
+  ...
+# Subtest: logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate
+ok 67 - logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate
+  ---
+  duration_ms: 29.370415
+  type: 'test'
+  ...
+# Subtest: provider signout failure preserves an actual app ACK without claiming the SDK session was closed
+ok 68 - provider signout failure preserves an actual app ACK without claiming the SDK session was closed
+  ---
+  duration_ms: 17.648182
+  type: 'test'
+  ...
+# Subtest: current guard accepts all 133 exact Backend files and both browser owner copies
+ok 69 - current guard accepts all 133 exact Backend files and both browser owner copies
+  ---
+  duration_ms: 115.291568
+  type: 'test'
+  ...
+# Subtest: same-size corruption of new attempts bytes is rejected
+ok 70 - same-size corruption of new attempts bytes is rejected
+  ---
+  duration_ms: 123.459516
+  type: 'test'
+  ...
+# Subtest: exact historical 9327-byte attempts is rejected
+ok 71 - exact historical 9327-byte attempts is rejected
+  ---
+  duration_ms: 115.971763
+  type: 'test'
+  ...
+# Subtest: historical attempts padded to new length is rejected
+ok 72 - historical attempts padded to new length is rejected
+  ---
+  duration_ms: 107.120139
+  type: 'test'
+  ...
+# Subtest: another dependency same-size corruption is rejected
+ok 73 - another dependency same-size corruption is rejected
+  ---
+  duration_ms: 120.697115
+  type: 'test'
+  ...
+# Subtest: another dependency wrong size is rejected
+ok 74 - another dependency wrong size is rejected
+  ---
+  duration_ms: 98.652229
+  type: 'test'
+  ...
+# Subtest: historical manifest tampering is rejected
+ok 75 - historical manifest tampering is rejected
+  ---
+  duration_ms: 94.616284
+  type: 'test'
+  ...
+# Subtest: current manifest tampering is rejected
+ok 76 - current manifest tampering is rejected
+  ---
+  duration_ms: 107.942355
+  type: 'test'
+  ...
+# Subtest: previous 44-file manifest tampering is rejected
+ok 77 - previous 44-file manifest tampering is rejected
+  ---
+  duration_ms: 77.831832
+  type: 'test'
+  ...
+# Subtest: browser production client same-size corruption is rejected
+ok 78 - browser production client same-size corruption is rejected
+  ---
+  duration_ms: 88.393562
+  type: 'test'
+  ...
+# Subtest: browser stale-size local-only client is rejected
+ok 79 - browser stale-size local-only client is rejected
+  ---
+  duration_ms: 93.839277
+  type: 'test'
+  ...
+# Subtest: browser types same-size corruption is rejected
+ok 80 - browser types same-size corruption is rejected
+  ---
+  duration_ms: 94.423509
+  type: 'test'
+  ...
+# Subtest: previous production 71-file manifest tampering is rejected
+ok 81 - previous production 71-file manifest tampering is rejected
+  ---
+  duration_ms: 58.257915
+  type: 'test'
+  ...
+# Subtest: new local CORS target same-size corruption is rejected
+ok 82 - new local CORS target same-size corruption is rejected
+  ---
+  duration_ms: 91.794762
+  type: 'test'
+  ...
+# Subtest: updated configured HTTP target same-size corruption is rejected
+ok 83 - updated configured HTTP target same-size corruption is rejected
+  ---
+  duration_ms: 69.432442
+  type: 'test'
+  ...
+# Subtest: missing new local CORS dependency fails closed
+ok 84 - missing new local CORS dependency fails closed
+  ---
+  duration_ms: 66.200689
+  type: 'test'
+  ...
+# Subtest: previous ada6600 83-file manifest tampering is rejected
+ok 85 - previous ada6600 83-file manifest tampering is rejected
+  ---
+  duration_ms: 69.909377
+  type: 'test'
+  ...
+# Subtest: new Vercel API entry same-size corruption is rejected
+ok 86 - new Vercel API entry same-size corruption is rejected
+  ---
+  duration_ms: 72.375746
+  type: 'test'
+  ...
+# Subtest: new Vercel transport same-size corruption is rejected
+ok 87 - new Vercel transport same-size corruption is rejected
+  ---
+  duration_ms: 73.035728
+  type: 'test'
+  ...
+# Subtest: new Vercel configuration wrong size is rejected
+ok 88 - new Vercel configuration wrong size is rejected
+  ---
+  duration_ms: 91.083798
+  type: 'test'
+  ...
+# Subtest: missing new transaction-pool dependency fails closed
+ok 89 - missing new transaction-pool dependency fails closed
+  ---
+  duration_ms: 84.42045
+  type: 'test'
+  ...
+# Subtest: previous Vercel 95-file manifest tampering is rejected
+ok 90 - previous Vercel 95-file manifest tampering is rejected
+  ---
+  duration_ms: 83.908407
+  type: 'test'
+  ...
+# Subtest: new Clerk HTTP target same-size corruption is rejected
+ok 91 - new Clerk HTTP target same-size corruption is rejected
+  ---
+  duration_ms: 72.821575
+  type: 'test'
+  ...
+# Subtest: new Clerk verifier target same-size corruption is rejected
+ok 92 - new Clerk verifier target same-size corruption is rejected
+  ---
+  duration_ms: 82.63195
+  type: 'test'
+  ...
+# Subtest: Clerk proposal wrong size is rejected
+ok 93 - Clerk proposal wrong size is rejected
+  ---
+  duration_ms: 74.776368
+  type: 'test'
+  ...
+# Subtest: missing Clerk fixture dependency fails closed
+ok 94 - missing Clerk fixture dependency fails closed
+  ---
+  duration_ms: 77.640249
+  type: 'test'
+  ...
+# Subtest: previous Clerk 108-file manifest tampering is rejected
+ok 95 - previous Clerk 108-file manifest tampering is rejected
+  ---
+  duration_ms: 63.339261
+  type: 'test'
+  ...
+# Subtest: F1 student state same-size corruption is rejected
+ok 96 - F1 student state same-size corruption is rejected
+  ---
+  duration_ms: 78.51316
+  type: 'test'
+  ...
+# Subtest: exact pre-F1 unmarked student state is rejected
+ok 97 - exact pre-F1 unmarked student state is rejected
+  ---
+  duration_ms: 75.352517
+  type: 'test'
+  ...
+# Subtest: pre-F1 student state padded to the current length is rejected
+ok 98 - pre-F1 student state padded to the current length is rejected
+  ---
+  duration_ms: 77.461094
+  type: 'test'
+  ...
+# Subtest: missing F1 family-context regression dependency fails closed
+ok 99 - missing F1 family-context regression dependency fails closed
+  ---
+  duration_ms: 82.638215
+  type: 'test'
+  ...
+# Subtest: previous F1 117-file manifest tampering is rejected
+ok 100 - previous F1 117-file manifest tampering is rejected
+  ---
+  duration_ms: 68.690156
+  type: 'test'
+  ...
+# Subtest: Clerk review schema same-size corruption is rejected
+ok 101 - Clerk review schema same-size corruption is rejected
+  ---
+  duration_ms: 62.814208
+  type: 'test'
+  ...
+# Subtest: missing Clerk review TCP listener fails closed
+ok 102 - missing Clerk review TCP listener fails closed
+  ---
+  duration_ms: 63.568645
+  type: 'test'
+  ...
+# Subtest: renderer localizes a supplied one-decimal server string without padding or rounding
+ok 103 - renderer localizes a supplied one-decimal server string without padding or rounding
+  ---
+  duration_ms: 0.947986
+  type: 'test'
+  ...
+# Subtest: renderer preserves additional server digits until the owner changes display precision
+ok 104 - renderer preserves additional server digits until the owner changes display precision
+  ---
+  duration_ms: 0.143808
+  type: 'test'
+  ...
+# Subtest: renderer preserves every large-value digit and never derives positivity from displayed zero
+ok 105 - renderer preserves every large-value digit and never derives positivity from displayed zero
+  ---
+  duration_ms: 0.111729
+  type: 'test'
+  ...
+# Subtest: history localizes supplied display text and keeps nonofficial attribution and nullable bonus
+ok 106 - history localizes supplied display text and keeps nonofficial attribution and nullable bonus
+  ---
+  duration_ms: 1.069261
+  type: 'test'
+  ...
+# Subtest: renderer rejects numbers, exponents, whitespace and trailing line terminators instead of numeric fallback
+ok 107 - renderer rejects numbers, exponents, whitespace and trailing line terminators instead of numeric fallback
+  ---
+  duration_ms: 0.61348
+  type: 'test'
+  ...
+# Subtest: owner-pinned point guard accepts1dp only; percentage remains2dp
+ok 108 - owner-pinned point guard accepts1dp only; percentage remains2dp
+  ---
+  duration_ms: 1.083321
+  type: 'test'
+  ...
+# Subtest: pending answer is not confirmed; clearing uses the next revision
+ok 109 - pending answer is not confirmed; clearing uses the next revision
+  ---
+  duration_ms: 1093.624899
+  type: 'test'
+  ...
+# Subtest: lost save acknowledgement requires a read before another save or submit
+ok 110 - lost save acknowledgement requires a read before another save or submit
+  ---
+  duration_ms: 1088.308409
+  type: 'test'
+  ...
+# Subtest: CAS conflict preserves both intents until explicit selection at fresh revision
+ok 111 - CAS conflict preserves both intents until explicit selection at fresh revision
+  ---
+  duration_ms: 1265.084483
+  type: 'test'
+  ...
+# Subtest: new generation drops the old unsent draft and answers
+ok 112 - new generation drops the old unsent draft and answers
+  ---
+  duration_ms: 1266.994708
+  type: 'test'
+  ...
+# Subtest: failed read blocks writes; local clock never declares a terminal result
+ok 113 - failed read blocks writes; local clock never declares a terminal result
+  ---
+  duration_ms: 1085.403563
+  type: 'test'
+  ...
+# Subtest: uncertain submit retains its key, blocks edits and resolves with the same key
+ok 114 - uncertain submit retains its key, blocks edits and resolves with the same key
+  ---
+  duration_ms: 1447.60883
+  type: 'test'
+  ...
+# Subtest: current and history carry the selected assignment and reject cross-assignment content
+ok 115 - current and history carry the selected assignment and reject cross-assignment content
+  ---
+  duration_ms: 1446.528614
+  type: 'test'
+  ...
+# Subtest: all lifecycle states are distinct; ready/cancelled/lapsed do not fetch or invent a result
+ok 116 - all lifecycle states are distinct; ready/cancelled/lapsed do not fetch or invent a result
+  ---
+  duration_ms: 2351.600796
+  type: 'test'
+  ...
+# Subtest: ready recovery only starts after explicit confirmation
+ok 117 - ready recovery only starts after explicit confirmation
+  ---
+  duration_ms: 1084.668719
+  type: 'test'
+  ...
+# Subtest: reload reads authoritative state and restores an uncertain submit key without replaying edits
+ok 118 - reload reads authoritative state and restores an uncertain submit key without replaying edits
+  ---
+  duration_ms: 1807.850244
+  type: 'test'
+  ...
+# Subtest: server Retry-After delays explicit retry; auth and scope errors conceal protected content
+ok 119 - server Retry-After delays explicit retry; auth and scope errors conceal protected content
+  ---
+  duration_ms: 3792.927346
+  type: 'test'
+  ...
+# Subtest: ordinary result does not wait for, add or inherit a nullable bonus
+ok 120 - ordinary result does not wait for, add or inherit a nullable bonus
+  ---
+  duration_ms: 1807.124304
+  type: 'test'
+  ...
+# Subtest: missing ordinary at terminal completion is an invariant error rather than a zero or calculating result
+ok 121 - missing ordinary at terminal completion is an invariant error rather than a zero or calculating result
+  ---
+  duration_ms: 1264.382034
+  type: 'test'
+  ...
+# Subtest: reload either resumes a committed start or retries an unconfirmed start with the same key
+ok 122 - reload either resumes a committed start or retries an unconfirmed start with the same key
+  ---
+  duration_ms: 2536.097819
+  type: 'test'
+  ...
+# Subtest: real HTTP exact-source rounding: 2.34 -> 2.3
+ok 123 - real HTTP exact-source rounding: 2.34 -> 2.3
+  ---
+  duration_ms: 118.495753
+  type: 'test'
+  ...
+# Subtest: real HTTP exact-source rounding: 2.35 -> 2.4
+ok 124 - real HTTP exact-source rounding: 2.35 -> 2.4
+  ---
+  duration_ms: 41.787685
+  type: 'test'
+  ...
+# Subtest: real HTTP exact-source rounding: 2.355 -> 2.4
+ok 125 - real HTTP exact-source rounding: 2.355 -> 2.4
+  ---
+  duration_ms: 37.95927
+  type: 'test'
+  ...
+# Subtest: real HTTP exact-source rounding: 2.349 -> 2.3
+ok 126 - real HTTP exact-source rounding: 2.349 -> 2.3
+  ---
+  duration_ms: 33.651969
+  type: 'test'
+  ...
+# Subtest: real HTTP: register/start/server timer/CAS clear/submit/history use owner client and1dp points
+ok 127 - real HTTP: register/start/server timer/CAS clear/submit/history use owner client and1dp points
+  ---
+  duration_ms: 45.399813
+  type: 'test'
+  ...
+# Subtest: real HTTP: new device revokes old context and resumes saved answers/generation/deadline
+ok 128 - real HTTP: new device revokes old context and resumes saved answers/generation/deadline
+  ---
+  duration_ms: 31.394467
+  type: 'test'
+  ...
+# Subtest: real HTTP: lost logout ACK retries only explicitly with identical refresh proof and no bearer
+ok 129 - real HTTP: lost logout ACK retries only explicitly with identical refresh proof and no bearer
+  ---
+  duration_ms: 10.625916
+  type: 'test'
+  ...
+# Subtest: real HTTP: late logout ACK cannot revoke or overwrite a fresh same-person login
+ok 130 - real HTTP: late logout ACK cannot revoke or overwrite a fresh same-person login
+  ---
+  duration_ms: 11.866711
+  type: 'test'
+  ...
+# Subtest: real HTTP: concurrent client expiry checks share exactly one refresh operation
+ok 131 - real HTTP: concurrent client expiry checks share exactly one refresh operation
+  ---
+  duration_ms: 19.326342
+  type: 'test'
+  ...
+# Subtest: real HTTP: delayed200 me body is superseded before affecting fresh login
+ok 132 - real HTTP: delayed200 me body is superseded before affecting fresh login
+  ---
+  duration_ms: 14.026421
+  type: 'test'
+  ...
+# Subtest: real HTTP: delayed401 me body is superseded before affecting fresh login
+ok 133 - real HTTP: delayed401 me body is superseded before affecting fresh login
+  ---
+  duration_ms: 13.409949
+  type: 'test'
+  ...
+# Subtest: receipt accepts its own post-clear ACK and gives the hook only original refresh proof
+ok 134 - receipt accepts its own post-clear ACK and gives the hook only original refresh proof
+  ---
+  duration_ms: 10.671749
+  type: 'test'
+  ...
+# Subtest: receipt retries are explicit and keep the original operation and proof
+ok 135 - receipt retries are explicit and keep the original operation and proof
+  ---
+  duration_ms: 1.557767
+  type: 'test'
+  ...
+# Subtest: only the same receipt operation is single-flight; repeated logout does not clear twice
+ok 136 - only the same receipt operation is single-flight; repeated logout does not clear twice
+  ---
+  duration_ms: 0.667727
+  type: 'test'
+  ...
+# Subtest: receipt retry never extends its first-clear deadline, including equality
+ok 137 - receipt retry never extends its first-clear deadline, including equality
+  ---
+  duration_ms: 1.216896
+  type: 'test'
+  ...
+# Subtest: receipt deadline aborts an unresponsive hook and releases the retry capability
+ok 138 - receipt deadline aborts an unresponsive hook and releases the retry capability
+  ---
+  duration_ms: 23.082387
+  type: 'test'
+  ...
+# Subtest: late receipt success cannot touch a fresh same-second login
+ok 139 - late receipt success cannot touch a fresh same-second login
+  ---
+  duration_ms: 27.548354
+  type: 'test'
+  ...
+# Subtest: late receipt success cannot touch a fresh different-person login
+ok 140 - late receipt success cannot touch a fresh different-person login
+  ---
+  duration_ms: 1.021873
+  type: 'test'
+  ...
+# Subtest: late receipt 401 cannot touch a fresh same-second login
+ok 141 - late receipt 401 cannot touch a fresh same-second login
+  ---
+  duration_ms: 0.877854
+  type: 'test'
+  ...
+# Subtest: late receipt 401 cannot touch a fresh different-person login
+ok 142 - late receipt 401 cannot touch a fresh different-person login
+  ---
+  duration_ms: 1.134106
+  type: 'test'
+  ...
+# Subtest: late receipt parse-error cannot touch a fresh same-second login
+ok 143 - late receipt parse-error cannot touch a fresh same-second login
+  ---
+  duration_ms: 1.237778
+  type: 'test'
+  ...
+# Subtest: late receipt parse-error cannot touch a fresh different-person login
+ok 144 - late receipt parse-error cannot touch a fresh different-person login
+  ---
+  duration_ms: 0.671338
+  type: 'test'
+  ...
+# Subtest: terminal receipt proof errors stop retention and never trigger refresh or replay
+ok 145 - terminal receipt proof errors stop retention and never trigger refresh or replay
+  ---
+  duration_ms: 1.296907
+  type: 'test'
+  ...
+# Subtest: receipt 429 honors Retry-After for explicit retry without moving its deadline
+ok 146 - receipt 429 honors Retry-After for explicit retry without moving its deadline
+  ---
+  duration_ms: 0.499491
+  type: 'test'
+  ...
+# Subtest: explicit cancel aborts the operation and makes its proof unavailable
+ok 147 - explicit cancel aborts the operation and makes its proof unavailable
+  ---
+  duration_ms: 0.514953
+  type: 'test'
+  ...
+# Subtest: an old logout completion cannot confirm or discard the newer logout operation
+ok 148 - an old logout completion cannot confirm or discard the newer logout operation
+  ---
+  duration_ms: 0.454662
+  type: 'test'
+  ...
+# Subtest: reload has no receipt proof; omitted policy enables no retained-proof retry
+ok 149 - reload has no receipt proof; omitted policy enables no retained-proof retry
+  ---
+  duration_ms: 0.559741
+  type: 'test'
+  ...
+# Subtest: production bootstrap/owner client over loopback HTTP: register, timer, CAS clear/resume, submit, result/history, logout
+ok 150 - production bootstrap/owner client over loopback HTTP: register, timer, CAS clear/resume, submit, result/history, logout
+  ---
+  duration_ms: 140.852159
+  type: 'test'
+  ...
+# Subtest: actual production connection uses Backend constructor/flags and server title without inventing a group
+ok 151 - actual production connection uses Backend constructor/flags and server title without inventing a group
+  ---
+  duration_ms: 45.218251
+  type: 'test'
+  ...
+# Subtest: normal start affordance follows server admission and normal-use metadata
+ok 152 - normal start affordance follows server admission and normal-use metadata
+  ---
+  duration_ms: 9.576144
+  type: 'test'
+  ...
+# Subtest: recovery start affordance uses only server snapshot window, including closed original admission
+ok 153 - recovery start affordance uses only server snapshot window, including closed original admission
+  ---
+  duration_ms: 3.669543
+  type: 'test'
+  ...
+# Subtest: same configured API media maps while an unreviewed external media origin fails closed
+ok 154 - same configured API media maps while an unreviewed external media origin fails closed
+  ---
+  duration_ms: 4.603222
+  type: 'test'
+  ...
+# Subtest: production connection rejects local_fixture mode rather than falling back to local constructor
+ok 155 - production connection rejects local_fixture mode rather than falling back to local constructor
+  ---
+  duration_ms: 0.269308
+  type: 'test'
+  ...
+# Subtest: local UI adapter keeps its own runtime local_fixture mode boundary
+ok 156 - local UI adapter keeps its own runtime local_fixture mode boundary
+  ---
+  duration_ms: 0.346005
+  type: 'test'
+  ...
+# Subtest: explicit HTTPS origins produce the pinned /api/v1 boundary without credentials
+ok 157 - explicit HTTPS origins produce the pinned /api/v1 boundary without credentials
+  ---
+  duration_ms: 3.317599
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection (undefined)
+ok 158 - invalid public API origin is rejected before connection (undefined)
+  ---
+  duration_ms: 0.832173
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("")
+ok 159 - invalid public API origin is rejected before connection ("")
+  ---
+  duration_ms: 0.294337
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection (" https://api.example.test")
+ok 160 - invalid public API origin is rejected before connection (" https://api.example.test")
+  ---
+  duration_ms: 0.249867
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("http://localhost")
+ok 161 - invalid public API origin is rejected before connection ("http://localhost")
+  ---
+  duration_ms: 0.199345
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("//local.invalid")
+ok 162 - invalid public API origin is rejected before connection ("//local.invalid")
+  ---
+  duration_ms: 0.178212
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("https://user:synthetic@local.invalid")
+ok 163 - invalid public API origin is rejected before connection ("https://user:synthetic@local.invalid")
+  ---
+  duration_ms: 0.233734
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("https://api.example.test/api/v1")
+ok 164 - invalid public API origin is rejected before connection ("https://api.example.test/api/v1")
+  ---
+  duration_ms: 0.146855
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("https://api.example.test/?q=1")
+ok 165 - invalid public API origin is rejected before connection ("https://api.example.test/?q=1")
+  ---
+  duration_ms: 0.227088
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("https://api.example.test/\#x")
+ok 166 - invalid public API origin is rejected before connection ("https://api.example.test/\#x")
+  ---
+  duration_ms: 0.288432
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("https://lo\\ncal.invalid")
+ok 167 - invalid public API origin is rejected before connection ("https://lo\\ncal.invalid")
+  ---
+  duration_ms: 0.196329
+  type: 'test'
+  ...
+# Subtest: invalid public API origin is rejected before connection ("https://api.example.test\\\\")
+ok 168 - invalid public API origin is rejected before connection ("https://api.example.test\\\\")
+  ---
+  duration_ms: 0.483428
+  type: 'test'
+  ...
+# Subtest: page origin mismatch and stale contract pin fail before SDK identity is read
+ok 169 - page origin mismatch and stale contract pin fail before SDK identity is read
+  ---
+  duration_ms: 0.442107
+  type: 'test'
+  ...
+# Subtest: uncomposed entry helper requires a Backend production factory; it has no global or local-client fallback
+ok 170 - uncomposed entry helper requires a Backend production factory; it has no global or local-client fallback
+  ---
+  duration_ms: 0.609779
+  type: 'test'
+  ...
+# Subtest: owner-built mutation preserves body/key/auth/signal while enforcing cross-origin request flags
+ok 171 - owner-built mutation preserves body/key/auth/signal while enforcing cross-origin request flags
+  ---
+  duration_ms: 32.971266
+  type: 'test'
+  ...
+# Subtest: body-only owner logout gains no Authorization, refresh or hidden retry
+ok 172 - body-only owner logout gains no Authorization, refresh or hidden retry
+  ---
+  duration_ms: 1.266914
+  type: 'test'
+  ...
+# Subtest: request boundary rejects GET https://else.invalid/api/v1/me
+ok 173 - request boundary rejects GET https://else.invalid/api/v1/me
+  ---
+  duration_ms: 0.393076
+  type: 'test'
+  ...
+# Subtest: request boundary rejects POST https://api.example.test/admin
+ok 174 - request boundary rejects POST https://api.example.test/admin
+  ---
+  duration_ms: 0.28247
+  type: 'test'
+  ...
+# Subtest: request boundary rejects GET https://api.example.test/api/v10/me
+ok 175 - request boundary rejects GET https://api.example.test/api/v10/me
+  ---
+  duration_ms: 0.179462
+  type: 'test'
+  ...
+# Subtest: request boundary rejects GET http://local.invalid/api/v1/me
+ok 176 - request boundary rejects GET http://local.invalid/api/v1/me
+  ---
+  duration_ms: 0.200268
+  type: 'test'
+  ...
+# Subtest: request boundary rejects GET https://api.example.test/api/v1/me\#hidden
+ok 177 - request boundary rejects GET https://api.example.test/api/v1/me\#hidden
+  ---
+  duration_ms: 0.191769
+  type: 'test'
+  ...
+# Subtest: request boundary rejects DELETE https://api.example.test/api/v1/me
+ok 178 - request boundary rejects DELETE https://api.example.test/api/v1/me
+  ---
+  duration_ms: 0.216281
+  type: 'test'
+  ...
+# Subtest: owner client executes the prepared transport with an injected response; no native network
+ok 179 - owner client executes the prepared transport with an injected response; no native network
+  ---
+  duration_ms: 1.157732
+  type: 'test'
+  ...
+# Subtest: owner production destination policy rejects localhost before bridge/I/O
+ok 180 - owner production destination policy rejects localhost before bridge/I/O
+  ---
+  duration_ms: 0.161207
+  type: 'test'
+  ...
+# Subtest: owner production destination policy rejects 127.0.0.2 before bridge/I/O
+ok 181 - owner production destination policy rejects 127.0.0.2 before bridge/I/O
+  ---
+  duration_ms: 0.089228
+  type: 'test'
+  ...
+# Subtest: owner production destination policy rejects [::1] before bridge/I/O
+ok 182 - owner production destination policy rejects [::1] before bridge/I/O
+  ---
+  duration_ms: 0.078314
+  type: 'test'
+  ...
+# Subtest: owner production destination policy rejects local.invalid before bridge/I/O
+ok 183 - owner production destination policy rejects local.invalid before bridge/I/O
+  ---
+  duration_ms: 0.066885
+  type: 'test'
+  ...
+# Subtest: owner production destination policy rejects invalid before bridge/I/O
+ok 184 - owner production destination policy rejects invalid before bridge/I/O
+  ---
+  duration_ms: 0.061603
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: auth-policy leaves no orphan rejection or abort listener
+ok 185 - receipt synchronous boundary: auth-policy leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 108.443866
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: offline-no-policy leaves no orphan rejection or abort listener
+ok 186 - receipt synchronous boundary: offline-no-policy leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 111.370245
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: validation-policy leaves no orphan rejection or abort listener
+ok 187 - receipt synchronous boundary: validation-policy leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 135.48563
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: malformed-policy leaves no orphan rejection or abort listener
+ok 188 - receipt synchronous boundary: malformed-policy leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 134.136321
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: auth-no-policy leaves no orphan rejection or abort listener
+ok 189 - receipt synchronous boundary: auth-no-policy leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 92.078004
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: offline-with-policy leaves no orphan rejection or abort listener
+ok 190 - receipt synchronous boundary: offline-with-policy leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 130.515553
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: limited-policy leaves no orphan rejection or abort listener
+ok 191 - receipt synchronous boundary: limited-policy leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 126.169772
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: retry-sync-auth leaves no orphan rejection or abort listener
+ok 192 - receipt synchronous boundary: retry-sync-auth leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 87.772732
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: cancel-inline leaves no orphan rejection or abort listener
+ok 193 - receipt synchronous boundary: cancel-inline leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 102.158164
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: relogin-inline leaves no orphan rejection or abort listener
+ok 194 - receipt synchronous boundary: relogin-inline leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 93.587974
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: deadline-inline leaves no orphan rejection or abort listener
+ok 195 - receipt synchronous boundary: deadline-inline leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 91.431753
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: ack leaves no orphan rejection or abort listener
+ok 196 - receipt synchronous boundary: ack leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 94.931122
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: async-auth leaves no orphan rejection or abort listener
+ok 197 - receipt synchronous boundary: async-auth leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 96.804592
+  type: 'test'
+  ...
+# Subtest: receipt synchronous boundary: thenable-error leaves no orphan rejection or abort listener
+ok 198 - receipt synchronous boundary: thenable-error leaves no orphan rejection or abort listener
+  ---
+  duration_ms: 100.422303
+  type: 'test'
+  ...
+# Subtest: raw SDK initData goes unchanged to owner login; only server profile is used
+ok 199 - raw SDK initData goes unchanged to owner login; only server profile is used
+  ---
+  duration_ms: 60.660384
+  type: 'test'
+  ...
+# Subtest: incomplete registration hydrates profile without fetching exams
+ok 200 - incomplete registration hydrates profile without fetching exams
+  ---
+  duration_ms: 5.331662
+  type: 'test'
+  ...
+# Subtest: missing Telegram bridge never creates an API connection
+ok 201 - missing Telegram bridge never creates an API connection
+  ---
+  duration_ms: 1.548817
+  type: 'test'
+  ...
+# Subtest: empty initData does not fall back to unsafe user, URL or storage values
+ok 202 - empty initData does not fall back to unsafe user, URL or storage values
+  ---
+  duration_ms: 0.369324
+  type: 'test'
+  ...
+# Subtest: bridge ready preserves its SDK receiver and runs once per bridge
+ok 203 - bridge ready preserves its SDK receiver and runs once per bridge
+  ---
+  duration_ms: 0.303325
+  type: 'test'
+  ...
+# Subtest: ready SDK exceptions are sanitized instead of reflecting raw data
+ok 204 - ready SDK exceptions are sanitized instead of reflecting raw data
+  ---
+  duration_ms: 0.297382
+  type: 'test'
+  ...
+# Subtest: concurrent starts share one login and one hydration
+ok 205 - concurrent starts share one login and one hydration
+  ---
+  duration_ms: 4.142688
+  type: 'test'
+  ...
+# Subtest: an already hydrated RAM session does not replay the launch
+ok 206 - an already hydrated RAM session does not replay the launch
+  ---
+  duration_ms: 2.789808
+  type: 'test'
+  ...
+# Subtest: Telegram auth loss keeps Telegram guidance and a fresh launch can re-enter
+ok 207 - Telegram auth loss keeps Telegram guidance and a fresh launch can re-enter
+  ---
+  duration_ms: 5.588656
+  type: 'test'
+  ...
+# Subtest: profile retry uses existing RAM session after a temporary read failure
+ok 208 - profile retry uses existing RAM session after a temporary read failure
+  ---
+  duration_ms: 4.671522
+  type: 'test'
+  ...
+# Subtest: RAM hydration retry refreshes an expired session without replaying Telegram data
+ok 209 - RAM hydration retry refreshes an expired session without replaying Telegram data
+  ---
+  duration_ms: 4.301009
+  type: 'test'
+  ...
+# Subtest: ambiguous login cannot automatically replay the same raw launch
+ok 210 - ambiguous login cannot automatically replay the same raw launch
+  ---
+  duration_ms: 3.201145
+  type: 'test'
+  ...
+# Subtest: profile person mismatch never hydrates identity into the UI
+ok 211 - profile person mismatch never hydrates identity into the UI
+  ---
+  duration_ms: 1.768811
+  type: 'test'
+  ...
+# Subtest: logout clears visible context immediately and sends a body-only receipt
+ok 212 - logout clears visible context immediately and sends a body-only receipt
+  ---
+  duration_ms: 4.026686
+  type: 'test'
+  ...
+# Subtest: late logout 200 cannot change a fresh login
+ok 213 - late logout 200 cannot change a fresh login
+  ---
+  duration_ms: 4.042827
+  type: 'test'
+  ...
+# Subtest: late logout 401 cannot change a fresh login
+ok 214 - late logout 401 cannot change a fresh login
+  ---
+  duration_ms: 5.248208
+  type: 'test'
+  ...
+# Subtest: late old bootstrap body cannot replace the next session UI
+ok 215 - late old bootstrap body cannot replace the next session UI
+  ---
+  duration_ms: 4.417352
+  type: 'test'
+  ...
+# Subtest: pending old registration is isolated in a retired flow after logout and fresh login
+ok 216 - pending old registration is isolated in a retired flow after logout and fresh login
+  ---
+  duration_ms: 6.507389
+  type: 'test'
+  ...
+# Subtest: disposal during pending login conceals data and does not claim server logout
+ok 217 - disposal during pending login conceals data and does not claim server logout
+  ---
+  duration_ms: 1.226673
+  type: 'test'
+  ...
+# Subtest: logout during pending login cannot resurrect that connection after a fresh launch
+ok 218 - logout during pending login cannot resurrect that connection after a fresh launch
+  ---
+  duration_ms: 5.815861
+  type: 'test'
+  ...
+# Subtest: window bridge discovery reads neither storage nor initDataUnsafe
+ok 219 - window bridge discovery reads neither storage nor initDataUnsafe
+  ---
+  duration_ms: 0.403335
+  type: 'test'
+  ...
+# Subtest: snapshot and observer notifications expose no launch or opaque proofs
+ok 220 - snapshot and observer notifications expose no launch or opaque proofs
+  ---
+  duration_ms: 2.495232
+  type: 'test'
+  ...
+# Subtest: production configuration never relaxes HTTPS, endpoint or contract pins
+ok 221 - production configuration never relaxes HTTPS, endpoint or contract pins
+  ---
+  duration_ms: 0.84153
+  type: 'test'
+  ...
+# Subtest: a singleton connection cannot be reused after logout for a new launch
+ok 222 - a singleton connection cannot be reused after logout for a new launch
+  ---
+  duration_ms: 6.031614
+  type: 'test'
+  ...
+# Subtest: a constructor cannot silently restore a preauthenticated proof context
+ok 223 - a constructor cannot silently restore a preauthenticated proof context
+  ---
+  duration_ms: 2.036478
+  type: 'test'
+  ...
+# Subtest: a synchronous owner logout hook throw is handled by the returned rejection
+ok 224 - a synchronous owner logout hook throw is handled by the returned rejection
+  ---
+  duration_ms: 1.146133
+  type: 'test'
+  ...
+# Subtest: student proof, no-store, omitted cookies and exact key are used without logging proof
+ok 225 - student proof, no-store, omitted cookies and exact key are used without logging proof
+  ---
+  duration_ms: 38.020153
+  type: 'test'
+  ...
+# Subtest: expired access refreshes once for concurrent requests before any mutation is sent
+ok 226 - expired access refreshes once for concurrent requests before any mutation is sent
+  ---
+  duration_ms: 1.330768
+  type: 'test'
+  ...
+# Subtest: a late 401 for an old proof does not rotate the new refresh proof again
+ok 227 - a late 401 for an old proof does not rotate the new refresh proof again
+  ---
+  duration_ms: 1.697065
+  type: 'test'
+  ...
+# Subtest: 401 mutations are never replayed automatically; lost refresh requires a fresh launch
+ok 228 - 401 mutations are never replayed automatically; lost refresh requires a fresh launch
+  ---
+  duration_ms: 1.64385
+  type: 'test'
+  ...
+# Subtest: 403/404/409/422/429/503 are distinct and do not expose raw server messages or retry
+ok 229 - 403/404/409/422/429/503 are distinct and do not expose raw server messages or retry
+  ---
+  duration_ms: 3.386148
+  type: 'test'
+  ...
+# Subtest: offline mutation and malformed success cannot be acknowledged or silently resent
+ok 230 - offline mutation and malformed success cannot be acknowledged or silently resent
+  ---
+  duration_ms: 0.89377
+  type: 'test'
+  ...
+# Subtest: lost login is not replayed; a new transport has no persisted proofs
+ok 231 - lost login is not replayed; a new transport has no persisted proofs
+  ---
+  duration_ms: 0.625219
+  type: 'test'
+  ...
+# Subtest: operation keys survive a journal reload and stay scoped to person/assignment/attempt/generation
+ok 232 - operation keys survive a journal reload and stay scoped to person/assignment/attempt/generation
+  ---
+  duration_ms: 1.491899
+  type: 'test'
+  ...
+# Subtest: a pending rotation cannot restore proofs after logout or overwrite a fresh login
+ok 233 - a pending rotation cannot restore proofs after logout or overwrite a fresh login
+  ---
+  duration_ms: 1.467602
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: success, logout-only
+ok 234 - F1 body-read epoch: success, logout-only
+  ---
+  duration_ms: 2.042802
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: success, same-person-login
+ok 235 - F1 body-read epoch: success, same-person-login
+  ---
+  duration_ms: 0.624016
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: success, logout-and-same-person-login
+ok 236 - F1 body-read epoch: success, logout-and-same-person-login
+  ---
+  duration_ms: 0.798364
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: revoked 401, logout-only
+ok 237 - F1 body-read epoch: revoked 401, logout-only
+  ---
+  duration_ms: 0.573844
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: revoked 401, same-person-login
+ok 238 - F1 body-read epoch: revoked 401, same-person-login
+  ---
+  duration_ms: 0.768756
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: revoked 401, logout-and-same-person-login
+ok 239 - F1 body-read epoch: revoked 401, logout-and-same-person-login
+  ---
+  duration_ms: 0.640801
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: expired 401, logout-only
+ok 240 - F1 body-read epoch: expired 401, logout-only
+  ---
+  duration_ms: 0.587537
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: expired 401, same-person-login
+ok 241 - F1 body-read epoch: expired 401, same-person-login
+  ---
+  duration_ms: 0.440885
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: expired 401, logout-and-same-person-login
+ok 242 - F1 body-read epoch: expired 401, logout-and-same-person-login
+  ---
+  duration_ms: 2.198375
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: JSON parse failure, logout-only
+ok 243 - F1 body-read epoch: JSON parse failure, logout-only
+  ---
+  duration_ms: 0.519941
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: JSON parse failure, same-person-login
+ok 244 - F1 body-read epoch: JSON parse failure, same-person-login
+  ---
+  duration_ms: 0.446025
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: JSON parse failure, logout-and-same-person-login
+ok 245 - F1 body-read epoch: JSON parse failure, logout-and-same-person-login
+  ---
+  duration_ms: 0.465122
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: success after a different-person login
+ok 246 - F1 body-read epoch: success after a different-person login
+  ---
+  duration_ms: 0.291069
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: malformed 401 body after same-person login
+ok 247 - F1 body-read epoch: malformed 401 body after same-person login
+  ---
+  duration_ms: 0.447608
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: mutation success preserves uncertainty and never retries
+ok 248 - F1 body-read epoch: mutation success preserves uncertainty and never retries
+  ---
+  duration_ms: 0.270689
+  type: 'test'
+  ...
+# Subtest: F1 body-read epoch: mutation expired 401 preserves uncertainty and never retries
+ok 249 - F1 body-read epoch: mutation expired 401 preserves uncertainty and never retries
+  ---
+  duration_ms: 0.175906
+  type: 'test'
+  ...
+# Subtest: F1 parser failure in the current epoch remains protocol failure without clearing its proof
+ok 250 - F1 parser failure in the current epoch remains protocol failure without clearing its proof
+  ---
+  duration_ms: 0.355244
+  type: 'test'
+  ...
+# Subtest: profile preserves authoritative registration and leading-zero display ID; no session/staff fields escape
+ok 251 - profile preserves authoritative registration and leading-zero display ID; no session/staff fields escape
+  ---
+  duration_ms: 3.351792
+  type: 'test'
+  ...
+# Subtest: metadata requires assignment/start permission context and never invents a group or admission rule
+ok 252 - metadata requires assignment/start permission context and never invents a group or admission rule
+  ---
+  duration_ms: 1.234958
+  type: 'test'
+  ...
+# Subtest: question order follows frozen display positions and rich blocks remain structured and input remains unchanged
+ok 253 - question order follows frozen display positions and rich blocks remain structured and input remains unchanged
+  ---
+  duration_ms: 1.621341
+  type: 'test'
+  ...
+# Subtest: all seven lifecycle projections preserve server deadline/current generation without copying successor content
+ok 254 - all seven lifecycle projections preserve server deadline/current generation without copying successor content
+  ---
+  duration_ms: 1.23826
+  type: 'test'
+  ...
+# Subtest: ACK mapping preserves clear null and revision; wrong question or revision zero is not a successful save
+ok 255 - ACK mapping preserves clear null and revision; wrong question or revision zero is not a successful save
+  ---
+  duration_ms: 0.342972
+  type: 'test'
+  ...
+# Subtest: wrong scope, stale active generation, duplicate positions and invalid answer membership fail closed
+ok 256 - wrong scope, stale active generation, duplicate positions and invalid answer membership fail closed
+  ---
+  duration_ms: 0.914708
+  type: 'test'
+  ...
+# Subtest: terminal content and active content without a deadline cannot be rendered as a valid attempt
+ok 257 - terminal content and active content without a deadline cannot be rendered as a valid attempt
+  ---
+  duration_ms: 0.630064
+  type: 'test'
+  ...
+# Subtest: ordinary is independent of nullable bonus and canonical server display strings are preserved
+ok 258 - ordinary is independent of nullable bonus and canonical server display strings are preserved
+  ---
+  duration_ms: 0.62732
+  type: 'test'
+  ...
+# Subtest: student display1 precision is strict while percentages retain2dp
+ok 259 - student display1 precision is strict while percentages retain2dp
+  ---
+  duration_ms: 0.548737
+  type: 'test'
+  ...
+# Subtest: double-rounding traps and totals above30 retain server display without browser policy
+ok 260 - double-rounding traps and totals above30 retain server display without browser policy
+  ---
+  duration_ms: 0.735567
+  type: 'test'
+  ...
+# Subtest: server midpoint and tiny-positive displays survive result and bonus mapping without arithmetic
+ok 261 - server midpoint and tiny-positive displays survive result and bonus mapping without arithmetic
+  ---
+  duration_ms: 0.541612
+  type: 'test'
+  ...
+# Subtest: display localization is lexical, retains precision and rejects trailing line terminators
+ok 262 - display localization is lexical, retains precision and rejects trailing line terminators
+  ---
+  duration_ms: 0.594725
+  type: 'test'
+  ...
+# Subtest: missing or malformed server display never falls back to approximate numbers
+ok 263 - missing or malformed server display never falls back to approximate numbers
+  ---
+  duration_ms: 0.638262
+  type: 'test'
+  ...
+# Subtest: history retains canonical displays and can localize repeatedly without changing attribution
+ok 264 - history retains canonical displays and can localize repeatedly without changing attribution
+  ---
+  duration_ms: 1.059947
+  type: 'test'
+  ...
+# Subtest: ordinary null is independent of cancellation; terminal history requires an ordinary result
+ok 265 - ordinary null is independent of cancellation; terminal history requires an ordinary result
+  ---
+  duration_ms: 0.605903
+  type: 'test'
+  ...
+# Subtest: result scope and malformed numeric values fail without creating a zero result or a review grant
+ok 266 - result scope and malformed numeric values fail without creating a zero result or a review grant
+  ---
+  duration_ms: 0.515076
+  type: 'test'
+  ...
+# Subtest: cancelled predecessor bonus remains historical; successor has no inherited result or invented history identity
+ok 267 - cancelled predecessor bonus remains historical; successor has no inherited result or invented history identity
+  ---
+  duration_ms: 0.484393
+  type: 'test'
+  ...
+# Subtest: unknown private fields do not reach UI projections and no media fetch is performed by mapping
+ok 268 - unknown private fields do not reach UI projections and no media fetch is performed by mapping
+  ---
+  duration_ms: 0.876205
+  type: 'test'
+  ...
+1..268
+# tests 268
+# suites 0
+# pass 268
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24852.544564

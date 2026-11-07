@@ -1,0 +1,226 @@
+{
+  "status": "LOCAL_AUTHOR_CANDIDATE_NOT_INDEPENDENT_QA",
+  "base_commit": "0dcb603cc7fb77fc6abe9df9f58fc4b955cde9a5",
+  "HEAD": "0dcb603cc7fb77fc6abe9df9f58fc4b955cde9a5",
+  "sdk": {
+    "package": "@clerk/react",
+    "version": "6.18.6",
+    "install_scripts": false
+  },
+  "backend_source_commit": "b9efa5978498d9150db43531da89820e80dc51ee",
+  "backend_manifest_sha256": "c9a2f4ceee5bd1ade89df05c618e0c302b2b3a454f3c2b909397beb0256db31b",
+  "contract_sha256": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28",
+  "backend_files_changed": 0,
+  "owner_client_files_changed": 0,
+  "deleted": [],
+  "files": [
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/clerk-sdk-local-candidate.md",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 7876,
+      "sha256": "2ec90707ef9154df0bd5adb0358d60afd556ad91858ed1d0082e05d20832e902"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/email/uz-otp-review.html",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 1566,
+      "sha256": "d8c0da091a1471cfe7d7f81c67137e461fb6f86e590882383f69c1e89adbb8aa"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/email/uz-otp-review.txt",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 373,
+      "sha256": "1720cb6b9ceea287a9795b4bb149e7c7733f091284fc55d4ad2045070f012fbf"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/package-lock.json",
+      "status": "modified",
+      "before_bytes": 39586,
+      "before_sha256": "f66c74833ac5ccf823c01af561239e1e9f1f6355a9c123e999f97c21926a6f11",
+      "bytes": 42432,
+      "sha256": "e0d11ceeccc2325066fa02d61e7b6ecffde79f7e675b0080facc4675f87bf059"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/package.json",
+      "status": "modified",
+      "before_bytes": 1281,
+      "before_sha256": "942a0aa320c9812a2d535cb280b2cd3ab05576e242f3e7fa3fd6dfe6f0e5d236",
+      "bytes": 1607,
+      "sha256": "5b73018ad1df65afc1cf85890eda5ef379b21e87fd47c66470f050d700801e64"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/production.env.example",
+      "status": "modified",
+      "before_bytes": 410,
+      "before_sha256": "882cea09369837894698a5c1707b96c276ad55af6a494d08978f373cdccd6a94",
+      "bytes": 643,
+      "sha256": "14416213c1227df1d13202df113138eb51ec1a25701eff127c3f6ff4224e051d"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/clerk-app-session.ts",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 2315,
+      "sha256": "a1d00af08b738a7d18ed6040a6ebcb408534ac4e521e5381b5768806d304d59d"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/clerk-review-entry.ts",
+      "status": "modified",
+      "before_bytes": 2920,
+      "before_sha256": "477c7cdc49161def2fe109ecd928ff92518fa8496403462311ecc3abdcae28bb",
+      "bytes": 1020,
+      "sha256": "ee6cf2fb20c49203bfe303532829be7be23c0383c92b1c89e9c00f572a41a730"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/clerk-sdk-adapter.ts",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 7438,
+      "sha256": "b6cc5384ed70df445ba27f1a76b39405e6a6c16617bd6f967ace5ddd95c60684"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-prototype.ts",
+      "status": "modified",
+      "before_bytes": 7697,
+      "before_sha256": "98ce50ac1af02e394f8bab4efd5ec02b60bb3315558750fbcc3a1ec8c7f954aa",
+      "bytes": 907,
+      "sha256": "2fb9ef7de54c37452813dcccf074873881afe282631450d6ed13456b273d7aee"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 6039,
+      "sha256": "66e925b2853d595b6ddd54716e65775ebfe8513d32f37ac276448f0da8a4f1f0"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-production-runtime.ts",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 2547,
+      "sha256": "db9e5c5ef70a3149863b7741033519baf1d5ff14f41246b402ce2096ffcc95e2"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-sign-in-view.tsx",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 3849,
+      "sha256": "96df60992f600661ee1872689aefed75894f818c5eae7bf575c2767d9dbfcf7a"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/main.tsx",
+      "status": "modified",
+      "before_bytes": 1107,
+      "before_sha256": "1af2e873d2b6acdeb0ddeb8fe92f1cf4e8d387d93f4a02e2aba268bfecd2bf7d",
+      "bytes": 1397,
+      "sha256": "eca147a3f4e3e1f1556402221cff58d339567a2edfdbfec7c8a30863b7586287"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/production-connection.ts",
+      "status": "modified",
+      "before_bytes": 2325,
+      "before_sha256": "9d3adaee8e8549c5f5c155a85d29a94a3d9a396ab97afed20727c42d23760492",
+      "bytes": 2459,
+      "sha256": "fae2470b79995be98e4ed96ac5457a2dd141466127d559bf8a96e0780f378265"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/sign-in-controller.ts",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 9227,
+      "sha256": "f4332f1bcc1b6633af11becd665f42a15dbbdecf5d77926bf22afc4fe048e2ce"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/style.css",
+      "status": "modified",
+      "before_bytes": 10405,
+      "before_sha256": "ecb015daf0ee0cfe727b4155ce3e5cbd785f3cd8b159f62ac422005b568df661",
+      "bytes": 10751,
+      "sha256": "b83824edd59f779f483adc3fe9c31c969fd385a46c470e540c428131665ad793"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk-adapter.test.mjs",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 8343,
+      "sha256": "7dd551fb3326fc463d3baad6f7f1edde8eaad9a3ea21eb66a2beab0252a30790"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk-browser.mjs",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 1394,
+      "sha256": "5d6cdb222c342b7e22047e0eb1e7f30941bbd4c0e27a32a7e30c2d0f87671777"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk-browser.py",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 9796,
+      "sha256": "3098c5ebb41221653adc938bed07ec799e9e5eb661167e3cc28225ca531be5b9"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk.fixture.html",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 279,
+      "sha256": "2945b012a506c02a1cf4de55c12f6563e27855f83b6eb2817536f0b5b2b570ff"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk.fixture.mjs",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 2137,
+      "sha256": "55aaf5bfcf2e9d18d36ad003c91af9cd8dd007f40ff2a0503cb26c9c9882a0d0"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/common-production-runtime.test.mjs",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 10165,
+      "sha256": "149a584f75c84b3a4758235dde745903938bd77f62f60f00047bf202554fd6b4"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/clerk-sdk.fixture.mjs",
+      "status": "added",
+      "before_bytes": null,
+      "before_sha256": null,
+      "bytes": 2580,
+      "sha256": "d26c48301e6116796b1fc2127560fdcac8545c435881893e3486e32eed623996"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.mjs",
+      "status": "modified",
+      "before_bytes": 3112,
+      "before_sha256": "8fc105ae7571be095420ba5a61cf99d2dc4749bbb45b02f0ceee7a695e80a068",
+      "bytes": 3567,
+      "sha256": "a301de92b7d56847da421317b86734b5a83d26b7fe31053c271c72e31cecb377"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.py",
+      "status": "modified",
+      "before_bytes": 12591,
+      "before_sha256": "26e63927499af351a26837c1a93bafcfbac876f49bf9858572a55dbe05a4444b",
+      "bytes": 12763,
+      "sha256": "27aba434034caa91c60468ffe7631f31b59ccaa289097347b69f2a24d4fe90ba"
+    }
+  ]
+}

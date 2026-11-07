@@ -1,0 +1,14 @@
+{
+  "status": "PASS_NO_MATCHES",
+  "source_files": 26,
+  "log_files": 12,
+  "patterns": [
+    "private_key",
+    "clerk_secret",
+    "telegram_bot_secret",
+    "jwt_literal"
+  ],
+  "findings": [],
+  "manual_review": "Only reserved example.test inputs, synthetic actor names and visual OTP placeholders; no real person, recipient, answer key or provider credentials added.",
+  "limits": "Targeted source/log check, not a formal secret-scanner or independent QA certification."
+}

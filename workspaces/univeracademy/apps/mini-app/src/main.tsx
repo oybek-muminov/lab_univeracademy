@@ -11,7 +11,10 @@ if (import.meta.env.DEV && __AUTH_PROTOTYPE_PREVIEW__) {
 } else if (import.meta.env.DEV || import.meta.env.MODE === 'demo') {
   void import('./demo.tsx').then(({ DemoApp }) => demoRoot().render(<DemoApp />));
 } else {
-  void Promise.all([import('./production-entry.tsx'), import('./production-connection.ts')])
+  if (import.meta.env.VITE_AUTH_ENTRY === 'common') {
+    void import('./common-production-entry.tsx').then(({ mountCommonProductionEntry }) =>
+      mountCommonProductionEntry(document.getElementById('root')!, { env: import.meta.env, pageOrigin: location.origin, scope: window }));
+  } else void Promise.all([import('./production-entry.tsx'), import('./production-connection.ts')])
     .then(([{ mountTelegramEntry }, { createProductionConnection }]) => mountTelegramEntry(document.getElementById('root')!, {
       env: import.meta.env, pageOrigin: window.location.origin, scope: window, createConnection: createProductionConnection,
     }));

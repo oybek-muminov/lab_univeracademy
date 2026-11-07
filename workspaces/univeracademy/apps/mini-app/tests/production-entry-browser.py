@@ -153,7 +153,7 @@ get initDataUnsafe() { throw new Error('UNSAFE_IDENTITY_READ'); } } };
                 else:
                     blocked.append(route.request.url); route.abort()
             page.route('**/*', built_route)
-            page.goto('https://app.invalid/')
+            page.goto('https://app.invalid' + spec.get('path', '/'))
             if spec['configured']:
                 expect(page.get_by_role('heading', name='Hozircha test yo‘q', exact=True)).to_be_visible()
                 assert page.evaluate('syntheticSdkReadyCalls') == 1
@@ -167,7 +167,8 @@ get initDataUnsafe() { throw new Error('UNSAFE_IDENTITY_READ'); } } };
             assert page.locator('.demo-tools,.demo-badge,.student-line').count() == 0
             assert len(sdk) == (1 if spec['configured'] else 0)
             assert not blocked and not errors, (blocked, errors)
-            results.append({'scenario': 'configured-main-production-owner-login-logout' if spec['configured'] else 'empty-config-default-main',
+            results.append({'scenario': ('common-optional-telegram-owner-login-logout' if spec.get('common') else 'configured-main-production-owner-login-logout')
+                if spec['configured'] else ('common-empty-config-no-sdk' if spec.get('common') else 'empty-config-default-main'),
                 'status': 'PASS', 'syntheticSdkLoads': len(sdk), 'interceptedApiRequests': len(api), 'externalApiRequests': 0})
             context.close()
     finally:

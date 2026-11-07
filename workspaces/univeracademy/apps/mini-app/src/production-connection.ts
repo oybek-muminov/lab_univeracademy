@@ -1,4 +1,5 @@
 import { createOwnerPort } from './owner-port.ts';
+import type { OwnerPortOptions } from './owner-port.ts';
 import { createProductionApiTransport } from './production-runtime.ts';
 import type { ProductionConnectionFactory } from './production-runtime.ts';
 import type { StudentSchema } from './owner-client/student-client.ts';
@@ -20,11 +21,12 @@ export const createProductionConnection: ProductionConnectionFactory = config =>
 
 // Explicit transport seam for local synthetic tests; production main passes fetch.
 // No URLs/proofs are read from window slots and no local client fallback exists.
-export function createProductionOwnerConnection(config: Parameters<ProductionConnectionFactory>[0], fetcher: typeof fetch) {
+export function createProductionOwnerConnection(config: Parameters<ProductionConnectionFactory>[0], fetcher: typeof fetch,
+  auth: Pick<OwnerPortOptions, 'loginMethod' | 'loginSignal'> = {}) {
   if (config.mode !== 'production') throw new StudentFailure('protocol', 'PRODUCTION_CLIENT_MODE_REQUIRED');
   const apiOrigin = new URL(config.baseUrl).origin;
   const views = new Map<string, { title: string; groupLabel: string; startAllowed: boolean }>();
-  return createOwnerPort({ ...config,
+  return createOwnerPort({ ...config, ...auth,
     fetcher: createProductionApiTransport({ apiOrigin }, fetcher),
     view: (assignmentId, meta) => {
       if (meta) views.set(assignmentId, { title: meta.title, groupLabel: '', startAllowed: offerStart(meta) });

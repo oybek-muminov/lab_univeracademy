@@ -10,30 +10,33 @@ async function serve(outDir) {
 }
 try {
   let args;
-  if (process.argv.includes('--production-gates')) {
+  if (process.argv.includes('--production-gates') || process.argv.includes('--common-gates')) {
+    const common = process.argv.includes('--common-gates');
     const values = { VITE_MINI_APP_ORIGIN: 'https://app.invalid', VITE_API_ORIGIN: 'https://api.example.test',
       VITE_STUDENT_CONTRACT_SHA256: STUDENT_CONTRACT_SHA256,
-      VITE_TELEGRAM_SDK_ENABLED: 'true' };
+      VITE_TELEGRAM_SDK_ENABLED: 'true', VITE_AUTH_ENTRY: common ? 'common' : '',
+      VITE_CLERK_PUBLISHABLE_KEY: '', VITE_CLERK_FRONTEND_ORIGIN: '' };
     const saved = Object.fromEntries(Object.keys(values).map(k => [k, process.env[k]]));
     const builds = [];
     try {
       for (const configured of [false, true]) {
         for (const key of Object.keys(values)) {
-          if (configured) process.env[key] = values[key]; else delete process.env[key];
+          if (configured || key === 'VITE_AUTH_ENTRY') process.env[key] = values[key]; else delete process.env[key];
         }
-        const outDir = `test-results/production-entry-${configured ? 'configured' : 'empty'}-build`;
+        const outDir = `test-results/${common ? 'common' : 'production'}-entry-${configured ? 'configured' : 'empty'}-build`;
         await build({ mode: 'production', build: { outDir, emptyOutDir: true } });
         const html = await readFile(outDir + '/index.html', 'utf8');
         const sdk = html.indexOf('https://telegram.org/js/telegram-web-app.js?64');
         if (configured ? sdk < 0 || sdk > html.indexOf('type="module"') : sdk !== -1) throw new Error('SDK_HEAD_GATE_FAILED');
         for (const name of await readdir(outDir + '/assets')) {
-          if (!name.endsWith('.js')) continue;
+          if (!/\.(?:js|css)$/.test(name)) continue;
           const js = await readFile(outDir + '/assets/' + name, 'utf8');
           if (['synthetic-entry-access', 'synthetic-entry-refresh', '__UA_SYNTHETIC_INIT_DATA__',
-            'Namuna holatlarini sinash', 'query_id=synthetic'].some(value => js.includes(value)))
+            'Namuna holatlarini sinash', 'query_id=synthetic', '__UA_SYNTHETIC_CLERK_SDK_TOKEN__',
+            '__UA_SDK_TEST_AUDIT__', 'synthetic-sdk-proof-', 'Lokal prototip', '246810'].some(value => js.includes(value)))
             throw new Error('SYNTHETIC_TEST_CODE_IN_PRODUCTION');
         }
-        builds.push({ configured, baseUrl: await serve(outDir) });
+        builds.push({ configured, common, path: common && configured ? '/telegram' : '/', baseUrl: await serve(outDir) });
       }
     } finally {
       for (const key of Object.keys(saved)) {

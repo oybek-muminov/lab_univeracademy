@@ -1,0 +1,13 @@
+vite v8.3.6 building client environment for production...
+transforming...
+✓ 31 modules transformed.
+rendering chunks...
+computing gzip size...
+test-results/clerk-sdk-facade-build/tests/clerk-sdk.fixture.html            0.37 kB │ gzip:  0.28 kB
+test-results/clerk-sdk-facade-build/assets/clerk-sdk-CHQ5EbBm.css           9.32 kB │ gzip:  2.95 kB
+test-results/clerk-sdk-facade-build/assets/clerk-sdk.fixture-D7nDISaM.js  278.07 kB │ gzip: 86.31 kB
+
+✓ built in 239ms
+{"status": "PASS", "width": 320, "SDK": "PUBLIC_FACADE_ONLY", "HTTP": "REAL_LOOPBACK_RAM", "exchange": 3, "OTP_retry": true, "save_resume_submit_result_history": true, "U1_guidance_reentry": true, "targetedSDKSignOut": 4, "cancel_late_finalize_no_exchange": true, "realProviderGoogleEmail": "NOT_RUN", "externalRequests": 0, "storageEntries": 0}
+{"status": "PASS", "width": 390, "SDK": "PUBLIC_FACADE_ONLY", "HTTP": "REAL_LOOPBACK_RAM", "exchange": 3, "OTP_retry": true, "save_resume_submit_result_history": true, "U1_guidance_reentry": true, "targetedSDKSignOut": 4, "cancel_late_finalize_no_exchange": true, "realProviderGoogleEmail": "NOT_RUN", "externalRequests": 0, "storageEntries": 0}
+{"status": "PASS", "width": 1280, "SDK": "PUBLIC_FACADE_ONLY", "HTTP": "REAL_LOOPBACK_RAM", "exchange": 3, "OTP_retry": true, "save_resume_submit_result_history": true, "U1_guidance_reentry": true, "targetedSDKSignOut": 4, "cancel_late_finalize_no_exchange": true, "realProviderGoogleEmail": "NOT_RUN", "externalRequests": 0, "storageEntries": 0}
