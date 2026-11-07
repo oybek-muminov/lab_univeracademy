@@ -1,4 +1,51 @@
-# Current Backend review snapshot — 2026-11-07
+# Current Backend publication — first-test relational commands and local CORS
+
+This update is based on branch HEAD2ef530bba05aa121479f93fdfca118b64fb61ae2,
+preserving its complete current Mini App subtree. It adds Teacher/Owner
+question/duration/publish, Admin initial membership/assignment relational writes
+and explicit loopback CORS. API, generated types, student client and dependency
+locks are unchanged. API remains PROVISIONAL / NOT ACCEPTED.
+
+```sh
+cd workspaces/univeracademy
+npm ci --ignore-scripts
+npm run setup:validator
+npm run test:first-test
+npm run typecheck
+```
+
+Author validation:32/32 PASS (14 new and18 affected enrollment/persistent HTTP
+regressions), typecheck exit0. Publication source/dependency bytes match the tested
+local candidate. Exact logs and frozen before/after hashes are in
+`evidence/first-test-2026-11-07/`. Preparation documents/manifest there and
+`docs/api/first-test-relational-local-2026-11-07.md` retain their original local
+checkpoint status as provenance. Publication status is recorded in
+`docs/api/first-test-publication-verification-2026-11-07.json`.
+
+Use existing staff ports with `domain:"first_test_relational"` instead of custom
+load/flush; JWT, liveness, validator and ID ports still must be explicitly supplied.
+Current Admin policy A and Teacher scope remain unchanged. Group/version locks
+are followed by fresh DB time and current proof/session/access checks. Grant,
+revision, receipt and audit writes share one COMMIT; unknown COMMIT remains503.
+
+```js
+startConfiguredServer({config,port:8793,allowedOrigins:["http://127.0.0.1:5198"]});
+```
+
+Local CORS uses exact loopback origins, OPTIONS204, existing proof/idempotency
+headers and Retry-After exposure. Default allowlist is empty; no wildcard/cookie
+grant or implicit storage configuration. Preflight does not imply API readiness.
+The executor remains a synthetic file ledger, not actual PostgreSQL/RLS proof.
+Real DB/provider, migration, domain, deployment and current Mini App browser QA
+remain NOT_RUN. Full CRUD/transfer/removal/recovery/media/onboarding are not added.
+
+The latest Mini App client copy matches the unchanged shared client/types. Its
+strict Backend manifest still pins71 files from1335762a and needs UI-owner repinning
+before combined QA. No Mini App file or guard is modified/bypassed here.
+BACKEND-CURRENT-SHA256SUMS identifies the current Backend; prior sums/reports are
+historical provenance. No real credential/data, cache/build or old archive is added.
+
+## Prior Backend1335762a snapshot — historical preparation and verification
 
 Laboratory branch: `qa/current-flow-20261106`. This publication is based on branch
 HEAD3d029d0e680ea2ddf93b0e702f252781b501dd13, preserving its Mini App subtree.

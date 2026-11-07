@@ -11,16 +11,18 @@ import { StudentHttpRows } from "./storage/student-http-rows.ts";
 import { locateStudent } from "./storage/student-scope.ts";
 import { StudentIdentityRows } from "./storage/student-identity-rows.ts";
 import { StaffAccessRows } from "./storage/staff-access-rows.ts";
+import { StaffFirstTestRows } from "./storage/staff-first-test-rows.ts";
 import { reconcileMembershipEffects } from "./membership-effects.ts";
 import { STAFF_CONTRACT_SHA } from "./staff-state.ts";
 import type { StaffJwtProof } from "./staff-jwt.ts";
 
 type StaffPorts={jwt:Parameters<typeof createStaffJwtVerifier>[0];
   resolvePersons?:(request:Request,proof:StaffJwtProof)=>Promise<readonly string[]>;
-  load:(tx:LockedTransaction,proof:StaffJwtProof)=>Promise<StaffState>;
-  flush:(tx:LockedTransaction,before:StaffState,after:StaffState)=>Promise<void>;
   liveness:Parameters<typeof requireLiveStaff>[3];
-  validate:(schema:string,value:unknown)=>boolean;newAssignmentId:()=>string};
+  validate:(schema:string,value:unknown)=>boolean;newAssignmentId:()=>string} &
+  ({domain:"first_test_relational";load?:never;flush?:never} |
+   {domain?:undefined;load:(tx:LockedTransaction,proof:StaffJwtProof)=>Promise<StaffState>;
+    flush:(tx:LockedTransaction,before:StaffState,after:StaffState)=>Promise<void>});
 export type HttpConfiguration={mode:"production"|"local_contract";
   storage:{kind:"postgres"|"postgres_contract_double";pool:PgPool};botToken:string;
   sessionPolicy:SessionPolicy;numericPresentation:NumericPresentation;now:()=>number;staff?:StaffPorts};
@@ -54,24 +56,34 @@ export function createConfiguredHttpHandler(config:HttpConfiguration){
       const runner=new PostgresTransactions(config.storage.pool);
       if(new URL(request.url).pathname.startsWith("/api/v1/admin/")){
         const p=config.staff;
-        if(!p||(p.resolvePersons!==undefined&&typeof p.resolvePersons!=="function")||typeof p.load!=="function"||typeof p.flush!=="function"||
+        if(!p||(p.resolvePersons!==undefined&&typeof p.resolvePersons!=="function")||
+          !(p.domain==="first_test_relational"||(p.domain===undefined&&typeof p.load==="function"&&typeof p.flush==="function"))||
           typeof p.liveness!=="function"||typeof p.validate!=="function"||typeof p.newAssignmentId!=="function") fail("SERVICE_UNAVAILABLE",503);
         const raw=request.headers.get("authorization")?.match(/^Bearer ([^\s]+)$/i)?.[1];
         if(!raw)fail("STAFF_TOKEN_INVALID",401);
         const proof=await createStaffJwtVerifier(p.jwt)(raw);
         const accessRows=new StaffAccessRows(),actorId=await accessRows.locate(config.storage.pool,proof);
         const persons=[actorId,...await affectedPeople(request.clone()),...(p.resolvePersons?await p.resolvePersons(request.clone(),proof):[])];
+        const relational=p.domain==="first_test_relational"?new StaffFirstTestRows(request.clone(),p.validate):null;
         const handler=createStaffHttpHandler({contractSha:STAFF_CONTRACT_SHA,validate:p.validate,newAssignmentId:p.newAssignmentId,
           verifyStaffToken:async(candidate)=>{if(candidate!==raw)fail("STAFF_TOKEN_INVALID",401);return proof;},reconcileMembershipDependencies:reconcileMembershipEffects,
           transactions:{transaction:work=>runner.run(persons,async tx=>{
-            const current=await accessRows.load(tx,proof,actorId);
+            let current=await accessRows.load(tx,proof,actorId);
             await requireLiveStaff(tx,proof,{staff:{[proof.subject]:current}},p.liveness);
-            const state=await p.load(tx,proof);
+            if(relational){
+              await relational.lock(tx,actorId);
+              // Group/version locks can wait: times and current permissions are
+              // checked again against a fresh DB clock before private reads.
+              current=await accessRows.load(tx,proof,actorId);
+              await requireLiveStaff(tx,proof,{staff:{[proof.subject]:current}},p.liveness);
+            }
+            const state=relational?await relational.load(tx,current):await p.load!(tx,proof);
             state.staff={[proof.subject]:current}; // Never trust a cached projection or token role.
             const before=structuredClone(state);
             const outcome=await work({state,now:()=>tx.now});
             if(JSON.stringify(before.staff)!==JSON.stringify(state.staff))fail("RESPONSE_INVARIANT_FAILED",500);
-            await p.flush(tx,before,state);return outcome;
+            if(relational)await relational.flush(tx,actorId,before,state);else await p.flush!(tx,before,state);
+            return outcome;
           })}});
         return await handler(request);
       }

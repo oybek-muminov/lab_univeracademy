@@ -18,7 +18,8 @@
     "test:persistent-http": "node --test tests/persistent-http/*.test.mjs",
     "start:local-ram": "node runtime/content-pilot-server.mjs",
     "test:production-client": "node --test tests/enrollment/production-client.test.mjs",
-    "test:enrollment-staff": "node --test tests/enrollment/identity-staff.test.mjs"
+    "test:enrollment-staff": "node --test tests/enrollment/identity-staff.test.mjs",
+    "test:first-test": "node --test tests/first-test/*.test.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",

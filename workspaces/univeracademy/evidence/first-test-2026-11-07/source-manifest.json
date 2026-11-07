@@ -1,0 +1,88 @@
+{
+  "status": "LOCAL_CANDIDATE_ONLY; NOT_UPLOADED",
+  "base_backend_commit": "1335762a8e133311849b2dad1ddc6be3ccf9bb53",
+  "source_files_changed_or_added": 10,
+  "files": [
+    {
+      "path": "package.json",
+      "bytes": 1578,
+      "sha256": "e4895525569006a768de312bb957eb912bab124fccb8463410c5e72f2b86e8bd",
+      "before": {
+        "bytes": 1512,
+        "sha256": "7ed766227430d1919dd7187112a2f28beb758611967e97754ec44a12e0147558"
+      }
+    },
+    {
+      "path": "runtime/configured-server.mjs",
+      "bytes": 2653,
+      "sha256": "c0c4747f563971e6bced723443cce86eaa1fae66c87c875f792b0baad20fec56",
+      "before": {
+        "bytes": 2557,
+        "sha256": "19a6f6fc6ca12d9f7441961ae0b0847d2119a0783a6f73193ac1af647f1c1b66"
+      }
+    },
+    {
+      "path": "runtime/local-cors.mjs",
+      "bytes": 2582,
+      "sha256": "3d56b5594b99ed7a85113ee47a65cd114fe4ae9fa9ba2bdfba1986676d1effee",
+      "before": null
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/configured-http.ts",
+      "bytes": 7704,
+      "sha256": "b68084330daccdcf1dad0fffac16c31d1621b73e5b699cdd255e61dcbb301651",
+      "before": {
+        "bytes": 6821,
+        "sha256": "26bf3d881e980706ecb8c343c5f02b00754e2f25d2f351a8c6938705f1c45706"
+      }
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "bytes": 15766,
+      "sha256": "a14674add9c53ddf11572696d6a823381a023ba8fc98aa79e2a383219d91d025",
+      "before": null
+    },
+    {
+      "path": "tests/first-test/executor.mjs",
+      "bytes": 3803,
+      "sha256": "6734a0d8221092978b7676bd4835e03124ffe18b11c323523348ec8cbef7520e",
+      "before": null
+    },
+    {
+      "path": "tests/first-test/fixture.mjs",
+      "bytes": 7281,
+      "sha256": "6e9c113a2d754fcdf5ca54e382b949e21859beb61a77016bdebaab0be7f4f35f",
+      "before": null
+    },
+    {
+      "path": "tests/first-test/http.test.mjs",
+      "bytes": 13002,
+      "sha256": "c1b72ff57078ca3edaff572cf9282f4a69da65a7fbe7e9c2741bc3a4daa32f57",
+      "before": null
+    },
+    {
+      "path": "tests/first-test/cors.test.mjs",
+      "bytes": 3479,
+      "sha256": "ef4ea2228157b718baa7f580bfe07403139a6d5294ed4609278dd0e3352eb6f1",
+      "before": null
+    },
+    {
+      "path": "docs/api/first-test-relational-local-2026-11-07.md",
+      "bytes": 7956,
+      "sha256": "21d9b02abeab25201fe637a51a6c70cce61b97a6dc312eea6bb2fd4a46ac7a6e",
+      "before": null
+    },
+    {
+      "path": "evidence/first-test-2026-11-07/tests.log",
+      "bytes": 4202,
+      "sha256": "4507ac1809046803540c291329d448ccef2ea11415dda24c519a0533aec44cf0",
+      "before": null
+    },
+    {
+      "path": "evidence/first-test-2026-11-07/typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f",
+      "before": null
+    }
+  ]
+}

@@ -1,10 +1,11 @@
 import {createServer} from "node:http";
 import {pathToFileURL} from "node:url";
 import {createConfiguredHttpHandler} from "../supabase/functions/univeracademy-api/configured-http.ts";
+import {withLocalCors} from "./local-cors.mjs";
 
-export async function startConfiguredServer({config,port=0}={}){
+export async function startConfiguredServer({config,port=0,allowedOrigins=[]}={}){
   if(!Number.isInteger(port)||port<0||port>65535)throw Error("INVALID_LOCAL_PORT");
-  const handler=createConfiguredHttpHandler(config);
+  const handler=withLocalCors(createConfiguredHttpHandler(config),allowedOrigins);
   const server=createServer(async(input,output)=>{
     let dispatched=false;
     try{

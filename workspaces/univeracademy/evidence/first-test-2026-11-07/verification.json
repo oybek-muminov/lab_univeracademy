@@ -1,0 +1,43 @@
+{
+  "status": "LOCAL_CONTRACT_DOUBLE_PASS; REAL_POSTGRES_RLS_PROVIDER_BROWSER_NOT_RUN",
+  "base_backend_commit": "1335762a8e133311849b2dad1ddc6be3ccf9bb53",
+  "tests": {
+    "command": "node --test tests/first-test/cors.test.mjs tests/first-test/http.test.mjs tests/enrollment/identity-staff.test.mjs tests/persistent-http/http.test.mjs",
+    "total": 32,
+    "new": 14,
+    "affected_regressions": 18,
+    "pass": 32,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0
+  },
+  "typecheck": {
+    "command": "npm run typecheck",
+    "exit": 0
+  },
+  "source_manifest_sha256": "483a997017c2af919521c8100134e7e6da153e7afcbeef3ab9f266c801f6342d",
+  "privacy": {
+    "unreviewed_matches": [],
+    "reviewed_synthetic_negative_url": [
+      {
+        "path": "tests/first-test/cors.test.mjs",
+        "rule": "credential_url",
+        "line": 40
+      }
+    ],
+    "real_credentials_or_real_data_included": false
+  },
+  "unchanged": {
+    "dependency_lock": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503",
+    "student_client": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "student_types": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+    "api": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4"
+  },
+  "limitations": [
+    "Statement dispatch/file ledger and global queue are not actual SQL/row locks/isolation/RLS evidence",
+    "Proposed tables/constraints/grants require separate schema review and actual DB proof",
+    "Real provider JWKS/session implementation and actual Mini App browser QA remain NOT_RUN",
+    "Transfer/removal/recovery/media/full CRUD have no first-test relational repository",
+    "No DB/migration/domain/provider/remote/deploy operation"
+  ]
+}

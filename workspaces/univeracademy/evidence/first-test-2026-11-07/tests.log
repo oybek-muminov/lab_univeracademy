@@ -1,0 +1,40 @@
+✔ empty storage creates an unprivileged student through HTTP; production constructor reads profile/empty exams after restart (130.936229ms)
+✔ invalid/expired queued login and a write failure leave no person, membership, replay or family behind (41.231952ms)
+✔ concurrent first logins create one canonical person; same initData is consumed once and only one fresh family stays active (61.912808ms)
+✔ unknown first-login COMMIT is never ACKed or auto-retried; fresh launch recovers the canonical identity (36.014137ms)
+✔ Qadam uniqueness retries collision without a seeded user or overwrite and exhausts only the configured bound (21.358736ms)
+✔ existing disabled or non-student identity is not recreated, enabled or silently granted the student role (48.128526ms)
+✔ staff authority comes from current normalized rows, never JWT metadata or a cached owner projection (65.072265ms)
+✔ group/subject/all-scope and Teacher approval readers reflect current revocation; roster stays independent (46.508801ms)
+✔ current mapping/access/approval/account/session revocation fails closed even with the same signed staff JWT (76.02657ms)
+✔ local OPTIONS permits exact configured Mini App origin, methods and proof/idempotency headers without invoking storage/auth (52.4771ms)
+✔ unlisted/null/malformed origin, unknown method/header and missing preflight proof are denied before application writes (2.703854ms)
+✔ local CORS preserves API error status/headers/body, exposes Retry-After, and has no wildcard/production origin default (1.247949ms)
+✔ relational first test: fresh registration, Teacher question/duration/publish, Admin roster/assignment, student save/resume/result/history survive restart (375.593342ms)
+✔ draft question/metadata failures roll back revision, authored row, receipt and audit (228.634095ms)
+✔ membership failures roll back group/member revisions, epoch, person group, receipt and audit (244.607753ms)
+✔ assignment/grant/receipt/audit are atomic and retry never duplicates the grant (295.358259ms)
+✔ staff unknown COMMIT returns503, never ACKs/retries; same original command recovers exactly once (206.953574ms)
+✔ concurrent local draft CAS has one effect; published version is frozen and old receipt replay cannot edit it (83.361558ms)
+✔ Admin A test-only assignment succeeds, roster-only assignment fails, revoked/scope-invalid receipt replay has no effect (108.163975ms)
+✔ Teacher approval is current and private questions are not loaded after revoked approval (40.037233ms)
+✔ resource lock waits refresh DB clock, staff session and permission before private domain reads (109.465032ms)
+✔ assignment stale membership cannot grant; unsupported transfer never falls back to cached/RAM staff state (83.718627ms)
+✔ explicit multi-student grants are atomic; another member receives no implicit assignment (81.654458ms)
+✔ HTTP login/profile -> new published exam/start -> save/clear -> separate process resume -> submit/result/history persists exact state (508.543135ms)
+✔ HTTP expiry at deadline commits ordinary+terminal state before409 and survives server restart (54.472502ms)
+✔ HTTP failed write and unknown COMMIT never ACK; reconciliation preserves committed revisions without reapplying command (56.730679ms)
+✔ HTTP new login replaces the old family while answer, deadline and membership persist; bad login and old refresh cannot revoke it (56.825787ms)
+✔ production rejects missing storage/auth/policy and explicit contract-double kind; staff without ports remains unavailable (27.668075ms)
+✔ invalid bearer never falls back to valid logout body; refresh reuse revokes only its own family across HTTP (49.264187ms)
+✔ configured staff HTTP verifies real offline JWT, current scoped capability and required live session under the storage lock (67.005877ms)
+✔ staff liveness/configuration/revocation and post-lock expiry fail closed; transport malformation remains400 (39.719966ms)
+✔ HTTP access uses current membership epoch and keeps foreign attempts hidden without changing immutable data (34.170938ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2963.602354

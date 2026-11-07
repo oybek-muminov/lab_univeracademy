@@ -1,0 +1,52 @@
+{
+  "status": "AUTHOR_BACKEND_VALIDATION_PASS; COMBINED_MINI_APP_QA_PENDING",
+  "branch": "qa/current-flow-20261106",
+  "publication_parent": "2ef530bba05aa121479f93fdfca118b64fb61ae2",
+  "previous_backend_commit": "1335762a8e133311849b2dad1ddc6be3ccf9bb53",
+  "preparation_source_manifest": "evidence/first-test-2026-11-07/source-manifest.json",
+  "preparation_source_manifest_sha256": "483a997017c2af919521c8100134e7e6da153e7afcbeef3ab9f266c801f6342d",
+  "preparation_verification_sha256": "07053949e8cdc83432934121770f7e11c978667327696456a4e80b82f41e1e98",
+  "preparation_status_preserved_as_historical_provenance": true,
+  "validation": {
+    "command": "node --test tests/first-test/cors.test.mjs tests/first-test/http.test.mjs tests/enrollment/identity-staff.test.mjs tests/persistent-http/http.test.mjs",
+    "source": "exact tested local candidate and frozen logs; tests not redundantly rerun during upload",
+    "tests": 32,
+    "new": 14,
+    "affected_regressions": 18,
+    "pass": 32,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0,
+    "typecheck": "npm run typecheck: exit0",
+    "source_and_dependencies_match_tested_candidate": true
+  },
+  "mini_app": {
+    "files_preserved": 66,
+    "parent_git_tree": "46ed50c3f41e201df5e94ed69a9d589e38f04468",
+    "current_client_and_types_match_shared_unchanged_bytes": true,
+    "guard_exit": 1,
+    "guard": "BACKEND_TARGET_SIZE_MISMATCH: BACKEND-CURRENT-SHA256SUMS; manifest still pins Backend1335762a/71 files",
+    "guard_modified_or_bypassed": false,
+    "needed": "UI owner repins the strict Backend manifest, then combined repository QA",
+    "browser_on_this_backend": "NOT_RUN"
+  },
+  "privacy": {
+    "unreviewed_targeted_scan_matches": 0,
+    "reviewed_synthetic_negative_case": "tests/first-test/cors.test.mjs intentionally rejects a user:pass URL; no real credential",
+    "real_data_or_real_credential_added": false,
+    "cache_build_old_archives_added": false
+  },
+  "unchanged_sha256": {
+    "client": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "types": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+    "api": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "dependency_lock": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503"
+  },
+  "limitations": [
+    "Synthetic statement executor/file ledger; no actual PostgreSQL/RLS/isolation proof",
+    "Proposed schema constraints/grants and real provider/session/JWKS remain pending",
+    "First-test repository only; full CRUD/transfer/removal/recovery/media/onboarding not added",
+    "API remains PROVISIONAL / NOT ACCEPTED"
+  ],
+  "main_project_real_DB_migration_domain_provider_deploy_changes": false
+}
