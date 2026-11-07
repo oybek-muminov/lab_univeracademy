@@ -34,12 +34,16 @@ const familyBaselineRaw = readFileSync(new URL('./fixtures/backend-6329367-manif
 assert.equal(sha256(familyBaselineRaw), '5036069d94b2a22326bed20dbe5f7ba62371102db081445ca103ce07606853cf',
   'FAMILY_BASELINE_MANIFEST_MISMATCH');
 assert.equal(JSON.parse(familyBaselineRaw).files.length, 117);
-const runtimeRaw = readFileSync(new URL('./fixtures/backend-b9efa597-manifest.json', import.meta.url));
-assert.equal(sha256(runtimeRaw), 'c9a2f4ceee5bd1ade89df05c618e0c302b2b3a454f3c2b909397beb0256db31b',
+const reviewBaselineRaw = readFileSync(new URL('./fixtures/backend-b9efa597-manifest.json', import.meta.url));
+assert.equal(sha256(reviewBaselineRaw), 'c9a2f4ceee5bd1ade89df05c618e0c302b2b3a454f3c2b909397beb0256db31b',
+  'CLERK_REVIEW_BASELINE_MANIFEST_MISMATCH');
+assert.equal(JSON.parse(reviewBaselineRaw).files.length, 133);
+const runtimeRaw = readFileSync(new URL('./fixtures/backend-a36d41a-manifest.json', import.meta.url));
+assert.equal(sha256(runtimeRaw), '4b57143f14c6f6d77d1f30bec340f61f2f5cdea608d044a7f71df76e71473082',
   'RUNTIME_MANIFEST_MISMATCH');
 const runtime = JSON.parse(runtimeRaw);
-assert.equal(runtime.source_commit, 'b9efa5978498d9150db43531da89820e80dc51ee');
-assert.equal(runtime.files.length, 133);
+assert.equal(runtime.source_commit, 'a36d41ac52c2b12eda4f191020d7420edb5dd23f');
+assert.equal(runtime.files.length, 149);
 export const BACKEND_SOURCE_COMMIT = runtime.source_commit;
 const repo = new URL('../../../', import.meta.url);
 for (const file of runtime.files) {
