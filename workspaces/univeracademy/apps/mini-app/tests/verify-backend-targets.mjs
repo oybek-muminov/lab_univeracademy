@@ -18,12 +18,16 @@ const productionBaselineRaw = readFileSync(new URL('./fixtures/production-backen
 assert.equal(sha256(productionBaselineRaw), 'bb8f1a619d677826225253614771863136cab7616c16bfdf35aaaf1a12b6b669',
   'PRODUCTION_BASELINE_MANIFEST_MISMATCH');
 assert.equal(JSON.parse(productionBaselineRaw).files.length, 71);
-const runtimeRaw = readFileSync(new URL('./fixtures/backend-ada6600-manifest.json', import.meta.url));
-assert.equal(sha256(runtimeRaw), '9321fe841690a3511b2399661fa7c8b860315f55dfed2389362d2c2a62f69619',
+const adaBaselineRaw = readFileSync(new URL('./fixtures/backend-ada6600-manifest.json', import.meta.url));
+assert.equal(sha256(adaBaselineRaw), '9321fe841690a3511b2399661fa7c8b860315f55dfed2389362d2c2a62f69619',
+  'ADA6600_BASELINE_MANIFEST_MISMATCH');
+assert.equal(JSON.parse(adaBaselineRaw).files.length, 83);
+const runtimeRaw = readFileSync(new URL('./fixtures/backend-47ed6f8-manifest.json', import.meta.url));
+assert.equal(sha256(runtimeRaw), 'ed4058842c6bef9dd18791424abff99418c931a9821c74fca38e09b4f34e9aee',
   'RUNTIME_MANIFEST_MISMATCH');
 const runtime = JSON.parse(runtimeRaw);
-assert.equal(runtime.source_commit, 'ada6600b2cecb9c4c48932d3a452349e64a06c2f');
-assert.equal(runtime.files.length, 83);
+assert.equal(runtime.source_commit, '47ed6f87323812da561ddf219cf13a1eb852f5f7');
+assert.equal(runtime.files.length, 95);
 export const BACKEND_SOURCE_COMMIT = runtime.source_commit;
 const repo = new URL('../../../', import.meta.url);
 for (const file of runtime.files) {
