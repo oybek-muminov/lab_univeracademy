@@ -1,0 +1,85 @@
+{
+  "status": "LOCAL_CANDIDATE_ONLY; NOT_COMMITTED_OR_UPLOADED",
+  "base": "9a9dd43cd0f565bac8f8b333b044f54650919531",
+  "source_files_changed_or_added": 10,
+  "files": [
+    {
+      "path": "package.json",
+      "bytes": 1712,
+      "sha256": "1c8f0f50a9052a773496de0aef29817f9fec17a7dd33384353e3c33da303103c",
+      "before": {
+        "bytes": 1646,
+        "sha256": "3cea34429f7719c62c6034edeadffaa9756ba5262fb2338e7443637399a84937"
+      }
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-state.ts",
+      "bytes": 7338,
+      "sha256": "9f8404d4caf65744d781eebd2931e27f2407fc3669a53b7afbfb522ad13183a1",
+      "before": {
+        "bytes": 7331,
+        "sha256": "0dd7d98f647ad45b277cd6a7ca6f6cd02819a8f707a1357ea9eed5506967c5bf"
+      }
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "bytes": 4949,
+      "sha256": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd",
+      "before": null
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 12407,
+      "sha256": "779cabf11343f323ff3af82dae5f05c31365a7c05df3bae869c1a76124973665",
+      "before": null
+    },
+    {
+      "path": "tests/clerk-auth/fixture.mjs",
+      "bytes": 5512,
+      "sha256": "f80662d9193ddebf03c600638f8a2ab95ec96541c1522a5a3ebcb3cede3eb108",
+      "before": null
+    },
+    {
+      "path": "tests/clerk-auth/verifier.test.mjs",
+      "bytes": 4509,
+      "sha256": "73dc09ba11d9598b3e00daaf6b8b24b9468b32d6ad6ed17bc600677f579a8628",
+      "before": null
+    },
+    {
+      "path": "tests/clerk-auth/http.test.mjs",
+      "bytes": 12220,
+      "sha256": "ae6549e5fb5b657fc15801529467efcd00fe82a6f986552b13747fb7a749913c",
+      "before": null
+    },
+    {
+      "path": "tests/clerk-auth/contract.test.mjs",
+      "bytes": 2639,
+      "sha256": "d1450ed5ddc892b42eea52aec84ee32c8fd9721b895ed97afb9337fd6689eb99",
+      "before": null
+    },
+    {
+      "path": "contracts/clerk-auth.proposal.patch.json",
+      "bytes": 7354,
+      "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019",
+      "before": null
+    },
+    {
+      "path": "docs/api/clerk-auth-local-proposal-2026-11-07.md",
+      "bytes": 9978,
+      "sha256": "e3aa4624d9d61bb72f82943b7b475844768bc2ce5fd5b9bcc147bf8b3994b1d2",
+      "before": null
+    },
+    {
+      "path": "evidence/clerk-auth-2026-11-07/tests.log",
+      "bytes": 2751,
+      "sha256": "ed91e30094f81dd094cbc1528adaf3c04efb462917b980d01839d3794afdaafc",
+      "before": null
+    },
+    {
+      "path": "evidence/clerk-auth-2026-11-07/typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f",
+      "before": null
+    }
+  ]
+}

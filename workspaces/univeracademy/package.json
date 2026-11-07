@@ -20,7 +20,8 @@
     "test:production-client": "node --test tests/enrollment/production-client.test.mjs",
     "test:enrollment-staff": "node --test tests/enrollment/identity-staff.test.mjs",
     "test:first-test": "node --test tests/first-test/*.test.mjs",
-    "test:vercel-node": "node --test tests/vercel-node/*.test.mjs"
+    "test:vercel-node": "node --test tests/vercel-node/*.test.mjs",
+    "test:clerk-auth": "node --test tests/clerk-auth/*.test.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",

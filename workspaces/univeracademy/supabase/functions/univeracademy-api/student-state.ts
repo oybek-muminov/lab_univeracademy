@@ -8,7 +8,7 @@ export type Profile = {
   roles: ("student" | "teacher" | "admin" | "owner")[];
   registration_complete: boolean; active_group_id: string | null; qadam_id: string | null;
 };
-export type Person = { telegramId: number; enabled: boolean; profile: Profile };
+export type Person = { telegramId: number | null; enabled: boolean; profile: Profile };
 export type Family = {
   personId: string; expiresAt: number; revokedAt: number | null;
   logoutRetainUntil: number | null;

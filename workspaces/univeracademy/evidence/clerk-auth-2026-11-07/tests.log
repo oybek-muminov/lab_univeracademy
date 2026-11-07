@@ -1,0 +1,28 @@
+✔ unapplied Clerk contract patch resolves on exact baseline, changes only auth security/new exchange, and its new strict schema accepts only empty object (238.154329ms)
+✔ fresh Clerk account is a new UUID student with no Telegram/group/grant/staff rights; JWT/email/name never auto-merges (151.947951ms)
+✔ existing mapping preserves the same account, answers/revisions/deadline; new Clerk session supersedes only the old student family (20.982879ms)
+✔ invalid/expired/disabled/revoked login does not consume proof, create account or disturb an active family (19.402241ms)
+✔ JWT exchange replay is one-use; concurrent first logins serialize to one canonical account and one active app family (7.798299ms)
+✔ provider/session binding and current liveness guard opaque access and refresh; outages never grant offline access (10.241372ms)
+✔ unknown exchange COMMIT is not ACKed; a fresh JWT for the still-current session recovers without a second account (8.103469ms)
+✔ Telegram link remains authenticated but blocked; optional existing Telegram association never auto-links or lets old Clerk session reclaim (15.047282ms)
+✔ staff device policy has no default; student/claim/cached owner authority cannot become staff (6.906262ms)
+✔ explicit fixture-only staff gate reuses current scope/capabilities and immutable receipts; revocation defeats old JWT replay (17.003993ms)
+✔ Clerk v2 RS256 proof preserves user_/sess_ case and never projects JWT/organization roles into authority (35.059175ms)
+✔ malformed/wrong provider identifiers, version, dates, status, authorized party and impersonation fail closed (26.119879ms)
+✔ algorithm/key/audience profile is explicit; unknown-key failure differs from trusted resolver availability (27.225777ms)
+✔ current provider session/account tuple and expiry must match; status/outage never becomes authentication (1.705485ms)
+✔ existing UUID staff verifier stays strict and rejects Clerk IDs even with its authenticated role claim (2.852651ms)
+✔ real ES256 signature and exact issuer/audience produce only identity/time/session proof, ignoring forged application roles (16.374743ms)
+✔ wrong signature, issuer, audience, absent session, anonymous and service-role tokens fail closed (17.174495ms)
+✔ expiry equality, future iat/nbf, fractional NumericDate and disallowed algorithm are rejected (17.853958ms)
+✔ current disabled/unapproved staff, expired post-lock proof and absent/revoked provider session cannot use a signed token (3.927164ms)
+✔ trusted key/session source outage is availability failure; incoming jku cannot choose a provider endpoint (6.162742ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1162.873114

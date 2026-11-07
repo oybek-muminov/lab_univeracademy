@@ -1,4 +1,51 @@
-# Current Backend publication — Vercel Node transport candidate
+# Current Backend publication — Clerk auth local candidate
+
+Based on branch HEAD9a9dd43cd0f565bac8f8b333b044f54650919531. This update publishes
+the approved Clerk Backend candidate for laboratory QA; all current Mini App files
+are preserved. No main-project, real Clerk/Google/DB/provider, credential/OAuth,
+domain or deployment operation is included.
+
+`createClerkCandidateHandler` uses the existing student/staff handlers with a
+separate Clerk v2 RS256 verifier. `user_…`/`sess_…` remain case-sensitive external
+identifiers mapped to an internal UUID; the old UUID/Supabase JWT verifier is
+unchanged. Current server identity, role, approval, capability and scope are used;
+JWT organization/custom role/email/name claims confer no authority or account merge.
+
+The proposed `POST /api/v1/auth/clerk`, Bearer Clerk JWT plus `{}`, returns the
+existing opaque SuccessSession envelope. Existing/new student account, replay/
+provider-liveness checks and one active student family are covered locally.
+Supersession preserves answers/revisions/deadlines. The contract JSON patch is
+unapplied and NOT ACCEPTED; original OpenAPI/client/types/locks remain unchanged.
+
+Author checks:20/20 PASS (15 new plus5 old staff JWT regressions), typecheck exit0.
+Exact tested source/log bytes are preserved in `evidence/clerk-auth-2026-11-07/`.
+Its preparation manifest/status and `docs/api/clerk-auth-local-proposal-2026-11-07.md`
+remain historical local-preparation evidence; this README and
+`docs/api/clerk-auth-publication-verification-2026-11-07.json` describe publication.
+Tests were not redundantly rerun during this source upload.
+
+```sh
+npm ci --ignore-scripts
+npm run setup:validator
+npm run test:clerk-auth
+npm run typecheck
+```
+
+Open gates remain explicit: Telegram link returns409 without mutation; staff
+device policy absent means503, and its synthetic test gate is not a product rule.
+Durable Clerk identity/family-binding/fence/replay storage, nullable Telegram DB
+schema/readers, real liveness/JWKS, consumer generation and Vercel auth bootstrap
+are pending. The global-queue memory transaction double proves no actual DB/RLS/
+isolation behavior. Existing Vercel default stays unconfigured503. No real origin
+or provider settings are inferred from a planned/reserved domain.
+
+Mini App's strict guard still pins95 files from Backend47ed6f8. UI-owner repinning
+and combined repository QA are required; no guard/client/UI file is modified or
+bypassed here. BACKEND-CURRENT-SHA256SUMS lists current Backend bytes; previous
+sums/reports are provenance. No secret, real user data, cache/build or old archive
+is added.
+
+## Prior Backend47ed6f8 publication — historical Vercel transport checkpoint
 
 Based on branch HEAD29217c3a0ad8fad1140435c752857a60ef71b441, preserving its full
 Mini App subtree. This publication adds only the reviewed Vercel Node adaptation,

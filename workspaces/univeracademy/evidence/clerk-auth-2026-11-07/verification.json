@@ -1,0 +1,51 @@
+{
+  "status": "LOCAL_SYNTHETIC_PASS; CONTRACT_UNAPPLIED; REAL_INTEGRATION_BLOCKED",
+  "base": "9a9dd43cd0f565bac8f8b333b044f54650919531",
+  "tests": {
+    "command": "node --test tests/clerk-auth/contract.test.mjs tests/clerk-auth/verifier.test.mjs tests/clerk-auth/http.test.mjs tests/storage-auth/staff-jwt.test.mjs",
+    "total": 20,
+    "new": 15,
+    "old_staff_jwt_regressions": 5,
+    "pass": 20,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0
+  },
+  "typecheck": {
+    "command": "npm run typecheck",
+    "exit": 0
+  },
+  "source_manifest_sha256": "2b9bd03563d308abee6aa6b22c919908d19a2ca6c1a473ece9a18e02afa4223a",
+  "proposal": {
+    "path": "contracts/clerk-auth.proposal.patch.json",
+    "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019",
+    "unapplied": true,
+    "dry_run_only_openapi_bytes": 432851,
+    "dry_run_only_openapi_sha256": "50756afdc86b5a92229c317759902e97b9c152b22da38a5762abc904e31d9901",
+    "full_new_oas_generated_client_acceptance": "NOT_RUN; original pins untouched"
+  },
+  "privacy": {
+    "unreviewed_matches": [],
+    "credentials": "ephemeral synthetic signing keys only; no real credential/data or literal signed tokens"
+  },
+  "unchanged": {
+    "contracts/review-only.openapi.json": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "packages/api-client/student-client.ts": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "packages/api-client/student-types.d.ts": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+    "package-lock.json": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503",
+    "supabase/functions/univeracademy-api/staff-jwt.ts": "6b28fe7ab3c08a6f4c6b6867dd353a98dc397afd006236a510324c9e4cc3fc1b",
+    "api/index.mjs": "e8c6699dbfac16771857c2b684b1198ac53950cf71469149200b619fb9412a4b",
+    "runtime/vercel-node.mjs": "eb95ef50e999b44403f20fa2bdd51923443f1ef6038f60c7588bda1820537171"
+  },
+  "mini_app_tree_preserved": "23526eb9f1bb1c8de38174eebeccb6fa1846a540",
+  "blockers": [
+    "Telegram linking/ownership/unlink protocol unresolved; authenticated link returns409 with no mutation",
+    "Staff device rule unresolved; missing gate returns503; fixture-only gate is not production policy",
+    "Durable Clerk identities/fences/bindings/replay metadata and nullable Telegram schema/readers not implemented",
+    "Actual Clerk/Google SDK/JWKS/liveness normalization and policy acceptance not run",
+    "Vercel/Mini App routing/client/bootstrap not integrated; default Vercel API remains503"
+  ],
+  "student_reentry": "retired SID denied, no silent reinstatement; interactive old-device re-entry UX pending",
+  "storage_proof": "global-queue clone transaction double, not DB/isolation/RLS evidence",
+  "main_repo_DB_provider_OAuth_credentials_remote_deploy_changes": false
+}

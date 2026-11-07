@@ -1,0 +1,58 @@
+{
+  "status": "AUTHOR_SYNTHETIC_PASS; CLERK_CONTRACT_UNAPPLIED; REAL_INTEGRATION_AND_COMBINED_QA_PENDING",
+  "branch": "qa/current-flow-20261106",
+  "publication_parent": "9a9dd43cd0f565bac8f8b333b044f54650919531",
+  "preparation_source_manifest": "evidence/clerk-auth-2026-11-07/source-manifest.json",
+  "preparation_source_manifest_sha256": "2b9bd03563d308abee6aa6b22c919908d19a2ca6c1a473ece9a18e02afa4223a",
+  "preparation_verification_sha256": "c65f46dd85d6d2c8e27148edced712f66713cdc80ec82deb5843dfdf8f3f2bce",
+  "preparation_status_preserved_as_historical_provenance": true,
+  "validation": {
+    "command": "node --test tests/clerk-auth/contract.test.mjs tests/clerk-auth/verifier.test.mjs tests/clerk-auth/http.test.mjs tests/storage-auth/staff-jwt.test.mjs",
+    "source": "exact tested local candidate and frozen logs; no redundant test rerun during upload",
+    "tests": 20,
+    "new": 15,
+    "old_staff_jwt_regressions": 5,
+    "pass": 20,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0,
+    "typecheck": "npm run typecheck: exit0",
+    "frozen_source_and_log_bytes_verified": true
+  },
+  "contract_proposal": {
+    "path": "contracts/clerk-auth.proposal.patch.json",
+    "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019",
+    "status": "UNAPPLIED / NOT ACCEPTED; original contract/client/types unchanged",
+    "version": "0.3.0-clerk-auth-proposal.1",
+    "staff_uuid_verifier_changed": false
+  },
+  "mini_app": {
+    "files_preserved": 68,
+    "parent_git_tree": "23526eb9f1bb1c8de38174eebeccb6fa1846a540",
+    "guard_exit": 1,
+    "guard": "BACKEND_TARGET_SIZE_MISMATCH: BACKEND-CURRENT-SHA256SUMS; still pins Backend47ed6f8/95 files",
+    "guard_modified_or_bypassed": false,
+    "needed": "UI owner publishes its prototype/repins strict Backend manifest, then combined repository QA"
+  },
+  "privacy": {
+    "unreviewed_targeted_scan_matches": 0,
+    "signing_keys": "ephemeral synthetic test keys only; private material not exported/persisted",
+    "real_data_or_real_credentials_added": false,
+    "cache_build_old_archives_added": false
+  },
+  "unchanged_sha256": {
+    "client": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "types": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+    "api": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "dependency_lock": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503"
+  },
+  "blockers": [
+    "Telegram link protocol unresolved; authenticated link fails409 without mutation",
+    "Staff device policy unresolved; missing gate fails503; test gate is not production policy",
+    "Durable Clerk identities/fences/family bindings/replay and nullable Telegram SQL schema/readers not implemented",
+    "Actual Clerk/Google SDK/JWKS/liveness normalization and auth profile/contract acceptance NOT_RUN",
+    "Vercel/client/Mini App auth bootstrap not integrated; default API remains503",
+    "Real DB/RLS/isolation/browser/provider revocation latency/capacity NOT_RUN"
+  ],
+  "main_project_real_DB_provider_credential_OAuth_domain_deploy_changes": false
+}
