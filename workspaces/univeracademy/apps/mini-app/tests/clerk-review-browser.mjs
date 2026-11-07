@@ -14,7 +14,7 @@ for (const width of [320, 390, 1280]) {
     await vite.listen();
     const url = `http://127.0.0.1:${vite.httpServer.address().port}/tests/clerk-review.fixture.html`;
     const proofs = [await backend.lab.sign(), await backend.lab.sign(),
-      await backend.lab.sign(backend.lab.actors.fresh), await backend.lab.sign()];
+      await backend.lab.sign(backend.lab.actors.fresh), await backend.lab.sign(), await backend.lab.sign()];
     await new Promise((resolve, reject) => {
       const child = spawn('python3', ['-B', 'tests/clerk-review-browser.py'], { stdio: ['pipe', 'inherit', 'inherit'] });
       // Ephemeral synthetic proofs travel in process memory, never a file/log/URL.

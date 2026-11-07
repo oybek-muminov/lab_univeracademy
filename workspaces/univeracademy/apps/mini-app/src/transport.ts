@@ -13,8 +13,11 @@ export class StudentFailure extends Error {
 export function asFailure(error: unknown): StudentFailure {
   return error instanceof StudentFailure ? error : new StudentFailure('offline', 'UNCONFIRMED', null, true);
 }
-export function failureMessage(error: StudentFailure): string {
-  if (error.kind === 'auth') return 'Sessiyani qayta oching. Telegramdan yangidan kiring; test vaqti davom etadi.';
+export type SignInMethod = 'telegram' | 'clerk';
+export function failureMessage(error: StudentFailure, signInMethod: SignInMethod = 'telegram'): string {
+  if (error.kind === 'auth') return signInMethod === 'clerk'
+    ? 'Sessiyani qayta oching. Google yoki email orqali yangidan kiring; test vaqti davom etadi.'
+    : 'Sessiyani qayta oching. Telegramdan yangidan kiring; test vaqti davom etadi.';
   if (error.kind === 'forbidden') return 'Bu amal uchun ruxsat yo‘q. Testlar ro‘yxatini yangilang.';
   if (error.kind === 'missing') return 'Test yoki urinish ochilmadi. Testlar ro‘yxatini yangilang.';
   if (error.kind === 'limited') return 'So‘rovlar vaqtincha cheklangan. Biroz kutib qayta tekshiring.';

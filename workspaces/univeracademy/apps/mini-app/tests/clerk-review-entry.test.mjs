@@ -181,6 +181,8 @@ test('provider revocation hides the old flow; a new verified session resumes ser
   const attempt = old.state.attempt, q = attempt.questions[0]; await old.choose(q.id, q.options[0].id);
   h.lab.live.get(h.lab.sids.first).status = 'revoked'; await old.enter();
   assert.equal(old.state.student, null); assert.equal(old.state.attempt, null); assert.equal(old.state.screen, 'welcome');
+  assert.match(old.state.notice, /Google yoki email orqali yangidan kiring/);
+  assert(!old.state.notice.includes('Telegram'));
   h.runtime.reset(); await h.runtime.google(); const fresh = h.runtime.snapshot().flow;
   await fresh.openExam(fresh.state.exams[0]); assert.equal(fresh.state.attempt.id, attempt.id);
   assert.equal(fresh.state.attempt.deadline, attempt.deadline); assert.equal(fresh.state.attempt.answers[q.id].revision, 1);

@@ -18,12 +18,18 @@ with sync_playwright() as p:
         page = browser.new_page(viewport={'width': args['width'], 'height': 900})
         page.set_default_timeout(10000)
         errors, blocked, audit, popups = [], [], [], []
+        fault = {'revoke_read': False}
         page.on('pageerror', lambda _: errors.append(True))
         page.on('popup', lambda _: popups.append(True))
         def gate(route):
             url = urlsplit(route.request.url)
             if url.netloc != origin.netloc or url.path.startswith('/api/v1/admin/'):
                 blocked.append(True); route.abort()
+            elif fault['revoke_read'] and route.request.method == 'GET' and url.path.startswith('/api/v1/exams/'):
+                fault['revoke_read'] = False
+                route.fulfill(status=401, content_type='application/json', body=json.dumps({'error': {
+                    'code': 'CLERK_SESSION_REVOKED', 'message': 'Synthetic U1 UI fault',
+                    'request_id': '00000000-0000-4000-8000-000000000901'}}))
             else:
                 route.continue_()
         page.route('**/*', gate)
@@ -81,6 +87,28 @@ with sync_playwright() as p:
         answer = saved.value.json()['data']; assert answer['revision'] == 1
         expect(page.get_by_text('✓ Tasdiqlangan', exact=True)).to_be_visible(); screenshot('saved')
 
+        # Browser-only 401 injection exercises actual rendered re-entry guidance.
+        # The Node integration suite separately revokes the RAM provider session.
+        fault['revoke_read'] = True
+        with page.expect_response(match('GET', f'/api/v1/exams/{assignment}')) as denied:
+            page.get_by_role('button', name='Saqlanganlarni tekshirish', exact=True).click()
+        assert denied.value.status == 401
+        notice = 'Sessiyani qayta oching. Google yoki email orqali yangidan kiring; test vaqti davom etadi.'
+        expect(page.get_by_text(notice, exact=True)).to_be_visible(); screenshot('u1-clerk-reentry')
+        assert page.get_by_role('timer').count() == 0 and page.get_by_role('radio').count() == 0
+        assert 'Telegramdan yangidan kiring' not in page.locator('body').inner_text()
+        expect(page.get_by_text('Qayta kirishda Google yoki email usulini tanlang.', exact=True)).to_be_visible()
+        assert '@univeracademybot' not in page.locator('body').inner_text()
+        page.get_by_role('button', name='Sinovga kirish', exact=True).click()
+        expect(page.get_by_role('heading', name='Kabinetga kirish', exact=True)).to_be_visible()
+        recovered, _ = google(4)
+        assert recovered['profile']['person_id'] == first['profile']['person_id']
+        with page.expect_response(match('GET', f'/api/v1/attempts/{aid}')) as reentered:
+            page.get_by_role('button', name='Testni ko‘rish').first.click()
+        assert reentered.value.json()['data']['deadline_at'] == attempt['deadline_at']
+        stored = next(a for a in reentered.value.json()['data']['answers'] if a['question_id'] == question)
+        assert stored['revision'] == 1 and stored['selected_option_id'] == answer['selected_option_id']
+
         # Reload holds no app proof. A new synthetic provider JWT must exchange.
         page.reload(); second, _ = google(1)
         assert first['profile']['person_id'] == second['profile']['person_id']
@@ -132,12 +160,14 @@ with sync_playwright() as p:
         page.get_by_role('button', name='Bekor qilish').click()
         page.evaluate('async () => { window.__UA_RELEASE_SYNTHETIC_PROVIDER__(); await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r))); }')
         expect(page.get_by_role('heading', name='Kabinetga kirish', exact=True)).to_be_visible()
-        assert sum(a['path'].endswith('/auth/clerk') for a in audit) == count == 3
+        assert sum(a['path'].endswith('/auth/clerk') for a in audit) == count == 4
         assert page.evaluate('localStorage.length + sessionStorage.length') == 0
         assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')
         assert page.url == args['url'] and not errors and not blocked and not popups
-        assert all(a['status'] == 200 for a in audit)
-        print(json.dumps({'status': 'PASS', 'width': args['width'], 'exchange': 3, 'bodyOnlyLogout': 2,
+        assert sum(a['status'] == 401 for a in audit) == 1
+        assert all(a['status'] in [200, 401] for a in audit)
+        print(json.dumps({'status': 'PASS', 'width': args['width'], 'exchange': 4, 'bodyOnlyLogout': 2,
+            'U1_correct_Clerk_guidance_and_UI_reentry': True, 'UI_fault': 'single synthetic401; provider revocation separately tested over TCP in Node',
             'reloadResume': True, 'submitResultHistory': True, 'freshUngrouped': True,
             'cancelLateProvider': True, 'externalRequests': 0, 'storageEntries': 0,
             'realClerkGoogleEmailDB': 'NOT_RUN', 'API': 'PROVISIONAL / NOT ACCEPTED'}))

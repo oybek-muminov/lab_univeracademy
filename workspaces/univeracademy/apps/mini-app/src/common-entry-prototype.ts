@@ -87,7 +87,7 @@ export function createCommonEntryPrototype(options: {
     const student = await authorization.port.profile(); check(generation);
     if (!student || student.person !== authorization.person) throw new EntryDemoFailure('PROFILE_MISMATCH');
     const exams = student.registrationComplete ? await authorization.port.exams() : []; check(generation);
-    const flow = new StudentFlow(authorization.port);
+    const flow = new StudentFlow(authorization.port, undefined, undefined, 'clerk');
     flow.patch({ student, exams, screen: student.registrationComplete ? 'exams' : 'profile' });
     challenge = null; email = '';
     update({ step: 'ready', maskedEmail: '', notice: '', flow });

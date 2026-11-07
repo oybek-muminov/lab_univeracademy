@@ -124,6 +124,16 @@ test('an already hydrated RAM session does not replay the launch', async () => {
   assert.equal(h.calls.filter(call => call.path === '/auth/telegram').length, 1);
 });
 
+test('Telegram auth loss keeps Telegram guidance and a fresh launch can re-enter', async () => {
+  let revoked = false;
+  const h = harness({ respond: async (call, reply) => call.path === '/me' && revoked ? fail(401, 'SESSION_REVOKED') : reply() });
+  const old = await h.runtime.start(); revoked = true; await old.enter();
+  assert.equal(old.state.student, null); assert.equal(old.state.screen, 'welcome');
+  assert.match(old.state.notice, /Telegramdan yangidan kiring/); assert(!old.state.notice.includes('Google'));
+  revoked = false; h.bridge.initData = rawB;
+  const fresh = await h.runtime.start(); assert.notEqual(fresh, old); assert.equal(fresh.state.student.person, id(9));
+});
+
 test('profile retry uses existing RAM session after a temporary read failure', async () => {
   let failed = false;
   const h = harness({ respond: async (call, reply) => {

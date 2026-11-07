@@ -1,4 +1,5 @@
 import { asFailure, createOperationJournal, failureMessage, StudentFailure } from './transport.ts';
+import type { SignInMethod } from './transport.ts';
 
 // UI projections only; actual wire schemas/client remain Backend-owned.
 export type Lifecycle = 'ready' | 'in_progress' | 'submitted' | 'expired' | 'forced' | 'cancelled' | 'recovery_lapsed';
@@ -44,12 +45,13 @@ export class StudentFlow {
   port: StudentPort;
   now: () => number;
   journal: ReturnType<typeof createOperationJournal>;
+  signInMethod: SignInMethod;
   state: State;
   listeners = new Set<() => void>();
   startKey: string | null = null;
   submitKey: string | null = null;
-  constructor(port: StudentPort, now = () => performance.now(), journal = createOperationJournal()) {
-    this.port = port; this.now = now; this.journal = journal;
+  constructor(port: StudentPort, now = () => performance.now(), journal = createOperationJournal(), signInMethod: SignInMethod = 'telegram') {
+    this.port = port; this.now = now; this.journal = journal; this.signInMethod = signInMethod;
     this.state = { screen: 'welcome', busy: false, notice: '', failure: null, retryAt: 0, student: null, exams: [],
       exam: null, attempt: null, draft: null, needsRead: false, result: null, history: [], clockAnchor: now() };
   }
@@ -62,7 +64,7 @@ export class StudentFlow {
   }
   fail(error: unknown) {
     const failure = asFailure(error);
-    this.patch({ failure, notice: failureMessage(failure), retryAt: failure.retryAfterMs === null ? 0 : this.now() + failure.retryAfterMs });
+    this.patch({ failure, notice: failureMessage(failure, this.signInMethod), retryAt: failure.retryAfterMs === null ? 0 : this.now() + failure.retryAfterMs });
     if (failure.kind === 'auth' || failure.kind === 'forbidden' || failure.kind === 'missing') {
       // Conceal protected content after current auth/scope is lost. Keys remain scoped.
       this.patch({ attempt: null, draft: null, result: null, history: [], exams: [], exam: null, needsRead: true,
