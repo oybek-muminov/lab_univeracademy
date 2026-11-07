@@ -38,12 +38,20 @@ const reviewBaselineRaw = readFileSync(new URL('./fixtures/backend-b9efa597-mani
 assert.equal(sha256(reviewBaselineRaw), 'c9a2f4ceee5bd1ade89df05c618e0c302b2b3a454f3c2b909397beb0256db31b',
   'CLERK_REVIEW_BASELINE_MANIFEST_MISMATCH');
 assert.equal(JSON.parse(reviewBaselineRaw).files.length, 133);
-const runtimeRaw = readFileSync(new URL('./fixtures/backend-a36d41a-manifest.json', import.meta.url));
-assert.equal(sha256(runtimeRaw), '4b57143f14c6f6d77d1f30bec340f61f2f5cdea608d044a7f71df76e71473082',
+const providerBaselineRaw = readFileSync(new URL('./fixtures/backend-a36d41a-manifest.json', import.meta.url));
+assert.equal(sha256(providerBaselineRaw), '4b57143f14c6f6d77d1f30bec340f61f2f5cdea608d044a7f71df76e71473082',
+  'CLERK_PROVIDER_BASELINE_MANIFEST_MISMATCH');
+assert.equal(JSON.parse(providerBaselineRaw).files.length, 149);
+const sdkStorageBaselineRaw = readFileSync(new URL('./fixtures/backend-6f2dbee7-manifest.json', import.meta.url));
+assert.equal(sha256(sdkStorageBaselineRaw), '2a5f0b8fd2f4939932e0e50b4e30d14d0c84b502038852770dc456e09bc68fa0',
+  'CLERK_SDK_STORAGE_BASELINE_MANIFEST_MISMATCH');
+assert.equal(JSON.parse(sdkStorageBaselineRaw).files.length, 163);
+const runtimeRaw = readFileSync(new URL('./fixtures/backend-c78c293-manifest.json', import.meta.url));
+assert.equal(sha256(runtimeRaw), 'f085f2666c7cb3811da2ede722428ea275aa01e258b77666769447174c23fd06',
   'RUNTIME_MANIFEST_MISMATCH');
 const runtime = JSON.parse(runtimeRaw);
-assert.equal(runtime.source_commit, 'a36d41ac52c2b12eda4f191020d7420edb5dd23f');
-assert.equal(runtime.files.length, 149);
+assert.equal(runtime.source_commit, 'c78c293acdf9162080c2da796bd0a5d34e4b8c90');
+assert.equal(runtime.files.length, 172);
 export const BACKEND_SOURCE_COMMIT = runtime.source_commit;
 const repo = new URL('../../../', import.meta.url);
 for (const file of runtime.files) {
