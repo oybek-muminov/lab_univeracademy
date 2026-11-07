@@ -9,7 +9,9 @@ import { spawnSync } from 'node:child_process';
 
 const source = fileURLToPath(new URL('../../../', import.meta.url));
 const guard = 'apps/mini-app/tests/verify-backend-targets.mjs';
-const current = 'apps/mini-app/tests/fixtures/current-flow-backend-manifest.json';
+const current = 'apps/mini-app/tests/fixtures/production-backend-manifest.json';
+const previous = 'apps/mini-app/tests/fixtures/current-flow-backend-manifest.json';
+const copies = ['student-client.ts', 'student-types.d.ts'].map(name => 'apps/mini-app/src/owner-client/' + name);
 const history = 'apps/mini-app/tests/fixtures/combined-259b675e-manifest.json';
 const attempts = 'supabase/functions/univeracademy-api/attempts.ts';
 const sha = value => createHash('sha256').update(value).digest('hex');
@@ -18,7 +20,7 @@ const manifest = JSON.parse(readFileSync(join(source, current), 'utf8'));
 function check(mutate, expected) {
   const root = mkdtempSync(join(tmpdir(), 'ua-current-guard-'));
   try {
-    for (const name of [guard, current, history, ...manifest.files.map(file => file.path)]) {
+    for (const name of [guard, current, previous, history, ...copies, ...manifest.files.map(file => file.path)]) {
       const path = join(root, name); mkdirSync(dirname(path), { recursive: true });
       writeFileSync(path, readFileSync(join(source, name)));
     }
@@ -42,7 +44,7 @@ function oldAttempts(root) {
   return old; // Exact historical bytes; never executed or written over owner source.
 }
 
-test('current guard accepts all 44 exact Backend files', () => check());
+test('current guard accepts all 71 exact Backend files and both browser owner copies', () => check());
 test('same-size corruption of new attempts bytes is rejected', () => check(root => {
   const path = join(root, attempts), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
 }, 'BACKEND_TARGET_HASH_MISMATCH: ' + attempts));
@@ -65,3 +67,16 @@ test('historical manifest tampering is rejected', () => check(root => {
 test('current manifest tampering is rejected', () => check(root => {
   const path = join(root, current); writeFileSync(path, readFileSync(path, 'utf8') + '\n');
 }, 'RUNTIME_MANIFEST_MISMATCH'));
+
+test('previous 44-file manifest tampering is rejected', () => check(root => {
+  const path = join(root, previous); writeFileSync(path, readFileSync(path, 'utf8') + '\n');
+}, 'PREVIOUS_RUNTIME_MANIFEST_MISMATCH'));
+test('browser production client same-size corruption is rejected', () => check(root => {
+  const path = join(root, copies[0]), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
+}, 'OWNER_CLIENT_HASH_MISMATCH: student-client.ts'));
+test('browser stale-size local-only client is rejected', () => check(root => {
+  const path = join(root, copies[0]); writeFileSync(path, readFileSync(path).subarray(0, 6968));
+}, 'OWNER_CLIENT_SIZE_MISMATCH: student-client.ts'));
+test('browser types same-size corruption is rejected', () => check(root => {
+  const path = join(root, copies[1]), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
+}, 'OWNER_CLIENT_HASH_MISMATCH: student-types.d.ts'));

@@ -1,4 +1,21 @@
-# Mini App: current local HTTP flow
+# Mini App: production owner client review
+
+Current composition targets Backend `1335762a8e133311849b2dad1ddc6be3ccf9bb53`.
+Production main now connects the Telegram bootstrap to Backend
+createProductionStudentClient through the shared UI adapter. Public HTTPS origins
+and SDK loading remain explicit; no live bot/API/hosting is configured.
+
+See [production entry and checks](PRODUCTION-ENTRY.md),
+[bootstrap lifecycle](TELEGRAM-BOOTSTRAP.md), and
+[current review evidence](PRODUCTION-INTEGRATION-QA.json).
+The guard now pins all71 current Backend files and both browser owner copies;
+the older raw manifests are retained. The active-test JSX/CSS are unchanged.
+
+## Prior local HTTP checkpoint (historical)
+
+The following text and CURRENT-FLOW-QA.json describe the earlier8f863e6/3d029d0
+checkpoint. They are provenance, not fresh evidence for Backend1335762 or real
+production persistence.
 
 Local synthetic candidate on Backend commit
 `8f863e645746159466e06dabb56db3b94f26be05`, in the laboratory branch

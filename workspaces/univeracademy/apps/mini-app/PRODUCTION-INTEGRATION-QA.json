@@ -1,0 +1,203 @@
+{
+  "status": "AUTHOR_LOCAL_PASS_INDEPENDENT_QA_PENDING_NOT_DEPLOYED",
+  "backend_base_commit": "1335762a8e133311849b2dad1ddc6be3ccf9bb53",
+  "api_status": "PROVISIONAL_NOT_ACCEPTED",
+  "owner_client": {
+    "bytes": 8521,
+    "sha256": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae"
+  },
+  "owner_types": {
+    "bytes": 46340,
+    "sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+  },
+  "full_api_sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+  "backend_guard": {
+    "files": 71,
+    "browser_copies": 2,
+    "manifest_sha256": "bb8f1a619d677826225253614771863136cab7616c16bfdf35aaaf1a12b6b669",
+    "historical_manifests": "PRESERVED_PINNED"
+  },
+  "checks": [
+    {
+      "command": "npm test",
+      "cwd": "apps/mini-app",
+      "result": "PASS",
+      "tests": 177,
+      "fail": 0
+    },
+    {
+      "command": "node --test tests/enrollment/production-client.test.mjs",
+      "cwd": "workspaces/univeracademy",
+      "result": "PASS",
+      "tests": 4
+    },
+    {
+      "command": "node --test --test-reporter=tap tests/current-flow-guard.test.mjs",
+      "cwd": "apps/mini-app",
+      "result": "PASS",
+      "tests": 12,
+      "included_in_mini_app_suite": true
+    },
+    {
+      "command": "npm run test:production-entry",
+      "cwd": "apps/mini-app",
+      "result": "PASS",
+      "browser_cases": 7,
+      "transport": "Pinned production constructor; synthetic RAM Responses"
+    },
+    {
+      "command": "npm run test:production-build",
+      "cwd": "apps/mini-app",
+      "result": "PASS",
+      "browser_cases": 2,
+      "transport": "Actual production main; SDK/API intercepted; configured login/profile/exams/logout and empty config"
+    },
+    {
+      "command": "npm run test:current-flow",
+      "cwd": "apps/mini-app",
+      "result": "PASS",
+      "browser_cases": 3,
+      "widths": [
+        320,
+        390,
+        1280
+      ],
+      "transport": "Actual loopback RAM Backend; current pinned71 files; Teacher publish + scoped Admin assignment; local_fixture UI entry"
+    },
+    {
+      "command": "npm run check",
+      "cwd": "apps/mini-app",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run build",
+      "cwd": "apps/mini-app",
+      "result": "PASS"
+    }
+  ],
+  "production_http_case": "Included in177: actual production bootstrap/connection/client mapped explicitly to a fresh loopback RAM Backend; register/timer/CAS save-clear-resume/submit/result/history/body-only logout PASS.",
+  "current_flow_browser": [
+    {
+      "width": 320,
+      "status": "PASS",
+      "backendCommit": "1335762a8e133311849b2dad1ddc6be3ccf9bb53",
+      "ungrouped_empty": true,
+      "membership_only_empty": true,
+      "literal_reload_saved_answer_and_same_deadline": true,
+      "new_question_from_HTTP_publication": true,
+      "display": {
+        "earned_points": "0.1",
+        "max_points": "0.3",
+        "percentage": "50.00"
+      },
+      "raw_submit_result_history_match": true,
+      "browser_errors": 0,
+      "blocked_requests": 0
+    },
+    {
+      "width": 390,
+      "status": "PASS",
+      "backendCommit": "1335762a8e133311849b2dad1ddc6be3ccf9bb53",
+      "ungrouped_empty": true,
+      "membership_only_empty": true,
+      "literal_reload_saved_answer_and_same_deadline": true,
+      "new_question_from_HTTP_publication": true,
+      "display": {
+        "earned_points": "0.1",
+        "max_points": "0.3",
+        "percentage": "50.00"
+      },
+      "raw_submit_result_history_match": true,
+      "browser_errors": 0,
+      "blocked_requests": 0
+    },
+    {
+      "width": 1280,
+      "status": "PASS",
+      "backendCommit": "1335762a8e133311849b2dad1ddc6be3ccf9bb53",
+      "ungrouped_empty": true,
+      "membership_only_empty": true,
+      "literal_reload_saved_answer_and_same_deadline": true,
+      "new_question_from_HTTP_publication": true,
+      "display": {
+        "earned_points": "0.1",
+        "max_points": "0.3",
+        "percentage": "50.00"
+      },
+      "raw_submit_result_history_match": true,
+      "browser_errors": 0,
+      "blocked_requests": 0
+    }
+  ],
+  "unchanged_core_sha256": {
+    "src/style.css": "ecb015daf0ee0cfe727b4155ce3e5cbd785f3cd8b159f62ac422005b568df661",
+    "src/flow.ts": "7be4a1418209828e2b95178dc86929fd103f5c37a16a3a08980538e6faeba0e7",
+    "src/transport.ts": "fff27d8201db371f09363679757119ecb178661f9c44ad3825d34b497c6377e9",
+    "src/wire-map.ts": "6af2f6c1df81aeaa5f01768b4ac5a3a02e7ef62a5a21c40d5e353163e2789548"
+  },
+  "active_test_jsx": {
+    "bytes": 3346,
+    "sha256": "0e0cd079db4c9511def56158ace2bfdd0e9973e61f099c0980dac0aea9e1221e",
+    "status": "BYTE_IDENTICAL_TO_BASE"
+  },
+  "privacy": {
+    "status": "PASS",
+    "scope": "All changed Mini App files; explicit synthetic examples only. Pattern scan repeated before source publication.",
+    "real_credentials_users_or_answer_keys_added": false,
+    "production_bundle_fixture_key_or_proof_markers": "ABSENT"
+  },
+  "not_run": [
+    "Real official SDK/Telegram WebView/bot launch",
+    "Live configured API, real CORS/preflight/TLS/CSP/hosting",
+    "Real DB/provider/SQL/RLS/deployment/load",
+    "Independent QA of these combined bytes"
+  ],
+  "remaining_review": [
+    "Reviewed real app/API origins and host CORS configuration",
+    "Fresh-launch/full-reload and durable operation-key recovery policy",
+    "Additional media-origin policy; only configured API-origin HTTPS media is accepted"
+  ],
+  "backend_preservation": "All71 tracked Backend files remain byte-identical to Backend base; no non-MiniApp source modified.",
+  "evidence_log_identities": [
+    {
+      "path": "mini-app-tests.log",
+      "bytes": 16828,
+      "sha256": "9f2887fd08f740cedbbefc3e466db537d88c0961cc907d4d43a1e9cd67443fbf"
+    },
+    {
+      "path": "guard-tests.tap",
+      "bytes": 2192,
+      "sha256": "bbdb3e998d03083b15fbeb9aaafe1a5489ab55d7cddbce618ec3feb75601cab7"
+    },
+    {
+      "path": "backend-production-client-tests.tap",
+      "bytes": 1310,
+      "sha256": "1c5a80dd517a10c4afb57d369c77bc2dbe85ecaba9b819e730ab5ccfa15d8ad7"
+    },
+    {
+      "path": "synthetic-entry-browser.log",
+      "bytes": 1630,
+      "sha256": "97897716ca4a686946dbc0df8285e503cdaefbc5936ff27922401046c382cc9d"
+    },
+    {
+      "path": "production-main-browser.log",
+      "bytes": 2511,
+      "sha256": "d435ef2c996e0cd85808dc176befbf0bfc28e7b8eadbccd6dc0067cfd897aab4"
+    },
+    {
+      "path": "current-flow-browser.log",
+      "bytes": 4627,
+      "sha256": "ab55173f4b2791f72e10c5715b4d7aa21a8a5cbbeec9b4e09c784905937ed3e7"
+    },
+    {
+      "path": "typecheck.log",
+      "bytes": 263,
+      "sha256": "ddc260d0ab04bbc1803bbc81e1bcac17f9e8e36dc769870e80d1e19c71bdab0b"
+    },
+    {
+      "path": "production-build.log",
+      "bytes": 898,
+      "sha256": "9539e1de34896d285414ee0e57ed337e586d1425edc3920fb6c83f4bc9c4c9cc"
+    }
+  ]
+}

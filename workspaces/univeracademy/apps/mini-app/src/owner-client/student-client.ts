@@ -29,8 +29,16 @@ export type LocalStudentClientOptions = {
   transport(request: Request): Promise<Response>;
 };
 
-// Review-only shared transport. No production constructor/native-fetch fallback,
-// secret loading, storage, background timers, automatic login/refresh or hidden retry.
+export type ProductionStudentClientOptions = {
+  mode: "production";
+  contractSha256: string;
+  baseUrl: string;
+  transport(request: Request): Promise<Response>;
+};
+export type StudentClient = ReturnType<typeof buildStudentClient>;
+
+// Both constructors use the same operations and wire/error/refresh behavior.
+// No native-fetch fallback, secret loading, session storage or automatic retry.
 export function createLocalStudentClient(options: LocalStudentClientOptions) {
   if (options.mode !== "local_fixture") throw new StudentClientProtocolError("DRAFT_CLIENT_LOCAL_ONLY");
   if (options.contractSha256 !== STUDENT_CONTRACT_SHA256) {
@@ -44,14 +52,32 @@ export function createLocalStudentClient(options: LocalStudentClientOptions) {
     base.pathname.replace(/\/$/, "") !== "/api/v1" || typeof options.transport !== "function") {
     throw new StudentClientProtocolError("INVALID_LOCAL_BASE_URL");
   }
-  const root = `${base.origin}/api/v1`;
+  return buildStudentClient(`${base.origin}/api/v1`, options.transport, false);
+}
+
+export function createProductionStudentClient(options: ProductionStudentClientOptions): StudentClient {
+  if (options?.mode !== "production") throw new StudentClientProtocolError("PRODUCTION_CLIENT_MODE_REQUIRED");
+  if (options.contractSha256 !== STUDENT_CONTRACT_SHA256) throw new StudentClientProtocolError("CONTRACT_HASH_MISMATCH");
+  let base: URL;
+  try { base = new URL(options.baseUrl); } catch { throw new StudentClientProtocolError("INVALID_PRODUCTION_BASE_URL"); }
+  const host = base.hostname;
+  if (base.protocol !== "https:" || base.username || base.password || base.search || base.hash ||
+      base.pathname.replace(/\/$/, "") !== "/api/v1" || typeof options.transport !== "function" ||
+      host === "localhost" || host.endsWith(".localhost") || host === "[::1]" || /^127\./.test(host) ||
+      host === "0.0.0.0" || host === "[::]" || host.endsWith(".invalid") || host === "invalid")
+    throw new StudentClientProtocolError("INVALID_PRODUCTION_BASE_URL");
+  return buildStudentClient(`${base.origin}/api/v1`, options.transport, true);
+}
+
+function buildStudentClient(root: string, transport: (request: Request) => Promise<Response>, production: boolean) {
   async function send<T>(method: string, path: string,
     args: { accessToken?: string; body?: unknown; idempotencyKey?: string } = {}): Promise<T> {
     const headers = new Headers({ accept: "application/json" });
     if (args.accessToken) headers.set("authorization", `Bearer ${args.accessToken}`);
     if (args.idempotencyKey !== undefined) headers.set("idempotency-key", args.idempotencyKey);
     if (args.body !== undefined) headers.set("content-type", "application/json");
-    const response = await options.transport(new Request(root + path, { method, headers,
+    const response = await transport(new Request(root + path, { method, headers,
+      ...(production ? { redirect: "error" as const, credentials: "omit" as const, cache: "no-store" as const } : {}),
       body: args.body === undefined ? undefined : JSON.stringify(args.body) }));
     let value: unknown;
     try { value = await response.json(); }

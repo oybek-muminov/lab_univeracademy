@@ -1,4 +1,4 @@
-import './verify-backend-targets.mjs';
+import { BACKEND_SOURCE_COMMIT } from './verify-backend-targets.mjs';
 import assert from 'node:assert/strict';
 import { createServer } from 'vite';
 import { spawn } from 'node:child_process';
@@ -102,7 +102,7 @@ for (const width of [320, 390, 1280]) {
     assert.equal(reports.length, 1);
     assert.deepEqual(backend.lab.store.state.audit.map(row => row.actorId),
       [staffIds.teacher, staffIds.teacher, staffIds.teacher, staffIds.teacher, staffIds.admin, staffIds.admin]);
-    process.stdout.write(JSON.stringify({ ...reports[0], backendCommit: '8f863e645746159466e06dabb56db3b94f26be05',
+    process.stdout.write(JSON.stringify({ ...reports[0], backendCommit: BACKEND_SOURCE_COMMIT,
       publishedVersionId: published.id, assignmentId: assignment.id,
       staffActors: { authoringAndPublish: 'approved Teacher', membershipAndAssignment: 'scoped Admin' },
       staffHttp: audit, browserAndBackendSameEnvironment: true }) + '\n');
