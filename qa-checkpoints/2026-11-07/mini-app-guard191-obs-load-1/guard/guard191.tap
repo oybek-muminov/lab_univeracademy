@@ -1,0 +1,328 @@
+TAP version 13
+# Subtest: current guard accepts all 191 exact Backend files and both browser owner copies
+ok 1 - current guard accepts all 191 exact Backend files and both browser owner copies
+  ---
+  duration_ms: 117.95379
+  type: 'test'
+  ...
+# Subtest: same-size corruption of new attempts bytes is rejected
+ok 2 - same-size corruption of new attempts bytes is rejected
+  ---
+  duration_ms: 92.688636
+  type: 'test'
+  ...
+# Subtest: exact historical 9327-byte attempts is rejected
+ok 3 - exact historical 9327-byte attempts is rejected
+  ---
+  duration_ms: 90.661114
+  type: 'test'
+  ...
+# Subtest: historical attempts padded to new length is rejected
+ok 4 - historical attempts padded to new length is rejected
+  ---
+  duration_ms: 106.096013
+  type: 'test'
+  ...
+# Subtest: another dependency same-size corruption is rejected
+ok 5 - another dependency same-size corruption is rejected
+  ---
+  duration_ms: 98.19665
+  type: 'test'
+  ...
+# Subtest: another dependency wrong size is rejected
+ok 6 - another dependency wrong size is rejected
+  ---
+  duration_ms: 95.351693
+  type: 'test'
+  ...
+# Subtest: historical manifest tampering is rejected
+ok 7 - historical manifest tampering is rejected
+  ---
+  duration_ms: 90.911446
+  type: 'test'
+  ...
+# Subtest: current manifest tampering is rejected
+ok 8 - current manifest tampering is rejected
+  ---
+  duration_ms: 100.591693
+  type: 'test'
+  ...
+# Subtest: previous 44-file manifest tampering is rejected
+ok 9 - previous 44-file manifest tampering is rejected
+  ---
+  duration_ms: 86.624147
+  type: 'test'
+  ...
+# Subtest: browser production client same-size corruption is rejected
+ok 10 - browser production client same-size corruption is rejected
+  ---
+  duration_ms: 104.011028
+  type: 'test'
+  ...
+# Subtest: browser stale-size local-only client is rejected
+ok 11 - browser stale-size local-only client is rejected
+  ---
+  duration_ms: 100.898276
+  type: 'test'
+  ...
+# Subtest: browser types same-size corruption is rejected
+ok 12 - browser types same-size corruption is rejected
+  ---
+  duration_ms: 100.83031
+  type: 'test'
+  ...
+# Subtest: previous production 71-file manifest tampering is rejected
+ok 13 - previous production 71-file manifest tampering is rejected
+  ---
+  duration_ms: 87.564125
+  type: 'test'
+  ...
+# Subtest: new local CORS target same-size corruption is rejected
+ok 14 - new local CORS target same-size corruption is rejected
+  ---
+  duration_ms: 89.580152
+  type: 'test'
+  ...
+# Subtest: updated configured HTTP target same-size corruption is rejected
+ok 15 - updated configured HTTP target same-size corruption is rejected
+  ---
+  duration_ms: 94.689949
+  type: 'test'
+  ...
+# Subtest: missing new local CORS dependency fails closed
+ok 16 - missing new local CORS dependency fails closed
+  ---
+  duration_ms: 105.403521
+  type: 'test'
+  ...
+# Subtest: previous ada6600 83-file manifest tampering is rejected
+ok 17 - previous ada6600 83-file manifest tampering is rejected
+  ---
+  duration_ms: 88.378546
+  type: 'test'
+  ...
+# Subtest: new Vercel API entry same-size corruption is rejected
+ok 18 - new Vercel API entry same-size corruption is rejected
+  ---
+  duration_ms: 85.062253
+  type: 'test'
+  ...
+# Subtest: new Vercel transport same-size corruption is rejected
+ok 19 - new Vercel transport same-size corruption is rejected
+  ---
+  duration_ms: 103.800392
+  type: 'test'
+  ...
+# Subtest: new Vercel configuration wrong size is rejected
+ok 20 - new Vercel configuration wrong size is rejected
+  ---
+  duration_ms: 105.402232
+  type: 'test'
+  ...
+# Subtest: missing new transaction-pool dependency fails closed
+ok 21 - missing new transaction-pool dependency fails closed
+  ---
+  duration_ms: 106.277046
+  type: 'test'
+  ...
+# Subtest: previous Vercel 95-file manifest tampering is rejected
+ok 22 - previous Vercel 95-file manifest tampering is rejected
+  ---
+  duration_ms: 100.323207
+  type: 'test'
+  ...
+# Subtest: new Clerk HTTP target same-size corruption is rejected
+ok 23 - new Clerk HTTP target same-size corruption is rejected
+  ---
+  duration_ms: 93.820677
+  type: 'test'
+  ...
+# Subtest: new Clerk verifier target same-size corruption is rejected
+ok 24 - new Clerk verifier target same-size corruption is rejected
+  ---
+  duration_ms: 95.508762
+  type: 'test'
+  ...
+# Subtest: Clerk proposal wrong size is rejected
+ok 25 - Clerk proposal wrong size is rejected
+  ---
+  duration_ms: 93.202883
+  type: 'test'
+  ...
+# Subtest: missing Clerk fixture dependency fails closed
+ok 26 - missing Clerk fixture dependency fails closed
+  ---
+  duration_ms: 89.596269
+  type: 'test'
+  ...
+# Subtest: previous Clerk 108-file manifest tampering is rejected
+ok 27 - previous Clerk 108-file manifest tampering is rejected
+  ---
+  duration_ms: 88.904715
+  type: 'test'
+  ...
+# Subtest: F1 student state same-size corruption is rejected
+ok 28 - F1 student state same-size corruption is rejected
+  ---
+  duration_ms: 88.940088
+  type: 'test'
+  ...
+# Subtest: exact pre-F1 unmarked student state is rejected
+ok 29 - exact pre-F1 unmarked student state is rejected
+  ---
+  duration_ms: 102.654091
+  type: 'test'
+  ...
+# Subtest: pre-F1 student state padded to the current length is rejected
+ok 30 - pre-F1 student state padded to the current length is rejected
+  ---
+  duration_ms: 106.876734
+  type: 'test'
+  ...
+# Subtest: missing F1 family-context regression dependency fails closed
+ok 31 - missing F1 family-context regression dependency fails closed
+  ---
+  duration_ms: 93.682599
+  type: 'test'
+  ...
+# Subtest: previous F1 117-file manifest tampering is rejected
+ok 32 - previous F1 117-file manifest tampering is rejected
+  ---
+  duration_ms: 93.646142
+  type: 'test'
+  ...
+# Subtest: Clerk review schema same-size corruption is rejected
+ok 33 - Clerk review schema same-size corruption is rejected
+  ---
+  duration_ms: 92.731518
+  type: 'test'
+  ...
+# Subtest: missing Clerk review TCP listener fails closed
+ok 34 - missing Clerk review TCP listener fails closed
+  ---
+  duration_ms: 106.878965
+  type: 'test'
+  ...
+# Subtest: previous Clerk review 133-file manifest tampering is rejected
+ok 35 - previous Clerk review 133-file manifest tampering is rejected
+  ---
+  duration_ms: 98.351359
+  type: 'test'
+  ...
+# Subtest: exact old 133-file manifest cannot replace the current manifest
+ok 36 - exact old 133-file manifest cannot replace the current manifest
+  ---
+  duration_ms: 99.50522
+  type: 'test'
+  ...
+# Subtest: new Clerk provider same-size corruption is rejected
+ok 37 - new Clerk provider same-size corruption is rejected
+  ---
+  duration_ms: 91.585656
+  type: 'test'
+  ...
+# Subtest: missing new Clerk provider dependency fails closed
+ok 38 - missing new Clerk provider dependency fails closed
+  ---
+  duration_ms: 104.979717
+  type: 'test'
+  ...
+# Subtest: previous Clerk provider 149-file manifest tampering is rejected
+ok 39 - previous Clerk provider 149-file manifest tampering is rejected
+  ---
+  duration_ms: 87.509756
+  type: 'test'
+  ...
+# Subtest: exact old 149-file manifest cannot replace the current manifest
+ok 40 - exact old 149-file manifest cannot replace the current manifest
+  ---
+  duration_ms: 95.089644
+  type: 'test'
+  ...
+# Subtest: new scoped Clerk storage same-size corruption is rejected
+ok 41 - new scoped Clerk storage same-size corruption is rejected
+  ---
+  duration_ms: 93.73314
+  type: 'test'
+  ...
+# Subtest: missing new Clerk SDK worker dependency fails closed
+ok 42 - missing new Clerk SDK worker dependency fails closed
+  ---
+  duration_ms: 95.670022
+  type: 'test'
+  ...
+# Subtest: unapplied Clerk storage proposal wrong size is rejected
+ok 43 - unapplied Clerk storage proposal wrong size is rejected
+  ---
+  duration_ms: 91.875664
+  type: 'test'
+  ...
+# Subtest: previous Clerk SDK storage 163-file manifest tampering is rejected
+ok 44 - previous Clerk SDK storage 163-file manifest tampering is rejected
+  ---
+  duration_ms: 100.669836
+  type: 'test'
+  ...
+# Subtest: exact old 163-file manifest cannot replace the current manifest
+ok 45 - exact old 163-file manifest cannot replace the current manifest
+  ---
+  duration_ms: 84.551792
+  type: 'test'
+  ...
+# Subtest: SDK-CANCEL-1 fixed bindings same-size corruption is rejected
+ok 46 - SDK-CANCEL-1 fixed bindings same-size corruption is rejected
+  ---
+  duration_ms: 92.003766
+  type: 'test'
+  ...
+# Subtest: SDK-CANCEL-1 fixed worker same-size corruption is rejected
+ok 47 - SDK-CANCEL-1 fixed worker same-size corruption is rejected
+  ---
+  duration_ms: 91.917584
+  type: 'test'
+  ...
+# Subtest: missing SDK-CANCEL-1 regression dependency fails closed
+ok 48 - missing SDK-CANCEL-1 regression dependency fails closed
+  ---
+  duration_ms: 94.770724
+  type: 'test'
+  ...
+# Subtest: previous SDK-CANCEL-1 172-file manifest tampering is rejected
+ok 49 - previous SDK-CANCEL-1 172-file manifest tampering is rejected
+  ---
+  duration_ms: 87.061454
+  type: 'test'
+  ...
+# Subtest: exact old 172-file manifest cannot replace the current 191-file manifest
+ok 50 - exact old 172-file manifest cannot replace the current 191-file manifest
+  ---
+  duration_ms: 85.734621
+  type: 'test'
+  ...
+# Subtest: new TCP abort bridge same-size corruption is rejected
+ok 51 - new TCP abort bridge same-size corruption is rejected
+  ---
+  duration_ms: 96.410498
+  type: 'test'
+  ...
+# Subtest: new Clerk domain writer same-size corruption is rejected
+ok 52 - new Clerk domain writer same-size corruption is rejected
+  ---
+  duration_ms: 93.842729
+  type: 'test'
+  ...
+# Subtest: missing new domain regression target fails closed
+ok 53 - missing new domain regression target fails closed
+  ---
+  duration_ms: 96.037547
+  type: 'test'
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5188.409488

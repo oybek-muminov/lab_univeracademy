@@ -1,0 +1,322 @@
+TAP version 13
+# Subtest: prebuilt: cached SDK session waits for explicit Continue and fresh Backend exchange
+ok 1 - prebuilt: cached SDK session waits for explicit Continue and fresh Backend exchange
+  ---
+  duration_ms: 439.636609
+  type: 'test'
+  ...
+# Subtest: prebuilt: missing, pending and task-bound SDK sessions cannot exchange
+ok 2 - prebuilt: missing, pending and task-bound SDK sessions cannot exchange
+  ---
+  duration_ms: 38.46498
+  type: 'test'
+  ...
+# Subtest: prebuilt: SDK context changes hide ready data before observer and require explicit new entry
+ok 3 - prebuilt: SDK context changes hide ready data before observer and require explicit new entry
+  ---
+  duration_ms: 312.062375
+  type: 'test'
+  ...
+# Subtest: prebuilt: Continue before observer cannot relabel an old ready app flow as a new SDK session
+ok 4 - prebuilt: Continue before observer cannot relabel an old ready app flow as a new SDK session
+  ---
+  duration_ms: 199.274782
+  type: 'test'
+  ...
+# Subtest: prebuilt: delayed old exchange body after SDK replacement cannot reopen the app
+ok 5 - prebuilt: delayed old exchange body after SDK replacement cannot reopen the app
+  ---
+  duration_ms: 118.761022
+  type: 'test'
+  ...
+# Subtest: prebuilt: own SDK signout observer does not supersede captured app logout ACK
+ok 6 - prebuilt: own SDK signout observer does not supersede captured app logout ACK
+  ---
+  duration_ms: 118.485292
+  type: 'test'
+  ...
+# Subtest: prebuilt: reset clears immediately but its cleanup promise waits for targeted SDK signout
+ok 7 - prebuilt: reset clears immediately but its cleanup promise waits for targeted SDK signout
+  ---
+  duration_ms: 153.011613
+  type: 'test'
+  ...
+# Subtest: prebuilt: SDK revocation clears app context and late old data never changes a new login
+ok 8 - prebuilt: SDK revocation clears app context and late old data never changes a new login
+  ---
+  duration_ms: 210.6576
+  type: 'test'
+  ...
+# Subtest: Clerk review entry exchanges once, uses opaque proofs and completes save/clear/resume, submit/result/history and body-only logout over TCP
+ok 9 - Clerk review entry exchanges once, uses opaque proofs and completes save/clear/resume, submit/result/history and body-only logout over TCP
+  ---
+  duration_ms: 1586.799052
+  type: 'test'
+  ...
+# Subtest: email evidence creates a fresh ungrouped student; canonical profile controls registration and empty exams
+ok 10 - email evidence creates a fresh ungrouped student; canonical profile controls registration and empty exams
+  ---
+  duration_ms: 116.45594
+  type: 'test'
+  ...
+# Subtest: cancelled provider completion never exchanges or replaces the newer email flow
+ok 11 - cancelled provider completion never exchanges or replaces the newer email flow
+  ---
+  duration_ms: 70.824477
+  type: 'test'
+  ...
+# Subtest: cancel after exchange headers rejects the late body and preserves a newer login even when fetch ignores abort
+ok 12 - cancel after exchange headers rejects the late body and preserves a newer login even when fetch ignores abort
+  ---
+  duration_ms: 196.76306
+  type: 'test'
+  ...
+# Subtest: cancel while profile body is pending retires the known app session and cannot expose its old payload
+ok 13 - cancel while profile body is pending retires the known app session and cannot expose its old payload
+  ---
+  duration_ms: 205.015118
+  type: 'test'
+  ...
+# Subtest: a delayed logout ACK cannot clear or alter a newer login; logout rejection remains observed
+ok 14 - a delayed logout ACK cannot clear or alter a newer login; logout rejection remains observed
+  ---
+  duration_ms: 185.568197
+  type: 'test'
+  ...
+# Subtest: lost exchange reply is not replayed, and a fresh verified proof recovers without restoring the cancelled context
+ok 15 - lost exchange reply is not replayed, and a fresh verified proof recovers without restoring the cancelled context
+  ---
+  duration_ms: 160.701312
+  type: 'test'
+  ...
+# Subtest: logout during an exchange body wait clears locally and never claims a server ACK or revives its late session
+ok 16 - logout during an exchange body wait clears locally and never claims a server ACK or revives its late session
+  ---
+  duration_ms: 183.49302
+  type: 'test'
+  ...
+# Subtest: failed logout stays locally signed out, reports uncertainty and cannot resurrect the old flow
+ok 17 - failed logout stays locally signed out, reports uncertainty and cannot resurrect the old flow
+  ---
+  duration_ms: 194.769977
+  type: 'test'
+  ...
+# Subtest: provider revocation hides the old flow; a new verified session resumes server answers and deadline
+ok 18 - provider revocation hides the old flow; a new verified session resumes server answers and deadline
+  ---
+  duration_ms: 379.994407
+  type: 'test'
+  ...
+# Subtest: local transport clear invalidates pending login and an old success without a server logout claim
+ok 19 - local transport clear invalidates pending login and an old success without a server logout claim
+  ---
+  duration_ms: 0.687169
+  type: 'test'
+  ...
+# Subtest: SDK email OTP uses public Future API, privacy-preserving signup transfer and a fresh default JWT
+ok 20 - SDK email OTP uses public Future API, privacy-preserving signup transfer and a fresh default JWT
+  ---
+  duration_ms: 46.722569
+  type: 'test'
+  ...
+# Subtest: verified missing account transfers to signup only after Clerk explicitly requests it
+ok 21 - verified missing account transfers to signup only after Clerk explicitly requests it
+  ---
+  duration_ms: 0.772648
+  type: 'test'
+  ...
+# Subtest: wrong code is sanitized and remains retryable on its current challenge
+ok 22 - wrong code is sanitized and remains retryable on its current challenge
+  ---
+  duration_ms: 9.6281
+  type: 'test'
+  ...
+# Subtest: missing or stale challenge never reaches the SDK verification
+ok 23 - missing or stale challenge never reaches the SDK verification
+  ---
+  duration_ms: 0.75811
+  type: 'test'
+  ...
+# Subtest: Google opens only a user-gesture popup and passes fixed same-origin callback URLs
+ok 24 - Google opens only a user-gesture popup and passes fixed same-origin callback URLs
+  ---
+  duration_ms: 0.727727
+  type: 'test'
+  ...
+# Subtest: popup block never attempts OAuth or returns evidence
+ok 25 - popup block never attempts OAuth or returns evidence
+  ---
+  duration_ms: 0.312684
+  type: 'test'
+  ...
+# Subtest: a verified transferable Google account signs up through the public transfer API
+ok 26 - a verified transferable Google account signs up through the public transfer API
+  ---
+  duration_ms: 0.749353
+  type: 'test'
+  ...
+# Subtest: cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry
+ok 27 - cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry
+  ---
+  duration_ms: 30.083103
+  type: 'test'
+  ...
+# Subtest: late finalize after cancel is quarantined and signs out only its captured session before new SDK auth
+ok 28 - late finalize after cancel is quarantined and signs out only its captured session before new SDK auth
+  ---
+  duration_ms: 15.158146
+  type: 'test'
+  ...
+# Subtest: cancel cleanup never signs out an unrelated SDK session activated outside the captured operation
+ok 29 - cancel cleanup never signs out an unrelated SDK session activated outside the captured operation
+  ---
+  duration_ms: 1.138663
+  type: 'test'
+  ...
+# Subtest: logout captures a specific session, waits for app receipt and never uses global SDK signout
+ok 30 - logout captures a specific session, waits for app receipt and never uses global SDK signout
+  ---
+  duration_ms: 1.405732
+  type: 'test'
+  ...
+# Subtest: failed app receipt still requests targeted provider signout without implying app ACK
+ok 31 - failed app receipt still requests targeted provider signout without implying app ACK
+  ---
+  duration_ms: 0.409152
+  type: 'test'
+  ...
+# Subtest: SDK needs_second_factor never becomes app evidence
+ok 32 - SDK needs_second_factor never becomes app evidence
+  ---
+  duration_ms: 20.006941
+  type: 'test'
+  ...
+# Subtest: SDK needs_client_trust never becomes app evidence
+ok 33 - SDK needs_client_trust never becomes app evidence
+  ---
+  duration_ms: 0.347012
+  type: 'test'
+  ...
+# Subtest: SDK needs_protect_check never becomes app evidence
+ok 34 - SDK needs_protect_check never becomes app evidence
+  ---
+  duration_ms: 4.034188
+  type: 'test'
+  ...
+# Subtest: session tasks and session changes during JWT fetch deny evidence
+ok 35 - session tasks and session changes during JWT fetch deny evidence
+  ---
+  duration_ms: 1.046812
+  type: 'test'
+  ...
+# Subtest: common config pins HTTPS app/API/Clerk host and fixed callback, with Telegram explicitly optional
+ok 36 - common config pins HTTPS app/API/Clerk host and fixed callback, with Telegram explicitly optional
+  ---
+  duration_ms: 19.860093
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY=undefined
+ok 37 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY=undefined
+  ---
+  duration_ms: 1.001835
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="not-a-key"
+ok 38 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="not-a-key"
+  ---
+  duration_ms: 0.722316
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="pk_test_b3RoZXIuZXhhbXBsZS50ZXN0JA=="
+ok 39 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="pk_test_b3RoZXIuZXhhbXBsZS50ZXN0JA=="
+  ---
+  duration_ms: 17.649401
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="http://clerk.example.test"
+ok 40 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="http://clerk.example.test"
+  ---
+  duration_ms: 0.268103
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test/path"
+ok 41 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test/path"
+  ---
+  duration_ms: 10.257351
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test?redirect=elsewhere"
+ok 42 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test?redirect=elsewhere"
+  ---
+  duration_ms: 3.414847
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test:444"
+ok 43 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test:444"
+  ---
+  duration_ms: 0.307711
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://user:synthetic@clerk.example.test"
+ok 44 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://user:synthetic@clerk.example.test"
+  ---
+  duration_ms: 4.717122
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN=" https://clerk.example.test"
+ok 45 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN=" https://clerk.example.test"
+  ---
+  duration_ms: 0.587955
+  type: 'test'
+  ...
+# Subtest: stale contract, app mismatch and callback override are rejected before provider IO
+ok 46 - stale contract, app mismatch and callback override are rejected before provider IO
+  ---
+  duration_ms: 1.02638
+  type: 'test'
+  ...
+# Subtest: public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout
+ok 47 - public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout
+  ---
+  duration_ms: 724.749271
+  type: 'test'
+  ...
+# Subtest: email SDK proof enters server-owned registration and an ungrouped student has no tests
+ok 48 - email SDK proof enters server-owned registration and an ungrouped student has no tests
+  ---
+  duration_ms: 100.765201
+  type: 'test'
+  ...
+# Subtest: Telegram WebView Google path is stopped before popup/API; email remains available
+ok 49 - Telegram WebView Google path is stopped before popup/API; email remains available
+  ---
+  duration_ms: 5.679056
+  type: 'test'
+  ...
+# Subtest: cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof
+ok 50 - cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof
+  ---
+  duration_ms: 76.788904
+  type: 'test'
+  ...
+# Subtest: logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate
+ok 51 - logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate
+  ---
+  duration_ms: 95.265737
+  type: 'test'
+  ...
+# Subtest: provider signout failure preserves an actual app ACK without claiming the SDK session was closed
+ok 52 - provider signout failure preserves an actual app ACK without claiming the SDK session was closed
+  ---
+  duration_ms: 44.325556
+  type: 'test'
+  ...
+1..52
+# tests 52
+# suites 0
+# pass 52
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 7642.01224

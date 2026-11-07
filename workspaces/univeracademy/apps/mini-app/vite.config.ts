@@ -1,4 +1,5 @@
 import { defineConfig, loadEnv } from 'vite';
+import { clerkLoadPromiseFix } from './tools/clerk-load-promise-fix.mjs';
 
 export default defineConfig(({ mode, command }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_');
@@ -6,7 +7,8 @@ export default defineConfig(({ mode, command }) => {
     define: { __AUTH_PROTOTYPE_PREVIEW__: JSON.stringify(command === 'serve' && mode === 'auth_prototype') },
     // Prepared host integration only; no SDK network request occurs during build.
     // Default builds do not inject a remote SDK. Browser tests intercept this URL.
-    plugins: [{ name: 'telegram-sdk-entry', transformIndexHtml() {
+    optimizeDeps: { rolldownOptions: { plugins: [clerkLoadPromiseFix()] } },
+    plugins: [clerkLoadPromiseFix(), { name: 'telegram-sdk-entry', transformIndexHtml() {
       if (command === 'build' && mode === 'production' && env.VITE_TELEGRAM_SDK_ENABLED === 'true')
         return [{ tag: 'script', attrs: { src: 'https://telegram.org/js/telegram-web-app.js?64', referrerpolicy: 'no-referrer' }, injectTo: 'head-prepend' as const }];
       return [];

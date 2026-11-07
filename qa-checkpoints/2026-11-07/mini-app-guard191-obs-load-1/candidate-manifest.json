@@ -1,0 +1,159 @@
+{
+  "status": "LOCAL_ONLY_NOT_UPLOADED_NOT_INDEPENDENT_QA",
+  "base_commit": "fa82166a5eaaa05a8ae254913039771e03e20bfb",
+  "file_count": 14,
+  "deleted": [],
+  "patch": {
+    "file": "candidate.patch",
+    "bytes": 65495,
+    "sha256": "a1dd889f7e13e3430e30bd865a3a367fb515eee5e600034369da6eb13dae8e26"
+  },
+  "files": [
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/obs-load-1-local.md",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 4999,
+        "sha256": "90c562955826436599b5142f4ded610db5a55d1263cc51e07b34155bd3f362c5"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/package.json",
+      "status": "modified",
+      "before": {
+        "bytes": 1863,
+        "sha256": "bc20fbeb18ac28595b1be306d24d1a787484feb64559a38a524c9277696851a0"
+      },
+      "after": {
+        "bytes": 2116,
+        "sha256": "a3a1094919d8d730651a66011c58923856d04c6f7eb84dd99f309b3e6f83ebe5"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/production.env.example",
+      "status": "modified",
+      "before": {
+        "bytes": 722,
+        "sha256": "9528f31cdb6baf152b36dd00414deb6baea9d0e1a9c8cfddce8dc9ae4a77e5d7"
+      },
+      "after": {
+        "bytes": 820,
+        "sha256": "6c8467c1502c1fe0a77d3a43e1af4adca728959c326ae2f0b319ab4c9d11ad07"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx",
+      "status": "modified",
+      "before": {
+        "bytes": 5663,
+        "sha256": "e559970921582b0b419585ca0411e5f303f9b6390fc1a880ec4e7b9bb3e46afe"
+      },
+      "after": {
+        "bytes": 6017,
+        "sha256": "81359bc781cb4278b8f0a8c8b723adc4bb7233b7df7b304c2bf5a25073731de6"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-browser.mjs",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 2261,
+        "sha256": "49b56cbbb23a23fc159c4149dc376dcfc08a2742ced309f2dee06f5f1f477706"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-browser.py",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 5078,
+        "sha256": "12bcaee62d88fb07ebe2a457f86bdf3855b1a38c24823d950b4eead4a42dfaab"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-promise.test.mjs",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 2057,
+        "sha256": "39b758c70e89d17a75635f7c728b472e69c0c446f9e0833484fafb92cdba2adb"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load.fixture.html",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 249,
+        "sha256": "52267f2a7cd24ec84971da6e72503bba32bfdfdf353ac2c18d26997a541c4f6f"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load.fixture.mjs",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 294,
+        "sha256": "7a4e73a048129fcd3a727d7a70d98884cb5a4fa9aa53461040c3e5c74839a1cc"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/current-flow-guard.test.mjs",
+      "status": "modified",
+      "before": {
+        "bytes": 15550,
+        "sha256": "5add26935363773e99d32bd76608dc256eb39138e31b1becb6bf70a8e7801699"
+      },
+      "after": {
+        "bytes": 16920,
+        "sha256": "51f8d71a314f7a35cf049be95e045750a52b7cf039024081039d0f9d9e25e221"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-fa82166-manifest.json",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 34192,
+        "sha256": "1a2588f66f261029753b5756e3783adc5940834839b0bfc339f7bc7ffa31f4f7"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/verify-backend-targets.mjs",
+      "status": "modified",
+      "before": {
+        "bytes": 4876,
+        "sha256": "c5cd5520fb43ff582563e1e5b2dd0e7bbd3d1368270365cfc7da1a7130407da5"
+      },
+      "after": {
+        "bytes": 5216,
+        "sha256": "9640ff6f956cf1192ba8bafd82106ef66e08bb6f5fb27288f8a24068ba3b2658"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tools/clerk-load-promise-fix.mjs",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 1319,
+        "sha256": "45be30aeec7dc8ec1c0c869da187f251fcf40f2413bdf5b2db955f8d4549fb07"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/vite.config.ts",
+      "status": "modified",
+      "before": {
+        "bytes": 1043,
+        "sha256": "0111b9cf1be03bf6429efb8adfdec90587a5dff9ae649dd95fa532790a3ed89c"
+      },
+      "after": {
+        "bytes": 1217,
+        "sha256": "df00cc8cbb680b41d8c96ea1bc29268b04c99f65e2281f8631de26c364a0914f"
+      }
+    }
+  ],
+  "restore": "PASS_EXACT_ALL_TARGETS",
+  "privacy": "PATTERN_AND_CONTEXT_REVIEW_PASS_NO_REAL_CREDENTIAL_OR_USER_DATA"
+}

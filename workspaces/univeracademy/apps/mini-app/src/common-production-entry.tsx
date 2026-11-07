@@ -78,6 +78,12 @@ export function mountCommonProductionEntry(element: HTMLElement, options: {
   if (!['/', '/sign-in', '/auth/callback'].includes(location.pathname)) {
     root.render(<Status text="Kirish sahifasini yangidan oching." />); return { unmount: () => root.unmount() };
   }
+  // Empty socket until the real Clerk integration is explicitly enabled.
+  // Even valid public settings alone do not start SDK downloads or an auth UI.
+  if (options.env.VITE_CLERK_SDK_ENABLED !== 'true') {
+    root.render(<Status text="Kabinetga ulanish hali tayyor emas. Keyinroq qayta oching." />);
+    return { unmount: () => root.unmount() };
+  }
   root.render(<EntryBoundary><ClerkProvider publishableKey={config.publishableKey} signInUrl={config.signInUrl}
     signUpUrl={config.signInUrl} signInForceRedirectUrl={config.signInUrl} signUpForceRedirectUrl={config.signInUrl}
     telemetry={{ disabled: true }}>

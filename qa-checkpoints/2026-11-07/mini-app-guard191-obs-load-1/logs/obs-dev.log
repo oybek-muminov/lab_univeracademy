@@ -1,0 +1,1 @@
+{"case": "abort-js", "mode": "dev", "status": "PASS", "safe_failure_ms": 7786, "SDK_unhandled_count": 0, "api_calls": 0, "cabinet_opened": false, "unrelated_rejection_observable": true, "actual_provider_network": 0, "observation_ms": 17500}

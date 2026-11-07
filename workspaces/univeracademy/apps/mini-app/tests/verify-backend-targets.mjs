@@ -46,12 +46,16 @@ const sdkStorageBaselineRaw = readFileSync(new URL('./fixtures/backend-6f2dbee7-
 assert.equal(sha256(sdkStorageBaselineRaw), '2a5f0b8fd2f4939932e0e50b4e30d14d0c84b502038852770dc456e09bc68fa0',
   'CLERK_SDK_STORAGE_BASELINE_MANIFEST_MISMATCH');
 assert.equal(JSON.parse(sdkStorageBaselineRaw).files.length, 163);
-const runtimeRaw = readFileSync(new URL('./fixtures/backend-c78c293-manifest.json', import.meta.url));
-assert.equal(sha256(runtimeRaw), 'f085f2666c7cb3811da2ede722428ea275aa01e258b77666769447174c23fd06',
+const sdkCancelBaselineRaw = readFileSync(new URL('./fixtures/backend-c78c293-manifest.json', import.meta.url));
+assert.equal(sha256(sdkCancelBaselineRaw), 'f085f2666c7cb3811da2ede722428ea275aa01e258b77666769447174c23fd06',
+  'CLERK_SDK_CANCEL_BASELINE_MANIFEST_MISMATCH');
+assert.equal(JSON.parse(sdkCancelBaselineRaw).files.length, 172);
+const runtimeRaw = readFileSync(new URL('./fixtures/backend-fa82166-manifest.json', import.meta.url));
+assert.equal(sha256(runtimeRaw), '1a2588f66f261029753b5756e3783adc5940834839b0bfc339f7bc7ffa31f4f7',
   'RUNTIME_MANIFEST_MISMATCH');
 const runtime = JSON.parse(runtimeRaw);
-assert.equal(runtime.source_commit, 'c78c293acdf9162080c2da796bd0a5d34e4b8c90');
-assert.equal(runtime.files.length, 172);
+assert.equal(runtime.source_commit, 'fa82166a5eaaa05a8ae254913039771e03e20bfb');
+assert.equal(runtime.files.length, 191);
 export const BACKEND_SOURCE_COMMIT = runtime.source_commit;
 const repo = new URL('../../../', import.meta.url);
 for (const file of runtime.files) {

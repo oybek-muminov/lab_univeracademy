@@ -9,7 +9,8 @@ import { spawnSync } from 'node:child_process';
 
 const source = fileURLToPath(new URL('../../../', import.meta.url));
 const guard = 'apps/mini-app/tests/verify-backend-targets.mjs';
-const current = 'apps/mini-app/tests/fixtures/backend-c78c293-manifest.json';
+const current = 'apps/mini-app/tests/fixtures/backend-fa82166-manifest.json';
+const sdkCancelBaseline = 'apps/mini-app/tests/fixtures/backend-c78c293-manifest.json';
 const sdkStorageBaseline = 'apps/mini-app/tests/fixtures/backend-6f2dbee7-manifest.json';
 const providerBaseline = 'apps/mini-app/tests/fixtures/backend-a36d41a-manifest.json';
 const reviewBaseline = 'apps/mini-app/tests/fixtures/backend-b9efa597-manifest.json';
@@ -28,7 +29,7 @@ const manifest = JSON.parse(readFileSync(join(source, current), 'utf8'));
 function check(mutate, expected) {
   const root = mkdtempSync(join(tmpdir(), 'ua-current-guard-'));
   try {
-    for (const name of [guard, current, previous, productionBaseline, adaBaseline, vercelBaseline, clerkBaseline, familyBaseline, reviewBaseline, providerBaseline, sdkStorageBaseline, history, ...copies, ...manifest.files.map(file => file.path)]) {
+    for (const name of [guard, current, previous, productionBaseline, adaBaseline, vercelBaseline, clerkBaseline, familyBaseline, reviewBaseline, providerBaseline, sdkStorageBaseline, sdkCancelBaseline, history, ...copies, ...manifest.files.map(file => file.path)]) {
       const path = join(root, name); mkdirSync(dirname(path), { recursive: true });
       writeFileSync(path, readFileSync(join(source, name)));
     }
@@ -52,7 +53,7 @@ function oldAttempts(root) {
   return old; // Exact historical bytes; never executed or written over owner source.
 }
 
-test('current guard accepts all 172 exact Backend files and both browser owner copies', () => check());
+test('current guard accepts all 191 exact Backend files and both browser owner copies', () => check());
 test('same-size corruption of new attempts bytes is rejected', () => check(root => {
   const path = join(root, attempts), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
 }, 'BACKEND_TARGET_HASH_MISMATCH: ' + attempts));
@@ -221,4 +222,23 @@ test('SDK-CANCEL-1 fixed worker same-size corruption is rejected', () => check(r
 }, 'BACKEND_TARGET_HASH_MISMATCH: runtime/clerk-sdk-worker.mjs'));
 test('missing SDK-CANCEL-1 regression dependency fails closed', () => check(root => {
   rmSync(join(root, 'tests/clerk-auth/sdk-cancel.test.mjs'));
+}, 'ENOENT'));
+
+
+test('previous SDK-CANCEL-1 172-file manifest tampering is rejected', () => check(root => {
+  const path = join(root, sdkCancelBaseline); writeFileSync(path, readFileSync(path, 'utf8') + '\n');
+}, 'CLERK_SDK_CANCEL_BASELINE_MANIFEST_MISMATCH'));
+test('exact old 172-file manifest cannot replace the current 191-file manifest', () => check(root => {
+  writeFileSync(join(root, current), readFileSync(join(root, sdkCancelBaseline)));
+}, 'RUNTIME_MANIFEST_MISMATCH'));
+test('new TCP abort bridge same-size corruption is rejected', () => check(root => {
+  const path = join(root, 'runtime/node-request-abort.mjs'), bytes = readFileSync(path);
+  bytes[0] ^= 1; writeFileSync(path, bytes);
+}, 'BACKEND_TARGET_HASH_MISMATCH: runtime/node-request-abort.mjs'));
+test('new Clerk domain writer same-size corruption is rejected', () => check(root => {
+  const path = join(root, 'supabase/functions/univeracademy-api/storage/clerk-domain.ts'), bytes = readFileSync(path);
+  bytes[0] ^= 1; writeFileSync(path, bytes);
+}, 'BACKEND_TARGET_HASH_MISMATCH: supabase/functions/univeracademy-api/storage/clerk-domain.ts'));
+test('missing new domain regression target fails closed', () => check(root => {
+  rmSync(join(root, 'tests/clerk-auth/domain-http.test.mjs'));
 }, 'ENOENT'));

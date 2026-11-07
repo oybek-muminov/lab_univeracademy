@@ -1,0 +1,52 @@
+{
+  "manifest_bytes": 1538,
+  "manifest_sha256": "950f2a6c64b183bed60425f6acec45d6e3145d9c8893b5b7ae46472285a871f3",
+  "patch_bytes": 41691,
+  "patch_sha256": "1eff6f0455e2a6236641f8d002451c455f85f106e1ee10797ee7b0c56750c05c",
+  "files": [
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/current-flow-guard.test.mjs",
+      "status": "modified",
+      "before": {
+        "bytes": 15550,
+        "sha256": "5add26935363773e99d32bd76608dc256eb39138e31b1becb6bf70a8e7801699"
+      },
+      "after": {
+        "bytes": 16920,
+        "sha256": "51f8d71a314f7a35cf049be95e045750a52b7cf039024081039d0f9d9e25e221"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-fa82166-manifest.json",
+      "status": "added",
+      "before": null,
+      "after": {
+        "bytes": 34192,
+        "sha256": "1a2588f66f261029753b5756e3783adc5940834839b0bfc339f7bc7ffa31f4f7"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/verify-backend-targets.mjs",
+      "status": "modified",
+      "before": {
+        "bytes": 4876,
+        "sha256": "c5cd5520fb43ff582563e1e5b2dd0e7bbd3d1368270365cfc7da1a7130407da5"
+      },
+      "after": {
+        "bytes": 5216,
+        "sha256": "9640ff6f956cf1192ba8bafd82106ef66e08bb6f5fb27288f8a24068ba3b2658"
+      }
+    }
+  ],
+  "status": "AUTHOR_LOCAL_PASS",
+  "tests": {
+    "guard": 53,
+    "failed": 0
+  },
+  "backend_targets": 191,
+  "owner_copies": 2,
+  "algorithm_tail_unchanged": true,
+  "historical172_sha256": "f085f2666c7cb3811da2ede722428ea275aa01e258b77666769447174c23fd06",
+  "reconstructed_guard": "PASS_191_PLUS_2",
+  "source_no_UI_Backend_provider_change": true
+}

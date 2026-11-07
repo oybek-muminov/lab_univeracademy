@@ -1,0 +1,173 @@
+{
+  "status": "AUTHORIZED_LAB_COMBINED_PUBLICATION_PLAN",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "qa/current-flow-20261106",
+  "remote_base": "fa82166a5eaaa05a8ae254913039771e03e20bfb",
+  "source_files": 14,
+  "evidence_files_before_this_plan": 18,
+  "candidate_manifest_sha256": "9975da27073a63d2318025b4b88eb1377e1f05c3bf5f969fed3330712ac96ba2",
+  "guard_manifest_sha256": "950f2a6c64b183bed60425f6acec45d6e3145d9c8893b5b7ae46472285a871f3",
+  "preservation": "Existing tree plus these exact paths only; no deletion/force push.",
+  "files": [
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/obs-load-1-local.md",
+      "bytes": 4999,
+      "sha256": "90c562955826436599b5142f4ded610db5a55d1263cc51e07b34155bd3f362c5"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/package.json",
+      "bytes": 2116,
+      "sha256": "a3a1094919d8d730651a66011c58923856d04c6f7eb84dd99f309b3e6f83ebe5"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/production.env.example",
+      "bytes": 820,
+      "sha256": "6c8467c1502c1fe0a77d3a43e1af4adca728959c326ae2f0b319ab4c9d11ad07"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx",
+      "bytes": 6017,
+      "sha256": "81359bc781cb4278b8f0a8c8b723adc4bb7233b7df7b304c2bf5a25073731de6"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-browser.mjs",
+      "bytes": 2261,
+      "sha256": "49b56cbbb23a23fc159c4149dc376dcfc08a2742ced309f2dee06f5f1f477706"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-browser.py",
+      "bytes": 5078,
+      "sha256": "12bcaee62d88fb07ebe2a457f86bdf3855b1a38c24823d950b4eead4a42dfaab"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-promise.test.mjs",
+      "bytes": 2057,
+      "sha256": "39b758c70e89d17a75635f7c728b472e69c0c446f9e0833484fafb92cdba2adb"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load.fixture.html",
+      "bytes": 249,
+      "sha256": "52267f2a7cd24ec84971da6e72503bba32bfdfdf353ac2c18d26997a541c4f6f"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load.fixture.mjs",
+      "bytes": 294,
+      "sha256": "7a4e73a048129fcd3a727d7a70d98884cb5a4fa9aa53461040c3e5c74839a1cc"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/current-flow-guard.test.mjs",
+      "bytes": 16920,
+      "sha256": "51f8d71a314f7a35cf049be95e045750a52b7cf039024081039d0f9d9e25e221"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-fa82166-manifest.json",
+      "bytes": 34192,
+      "sha256": "1a2588f66f261029753b5756e3783adc5940834839b0bfc339f7bc7ffa31f4f7"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/verify-backend-targets.mjs",
+      "bytes": 5216,
+      "sha256": "9640ff6f956cf1192ba8bafd82106ef66e08bb6f5fb27288f8a24068ba3b2658"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tools/clerk-load-promise-fix.mjs",
+      "bytes": 1319,
+      "sha256": "45be30aeec7dc8ec1c0c869da187f251fcf40f2413bdf5b2db955f8d4549fb07"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/vite.config.ts",
+      "bytes": 1217,
+      "sha256": "df00cc8cbb680b41d8c96ea1bc29268b04c99f65e2281f8631de26c364a0914f"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/candidate-manifest.json",
+      "bytes": 5029,
+      "sha256": "9975da27073a63d2318025b4b88eb1377e1f05c3bf5f969fed3330712ac96ba2"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/candidate.patch",
+      "bytes": 65495,
+      "sha256": "a1dd889f7e13e3430e30bd865a3a367fb515eee5e600034369da6eb13dae8e26"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/verification.json",
+      "bytes": 5267,
+      "sha256": "febd8c8909a8f0135864f52de8f9582e434a2bbdcd9a0dfc31b6fad22f9f3b63"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/README.md",
+      "bytes": 2427,
+      "sha256": "676f5f377500166edf867c949f955247873e53e2dbc77b8e557de799b7188935"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/obs-baseline.log",
+      "bytes": 880,
+      "sha256": "5cb68dd8e860fa6509fcd615a8a19b6efa142dd38e1bacdbb7e4f8b1c8662ec6"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/loader-patch.tap",
+      "bytes": 994,
+      "sha256": "01bbec88c888de253aed79344f1a3bfbb75c31664041041eed57c0e2d3e85fec"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/default-build.log",
+      "bytes": 898,
+      "sha256": "04da049d0ca43bd0a92e1975893ea1f8e466de9cfe4776e049922e8372fda9a4"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/obs-fixed.log",
+      "bytes": 1347,
+      "sha256": "36b7dd727e995effc5a83fe2b75a842c86e502c89669eca68de313db6ddd10b3"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/obs-dev.log",
+      "bytes": 241,
+      "sha256": "90718f47c89c8a6683220b9833e2ee0539a235b8430ea52ccdf6b46898b3829c"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/empty-socket.log",
+      "bytes": 761,
+      "sha256": "743c0ca682c7cce0c4666081cdd405583f63b9b223079a9704b9bc6a76a867eb"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/affected-auth.log",
+      "bytes": 13276,
+      "sha256": "c296e35b42505cc072fed5902987cd14b9394d608da7eea1ef2fa1116e9f0f44"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/prebuilt-regression.log",
+      "bytes": 2393,
+      "sha256": "afab4de36ccf8c196bca993fdad37decc05b6efc679e689a84f17f62f68e1983"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/common-build.log",
+      "bytes": 1716,
+      "sha256": "e89e342904718d78dd20dc138dd74e58ea50df5d7468746e3477d8a9a6d34c44"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/candidate-manifest.json",
+      "bytes": 1538,
+      "sha256": "950f2a6c64b183bed60425f6acec45d6e3145d9c8893b5b7ae46472285a871f3"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/candidate.patch",
+      "bytes": 41691,
+      "sha256": "1eff6f0455e2a6236641f8d002451c455f85f106e1ee10797ee7b0c56750c05c"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/verification.json",
+      "bytes": 1692,
+      "sha256": "8737af28ea1e19a680a7ed98c09605458a880f726147c844f1e1e2c326ccdb1a"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/HANDOFF.md",
+      "bytes": 2116,
+      "sha256": "abbeecfe4b18778c6cbc51c148c6807cc048e9921f4634ad146b1902154033b0"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/guard191.tap",
+      "bytes": 9712,
+      "sha256": "cec6acf4a35436d1e5d1097a088e61c217e258ce134b67ddb236c67408e199d4"
+    }
+  ]
+}
