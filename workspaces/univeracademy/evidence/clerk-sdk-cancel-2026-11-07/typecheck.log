@@ -1,0 +1,4 @@
+
+> univeracademy-student-points-local-candidate@0.0.0-local-candidate typecheck
+> tsc --noEmit --allowImportingTsExtensions --target es2023 --module esnext --moduleResolution bundler --lib es2023,dom,dom.iterable --strict supabase/functions/univeracademy-api/*.ts packages/api-client/student-client.ts supabase/functions/univeracademy-api/storage/*.ts
+

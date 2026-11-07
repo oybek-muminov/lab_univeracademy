@@ -1,3 +1,31 @@
+# Current Backend publication — SDK-CANCEL-1 correction candidate
+
+PROVISIONAL / NOT ACCEPTED. Laboratory QA candidate based on
+6f2dbee78ba5545bd07ce759a9f0a6dde5514e60. This delta only changes the two Clerk
+SDK bridge runtime files and adds their cancellation regression test, handoff
+and frozen verification evidence. Existing Mini App files/evidence, dependency
+lock, schema, auth policies and other work are preserved.
+
+Caller abort/provider timeout/SDK timeout now cancel that call's transport.
+Worker fetches carry the public call ID via AsyncLocalStorage, including
+concurrent calls for the same session. Finished calls cannot start transport;
+late replies are discarded and their bodies cancelled. Timer/listener/reader
+cleanup and idempotent close are exercised. Arbitrary transports can ignore
+abort internally; this is cooperative cancellation, not forcible execution stop.
+
+Author evidence:65/65 PASS (10 new cancellation checks +55 prior affected),
+typecheck exit0, exact source hashes retained. No redundant test rerun on upload.
+The new regression failed on the unmodified base before the correction. Actual
+Clerk/socket cancellation and production deployment remain NOT_RUN; independent
+QA has not accepted this correction. No real provider/database/deploy operation.
+
+See docs/api/clerk-sdk-cancel-2026-11-07.md and
+evidence/clerk-sdk-cancel-2026-11-07/source-manifest.json for commands and hashes.
+Frozen local NOT_UPLOADED labels describe preparation provenance; the separate
+publication verification describes the authorized lab upload.
+
+---
+
 # Current Backend publication — pinned Clerk SDK and scoped auth storage candidate
 
 PROVISIONAL / NOT ACCEPTED. Approved laboratory QA upload based on branch HEAD

@@ -1,0 +1,75 @@
+{
+  "finding": "SDK-CANCEL-1",
+  "status": "LOCAL_PASS_NOT_INDEPENDENT_QA_NOT_UPLOADED",
+  "base_commit": "6f2dbee78ba5545bd07ce759a9f0a6dde5514e60",
+  "source_manifest_sha256": "683437bf68c3cedfbb8ed04fd9037e03765756bed74765945b3c65114761986e",
+  "source_files": 3,
+  "tests": {
+    "total": 65,
+    "new_cancellation": 10,
+    "prior_affected": 55,
+    "pass": 65,
+    "fail": 0,
+    "typecheck_exit": 0
+  },
+  "before_regression": "Exact-base transport.signal.aborted was false before close; assertion failed",
+  "synthetic_only": true,
+  "privacy_scan": {
+    "files": 9,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "aws_access",
+      "telegram_token",
+      "jwt_literal",
+      "credential_url",
+      "provider_key"
+    ],
+    "matches": []
+  },
+  "evidence": [
+    {
+      "path": "docs/api/clerk-sdk-cancel-2026-11-07.md",
+      "bytes": 3504,
+      "sha256": "6d386c0543cb2f8cb4c8391bc3170628ab6e61ae8df3b512c46ae97965acb8f6"
+    },
+    {
+      "path": "evidence/clerk-sdk-cancel-2026-11-07/before.log",
+      "bytes": 951,
+      "sha256": "6307c54776820a9d90a6a122ac2fc39585550b1be46f5e701ab404dd1bafd961"
+    },
+    {
+      "path": "evidence/clerk-sdk-cancel-2026-11-07/source-manifest.json",
+      "bytes": 1164,
+      "sha256": "683437bf68c3cedfbb8ed04fd9037e03765756bed74765945b3c65114761986e"
+    },
+    {
+      "path": "evidence/clerk-sdk-cancel-2026-11-07/source.patch",
+      "bytes": 18393,
+      "sha256": "ec972ea5ce005ca15160fb0490b6591caa26118f660040d66b6488b0722ba3e7"
+    },
+    {
+      "path": "evidence/clerk-sdk-cancel-2026-11-07/tests.log",
+      "bytes": 8565,
+      "sha256": "2ad9fd868b8513f791e2bb768811bfdc1fa7116d33fe1f05820aa5cbf07a78a9"
+    },
+    {
+      "path": "evidence/clerk-sdk-cancel-2026-11-07/typecheck.log",
+      "bytes": 353,
+      "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+    }
+  ],
+  "not_run": [
+    "Real Clerk transport/socket cancellation",
+    "Production worker deployment",
+    "Real Postgres/RLS",
+    "Independent QA"
+  ],
+  "outside_actions": {
+    "upload": false,
+    "commit_push": false,
+    "real_provider": false,
+    "real_database": false,
+    "deploy": false
+  }
+}

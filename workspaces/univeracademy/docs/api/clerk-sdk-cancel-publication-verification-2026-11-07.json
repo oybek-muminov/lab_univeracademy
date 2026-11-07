@@ -1,0 +1,75 @@
+{
+  "finding": "SDK-CANCEL-1",
+  "status": "PUBLIC_LAB_QA_CANDIDATE_PROVISIONAL_NOT_ACCEPTED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "qa/current-flow-20261106",
+  "publication_base_commit": "6f2dbee78ba5545bd07ce759a9f0a6dde5514e60",
+  "author_base_commit": "6f2dbee78ba5545bd07ce759a9f0a6dde5514e60",
+  "source_files": 3,
+  "frozen_source_and_evidence_files": 10,
+  "source_manifest_sha256": "683437bf68c3cedfbb8ed04fd9037e03765756bed74765945b3c65114761986e",
+  "author_verification_sha256": "2222159d938fa4e4d2175c9d4b8bfd80bcb60baf42065a38745af2e1680bd514",
+  "source_patch_sha256": "ec972ea5ce005ca15160fb0490b6591caa26118f660040d66b6488b0722ba3e7",
+  "author_validation": {
+    "total": 65,
+    "new_cancellation": 10,
+    "prior_affected": 55,
+    "pass": 65,
+    "fail": 0,
+    "typecheck_exit": 0
+  },
+  "baseline_reproducer": "Exact-base transport.signal.aborted was false before close; assertion failed",
+  "metadata_note": "Frozen local NOT_UPLOADED status remains preparation provenance. Byte-identical tested source is published without redundant test rerun. Independent QA remains pending.",
+  "runtime_scope": "Per-call SDK transport cancellation/correlation, late-body disposal and cleanup only",
+  "dependencies_schema_auth_policy_unchanged": true,
+  "not_run": [
+    "Real Clerk transport/socket cancellation",
+    "Production worker deployment",
+    "Real Postgres/RLS",
+    "Independent QA"
+  ],
+  "outside_actions": {
+    "main_project": false,
+    "real_provider": false,
+    "real_database": false,
+    "migration": false,
+    "deploy": false,
+    "force_push": false
+  },
+  "ownership": {
+    "backend_base_files": 163,
+    "backend_current_files": 172,
+    "mini_app_files_unchanged": 108,
+    "ui_evidence_files_unchanged": 15,
+    "foreign_files_excluded_from_backend_manifest": 123
+  },
+  "mini_app": {
+    "tree": "9dabb44694f2c56e4cfd07ae63771306ff834adc",
+    "evidence_tree": "042a41abfdcd7c19ed87f28b7d8e235fa60fde38",
+    "changed_or_bypassed": false
+  },
+  "ui_guard": {
+    "command": "node apps/mini-app/tests/verify-backend-targets.mjs",
+    "exit": 1,
+    "result": "BACKEND_TARGET_SIZE_MISMATCH: BACKEND-CURRENT-SHA256SUMS",
+    "reason": "Unchanged UI guard pins a36d41a/149 Backend files; current approved candidate has172; UI-owner repin required"
+  },
+  "publication_secret_scan": {
+    "files": 13,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "aws_access",
+      "telegram_token",
+      "jwt_literal",
+      "credential_url",
+      "provider_key"
+    ],
+    "matches": [],
+    "data": "Synthetic fixtures only; no credential/real user data or cache/build/dependencies"
+  },
+  "whitespace_check": {
+    "scope": "Runtime/test/handoff/metadata",
+    "frozen_evidence": "Exact raw logs and unified source.patch preserve their original bytes; not whitespace-normalized"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "status": "LOCAL_PROVISIONAL_NOT_ACCEPTED_NOT_UPLOADED",
+  "base_commit": "6f2dbee78ba5545bd07ce759a9f0a6dde5514e60",
+  "source_files": [
+    {
+      "path": "runtime/clerk-sdk-bindings.mjs",
+      "bytes": 6984,
+      "sha256": "fc8d588919e598ba599c4c724bd2cf12ae61bc38e9a5af18a5420adc44bb4ef7",
+      "before_sha256": "283a796aca03d25f4c04005657fd286c8dbd83c615ed3e1d8e9b49d907928010"
+    },
+    {
+      "path": "runtime/clerk-sdk-worker.mjs",
+      "bytes": 2062,
+      "sha256": "75aef2bbd53a86920d1a1786745ce33545627e147a1a8b6a5b3b95dd08e0604f",
+      "before_sha256": "2768132b7383a2d0e9c579428c5648c58a587f9c242a61bbe4ee2e1c8c89fc62"
+    },
+    {
+      "path": "tests/clerk-auth/sdk-cancel.test.mjs",
+      "bytes": 10469,
+      "sha256": "0cd4918952b587929d0e4e446b5e1d7a4772ec039d7f401c23e34d99f5293c42",
+      "before_sha256": null
+    }
+  ],
+  "patch": {
+    "path": "evidence/clerk-sdk-cancel-2026-11-07/source.patch",
+    "bytes": 18393,
+    "sha256": "ec972ea5ce005ca15160fb0490b6591caa26118f660040d66b6488b0722ba3e7"
+  },
+  "patch_checks": {
+    "against_base_index": 0,
+    "reverse_against_worktree": 0
+  },
+  "sdk_and_lock_unchanged": true
+}

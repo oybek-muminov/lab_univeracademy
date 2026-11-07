@@ -41,35 +41,47 @@ export async function createClerkSdkBindings({secretKey,transport,now,timeoutMs,
   worker.on("message",async message=>{
     if(message.type==="ready"){readyResolve();return;}
     if(message.type==="result"){
-      const p=pending.get(message.id);if(!p)return;pending.delete(message.id);
+      const p=pending.get(message.id);if(!p)return;
       p.finish(message.error?new ApiFault(message.status===404?"NOT_FOUND":"SERVICE_UNAVAILABLE",message.status===404?404:503):null,message.data);return;
     }
     if(message.type!=="fetch")return;
-    const controller=new AbortController();inflight.add(controller);const timer=setTimeout(()=>controller.abort(),timeoutMs);
+    const p=pending.get(message.callId);
+    if(closed||!p){if(!closed)worker.postMessage({type:"response",id:message.id,error:true});return;}
+    const controller=new AbortController();inflight.add(controller);p.controllers.add(controller);
+    const timer=setTimeout(()=>controller.abort(),timeoutMs);let abort;
     try{
       const url=new URL(message.url),headers=new Headers(message.headers);
       if(closed||message.method!=="GET"||url.origin!=="https://api.clerk.com"||url.search||url.hash||
         !/^\/v1\/(sessions\/sess_[A-Za-z0-9]+|users\/user_[A-Za-z0-9]+)(?![\s\S])/.test(url.pathname)||
         headers.get("authorization")!=="Bearer "+secretKey)throw unavailable();
-      const response=await Promise.race([transport(new Request(url,{method:"GET",headers,redirect:"error",credentials:"omit",cache:"no-store",signal:controller.signal})),
-        new Promise((_,reject)=>controller.signal.addEventListener("abort",()=>reject(unavailable()),{once:true}))]);
+      const aborted=new Promise((_,reject)=>{abort=()=>reject(unavailable());controller.signal.addEventListener("abort",abort,{once:true});});
+      const response=await Promise.race([Promise.resolve().then(()=>{
+        if(controller.signal.aborted)throw unavailable();
+        return transport(new Request(url,{method:"GET",headers,redirect:"error",credentials:"omit",cache:"no-store",signal:controller.signal}));
+      }).then(response=>{
+        if(controller.signal.aborted){void response.body?.cancel().catch(()=>{});throw unavailable();}return response;
+      }),aborted]);
+      if(controller.signal.aborted)throw unavailable();
       if(response.url&&response.url!==url.href)throw unavailable();
       if(response.status!==200){worker.postMessage({type:"response",id:message.id,status:response.status===404?404:503,body:'{"errors":[{"code":"provider_unavailable","message":"SERVICE_UNAVAILABLE"}]}',headers:{"content-type":"application/json"}});return;}
       if(!/^application\/json(?:\s*;|$)/i.test(response.headers.get("content-type")??""))throw unavailable();
       const raw=await boundedBody(response,maxResponseBytes,controller.signal),value=JSON.parse(raw);rawSecurity(url.pathname,value);
+      if(controller.signal.aborted)throw unavailable();
       worker.postMessage({type:"response",id:message.id,status:200,body:raw,headers:{"content-type":"application/json"}});
     }catch{if(!closed)worker.postMessage({type:"response",id:message.id,error:true});}
-    finally{clearTimeout(timer);inflight.delete(controller);}
+    finally{clearTimeout(timer);if(abort)controller.signal.removeEventListener("abort",abort);inflight.delete(controller);p.controllers.delete(controller);}
   });
   const readyTimer=setTimeout(()=>readyReject(unavailable()),timeoutMs);
   try{await ready;}catch(error){await worker.terminate();throw error;}finally{clearTimeout(readyTimer);}
   const call=(method,target,{signal}={})=>new Promise((resolve,reject)=>{
     if(closed||(method==="getSession"?!sid(target):!user(target))||signal?.aborted){reject(unavailable());return;}
     const id=++sequence;
-    const finish=(error,value)=>{clearTimeout(timer);signal?.removeEventListener("abort",abort);error?reject(error):resolve(value);};
-    const abort=()=>{pending.delete(id);finish(unavailable());};
-    const timer=setTimeout(abort,timeoutMs);pending.set(id,{finish});signal?.addEventListener("abort",abort,{once:true});
-    worker.postMessage({type:"call",id,method,target});
+    const controllers=new Set();
+    const finish=(error,value)=>{if(!pending.delete(id))return;clearTimeout(timer);signal?.removeEventListener("abort",abort);
+      for(const controller of controllers)controller.abort();error?reject(error):resolve(value);};
+    const abort=()=>finish(unavailable());
+    const timer=setTimeout(abort,timeoutMs);pending.set(id,{finish,controllers});signal?.addEventListener("abort",abort,{once:true});
+    try{worker.postMessage({type:"call",id,method,target});}catch{abort();}
   });
   return{sdkVersion:CLERK_BACKEND_VERSION,now,
     fetchJwks:request=>transport(request),

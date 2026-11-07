@@ -2,7 +2,7 @@
 5189eff514f03dbac1eda22207839f5208195325cf4f6dc47853766e73dfc535  BACKEND-SHA256SUMS
 212c0e72c8a3bd4c0c4eb066f2a6c7d9037981c5d28dfc281c9129e747bc201b  CLIENT-PRODUCTION-HANDOFF.md
 07c7eb54e46cd6e085cd35a71cd1f94e17d47d89f3dc03d2d019cdffda96f725  README.backend.md
-3d469c1f564b02556a61619e567306eb774d7475b01054dfcc3c1d67f954dff3  README.current-backend.md
+6ed9ba96bcb485f1dc94277386a5af36d0d384e84e466de5bcaf961d5f4826b4  README.current-backend.md
 26b70e48719ba0de89c219019e611ac3688544a684119f2326424b389bc5889a  README.enrollment-staff.md
 510e12bc1be2d52fa922a7dd2d511ee4b68742ee0fd9df6999e0e38612ccb231  README.persistent-http.md
 1566d6ab399e25ebae0d38a5c5350c564038b4956192941906f5cf4737445630  README.storage-auth.md
@@ -23,6 +23,8 @@ e3aa4624d9d61bb72f82943b7b475844768bc2ce5fd5b9bcc147bf8b3994b1d2  docs/api/clerk
 29ebeec4730a16e7b926162329a6165519d90534c0d330a6684b1ceaa349e021  docs/api/clerk-provider-publication-verification-2026-11-07.json
 32380352894e059cdb294de0adf3d43d411ec323ffd81ffc1b1b1aa673476016  docs/api/clerk-review-handoff-2026-11-07.md
 7d8fa44fd71ab6f2d5a282690b5b2f1480c9514089b95779ccb2c76c6339d75c  docs/api/clerk-review-publication-verification-2026-11-07.json
+6d386c0543cb2f8cb4c8391bc3170628ab6e61ae8df3b512c46ae97965acb8f6  docs/api/clerk-sdk-cancel-2026-11-07.md
+f8ab72eea05df04ece9fd3297872844d077c2d60935a6a4bed2d5d4b27556fc3  docs/api/clerk-sdk-cancel-publication-verification-2026-11-07.json
 9b5a116ff15800310bd7a089b61530c51feaebec08904cacf7f47a98b1f91fb8  docs/api/clerk-sdk-scoped-storage-2026-11-07.md
 2a63a20500e780fce68457d82ac215d2cb24a67597880a4293f005b238ee861f  docs/api/clerk-sdk-storage-publication-verification-2026-11-07.json
 0fd76309a328351bb5186b4a9689fccd3827c55faf3f016c067d55686276dec8  docs/api/clerk-timing-d1-d2-2026-11-07.md
@@ -61,6 +63,12 @@ ca4ef3ef579f1c6b4e2463393ec3a9a03502c250ba883c28e4d88c351e7480dd  evidence/clerk
 99024b79894893dc3f387d8679883771849c480090289e70c7419961754b94a6  evidence/clerk-review-2026-11-07/transport-auth-order-expectation.log
 d2fbe9e2039dddfd15f59e2f771551898703dc2e56430268fa7297497e46f8bc  evidence/clerk-review-2026-11-07/typecheck.log
 5e107ba264798c4c2223f31481807b186ab762d366670405a233291c768e77b0  evidence/clerk-review-2026-11-07/verification.json
+6307c54776820a9d90a6a122ac2fc39585550b1be46f5e701ab404dd1bafd961  evidence/clerk-sdk-cancel-2026-11-07/before.log
+683437bf68c3cedfbb8ed04fd9037e03765756bed74765945b3c65114761986e  evidence/clerk-sdk-cancel-2026-11-07/source-manifest.json
+ec972ea5ce005ca15160fb0490b6591caa26118f660040d66b6488b0722ba3e7  evidence/clerk-sdk-cancel-2026-11-07/source.patch
+2ad9fd868b8513f791e2bb768811bfdc1fa7116d33fe1f05820aa5cbf07a78a9  evidence/clerk-sdk-cancel-2026-11-07/tests.log
+e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc  evidence/clerk-sdk-cancel-2026-11-07/typecheck.log
+2222159d938fa4e4d2175c9d4b8bfd80bcb60baf42065a38745af2e1680bd514  evidence/clerk-sdk-cancel-2026-11-07/verification.json
 deb635fa1f15fc5ac3f4f003240596a59879b79a0de38d58472948ef1f34a1a6  evidence/clerk-sdk-storage-2026-11-07/sdk-inspection.json
 9779e41c808555c8a30f2a17f3cafdb144f9df6895698f5af251210d56180cbf  evidence/clerk-sdk-storage-2026-11-07/source-manifest.json
 897ba23e6ccee08d35638641150158f845ca56f2694108394bd31cec4d25c9b9  evidence/clerk-sdk-storage-2026-11-07/tests.log
@@ -82,8 +90,8 @@ a1bdcd4e7177388e6eb0cf77bdde00a4a962ca7ac13fb921277f863ea0acacff  packages/api-c
 5bb3f266acd8f699ff10df8ef0522852b5d7657af0df349f95d7ac52440020cb  packages/api-client/student-openapi.json
 bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc  packages/api-client/student-types.d.ts
 04941545a0f98e4fb0f52c490af3129c7fbbe44720b7ee6b199dc6dfed24db16  runtime/clerk-review-server.mjs
-283a796aca03d25f4c04005657fd286c8dbd83c615ed3e1d8e9b49d907928010  runtime/clerk-sdk-bindings.mjs
-2768132b7383a2d0e9c579428c5648c58a587f9c242a61bbe4ee2e1c8c89fc62  runtime/clerk-sdk-worker.mjs
+fc8d588919e598ba599c4c724bd2cf12ae61bc38e9a5af18a5420adc44bb4ef7  runtime/clerk-sdk-bindings.mjs
+75aef2bbd53a86920d1a1786745ce33545627e147a1a8b6a5b3b95dd08e0604f  runtime/clerk-sdk-worker.mjs
 c0c4747f563971e6bced723443cce86eaa1fae66c87c875f792b0baad20fec56  runtime/configured-server.mjs
 a118db0f7531e4005edd8388e93a25cfe2952cb223e80a752a6ddd617543466e  runtime/content-pilot-driver.mjs
 4bda938261a208c9c632022a86a31e447c56e4cb38e4e209401d1c8e3b14cfee  runtime/content-pilot-lab.mjs
@@ -141,6 +149,7 @@ db182096422e367993ba15f34d3a412bf65a1b269f1a4f4954dd7436c13a3a59  tests/clerk-au
 81fffa224c5f3b27a0d56ee5c3e25f91475a0cc14a0c28a13fb594b40bedd534  tests/clerk-auth/review-types.test.ts
 e301a111d26b64fc2de1bdb9d62a9c0f3308d4c7401c351ea828cfc7bfe52c64  tests/clerk-auth/scoped-store.test.mjs
 6e42092ca6ada3590b5a9b517e376cc72ab19474c35e50d34d5bf7f65b3a362f  tests/clerk-auth/sdk-binding.test.mjs
+0cd4918952b587929d0e4e446b5e1d7a4772ec039d7f401c23e34d99f5293c42  tests/clerk-auth/sdk-cancel.test.mjs
 bfa54cb9f778a5202705e415f92d25497640f8847acc963182064c6ef8328a45  tests/clerk-auth/staff-parallel.test.mjs
 73dc09ba11d9598b3e00daaf6b8b24b9468b32d6ad6ed17bc600677f579a8628  tests/clerk-auth/verifier.test.mjs
 ed14bfbd5f231463ebf2376304add8b6226645db3a4d811855a9b355e2335c0a  tests/enrollment/identity-staff.test.mjs
