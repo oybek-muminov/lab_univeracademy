@@ -65,7 +65,7 @@ export function createSignInController(options: {
       return receipt.value;
     });
   }
-  function reset() { clearLocal(); void retireAll().catch(() => {}); }
+  function reset() { clearLocal(); return retireAll().then(() => {}, () => {}); }
   async function logout() {
     clearLocal(); const generation = epoch;
     try {

@@ -33,8 +33,18 @@ try {
           const js = await readFile(outDir + '/assets/' + name, 'utf8');
           if (['synthetic-entry-access', 'synthetic-entry-refresh', '__UA_SYNTHETIC_INIT_DATA__',
             'Namuna holatlarini sinash', 'query_id=synthetic', '__UA_SYNTHETIC_CLERK_SDK_TOKEN__',
-            '__UA_SDK_TEST_AUDIT__', 'synthetic-sdk-proof-', 'Lokal prototip', '246810'].some(value => js.includes(value)))
+            '__UA_SDK_TEST_AUDIT__', '__UA_REACT_TEST_', 'SYNTHETIC_REACT_PROOF_REQUIRED',
+            '__UA_PREBUILT_TEST_', '__SDK_TEST_COMPLETE_FORM__', 'SYNTHETIC_PREBUILT_PROOF_REQUIRED',
+            'synthetic-sdk-proof-', 'Lokal prototip', '246810'].some(value => js.includes(value)))
             throw new Error('SYNTHETIC_TEST_CODE_IN_PRODUCTION');
+        }
+        if (common) {
+          for (const name of await readdir(outDir + '/assets')) {
+            if (!name.endsWith('.js')) continue;
+            const js = await readFile(outDir + '/assets/' + name, 'utf8');
+            if (['sign-in-email', 'Hisoblarni bog‘lash hozircha mavjud emas.', 'Tekshirish va kirish'].some(value => js.includes(value)))
+              throw new Error('CUSTOM_BACKUP_FORM_IN_MAIN_PRODUCTION');
+          }
         }
         builds.push({ configured, common, path: common && configured ? '/telegram' : '/', baseUrl: await serve(outDir) });
       }

@@ -29,7 +29,7 @@ export function CommonSignInView({ runtime, canContinue, telegramUrl }: {
           <button className="primary" disabled={state.busy}>Tasdiqlash kodini yuborish</button>
         </form>
         {telegramUrl && <p><a href={telegramUrl}>Telegram orqali kirish — ixtiyoriy</a></p>}
-        <small>Hisoblar avtomatik bog‘lanmaydi.</small>
+        <small>Hisoblarni bog‘lash hozircha mavjud emas.</small>
       </>}
       {state.step === 'code' && <>
         <p>{state.maskedEmail} manziliga yuborilgan kodni kiriting.</p>

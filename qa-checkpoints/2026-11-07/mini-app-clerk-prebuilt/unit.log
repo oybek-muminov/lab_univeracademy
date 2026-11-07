@@ -1,0 +1,466 @@
+TAP version 13
+# Subtest: prebuilt: cached SDK session waits for explicit Continue and fresh Backend exchange
+ok 1 - prebuilt: cached SDK session waits for explicit Continue and fresh Backend exchange
+  ---
+  duration_ms: 366.36335
+  type: 'test'
+  ...
+# Subtest: prebuilt: missing, pending and task-bound SDK sessions cannot exchange
+ok 2 - prebuilt: missing, pending and task-bound SDK sessions cannot exchange
+  ---
+  duration_ms: 3.003721
+  type: 'test'
+  ...
+# Subtest: prebuilt: SDK context changes hide ready data before observer and require explicit new entry
+ok 3 - prebuilt: SDK context changes hide ready data before observer and require explicit new entry
+  ---
+  duration_ms: 134.983984
+  type: 'test'
+  ...
+# Subtest: prebuilt: Continue before observer cannot relabel an old ready app flow as a new SDK session
+ok 4 - prebuilt: Continue before observer cannot relabel an old ready app flow as a new SDK session
+  ---
+  duration_ms: 58.028909
+  type: 'test'
+  ...
+# Subtest: prebuilt: delayed old exchange body after SDK replacement cannot reopen the app
+ok 5 - prebuilt: delayed old exchange body after SDK replacement cannot reopen the app
+  ---
+  duration_ms: 24.378294
+  type: 'test'
+  ...
+# Subtest: prebuilt: own SDK signout observer does not supersede captured app logout ACK
+ok 6 - prebuilt: own SDK signout observer does not supersede captured app logout ACK
+  ---
+  duration_ms: 47.94472
+  type: 'test'
+  ...
+# Subtest: prebuilt: reset clears immediately but its cleanup promise waits for targeted SDK signout
+ok 7 - prebuilt: reset clears immediately but its cleanup promise waits for targeted SDK signout
+  ---
+  duration_ms: 122.694787
+  type: 'test'
+  ...
+# Subtest: prebuilt: SDK revocation clears app context and late old data never changes a new login
+ok 8 - prebuilt: SDK revocation clears app context and late old data never changes a new login
+  ---
+  duration_ms: 31.642737
+  type: 'test'
+  ...
+# Subtest: Clerk review entry exchanges once, uses opaque proofs and completes save/clear/resume, submit/result/history and body-only logout over TCP
+ok 9 - Clerk review entry exchanges once, uses opaque proofs and completes save/clear/resume, submit/result/history and body-only logout over TCP
+  ---
+  duration_ms: 860.48637
+  type: 'test'
+  ...
+# Subtest: email evidence creates a fresh ungrouped student; canonical profile controls registration and empty exams
+ok 10 - email evidence creates a fresh ungrouped student; canonical profile controls registration and empty exams
+  ---
+  duration_ms: 117.130306
+  type: 'test'
+  ...
+# Subtest: cancelled provider completion never exchanges or replaces the newer email flow
+ok 11 - cancelled provider completion never exchanges or replaces the newer email flow
+  ---
+  duration_ms: 28.410189
+  type: 'test'
+  ...
+# Subtest: cancel after exchange headers rejects the late body and preserves a newer login even when fetch ignores abort
+ok 12 - cancel after exchange headers rejects the late body and preserves a newer login even when fetch ignores abort
+  ---
+  duration_ms: 59.552284
+  type: 'test'
+  ...
+# Subtest: cancel while profile body is pending retires the known app session and cannot expose its old payload
+ok 13 - cancel while profile body is pending retires the known app session and cannot expose its old payload
+  ---
+  duration_ms: 25.139476
+  type: 'test'
+  ...
+# Subtest: a delayed logout ACK cannot clear or alter a newer login; logout rejection remains observed
+ok 14 - a delayed logout ACK cannot clear or alter a newer login; logout rejection remains observed
+  ---
+  duration_ms: 81.22994
+  type: 'test'
+  ...
+# Subtest: lost exchange reply is not replayed, and a fresh verified proof recovers without restoring the cancelled context
+ok 15 - lost exchange reply is not replayed, and a fresh verified proof recovers without restoring the cancelled context
+  ---
+  duration_ms: 81.088296
+  type: 'test'
+  ...
+# Subtest: logout during an exchange body wait clears locally and never claims a server ACK or revives its late session
+ok 16 - logout during an exchange body wait clears locally and never claims a server ACK or revives its late session
+  ---
+  duration_ms: 68.988353
+  type: 'test'
+  ...
+# Subtest: failed logout stays locally signed out, reports uncertainty and cannot resurrect the old flow
+ok 17 - failed logout stays locally signed out, reports uncertainty and cannot resurrect the old flow
+  ---
+  duration_ms: 90.604971
+  type: 'test'
+  ...
+# Subtest: provider revocation hides the old flow; a new verified session resumes server answers and deadline
+ok 18 - provider revocation hides the old flow; a new verified session resumes server answers and deadline
+  ---
+  duration_ms: 115.247527
+  type: 'test'
+  ...
+# Subtest: local transport clear invalidates pending login and an old success without a server logout claim
+ok 19 - local transport clear invalidates pending login and an old success without a server logout claim
+  ---
+  duration_ms: 1.372338
+  type: 'test'
+  ...
+# Subtest: SDK email OTP uses public Future API, privacy-preserving signup transfer and a fresh default JWT
+ok 20 - SDK email OTP uses public Future API, privacy-preserving signup transfer and a fresh default JWT
+  ---
+  duration_ms: 21.689063
+  type: 'test'
+  ...
+# Subtest: verified missing account transfers to signup only after Clerk explicitly requests it
+ok 21 - verified missing account transfers to signup only after Clerk explicitly requests it
+  ---
+  duration_ms: 0.681734
+  type: 'test'
+  ...
+# Subtest: wrong code is sanitized and remains retryable on its current challenge
+ok 22 - wrong code is sanitized and remains retryable on its current challenge
+  ---
+  duration_ms: 6.427205
+  type: 'test'
+  ...
+# Subtest: missing or stale challenge never reaches the SDK verification
+ok 23 - missing or stale challenge never reaches the SDK verification
+  ---
+  duration_ms: 3.91596
+  type: 'test'
+  ...
+# Subtest: Google opens only a user-gesture popup and passes fixed same-origin callback URLs
+ok 24 - Google opens only a user-gesture popup and passes fixed same-origin callback URLs
+  ---
+  duration_ms: 4.994866
+  type: 'test'
+  ...
+# Subtest: popup block never attempts OAuth or returns evidence
+ok 25 - popup block never attempts OAuth or returns evidence
+  ---
+  duration_ms: 0.344527
+  type: 'test'
+  ...
+# Subtest: a verified transferable Google account signs up through the public transfer API
+ok 26 - a verified transferable Google account signs up through the public transfer API
+  ---
+  duration_ms: 0.549014
+  type: 'test'
+  ...
+# Subtest: cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry
+ok 27 - cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry
+  ---
+  duration_ms: 31.610096
+  type: 'test'
+  ...
+# Subtest: late finalize after cancel is quarantined and signs out only its captured session before new SDK auth
+ok 28 - late finalize after cancel is quarantined and signs out only its captured session before new SDK auth
+  ---
+  duration_ms: 26.603684
+  type: 'test'
+  ...
+# Subtest: cancel cleanup never signs out an unrelated SDK session activated outside the captured operation
+ok 29 - cancel cleanup never signs out an unrelated SDK session activated outside the captured operation
+  ---
+  duration_ms: 2.100189
+  type: 'test'
+  ...
+# Subtest: logout captures a specific session, waits for app receipt and never uses global SDK signout
+ok 30 - logout captures a specific session, waits for app receipt and never uses global SDK signout
+  ---
+  duration_ms: 1.731161
+  type: 'test'
+  ...
+# Subtest: failed app receipt still requests targeted provider signout without implying app ACK
+ok 31 - failed app receipt still requests targeted provider signout without implying app ACK
+  ---
+  duration_ms: 0.434995
+  type: 'test'
+  ...
+# Subtest: SDK needs_second_factor never becomes app evidence
+ok 32 - SDK needs_second_factor never becomes app evidence
+  ---
+  duration_ms: 0.408114
+  type: 'test'
+  ...
+# Subtest: SDK needs_client_trust never becomes app evidence
+ok 33 - SDK needs_client_trust never becomes app evidence
+  ---
+  duration_ms: 0.395597
+  type: 'test'
+  ...
+# Subtest: SDK needs_protect_check never becomes app evidence
+ok 34 - SDK needs_protect_check never becomes app evidence
+  ---
+  duration_ms: 0.306364
+  type: 'test'
+  ...
+# Subtest: session tasks and session changes during JWT fetch deny evidence
+ok 35 - session tasks and session changes during JWT fetch deny evidence
+  ---
+  duration_ms: 17.02099
+  type: 'test'
+  ...
+# Subtest: prototype mode is explicit; no provider or HTTP contract is inferred
+ok 36 - prototype mode is explicit; no provider or HTTP contract is inferred
+  ---
+  duration_ms: 4.152785
+  type: 'test'
+  ...
+# Subtest: Google evidence must pass separate app authorization/profile before a student flow appears
+ok 37 - Google evidence must pass separate app authorization/profile before a student flow appears
+  ---
+  duration_ms: 25.198104
+  type: 'test'
+  ...
+# Subtest: provider completion while app authorization is pending does not reveal a flow
+ok 38 - provider completion while app authorization is pending does not reveal a flow
+  ---
+  duration_ms: 9.186074
+  type: 'test'
+  ...
+# Subtest: app rejection after provider success never loads profile/exams and has no raw error message
+ok 39 - app rejection after provider success never loads profile/exams and has no raw error message
+  ---
+  duration_ms: 6.087898
+  type: 'test'
+  ...
+# Subtest: email is synthetic-only, normalized, masked in snapshots and a code uses its captured challenge
+ok 40 - email is synthetic-only, normalized, masked in snapshots and a code uses its captured challenge
+  ---
+  duration_ms: 1.32261
+  type: 'test'
+  ...
+# Subtest: non-synthetic email never reaches the provider
+ok 41 - non-synthetic email never reaches the provider
+  ---
+  duration_ms: 0.300787
+  type: 'test'
+  ...
+# Subtest: invalid code format does not call a provider
+ok 42 - invalid code format does not call a provider
+  ---
+  duration_ms: 2.703416
+  type: 'test'
+  ...
+# Subtest: wrong provider code is retryable without app authorization
+ok 43 - wrong provider code is retryable without app authorization
+  ---
+  duration_ms: 1.044267
+  type: 'test'
+  ...
+# Subtest: expired code drops challenge and cannot be reused
+ok 44 - expired code drops challenge and cannot be reused
+  ---
+  duration_ms: 0.862722
+  type: 'test'
+  ...
+# Subtest: resend replaces the old challenge explicitly
+ok 45 - resend replaces the old challenge explicitly
+  ---
+  duration_ms: 1.091677
+  type: 'test'
+  ...
+# Subtest: app authorization failure consumes the finished code step, without code replay
+ok 46 - app authorization failure consumes the finished code step, without code replay
+  ---
+  duration_ms: 0.862533
+  type: 'test'
+  ...
+# Subtest: WebView Google action is blocked before provider/app calls, while email remains available
+ok 47 - WebView Google action is blocked before provider/app calls, while email remains available
+  ---
+  duration_ms: 4.332694
+  type: 'test'
+  ...
+# Subtest: provider CANCELLED cannot authorize the app
+ok 48 - provider CANCELLED cannot authorize the app
+  ---
+  duration_ms: 0.516523
+  type: 'test'
+  ...
+# Subtest: provider VERIFICATION_REQUIRED cannot authorize the app
+ok 49 - provider VERIFICATION_REQUIRED cannot authorize the app
+  ---
+  duration_ms: 0.464256
+  type: 'test'
+  ...
+# Subtest: provider RATE_LIMITED cannot authorize the app
+ok 50 - provider RATE_LIMITED cannot authorize the app
+  ---
+  duration_ms: 0.455373
+  type: 'test'
+  ...
+# Subtest: same pending action is single-flight
+ok 51 - same pending action is single-flight
+  ---
+  duration_ms: 2.944756
+  type: 'test'
+  ...
+# Subtest: late provider success after reset cannot enter the new context
+ok 52 - late provider success after reset cannot enter the new context
+  ---
+  duration_ms: 1.078966
+  type: 'test'
+  ...
+# Subtest: late app authorization cannot change a fresh flow after reset
+ok 53 - late app authorization cannot change a fresh flow after reset
+  ---
+  duration_ms: 21.989931
+  type: 'test'
+  ...
+# Subtest: late rejection after reset does not overwrite a new ready flow
+ok 54 - late rejection after reset does not overwrite a new ready flow
+  ---
+  duration_ms: 0.587568
+  type: 'test'
+  ...
+# Subtest: profile identity mismatch is rejected before exams
+ok 55 - profile identity mismatch is rejected before exams
+  ---
+  duration_ms: 0.212658
+  type: 'test'
+  ...
+# Subtest: incomplete server profile enters registration without loading exams
+ok 56 - incomplete server profile enters registration without loading exams
+  ---
+  duration_ms: 0.140968
+  type: 'test'
+  ...
+# Subtest: empty provider evidence fails before app authorization
+ok 57 - empty provider evidence fails before app authorization
+  ---
+  duration_ms: 0.174667
+  type: 'test'
+  ...
+# Subtest: snapshots omit email, OTP, evidence and raw failures
+ok 58 - snapshots omit email, OTP, evidence and raw failures
+  ---
+  duration_ms: 0.483905
+  type: 'test'
+  ...
+# Subtest: dispose prevents late responses and further actions; no unhandled synchronous hook rejection
+ok 59 - dispose prevents late responses and further actions; no unhandled synchronous hook rejection
+  ---
+  duration_ms: 0.376842
+  type: 'test'
+  ...
+# Subtest: common config pins HTTPS app/API/Clerk host and fixed callback, with Telegram explicitly optional
+ok 60 - common config pins HTTPS app/API/Clerk host and fixed callback, with Telegram explicitly optional
+  ---
+  duration_ms: 2.785529
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY=undefined
+ok 61 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY=undefined
+  ---
+  duration_ms: 1.562059
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="not-a-key"
+ok 62 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="not-a-key"
+  ---
+  duration_ms: 0.258019
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="pk_test_b3RoZXIuZXhhbXBsZS50ZXN0JA=="
+ok 63 - common config fails closed before SDK/API on VITE_CLERK_PUBLISHABLE_KEY="pk_test_b3RoZXIuZXhhbXBsZS50ZXN0JA=="
+  ---
+  duration_ms: 0.197512
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="http://clerk.example.test"
+ok 64 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="http://clerk.example.test"
+  ---
+  duration_ms: 0.2311
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test/path"
+ok 65 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test/path"
+  ---
+  duration_ms: 0.157019
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test?redirect=elsewhere"
+ok 66 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test?redirect=elsewhere"
+  ---
+  duration_ms: 0.260651
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test:444"
+ok 67 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://clerk.example.test:444"
+  ---
+  duration_ms: 0.444444
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://user:synthetic@clerk.example.test"
+ok 68 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN="https://user:synthetic@clerk.example.test"
+  ---
+  duration_ms: 0.303975
+  type: 'test'
+  ...
+# Subtest: common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN=" https://clerk.example.test"
+ok 69 - common config fails closed before SDK/API on VITE_CLERK_FRONTEND_ORIGIN=" https://clerk.example.test"
+  ---
+  duration_ms: 0.618301
+  type: 'test'
+  ...
+# Subtest: stale contract, app mismatch and callback override are rejected before provider IO
+ok 70 - stale contract, app mismatch and callback override are rejected before provider IO
+  ---
+  duration_ms: 1.752721
+  type: 'test'
+  ...
+# Subtest: public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout
+ok 71 - public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout
+  ---
+  duration_ms: 789.481419
+  type: 'test'
+  ...
+# Subtest: email SDK proof enters server-owned registration and an ungrouped student has no tests
+ok 72 - email SDK proof enters server-owned registration and an ungrouped student has no tests
+  ---
+  duration_ms: 226.843874
+  type: 'test'
+  ...
+# Subtest: Telegram WebView Google path is stopped before popup/API; email remains available
+ok 73 - Telegram WebView Google path is stopped before popup/API; email remains available
+  ---
+  duration_ms: 9.809783
+  type: 'test'
+  ...
+# Subtest: cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof
+ok 74 - cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof
+  ---
+  duration_ms: 95.953039
+  type: 'test'
+  ...
+# Subtest: logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate
+ok 75 - logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate
+  ---
+  duration_ms: 194.601982
+  type: 'test'
+  ...
+# Subtest: provider signout failure preserves an actual app ACK without claiming the SDK session was closed
+ok 76 - provider signout failure preserves an actual app ACK without claiming the SDK session was closed
+  ---
+  duration_ms: 112.038512
+  type: 'test'
+  ...
+1..76
+# tests 76
+# suites 0
+# pass 76
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6563.125987

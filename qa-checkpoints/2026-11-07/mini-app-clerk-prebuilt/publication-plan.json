@@ -1,0 +1,220 @@
+{
+  "status": "AUTHORIZED_LAB_PUBLICATION_PLAN_NOT_PROVIDER_VERIFICATION",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "qa/current-flow-20261106",
+  "remote_base": "31b2b00ecd1c413e1f828fef4c023c3ff2310909",
+  "source_manifest_sha256": "5f4d0f22ade20e4609657b7366febe3014d4f4745254c01569da747def9e253b",
+  "patch_sha256": "e628afee2b6410b815dd3588431316b9cb26b5923a4161a24bd3d2ea23ce9b20",
+  "source_files": 26,
+  "evidence_files": 15,
+  "preservation": "Existing remote tree plus these exact files only; no deletions/force update.",
+  "frozen_report_notice": "LOCAL_CANDIDATE/NOT_UPLOADED phrases in frozen reports describe the original evidence capture time. Publishing does not promote author-local PASS to independent QA or real-provider PASS.",
+  "privacy": "Contextual manual review and pattern scan of selected source and reports: PASS; no real credentials/user data.",
+  "files": [
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/clerk-prebuilt-local.md",
+      "bytes": 5415,
+      "sha256": "8d6f72fe6f8ce2bf08bd273a4a24eef8ba1135035f244fa2fa7b39d8b9b99478"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/review/README.md",
+      "bytes": 5388,
+      "sha256": "31d8e07b52d6c198bae98b82590bee062762fdab584664c95c036d1b6da5c9b3"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/review/uz-otp-email-A.txt",
+      "bytes": 297,
+      "sha256": "a24eb98bbd10ddc61500f758461eb253c4c4cb6addb99f022fee7ef8faaa3e7e"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.html",
+      "bytes": 5758,
+      "sha256": "1b06db251679e9ed8f448b29021d90d1c8bb1e8112c40bc68172418b51d5ccd0"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.json",
+      "bytes": 2571,
+      "sha256": "996440127fb2a67876e720d65cda71b8012facd0f3611c898635089bf7822b45"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/index.html",
+      "bytes": 443,
+      "sha256": "ce7d1edfc92a76a921a409160204f56db60105b2a15b8f6441477b7d1563147d"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/package.json",
+      "bytes": 1863,
+      "sha256": "bc20fbeb18ac28595b1be306d24d1a787484feb64559a38a524c9277696851a0"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/production.env.example",
+      "bytes": 722,
+      "sha256": "9528f31cdb6baf152b36dd00414deb6baea9d0e1a9c8cfddce8dc9ae4a77e5d7"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-entry.tsx",
+      "bytes": 3789,
+      "sha256": "be3c0dc5f7f28217432827c925703f563661d2749ffb50a6092eb51e883832fc"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-session.ts",
+      "bytes": 1513,
+      "sha256": "6cf3a8809c2db65f9a93e3f57a885f56b872aa64505c268842fd2529eaa4f21d"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-backup-entry.tsx",
+      "bytes": 2179,
+      "sha256": "e07931a5dd0e7356fe5b520a0f4a7d65bea40eb46f6827533eac6071a41a5dbd"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx",
+      "bytes": 5663,
+      "sha256": "e559970921582b0b419585ca0411e5f303f9b6390fc1a880ec4e7b9bb3e46afe"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-sign-in-view.tsx",
+      "bytes": 3858,
+      "sha256": "69458469ac42f1a13035263b203183426418ebb795ae573c143f69c53419e2b5"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/sign-in-controller.ts",
+      "bytes": 9238,
+      "sha256": "d8ff17a8074648d8f4e93448913d162d719d97fac324fbc5afe50396a35de2a1"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.mjs",
+      "bytes": 1426,
+      "sha256": "43bae212363f1a72d03e1222f128e73c478e37cd62890a17b06ef2a871348c20"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.py",
+      "bytes": 9291,
+      "sha256": "4ff89c3a61ac830f8ddc3811459b4acb8693253a2d533050cafff234896d6fbf"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-session.test.mjs",
+      "bytes": 7218,
+      "sha256": "0c9e2d0107e5fea8c7d5dbdaff3f78c313d4b9283a255de643bd20f002ff02b3"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.html",
+      "bytes": 345,
+      "sha256": "4aac86ba3b840c95a874bb71350ee8261d2c02f84d9de1cb27013b799d2a1287"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.mjs",
+      "bytes": 4333,
+      "sha256": "79c413cbd755b34d534ac8f7ab1b8a54c2868abe77c9b82194bddbcc8a6963ca"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.mjs",
+      "bytes": 1464,
+      "sha256": "88f896bd09e7854b79647441839d09e3665b27dd0805cd2e5add77cb22dad495"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.py",
+      "bytes": 7628,
+      "sha256": "c8019a37b80aec77bace7bf1ada7fc34efe1674cc1bf107c0e307ff9c1ce7bb6"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.html",
+      "bytes": 329,
+      "sha256": "aee2688a4df76d1f0821f23d0a35661a564685596cac4a1c430cf7ed3b29b223"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.mjs",
+      "bytes": 3679,
+      "sha256": "9290553faf0a2bf1cf5ad458ee9ca07bffaaa0528ce1a2d701e758242fb36859"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.mjs",
+      "bytes": 4181,
+      "sha256": "21926816fa1aa8ba84e46696e698cb120cde531eb4a71768f5a13c5f41fe30a4"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.py",
+      "bytes": 12835,
+      "sha256": "64b53831b887c996ca90d3bca43e8e3e4ede29ec2975828657fa9741f0da4ceb"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/vite.config.ts",
+      "bytes": 1043,
+      "sha256": "0111b9cf1be03bf6429efb8adfdec90587a5dff9ae649dd95fa532790a3ed89c"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/candidate-manifest.json",
+      "bytes": 8922,
+      "sha256": "5f4d0f22ade20e4609657b7366febe3014d4f4745254c01569da747def9e253b"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/candidate.patch",
+      "bytes": 86867,
+      "sha256": "e628afee2b6410b815dd3588431316b9cb26b5923a4161a24bd3d2ea23ce9b20"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/HANDOFF.md",
+      "bytes": 2385,
+      "sha256": "3b03914d77621e19ca62e68fe6cc2feae85c30feb5ac327c2e2dbeeb544ec492"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/restore-candidate.py",
+      "bytes": 1826,
+      "sha256": "0ee450f1ba4d678ca675b7f21486d5fecf6068a445705eeb62be1c04154999c5"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/verification.json",
+      "bytes": 3076,
+      "sha256": "19eab10f0e2e9aa8709546e440bb085d5ebf3b836e9f317951d115a38563f78b"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/integrity-privacy.json",
+      "bytes": 970,
+      "sha256": "f2c0820adb2c4edf348818d444823e557a377c52a3295bbbb907854f041210fd"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/unit.log",
+      "bytes": 18013,
+      "sha256": "16da8de93bbe19275443c2a91793afbf8f0d2fa1c45826193f7ef81a9dba4d73"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/prebuilt-browser.log",
+      "bytes": 2393,
+      "sha256": "26e8b242014d8780980ef0325641821449a3c239a5acbb055a646d12b47832a1"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/backup-browser.log",
+      "bytes": 1616,
+      "sha256": "76a8c821d4886d3c6a68916f1f6a20b10b3e59ca30fda2097a5089120947d14b"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/common-production-build.log",
+      "bytes": 1716,
+      "sha256": "27b5602e677e8714a68aa791e6d4cccf3a06e0ccbdc00d4bde629e0c64563d74"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/legacy-production-build.log",
+      "bytes": 2193,
+      "sha256": "f3a6a7a9a152a3288568710841bd5c74cbd63e23062c2370bcb9b4b7ba882db8"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/build-typecheck.log",
+      "bytes": 898,
+      "sha256": "20ba0c891c8378d771493e82458b293d38ae5e85d0d9ed136f26109a1588e2ac"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/typecheck.log",
+      "bytes": 263,
+      "sha256": "ddc260d0ab04bbc1803bbc81e1bcac17f9e8e36dc769870e80d1e19c71bdab0b"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/backend172-guard.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/restore-script.log",
+      "bytes": 230,
+      "sha256": "b66327f8e48a7493e69b3b581721efed3100b019dc43ae783e76cc85be7b8e63"
+    }
+  ]
+}

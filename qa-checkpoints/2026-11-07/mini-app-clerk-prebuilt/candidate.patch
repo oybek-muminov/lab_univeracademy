@@ -1,0 +1,1159 @@
+diff --git a/workspaces/univeracademy/apps/mini-app/index.html b/workspaces/univeracademy/apps/mini-app/index.html
+index c537336ef4324fa9a5c1d53d694e39f074dfa3f2..e4dceab9ec402fa38053b18e471566b008f9ff16 100644
+--- a/workspaces/univeracademy/apps/mini-app/index.html
++++ b/workspaces/univeracademy/apps/mini-app/index.html
+@@ -4,6 +4,7 @@
+     <meta charset="UTF-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+     <meta name="theme-color" content="#123d32" />
++    <meta name="referrer" content="no-referrer" />
+     <title>UniverAcademy — o‘quvchi kabineti</title>
+   </head>
+   <body>
+diff --git a/workspaces/univeracademy/apps/mini-app/package.json b/workspaces/univeracademy/apps/mini-app/package.json
+index 69db9df32f411e24bf352bd16f24749ef1d27947..b07be694fcc2e4ae6e3d9bc88becae98f50396f8 100644
+--- a/workspaces/univeracademy/apps/mini-app/package.json
++++ b/workspaces/univeracademy/apps/mini-app/package.json
+@@ -22,8 +22,11 @@
+     "test:common-build": "node tests/production-entry-browser.mjs --common-gates",
+     "test:clerk-sdk": "node --unhandled-rejections=strict --test tests/clerk-sdk-adapter.test.mjs tests/common-production-runtime.test.mjs",
+     "test:clerk-sdk-browser": "node tests/clerk-sdk-browser.mjs",
++    "test:clerk-react-browser": "node tests/clerk-react-browser.mjs",
+     "build": "tsc --noEmit && vite build",
+-    "build:demo": "tsc --noEmit && vite build --mode demo --outDir dist-demo"
++    "build:demo": "tsc --noEmit && vite build --mode demo --outDir dist-demo",
++    "test:clerk-prebuilt": "node --unhandled-rejections=strict --test tests/clerk-prebuilt-session.test.mjs",
++    "test:clerk-prebuilt-browser": "node tests/clerk-prebuilt-browser.mjs"
+   },
+   "dependencies": {
+     "@clerk/react": "6.18.6",
+diff --git a/workspaces/univeracademy/apps/mini-app/production.env.example b/workspaces/univeracademy/apps/mini-app/production.env.example
+index 544e0532d1c662c1e601b2a1471249276d44225b..6d9711480dd2bed641fe68f56dc5864598d84e8d 100644
+--- a/workspaces/univeracademy/apps/mini-app/production.env.example
++++ b/workspaces/univeracademy/apps/mini-app/production.env.example
+@@ -3,7 +3,8 @@
+ VITE_MINI_APP_ORIGIN=
+ VITE_API_ORIGIN=
+ VITE_STUDENT_CONTRACT_SHA256=f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28
+-# Common Clerk entry is an explicit rollout choice; blank keeps legacy Telegram.
++# common selects Clerk's provided SignIn form; blank keeps legacy Telegram.
++# Custom credential UI remains test/reserve only; no automatic production fallback.
+ VITE_AUTH_ENTRY=
+ # Public values only. No real instance/domain is configured by this candidate.
+ VITE_CLERK_PUBLISHABLE_KEY=
+diff --git a/workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx b/workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx
+index 2aea05667e265c69c95b276d80a290e3a6625cbc..4f83e01f45c7c872443afd0b0c1c8edfd5296057 100644
+--- a/workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx
++++ b/workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx
+@@ -1,12 +1,10 @@
+ import { Component, useEffect, useRef, useState } from 'react';
+ import type { ReactNode } from 'react';
+ import { createRoot } from 'react-dom/client';
+-import { ClerkProvider, ClerkLoaded, ClerkLoading, ClerkFailed, HandleSSOCallback, useClerk, useSignIn, useSignUp } from '@clerk/react';
+-import type { SignInFutureResource, SignUpFutureResource } from '@clerk/react/types';
+-import { CommonSignInView } from './common-sign-in-view.tsx';
+-import { readCommonEntryConfig, createCommonProductionRuntime } from './common-production-runtime.ts';
++import { ClerkProvider, ClerkLoaded, ClerkLoading, ClerkFailed, HandleSSOCallback, useSession, useSignIn, useSignUp } from '@clerk/react';
++import { PrebuiltReadyEntry } from './clerk-prebuilt-entry.tsx';
++import { readCommonEntryConfig } from './common-production-runtime.ts';
+ import type { CommonEntryConfig } from './common-production-runtime.ts';
+-import { readTelegramBridge } from './telegram-bootstrap.ts';
+ import { mountTelegramEntry } from './production-entry.tsx';
+ import { createProductionConnection } from './production-connection.ts';
+ 
+@@ -18,50 +16,51 @@ class EntryBoundary extends Component<{ children: ReactNode }, { failed: boolean
+   static getDerivedStateFromError() { return { failed: true }; }
+   render() { return this.state.failed ? <Status text="Kirish xizmati tayyor bo‘lmadi. Sahifani qayta oching." /> : this.props.children; }
+ }
+-function ReadyEntry({ config, scope, signIn, signUp }: {
+-  config: CommonEntryConfig; scope: unknown; signIn: SignInFutureResource; signUp: SignUpFutureResource;
+-}) {
+-  const clerk = useClerk(), latest = useRef({ clerk, signIn, signUp });
+-  latest.current = { clerk, signIn, signUp };
+-  const webview = !!readTelegramBridge(scope);
+-  const [runtime] = useState(() => createCommonProductionRuntime(config, {
+-    get signIn() { return latest.current.signIn; }, get signUp() { return latest.current.signUp; },
+-    session: () => latest.current.clerk.session ?? null,
+-    signOut: sessionId => latest.current.clerk.signOut({ sessionId }),
+-    openPopup: () => window.open('about:blank', '_blank', 'popup,width=480,height=700'), callbackUrl: config.callbackUrl,
+-  }, webview ? 'telegram_webview' : 'browser'));
+-  const [callback, setCallback] = useState(location.pathname === '/auth/callback');
++
++export function CallbackNotice({ config }: { config: CommonEntryConfig }) {
++  const { session } = useSession();
+   const [callbackSession, setCallbackSession] = useState<string | null>(null), [callbackNotice, setCallbackNotice] = useState('');
+-  const cancelled = useRef(false), handled = useRef(false);
+-  useEffect(() => () => runtime.dispose(), [runtime]);
++  const [settled, setSettled] = useState(false), cancelled = useRef(false);
++  const cleanUrl = () => history.replaceState(null, '', config.callbackUrl);
+   useEffect(() => {
+-    if (cancelled.current || handled.current || !callbackSession || clerk.session?.id !== callbackSession) return;
+-    if (clerk.session.status !== 'active' || clerk.session.currentTask) { setCallbackNotice('Qo‘shimcha tasdiqlash kerak.'); return; }
+-    handled.current = true; setCallback(false);
+-    history.replaceState(null, '', config.signInUrl);
+-    // Only this verified callback requests an app exchange. SDK state changes
+-    // elsewhere never auto-reopen an app session after cancel/logout.
+-    void runtime.continueSession();
+-  }, [callbackSession, clerk.session, runtime, config.signInUrl]);
+-  if (callback) return <>
+-    <Status text={callbackNotice || 'Google orqali kirish tekshirilmoqda…'} />
+-    <button className="text-button" onClick={() => {
+-      cancelled.current = true; runtime.reset(); setCallback(false); history.replaceState(null, '', config.signInUrl);
+-    }}>Bekor qilish</button>
+-    <HandleSSOCallback navigateToApp={({ session }) => {
++    if (cancelled.current || !callbackSession || session?.id !== callbackSession) return;
++    if (session.status !== 'active' || session.currentTask) {
++      setSettled(true); setCallbackNotice('Qo‘shimcha tasdiqlash kerak.');
++      history.replaceState(null, '', config.callbackUrl); return;
++    }
++    setSettled(true); setCallbackNotice('Google javobi qabul qilindi. Asosiy kirish oynasiga qayting.');
++    // This document never opens an app session, even after an SDK callback.
++    // Only the initiating main-window operation may exchange its proof. A
++    // separate explicit sign-in remains available at the fixed sign-in URL.
++    history.replaceState(null, '', config.callbackUrl);
++  }, [callbackSession, session, config.callbackUrl]);
++  return <main className="shell"><section className="card"><h1>Kabinetga kirish</h1>
++    <p role="status">{callbackNotice || 'Google javobi tekshirilmoqda…'}</p>
++    <a href={config.signInUrl}>Kirish oynasiga qaytish</a>
++      {!settled && <button className="text-button" onClick={() => {
++        cancelled.current = true; setSettled(true); setCallbackSession(null);
++        setCallbackNotice('Kirish bekor qilindi. Yangidan kirishni boshlashingiz mumkin.'); cleanUrl();
++      }}>Bekor qilish</button>}
++    {!settled && <HandleSSOCallback navigateToApp={({ session }) => {
+       if (cancelled.current) return;
+-      if (!session || session.currentTask) { setCallbackNotice('Qo‘shimcha tasdiqlash kerak.'); return; }
++      if (!session || session.currentTask) {
++        setSettled(true); setCallbackNotice('Qo‘shimcha tasdiqlash kerak.'); cleanUrl(); return;
++      }
+       setCallbackSession(session.id);
+-    }} navigateToSignIn={() => { if (!cancelled.current) setCallbackNotice('Kirish uchun qo‘shimcha tasdiqlash kerak.'); }}
+-      navigateToSignUp={() => { if (!cancelled.current) setCallbackNotice('Ro‘yxatdan o‘tishni yakunlash uchun qo‘shimcha tasdiqlash kerak.'); }} />
+-  </>;
+-  return <CommonSignInView runtime={runtime} canContinue={clerk.session?.status === 'active'}
+-    telegramUrl={config.telegramEnabled ? webview ? '/telegram' : 'https://t.me/univeracademybot' : undefined} />;
++    }} navigateToSignIn={() => { if (!cancelled.current) {
++      setSettled(true); setCallbackNotice('Kirish uchun qo‘shimcha tasdiqlash kerak.'); cleanUrl();
++    } }} navigateToSignUp={() => { if (!cancelled.current) {
++      setSettled(true); setCallbackNotice('Ro‘yxatdan o‘tishni yakunlash uchun qo‘shimcha tasdiqlash kerak.'); cleanUrl();
++    } }} />}
++  </section></main>;
+ }
+-function ConnectedEntry({ config, scope }: { config: CommonEntryConfig; scope: unknown }) {
++// Exported content lets a host use the real public ClerkProvider. Tests supply
++// their synthetic SDK client only in a separate test entry, never production.
++export function CommonClerkEntry({ config, scope }: { config: CommonEntryConfig; scope: unknown }) {
+   const { signIn } = useSignIn(), { signUp } = useSignUp();
+   if (!signIn || !signUp) return <Status text="Kirish oynasi tayyorlanmoqda…" />;
+-  return <ReadyEntry config={config} scope={scope} signIn={signIn} signUp={signUp} />;
++  if (location.pathname === '/auth/callback') return <CallbackNotice config={config} />;
++  return <PrebuiltReadyEntry config={config} scope={scope} signIn={signIn} signUp={signUp} />;
+ }
+ export function mountCommonProductionEntry(element: HTMLElement, options: {
+   env: Readonly<Record<string, unknown>>; pageOrigin: string; scope: unknown;
+@@ -80,11 +79,11 @@ export function mountCommonProductionEntry(element: HTMLElement, options: {
+     root.render(<Status text="Kirish sahifasini yangidan oching." />); return { unmount: () => root.unmount() };
+   }
+   root.render(<EntryBoundary><ClerkProvider publishableKey={config.publishableKey} signInUrl={config.signInUrl}
+-    signUpUrl={config.signInUrl} signInFallbackRedirectUrl={config.callbackUrl} signUpFallbackRedirectUrl={config.callbackUrl}
++    signUpUrl={config.signInUrl} signInForceRedirectUrl={config.signInUrl} signUpForceRedirectUrl={config.signInUrl}
+     telemetry={{ disabled: true }}>
+     <ClerkLoading><Status text="Kirish oynasi tayyorlanmoqda…" /></ClerkLoading>
+     <ClerkFailed><Status text="Kirish xizmati javob bermadi. Keyinroq qayta urinib ko‘ring." /></ClerkFailed>
+-    <ClerkLoaded><ConnectedEntry config={config} scope={options.scope} /></ClerkLoaded>
++    <ClerkLoaded><CommonClerkEntry config={config} scope={options.scope} /></ClerkLoaded>
+   </ClerkProvider></EntryBoundary>);
+   return { unmount: () => root.unmount() };
+ }
+diff --git a/workspaces/univeracademy/apps/mini-app/src/common-sign-in-view.tsx b/workspaces/univeracademy/apps/mini-app/src/common-sign-in-view.tsx
+index 0406dcbfef54d8c59195509aa004a635a28bf966..b7646a49cf794647cc956cfeded19804293ecced 100644
+--- a/workspaces/univeracademy/apps/mini-app/src/common-sign-in-view.tsx
++++ b/workspaces/univeracademy/apps/mini-app/src/common-sign-in-view.tsx
+@@ -29,7 +29,7 @@ export function CommonSignInView({ runtime, canContinue, telegramUrl }: {
+           <button className="primary" disabled={state.busy}>Tasdiqlash kodini yuborish</button>
+         </form>
+         {telegramUrl && <p><a href={telegramUrl}>Telegram orqali kirish — ixtiyoriy</a></p>}
+-        <small>Hisoblar avtomatik bog‘lanmaydi.</small>
++        <small>Hisoblarni bog‘lash hozircha mavjud emas.</small>
+       </>}
+       {state.step === 'code' && <>
+         <p>{state.maskedEmail} manziliga yuborilgan kodni kiriting.</p>
+diff --git a/workspaces/univeracademy/apps/mini-app/src/sign-in-controller.ts b/workspaces/univeracademy/apps/mini-app/src/sign-in-controller.ts
+index 9377ffd1679d3ec460c7a4532ebf8d8c32396f5e..034eeb36193e23d40b4035921772a73d0d206517 100644
+--- a/workspaces/univeracademy/apps/mini-app/src/sign-in-controller.ts
++++ b/workspaces/univeracademy/apps/mini-app/src/sign-in-controller.ts
+@@ -65,7 +65,7 @@ export function createSignInController(options: {
+       return receipt.value;
+     });
+   }
+-  function reset() { clearLocal(); void retireAll().catch(() => {}); }
++  function reset() { clearLocal(); return retireAll().then(() => {}, () => {}); }
+   async function logout() {
+     clearLocal(); const generation = epoch;
+     try {
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.mjs b/workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.mjs
+index e43b106491c65e9f9487a528fbec2d9a6ad32f9b..6bd7a6a0c7fa7ae3d2048a0f5fe4544d203c1710 100644
+--- a/workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.mjs
++++ b/workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.mjs
+@@ -33,9 +33,19 @@ try {
+           const js = await readFile(outDir + '/assets/' + name, 'utf8');
+           if (['synthetic-entry-access', 'synthetic-entry-refresh', '__UA_SYNTHETIC_INIT_DATA__',
+             'Namuna holatlarini sinash', 'query_id=synthetic', '__UA_SYNTHETIC_CLERK_SDK_TOKEN__',
+-            '__UA_SDK_TEST_AUDIT__', 'synthetic-sdk-proof-', 'Lokal prototip', '246810'].some(value => js.includes(value)))
++            '__UA_SDK_TEST_AUDIT__', '__UA_REACT_TEST_', 'SYNTHETIC_REACT_PROOF_REQUIRED',
++            '__UA_PREBUILT_TEST_', '__SDK_TEST_COMPLETE_FORM__', 'SYNTHETIC_PREBUILT_PROOF_REQUIRED',
++            'synthetic-sdk-proof-', 'Lokal prototip', '246810'].some(value => js.includes(value)))
+             throw new Error('SYNTHETIC_TEST_CODE_IN_PRODUCTION');
+         }
++        if (common) {
++          for (const name of await readdir(outDir + '/assets')) {
++            if (!name.endsWith('.js')) continue;
++            const js = await readFile(outDir + '/assets/' + name, 'utf8');
++            if (['sign-in-email', 'Hisoblarni bog‘lash hozircha mavjud emas.', 'Tekshirish va kirish'].some(value => js.includes(value)))
++              throw new Error('CUSTOM_BACKUP_FORM_IN_MAIN_PRODUCTION');
++          }
++        }
+         builds.push({ configured, common, path: common && configured ? '/telegram' : '/', baseUrl: await serve(outDir) });
+       }
+     } finally {
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.py b/workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.py
+index a7829436c0239b39942b0653eea353d753c34c77..1cd8e55225577938f2137cd441df715007991c32 100644
+--- a/workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.py
++++ b/workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.py
+@@ -109,6 +109,7 @@ with sync_playwright() as p:
+             def built_route(route):
+                 target = urlsplit(route.request.url)
+                 if route.request.url == 'https://telegram.org/js/telegram-web-app.js?64' and spec['configured']:
++                    assert 'referer' not in route.request.all_headers()
+                     sdk.append(True)
+                     # Fake SDK surface; no real SDK bytes, bot or launch are used.
+                     route.fulfill(content_type='application/javascript', body='''
+diff --git a/workspaces/univeracademy/apps/mini-app/vite.config.ts b/workspaces/univeracademy/apps/mini-app/vite.config.ts
+index aefae19a5e0be9d48cba10ebe07172e8c63232a9..d0e88db8cb59550960f5528412e35d77f17f34c5 100644
+--- a/workspaces/univeracademy/apps/mini-app/vite.config.ts
++++ b/workspaces/univeracademy/apps/mini-app/vite.config.ts
+@@ -8,7 +8,7 @@ export default defineConfig(({ mode, command }) => {
+     // Default builds do not inject a remote SDK. Browser tests intercept this URL.
+     plugins: [{ name: 'telegram-sdk-entry', transformIndexHtml() {
+       if (command === 'build' && mode === 'production' && env.VITE_TELEGRAM_SDK_ENABLED === 'true')
+-        return [{ tag: 'script', attrs: { src: 'https://telegram.org/js/telegram-web-app.js?64' }, injectTo: 'head-prepend' as const }];
++        return [{ tag: 'script', attrs: { src: 'https://telegram.org/js/telegram-web-app.js?64', referrerpolicy: 'no-referrer' }, injectTo: 'head-prepend' as const }];
+       return [];
+     } }],
+     // Loopback fixture proxy only. Production cross-origin CORS belongs to Backend.
+diff --git a/workspaces/univeracademy/apps/mini-app/docs/clerk-prebuilt-local.md b/workspaces/univeracademy/apps/mini-app/docs/clerk-prebuilt-local.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..9c7031cc7581f856d5cc9393d3755b476730063c
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/docs/clerk-prebuilt-local.md
+@@ -0,0 +1,95 @@
++# Tayyor Clerk formasi: lokal texnik nomzod
++
++Holat: LOCAL_CANDIDATE; mustaqil QA va haqiqiy provider sinovi bajarilmagan.
++Asos: lab `31b2b00ecd1c413e1f828fef4c023c3ff2310909`, Backend172
++`c78c293acdf9162080c2da796bd0a5d34e4b8c90`. API hanuz provisional.
++
++Foydalanuvchi qarori: tayyor Clerk formasi asosiy kirish yo‘li bo‘ladi;
++avvalgi oyna test/zaxira sifatida saqlanadi. Yangi dizayn, appearance override,
++CSS yoki ro‘yxatdan o‘tish/email matni bu ishda yaratilmagan. `docs/review/`
++avvalgi foydalanuvchi ko‘rigidagi loyiha baytlarini saqlaydi; ular tasdiqlangan
++provider email shabloni yoki Clerk formasining tarjimasi hisoblanmaydi.
++
++## Asosiy yo‘l
++
++`main.tsx`dagi mavjud `VITE_AUTH_ENTRY=common` tanlovi →
++`mountCommonProductionEntry` → haqiqiy `ClerkProvider` →
++`CommonClerkEntry` → `PrebuiltReadyEntry` → haqiqiy `@clerk/react@6.18.6`
++`SignIn`. `withSignUp`, hash routing va popup OAuth tanlangan. Formaning o‘zi
++Clerk tomonidan beriladi. Google/email OTPning ochiqligi, tenant sozlamalari,
++formaning tili, qo‘shimcha tasklar va provider email maketi haqiqiy Clerkda
++hali tekshirilmagan; Dashboardga hech narsa yozilmagan.
++
++`production.env.example` hali bo‘sh: tanlov yoki haqiqiy origin/key yoqilmagan.
++Bo‘sh tanlov oldingi Telegram entryni saqlaydi; commonning noto‘g‘ri/bo‘sh
++konfiguratsiyasi SDK/APIga chiqishdan oldin yopiladi. Telegram alohida mavjud
++opt-in orqali ixtiyoriy. Hech qanday yangi endpoint/dependency yo‘q.
++
++Provider va komponentning majburiy qaytish manzili konfiguratsiya tekshirgan
++bir xil originning `/sign-in` manzili. Querydagi redirect manzili olinmaydi.
++`/auth/callback` faqat avvalgi SDK callbackini yakunlaydi; u ilova sessiyasini
++avtomatik ochmaydi. WebView/tashqi brauzer uchun state/nonce/PKCEga bog‘langan
++qaytish protokoli bajarildi deb ko‘rsatilmaydi. Aniqlangan Telegram WebViewda
++SDK sessiyasi yo‘q bo‘lsa formani ochish bloklanadi; mavjud ogohlantirish va
++opsional Telegram yo‘li saqlanadi. WebView aniqlash ishonchli identity dalili emas.
++
++Faol, tasksiz SDK sessiyasi bo‘lsa vendor formasi mount qilinmaydi. Mavjud
++“Tasdiqlangan hisob bilan davom etish” amali yangi default SDK proofini
++`getToken({skipCache:true})` bilan oladi → Backend egasining production clienti
++`POST /api/v1/auth/clerk` → opaque ilova sessiyasi → `/me` → `/exams`.
++Clerk cookie/session/user metadata o‘zi kabinet yoki rol bermaydi. Ro‘yxatdan
++o‘tish, test, CAS/taymer, saqlash, submit/natija/tarix mavjud oqimdan foydalanadi.
++
++## Sessiya chegarasi
++
++- Prebuilt gate explicit amaldagi SDK session IDni kuzatadi. Tashqi session
++  o‘zgarsa eski kabinet darhol renderdan yashiriladi va eski app konteksti
++  retire qilinadi. Yangi session avtomatik exchange qilinmaydi.
++- React effectdan oldin yangi Continue bosilsa ham eski ready flow yangi
++  session IDga qayta nomlanmaydi: avval reset/cleanup tugaydi.
++- Reset lokal state/epochni darhol tozalaydi; endi kuzatiladigan cleanup
++  Promise ham qaytaradi. Native vendor formasi oldingi captured SDK signout
++  tugaguncha qayta mount qilinmaydi.
++- Own logout observer expectationni oldindan olib tashlaydi. Shuning uchun
++  o‘z SDK session-null xabari captured app logout ACKni supersede qilmaydi.
++  Mavjud body-only logout receipt va targeted SDK signout saqlanadi; kech
++  signout yangi SDK sessionni global ravishda tozalamaydi.
++- Cancel yoki eski exchange bodydan keyin kech success appni qayta ochmaydi.
++  F1/receipt/transport, auth-refresh, CAS/deadline hisoblash kodlari o‘zgarmagan.
++- Linking bloklangan; provider email/name profilega avtomatik yozilmaydi.
++
++## Zaxira va sinov chegarasi
++
++`common-backup-entry.tsx` oldingi custom oynani saqlaydi. Uni faqat alohida
++`tests/clerk-react.fixture.mjs` import qiladi. Production entry unga fallback
++qilmaydi va undan import olmaydi. Avvalgi alohida synthetic prototype faqat
++mavjud dev/test rejimida qoladi. Production build tekshiruvi synthetic driver
++markerlarini va custom formaning aniq matnlarini bundlelardan rad etadi.
++
++`tests/clerk-prebuilt.fixture.mjs` haqiqiy SDK React wrapper/hooks bilan
++synthetic clientning `mountSignIn` interfeysini tekshiradi. Undagi aniq test
++control vendor dizayni sifatida ko‘rsatilmaydi; vendor ClerkJS UI yoki FAPI
++olinmaydi. Prooflar test serverida RAMda yaratiladi va browserga stdin/evaluate
++orqali beriladi, log/fayl/URLga yozilmaydi. HTTPS reserved domenlarni localhostga
++yo‘naltirish faqat test bridge; u production CORS dalili emas.
++
++Brevo, haqiqiy Clerk/Google/email/Telegram, account linking, tashqi brauzerga
++ishonchli qaytish, haqiqiy DB/provider/deploy va upload: NOT_RUN.
++
++## Tekshiruv buyruqlari
++
++Node24; mavjud lockdagi aniq dependencylar. Ilova katalogida:
++
++```sh
++npm run check
++node --unhandled-rejections=strict --test --test-reporter=tap tests/common-entry-prototype.test.mjs tests/clerk-review-entry.test.mjs tests/clerk-sdk-adapter.test.mjs tests/common-production-runtime.test.mjs tests/clerk-prebuilt-session.test.mjs
++node tests/clerk-prebuilt-browser.mjs
++node tests/clerk-react-browser.mjs
++node tests/production-entry-browser.mjs --common-gates
++node tests/production-entry-browser.mjs --production-gates
++npm run build
++```
++
++Python Playwright/Chromium kerak. Listener faqat loopback/RAM. Backend172 va
++owner-client guardlari odatdagi test importida to‘liq ishlaydi, o‘zgartirilmagan.
++Natijalar va aynan source baytlari alohida evidence manifest/patchga bog‘lanadi.
+diff --git a/workspaces/univeracademy/apps/mini-app/docs/review/README.md b/workspaces/univeracademy/apps/mini-app/docs/review/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..e8339124f87b747004f4b1619c075b63d4049687
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/docs/review/README.md
+@@ -0,0 +1,26 @@
++# O‘zbekcha kirish va ro‘yxatdan o‘tish — loyiha A
++
++Holat: **foydalanuvchi fikrlari kutilmoqda**. Asos laboratoriya commit `9bed5e04bf54f04f2e5f7d2441dcacb2017f7505`. Bu lokal nusxa; yangi upload yoki production yoqilishi emas.
++
++`uz-registration-otp-A.html` — tarmoqqa chiqmaydigan, to‘rt ko‘rinishli maket: kirish, email kodi, ism/familiya, OTP xati. `uz-registration-otp-A.json` — aniq matnlar; `uz-otp-email-A.txt` — email matni. Tugmalar faqat maketning ko‘rinishlarini almashtiradi, hisob ochmaydi va xat yubormaydi. Bu matnlar amaldagi production UI yoki Clerk Dashboard shabloniga qo‘llanmagan. Google va email bitta boshlang‘ich oynada; mavjud/yangi hisob tafovuti email tasdiqlanishidan oldin oshkor qilinmaydi. Ism/familiya faqat server registration_complete=false desa olinadi; mavjud profilga provider nomi/emaili ko‘chirilmaydi. Testni o‘qituvchi/admin biriktiradi; UI guruh yoki rol bermaydi.
++
++Foydalanuvchidan taklif olish uchun uchta band: boshlang‘ich sarlavha/tugmalar; profil oynasining tushuntirishi; OTP xatining ohangi va matni. Kod muddati, qayta yuborish soniyalari, jo‘natuvchi emaili yoki yangi rozilik siyosati bu loyihada taxmin qilinmagan. `[TASDIQLASH_KODI]` — ko‘rinish placeholderi; haqiqiy Clerk o‘zgaruvchisi sifatida ishlatilmaydi. Dashboarddagi aynan kod shabloni o‘zgaruvchisi va sender/branding/domain sozlamalari keyingi vakolatli ishda tekshiriladi. O‘zbekcha custom ekranlar tayyor; Clerk/Google/CAPTCHA/MFA/browser matnlari to‘liq o‘zbekcha deb tasdiqlanmagan.
++
++## Production SDK nomzodidagi davomiy ish
++
++Pinlangan `@clerk/react@6.18.6` saqlandi. Public `useSession` faol SDK sessiyasini kuzatish uchun ishlatiladi: resursning oddiy mutable getteriga tayanilmaydi. SDK sessiyasi paydo bo‘lishi app sessiyasini avtomatik ochmaydi; fixed sign-in oynasida foydalanuvchi explicit davom etishi yoki boshlang‘ich oynadagi hali amaldagi auth operatsiyasi kerak. Google/email adapteri, owner-client va opaque app session oqimi saqlanadi.
++
++Callback alohida komponentga ajratildi va unda app runtime/exchange umuman yaratilmaydi. SDK callbacki muvaffaqiyatli tugasa ham child/callback hujjati `getToken`/`POST /auth/clerk` orqali app sessiyasini ochmaydi. Kech callback bekor qilingan UIga kirishni qaytarmaydi. Callback parametrlari terminal holatda fixed HTTPS callback yo‘liga tozalanadi; qaytish havolasi faqat configured `/sign-in`. App proof/token URL, fragment, deep-link yoki postMessagega qo‘shilmaydi. `no-referrer` meta va Telegram head scriptining referrerpolicy atributi qo‘shildi. Hosting darajasidagi cache/CSP/headerlar bu ishda sozlanmadi.
++
++Ko‘rik manbalari: Backend149 ichidagi `docs/api/clerk-timing-d1-d2-2026-11-07.md` va `docs/api/identity-link-return-proposal-2026-11-07.md`. D1 linking endpointi bloklanganicha; frontend yangi link API, purpose/person parametri, emailga ko‘ra merge yoki Telegram return bridge qo‘shmaydi. Appdagi eski “avtomatik bog‘lanmaydi” yozuvi upstream Clerkning tekshirilmagan email association xulqiga kafolat sifatida talqin qilinmasligi uchun aniq feature holatiga almashtirildi: “Hisoblarni bog‘lash hozircha mavjud emas.”
++
++## Sinov chegarasi
++
++- Haqiqiy pinlangan React SDK paketi, `ClerkProvider`, public hooklar va `HandleSSOCallback` brauzer bundle ichida bajariladi. Faqat `tests/clerk-react.fixture.mjs`dagi public `Clerk` propiga berilgan client/session/signal modeli sun’iy. Private signal storage shu test double ichida versiyaga bog‘langan model; production bunday maydonlarni import/chaqirmaydi.
++- Synthetic JWTlar fresh loopback Backend149 RAM serveriga mavjud production owner-client orqali exchange qilinadi. Qabul qilingan Backend HTTP so‘rovlari real lokal TCP; reserved HTTPS hostlar test routing bilan localhostga bog‘lanadi. Bu production CORS dalili emas.
++- Google/email profil oqimi, logout; callbackda zero app exchange; canceldan keyingi kech SDK finalize; tashqi SDK session update tugmani yangilashi va logoutdan keyin avtomatik app login bo‘lmasligi sinovlari bor. Production builddan yangi test markerlari ham qidiriladi.
++- Haqiqiy ClerkJS resurs modeli, Clerk FAPI/Backend SDK provider readlari, Google consent, haqiqiy email, cookie/cross-tab va real OAuth state/PKCE/nonce tekshiruvi **NOT_RUN**. React SDK test clientining oldindan tayyorlangan callback holati haqiqiy OAuth binding isboti emas.
++
++D2 uchun state/PKCE/nonce va initiating browser/purpose bog‘lanishi, parallel/replay/duplicate callback, expiry, verifier yo‘qolishi va aniq redirect allowlist tekshiruvlari hali mustaqil ko‘rik/handoff talab qiladi. Telegram head SDK flagi butun SPA HTMLiga tegishli; haqiqiy callback uchun alohida hosting/SDK-script izolyatsiyasi ham keyingi ko‘rikda hal qilinishi kerak. App callbackidan avtomatik exchange olib tashlanishi bu talablarning bajarilganini anglatmaydi. Cross-document callback provider sessiyasini kech yaratishi mumkin; app unga grant bermaydi, universal provider rollback kafolati berilmaydi. Linking va tashqi WebView return yoqilmadi. Staff-only login paneli bu o‘quvchi entrysining qismi emas.
++
++Yangi buyruq: frontend ichida `node tests/clerk-react-browser.mjs`. Mavjud tegishli Node testlari va build-gate buyruqlari QA hisobotida. Eski 268-test/guard checkpointlar tarixi saqlanadi; ular yangi nomzodga avtomatik mustaqil QA tasdig‘i bo‘lib o‘tmaydi.
+diff --git a/workspaces/univeracademy/apps/mini-app/docs/review/uz-otp-email-A.txt b/workspaces/univeracademy/apps/mini-app/docs/review/uz-otp-email-A.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..8e5d6d38d67f290e0c4279aec0bf5cc9a72d7d0f
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/docs/review/uz-otp-email-A.txt
+@@ -0,0 +1,11 @@
++Mavzu: UniverAcademy uchun tasdiqlash kodi
++Qisqa izoh: Kabinetga kirishni tasdiqlang.
++
++Kirishni tasdiqlang
++
++UniverAcademy kabinetiga kirish uchun quyidagi kodni kiriting.
++
++[TASDIQLASH_KODI]
++
++Koddan faqat o‘zingiz foydalaning.
++Bu so‘rovni yubormagan bo‘lsangiz, xatni e’tiborsiz qoldiring.
+diff --git a/workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.html b/workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..0840e5de68a7354fa11cfd09a91f25fa910279dc
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.html
+@@ -0,0 +1,6 @@
++<!doctype html><html lang="uz"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>UniverAcademy — ro‘yxatdan o‘tish loyihasi A</title>
++<style>
++:root{font-family:Arial,sans-serif;color:#192e28;background:#f6f7f3}*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer;min-height:46px;border-radius:12px;border:1px solid #ccd7ce;padding:12px 16px;font-weight:600;color:#123d32;background:#fff}button:focus-visible,input:focus-visible{outline:3px solid #bc7400;outline-offset:3px}.review{max-width:900px;margin:0 auto;padding:20px 16px}.note{font-size:13px;color:#52685f;line-height:1.6}.tag{display:inline-block;background:#fff0c9;color:#73510d;border-radius:20px;padding:7px 12px;font-size:12px;font-weight:bold}.nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 24px}.nav button[aria-selected=true]{background:#123d32;color:#fff}.phone{max-width:430px;margin:auto}.brand{display:flex;gap:10px;align-items:center;margin-bottom:22px;font-weight:bold}.brand span{display:grid;place-items:center;background:#123d32;color:#f4d98a;width:40px;height:40px;font-size:26px;border-radius:13px 13px 13px 3px}.brand small{display:block;font-weight:normal;color:#64796f;margin-top:4px}.card{background:#fff;border:1px solid #dfe6de;border-radius:22px;padding:26px}.card h1{font-size:28px;line-height:1.15;letter-spacing:-1px;margin:0 0 14px}.card p{color:#52685f;line-height:1.6}.card label{display:block;font-size:14px;font-weight:bold;margin:22px 0 10px}.card input{width:100%;min-height:48px;border:1px solid #bccdbf;border-radius:10px;padding:12px;background:#fafbf9}.wide{width:100%;margin:12px 0}.primary{background:#123d32;color:#fff;border-color:#123d32}.link{display:block;border:0;background:transparent;margin:6px auto;font-size:14px;text-decoration:underline;text-underline-offset:3px}.hint{font-size:13px;line-height:1.6}.soft{background:#edf2e8;border-radius:12px;padding:16px}.otp{font-size:24px;letter-spacing:6px;text-align:center}.email-code{font-size:21px;font-weight:bold;text-align:center;background:#edf2e8;border-radius:12px;padding:20px 8px;overflow-wrap:anywhere}.mail-meta{font-size:13px;line-height:1.6;border-bottom:1px solid #dfe6de;padding-bottom:16px;margin-bottom:24px}.foot{max-width:430px;margin:22px auto;color:#64796f;font-size:13px;line-height:1.6}[hidden]{display:none!important}
++</style></head><body><div class="review"><span class="tag">Ko‘rib chiqish uchun loyiha A</span><p class="note">Bu maket hisob ochmaydi va email yubormaydi. Matnlar taklif sifatida tayyorlangan.</p><nav class="nav" aria-label="Maket bosqichlari">
++<button type="button" data-target="entry" aria-selected="true">1. Kirish</button><button type="button" data-target="otp" aria-selected="false">2. Email kodi</button><button type="button" data-target="profile" aria-selected="false">3. Profil</button><button type="button" data-target="email" aria-selected="false">4. Email xati</button></nav>
++<div class="phone"><div class="brand"><span>U</span><div>UniverAcademy<small>O‘quvchi kabineti</small></div></div><section class="card" data-screen="entry"><h1>Kirish va ro‘yxatdan o‘tish</h1><p>O‘quvchi kabinetiga Google yoki email orqali kiring.</p><button type="button" class="wide">Google bilan davom etish</button><label for="email">Email manzilingiz</label><input type="email" id="email" autocomplete="off"><button type="button" class="wide primary" data-target="otp">Kod yuborish</button><button type="button" class="link">Telegram orqali kirish — ixtiyoriy</button><p class="hint">Oldin hisob ochgan bo‘lsangiz, avvalgi kirish usulingizni tanlang.</p></section><section class="card" data-screen="otp" hidden><h1>Emailni tasdiqlang</h1><p>Emailingizga yuborilgan 6 xonali kodni kiriting.<br><strong>o***@example.test</strong></p><label for="code">Tasdiqlash kodi</label><input id="code" class="otp" inputmode="numeric" maxlength="6" placeholder="······" autocomplete="off"><button type="button" class="wide primary" data-target="profile">Tasdiqlash</button><button type="button" class="link">Kodni qayta yuborish</button><button type="button" class="link" data-target="entry">Boshqa email kiritish</button></section><section class="card" data-screen="profile" hidden><h1>Profilni to‘ldiring</h1><p>Ism va familiyangizni kiriting.</p><label for="first">Ism</label><input id="first" autocomplete="off" maxlength="100"><label for="last">Familiya</label><input id="last" autocomplete="off" maxlength="100"><button type="button" class="wide primary">Saqlash va davom etish</button><p class="hint soft">Testlarni sizga o‘qituvchi yoki administrator biriktiradi.</p></section><section class="card" data-screen="email" hidden><div class="mail-meta"><strong>Mavzu:</strong> UniverAcademy uchun tasdiqlash kodi<br><strong>Qisqa izoh:</strong> Kabinetga kirishni tasdiqlang.</div><h1>Kirishni tasdiqlang</h1><p>UniverAcademy kabinetiga kirish uchun quyidagi kodni kiriting.</p><div class="email-code">[TASDIQLASH_KODI]</div><p class="hint">Koddan faqat o‘zingiz foydalaning.</p><p class="hint">Bu so‘rovni yubormagan bo‘lsangiz, xatni e’tiborsiz qoldiring.</p></section></div><p class="foot">Sarlavha, tugmalar, profil oynasi va email matni bo‘yicha takliflaringizni shu loyihaga qarab bildirishingiz mumkin.</p></div><script>document.querySelectorAll('[data-target]').forEach(button=>button.addEventListener('click',()=>{const id=button.dataset.target;document.querySelectorAll('[data-screen]').forEach(panel=>panel.hidden=panel.dataset.screen!==id);document.querySelectorAll('.nav button').forEach(tab=>tab.setAttribute('aria-selected',String(tab.dataset.target===id)));}));</script></body></html>
+diff --git a/workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.json b/workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.json
+new file mode 100644
+index 0000000000000000000000000000000000000000..289cd60b2eaa4f50f944d7b43a20caa5596f1076
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.json
+@@ -0,0 +1,56 @@
++{
++  "status": "REVIEW_DRAFT_USER_FEEDBACK_PENDING",
++  "language": "uz-Latn",
++  "version": "2026-11-07-A",
++  "entry": {
++    "title": "Kirish va ro‘yxatdan o‘tish",
++    "intro": "O‘quvchi kabinetiga Google yoki email orqali kiring.",
++    "google_button": "Google bilan davom etish",
++    "email_label": "Email manzilingiz",
++    "email_button": "Kod yuborish",
++    "telegram_optional": "Telegram orqali kirish — ixtiyoriy",
++    "existing_account_hint": "Oldin hisob ochgan bo‘lsangiz, avvalgi kirish usulingizni tanlang."
++  },
++  "otp": {
++    "title": "Emailni tasdiqlang",
++    "instruction": "Emailingizga yuborilgan 6 xonali kodni kiriting.",
++    "masked_example": "o***@example.test",
++    "label": "Tasdiqlash kodi",
++    "submit": "Tasdiqlash",
++    "resend": "Kodni qayta yuborish",
++    "change_email": "Boshqa email kiritish",
++    "wrong": "Kod mos kelmadi. Qayta tekshiring.",
++    "expired": "Kod muddati tugagan. Yangi kod so‘rang.",
++    "rate_limited": "Biroz kutib, qayta urinib ko‘ring."
++  },
++  "profile": {
++    "title": "Profilni to‘ldiring",
++    "instruction": "Ism va familiyangizni kiriting.",
++    "first_name_label": "Ism",
++    "last_name_label": "Familiya",
++    "submit": "Saqlash va davom etish",
++    "group_hint": "Testlarni sizga o‘qituvchi yoki administrator biriktiradi."
++  },
++  "email": {
++    "subject": "UniverAcademy uchun tasdiqlash kodi",
++    "preheader": "Kabinetga kirishni tasdiqlang.",
++    "heading": "Kirishni tasdiqlang",
++    "body": "UniverAcademy kabinetiga kirish uchun quyidagi kodni kiriting.",
++    "code_placeholder": "[TASDIQLASH_KODI]",
++    "privacy": "Koddan faqat o‘zingiz foydalaning.",
++    "unsolicited": "Bu so‘rovni yubormagan bo‘lsangiz, xatni e’tiborsiz qoldiring."
++  },
++  "review_notes": [
++    "Bu matnlar amaldagi production UIga qo‘llanmadi; foydalanuvchi takliflari kutiladi.",
++    "Email placeholderi Clerk shablon o‘zgaruvchisi emas. Dashboard mappingi va xat yuborish keyingi alohida ish.",
++    "Email qaysi hisob mavjudligini tasdiqlashdan oldin oshkor qilmaydi; ism/familiya faqat tekshirilgan yangi profil uchun so‘raladi.",
++    "Guruh/huquq serverga tegishli. Provider nomi/emaili mavjud profilga avtomatik ko‘chirilmaydi.",
++    "Linking bloklangan. Telegram WebView va tashqi brauzer orasida sessiya almashish ko‘prigi yo‘q.",
++    "Clerk/Google/CAPTCHA/MFA va browserning o‘z matnlari to‘liq o‘zbekcha deb tasdiqlanmagan."
++  ],
++  "feedback_fields": [
++    "Sarlavha va tugmalar matni",
++    "Ism/familiya oynasining tushuntirishi",
++    "OTP emailining ohangi va matni"
++  ]
++}
+diff --git a/workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-entry.tsx b/workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-entry.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..117fa06e5d9cebcc3ee7ab5e230e03afe8dc1478
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-entry.tsx
+@@ -0,0 +1,50 @@
++import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
++import { SignIn, useClerk, useSession } from '@clerk/react';
++import type { SignInFutureResource, SignUpFutureResource } from '@clerk/react/types';
++import { createCommonProductionRuntime } from './common-production-runtime.ts';
++import type { CommonEntryConfig } from './common-production-runtime.ts';
++import { createPrebuiltSessionGate } from './clerk-prebuilt-session.ts';
++import { readTelegramBridge } from './telegram-bootstrap.ts';
++import { StudentApp } from './student-app.tsx';
++
++// Clerk supplies the form/design. No appearance overrides, custom credential
++// fields, synthetic provider, roles or identity-linking operation is installed.
++export function PrebuiltReadyEntry({ config, scope, signIn, signUp }: {
++  config: CommonEntryConfig; scope: unknown; signIn: SignInFutureResource; signUp: SignUpFutureResource;
++}) {
++  const clerk = useClerk(), { session } = useSession();
++  const latest = useRef({ clerk, signIn, signUp }); latest.current = { clerk, signIn, signUp };
++  const webview = !!readTelegramBridge(scope);
++  const [runtime] = useState(() => createCommonProductionRuntime(config, {
++    get signIn() { return latest.current.signIn; }, get signUp() { return latest.current.signUp; },
++    session: () => latest.current.clerk.session ?? null,
++    signOut: sessionId => latest.current.clerk.signOut({ sessionId }),
++    openPopup: () => window.open('about:blank', '_blank', 'popup,width=480,height=700'), callbackUrl: config.callbackUrl,
++  }, webview ? 'telegram_webview' : 'browser'));
++  const [gate] = useState(() => createPrebuiltSessionGate(runtime, () => latest.current.clerk.session));
++  const state = useSyncExternalStore(runtime.subscribe, runtime.snapshot);
++  const [authBusy, setAuthBusy] = useState(false), operation = useRef(0);
++  async function act(action: () => Promise<void> | void) {
++    const current = ++operation.current; setAuthBusy(true);
++    try { await action(); } catch { /* runtime already exposes the sanitized failure/receipt */ }
++    finally { if (current === operation.current) setAuthBusy(false); }
++  }
++  useEffect(() => { const cleanup = gate.observe(); if (cleanup) void act(() => cleanup); }, [gate, session?.id, session?.status, session?.currentTask]);
++  useEffect(() => () => gate.dispose(), [gate]);
++  if (state.step === 'ready' && state.flow && gate.matches())
++    return <StudentApp studentFlow={state.flow} mode="telegram" onEnter={() => act(() => gate.reset())}
++      onLogout={() => act(() => gate.logout())} />;
++  const canContinue = session?.status === 'active' && !session.currentTask;
++  return <main className="shell">
++    {state.notice && <p className="notice" role="alert">{state.notice}</p>}
++    {state.busy || authBusy || (state.flow && !gate.matches()) ? <section className="card"><h1>Kabinetga kirish</h1><p role="status">Kabinetga kirish tekshirilmoqda…</p>
++      <button className="text-button" onClick={() => void act(() => gate.reset())}>Bekor qilish</button></section>
++      : canContinue ? <section className="card"><h1>Kabinetga kirish</h1>
++        <button className="primary" onClick={() => void act(() => gate.enter())}>Tasdiqlangan hisob bilan davom etish</button></section>
++      : webview ? <section className="card"><h1>Brauzerda davom etish kerak</h1>
++        <p>Bu Telegram oynasida Google bilan kirish va tashqi brauzerdan qaytish hali ulanmagan.</p></section>
++      : <SignIn routing="hash" withSignUp oauthFlow="popup" forceRedirectUrl={config.signInUrl}
++        signUpForceRedirectUrl={config.signInUrl} fallback={<p role="status">Kirish oynasi tayyorlanmoqda…</p>} />}
++    {config.telegramEnabled && <p><a href={webview ? '/telegram' : 'https://t.me/univeracademybot'}>Telegram orqali kirish — ixtiyoriy</a></p>}
++  </main>;
++}
+diff --git a/workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-session.ts b/workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-session.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..428f4466d32c6ea17231ba51cba50c5884baa3a4
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-session.ts
+@@ -0,0 +1,29 @@
++import type { createSignInController } from './sign-in-controller.ts';
++
++type Runtime = ReturnType<typeof createSignInController>;
++type Session = { id: string; status: string; currentTask?: unknown } | null | undefined;
++
++// A widget/cookie/callback session alone never grants application access. This
++// gate binds the explicit existing Continue action to one SDK session context.
++export function createPrebuiltSessionGate(runtime: Runtime, session: () => Session) {
++  let expected: string | null = null;
++  function active() { const value = session(); return value?.status === 'active' && !value.currentTask ? value : null; }
++  function matches() { return expected !== null && active()?.id === expected; }
++  function reset() { expected = null; return runtime.reset(); }
++  return {
++    matches,
++    async enter() {
++      // An SDK update may precede React's observer effect. Never relabel an old
++      // ready/pending app flow as the new SDK context in that interval.
++      if ((expected || runtime.snapshot().flow) && !matches()) await reset();
++      const current = active(); if (!current) return;
++      expected = current.id; await runtime.continueSession();
++    },
++    observe() { return expected && !matches() ? reset() : null; },
++    reset,
++    // Clear the observer expectation before our own signOut, so its session
++    // update cannot supersede the captured app logout receipt/ACK.
++    logout() { expected = null; return runtime.logout(); },
++    dispose() { expected = null; runtime.dispose(); },
++  };
++}
+diff --git a/workspaces/univeracademy/apps/mini-app/src/common-backup-entry.tsx b/workspaces/univeracademy/apps/mini-app/src/common-backup-entry.tsx
+new file mode 100644
+index 0000000000000000000000000000000000000000..a1b6ade5d4878d2dbe442b34f277bcac4856b630
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/src/common-backup-entry.tsx
+@@ -0,0 +1,34 @@
++// Test/reserve entry only. Production main never imports this custom form.
++import { useEffect, useRef, useState } from 'react';
++import { useClerk, useSession, useSignIn, useSignUp } from '@clerk/react';
++import type { SignInFutureResource, SignUpFutureResource } from '@clerk/react/types';
++import { CommonSignInView } from './common-sign-in-view.tsx';
++import { createCommonProductionRuntime } from './common-production-runtime.ts';
++import type { CommonEntryConfig } from './common-production-runtime.ts';
++import { readTelegramBridge } from './telegram-bootstrap.ts';
++import { CallbackNotice } from './common-production-entry.tsx';
++
++function BackupReadyEntry({ config, scope, signIn, signUp }: {
++  config: CommonEntryConfig; scope: unknown; signIn: SignInFutureResource; signUp: SignUpFutureResource;
++}) {
++  const clerk = useClerk(), latest = useRef({ clerk, signIn, signUp });
++  const { session } = useSession();
++  latest.current = { clerk, signIn, signUp };
++  const webview = !!readTelegramBridge(scope);
++  const [runtime] = useState(() => createCommonProductionRuntime(config, {
++    get signIn() { return latest.current.signIn; }, get signUp() { return latest.current.signUp; },
++    session: () => latest.current.clerk.session ?? null,
++    signOut: sessionId => latest.current.clerk.signOut({ sessionId }),
++    openPopup: () => window.open('about:blank', '_blank', 'popup,width=480,height=700'), callbackUrl: config.callbackUrl,
++  }, webview ? 'telegram_webview' : 'browser'));
++  useEffect(() => () => runtime.dispose(), [runtime]);
++  return <CommonSignInView runtime={runtime} canContinue={session?.status === 'active'}
++    telegramUrl={config.telegramEnabled ? webview ? '/telegram' : 'https://t.me/univeracademybot' : undefined} />;
++}
++
++export function BackupCommonClerkEntry({ config, scope }: { config: CommonEntryConfig; scope: unknown }) {
++  const { signIn } = useSignIn(), { signUp } = useSignUp();
++  if (!signIn || !signUp) return <p role="status">Kirish oynasi tayyorlanmoqda…</p>;
++  if (location.pathname === '/auth/callback') return <CallbackNotice config={config} />;
++  return <BackupReadyEntry config={config} scope={scope} signIn={signIn} signUp={signUp} />;
++}
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.mjs b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..1f94fa213bd940d215ee315d6a19e436a8ba2a16
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.mjs
+@@ -0,0 +1,23 @@
++import './verify-backend-targets.mjs';
++import { build, preview } from 'vite';
++import { spawn } from 'node:child_process';
++import { startClerkReviewServer } from '../../../runtime/clerk-review-server.mjs';
++
++const outDir = 'test-results/clerk-prebuilt-package-build';
++await build({ configFile: false, build: { outDir, emptyOutDir: true,
++  rollupOptions: { input: 'tests/clerk-prebuilt.fixture.html' } } });
++const assets = await preview({ configFile: false, build: { outDir }, preview: { host: '127.0.0.1', port: 0 } });
++try {
++  for (const scenario of ['widget-explicit', 'cached-session', 'cancel-body', 'user-cancel', 'logout-new-session', 'revoked', 'webview']) {
++    const backend = await startClerkReviewServer();
++    try {
++      const proofs = [await backend.lab.sign(), await backend.lab.sign()];
++      await new Promise((resolve, reject) => {
++        const child = spawn('python3', ['-B', 'tests/clerk-prebuilt-browser.py'], { stdio: ['pipe', 'inherit', 'inherit'] });
++        child.stdin.end(JSON.stringify({ assets: `http://127.0.0.1:${assets.httpServer.address().port}`, api: backend.baseUrl,
++          scenario, proofs }) + '\n');
++        child.once('error', reject); child.once('exit', code => code === 0 ? resolve() : reject(new Error('CLERK_PREBUILT_MOUNT_TEST_FAILED:' + code)));
++      });
++    } finally { await backend.close(); }
++  }
++} finally { await new Promise(resolve => assets.httpServer.close(resolve)); }
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.py b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..074ea0266caab375dc4959d9d86061fd0760f9ab
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.py
+@@ -0,0 +1,132 @@
++"""Actual React SDK SignIn wrapper; synthetic mount implementation and proofs.
++The reserved HTTPS->loopback route is only a test bridge, not production CORS.
++"""
++import json
++import shutil
++import sys
++from urllib.parse import urlsplit
++from playwright.sync_api import sync_playwright, expect
++
++args = json.loads(sys.stdin.readline())
++assert all(urlsplit(args[k]).hostname == '127.0.0.1' for k in ['assets', 'api'])
++scenario = args['scenario']
++match = lambda method, path: lambda r: r.request.method == method and urlsplit(r.url).path == path
++with sync_playwright() as p:
++    browser = p.chromium.launch(executable_path=shutil.which('chromium'), headless=True, args=['--no-sandbox'])
++    try:
++        page = browser.new_page(viewport={'width': 390, 'height': 900}); page.set_default_timeout(10000)
++        errors, blocked, audit, referrers = [], [], [], []
++        page.on('pageerror', lambda e: errors.append(str(e)))
++        def route(r):
++            u = urlsplit(r.request.url)
++            if u.scheme == 'https' and u.netloc == 'app.example.test':
++                if u.path.startswith('/assets/') and r.request.headers.get('referer'): referrers.append(True)
++                path = u.path if u.path.startswith('/assets/') else '/tests/clerk-prebuilt.fixture.html'
++                response = r.fetch(url=args['assets'] + path); r.fulfill(response=response)
++            elif u.scheme == 'https' and u.netloc == 'api.example.test' and u.path.startswith('/api/v1/'):
++                assert '/admin/' not in u.path and not u.path.endswith('/link')
++                headers = {k: v for k, v in r.request.all_headers().items() if k != 'origin'}
++                response = r.fetch(url=args['api'].removesuffix('/api/v1') + u.path, headers=headers)
++                r.fulfill(response=response, headers={**response.headers, 'access-control-allow-origin': 'https://app.example.test'})
++            else:
++                blocked.append(u.netloc); r.abort()
++        page.route('**/*', route)
++        page.on('response', lambda r: audit.append({'method': r.request.method, 'path': urlsplit(r.url).path, 'status': r.status})
++            if urlsplit(r.url).netloc == 'api.example.test' else None)
++        def proof(index):
++            value = args['proofs'][index]; args['proofs'][index] = None
++            page.evaluate('''value => { window.__UA_PREBUILT_TEST_PROOF__ = async () => {
++                if (!value) throw new Error('TEST_PROOF_CONSUMED'); const next = value; value = null; return next;
++            }; }''', value)
++        def state(): return page.evaluate('__UA_PREBUILT_TEST_AUDIT__()')
++        def session(value): page.evaluate('__UA_PREBUILT_TEST_SESSION__', value)
++        def entered(): expect(page.get_by_role('heading', name='Mening testlarim', exact=True)).to_be_visible()
++        def enter():
++            with page.expect_response(match('GET', '/api/v1/exams')):
++                with page.expect_response(match('POST', '/api/v1/auth/clerk')) as exchange:
++                    page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish', exact=True).click()
++            assert exchange.value.status == 200 and exchange.value.request.post_data_json == {}; entered()
++        def count(path): return len([r for r in audit if r['path'] == path])
++        query = '?cached=1' if scenario == 'cached-session' else '?webview=1' if scenario == 'webview' else ''
++        page.goto('https://app.example.test/sign-in' + query)
++        if scenario == 'webview':
++            expect(page.get_by_role('heading', name='Brauzerda davom etish kerak')).to_be_visible()
++            assert state()['mounts'] == [] and not audit and state()['proofReads'] == 0
++        else:
++            if scenario == 'cached-session':
++                expect(page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish')).to_be_visible()
++                assert state()['mounts'] == [] and not audit and state()['proofReads'] == 0
++            else:
++                page.get_by_role('button', name='__SDK_TEST_COMPLETE_FORM__', exact=True).click()
++                expect(page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish')).to_be_visible()
++                assert not audit and state()['proofReads'] == 0
++                props = state()['mounts'][0]
++                assert props['routing'] == 'hash' and props['withSignUp'] is True and props['oauthFlow'] == 'popup'
++                assert props['forceRedirectUrl'] == props['signUpForceRedirectUrl'] == 'https://app.example.test/sign-in'
++                assert 'appearance' not in props and 'unsafeMetadata' not in props
++            assert page.get_by_label('Email', exact=True).count() == 0  # no custom fallback
++            proof(0)
++            if scenario in ['cancel-body', 'user-cancel']:
++                page.evaluate('__UA_PREBUILT_TEST_HOLD_BODY__ = true')
++                page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish').click()
++                page.wait_for_function('typeof __UA_PREBUILT_TEST_RELEASE_BODY__ === "function"')
++                if scenario == 'user-cancel':
++                    page.get_by_role('button', name='Bekor qilish', exact=True).click()
++                else:
++                    session('sess_ReplacementSynthetic')
++                page.evaluate('__UA_PREBUILT_TEST_RELEASE_BODY__()')
++                if scenario == 'user-cancel':
++                    page.get_by_role('button', name='__SDK_TEST_COMPLETE_FORM__').click()
++                expect(page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish')).to_be_visible()
++                assert count('/api/v1/me') == 0
++                assert page.get_by_role('heading', name='Mening testlarim', exact=True).count() == 0
++                assert state()['session'] == ('sess_WidgetSynthetic' if scenario == 'user-cancel' else 'sess_ReplacementSynthetic')
++                proof(1); enter()
++                assert count('/api/v1/auth/clerk') == 2
++            else:
++                enter()
++                if scenario == 'logout-new-session':
++                    original = state()['session']; mount_count = len(state()['mounts'])
++                    page.evaluate('__UA_PREBUILT_TEST_DELAY_SIGNOUT__ = true')
++                    with page.expect_response(match('POST', '/api/v1/auth/logout')) as out:
++                        page.get_by_role('button', name='Chiqish', exact=True).click()
++                    assert out.value.status == 200 and 'authorization' not in out.value.request.all_headers()
++                    page.wait_for_function('typeof __UA_PREBUILT_TEST_RELEASE_SIGNOUT__ === "function"')
++                    assert len(state()['mounts']) == mount_count
++                    session('sess_NewDuringLogoutSynthetic')
++                    page.evaluate('__UA_PREBUILT_TEST_RELEASE_SIGNOUT__()')
++                    expect(page.get_by_text('Server sessiya yopilganini tasdiqladi.', exact=True)).to_be_visible()
++                    assert state()['session'] == 'sess_NewDuringLogoutSynthetic' and state()['signOuts'] == [original]
++                    assert count('/api/v1/auth/clerk') == 1
++                    proof(1); enter(); assert count('/api/v1/auth/clerk') == 2
++                elif scenario == 'revoked':
++                    session(None)
++                    expect(page.get_by_role('button', name='__SDK_TEST_COMPLETE_FORM__')).to_be_visible()
++                    assert page.get_by_role('heading', name='Mening testlarim', exact=True).count() == 0
++                    assert count('/api/v1/auth/clerk') == 1
++                    session('sess_FreshAfterRevocationSynthetic')
++                    expect(page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish')).to_be_visible()
++                    assert count('/api/v1/auth/clerk') == 1
++                    proof(1); enter(); assert count('/api/v1/auth/clerk') == 2
++                else:
++                    original = state()['session']
++                    with page.expect_response(match('POST', '/api/v1/auth/logout')) as out:
++                        page.get_by_role('button', name='Chiqish', exact=True).click()
++                    assert out.value.status == 200 and 'authorization' not in out.value.request.all_headers()
++                    expect(page.get_by_role('button', name='__SDK_TEST_COMPLETE_FORM__')).to_be_visible()
++                    expect(page.get_by_text('Server sessiya yopilganini tasdiqladi.', exact=True)).to_be_visible()
++                    assert state()['session'] is None and state()['signOuts'] == [original]
++                    assert count('/api/v1/auth/clerk') == 1
++        assert not errors, errors
++        assert not blocked, blocked
++        assert not referrers
++        assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')
++        print(json.dumps({'scenario': scenario, 'status': 'PASS', 'SDK': '@clerk/react@6.18.6_REAL_WRAPPER_HOOKS',
++            'vendorUI_client_proof': 'SYNTHETIC', 'HTTP': 'REAL_LOOPBACK_RAM', 'apiCalls': len(audit),
++            'linkCalls': 0, 'externalRequests': 0, 'vendorFormVisual_realClerkGoogleEmail': 'NOT_RUN'}))
++    except Exception:
++        print(json.dumps({'scenario': scenario, 'errors': errors, 'blocked': blocked,
++            'body': page.locator('body').inner_text()[:300]}), file=sys.stderr)
++        raise
++    finally:
++        browser.close()
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-session.test.mjs b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-session.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..d4acffc8bcd530ab6ea70262fb4f3efa67131110
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-session.test.mjs
+@@ -0,0 +1,100 @@
++import './verify-backend-targets.mjs';
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { startClerkReviewServer } from '../../../runtime/clerk-review-server.mjs';
++import { STUDENT_CONTRACT_SHA256 } from '../src/owner-client/student-client.ts';
++import { readCommonEntryConfig, createCommonProductionRuntime } from '../src/common-production-runtime.ts';
++import { createPrebuiltSessionGate } from '../src/clerk-prebuilt-session.ts';
++import { fakeClerkSdk } from './fixtures/clerk-sdk.fixture.mjs';
++
++const wait = () => { let release; const promise = new Promise(r => { release = r; }); return { promise, release }; };
++const turn = () => new Promise(r => setImmediate(r));
++async function harness(t, options = {}) {
++  const server = await startClerkReviewServer(); t.after(() => server.close());
++  const fixture = fakeClerkSdk({ token: async () => server.lab.sign(), ...options.sdk });
++  const config = readCommonEntryConfig({ VITE_MINI_APP_ORIGIN: 'https://app.example.test', VITE_API_ORIGIN: 'https://api.example.test',
++    VITE_STUDENT_CONTRACT_SHA256: STUDENT_CONTRACT_SHA256, VITE_CLERK_PUBLISHABLE_KEY: 'pk_test_' + btoa('clerk.example.test$'),
++    VITE_CLERK_FRONTEND_ORIGIN: 'https://clerk.example.test' }, 'https://app.example.test');
++  const calls = [];
++  const runtime = createCommonProductionRuntime(config, fixture.sdk, 'browser', async request => {
++    calls.push(request.clone());
++    const url = new URL(request.url), base = new URL(server.baseUrl); url.protocol = base.protocol; url.host = base.host;
++    const send = () => fetch(new Request(url, request));
++    return options.send ? options.send(request, send) : send();
++  });
++  const gate = createPrebuiltSessionGate(runtime, fixture.sdk.session);
++  t.after(() => gate.dispose());
++  const session = id => fixture.setSession(fixture.makeSession(id));
++  return { ...fixture, runtime, gate, calls, session };
++}
++test('prebuilt: cached SDK session waits for explicit Continue and fresh Backend exchange', async t => {
++  const h = await harness(t); h.session('sess_Cached');
++  assert.equal(h.gate.matches(), false); assert.equal(h.gate.observe(), null); await turn();
++  assert.equal(h.calls.length, 0); assert.equal(h.runtime.snapshot().flow, null);
++  await h.gate.enter(); assert(h.gate.matches()); assert.equal(h.runtime.snapshot().flow.signInMethod, 'clerk');
++  assert.equal(h.calls.filter(r => r.url.endsWith('/auth/clerk')).length, 1);
++  assert.deepEqual(h.calls[0].method, 'POST');
++});
++test('prebuilt: missing, pending and task-bound SDK sessions cannot exchange', async t => {
++  const h = await harness(t);
++  for (const value of [null, { ...h.makeSession('sess_Pending'), status: 'pending' }, { ...h.makeSession('sess_Task'), currentTask: { key: 'synthetic-task' } }]) {
++    h.setSession(value); await h.gate.enter(); assert.equal(h.gate.matches(), false);
++  }
++  assert.equal(h.calls.length, 0); assert.equal(h.runtime.snapshot().flow, null);
++});
++test('prebuilt: SDK context changes hide ready data before observer and require explicit new entry', async t => {
++  const h = await harness(t); h.session('sess_First'); await h.gate.enter();
++  const old = h.runtime.snapshot().flow; h.session('sess_Second'); assert.equal(h.gate.matches(), false);
++  await h.gate.observe(); assert.equal(h.runtime.snapshot().flow, null); assert.equal(h.sdk.session().id, 'sess_Second');
++  const count = h.calls.length; await turn(); assert.equal(h.calls.length, count);
++  await assert.rejects(old.port.profile(), e => e.kind === 'auth');
++  await h.gate.enter(); assert(h.gate.matches()); assert.notEqual(h.runtime.snapshot().flow, old);
++  assert.deepEqual(h.calls.filter(r => r.url.endsWith('/auth/clerk')).length, 2);
++});
++test('prebuilt: Continue before observer cannot relabel an old ready app flow as a new SDK session', async t => {
++  const h = await harness(t); h.session('sess_First'); await h.gate.enter(); const old = h.runtime.snapshot().flow;
++  h.session('sess_Second'); await h.gate.enter();
++  assert(h.gate.matches()); assert.notEqual(h.runtime.snapshot().flow, old);
++  assert.equal(h.calls.filter(r => r.url.endsWith('/auth/clerk')).length, 2);
++  assert.deepEqual(h.calls.filter(r => r.url.endsWith('/auth/logout')).length, 1);
++  assert.equal(h.sdk.session().id, 'sess_Second');
++});
++test('prebuilt: delayed old exchange body after SDK replacement cannot reopen the app', async t => {
++  const reading = wait(), release = wait(); let first = true;
++  const h = await harness(t, { send: async (request, send) => {
++    const response = await send(); if (first && request.url.endsWith('/auth/clerk')) {
++      first = false; const json = response.json.bind(response);
++      response.json = async () => { const value = await json(); reading.release(); await release.promise; return value; };
++    } return response;
++  } });
++  h.session('sess_First'); const old = h.gate.enter(); await reading.promise;
++  h.session('sess_Second'); const cleanup = h.gate.observe(); release.release(); await Promise.all([old, cleanup]);
++  assert.equal(h.runtime.snapshot().flow, null); assert.equal(h.sdk.session().id, 'sess_Second');
++  assert.equal(h.calls.filter(r => r.url.endsWith('/me')).length, 0);
++  await h.gate.enter(); assert(h.gate.matches()); assert.equal(h.runtime.snapshot().step, 'ready');
++});
++test('prebuilt: own SDK signout observer does not supersede captured app logout ACK', async t => {
++  const h = await harness(t); h.session('sess_Own'); await h.gate.enter();
++  const off = h.runtime.subscribe(() => { if (!h.sdk.session()) h.gate.observe(); });
++  await h.gate.logout(); off();
++  assert.equal(h.gate.observe(), null); assert.equal(h.runtime.snapshot().flow, null); assert.equal(h.sdk.session(), null);
++  assert.equal(h.runtime.snapshot().notice, 'Server sessiya yopilganini tasdiqladi.');
++  const request = h.calls.find(r => r.url.endsWith('/auth/logout'));
++  assert(!request.headers.has('authorization')); assert.deepEqual(Object.keys(await request.json()), ['refresh_token']);
++});
++test('prebuilt: reset clears immediately but its cleanup promise waits for targeted SDK signout', async t => {
++  const release = wait(), started = wait();
++  const h = await harness(t, { sdk: { signOut: async () => { started.release(); await release.promise; } } });
++  h.session('sess_First'); await h.gate.enter(); const cleanup = h.gate.reset();
++  assert.equal(h.runtime.snapshot().flow, null); assert.equal(h.gate.matches(), false);
++  let settled = false; cleanup.then(() => { settled = true; }); await started.promise; await turn(); assert.equal(settled, false);
++  h.session('sess_Second'); release.release(); await cleanup;
++  assert.equal(h.sdk.session().id, 'sess_Second'); assert.equal(h.gate.matches(), false);
++  await h.gate.enter(); assert(h.gate.matches());
++});
++test('prebuilt: SDK revocation clears app context and late old data never changes a new login', async t => {
++  const h = await harness(t); h.session('sess_First'); await h.gate.enter();
++  h.setSession(null); assert.equal(h.gate.matches(), false); await h.gate.observe(); assert.equal(h.runtime.snapshot().flow, null);
++  h.session('sess_New'); assert.equal(h.gate.observe(), null); assert.equal(h.runtime.snapshot().flow, null);
++  await h.gate.enter(); assert(h.gate.matches());
++});
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.html b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..c1e1af36023ea8c6c4d91507a367bd6373821cb6
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.html
+@@ -0,0 +1 @@
++<!doctype html><html lang="uz"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>Clerk supplied form mount contract test</title></head><body><div id="root"></div><script type="module" src="/tests/clerk-prebuilt.fixture.mjs"></script></body></html>
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.mjs b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..bb3700e76a76b1e43e3c16c2019b51818c00e120
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.mjs
+@@ -0,0 +1,68 @@
++// Real pinned React SDK wrapper/hooks. The vendor UI/client, session and proof
++// remain synthetic; this verifies mount/lifecycle contracts, not Clerk's design.
++import { createElement } from 'react';
++import { createRoot } from 'react-dom/client';
++import { ClerkProvider, ClerkLoaded } from '@clerk/react';
++import { CommonClerkEntry } from '../src/common-production-entry.tsx';
++import { readCommonEntryConfig } from '../src/common-production-runtime.ts';
++import { STUDENT_CONTRACT_SHA256 } from '../src/owner-client/student-client.ts';
++import { fakeClerkSdk } from './fixtures/clerk-sdk.fixture.mjs';
++import '../src/style.css';
++
++const listeners = new Set(), mounts = [], signOuts = [];
++const emit = () => { client.__internal_lastEmittedResources = { session: fixture.sdk.session(), user: null, organization: null, client: client.client }; listeners.forEach(f => f()); };
++const fixture = fakeClerkSdk({
++  token: async () => {
++    if (typeof window.__UA_PREBUILT_TEST_PROOF__ !== 'function') throw new Error('SYNTHETIC_PREBUILT_PROOF_REQUIRED');
++    return window.__UA_PREBUILT_TEST_PROOF__();
++  },
++  signOut: async id => {
++    signOuts.push(id);
++    if (window.__UA_PREBUILT_TEST_DELAY_SIGNOUT__) await new Promise(resolve => { window.__UA_PREBUILT_TEST_RELEASE_SIGNOUT__ = resolve; });
++  },
++});
++const signInSignal = { signIn: fixture.sdk.signIn, fetchStatus: 'idle', errors: null };
++const signUpSignal = { signUp: fixture.sdk.signUp, fetchStatus: 'idle', errors: null };
++const client = {
++  loaded: true, status: 'ready', client: { sessions: [] }, user: null, organization: null,
++  on(event, callback) { if (event === 'status') queueMicrotask(() => callback('ready')); return () => {}; }, off() {},
++  get session() { return fixture.sdk.session(); },
++  addListener(callback, options) { listeners.add(callback); if (!options?.skipInitialEmit) callback(); return () => listeners.delete(callback); },
++  __internal_state: { signInSignal: () => signInSignal, signUpSignal: () => signUpSignal,
++    __internal_effect(callback) { listeners.add(callback); callback(); return () => listeners.delete(callback); } },
++  signOut: async ({ sessionId }) => { await fixture.sdk.signOut(sessionId); emit(); },
++  mountSignIn(node, props) {
++    mounts.push(props);
++    // Clearly marked test driver, never a mock-up presented as the vendor form.
++    const button = document.createElement('button'); button.textContent = '__SDK_TEST_COMPLETE_FORM__';
++    button.onclick = () => { fixture.setSession(fixture.makeSession('sess_WidgetSynthetic')); emit(); };
++    node.replaceChildren(button);
++  },
++  unmountSignIn(node) { node.replaceChildren(); },
++};
++window.__UA_PREBUILT_TEST_SESSION__ = id => { fixture.setSession(id ? fixture.makeSession(id) : null); emit(); };
++window.__UA_PREBUILT_TEST_AUDIT__ = () => ({ session: client.session?.id ?? null, signOuts,
++  proofReads: fixture.calls.filter(c => c[0] === 'getToken').length, mounts });
++const nativeFetch = window.fetch;
++window.fetch = async (...args) => {
++  const response = await nativeFetch(...args);
++  if (window.__UA_PREBUILT_TEST_HOLD_BODY__ && response.url.endsWith('/auth/clerk')) {
++    window.__UA_PREBUILT_TEST_HOLD_BODY__ = false;
++    const read = response.json.bind(response);
++    response.json = async () => {
++      const body = await read();
++      await new Promise(resolve => { window.__UA_PREBUILT_TEST_RELEASE_BODY__ = resolve; }); return body;
++    };
++  }
++  return response;
++};
++const query = new URLSearchParams(location.search);
++if (query.has('cached')) fixture.setSession(fixture.makeSession('sess_CachedSynthetic'));
++const scope = query.has('webview') ? { Telegram: { WebApp: { initData: 'query_id=synthetic-prebuilt-view', ready() {}, expand() {} } } } : {};
++emit();
++const config = readCommonEntryConfig({ VITE_MINI_APP_ORIGIN: 'https://app.example.test', VITE_API_ORIGIN: 'https://api.example.test',
++  VITE_STUDENT_CONTRACT_SHA256: STUDENT_CONTRACT_SHA256, VITE_CLERK_PUBLISHABLE_KEY: 'pk_test_' + btoa('clerk.example.test$'),
++  VITE_CLERK_FRONTEND_ORIGIN: 'https://clerk.example.test' }, location.origin);
++createRoot(document.getElementById('root')).render(createElement(ClerkProvider, {
++  publishableKey: config.publishableKey, Clerk: client, telemetry: { disabled: true }, prefetchUI: false,
++}, createElement(ClerkLoaded, null, createElement(CommonClerkEntry, { config, scope }))));
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.mjs b/workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..e40897642b64bb705c9b354082f24e34b04468ea
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.mjs
+@@ -0,0 +1,23 @@
++import './verify-backend-targets.mjs';
++import { build, preview } from 'vite';
++import { spawn } from 'node:child_process';
++import { startClerkReviewServer } from '../../../runtime/clerk-review-server.mjs';
++
++const outDir = 'test-results/clerk-react-package-build';
++await build({ configFile: false, build: { outDir, emptyOutDir: true,
++  rollupOptions: { input: 'tests/clerk-react.fixture.html' } } });
++const assets = await preview({ configFile: false, build: { outDir }, preview: { host: '127.0.0.1', port: 0 } });
++try {
++  for (const scenario of ['google-email', 'callback', 'cancel-callback', 'explicit-session']) {
++    const backend = await startClerkReviewServer();
++    try {
++      const proofs = [await backend.lab.sign(), await backend.lab.sign(backend.lab.actors.fresh)];
++      await new Promise((resolve, reject) => {
++        const child = spawn('python3', ['-B', 'tests/clerk-react-browser.py'], { stdio: ['pipe', 'inherit', 'inherit'] });
++        child.stdin.end(JSON.stringify({ assets: `http://127.0.0.1:${assets.httpServer.address().port}`, api: backend.baseUrl,
++          scenario, proofs, screens: process.argv[2] ?? 'test-results/clerk-react/screenshots' }) + '\n');
++        child.once('error', reject); child.once('exit', code => code === 0 ? resolve() : reject(new Error('CLERK_REACT_PACKAGE_TEST_FAILED:' + code)));
++      });
++    } finally { await backend.close(); }
++  }
++} finally { await new Promise(resolve => assets.httpServer.close(resolve)); }
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.py b/workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..5f6e6a5a44673303bfc9ba9091eef6ebb42bc961
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.py
+@@ -0,0 +1,109 @@
++"""Real @clerk/react package/hooks; synthetic client/JWT, real RAM Backend HTTP."""
++import json
++from pathlib import Path
++import shutil
++import sys
++from urllib.parse import urlsplit
++from playwright.sync_api import sync_playwright, expect
++
++args = json.loads(sys.stdin.readline())
++assert all(urlsplit(args[k]).hostname == '127.0.0.1' for k in ['assets', 'api'])
++screens = Path(args['screens']); screens.mkdir(parents=True, exist_ok=True)
++scenario = args['scenario']
++match = lambda method, path: lambda r: r.request.method == method and urlsplit(r.url).path == path
++with sync_playwright() as p:
++    browser = p.chromium.launch(executable_path=shutil.which('chromium'), headless=True, args=['--no-sandbox'])
++    try:
++        page = browser.new_page(viewport={'width': 390, 'height': 900}); page.set_default_timeout(10000)
++        errors, blocked, audit, referrers = [], [], [], []
++        page.on('pageerror', lambda e: errors.append(str(e)))
++        page.on('console', lambda message: print('SDK_TEST_CONSOLE ' + message.text, file=sys.stderr) if message.type == 'error' else None)
++        def route(r):
++            u = urlsplit(r.request.url)
++            if u.scheme == 'https' and u.netloc == 'app.example.test':
++                if u.path.startswith('/assets/') and r.request.headers.get('referer'): referrers.append(True)
++                path = u.path if u.path.startswith('/assets/') else '/tests/clerk-react.fixture.html'
++                response = r.fetch(url=args['assets'] + path); r.fulfill(response=response)
++            elif u.scheme == 'https' and u.netloc == 'api.example.test' and u.path.startswith('/api/v1/'):
++                assert '/admin/' not in u.path and not u.path.endswith('/link')
++                headers = {k: v for k, v in r.request.all_headers().items() if k != 'origin'}
++                response = r.fetch(url=args['api'].removesuffix('/api/v1') + u.path, headers=headers)
++                r.fulfill(response=response, headers={**response.headers, 'access-control-allow-origin': 'https://app.example.test'})
++            else:
++                blocked.append(u.netloc); r.abort()
++        page.route('**/*', route)
++        page.on('response', lambda r: audit.append({'method': r.request.method, 'path': urlsplit(r.url).path, 'status': r.status})
++            if urlsplit(r.url).netloc == 'api.example.test' else None)
++        def proof(index):
++            value = args['proofs'][index]; args['proofs'][index] = None
++            page.evaluate('''value => { window.__UA_REACT_TEST_PROOF__ = async () => {
++                if (!value) throw new Error('TEST_PROOF_CONSUMED'); const next = value; value = null; return next;
++            }; }''', value)
++        def logout():
++            with page.expect_response(match('POST', '/api/v1/auth/logout')) as ack:
++                page.get_by_role('button', name='Chiqish', exact=True).click()
++            assert ack.value.status == 200 and 'authorization' not in ack.value.request.all_headers()
++            expect(page.get_by_text('Server sessiya yopilganini tasdiqladi.', exact=True)).to_be_visible()
++            page.wait_for_function('__UA_REACT_TEST_AUDIT__().session === null')
++        if scenario in ['callback', 'cancel-callback']:
++            query = '?state=synthetic-callback-state&code=synthetic-callback-code'
++            if scenario == 'cancel-callback': query += '&delay=1'
++            page.goto('https://app.example.test/auth/callback' + query)
++            if scenario == 'cancel-callback':
++                page.wait_for_function('typeof __UA_RELEASE_REACT_FINALIZE__ === "function"')
++                page.get_by_role('button', name='Bekor qilish', exact=True).click()
++                page.evaluate('__UA_RELEASE_REACT_FINALIZE__()')
++                page.wait_for_function('__UA_REACT_TEST_AUDIT__().session === "sess_CallbackFixture"')
++                expect(page.get_by_role('status')).to_have_text('Kirish bekor qilindi. Yangidan kirishni boshlashingiz mumkin.')
++            else:
++                expect(page.get_by_role('status')).to_have_text('Google javobi qabul qilindi. Asosiy kirish oynasiga qayting.')
++            expect(page.get_by_role('link', name='Kirish oynasiga qaytish')).to_have_attribute('href', 'https://app.example.test/sign-in')
++            assert page.url == 'https://app.example.test/auth/callback'
++            assert not audit and page.evaluate('__UA_REACT_TEST_AUDIT__().proofReads') == 0
++            assert page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish').count() == 0
++        else:
++            page.goto('https://app.example.test/sign-in')
++            expect(page.get_by_role('heading', name='Kabinetga kirish', exact=True)).to_be_visible()
++            proof(0)
++            if scenario == 'explicit-session':
++                page.evaluate('__UA_REACT_TEST_EXTERNAL_SESSION__()')
++                button = page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish', exact=True)
++                expect(button).to_be_visible(); assert not audit
++            else:
++                button = page.get_by_role('button', name='Google bilan davom etish', exact=True)
++            with page.expect_response(match('GET', '/api/v1/exams')):
++                with page.expect_response(match('POST', '/api/v1/auth/clerk')) as exchange:
++                    button.click()
++            assert exchange.value.status == 200 and exchange.value.request.post_data_json == {}
++            expect(page.get_by_role('heading', name='Mening testlarim', exact=True)).to_be_visible(); logout()
++            if scenario == 'google-email':
++                proof(1)
++                page.get_by_label('Email', exact=True).fill('student@example.test')
++                page.get_by_role('button', name='Tasdiqlash kodini yuborish', exact=True).click()
++                page.get_by_label('6 xonali kod').fill('123456')
++                with page.expect_response(match('POST', '/api/v1/auth/clerk')) as email:
++                    page.get_by_role('button', name='Tekshirish va kirish', exact=True).click()
++                assert email.value.status == 200
++                expect(page.get_by_role('heading', name='Ism va familiyangiz', exact=True)).to_be_visible()
++                page.get_by_label('Ism', exact=True).fill('Suniy'); page.get_by_label('Familiya', exact=True).fill('Review')
++                with page.expect_response(match('GET', '/api/v1/exams')) as empty:
++                    page.get_by_role('button', name='Davom etish', exact=False).click()
++                assert empty.value.json()['data'] == []; logout()
++            else:
++                count = len(audit); page.evaluate('__UA_REACT_TEST_EXTERNAL_SESSION__()')
++                expect(page.get_by_role('button', name='Tasdiqlangan hisob bilan davom etish', exact=True)).to_be_visible()
++                assert len(audit) == count
++        assert not errors, errors
++        assert not blocked, blocked
++        assert not referrers
++        assert not page.evaluate('document.documentElement.scrollWidth > innerWidth')
++        page.screenshot(path=str(screens / (scenario + '.png')), full_page=True)
++        print(json.dumps({'scenario': scenario, 'status': 'PASS', 'reactSDKPackage': '@clerk/react@6.18.6_REAL_BUNDLED',
++            'client_and_proofs': 'SYNTHETIC', 'HTTP': 'REAL_LOOPBACK_RAM', 'apiCalls': len(audit),
++            'callbackAutoExchange': 0, 'linkCalls': 0, 'externalRequests': 0, 'realClerkJSProvider': 'NOT_RUN'}))
++    except Exception:
++        print(json.dumps({'scenario': scenario, 'errors': errors, 'blocked': blocked,
++            'body': page.locator('body').inner_text()[:300]}), file=sys.stderr)
++        raise
++    finally:
++        browser.close()
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.html b/workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..f6f1a0a1682a8d65d0a956431f81bf92658d1b78
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.html
+@@ -0,0 +1 @@
++<!doctype html><html lang="uz"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer"><title>Clerk React SDK local test</title></head><body><div id="root"></div><script type="module" src="/tests/clerk-react.fixture.mjs"></script></body></html>
+diff --git a/workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.mjs b/workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..dc7467d4ad01339663d386b2d2eecd0113a8496b
+--- /dev/null
++++ b/workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.mjs
+@@ -0,0 +1,51 @@
++// Actual pinned @clerk/react components/hooks, synthetic client/session only.
++// The test-only client models the versioned SDK's private signal storage solely
++// to drive its public hooks. Production does not import this file or these seams.
++import { createElement } from 'react';
++import { createRoot } from 'react-dom/client';
++import { ClerkProvider, ClerkLoaded } from '@clerk/react';
++import { BackupCommonClerkEntry } from '../src/common-backup-entry.tsx';
++import { readCommonEntryConfig } from '../src/common-production-runtime.ts';
++import { STUDENT_CONTRACT_SHA256 } from '../src/owner-client/student-client.ts';
++import { fakeClerkSdk } from './fixtures/clerk-sdk.fixture.mjs';
++import '../src/style.css';
++
++const listeners = new Set();
++const emit = () => { client.__internal_lastEmittedResources = { session: fixture.sdk.session(), user: null, organization: null, client: client.client }; listeners.forEach(f => f()); };
++const fixture = fakeClerkSdk({
++  token: async () => {
++    if (typeof window.__UA_REACT_TEST_PROOF__ !== 'function') throw new Error('SYNTHETIC_REACT_PROOF_REQUIRED');
++    return window.__UA_REACT_TEST_PROOF__();
++  },
++  finalize: async (kind, input, activate) => {
++    const id = fixture.sdk[kind].createdSessionId, session = fixture.makeSession(id);
++    if (window.__UA_DELAY_REACT_FINALIZE__) await new Promise(resolve => { window.__UA_RELEASE_REACT_FINALIZE__ = resolve; });
++    await input.navigate?.({ session, decorateUrl: url => url }); activate(id); emit(); return { error: null };
++  },
++});
++const signInSignal = { signIn: fixture.sdk.signIn, fetchStatus: 'idle', errors: null };
++const signUpSignal = { signUp: fixture.sdk.signUp, fetchStatus: 'idle', errors: null };
++const client = {
++  loaded: true, status: 'ready', client: { sessions: [] }, user: null, organization: null,
++  on(event, callback) { if (event === 'status') queueMicrotask(() => callback('ready')); return () => {}; },
++  off() {},
++  get session() { return fixture.sdk.session(); },
++  addListener(callback, options) { listeners.add(callback); if (!options?.skipInitialEmit) callback(); return () => listeners.delete(callback); },
++  __internal_state: { signInSignal: () => signInSignal, signUpSignal: () => signUpSignal,
++    __internal_effect(callback) { listeners.add(callback); callback(); return () => listeners.delete(callback); } },
++  signOut: async ({ sessionId }) => { await fixture.sdk.signOut(sessionId); emit(); },
++};
++emit();
++window.__UA_REACT_TEST_AUDIT__ = () => ({ session: client.session?.id ?? null, signOut: fixture.calls.filter(c => c[0] === 'signOut').length,
++  proofReads: fixture.calls.filter(c => c[0] === 'getToken').length });
++window.__UA_REACT_TEST_EXTERNAL_SESSION__ = () => { fixture.setSession(fixture.makeSession('sess_ExplicitExternal')); emit(); };
++if (location.pathname === '/auth/callback') {
++  fixture.sdk.signIn.status = 'complete'; fixture.sdk.signIn.createdSessionId = 'sess_CallbackFixture';
++  if (new URLSearchParams(location.search).has('delay')) window.__UA_DELAY_REACT_FINALIZE__ = true;
++}
++const config = readCommonEntryConfig({ VITE_MINI_APP_ORIGIN: 'https://app.example.test', VITE_API_ORIGIN: 'https://api.example.test',
++  VITE_STUDENT_CONTRACT_SHA256: STUDENT_CONTRACT_SHA256, VITE_CLERK_PUBLISHABLE_KEY: 'pk_test_' + btoa('clerk.example.test$'),
++  VITE_CLERK_FRONTEND_ORIGIN: 'https://clerk.example.test' }, location.origin);
++const root = createRoot(document.getElementById('root'));
++root.render(createElement(ClerkProvider, { publishableKey: config.publishableKey, Clerk: client, telemetry: { disabled: true }, prefetchUI: false },
++  createElement(ClerkLoaded, null, createElement(BackupCommonClerkEntry, { config, scope: window }))));

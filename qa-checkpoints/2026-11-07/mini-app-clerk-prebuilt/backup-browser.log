@@ -1,0 +1,14 @@
+vite v8.3.6 building client environment for production...
+transforming...
+✓ 104 modules transformed.
+rendering chunks...
+computing gzip size...
+test-results/clerk-react-package-build/tests/clerk-react.fixture.html            0.43 kB │ gzip:   0.29 kB
+test-results/clerk-react-package-build/assets/clerk-react-CHQ5EbBm.css           9.32 kB │ gzip:   2.95 kB
+test-results/clerk-react-package-build/assets/clerk-react.fixture-DqAsPR99.js  407.46 kB │ gzip: 119.54 kB
+
+✓ built in 1.12s
+{"scenario": "google-email", "status": "PASS", "reactSDKPackage": "@clerk/react@6.18.6_REAL_BUNDLED", "client_and_proofs": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 9, "callbackAutoExchange": 0, "linkCalls": 0, "externalRequests": 0, "realClerkJSProvider": "NOT_RUN"}
+{"scenario": "callback", "status": "PASS", "reactSDKPackage": "@clerk/react@6.18.6_REAL_BUNDLED", "client_and_proofs": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 0, "callbackAutoExchange": 0, "linkCalls": 0, "externalRequests": 0, "realClerkJSProvider": "NOT_RUN"}
+{"scenario": "cancel-callback", "status": "PASS", "reactSDKPackage": "@clerk/react@6.18.6_REAL_BUNDLED", "client_and_proofs": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 0, "callbackAutoExchange": 0, "linkCalls": 0, "externalRequests": 0, "realClerkJSProvider": "NOT_RUN"}
+{"scenario": "explicit-session", "status": "PASS", "reactSDKPackage": "@clerk/react@6.18.6_REAL_BUNDLED", "client_and_proofs": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 4, "callbackAutoExchange": 0, "linkCalls": 0, "externalRequests": 0, "realClerkJSProvider": "NOT_RUN"}

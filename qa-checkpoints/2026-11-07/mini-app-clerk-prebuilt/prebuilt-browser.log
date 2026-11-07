@@ -1,0 +1,17 @@
+vite v8.3.6 building client environment for production...
+transforming...
+✓ 102 modules transformed.
+rendering chunks...
+computing gzip size...
+test-results/clerk-prebuilt-package-build/tests/clerk-prebuilt.fixture.html            0.45 kB │ gzip:   0.30 kB
+test-results/clerk-prebuilt-package-build/assets/clerk-prebuilt-CHQ5EbBm.css           9.32 kB │ gzip:   2.95 kB
+test-results/clerk-prebuilt-package-build/assets/clerk-prebuilt.fixture-DBkyeczj.js  406.86 kB │ gzip: 119.41 kB
+
+✓ built in 299ms
+{"scenario": "widget-explicit", "status": "PASS", "SDK": "@clerk/react@6.18.6_REAL_WRAPPER_HOOKS", "vendorUI_client_proof": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 4, "linkCalls": 0, "externalRequests": 0, "vendorFormVisual_realClerkGoogleEmail": "NOT_RUN"}
+{"scenario": "cached-session", "status": "PASS", "SDK": "@clerk/react@6.18.6_REAL_WRAPPER_HOOKS", "vendorUI_client_proof": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 4, "linkCalls": 0, "externalRequests": 0, "vendorFormVisual_realClerkGoogleEmail": "NOT_RUN"}
+{"scenario": "cancel-body", "status": "PASS", "SDK": "@clerk/react@6.18.6_REAL_WRAPPER_HOOKS", "vendorUI_client_proof": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 4, "linkCalls": 0, "externalRequests": 0, "vendorFormVisual_realClerkGoogleEmail": "NOT_RUN"}
+{"scenario": "user-cancel", "status": "PASS", "SDK": "@clerk/react@6.18.6_REAL_WRAPPER_HOOKS", "vendorUI_client_proof": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 4, "linkCalls": 0, "externalRequests": 0, "vendorFormVisual_realClerkGoogleEmail": "NOT_RUN"}
+{"scenario": "logout-new-session", "status": "PASS", "SDK": "@clerk/react@6.18.6_REAL_WRAPPER_HOOKS", "vendorUI_client_proof": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 7, "linkCalls": 0, "externalRequests": 0, "vendorFormVisual_realClerkGoogleEmail": "NOT_RUN"}
+{"scenario": "revoked", "status": "PASS", "SDK": "@clerk/react@6.18.6_REAL_WRAPPER_HOOKS", "vendorUI_client_proof": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 7, "linkCalls": 0, "externalRequests": 0, "vendorFormVisual_realClerkGoogleEmail": "NOT_RUN"}
+{"scenario": "webview", "status": "PASS", "SDK": "@clerk/react@6.18.6_REAL_WRAPPER_HOOKS", "vendorUI_client_proof": "SYNTHETIC", "HTTP": "REAL_LOOPBACK_RAM", "apiCalls": 0, "linkCalls": 0, "externalRequests": 0, "vendorFormVisual_realClerkGoogleEmail": "NOT_RUN"}

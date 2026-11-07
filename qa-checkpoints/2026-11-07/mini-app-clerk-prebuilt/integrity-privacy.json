@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "head_unchanged": "31b2b00ecd1c413e1f828fef4c023c3ff2310909",
+  "file_count": 26,
+  "patch_restore": "/workspace/shared/mini-app-clerk-prebuilt-evidence-20261107/restore-check",
+  "restored_targets_exact": 26,
+  "all_changed_paths_frontend_only": true,
+  "backend_guard_owner_transport_unchanged": true,
+  "prior_user_review_files_unchanged": 4,
+  "new_dependencies": 0,
+  "privacy_patterns": [
+    "private_key",
+    "real_clerk_secret",
+    "github_token",
+    "google_key",
+    "jwt_literal",
+    "bot_token",
+    "password_assignment"
+  ],
+  "privacy_hits": [],
+  "manual_review": "All emails/domains/proofs and UI test inputs are synthetic or empty public configuration; no real user data/key included. Actual vendor/provider visual/email/return/linking NOT_RUN.",
+  "manifest_sha256": "5f4d0f22ade20e4609657b7366febe3014d4f4745254c01569da747def9e253b",
+  "patch_sha256": "e628afee2b6410b815dd3588431316b9cb26b5923a4161a24bd3d2ea23ce9b20"
+}

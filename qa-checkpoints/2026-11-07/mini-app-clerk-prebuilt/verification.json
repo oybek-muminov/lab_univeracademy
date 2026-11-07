@@ -1,0 +1,103 @@
+{
+  "status": "AUTHOR_LOCAL_PASS_NOT_INDEPENDENT_QA",
+  "manifest_sha256": "5f4d0f22ade20e4609657b7366febe3014d4f4745254c01569da747def9e253b",
+  "base_commit": "31b2b00ecd1c413e1f828fef4c023c3ff2310909",
+  "node": "v24.22.1",
+  "node_tests": {
+    "passed": 76,
+    "failed": 0,
+    "new_prebuilt_gate": 8
+  },
+  "browser_cases": {
+    "prebuilt-browser": [
+      "widget-explicit",
+      "cached-session",
+      "cancel-body",
+      "user-cancel",
+      "logout-new-session",
+      "revoked",
+      "webview"
+    ],
+    "backup-browser": [
+      "google-email",
+      "callback",
+      "cancel-callback",
+      "explicit-session"
+    ],
+    "common-production-build": [
+      "common-empty-config-no-sdk",
+      "common-optional-telegram-owner-login-logout"
+    ],
+    "legacy-production-build": [
+      "empty-config-default-main",
+      "configured-main-production-owner-login-logout"
+    ]
+  },
+  "browser_case_count": 15,
+  "guard": "PASS_172_BACKEND_TARGETS_PLUS_2_OWNER_COPIES_HISTORY_PINS_UNCHANGED",
+  "build": "PASS",
+  "typecheck": "PASS",
+  "patch_restore": "PASS_26_OF_26_EXACT",
+  "production_bundle": "PASS_NO_SYNTHETIC_DRIVER_OR_CUSTOM_BACKUP_CREDENTIAL_UI",
+  "provider_boundary": "React SDK wrappers/hooks real; vendor UI/client/JWT synthetic; Backend HTTP real loopback RAM; HTTPS forwarding is test-only CORS bridge.",
+  "not_run": [
+    "independent_QA_for_this_candidate",
+    "real_ClerkJS_form_visual_FAPI",
+    "real_Google_email_OTP",
+    "Uzbek_vendor_form_locale",
+    "tenant_email_template",
+    "Telegram_WebView_OAuth_return_binding",
+    "account_linking",
+    "real_DB_RLS_provider",
+    "Brevo",
+    "deploy",
+    "upload_commit_push"
+  ],
+  "logs": [
+    {
+      "file": "unit.log",
+      "bytes": 18013,
+      "sha256": "16da8de93bbe19275443c2a91793afbf8f0d2fa1c45826193f7ef81a9dba4d73"
+    },
+    {
+      "file": "prebuilt-browser.log",
+      "bytes": 2393,
+      "sha256": "26e8b242014d8780980ef0325641821449a3c239a5acbb055a646d12b47832a1"
+    },
+    {
+      "file": "backup-browser.log",
+      "bytes": 1616,
+      "sha256": "76a8c821d4886d3c6a68916f1f6a20b10b3e59ca30fda2097a5089120947d14b"
+    },
+    {
+      "file": "common-production-build.log",
+      "bytes": 1716,
+      "sha256": "27b5602e677e8714a68aa791e6d4cccf3a06e0ccbdc00d4bde629e0c64563d74"
+    },
+    {
+      "file": "legacy-production-build.log",
+      "bytes": 2193,
+      "sha256": "f3a6a7a9a152a3288568710841bd5c74cbd63e23062c2370bcb9b4b7ba882db8"
+    },
+    {
+      "file": "build-typecheck.log",
+      "bytes": 898,
+      "sha256": "20ba0c891c8378d771493e82458b293d38ae5e85d0d9ed136f26109a1588e2ac"
+    },
+    {
+      "file": "typecheck.log",
+      "bytes": 263,
+      "sha256": "ddc260d0ab04bbc1803bbc81e1bcac17f9e8e36dc769870e80d1e19c71bdab0b"
+    },
+    {
+      "file": "backend172-guard.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "integrity-privacy.json",
+      "bytes": 970,
+      "sha256": "f2c0820adb2c4edf348818d444823e557a377c52a3295bbbb907854f041210fd"
+    }
+  ]
+}

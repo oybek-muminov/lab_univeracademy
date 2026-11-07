@@ -1,0 +1,11 @@
+Mavzu: UniverAcademy uchun tasdiqlash kodi
+Qisqa izoh: Kabinetga kirishni tasdiqlang.
+
+Kirishni tasdiqlang
+
+UniverAcademy kabinetiga kirish uchun quyidagi kodni kiriting.
+
+[TASDIQLASH_KODI]
+
+Koddan faqat o‘zingiz foydalaning.
+Bu so‘rovni yubormagan bo‘lsangiz, xatni e’tiborsiz qoldiring.

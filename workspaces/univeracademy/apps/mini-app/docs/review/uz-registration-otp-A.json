@@ -1,0 +1,56 @@
+{
+  "status": "REVIEW_DRAFT_USER_FEEDBACK_PENDING",
+  "language": "uz-Latn",
+  "version": "2026-11-07-A",
+  "entry": {
+    "title": "Kirish va ro‘yxatdan o‘tish",
+    "intro": "O‘quvchi kabinetiga Google yoki email orqali kiring.",
+    "google_button": "Google bilan davom etish",
+    "email_label": "Email manzilingiz",
+    "email_button": "Kod yuborish",
+    "telegram_optional": "Telegram orqali kirish — ixtiyoriy",
+    "existing_account_hint": "Oldin hisob ochgan bo‘lsangiz, avvalgi kirish usulingizni tanlang."
+  },
+  "otp": {
+    "title": "Emailni tasdiqlang",
+    "instruction": "Emailingizga yuborilgan 6 xonali kodni kiriting.",
+    "masked_example": "o***@example.test",
+    "label": "Tasdiqlash kodi",
+    "submit": "Tasdiqlash",
+    "resend": "Kodni qayta yuborish",
+    "change_email": "Boshqa email kiritish",
+    "wrong": "Kod mos kelmadi. Qayta tekshiring.",
+    "expired": "Kod muddati tugagan. Yangi kod so‘rang.",
+    "rate_limited": "Biroz kutib, qayta urinib ko‘ring."
+  },
+  "profile": {
+    "title": "Profilni to‘ldiring",
+    "instruction": "Ism va familiyangizni kiriting.",
+    "first_name_label": "Ism",
+    "last_name_label": "Familiya",
+    "submit": "Saqlash va davom etish",
+    "group_hint": "Testlarni sizga o‘qituvchi yoki administrator biriktiradi."
+  },
+  "email": {
+    "subject": "UniverAcademy uchun tasdiqlash kodi",
+    "preheader": "Kabinetga kirishni tasdiqlang.",
+    "heading": "Kirishni tasdiqlang",
+    "body": "UniverAcademy kabinetiga kirish uchun quyidagi kodni kiriting.",
+    "code_placeholder": "[TASDIQLASH_KODI]",
+    "privacy": "Koddan faqat o‘zingiz foydalaning.",
+    "unsolicited": "Bu so‘rovni yubormagan bo‘lsangiz, xatni e’tiborsiz qoldiring."
+  },
+  "review_notes": [
+    "Bu matnlar amaldagi production UIga qo‘llanmadi; foydalanuvchi takliflari kutiladi.",
+    "Email placeholderi Clerk shablon o‘zgaruvchisi emas. Dashboard mappingi va xat yuborish keyingi alohida ish.",
+    "Email qaysi hisob mavjudligini tasdiqlashdan oldin oshkor qilmaydi; ism/familiya faqat tekshirilgan yangi profil uchun so‘raladi.",
+    "Guruh/huquq serverga tegishli. Provider nomi/emaili mavjud profilga avtomatik ko‘chirilmaydi.",
+    "Linking bloklangan. Telegram WebView va tashqi brauzer orasida sessiya almashish ko‘prigi yo‘q.",
+    "Clerk/Google/CAPTCHA/MFA va browserning o‘z matnlari to‘liq o‘zbekcha deb tasdiqlanmagan."
+  ],
+  "feedback_fields": [
+    "Sarlavha va tugmalar matni",
+    "Ism/familiya oynasining tushuntirishi",
+    "OTP emailining ohangi va matni"
+  ]
+}

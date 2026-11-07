@@ -1,0 +1,26 @@
+# O‘zbekcha kirish va ro‘yxatdan o‘tish — loyiha A
+
+Holat: **foydalanuvchi fikrlari kutilmoqda**. Asos laboratoriya commit `9bed5e04bf54f04f2e5f7d2441dcacb2017f7505`. Bu lokal nusxa; yangi upload yoki production yoqilishi emas.
+
+`uz-registration-otp-A.html` — tarmoqqa chiqmaydigan, to‘rt ko‘rinishli maket: kirish, email kodi, ism/familiya, OTP xati. `uz-registration-otp-A.json` — aniq matnlar; `uz-otp-email-A.txt` — email matni. Tugmalar faqat maketning ko‘rinishlarini almashtiradi, hisob ochmaydi va xat yubormaydi. Bu matnlar amaldagi production UI yoki Clerk Dashboard shabloniga qo‘llanmagan. Google va email bitta boshlang‘ich oynada; mavjud/yangi hisob tafovuti email tasdiqlanishidan oldin oshkor qilinmaydi. Ism/familiya faqat server registration_complete=false desa olinadi; mavjud profilga provider nomi/emaili ko‘chirilmaydi. Testni o‘qituvchi/admin biriktiradi; UI guruh yoki rol bermaydi.
+
+Foydalanuvchidan taklif olish uchun uchta band: boshlang‘ich sarlavha/tugmalar; profil oynasining tushuntirishi; OTP xatining ohangi va matni. Kod muddati, qayta yuborish soniyalari, jo‘natuvchi emaili yoki yangi rozilik siyosati bu loyihada taxmin qilinmagan. `[TASDIQLASH_KODI]` — ko‘rinish placeholderi; haqiqiy Clerk o‘zgaruvchisi sifatida ishlatilmaydi. Dashboarddagi aynan kod shabloni o‘zgaruvchisi va sender/branding/domain sozlamalari keyingi vakolatli ishda tekshiriladi. O‘zbekcha custom ekranlar tayyor; Clerk/Google/CAPTCHA/MFA/browser matnlari to‘liq o‘zbekcha deb tasdiqlanmagan.
+
+## Production SDK nomzodidagi davomiy ish
+
+Pinlangan `@clerk/react@6.18.6` saqlandi. Public `useSession` faol SDK sessiyasini kuzatish uchun ishlatiladi: resursning oddiy mutable getteriga tayanilmaydi. SDK sessiyasi paydo bo‘lishi app sessiyasini avtomatik ochmaydi; fixed sign-in oynasida foydalanuvchi explicit davom etishi yoki boshlang‘ich oynadagi hali amaldagi auth operatsiyasi kerak. Google/email adapteri, owner-client va opaque app session oqimi saqlanadi.
+
+Callback alohida komponentga ajratildi va unda app runtime/exchange umuman yaratilmaydi. SDK callbacki muvaffaqiyatli tugasa ham child/callback hujjati `getToken`/`POST /auth/clerk` orqali app sessiyasini ochmaydi. Kech callback bekor qilingan UIga kirishni qaytarmaydi. Callback parametrlari terminal holatda fixed HTTPS callback yo‘liga tozalanadi; qaytish havolasi faqat configured `/sign-in`. App proof/token URL, fragment, deep-link yoki postMessagega qo‘shilmaydi. `no-referrer` meta va Telegram head scriptining referrerpolicy atributi qo‘shildi. Hosting darajasidagi cache/CSP/headerlar bu ishda sozlanmadi.
+
+Ko‘rik manbalari: Backend149 ichidagi `docs/api/clerk-timing-d1-d2-2026-11-07.md` va `docs/api/identity-link-return-proposal-2026-11-07.md`. D1 linking endpointi bloklanganicha; frontend yangi link API, purpose/person parametri, emailga ko‘ra merge yoki Telegram return bridge qo‘shmaydi. Appdagi eski “avtomatik bog‘lanmaydi” yozuvi upstream Clerkning tekshirilmagan email association xulqiga kafolat sifatida talqin qilinmasligi uchun aniq feature holatiga almashtirildi: “Hisoblarni bog‘lash hozircha mavjud emas.”
+
+## Sinov chegarasi
+
+- Haqiqiy pinlangan React SDK paketi, `ClerkProvider`, public hooklar va `HandleSSOCallback` brauzer bundle ichida bajariladi. Faqat `tests/clerk-react.fixture.mjs`dagi public `Clerk` propiga berilgan client/session/signal modeli sun’iy. Private signal storage shu test double ichida versiyaga bog‘langan model; production bunday maydonlarni import/chaqirmaydi.
+- Synthetic JWTlar fresh loopback Backend149 RAM serveriga mavjud production owner-client orqali exchange qilinadi. Qabul qilingan Backend HTTP so‘rovlari real lokal TCP; reserved HTTPS hostlar test routing bilan localhostga bog‘lanadi. Bu production CORS dalili emas.
+- Google/email profil oqimi, logout; callbackda zero app exchange; canceldan keyingi kech SDK finalize; tashqi SDK session update tugmani yangilashi va logoutdan keyin avtomatik app login bo‘lmasligi sinovlari bor. Production builddan yangi test markerlari ham qidiriladi.
+- Haqiqiy ClerkJS resurs modeli, Clerk FAPI/Backend SDK provider readlari, Google consent, haqiqiy email, cookie/cross-tab va real OAuth state/PKCE/nonce tekshiruvi **NOT_RUN**. React SDK test clientining oldindan tayyorlangan callback holati haqiqiy OAuth binding isboti emas.
+
+D2 uchun state/PKCE/nonce va initiating browser/purpose bog‘lanishi, parallel/replay/duplicate callback, expiry, verifier yo‘qolishi va aniq redirect allowlist tekshiruvlari hali mustaqil ko‘rik/handoff talab qiladi. Telegram head SDK flagi butun SPA HTMLiga tegishli; haqiqiy callback uchun alohida hosting/SDK-script izolyatsiyasi ham keyingi ko‘rikda hal qilinishi kerak. App callbackidan avtomatik exchange olib tashlanishi bu talablarning bajarilganini anglatmaydi. Cross-document callback provider sessiyasini kech yaratishi mumkin; app unga grant bermaydi, universal provider rollback kafolati berilmaydi. Linking va tashqi WebView return yoqilmadi. Staff-only login paneli bu o‘quvchi entrysining qismi emas.
+
+Yangi buyruq: frontend ichida `node tests/clerk-react-browser.mjs`. Mavjud tegishli Node testlari va build-gate buyruqlari QA hisobotida. Eski 268-test/guard checkpointlar tarixi saqlanadi; ular yangi nomzodga avtomatik mustaqil QA tasdig‘i bo‘lib o‘tmaydi.

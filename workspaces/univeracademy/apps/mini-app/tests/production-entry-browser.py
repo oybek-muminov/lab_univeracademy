@@ -109,6 +109,7 @@ with sync_playwright() as p:
             def built_route(route):
                 target = urlsplit(route.request.url)
                 if route.request.url == 'https://telegram.org/js/telegram-web-app.js?64' and spec['configured']:
+                    assert 'referer' not in route.request.all_headers()
                     sdk.append(True)
                     # Fake SDK surface; no real SDK bytes, bot or launch are used.
                     route.fulfill(content_type='application/javascript', body='''
