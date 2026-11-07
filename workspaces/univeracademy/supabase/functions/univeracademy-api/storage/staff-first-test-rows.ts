@@ -117,7 +117,8 @@ FROM ua_private.test_versions v JOIN ua_private.demos d ON d.id=v.demo_id WHERE 
       if (!p) fail("NOT_FOUND", 404);
       const profile = p.profile as Person["profile"];
       if (profile.person_id !== id || !same(profile.roles, p.roles)) fail("RESPONSE_INVARIANT_FAILED", 500);
-      s.student.people[id] = { telegramId: integer(p.telegram_id), enabled: p.enabled as boolean, profile };
+      if(typeof p.enabled!=="boolean")fail("RESPONSE_INVARIANT_FAILED",500);
+      s.student.people[id] = { telegramId: p.telegram_id===null?null:integer(p.telegram_id), enabled: p.enabled, profile };
       const m = (await query(tx, "ua_first_membership", "SELECT affinity_group_id::text,active,revision::text,epoch::text FROM ua_private.memberships WHERE person_id=$1", [id])).rows[0];
       if (!m) fail("NOT_FOUND", 404);
       s.memberships[id] = { affinityGroupId: m.affinity_group_id as string | null, active: m.active as boolean, revision: integer(m.revision), epoch: integer(m.epoch) };

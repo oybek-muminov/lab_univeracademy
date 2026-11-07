@@ -2,6 +2,7 @@ import { createServer } from "node:http";
 import { pathToFileURL } from "node:url";
 import { createSyntheticPhysicsLab } from "./local-lab.mjs";
 import { ApiFault } from "../supabase/functions/univeracademy-api/fault.ts";
+import {nodeRequestAbort} from "./node-request-abort.mjs";
 
 // Local transport candidate only, not an approved production body/rate/CORS policy.
 const BODY_BYTES = 64 * 1024;
@@ -14,6 +15,7 @@ function errorReply(response, status, code) {
 export async function startLocalServer({ port = 0, lab = createSyntheticPhysicsLab() } = {}) {
   if (!Number.isInteger(port) || port < 0 || port > 65535) throw Error("INVALID_LOCAL_PORT");
   const server = createServer(async (incoming, outgoing) => {
+    const cancellation=nodeRequestAbort(incoming,outgoing);
     let dispatched = false;
     try {
       const origin = `http://127.0.0.1:${server.address().port}`;
@@ -32,7 +34,7 @@ export async function startLocalServer({ port = 0, lab = createSyntheticPhysicsL
         headers.append(incoming.rawHeaders[i], incoming.rawHeaders[i + 1]);
       }
       const request = new Request(url, { method: incoming.method, headers,
-        body: bytes ? Buffer.concat(chunks) : undefined });
+        body: bytes ? Buffer.concat(chunks) : undefined,signal:cancellation.signal });
       dispatched = true;
       const reply = await lab.handler(request);
       if (outgoing.destroyed) return;
@@ -42,7 +44,7 @@ export async function startLocalServer({ port = 0, lab = createSyntheticPhysicsL
       // Never log incoming proofs/body or reflect exception text.
       if (error instanceof ApiFault) errorReply(outgoing, error.status, error.code);
       else errorReply(outgoing, dispatched ? 500 : 400, dispatched ? "INTERNAL_ERROR" : "MALFORMED_REQUEST");
-    }
+    }finally{if(outgoing.destroyed||outgoing.writableFinished)cancellation.cleanup();}
   });
   server.requestTimeout = 10_000;
   await new Promise((resolve, reject) => {

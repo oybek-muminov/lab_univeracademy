@@ -17,8 +17,9 @@ export type ClerkCandidateState={
   studentSessions:Record<string,{personId:string;retiredAt:number|null}>;
   consumedTokens:Record<string,true>;
 };
-export type ClerkTransaction={state:ClerkCandidateState;now:()=>number};
-export type ClerkTransactions={transaction<T>(work:(tx:ClerkTransaction)=>Promise<T>):Promise<T>};
+export type ClerkTransaction={state:ClerkCandidateState;now:()=>number;newPersonId?:()=>string};
+export type ClerkTransactionIntent={kind:"exchange"|"staff"|"link";proof:ClerkProof};
+export type ClerkTransactions={transaction<T>(work:(tx:ClerkTransaction)=>Promise<T>,intent?:ClerkTransactionIntent):Promise<T>};
 export type ClerkCandidateDependencies={mode:"local_candidate";transactions:ClerkTransactions;
   verifier:ClerkVerifierConfiguration;liveness:ClerkLiveness;sessionPolicy:SessionPolicy;numericPresentation:NumericPresentation;
   legacyTelegram?:{botToken:string};staff?:{validate:(schema:string,value:unknown)=>boolean;newAssignmentId:()=>string}};
@@ -48,13 +49,13 @@ function currentStudentSession(state:ClerkCandidateState,id:ClerkIdentity,person
   const record=state.studentSessions[clerkSessionKey(id)];
   if(record&&(record.personId!==personId||record.retiredAt!==null))fail("CLERK_SESSION_SUPERSEDED",401);
 }
-function ensureStudent(state:ClerkCandidateState,id:ClerkIdentity,policy:SessionPolicy):Person{
+function ensureStudent(state:ClerkCandidateState,id:ClerkIdentity,policy:SessionPolicy,newPersonId:()=>string=()=>crypto.randomUUID()):Person{
   const key=clerkIdentityKey(id);
   if(Object.hasOwn(state.identities,key)){
     const person=mapped(state,id);if(!person.profile.roles.includes("student"))fail("FORBIDDEN",403);return person;
   }
   for(let n=0;n<policy.identityCollisionAttempts;n++){
-    const personId=crypto.randomUUID(),qadam=newQadamId();
+    const personId=newPersonId(),qadam=newQadamId();
     if(state.domain.student.people[personId]||Object.values(state.domain.student.people).some(p=>p.profile.qadam_id===qadam))continue;
     const person:Person={telegramId:null,enabled:true,profile:{person_id:personId,first_name:"",last_name:"",roles:["student"],
       registration_complete:false,active_group_id:null,qadam_id:qadam}};
@@ -63,7 +64,8 @@ function ensureStudent(state:ClerkCandidateState,id:ClerkIdentity,policy:Session
   }
   fail("SERVICE_UNAVAILABLE",503);
 }
-function serverTime(tx:ClerkTransaction,deps:ClerkCandidateDependencies,floor=0):number{
+function serverTime(tx:ClerkTransaction,deps:ClerkCandidateDependencies&{signal?:AbortSignal},floor=0):number{
+  if(deps.signal?.aborted)fail("SERVICE_UNAVAILABLE",503);
   const lockedAt=tx.now(),now=deps.verifier.now();
   if(!Number.isSafeInteger(lockedAt)||lockedAt<0||!Number.isSafeInteger(now)||now<lockedAt||now<floor)
     fail("SERVICE_UNAVAILABLE",503);
@@ -86,7 +88,7 @@ async function exchange(tx:ClerkTransaction,proof:ClerkProof,deps:ClerkCandidate
   const digest=await proofHash(JSON.stringify([proof.issuer,proof.userId,proof.sessionId,proof.tokenId]));
   // All provider/clock/digest awaits precede account creation and supersession.
   const now=checkCurrentTime(tx,proof,deps,providerExpires,checked.now);
-  const person=ensureStudent(state,id,policy),personId=person.profile.person_id,key=clerkSessionKey(id);
+  const person=ensureStudent(state,id,policy,tx.newPersonId),personId=person.profile.person_id,key=clerkSessionKey(id);
   currentStudentSession(state,id,personId);
   if(state.consumedTokens[digest])fail("CLERK_TOKEN_REPLAY",409);
   const expiresAt=Math.min(now+policy.familyTtlMs,providerExpires);utc(expiresAt);
@@ -152,8 +154,9 @@ function staffRecord(state:ClerkCandidateState,proof:ClerkProof,now:number):Staf
 
 // Local contract adapter only. No default store, SDK network client, secret loader,
 // provider mutation, SQL bootstrap or change to the existing Supabase JWT verifier.
-export function createClerkCandidateHandler(deps:ClerkCandidateDependencies){
+export function createClerkCandidateHandler(configuration:ClerkCandidateDependencies){
   return async(request:Request):Promise<Response>=>{
+    const deps={...configuration,signal:request.signal,liveness:(id:ClerkIdentity,now:number)=>configuration.liveness(id,now,{signal:request.signal})};
     try{
       if(deps?.mode!=="local_candidate"||typeof deps.transactions?.transaction!=="function"||typeof deps.liveness!=="function")fail("SERVICE_UNAVAILABLE",503);
       const path=new URL(request.url).pathname.replace(/\/$/,"");
@@ -161,7 +164,7 @@ export function createClerkCandidateHandler(deps:ClerkCandidateDependencies){
         const token=bearer(request),proof=await createClerkVerifier(deps.verifier)(token),raw=await request.text();
         let parsed;try{parsed=JSON.parse(raw);}catch{fail("MALFORMED_JSON",400);}
         if(!parsed||typeof parsed!=="object"||Array.isArray(parsed)||Object.keys(parsed).length)fail("VALIDATION_ERROR",422);
-        const result=await deps.transactions.transaction(tx=>exchange(tx,proof,deps));
+        const result=await deps.transactions.transaction(tx=>exchange(tx,proof,deps),{kind:"exchange",proof});
         return new Response(JSON.stringify({data:result}),{status:200,headers:{"content-type":"application/json; charset=utf-8","cache-control":"no-store"}});
       }
       if(path==="/api/v1/auth/telegram/link"&&request.method==="POST"){
@@ -169,7 +172,7 @@ export function createClerkCandidateHandler(deps:ClerkCandidateDependencies){
         await deps.transactions.transaction(async tx=>{
           await verifyCurrentClerk(tx,proof,deps);mapped(tx.state,proof);
           fail("IDENTITY_LINK_POLICY_UNRESOLVED",409); // No auto merge/email match/link mutation.
-        });
+        },{kind:"link",proof});
         fail("RESPONSE_INVARIANT_FAILED",500);
       }
       if(path.startsWith("/api/v1/admin/")){
@@ -189,7 +192,7 @@ export function createClerkCandidateHandler(deps:ClerkCandidateDependencies){
             checkCurrentTime(tx,proof,deps,checked.providerExpires,now);
             if(JSON.stringify(view.staff)!==before)fail("RESPONSE_INVARIANT_FAILED",500);
             const {staff:_,...domain}=view;Object.assign(tx.state.domain,domain);return outcome;
-          })}})(request);
+          },{kind:"staff",proof})}})(request);
       }
       const raw=await request.clone().text();
       return await createStudentHttpHandler({sessionPolicy:deps.sessionPolicy,numericPresentation:deps.numericPresentation,botToken:deps.legacyTelegram?.botToken,

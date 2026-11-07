@@ -123,7 +123,7 @@ export function createStudentHttpHandler(deps: StudentHttpDependencies) {
           }
           const familyId = crypto.randomUUID();
           state.families[familyId] = { personId: person.profile.person_id,
-            expiresAt: now + policy.familyTtlMs, revokedAt: null, logoutRetainUntil: null };
+            expiresAt: now + policy.familyTtlMs, revokedAt: null, logoutRetainUntil: null,authProvider:"telegram" };
           const proofs = await issueProofs(state, familyId, now, policy);
           return completed({ access_token: proofs.accessToken, refresh_token: proofs.refreshToken,
             expires_at: utc(proofs.expiresAt), refresh_expires_at: utc(proofs.refreshExpiresAt),

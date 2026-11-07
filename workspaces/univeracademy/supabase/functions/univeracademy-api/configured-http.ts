@@ -15,6 +15,9 @@ import { StaffFirstTestRows } from "./storage/staff-first-test-rows.ts";
 import { reconcileMembershipEffects } from "./membership-effects.ts";
 import { STAFF_CONTRACT_SHA } from "./staff-state.ts";
 import type { StaffJwtProof } from "./staff-jwt.ts";
+import {createClerkCandidateHandler} from "./clerk-http.ts";
+import type {ClerkCandidateDependencies} from "./clerk-http.ts";
+import {ClerkDomainTransactions} from "./storage/clerk-domain.ts";
 
 type StaffPorts={jwt:Parameters<typeof createStaffJwtVerifier>[0];
   resolvePersons?:(request:Request,proof:StaffJwtProof)=>Promise<readonly string[]>;
@@ -24,14 +27,15 @@ type StaffPorts={jwt:Parameters<typeof createStaffJwtVerifier>[0];
    {domain?:undefined;load:(tx:LockedTransaction,proof:StaffJwtProof)=>Promise<StaffState>;
     flush:(tx:LockedTransaction,before:StaffState,after:StaffState)=>Promise<void>});
 export type HttpConfiguration={mode:"production"|"local_contract";
-  storage:{kind:"postgres"|"postgres_contract_double";pool:PgPool};botToken:string;
+  storage:{kind:"postgres"|"postgres_contract_double";pool:PgPool};botToken?:string;
+  clerk?:Pick<ClerkCandidateDependencies,"verifier"|"liveness"|"staff">;
   sessionPolicy:SessionPolicy;numericPresentation:NumericPresentation;now:()=>number;staff?:StaffPorts};
 function ready(config:HttpConfiguration):void{
   if(!config||!["production","local_contract"].includes(config.mode)||
     !config.storage||typeof config.storage.pool?.connect!=="function"||
     (config.mode==="production"&&config.storage.kind!=="postgres")||
     (config.mode==="local_contract"&&!["postgres","postgres_contract_double"].includes(config.storage.kind))||
-    typeof config.botToken!=="string"||!config.botToken||typeof config.now!=="function") fail("SERVICE_UNAVAILABLE",503);
+    ((!config.clerk)&&(typeof config.botToken!=="string"||!config.botToken))||typeof config.now!=="function") fail("SERVICE_UNAVAILABLE",503);
   checkSessionPolicy(config.sessionPolicy);
   const n=config.numericPresentation;
   if(!n?.policyId||typeof n.toFiniteNumber!=="function"||typeof n.toDisplayString!=="function"||
@@ -53,6 +57,14 @@ export function createConfiguredHttpHandler(config:HttpConfiguration){
     try{
       ready(config);
       if(!new URL(request.url).pathname.startsWith("/api/v1/"))fail("NOT_FOUND",404);
+      if(config.clerk){
+        if(typeof config.clerk.liveness!=="function"||!config.clerk.verifier)fail("SERVICE_UNAVAILABLE",503);
+        return await createClerkCandidateHandler({mode:"local_candidate",...config.clerk,
+          sessionPolicy:config.sessionPolicy,numericPresentation:config.numericPresentation,
+          ...(config.botToken?{legacyTelegram:{botToken:config.botToken}}:{}),
+          transactions:new ClerkDomainTransactions({pool:config.storage.pool,request,botToken:config.botToken,
+            sessionPolicy:config.sessionPolicy,now:config.now,liveness:config.clerk.liveness,staff:config.clerk.staff})})(request);
+      }
       const runner=new PostgresTransactions(config.storage.pool);
       if(new URL(request.url).pathname.startsWith("/api/v1/admin/")){
         const p=config.staff;
@@ -87,7 +99,8 @@ export function createConfiguredHttpHandler(config:HttpConfiguration){
           })}});
         return await handler(request);
       }
-      const scope=await locateStudent(config.storage.pool,request.clone(),config);
+      const legacy={...config,botToken:config.botToken!};
+      const scope=await locateStudent(config.storage.pool,request.clone(),legacy);
       const rows=new StudentHttpRows();
       return await createStudentHttpHandler({botToken:config.botToken,sessionPolicy:config.sessionPolicy,
         numericPresentation:config.numericPresentation,transactions:{transaction:work=>{
@@ -95,7 +108,7 @@ export function createConfiguredHttpHandler(config:HttpConfiguration){
             const personId=tx.personIds[0],state=await rows.load(tx,personId),before=structuredClone(state);
             const outcome=await work({state,now:()=>tx.now});await rows.flush(tx,personId,before,state);return outcome;
           };
-          return scope.kind==="telegram"?runner.runIdentity(scope.telegramId,gate=>new StudentIdentityRows().ensure(gate,scope.initData,config),perform):runner.run([scope.personId],perform);
+          return scope.kind==="telegram"?runner.runIdentity(scope.telegramId,gate=>new StudentIdentityRows().ensure(gate,scope.initData,legacy),perform):runner.run([scope.personId],perform);
         }}})(request);
     }catch(error){
       const fault=error instanceof ApiFault?error:new ApiFault("INTERNAL_ERROR",500);

@@ -1,0 +1,28 @@
+✖ TCP-CANCEL-1: completed POST body then TCP disconnect aborts Request and active SDK before500ms provider fallback (636.032012ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 815.75134
+
+✖ failing tests:
+
+test at tests/clerk-auth/tcp-cancel.test.mjs:13:1
+✖ TCP-CANCEL-1: completed POST body then TCP disconnect aborts Request and active SDK before500ms provider fallback (636.032012ms)
+  AssertionError [ERR_ASSERTION]: disconnect must reach Request.signal, not only the provider timer
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///workspace/qa-tcp-cancel-candidate-20261107/workspaces/univeracademy/tests/clerk-auth/tcp-cancel.test.mjs:23:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

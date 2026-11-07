@@ -23,9 +23,9 @@ export class DiskExecutor {
       query: async ({ name, text, values: v }) => {
         this.events.push(name);
         if (this.failStatement === name) { this.failStatement = null; throw Error("SYNTHETIC_WRITE_FAILURE"); }
-        if (name === "ua_begin") { draft = this.read(); return result(); }
-        if (name === "ua_rollback") return result();
-        if (name === "ua_commit") {
+        if (["ua_begin","ua_clerk_begin","ua_clerk_locator_begin"].includes(name)) { draft = this.read(); return result(); }
+        if (["ua_rollback","ua_clerk_rollback","ua_clerk_locator_rollback"].includes(name)) return result();
+        if (["ua_commit","ua_clerk_commit"].includes(name)) {
           const failure = this.failCommit; this.failCommit = null;
           if (failure === "before") throw Error("SYNTHETIC_COMMIT_UNKNOWN");
           durableWrite(this.path, draft);
@@ -33,6 +33,9 @@ export class DiskExecutor {
           return result();
         }
         if(this.extension){const handled=await this.extension({name,text,values:v},draft??this.read());if(handled!==undefined)return handled;}
+        if(["ua_people_context","ua_telegram_identity_context"].includes(name))return result();
+        if(name==="ua_clerk_retire_person"){for(const f of Object.values(draft.clerkFences??{}))if(f.personId===v[0]&&f.retiredAt===null)f.retiredAt=v[1];return result();}
+        if(name==="ua_session_provenance")return result(Object.values(draft.families).filter(f=>f.person_id===v[0]&&f.revoked_at_ms===null&&f.expires_at_ms>v[1]).map(f=>({auth_provider:f.auth_provider})));
         if (name === "ua_people_lock") {
           if (this.beforeLock) { const fn = this.beforeLock; this.beforeLock = null; await fn(); }
           return result(v[0].filter((id) => draft.people[id]).map((id) => ({ id })));
@@ -79,7 +82,7 @@ export class DiskExecutor {
         }
         if (name === "ua_family_insert") {
           if (draft.families[v[0]] || Object.values(draft.families).some((f) => f.person_id === v[1] && f.revoked_at_ms === null)) throw Error("SYNTHETIC_UNIQUE_CONSTRAINT");
-          draft.families[v[0]] = { person_id: v[1], expires_at_ms: v[2], revoked_at_ms: null, logout_retain_until_ms: null }; return result();
+          draft.families[v[0]] = { person_id: v[1], expires_at_ms: v[2], revoked_at_ms: null, logout_retain_until_ms: null,auth_provider:"telegram" }; return result();
         }
         if (name === "ua_access_insert" || name === "ua_refresh_insert") {
           const table = name === "ua_access_insert" ? draft.access : draft.refresh;

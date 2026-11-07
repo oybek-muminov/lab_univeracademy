@@ -1,0 +1,55 @@
+{
+  "finding": "TCP-CANCEL-1",
+  "status": "LOCAL_PASS_NOT_INDEPENDENT_QA_NOT_UPLOADED",
+  "base_commit": "31b2b00ecd1c413e1f828fef4c023c3ff2310909",
+  "source_manifest_sha256": "99bff54378d692aabdf3cbddde5dd0d05e4d0f765db9d91db7b22683e364b40f",
+  "tests": {
+    "pass": 57,
+    "new_tcp_cases": 5,
+    "fail": 0,
+    "typecheck_exit": 0
+  },
+  "privacy_scan": {
+    "files": 12,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "jwt_literal",
+      "credential_url",
+      "provider_key"
+    ],
+    "matches": []
+  },
+  "evidence": [
+    {
+      "path": "evidence/tcp-cancel-2026-11-07/before.log",
+      "bytes": 1025,
+      "sha256": "3f63ceac7a154d1d0e94b7afed82f8bdcdfee4254950c55418483c75851bfb0a"
+    },
+    {
+      "path": "evidence/tcp-cancel-2026-11-07/source-manifest.json",
+      "bytes": 2614,
+      "sha256": "99bff54378d692aabdf3cbddde5dd0d05e4d0f765db9d91db7b22683e364b40f"
+    },
+    {
+      "path": "evidence/tcp-cancel-2026-11-07/tests.log",
+      "bytes": 7408,
+      "sha256": "134642f9ecb540828fc3fdbd0baabccd215b1b43b4451318a713ff5ef46df392"
+    },
+    {
+      "path": "evidence/tcp-cancel-2026-11-07/typecheck.log",
+      "bytes": 353,
+      "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+    }
+  ],
+  "limitations": [
+    "Real provider/socket/deploy NOT_RUN",
+    "Pre-verification remote JWKS transport cancellation not covered"
+  ],
+  "outside_actions": {
+    "upload": false,
+    "real_provider": false,
+    "real_database": false,
+    "deploy": false
+  }
+}

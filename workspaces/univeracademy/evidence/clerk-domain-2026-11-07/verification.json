@@ -1,0 +1,55 @@
+{
+  "status": "LOCAL_PASS_NOT_INDEPENDENT_QA_NOT_UPLOADED",
+  "base_commit": "c78c293acdf9162080c2da796bd0a5d34e4b8c90",
+  "source_manifest_sha256": "ecccbde7939faae7128aad5f629078f3cb9083406ad75c58a1527ffa0e992155",
+  "privacy_scan": {
+    "files": 27,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "aws_key",
+      "jwt_literal",
+      "credential_url",
+      "provider_key"
+    ],
+    "matches": []
+  },
+  "evidence": [
+    {
+      "path": "evidence/clerk-domain-2026-11-07/source-manifest.json",
+      "bytes": 8362,
+      "sha256": "ecccbde7939faae7128aad5f629078f3cb9083406ad75c58a1527ffa0e992155"
+    },
+    {
+      "path": "evidence/clerk-domain-2026-11-07/tests.log",
+      "bytes": 17742,
+      "sha256": "0b3eb2fbdcab26a35e69ffa377ae3bc7d206540e561baa89dbefab71c368968e"
+    },
+    {
+      "path": "evidence/clerk-domain-2026-11-07/typecheck.log",
+      "bytes": 353,
+      "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+    }
+  ],
+  "tests": {
+    "pass": 139,
+    "fail": 0,
+    "new_domain_cases": 10,
+    "new_tcp_cases": 5,
+    "typecheck_exit": 0
+  },
+  "NOT_RUN": [
+    "Actual PostgreSQL SQL/FK/index/RLS/grants/pool reset/isolation",
+    "Real providers/deployment",
+    "Returned-roster/Teacher membership runtime and relational transfer repository",
+    "Historical registration timestamp persistence/backfill",
+    "Pre-verification remote JWKS transport cancellation"
+  ],
+  "outside_actions": {
+    "upload_commit_push": false,
+    "real_provider": false,
+    "real_database": false,
+    "migration": false,
+    "deploy": false
+  }
+}

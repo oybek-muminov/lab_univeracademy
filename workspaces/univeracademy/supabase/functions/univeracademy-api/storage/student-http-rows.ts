@@ -8,17 +8,20 @@ const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b)
 const digest = (s: string) => /^[0-9a-f]{64}$/.test(s);
 export class StudentHttpRows {
   private readonly attempts = new AttemptRows();
+  private readonly options:{boundClerk?:boolean;externalAuthWriter?:boolean};
+  constructor(options:{boundClerk?:boolean;externalAuthWriter?:boolean}={}){this.options=options;}
   async load(tx: LockedTransaction, personId: string): Promise<StudentState> {
     own(tx, personId);
     const p = (await query(tx, "ua_http_person", "SELECT telegram_id::text,enabled,roles,profile FROM ua_private.people WHERE id=$1", [personId])).rows[0];
     if (!p) fail("NOT_FOUND", 404);
     const profile = p.profile as Person["profile"];
     if (profile.person_id !== personId || !same(profile.roles, p.roles) || typeof p.enabled !== "boolean") fail("RESPONSE_INVARIANT_FAILED", 500);
-    const s: StudentState = { people: { [personId]: { telegramId: integer(p.telegram_id), enabled: p.enabled, profile } },
+    const s: StudentState = { people: { [personId]: { telegramId: p.telegram_id===null?null:integer(p.telegram_id), enabled: p.enabled, profile } },
       families: {},access: {},refresh: {},consumedInitData: {},grants: {[personId]:{}},assignments: {},series: {},attempts: {},receipts: {},bonuses: {},cancellations: {} };
-    const families = await query(tx, "ua_http_families", "SELECT id::text,person_id::text,expires_at_ms::text,revoked_at_ms::text,logout_retain_until_ms::text FROM ua_private.student_families WHERE person_id=$1", [personId]);
+    const families = await query(tx, "ua_http_families", "SELECT id::text,person_id::text,expires_at_ms::text,revoked_at_ms::text,logout_retain_until_ms::text,auth_provider FROM ua_private.student_families WHERE person_id=$1", [personId]);
     for (const f of families.rows) s.families[f.id as string] = { personId: f.person_id as string, expiresAt: integer(f.expires_at_ms),
-      revokedAt: f.revoked_at_ms === null ? null : integer(f.revoked_at_ms), logoutRetainUntil: f.logout_retain_until_ms === null ? null : integer(f.logout_retain_until_ms) };
+      revokedAt: f.revoked_at_ms === null ? null : integer(f.revoked_at_ms), logoutRetainUntil: f.logout_retain_until_ms === null ? null : integer(f.logout_retain_until_ms),...(f.auth_provider===null?{}:{authProvider:f.auth_provider as "clerk"|"telegram"}) };
+    if(!this.options.boundClerk&&Object.values(s.families).some(f=>f.revokedAt===null&&tx.now<f.expiresAt&&f.authProvider!=="telegram"))fail("SERVICE_UNAVAILABLE",503);
     for (const a of (await query(tx, "ua_http_access", "SELECT a.digest,a.family_id::text,a.expires_at_ms::text,a.superseded FROM ua_private.student_access a JOIN ua_private.student_families f ON f.id=a.family_id WHERE f.person_id=$1", [personId])).rows)
       s.access[a.digest as string] = { familyId: a.family_id as string, expiresAt: integer(a.expires_at_ms), superseded: a.superseded as boolean };
     for (const r of (await query(tx, "ua_http_refresh", "SELECT r.digest,r.family_id::text,r.consumed FROM ua_private.student_refresh r JOIN ua_private.student_families f ON f.id=r.family_id WHERE f.person_id=$1", [personId])).rows)
@@ -55,7 +58,7 @@ export class StudentHttpRows {
     const identity=(p:Person)=>({telegramId:p.telegramId,enabled:p.enabled,personId:p.profile.person_id,roles:p.profile.roles,
       group:p.profile.active_group_id,qadam:p.profile.qadam_id});
     if(!same(identity(a),identity(b))) fail("RESPONSE_INVARIANT_FAILED",500);
-    if(!same(a.profile,b.profile)) {
+    if(!this.options.externalAuthWriter&&!same(a.profile,b.profile)) {
       const r=await query(tx,"ua_http_profile_write","UPDATE ua_private.people SET profile=$1::jsonb WHERE id=$2 RETURNING id",[JSON.stringify(a.profile),personId]);
       if(r.rowCount!==1) fail("RESPONSE_INVARIANT_FAILED",500);
     }
@@ -66,11 +69,15 @@ export class StudentHttpRows {
       const r=await query(tx,"ua_init_consume","INSERT INTO ua_private.init_data_replays(digest,person_id,consumed_at_ms) VALUES($1,$2,$3) ON CONFLICT(digest) DO NOTHING RETURNING digest",[key,personId,tx.now]);
       if(r.rowCount!==1) fail("INIT_DATA_REPLAY",409);
     }
+    if(!this.options.externalAuthWriter){
+    if(Object.entries(after.families).some(([id,f])=>!before.families[id]&&f.authProvider==="telegram"))
+      await query(tx,"ua_clerk_retire_person","UPDATE ua_private.clerk_student_sessions SET retired_at_ms=COALESCE(retired_at_ms,$2) WHERE person_id=$1",[personId,tx.now]);
     for(const [id,f] of Object.entries(after.families)) if(!same(before.families[id],f)) {
       if(f.personId!==personId) fail("RESPONSE_INVARIANT_FAILED",500);
       const old=before.families[id];
-      if(old && (old.expiresAt!==f.expiresAt || (old.revokedAt!==null && !same(old,f)))) fail("RESPONSE_INVARIANT_FAILED",500);
-      const r=await query(tx,"ua_http_family_merge",`INSERT INTO ua_private.student_families(id,person_id,expires_at_ms,revoked_at_ms,logout_retain_until_ms) VALUES($1,$2,$3,$4,$5) ON CONFLICT(id) DO UPDATE SET revoked_at_ms=COALESCE(ua_private.student_families.revoked_at_ms,EXCLUDED.revoked_at_ms),logout_retain_until_ms=CASE WHEN ua_private.student_families.revoked_at_ms IS NULL THEN EXCLUDED.logout_retain_until_ms ELSE ua_private.student_families.logout_retain_until_ms END WHERE ua_private.student_families.person_id=EXCLUDED.person_id RETURNING id`,[id,personId,f.expiresAt,f.revokedAt,f.logoutRetainUntil]);
+      if(old && (old.expiresAt!==f.expiresAt || old.authProvider!==f.authProvider || (old.revokedAt!==null && !same(old,f)))) fail("RESPONSE_INVARIANT_FAILED",500);
+      if(!old&&f.authProvider!=="telegram")fail("SERVICE_UNAVAILABLE",503);
+      const r=await query(tx,"ua_http_family_merge",`INSERT INTO ua_private.student_families(id,person_id,expires_at_ms,revoked_at_ms,logout_retain_until_ms,auth_provider) VALUES($1,$2,$3,$4,$5,$6) ON CONFLICT(id) DO UPDATE SET revoked_at_ms=COALESCE(ua_private.student_families.revoked_at_ms,EXCLUDED.revoked_at_ms),logout_retain_until_ms=CASE WHEN ua_private.student_families.revoked_at_ms IS NULL THEN EXCLUDED.logout_retain_until_ms ELSE ua_private.student_families.logout_retain_until_ms END WHERE ua_private.student_families.person_id=EXCLUDED.person_id AND ua_private.student_families.auth_provider IS NOT DISTINCT FROM EXCLUDED.auth_provider RETURNING id`,[id,personId,f.expiresAt,f.revokedAt,f.logoutRetainUntil,f.authProvider??null]);
       if(r.rowCount!==1) fail("RESPONSE_INVARIANT_FAILED",500);
     }
     for(const [key,p] of Object.entries(after.access)) if(!same(before.access[key],p)) {
@@ -82,6 +89,7 @@ export class StudentHttpRows {
       if(!digest(key)||!after.families[p.familyId]) fail("RESPONSE_INVARIANT_FAILED",500);
       const r=await query(tx,"ua_http_refresh_merge",`INSERT INTO ua_private.student_refresh(digest,family_id,consumed) VALUES($1,$2,$3) ON CONFLICT(digest) DO UPDATE SET consumed=ua_private.student_refresh.consumed OR EXCLUDED.consumed WHERE ua_private.student_refresh.family_id=EXCLUDED.family_id RETURNING digest`,[key,p.familyId,p.consumed]);
       if(r.rowCount!==1) fail("RESPONSE_INVARIANT_FAILED",500);
+    }
     }
     // Insert first attempts before linking the new series. Proposed schema needs
     // deferred series/current-attempt FK checks; actual DDL remains unverified.

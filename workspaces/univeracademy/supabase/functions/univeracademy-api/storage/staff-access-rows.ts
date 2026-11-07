@@ -16,9 +16,11 @@ export class StaffAccessRows {
       return r.rows[0].person_id as string;
     }finally{client.release();}
   }
-  async load(tx:LockedTransaction,proof:StaffJwtProof,personId:string):Promise<StaffAccessRecord>{
+  async load(tx:LockedTransaction,proof:Pick<StaffJwtProof,"issuer"|"subject">,personId:string,source:"staff"|"clerk"="staff"):Promise<StaffAccessRecord>{
     own(tx,personId);
-    const result=await query(tx,"ua_staff_access_current",`SELECT p.id::text,p.enabled,p.roles,a.approved,a.manage_roster,a.manage_content,a.all_groups,a.all_subjects
+    const result=await query(tx,source==="clerk"?"ua_clerk_staff_access":"ua_staff_access_current",source==="clerk"?`SELECT p.id::text,p.enabled,p.roles,a.approved,a.manage_roster,a.manage_content,a.all_groups,a.all_subjects
+FROM ua_private.clerk_identities i JOIN ua_private.people p ON p.id=i.person_id JOIN ua_private.staff_access a ON a.person_id=p.id
+WHERE i.issuer=$1 AND i.subject=$2 AND i.person_id=$3 AND i.enabled=true`:`SELECT p.id::text,p.enabled,p.roles,a.approved,a.manage_roster,a.manage_content,a.all_groups,a.all_subjects
 FROM ua_private.staff_identities i JOIN ua_private.people p ON p.id=i.person_id JOIN ua_private.staff_access a ON a.person_id=p.id
 WHERE i.issuer=$1 AND i.provider_subject=$2 AND i.person_id=$3 AND i.revoked_at_ms IS NULL`,[proof.issuer,proof.subject,personId]);
     if(result.rows.length!==1)fail("STAFF_TOKEN_INVALID",401);

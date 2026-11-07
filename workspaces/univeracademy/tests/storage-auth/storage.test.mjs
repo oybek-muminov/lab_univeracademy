@@ -26,7 +26,7 @@ async function setup(t) {
   durableWrite(path,{ people:{[P]:{telegram_id:4000000001,enabled:true,roles:["student"]}},
     attempts:{[A]:{body,frozen_test:encodePublished(published),question_order:questionOrder}}, answers:{},results:{},
     series:{[P+"/"+D]:{currentAttemptId:A,generation:1,stateRevision:1,officialAttemptId:null}},
-    families:{[F]:{person_id:P,expires_at_ms:100000,revoked_at_ms:null,logout_retain_until_ms:null}},
+    families:{[F]:{person_id:P,expires_at_ms:100000,revoked_at_ms:null,logout_retain_until_ms:null,auth_provider:"telegram"}},
     access:{[hash(1)]:{family_id:F,expires_at_ms:90000,superseded:false}},refresh:{[hash(2)]:{family_id:F,consumed:false}},replays:{} });
   const pool=new DiskExecutor(path),runner=new PostgresTransactions(pool),repo=new AttemptRows(),sessions=new SessionRows();
   async function command(action, digest=hash(1)) {

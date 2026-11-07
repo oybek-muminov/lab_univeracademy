@@ -1,0 +1,50 @@
+{
+  "status": "REVIEW_ONLY_NOT_APPLIED_NOT_ACCEPTED",
+  "base_commit": "c78c293acdf9162080c2da796bd0a5d34e4b8c90",
+  "parent_proposal": {
+    "path": "contracts/clerk-storage.schema-rls.proposal.json",
+    "sha256": "980585b91d4adcd93751ec50a939ac23f378e4610957c5674612c506bc4e20e2"
+  },
+  "runtime_candidate": "ClerkDomainTransactions through existing createConfiguredHttpHandler, createClerkCandidateHandler, StudentHttpRows and StaffFirstTestRows",
+  "database_role": "PENDING_REVIEWED_BACKEND_ROLE",
+  "no_ddl_or_migration": true,
+  "required_schema_review": {
+    "people.telegram_id": "Nullable; uniqueness for non-null verified Telegram identities. Never coerce null to0 or invent identity linking.",
+    "people.registered_at_ms": "Roster review proposal only: immutable original registration timestamp. Existing actual column/data unknown; do not derive from latest login or guess/backfill history.",
+    "student_families.auth_provider": "Explicit clerk/telegram provenance. Current code denies an unmarked active family. No automatic legacy attribution.",
+    "security_integrity": [
+      "Canonical issuer+subject unique mapping and immutable person binding",
+      "Composite person/family/identity/SID constraints prevent cross-person binding",
+      "Deferred active Clerk-family-to-F1-binding requirement allows family+binding insertion within one transaction but never missing at COMMIT",
+      "One nonrevoked student family per person; old families revoked before new insert",
+      "Global replay digest uniqueness survives person-scoped visibility",
+      "SID retirement, refresh consumed, access superseded and first revocation are monotonic",
+      "Runtime has no DELETE for auth/replay/provenance/history; retention GC is a separate reviewed scope"
+    ],
+    "domain_integrity": [
+      "Membership anchor and epoch are person scoped; grants cannot outlive the current epoch",
+      "Attempt/series FKs and initial circular references need reviewed deferred constraints",
+      "Frozen published snapshot, deadline and generation immutable outside existing explicit transitions",
+      "Answer revision CAS, ordinary exact result and command receipt commit atomically",
+      "Statistical bonus schema/calculation/activation remain unchanged"
+    ]
+  },
+  "rls_context_review": {
+    "transaction_local_only": true,
+    "keys": ["ua.telegram_id", "ua.person_ids", "ua.person_id", "ua.clerk_issuer", "ua.clerk_subject"],
+    "identity_bootstrap": "Only exact verified issuer+subject or verified Telegram identity may locate/create its canonical person before a person row exists. Advisory identity gate precedes person lock. Locator hints are rechecked after locks.",
+    "person_rows": "People, membership, family, proof digest, replay, attempts/answers/results/receipts limited to the locked canonical people. WITH CHECK must also prevent person/family/key reassignment.",
+    "staff_rows": "Current server-loaded role/approval/capability/group/subject records are used on every command and receipt replay. Actor+target hints are not authorization. Staff liveness remains per provider session; no student device fence for staff.",
+    "private_resources": "Group/version and private content access require existing command scope before private projections. Teacher approved-subject content and Admin A assignment rules remain as before.",
+    "roles_and_exposure": "Private schema not publicly exposed. No anon/authenticated access to internal auth tables, no service_role/BYPASSRLS shortcut, no user_metadata role trust. Any privileged locator helper/search_path/grants require separate review; none created here.",
+    "limitations": "GUC values and parameterized WHERE predicates are defense-in-depth design, not proof that RLS exists or is effective. Actual role privileges, RLS recursion/bootstrap and connection reset need real Postgres tests."
+  },
+  "pool_review": {
+    "port": "existing transactionPoolPort",
+    "named_prepared_statements": "Internal Statement.name labels are stripped before node-postgres; no named statements on transaction pooling",
+    "session_state": "SET LOCAL-equivalent set_config(...,true) inside each transaction; no reliance on a warm connection",
+    "commit_uncertainty": "503, discard connection, no automatic retry or ACK; reconcile by authoritative state and existing idempotency contract"
+  },
+  "rollout_and_rollback": "docs/api/clerk-domain-review-2026-11-07.md",
+  "not_run": ["Actual DDL/FK/index/uniqueness", "Actual RLS/grants/bootstrap/pool reset", "Independent connections and isolation races", "Real Clerk/Telegram provider", "Migration/deploy/restore"]
+}

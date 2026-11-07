@@ -1,0 +1,170 @@
+{
+  "status": "REVIEW_ONLY_NOT_APPLIED_NOT_ACCEPTED",
+  "base_openapi_path": "contracts/review-only.openapi.json",
+  "base_sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+  "format": "RFC6902 operations in patch; no generated OpenAPI/client written",
+  "patch": [
+    {
+      "op": "test",
+      "path": "/paths/~1admin~1students~1unassigned/get/description",
+      "value": "O-01 narrow discovery exception: registered students with NO ever membership only, newest registered_at DESC then student_id DESC. Teacher must have current own-group manage_roster grant; Owner/Admin require roster capability and target group scope. Required group_id supplies authorization context. Cursor binds actor, authority revision, group, filters and initial high-watermark; tamper/stale scope400 INVALID_CURSOR after auth. Eligibility/scope before count/page. Only StudentCandidate fields; rate limited and audited. This is not a global pupil directory."
+    },
+    {
+      "op": "replace",
+      "path": "/paths/~1admin~1students~1unassigned/get/description",
+      "value": "Registered students with no current active group, including returned/inactive students, may reappear with their immutable original registered_at. Re-entry, login, removal and re-add never set a new registration date. Eligibility before count/search/page: registration_complete, active_group_id=null and an inactive membership anchor. Required group_id supplies current authorization context. Teacher discovery requires current own-group manage_roster authority and only never-placed or same-affinity inactive candidates. Admin/Owner discovery stays within current roster/read scope; cross-affinity candidates require privileged transfer, never direct member re-add. StudentCandidate fields only, no contact/Telegram/history disclosure. Sort registered_at DESC, student_id DESC. Cursor binds current actor/authority/group/filters and reviewed listing watermark; roster eligibility-change invalidation or as-of snapshot mechanics require review. Fresh listing shows a returnee in its original chronological position. Missing original dates are not invented from login."
+    },
+    {
+      "op": "test",
+      "path": "/paths/~1admin~1students/get/description",
+      "value": "Scope before search/count/page: Admin all-group read confirmed; Teacher own-group students/results and approved-subject content-wide demos. Pending applicants denied. Request visibility requester/authorized approver only; no client role trust. Exact qadam_id optional filter inside existing authorized directory; no global expansion. Initial candidates use /admin/students/unassigned or /lookup."
+    },
+    {
+      "op": "replace",
+      "path": "/paths/~1admin~1students/get/description",
+      "value": "Current server scope precedes search/count/page. Teacher reads own currently assigned group roster; read visibility is not a membership mutation or transfer capability. Existing Admin/Owner directory rights remain. Exact qadam_id filter never expands the authorized directory. Unassigned/returned candidate discovery uses the separate context-bound route. Pending/unapproved/revoked actors remain denied; receipts/cursors cannot bypass current scope."
+    },
+    {
+      "op": "test",
+      "path": "/paths/~1admin~1students~1lookup/get/description",
+      "value": "O-01 exact ten-digit Qadam ID lookup for target group placement. Teacher current own-group manage_roster required; disclose only never-placed registered pupil or inactive pupil with same retained affinity. Wrong ID, other affinity, foreign current group or nonexistent pupil all404 NOT_FOUND with same envelope/timing class; never include that group/history/contact. Owner/Admin need source+target roster scope before any disclosure. No partial-ID or broad name search. Lookup grants no placement authority; mutation rechecks under locks."
+    },
+    {
+      "op": "replace",
+      "path": "/paths/~1admin~1students~1lookup/get/description",
+      "value": "Exact Qadam candidate lookup is context-bound and does not grant authority. For a Teacher with current own-group manage_roster authority, eligible registered candidates are never-placed or inactive with affinity equal to the authorized target group. For Admin/Owner, existing directory/roster scope applies. A different affinity must use the privileged transfer route; no cross-group direct re-add, even when a Teacher controls both groups. Preserve original registered_at. Unauthorized existence stays hidden and only StudentCandidate fields are disclosed."
+    },
+    {
+      "op": "test",
+      "path": "/paths/~1admin~1students~1{student_id}~1transfer/post/description",
+      "value": "O-01. Only Owner or delegated Admin with manage_roster and current source/target group scope. Atomic transfer from current group or retained affinity when inactive. Same target as affinity is not a transfer (409 MEMBERSHIP_STATE_CONFLICT); use member route to re-add. Check current membership CAS after auth/privacy; only a started current in_progress attempt with locked now < deadline blocks transfer. At/after deadline materialize completion first. Unstarted approved ready recovery, including a future opens_at, never blocks transfer and is revoked atomically on successful transfer, retaining its historical window and existing attempts/answers. Commit changes affinity+membership epoch, revokes ALL old unstarted grants, keeps result/attempt history and global normal-demo usage; re-add cannot restore old access. Fresh grants require explicit authorization bound to new epoch. See x-membership-rules. No previous affinity is initial placement, not transfer:409 MEMBERSHIP_STATE_CONFLICT; use member route. The latest user decision confirms the transfer active-only guard and cancellation of unstarted recovery eligibility; exact delegation/storage/concurrency mechanics remain local review design. Removal policy is separate."
+    },
+    {
+      "op": "replace",
+      "path": "/paths/~1admin~1students~1{student_id}~1transfer/post/description",
+      "value": "Privileged transfer remains Owner or delegated Admin with manage_roster and current source AND target group scope. Teacher cannot execute transfer even with manage_roster and both-group assignments. Owner general authority is preserved; Admin-only here distinguishes Admin from Teacher, not removal of Owner rights. Reauthorize before state and receipt replay; membership CAS and person locks remain. Only a started current in_progress attempt with locked now < deadline blocks. At/after deadline materialize existing completion before the transfer decision. Unstarted ready recovery, including future opens_at, does not block and is revoked atomically. Preserve attempts, answers, original deadline, history, registered_at and normal-demo usage; no statistical bonus change. Same-affinity re-add uses member route; cross-affinity writes cannot masquerade as re-add."
+    },
+    {
+      "op": "test",
+      "path": "/components/schemas/StudentCandidate/description",
+      "value": "Minimal roster candidate. No Telegram identity/contact, credentials, other group, results, roles or membership history. Eligibility checked before disclosure; not a grant."
+    },
+    {
+      "op": "replace",
+      "path": "/components/schemas/StudentCandidate/description",
+      "value": "Minimal scoped roster candidate, now including eligible returned/inactive registered students. Existing required registered_at means the immutable original registration date; do not replace it with latest login/removal/re-add time. Identity/contact/history/roles/results are not disclosed. Eligibility/scope precede disclosure and this object is not an authorization grant."
+    },
+    {
+      "op": "add",
+      "path": "/x-roster-return-review",
+      "value": {
+        "status": "REVIEW_ONLY_NOT_ACCEPTED",
+        "original_registration_date": "immutable; first registration source must be verified; no guessed legacy backfill",
+        "teacher_read": "current own-group roster only; no global directory expansion",
+        "teacher_mutations": "existing manage_roster/own-group/same-affinity rules only",
+        "transfer_roles": [
+          "owner",
+          "admin"
+        ],
+        "admin_assignment_policy_A": "manage_content plus current group AND subject scope; manage_roster is not required for assignment",
+        "cursor_eligibility_concurrency": "pending review: invalidation on roster revision versus stable as-of listing; no runtime choice applied",
+        "wire_fields_and_numeric_bonus": "unchanged"
+      }
+    }
+  ],
+  "expected_review_cases": [
+    {
+      "id": "R01",
+      "scenario": "Registered never-placed student",
+      "expected": "Visible only within authorized initial-candidate scope",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R02",
+      "scenario": "Registered student removed then returned to unassigned listing",
+      "expected": "Original registered_at unchanged; chronological old position on fresh listing",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R03",
+      "scenario": "Login/refresh/removal/re-add after registration",
+      "expected": "Never update registered_at or duplicate canonical student",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R04",
+      "scenario": "Teacher current own-group roster read",
+      "expected": "Existing scoped read permitted; not a mutation grant",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R05",
+      "scenario": "Teacher inactive same-affinity candidate with current manage_roster",
+      "expected": "Scoped discovery/re-add candidate only; old grants not resurrected",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R06",
+      "scenario": "Teacher different-affinity student or forged candidate UUID",
+      "expected": "No discovery expansion or direct cross-group placement",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R07",
+      "scenario": "Teacher owns both groups and has manage_roster; transfer request",
+      "expected": "Denied; scope does not create transfer capability",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R08",
+      "scenario": "Admin transfer without manage_roster/source scope/target scope",
+      "expected": "Denied before state/receipt replay",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R09",
+      "scenario": "Admin A manage_content with group+subject scope but no roster capability",
+      "expected": "Assignment permitted under existing A; membership/transfer denied",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R10",
+      "scenario": "Current active attempt before/equal/after deadline",
+      "expected": "Before blocks; equal/after materialize expiry then apply existing transfer rule",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R11",
+      "scenario": "Unstarted recovery window, including future opens_at",
+      "expected": "Transfer may proceed and cancels that unused permission; preserve history",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R12",
+      "scenario": "Missing/guessed original registration date",
+      "expected": "Review blocker; no silent now()/latest-login backfill",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R13",
+      "scenario": "Revoked actor/capability/group grant on cursor or receipt replay",
+      "expected": "Current authority rechecked; stale state cannot grant access",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    },
+    {
+      "id": "R14",
+      "scenario": "Transfer or re-add",
+      "expected": "No answer/deadline/generation/result/normal usage/statistical bonus mutation beyond existing reviewed transitions",
+      "execution": "NOT_RUN_CONTRACT_PROPOSAL"
+    }
+  ],
+  "not_implemented": [
+    "Returned/unassigned directory runtime",
+    "Full Teacher roster membership repository",
+    "Full relational transfer repository",
+    "Immutable registration timestamp persistence/backfill",
+    "Cursor concurrency choice"
+  ],
+  "no_new_capability_or_dto": true,
+  "statistical_bonus_unchanged": true
+}

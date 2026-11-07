@@ -36,7 +36,7 @@ export function httpExecutor(path){
     if(name==="ua_locate_access"||name==="ua_locate_refresh"){
       const p=(name==="ua_locate_access"?d.access:d.refresh)[v[0]],f=p&&d.families[p.family_id];return result(f?[{person_id:f.person_id}]:[]);
     }
-    if(name==="ua_http_person"){const p=d.people[v[0]];return result(p?[{...p,telegram_id:String(p.telegram_id)}]:[]);}
+    if(name==="ua_http_person"){const p=d.people[v[0]];return result(p?[{...p,telegram_id:p.telegram_id===null?null:String(p.telegram_id)}]:[]);}
     if(name==="ua_http_families")return result(familyRows().map(([id,f])=>({id,...f,expires_at_ms:String(f.expires_at_ms),
       revoked_at_ms:f.revoked_at_ms===null?null:String(f.revoked_at_ms),logout_retain_until_ms:f.logout_retain_until_ms===null?null:String(f.logout_retain_until_ms)})));
     if(name==="ua_http_access"||name==="ua_http_refresh")return result(Object.entries(name==="ua_http_access"?d.access:d.refresh)
@@ -49,13 +49,14 @@ export function httpExecutor(path){
       official_attempt_id:s.officialAttemptId,recovery_state:s.recoveryState,recovery_window:s.recovery})));
     if(name==="ua_http_attempt_ids")return result(Object.entries(d.attempts).filter(([,a])=>a.body.personId===v[0]).map(([id])=>({id})));
     if(name==="ua_http_receipts")return result(Object.entries(d.receipts).filter(([key])=>key.startsWith(v[0]+"/")).map(([key,r])=>({key,payload:r.payload,attempt_id:r.attemptId})));
-    if(name==="ua_http_bonuses"||name==="ua_http_cancellations")return result([]);
+    if(name==="ua_http_bonuses")return result(Object.entries(d.bonuses??{}).filter(([,b])=>b.personId===v[0]).map(([attempt_id,b])=>{const {personId,...record}=b;return{attempt_id,record};}));
+    if(name==="ua_http_cancellations")return result([]);
     if(name==="ua_http_profile_write"){if(!d.people[v[1]])return result();d.people[v[1]].profile=JSON.parse(v[0]);return ack();}
     if(name==="ua_http_family_merge"){
       const old=d.families[v[0]];
       if(old){if(old.person_id!==v[1])return result();if(old.revoked_at_ms===null){old.revoked_at_ms=v[3];old.logout_retain_until_ms=v[4];}}
       else{if(v[3]===null&&Object.values(d.families).some(f=>f.person_id===v[1]&&f.revoked_at_ms===null))throw Error("SYNTHETIC_ACTIVE_FAMILY_UNIQUE");
-        d.families[v[0]]={person_id:v[1],expires_at_ms:v[2],revoked_at_ms:v[3],logout_retain_until_ms:v[4]};}return ack();
+        d.families[v[0]]={person_id:v[1],expires_at_ms:v[2],revoked_at_ms:v[3],logout_retain_until_ms:v[4],auth_provider:v[5]};}return ack();
     }
     if(name==="ua_http_access_merge"){
       const old=d.access[v[0]];if(old){if(old.family_id!==v[1]||old.expires_at_ms!==v[2])return result();old.superseded ||=v[3];}

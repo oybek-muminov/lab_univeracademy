@@ -11,10 +11,12 @@ export type ClerkAuthSnapshot={person:Person|null;membership:{active:boolean;epo
   identities:ClerkCandidateState["identities"];familyBindings:ClerkCandidateState["familyBindings"];
   studentSessions:ClerkCandidateState["studentSessions"];consumedTokens:ClerkCandidateState["consumedTokens"];
   families:StudentState["families"];access:StudentState["access"];refresh:StudentState["refresh"]};
-type Scope={client:PgClient;personId:string;identity:ClerkIdentity;existing:boolean;now:number;exchangeDigest?:string};
+export type ClerkAuthScope={client:PgClient;personId:string;identity?:ClerkIdentity;existing:boolean;now:number;exchangeDigest?:string;allowTelegramLogin?:boolean};
+type Scope=ClerkAuthScope;
 const uuid=(v:unknown):v is string=>typeof v==="string"&&/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/.test(v);
 const digest=(v:string)=>/^[0-9a-f]{64}$/.test(v);
-const same=(a:unknown,b:unknown)=>JSON.stringify(a)===JSON.stringify(b);
+const canonical=(v:unknown):string=>JSON.stringify(v,(_,x)=>x&&typeof x==="object"&&!Array.isArray(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a.localeCompare(b))):x);
+const same=(a:unknown,b:unknown)=>canonical(a)===canonical(b);
 const ms=(v:unknown)=>{if(!Number.isSafeInteger(v)||Number(v)<0)fail("RESPONSE_INVARIANT_FAILED",500);return v as number;};
 const bool=(v:unknown)=>{if(typeof v!=="boolean")fail("RESPONSE_INVARIANT_FAILED",500);return v;};
 const nullable=(v:unknown)=>v===null?null:integer(v);
@@ -39,7 +41,7 @@ function checkSnapshot(scope:Scope,s:ClerkAuthSnapshot){
     !(m.affinityGroupId===null||uuid(m.affinityGroupId))||m.active&&m.affinityGroupId===null||p.active_group_id!==(m.active?m.affinityGroupId:null))fail("RESPONSE_INVARIANT_FAILED",500);
   if(s.person.telegramId!==null&&(!Number.isSafeInteger(s.person.telegramId)||s.person.telegramId<=0))fail("RESPONSE_INVARIANT_FAILED",500);
   for(const v of Object.values(s.identities))if(v.personId!==scope.personId||typeof v.enabled!=="boolean")fail("RESPONSE_INVARIANT_FAILED",500);
-  const current=s.identities[clerkIdentityKey(scope.identity)];if(!current?.enabled)fail("CLERK_IDENTITY_REVOKED",401);
+  if(scope.identity&&!s.identities[clerkIdentityKey(scope.identity)]?.enabled)fail("CLERK_IDENTITY_REVOKED",401);
   let live=0;
   for(const [key,f]of Object.entries(s.families)){
     if(!uuid(key)||f.personId!==scope.personId)fail("RESPONSE_INVARIANT_FAILED",500);ms(f.expiresAt);if(f.revokedAt!==null)ms(f.revokedAt);
@@ -50,7 +52,7 @@ function checkSnapshot(scope:Scope,s:ClerkAuthSnapshot){
     }else if(f.authProvider==="clerk"){
       const binding=s.familyBindings[key];
       if(!binding){if(f.revokedAt===null&&scope.now<f.expiresAt)fail("SERVICE_UNAVAILABLE",503);}
-      else{identity(binding);const fence=s.studentSessions[clerkSessionKey(binding)];if(!s.identities[clerkIdentityKey(binding)]?.enabled||!fence||f.revokedAt===null&&fence.retiredAt!==null)fail("SERVICE_UNAVAILABLE",503);}
+      else{identity(binding);const fence=s.studentSessions[clerkSessionKey(binding)];if(f.revokedAt===null&&scope.now<f.expiresAt&&(!s.identities[clerkIdentityKey(binding)]?.enabled||!fence||fence.retiredAt!==null))fail("SERVICE_UNAVAILABLE",503);}
     }else if(Object.hasOwn(s.familyBindings,key))fail("SERVICE_UNAVAILABLE",503);
   }
   if(live>1)fail("RESPONSE_INVARIANT_FAILED",500);
@@ -69,18 +71,27 @@ function checkSnapshot(scope:Scope,s:ClerkAuthSnapshot){
 // verifier, never a proof-shaped public JSON body. No domain/attempt/grant/staff
 // load, API bootstrap or raw-JWT verification is implemented by this row port.
 export class ClerkScopedAuthStore{
-  private readonly pool:PgPool;private readonly liveness:ClerkLiveness;private readonly newPersonId:()=>string;
-  constructor(options:{pool:PgPool;liveness:ClerkLiveness;newPersonId?:()=>string}){
+  private readonly pool:PgPool;private readonly liveness:ClerkLiveness;private readonly newPersonId:()=>string;private readonly signal?:AbortSignal;
+  constructor(options:{pool:PgPool;liveness:ClerkLiveness;newPersonId?:()=>string;signal?:AbortSignal}){
     if(typeof options.pool?.connect!=="function"||typeof options.liveness!=="function")throw new StorageUnavailable("not_committed");
-    this.pool=options.pool;this.liveness=options.liveness;this.newPersonId=options.newPersonId??(()=>crypto.randomUUID());
+    this.pool=options.pool;this.liveness=options.liveness;this.newPersonId=options.newPersonId??(()=>crypto.randomUUID());this.signal=options.signal;
   }
   async run<T>(proof:ClerkProof,work:(input:{personId:string;state:ClerkAuthSnapshot;now:number})=>Promise<T>):Promise<T>{
+    return this.execute(proof,work,true);
+  }
+  // The existing HTTP exchange owns replay consumption and family issuance.
+  // Keep its work in the same identity/person transaction as these auth rows.
+  async runDomain<T>(proof:ClerkProof,work:(input:{personId:string;state:ClerkAuthSnapshot;now:number})=>Promise<T>):Promise<T>{
+    return this.execute(proof,work,false);
+  }
+  private async execute<T>(proof:ClerkProof,work:(input:{personId:string;state:ClerkAuthSnapshot;now:number})=>Promise<T>,consumeBeforeWork:boolean):Promise<T>{
     let client:PgClient;try{client=await this.pool.connect();}catch{throw new StorageUnavailable("not_committed");}
     if(typeof client?.query!=="function"||typeof client.release!=="function"){
       if(typeof client?.release==="function")client.release(true);throw new StorageUnavailable("not_committed");
     }
     let began=false,committing=false,discard=false;
     try{
+      if(this.signal?.aborted)throw new StorageUnavailable("not_committed");
       await query(client,"ua_clerk_begin","BEGIN");began=true;
       checkClerkProof(proof,await clock(client));
       const who={issuer:proof.issuer,userId:proof.userId,sessionId:proof.sessionId};identity(who);
@@ -94,15 +105,18 @@ export class ClerkScopedAuthStore{
       let now=await clock(client);checkClerkProof(proof,now);
       const providerExpires=await requireLiveClerk(who,now,this.liveness),afterRead=await clock(client);
       if(afterRead<now)throw new StorageUnavailable("not_committed");now=afterRead;checkClerkProof(proof,now);if(now>=providerExpires)fail("CLERK_SESSION_REVOKED",401);
-      const scope:Scope={client,personId,identity:who,existing:mapped.rows.length===1,now},state=await this.load(scope),before=structuredClone(state);
+      const rows=new ClerkAuthRows(),scope:Scope={client,personId,identity:who,existing:mapped.rows.length===1,now},state=await rows.load(scope),before=structuredClone(state);
       const replay=await proofHash(JSON.stringify([proof.issuer,proof.userId,proof.sessionId,proof.tokenId]));
       const readyAt=await clock(client);if(readyAt<now)throw new StorageUnavailable("not_committed");now=readyAt;scope.now=now;
       checkClerkProof(proof,now);if(now>=providerExpires)fail("CLERK_SESSION_REVOKED",401);
-      if(state.consumedTokens[replay])fail("CLERK_TOKEN_REPLAY",409);state.consumedTokens[replay]=true;scope.exchangeDigest=replay;
+      if(state.consumedTokens[replay])fail("CLERK_TOKEN_REPLAY",409);if(consumeBeforeWork)state.consumedTokens[replay]=true;scope.exchangeDigest=replay;
       const value=await work({personId,state,now});scope.now=await clock(client);if(scope.now<now)throw new StorageUnavailable("not_committed");checkClerkProof(proof,scope.now);if(scope.now>=providerExpires)fail("CLERK_SESSION_REVOKED",401);
       if(state.consumedTokens[replay]!==true)fail("RESPONSE_INVARIANT_FAILED",500);
-      await this.flush(scope,before,state);
+      await rows.flush(scope,before,state);
       const finalTime=await clock(client);if(finalTime<scope.now)throw new StorageUnavailable("not_committed");checkClerkProof(proof,finalTime);if(finalTime>=providerExpires)fail("CLERK_SESSION_REVOKED",401);
+      for(const [key,f]of Object.entries(state.families))if(!before.families[key]&&f.revokedAt===null&&finalTime>=f.expiresAt)fail("CLERK_SESSION_REVOKED",401);
+      for(const [key,p]of Object.entries(state.access))if(!before.access[key]&&finalTime>=p.expiresAt)fail("APP_SESSION_EXPIRED",401);
+      if(this.signal?.aborted)throw new StorageUnavailable("not_committed");
       committing=true;await query(client,"ua_clerk_commit","COMMIT");began=false;return value;
     }catch(error){
       if(committing){discard=true;throw new StorageUnavailable("commit_unknown");}
@@ -110,7 +124,11 @@ export class ClerkScopedAuthStore{
       throw error;
     }finally{client.release(discard);}
   }
-  private async load(s:Scope):Promise<ClerkAuthSnapshot>{
+}
+
+// Shared person-scoped auth rows. No transaction, HTTP or provider defaults.
+export class ClerkAuthRows{
+  async load(s:Scope):Promise<ClerkAuthSnapshot>{
     const result:ClerkAuthSnapshot={person:null,membership:null,identities:{},families:{},access:{},refresh:{},familyBindings:{},studentSessions:{},consumedTokens:{}};
     if(!s.existing)return result;
     const read=(name:string,text:string)=>query(s.client,name,text,[s.personId]);
@@ -123,7 +141,7 @@ export class ClerkScopedAuthStore{
     if(member.length!==1)fail("RESPONSE_INVARIANT_FAILED",500);
     result.membership={active:bool(member[0].active),epoch:integer(member[0].epoch),revision:integer(member[0].revision),affinityGroupId:member[0].affinity_group_id as string|null};
     for(const r of (await read("ua_clerk_identities","SELECT issuer,subject,person_id::text,enabled FROM ua_private.clerk_identities WHERE person_id=$1")).rows){
-      identity({issuer:r.issuer as string,userId:r.subject as string,sessionId:s.identity.sessionId});
+      identity({issuer:r.issuer as string,userId:r.subject as string,sessionId:s.identity?.sessionId??"sess_ShapeCheck"});
       if(r.person_id!==s.personId)fail("RESPONSE_INVARIANT_FAILED",500);result.identities[JSON.stringify([r.issuer,r.subject])]={personId:s.personId,enabled:bool(r.enabled)};
     }
     for(const r of (await read("ua_clerk_families","SELECT id::text,person_id::text,expires_at_ms::text,revoked_at_ms::text,logout_retain_until_ms::text,auth_provider FROM ua_private.student_families WHERE person_id=$1")).rows){
@@ -142,16 +160,17 @@ export class ClerkScopedAuthStore{
     for(const r of (await read("ua_clerk_refresh","SELECT r.digest,r.family_id::text,r.consumed FROM ua_private.student_refresh r JOIN ua_private.student_families f ON f.id=r.family_id WHERE f.person_id=$1")).rows)
       result.refresh[r.digest as string]={familyId:r.family_id as string,consumed:bool(r.consumed)};
     checkSnapshot(s,result);
-    if(result.studentSessions[clerkSessionKey(s.identity)]?.retiredAt!==null&&result.studentSessions[clerkSessionKey(s.identity)]!==undefined)fail("CLERK_SESSION_SUPERSEDED",401);
+    if(s.identity&&result.studentSessions[clerkSessionKey(s.identity)]?.retiredAt!==null&&result.studentSessions[clerkSessionKey(s.identity)]!==undefined)fail("CLERK_SESSION_SUPERSEDED",401);
     return result;
   }
-  private async flush(s:Scope,before:ClerkAuthSnapshot,after:ClerkAuthSnapshot){
+  async flush(s:Scope,before:ClerkAuthSnapshot,after:ClerkAuthSnapshot){
     checkSnapshot(s,after);
     const person=after.person!;
     const write=async(name:string,text:string,values:readonly unknown[])=>{const r=await query(s.client,name,text,values);if(r.rowCount!==1)fail("RESPONSE_INVARIANT_FAILED",500);};
     for(const map of ["identities","families","familyBindings","access","refresh","studentSessions","consumedTokens"] as const)
       if(Object.keys(before[map]).some(key=>!Object.hasOwn(after[map],key)))fail("RESPONSE_INVARIANT_FAILED",500);
     if(!before.person){
+      if(!s.identity)fail("SERVICE_UNAVAILABLE",503);
       if(person.telegramId!==null||!same(person.profile.roles,["student"])||person.profile.registration_complete||person.profile.active_group_id!==null||
         !same(Object.keys(after.identities),[clerkIdentityKey(s.identity)])||!same(after.membership,{active:false,epoch:0,revision:0,affinityGroupId:null}))fail("RESPONSE_INVARIANT_FAILED",500);
       await write("ua_clerk_person_insert","INSERT INTO ua_private.people(id,telegram_id,qadam_id,enabled,roles,profile) VALUES($1,NULL,$2,$3,$4,$5::jsonb) ON CONFLICT DO NOTHING RETURNING id",[s.personId,person.profile.qadam_id,person.enabled,person.profile.roles,JSON.stringify(person.profile)]);
@@ -169,7 +188,7 @@ export class ClerkScopedAuthStore{
     }
     for(const [key,v]of Object.entries(after.studentSessions))if(!same(before.studentSessions[key],v)){
       const old=before.studentSessions[key];if(old&&old.retiredAt!==null)fail("RESPONSE_INVARIANT_FAILED",500);const [issuer,subject,sid]=JSON.parse(key);
-      if(!old&&key!==clerkSessionKey(s.identity))fail("RESPONSE_INVARIANT_FAILED",500);
+      if(!old&&(!s.identity||key!==clerkSessionKey(s.identity)))fail("RESPONSE_INVARIANT_FAILED",500);
       await write("ua_clerk_fence_write","INSERT INTO ua_private.clerk_student_sessions(issuer,subject,sid,person_id,retired_at_ms) VALUES($1,$2,$3,$4,$5) ON CONFLICT(issuer,subject,sid) DO UPDATE SET retired_at_ms=COALESCE(ua_private.clerk_student_sessions.retired_at_ms,EXCLUDED.retired_at_ms) WHERE ua_private.clerk_student_sessions.person_id=EXCLUDED.person_id RETURNING person_id",[issuer,subject,sid,s.personId,v.retiredAt]);
     }
     for(const [key,old]of Object.entries(before.families))if(!same(old,after.families[key])){
@@ -177,8 +196,10 @@ export class ClerkScopedAuthStore{
       await write("ua_clerk_family_revoke","UPDATE ua_private.student_families SET revoked_at_ms=$1,logout_retain_until_ms=$2 WHERE id=$3 AND person_id=$4 AND revoked_at_ms IS NULL RETURNING id",[v.revokedAt,v.logoutRetainUntil,key,s.personId]);
     }
     for(const [key,v]of Object.entries(after.families))if(!before.families[key]){
-      if(v.authProvider!=="clerk"||!after.familyBindings[key])fail("SERVICE_UNAVAILABLE",503);
-      if(!same(after.familyBindings[key],s.identity))fail("RESPONSE_INVARIANT_FAILED",500);
+      if(s.identity){
+        if(v.authProvider!=="clerk"||!after.familyBindings[key])fail("SERVICE_UNAVAILABLE",503);
+        if(!same(after.familyBindings[key],s.identity))fail("RESPONSE_INVARIANT_FAILED",500);
+      }else if(!s.allowTelegramLogin||person.telegramId===null||v.authProvider!=="telegram"||after.familyBindings[key])fail("SERVICE_UNAVAILABLE",503);
       await write("ua_clerk_family_insert","INSERT INTO ua_private.student_families(id,person_id,expires_at_ms,revoked_at_ms,logout_retain_until_ms,auth_provider) VALUES($1,$2,$3,$4,$5,$6) RETURNING id",[key,s.personId,v.expiresAt,v.revokedAt,v.logoutRetainUntil,v.authProvider]);
     }
     for(const [key,v]of Object.entries(after.familyBindings)){

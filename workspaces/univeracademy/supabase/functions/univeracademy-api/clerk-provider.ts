@@ -56,17 +56,20 @@ export function readClerkProductionAuthSettings(environment: Readonly<Record<str
   catch { throw unavailable(); } // Never echo configuration or credential text.
 }
 
-async function bounded<T>(work: (signal: AbortSignal) => Promise<T>, ms: number, resourceRead = false): Promise<T> {
+async function bounded<T>(work: (signal: AbortSignal) => Promise<T>, ms: number, resourceRead = false, parent?:AbortSignal): Promise<T> {
   const controller = new AbortController();
   let timer: ReturnType<typeof setTimeout> | undefined;
+  let abort:()=>void=()=>{};
   try {
-    return await Promise.race([Promise.resolve().then(() => work(controller.signal)), new Promise<never>((_, reject) => {
-      timer = setTimeout(() => { controller.abort(); reject(unavailable()); }, ms);
-    })]);
+    const cancelled=new Promise<never>((_,reject)=>{
+      abort=()=>{controller.abort();reject(unavailable());};
+      parent?.addEventListener("abort",abort,{once:true});timer=setTimeout(abort,ms);if(parent?.aborted)abort();
+    });
+    return await Promise.race([cancelled,Promise.resolve().then(() => {if(controller.signal.aborted)throw unavailable();return work(controller.signal);})]);
   } catch (error) {
     if (resourceRead && object(error) && error.status === 404) fail("CLERK_SESSION_REVOKED", 401);
     throw unavailable();
-  } finally { clearTimeout(timer); }
+  } finally { clearTimeout(timer);parent?.removeEventListener("abort",abort); }
 }
 async function publicJwks(response: Response, limit: number, signal: AbortSignal): Promise<Response> {
   if (response.status !== 200 || !/^application\/json(?:\s*;|$)/i.test(response.headers.get("content-type") ?? "")) throw unavailable();
@@ -118,16 +121,16 @@ export function createClerkProviderAdapter(input: ClerkProviderSettings, binding
   const verifier: ClerkVerifierConfiguration = Object.freeze({ issuer: c.issuer, authorizedParties: c.authorizedParties,
     audience: c.audience, trustedKeys, now: clock });
   createClerkVerifier(verifier); // Eager shape validation, no network request.
-  const liveness: ClerkLiveness = async (identity: ClerkIdentity, at: number) => {
+  const liveness: ClerkLiveness = async (identity: ClerkIdentity, at: number, options) => {
     if (identity.issuer !== c.issuer || !id(identity.userId, "user") || !id(identity.sessionId, "sess")) fail("CLERK_TOKEN_INVALID", 401);
     if (!stamp(at)) throw unavailable();
     const denied = () => ({ ...identity, status: "revoked", accountEnabled: false, expiresAt: 0 });
     try {
-      const session = await bounded(signal => bindings.getSession(identity.sessionId, { signal }), c.timeoutMs, true);
+      const session = await bounded(signal => bindings.getSession(identity.sessionId, { signal }), c.timeoutMs, true,options?.signal);
       if (!object(session) || !id(session.id, "sess") || !id(session.userId, "user") || typeof session.status !== "string" ||
           !stamp(session.expireAt) || !stamp(session.abandonAt) || !Object.hasOwn(session, "actor")) throw unavailable();
       if (session.id !== identity.sessionId || session.userId !== identity.userId || session.status !== "active" || session.actor !== null) return denied();
-      const user = await bounded(signal => bindings.getUser(identity.userId, { signal }), c.timeoutMs, true);
+      const user = await bounded(signal => bindings.getUser(identity.userId, { signal }), c.timeoutMs, true,options?.signal);
       const now = clock(); if (now < at) throw unavailable();
       // Revalidate both returned models after the final await and clock read.
       // A mutable SDK model must not retain an earlier active-state decision.

@@ -1,0 +1,195 @@
+{
+  "status": "LOCAL_PROVISIONAL_NOT_ACCEPTED_NOT_UPLOADED",
+  "base_commit": "c78c293acdf9162080c2da796bd0a5d34e4b8c90",
+  "readonly_later_ui_head_observed": "31b2b00ecd1c413e1f828fef4c023c3ff2310909",
+  "source_files": [
+    {
+      "path": "contracts/clerk-domain.schema-rls.proposal.json",
+      "bytes": 4640,
+      "sha256": "15252ecc611cde79603708f10c9e043ece0ee282723416ee8f0fb3e51ac333d7",
+      "before_sha256": null
+    },
+    {
+      "path": "contracts/roster-return-policy.proposal.patch.json",
+      "bytes": 12280,
+      "sha256": "416be738474fed55bd0390d891b5b03c73916b16caaa53a089ef2bc05c6d474f",
+      "before_sha256": null
+    },
+    {
+      "path": "docs/api/clerk-domain-review-2026-11-07.md",
+      "bytes": 7611,
+      "sha256": "f93cdeb309a20026695b1ea8bb5638480f1c8fb105509c99928256436a5597db",
+      "before_sha256": null
+    },
+    {
+      "path": "runtime/configured-server.mjs",
+      "bytes": 2957,
+      "sha256": "a8d50828f7ee85b1b5624d939020dd847a696c49b3ad8f294ca616805772affe",
+      "before_sha256": "c0c4747f563971e6bced723443cce86eaa1fae66c87c875f792b0baad20fec56"
+    },
+    {
+      "path": "runtime/local-server.mjs",
+      "bytes": 3505,
+      "sha256": "3b27100d39d89fbffdec938ffc5c4dbbdd2d1110ab71db604b055089ed081062",
+      "before_sha256": "9f9780466ee2715d4f407949d0b28b2e8788d74f64cda25ee822d9ff906acee7"
+    },
+    {
+      "path": "runtime/node-request-abort.mjs",
+      "bytes": 642,
+      "sha256": "3511ce2225a1b8fb22e3c7723aa5e9913d9bed1e713e8c5daecfaed02d8bcbe8",
+      "before_sha256": null
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "bytes": 4980,
+      "sha256": "278d4d6deaaf9a9b53e1fa1feb6f677b29b81761b6c3eb3f85a3b80cf31f3565",
+      "before_sha256": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 15215,
+      "sha256": "79fade5bdc4bb4e9ccbf09b2cf7de3101a7a11406457e4bbcb361074dbfc85e0",
+      "before_sha256": "3d2ebe945d2a8313f88034b588310abbaa8c5306a81843312bc1be5fe216e2f5"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-provider.ts",
+      "bytes": 10057,
+      "sha256": "06a295c8a0fe24fd8815ebd1f35ae2e77a4895635ab7f5df2a9576926720739b",
+      "before_sha256": "347d026a27549082921898068d2e49af11480d1e98ede1ae125d52f5c91180cf"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/configured-http.ts",
+      "bytes": 8697,
+      "sha256": "3ab2e3c9393080c41347bf98f1e83d1a0a1ca3b64dbc847bf6a2c9d52ef7c708",
+      "before_sha256": "b68084330daccdcf1dad0fffac16c31d1621b73e5b699cdd255e61dcbb301651"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "bytes": 22634,
+      "sha256": "02de46baf1ec90442bfb958c264f4192948afe08c9c2b4e3e2a767eac2b445d2",
+      "before_sha256": "a3ae81519d14c042cfee365fe35f97ff5fccbf2246474aea71d8877b4bfd4f81"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "bytes": 10501,
+      "sha256": "8d2f69c9a4a970c85ff2594fa23cd8cd7441d0ae3b74ee265919381f2d44ea77",
+      "before_sha256": null
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+      "bytes": 5447,
+      "sha256": "6d78d355be8e0509eb0e2e337a64110d32417c52bf2770b7a46abb47002bb62f",
+      "before_sha256": "ef86dde8e8cff64a3cd11062caaecd8eb594e6f5aad73d1a1be05d41cc25a245"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/session-rows.ts",
+      "bytes": 6717,
+      "sha256": "492d043bbe322752a8ef3e2a5abd2daf1d117068fc00c74d0f9ec73143f5916b",
+      "before_sha256": "7dd1d7b30cf85a9f5c777e7ee0970d03723f09ac6ddbb125f87f70f3cb6128c3"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+      "bytes": 3744,
+      "sha256": "cec02c6a6392c51fdcd004189fbcb504d1a48efbf20e5f6b2af912f5244ab700",
+      "before_sha256": "e4f8f60af5c1bffe405312c7b28417384bc67c0718d43954ae0433dbe6b81a80"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "bytes": 15858,
+      "sha256": "744a44d3504b9b98b24e9b42fcd2f602c28869479e984166f02de22af2df95d9",
+      "before_sha256": "a14674add9c53ddf11572696d6a823381a023ba8fc98aa79e2a383219d91d025"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "bytes": 13250,
+      "sha256": "a6a97239245a086d5e6c51fbb6ddd9977b2e781b5ef92071d89bbfd71a909595",
+      "before_sha256": "dfaec079eb86abf29fd06c88069d1dbfb8530bc2b6d1cc2100b88c1baea3f792"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-http.ts",
+      "bytes": 17650,
+      "sha256": "32bc06bab2e7422544ee5b0f5831330755c8befaa579d8d7e5fee1b0db24cee0",
+      "before_sha256": "5e1e68edcbac4e1a601bbfbd2c3cf011bc827037c6c4d0e35ac096d23c932e47"
+    },
+    {
+      "path": "tests/clerk-auth/domain-executor.mjs",
+      "bytes": 4815,
+      "sha256": "78bf1357f8876a1d8dc59caca9ca235761d552f9f9ddacc9794bba9d5a55a757",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/clerk-auth/domain-http.test.mjs",
+      "bytes": 13849,
+      "sha256": "24b8aef28ab138f65fecde222945ad8769635555c64925aeac16bf8886a18678",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/clerk-auth/tcp-cancel.test.mjs",
+      "bytes": 6661,
+      "sha256": "89ff63e911cd10816cdfc2d33cfa5f7f57556fc476edd8817727fe605b469ffe",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/persistent-http/executor.mjs",
+      "bytes": 7574,
+      "sha256": "ad86e0734e7e7cc19c310300f8417cde07c2d17c763b85a61714a7ae299f6cc6",
+      "before_sha256": "d1400af9c5f8532446ee3b91816c37719a0671638af3f14fee2e0aee212a3a5b"
+    },
+    {
+      "path": "tests/storage-auth/disk-executor.mjs",
+      "bytes": 7084,
+      "sha256": "4103509484ffcbd1f04b4924e9e99380ce60e206ae60de6c955f49657e8f8690",
+      "before_sha256": "83f6c56ac9e4c7d43af218032acdca50ea53c4e8f77248cf14cbe745b90f0637"
+    },
+    {
+      "path": "tests/storage-auth/storage.test.mjs",
+      "bytes": 12570,
+      "sha256": "9f2729b65a61ab0f3b3a0436e8df6620474da009427651e092b65d2b9491bc22",
+      "before_sha256": "f53bcc5a001f1a1d23ea0d9732e2a0251bcefb39d7110681c29b183e36007c82"
+    }
+  ],
+  "unchanged": {
+    "package.json": "05bd3c8c58e5e898b577ca3106b8a77d018ef01a39d9975e5551453f507436a4",
+    "package-lock.json": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222",
+    "contracts/review-only.openapi.json": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "contracts/clerk-storage.schema-rls.proposal.json": "980585b91d4adcd93751ec50a939ac23f378e4610957c5674612c506bc4e20e2",
+    "packages/api-client/student-client.ts": "61cf1d2d0681f3bf25a610c73eff7470159bca45679c5def42101e9a58017494",
+    "packages/api-client/student-types.d.ts": "bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc",
+    "supabase/functions/univeracademy-api/ordinary.ts": "acd083fa6874fb4c8dfd8ec7551c9b12842dca1c07c970a8c7f0f5988cf1fd52",
+    "supabase/functions/univeracademy-api/student-wire.ts": "a43b5e043ca19c2e45cf83e1b76dddf0a89422633eeb2eefa19e647a847699af"
+  },
+  "tests": {
+    "pass": 139,
+    "fail": 0,
+    "new_domain_cases": 10,
+    "new_tcp_cases": 5,
+    "typecheck_exit": 0
+  },
+  "ports": [
+    "Existing createConfiguredHttpHandler with optional clerk binding",
+    "ClerkDomainTransactions implementing ClerkTransactions",
+    "Shared ClerkAuthRows; ClerkScopedAuthStore.runDomain for the existing exchange",
+    "Existing StudentHttpRows/StaffFirstTestRows/StaffAccessRows/PostgresTransactions"
+  ],
+  "contract_review": {
+    "patch_ops": 11,
+    "expected_cases": 14,
+    "proposal_cases_execution": "NOT_RUN",
+    "active_openapi_changed": false,
+    "numeric_bonus_wire_changed": false
+  },
+  "NOT_RUN": [
+    "Actual PostgreSQL SQL/FK/index/RLS/grants/pool reset/isolation",
+    "Real providers/deployment",
+    "Returned-roster/Teacher membership runtime and relational transfer repository",
+    "Historical registration timestamp persistence/backfill",
+    "Pre-verification remote JWKS transport cancellation"
+  ],
+  "outside_actions": {
+    "upload_commit_push": false,
+    "real_provider": false,
+    "real_database": false,
+    "migration": false,
+    "deploy": false
+  }
+}

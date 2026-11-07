@@ -1,3 +1,41 @@
+# Current Backend publication — scoped Clerk auth/domain and TCP-CANCEL-1
+
+PROVISIONAL / NOT ACCEPTED. Authorized laboratory QA candidate based on
+0a875bf1367e204ede52288882bac1604a23cfef. Existing Mini App and its evidence are
+preserved. Main OpenAPI, student client/types, dependency lock, ordinary/numeric
+and statistical bonus code are unchanged.
+
+Existing configured HTTP now composes shared Clerk auth rows with person-scoped
+student/domain and first-test staff row ports. Nullable Telegram, explicit
+provenance/F1 binding, replay/SID retirement and commit-before-ACK are retained.
+New login does not load or write answers, deadline or history. The synthetic
+fresh Clerk-only student flow uses Teacher HTTP publish, Admin membership and
+explicit assignment, save/clear/CAS, re-login/reload and submit/result/history.
+
+TCP disconnect propagates through Request.signal, Clerk Session/User liveness
+and the SDK transport. A post-COMMIT disconnect does not roll back the command;
+missing ACK must reconcile. Normal completed request bodies do not cause abort.
+
+Author checks on exact final source:139/139 PASS including10 new domain and5 TCP
+cases; typecheck exit0. Historical standalone TCP57 is separate overlapping
+evidence, not57 additional final tests. Frozen source/log bytes are retained.
+The final source is the domain24 manifest; standalone TCP's clerk-http.ts hash
+is superseded by the combined scoped-context version, as mapped in the
+publication verification. No redundant test rerun for byte-identical source.
+
+Schema/RLS and roster JSON Patch remain review-only unapplied proposals. Teacher
+roster runtime, relational transfer, original-registration-date persistence,
+actual Postgres/RLS/isolation, real providers, remote JWKS transport cancellation
+before verification, and deployment remain unverified/not implemented.
+No real provider/database/DDL/migration/deploy operation is included.
+
+See docs/api/clerk-domain-review-2026-11-07.md,
+docs/api/tcp-cancel-2026-11-07.md and the publication verification for exact
+commands, scope and limitations. Original local NOT_UPLOADED labels describe
+preparation provenance and are not independent QA acceptance.
+
+---
+
 # Current Backend publication — SDK-CANCEL-1 correction candidate
 
 PROVISIONAL / NOT ACCEPTED. Laboratory QA candidate based on

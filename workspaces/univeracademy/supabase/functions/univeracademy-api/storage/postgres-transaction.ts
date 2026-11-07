@@ -42,6 +42,7 @@ export class PostgresTransactions {
       // Negative bigint keys are reserved for verified Telegram identities.
       // This lock exists before the first people row; no global identity lock.
       await client.query({ name: "ua_telegram_identity_lock", text: "SELECT pg_advisory_xact_lock($1::bigint)", values: [(-BigInt(telegramId)).toString()] });
+      await client.query({name:"ua_telegram_identity_context",text:"SELECT set_config('ua.telegram_id',$1,true)",values:[String(telegramId)]});
       const personId = await ensure({client,personIds:[],now:await this.clock(client),telegramId});
       if (!uuid.test(personId)) fail("RESPONSE_INVARIANT_FAILED", 500);
       return this.lockPeople(client, [personId]);
@@ -56,6 +57,7 @@ export class PostgresTransactions {
     return now;
   }
   private async lockPeople(client: PgClient, ids: readonly string[]): Promise<LockedTransaction> {
+    await client.query({name:"ua_people_context",text:"SELECT set_config('ua.person_ids',$1,true)",values:[JSON.stringify(ids)]});
     const locked = await client.query({ name: "ua_people_lock", text:
       "SELECT id::text AS id FROM ua_private.people WHERE id = ANY($1::uuid[]) ORDER BY id FOR UPDATE", values: [ids] });
     if (locked.rows.length !== ids.length || locked.rows.some((r, i) => r.id !== ids[i])) fail("NOT_FOUND", 404);

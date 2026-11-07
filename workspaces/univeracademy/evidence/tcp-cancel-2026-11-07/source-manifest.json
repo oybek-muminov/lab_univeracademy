@@ -1,0 +1,72 @@
+{
+  "status": "LOCAL_PROVISIONAL_NOT_ACCEPTED_NOT_UPLOADED",
+  "base_commit": "31b2b00ecd1c413e1f828fef4c023c3ff2310909",
+  "source_files": [
+    {
+      "path": "runtime/node-request-abort.mjs",
+      "bytes": 642,
+      "sha256": "3511ce2225a1b8fb22e3c7723aa5e9913d9bed1e713e8c5daecfaed02d8bcbe8",
+      "before_sha256": null
+    },
+    {
+      "path": "runtime/local-server.mjs",
+      "bytes": 3505,
+      "sha256": "3b27100d39d89fbffdec938ffc5c4dbbdd2d1110ab71db604b055089ed081062",
+      "before_sha256": "9f9780466ee2715d4f407949d0b28b2e8788d74f64cda25ee822d9ff906acee7"
+    },
+    {
+      "path": "runtime/configured-server.mjs",
+      "bytes": 2957,
+      "sha256": "a8d50828f7ee85b1b5624d939020dd847a696c49b3ad8f294ca616805772affe",
+      "before_sha256": "c0c4747f563971e6bced723443cce86eaa1fae66c87c875f792b0baad20fec56"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "bytes": 4980,
+      "sha256": "278d4d6deaaf9a9b53e1fa1feb6f677b29b81761b6c3eb3f85a3b80cf31f3565",
+      "before_sha256": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-provider.ts",
+      "bytes": 10057,
+      "sha256": "06a295c8a0fe24fd8815ebd1f35ae2e77a4895635ab7f5df2a9576926720739b",
+      "before_sha256": "347d026a27549082921898068d2e49af11480d1e98ede1ae125d52f5c91180cf"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 14953,
+      "sha256": "e7b31eaec0891a7f1b44ccb36035437909b22b86cd0c5672fdc54a19e3b098be",
+      "before_sha256": "3d2ebe945d2a8313f88034b588310abbaa8c5306a81843312bc1be5fe216e2f5"
+    },
+    {
+      "path": "tests/clerk-auth/tcp-cancel.test.mjs",
+      "bytes": 6661,
+      "sha256": "89ff63e911cd10816cdfc2d33cfa5f7f57556fc476edd8817727fe605b469ffe",
+      "before_sha256": null
+    },
+    {
+      "path": "docs/api/tcp-cancel-2026-11-07.md",
+      "bytes": 2697,
+      "sha256": "65fd1ce969ca8c48d2a31a5b3844e8f848629344a9193f3e07612c115e1b4cc2",
+      "before_sha256": null
+    }
+  ],
+  "tests": {
+    "pass": 57,
+    "new_tcp_cases": 5,
+    "fail": 0,
+    "typecheck_exit": 0
+  },
+  "scope": "Node disconnect to Request.signal to Clerk Session/User liveness/SDK transport",
+  "commit_boundary": "Post-COMMIT disconnect does not rollback; lost ACK reconciles",
+  "limitations": [
+    "Real provider/socket/deploy NOT_RUN",
+    "Pre-verification remote JWKS transport cancellation not covered"
+  ],
+  "outside_actions": {
+    "upload": false,
+    "real_provider": false,
+    "real_database": false,
+    "deploy": false
+  }
+}

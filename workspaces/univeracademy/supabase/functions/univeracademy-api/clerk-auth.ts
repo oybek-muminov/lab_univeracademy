@@ -7,7 +7,7 @@ export type ClerkProof=Readonly<ClerkIdentity&{kind:"clerk_verified";notBefore:n
 export type ClerkVerifierConfiguration={issuer:string;authorizedParties:readonly string[];
   audience:{kind:"required";value:string}|{kind:"clerk_default_no_audience"};
   trustedKeys:JWTVerifyGetKey;now:()=>number};
-export type ClerkLiveness=(identity:ClerkIdentity,now:number)=>Promise<{
+export type ClerkLiveness=(identity:ClerkIdentity,now:number,options?:{signal?:AbortSignal})=>Promise<{
   issuer:string;userId:string;sessionId:string;status:string;accountEnabled:boolean;expiresAt:number;
 }>;
 const user=(v:unknown):v is string=>typeof v==="string"&&/^user_[A-Za-z0-9]+(?![\s\S])/.test(v);
