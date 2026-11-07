@@ -1,0 +1,56 @@
+{
+  "status": "LOCAL_PASS_NOT_INDEPENDENT_QA",
+  "base_commit": "a36d41ac52c2b12eda4f191020d7420edb5dd23f",
+  "source_manifest_sha256": "9779e41c808555c8a30f2a17f3cafdb144f9df6895698f5af251210d56180cbf",
+  "evidence": [
+    {
+      "path": "evidence/clerk-sdk-storage-2026-11-07/sdk-inspection.json",
+      "bytes": 1605,
+      "sha256": "deb635fa1f15fc5ac3f4f003240596a59879b79a0de38d58472948ef1f34a1a6"
+    },
+    {
+      "path": "evidence/clerk-sdk-storage-2026-11-07/tests.log",
+      "bytes": 7801,
+      "sha256": "897ba23e6ccee08d35638641150158f845ca56f2694108394bd31cec4d25c9b9"
+    },
+    {
+      "path": "evidence/clerk-sdk-storage-2026-11-07/typecheck.log",
+      "bytes": 422,
+      "sha256": "e33adee6eb91aaf2de248b4d11b966150c05429d3e89e933844930e821ea4fe9"
+    }
+  ],
+  "secret_scan": {
+    "files": 13,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "aws_access",
+      "telegram_token",
+      "jwt_literal",
+      "opaque_proof_literal",
+      "credential_url",
+      "provider_key"
+    ],
+    "matches": [],
+    "credential_data": "Synthetic key strings only; no real key loaded or logged"
+  },
+  "provider_network_calls": 0,
+  "real_db_queries": 0,
+  "SDK_import": "private worker; main global fetch unchanged; telemetry disabled",
+  "unchanged_base_files": 269,
+  "NOT_RUN": [
+    "Real Clerk tenant, SDK credential transport/region and live raw field guarantees",
+    "Actual Postgres schema/FKs/indexes/locks/uniqueness/RLS/grants and pool reset",
+    "Full-domain scoped HTTP composition and legacy Telegram writer cutover",
+    "Real worker deployment/asset bundling and production bootstrap",
+    "Callback iframe/header/browser enforcement and PKCE/nonce bridge",
+    "Fresh interactive A/B reauth and challenge/retention policy implementation",
+    "Independent QA/load/capacity/deploy"
+  ],
+  "product_decisions_not_changed": [
+    "student single active family",
+    "Teacher/Admin/Owner parallel sessions",
+    "No identity auto-merge by email",
+    "Linking blocked; no TTL/retention/factor policy silently selected"
+  ]
+}

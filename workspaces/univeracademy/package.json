@@ -29,6 +29,7 @@
     "typescript": "5.9.3"
   },
   "dependencies": {
+    "@clerk/backend": "3.27.0",
     "jose": "6.2.15"
   }
 }

@@ -1,0 +1,39 @@
+{
+  "sdk": "@clerk/backend",
+  "version": "3.27.0",
+  "package_integrity": "sha512-pmhVVP9EsAOL1rlRU4xR0XSL1BJczxGAJIqv8c+C9fRz7TYzCndGUMSSE/Zg7i2QOA24ExJbEJUiOjILdUL2EQ==",
+  "observed_runtime_defaults": {
+    "Session.actor": "missing raw actor defaults to null",
+    "User.deprovisioned": "missing raw deprovisioned defaults to false",
+    "fetch": "captured during SDK module import; worker isolates bridged transport"
+  },
+  "mitigation": "Validate exact raw JSON security evidence before handing response to SDK. Omission is503. No actor/deprovisioned default accepted.",
+  "inspected_local_package_files": [
+    {
+      "path": "node_modules/@clerk/backend/package.json",
+      "bytes": 3709,
+      "sha256": "af01c9bb668ae7d395de1cfc4ffc7d7f84ff420e749322766b210ef67c0f0051"
+    },
+    {
+      "path": "node_modules/@clerk/backend/dist/api/resources/Session.d.ts",
+      "bytes": 5649,
+      "sha256": "f08348963dfd164fc5abc091ad91f3d7b192c9f151a3358439fde774653ffc82"
+    },
+    {
+      "path": "node_modules/@clerk/backend/dist/api/resources/User.d.ts",
+      "bytes": 10797,
+      "sha256": "17c0e269a72c6f551471a2188c41a2504875c6af9985ed35c3ec0b916ee8c9fb"
+    },
+    {
+      "path": "node_modules/@clerk/backend/dist/chunk-CSXNUYCW.mjs",
+      "bytes": 287945,
+      "sha256": "658424463a85fac6788b4be08b71be18c3acbc407b1ead1747077a01015f2bad"
+    },
+    {
+      "path": "node_modules/@clerk/backend/dist/chunk-XQX6JGUU.mjs",
+      "bytes": 14992,
+      "sha256": "f436dda37cfd95a810e1ffe963c2d110617f30dba8c87824bf1a3b1cbeaf952a"
+    }
+  ],
+  "vendor_sources_copied_to_deliverable": false
+}

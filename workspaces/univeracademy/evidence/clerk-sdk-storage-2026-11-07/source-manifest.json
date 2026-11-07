@@ -1,0 +1,123 @@
+{
+  "status": "LOCAL_PROVISIONAL_NOT_ACCEPTED_NOT_DEPLOY_READY",
+  "base_commit": "a36d41ac52c2b12eda4f191020d7420edb5dd23f",
+  "source_files": 10,
+  "modified_existing": 2,
+  "new_source_files": 8,
+  "files": [
+    {
+      "path": "package.json",
+      "bytes": 1744,
+      "sha256": "05bd3c8c58e5e898b577ca3106b8a77d018ef01a39d9975e5551453f507436a4",
+      "change": "modify",
+      "before_sha256": "1c8f0f50a9052a773496de0aef29817f9fec17a7dd33384353e3c33da303103c"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 19609,
+      "sha256": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222",
+      "change": "modify",
+      "before_sha256": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503"
+    },
+    {
+      "path": "runtime/clerk-sdk-bindings.mjs",
+      "bytes": 6189,
+      "sha256": "283a796aca03d25f4c04005657fd286c8dbd83c615ed3e1d8e9b49d907928010",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "runtime/clerk-sdk-worker.mjs",
+      "bytes": 1736,
+      "sha256": "2768132b7383a2d0e9c579428c5648c58a587f9c242a61bbe4ee2e1c8c89fc62",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "bytes": 20882,
+      "sha256": "a3ae81519d14c042cfee365fe35f97ff5fccbf2246474aea71d8877b4bfd4f81",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/clerk-auth/sdk-binding.test.mjs",
+      "bytes": 8171,
+      "sha256": "6e42092ca6ada3590b5a9b517e376cc72ab19474c35e50d34d5bf7f65b3a362f",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/clerk-auth/scoped-store.test.mjs",
+      "bytes": 14224,
+      "sha256": "e301a111d26b64fc2de1bdb9d62a9c0f3308d4c7401c351ea828cfc7bfe52c64",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "contracts/clerk-storage.schema-rls.proposal.json",
+      "bytes": 9621,
+      "sha256": "980585b91d4adcd93751ec50a939ac23f378e4610957c5674612c506bc4e20e2",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "docs/api/clerk-sdk-scoped-storage-2026-11-07.md",
+      "bytes": 9601,
+      "sha256": "9b5a116ff15800310bd7a089b61530c51feaebec08904cacf7f47a98b1f91fb8",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "docs/api/clerk-callback-reauth-retention-2026-11-07.md",
+      "bytes": 7851,
+      "sha256": "2ccb3faab664fd06de6ce0f9793dfc1456f17bea2d430c24af0f779077b0c66e",
+      "change": "add",
+      "before_sha256": null
+    }
+  ],
+  "dependencies": {
+    "@clerk/backend": {
+      "version": "3.27.0",
+      "integrity": "sha512-pmhVVP9EsAOL1rlRU4xR0XSL1BJczxGAJIqv8c+C9fRz7TYzCndGUMSSE/Zg7i2QOA24ExJbEJUiOjILdUL2EQ=="
+    },
+    "@clerk/shared": {
+      "version": "4.44.1",
+      "integrity": "sha512-c06U6GtlLJNOKj900rHDSqjVRz0/0zb3RZXVGKUqTulfQxr4Ym543JE6cbOnZVJZCbm0fGPhdRKvHq6fO/SvVw=="
+    },
+    "standardwebhooks": {
+      "version": "1.1.1",
+      "integrity": "sha512-bCbX9ZEyFkWPsRz7Bl3NuQUJohmwGSev/yhr7vhaGPlc4AfIrspIRa6cPTBuI1ItmrTDJ4d/S2hCsfe4+vQGnQ=="
+    },
+    "jose": {
+      "version": "6.2.15",
+      "integrity": "sha512-qdF6ewcZARtef63fJ9AKKZPgxw+t7USH6HLXYcD4CrdmSvDp79rpJSPFEKc90QBeGS63u1KQtN2MZQHC0yDIzA=="
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="
+    }
+  },
+  "unchanged_base_files": 269,
+  "base_backend_manifest_sha256": "e0726db4812834ed951ea2a24d385c4addae9e0752f49ccf325e201aa6ba8b5c",
+  "runtime_scope": "Pinned SDK Session/User bridge and auth-only scoped exchange row port; not a full HTTP/domain bootstrap",
+  "validation": {
+    "tests": "55/55 PASS",
+    "new_sdk_groups": 7,
+    "new_store_groups": 7,
+    "existing_groups": 41,
+    "typecheck_exit": 0,
+    "provider_replies": "synthetic raw BAPI/JWKS responses through actual SDK3.27.0 and real jose",
+    "storage": "parameterized SQL through statement/global-queue double; real SQL never executed",
+    "schema_rls": "unapplied JSON proposal",
+    "linking": "blocked409; invalid/expired proof401"
+  },
+  "outside_actions": {
+    "upload": false,
+    "commit_push": false,
+    "real_provider": false,
+    "real_database": false,
+    "migration": false,
+    "deploy": false
+  }
+}

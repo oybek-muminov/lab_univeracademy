@@ -1,0 +1,241 @@
+{
+  "status": "LOCAL_SCHEMA_RLS_DIFF_PROPOSAL_NOT_APPLIED_NOT_ACCEPTED",
+  "base_commit": "a36d41ac52c2b12eda4f191020d7420edb5dd23f",
+  "version": "0.0.0-clerk-auth-scoped-storage-review.1",
+  "execution": "Review JSON only. No migration/DDL command is generated or applied. Runtime SQL is exercised only by a statement-protocol double.",
+  "changes": [
+    {
+      "target": "ua_private.people.telegram_id",
+      "before": "NOT NULL reader and Telegram identity gate",
+      "after": "nullable; preserve existing uniqueness among nonnull Telegram IDs; no fake numeric ID or email match"
+    },
+    {
+      "target": "ua_private.student_families.auth_provider",
+      "before": "absent in current relational reader/writer",
+      "after": "nullable legacy column with enum clerk/telegram; new inserts require explicit provenance; immutable once written; old unmarked active rows deny503"
+    },
+    {
+      "target": "ua_private.student_families",
+      "after_constraints": [
+        "unique(id,person_id) for composite binding FK",
+        "one nonrevoked family per person (no now() index predicate); expired unrevoked family must be revoked before next insert"
+      ],
+      "compatibility": "Current legacy Telegram relational writer does not stamp auth_provider. It must be updated and reviewed before any cutover; no automatic backfill."
+    }
+  ],
+  "new_tables": {
+    "clerk_identities": {
+      "columns": {
+        "issuer": "text COLLATE C NOT NULL",
+        "subject": "text COLLATE C NOT NULL",
+        "person_id": "uuid NOT NULL REFERENCES people(id)",
+        "enabled": "boolean NOT NULL"
+      },
+      "primary_key": [
+        "issuer",
+        "subject"
+      ],
+      "unique": [
+        [
+          "issuer",
+          "subject",
+          "person_id"
+        ]
+      ],
+      "indexes": [
+        [
+          "person_id"
+        ]
+      ]
+    },
+    "clerk_student_sessions": {
+      "columns": {
+        "issuer": "text COLLATE C NOT NULL",
+        "subject": "text COLLATE C NOT NULL",
+        "sid": "text COLLATE C NOT NULL",
+        "person_id": "uuid NOT NULL",
+        "retired_at_ms": "bigint NULL; first retirement immutable"
+      },
+      "primary_key": [
+        "issuer",
+        "subject",
+        "sid"
+      ],
+      "unique": [
+        [
+          "issuer",
+          "subject",
+          "sid",
+          "person_id"
+        ]
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "issuer",
+            "subject",
+            "person_id"
+          ],
+          "target": "clerk_identities(issuer,subject,person_id)"
+        }
+      ],
+      "indexes": [
+        [
+          "person_id"
+        ]
+      ]
+    },
+    "clerk_family_bindings": {
+      "columns": {
+        "family_id": "uuid NOT NULL",
+        "issuer": "text COLLATE C NOT NULL",
+        "subject": "text COLLATE C NOT NULL",
+        "sid": "text COLLATE C NOT NULL",
+        "person_id": "uuid NOT NULL"
+      },
+      "primary_key": [
+        "family_id"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "family_id",
+            "person_id"
+          ],
+          "target": "student_families(id,person_id)"
+        },
+        {
+          "columns": [
+            "issuer",
+            "subject",
+            "sid",
+            "person_id"
+          ],
+          "target": "clerk_student_sessions(issuer,subject,sid,person_id)"
+        }
+      ],
+      "indexes": [
+        [
+          "person_id"
+        ]
+      ]
+    },
+    "clerk_exchange_replays": {
+      "columns": {
+        "digest": "text NOT NULL; exact64 lowercase hex; raw JWT never stored",
+        "person_id": "uuid NOT NULL REFERENCES people(id)",
+        "consumed_at_ms": "bigint NOT NULL",
+        "retain_until_ms": "bigint NULL; null means do not GC until a reviewed bound exists"
+      },
+      "primary_key": [
+        "digest"
+      ],
+      "indexes": [
+        [
+          "person_id"
+        ]
+      ]
+    }
+  },
+  "integrity": {
+    "required_deferred_commit_check": "Every new Clerk family has exactly one matching same-person binding and provider-session row. A Telegram family has no Clerk binding. A nullable FK alone is insufficient. Exact SQL/trigger implementation and real constraint validation remain NOT_RUN.",
+    "immutable": [
+      "identity canonical person",
+      "family origin/person/absolute expiry",
+      "binding family/provider/person",
+      "provider-session canonical person and first nonnull retirement",
+      "proof digest family binding/expiry; consume/supersede monotonic",
+      "replay receipt digest/person/consumed_at"
+    ],
+    "delete": "Runtime role has no identity/fence/binding/replay DELETE; no cascading erase of histories. Reviewed retention worker is a future separate scope."
+  },
+  "rls": {
+    "schema": "ua_private; must remain unexposed to Data API",
+    "role": {
+      "name": "PENDING_REVIEWED_BACKEND_ROLE",
+      "requirements": [
+        "non-superuser",
+        "no BYPASSRLS",
+        "not available to browser clients",
+        "transaction-local context set only by trusted server path after signature verification"
+      ]
+    },
+    "new_tables": {
+      "clerk_identities": {
+        "enabled": true,
+        "force": true,
+        "select_using": "(person_id = nullif(current_setting('ua.person_id',true),'')::uuid) OR (issuer = current_setting('ua.clerk_issuer',true) AND subject = current_setting('ua.clerk_subject',true))",
+        "insert_with_check": "(person_id = nullif(current_setting('ua.person_id',true),'')::uuid) AND (issuer = current_setting('ua.clerk_issuer',true) AND subject = current_setting('ua.clerk_subject',true))",
+        "update_using": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_with_check": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_limits": "Only monotonic retirement for sessions. Identity/binding/replay reassignment disallowed by immutable guard.",
+        "delete": false
+      },
+      "clerk_student_sessions": {
+        "enabled": true,
+        "force": true,
+        "select_using": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "insert_with_check": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_using": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_with_check": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_limits": "Only monotonic retirement for sessions. Identity/binding/replay reassignment disallowed by immutable guard.",
+        "delete": false
+      },
+      "clerk_family_bindings": {
+        "enabled": true,
+        "force": true,
+        "select_using": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "insert_with_check": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_using": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_with_check": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_limits": "Only monotonic retirement for sessions. Identity/binding/replay reassignment disallowed by immutable guard.",
+        "delete": false
+      },
+      "clerk_exchange_replays": {
+        "enabled": true,
+        "force": true,
+        "select_using": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "insert_with_check": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_using": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_with_check": "person_id = nullif(current_setting('ua.person_id',true),'')::uuid",
+        "update_limits": "Only monotonic retirement for sessions. Identity/binding/replay reassignment disallowed by immutable guard.",
+        "delete": false
+      }
+    },
+    "grants": {
+      "PUBLIC": "NONE",
+      "anon": "NONE",
+      "authenticated": "NONE",
+      "PENDING_REVIEWED_BACKEND_ROLE": "Only reviewed SELECT/INSERT and limited UPDATE; no DELETE. Existing people/membership policies must be reviewed, not replaced blindly."
+    },
+    "notes": [
+      "RLS context is not auth.uid() from a user_ subject. Canonical UUID is resolved server-side.",
+      "set_config is transaction-local; verify reset after pool reuse.",
+      "Role/grants/constraints and actual effective RLS must be tested on isolated Postgres before production. No service-role key goes into UI."
+    ]
+  },
+  "retention": {
+    "decision": "PENDING; no GC enabled",
+    "bounds": [
+      "Do not drop retired sid until no future proof can be minted and all family/replay/tombstone/retry windows are closed",
+      "Old JWT exp alone is not a sid retirement bound",
+      "Retries never extend first retention; logical expiry applies before physical purge"
+    ],
+    "not_assumed": [
+      "provider absolute expiry immutable",
+      "provider terminal status guarantees no future reactivation",
+      "any fixed challenge/session TTL approved"
+    ]
+  },
+  "required_real_tests": [
+    "case-sensitive identity uniqueness",
+    "same-identity creation race on separate connections",
+    "nullable Telegram uniqueness",
+    "deferred F1/composite-FK enforcement",
+    "all partial-write rollbacks and commit uncertainty",
+    "current/retired SID and jti replay after process restart",
+    "scope/RLS cross-person denial and pool context leakage",
+    "old unmarked legacy compatibility and cutover of all old writers",
+    "expiry after lock/network/flush and immediately before real COMMIT"
+  ]
+}

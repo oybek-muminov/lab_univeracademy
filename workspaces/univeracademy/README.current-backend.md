@@ -1,4 +1,65 @@
-# Current Backend publication — Clerk provider, fresh time and staff parallel sessions
+# Current Backend publication — pinned Clerk SDK and scoped auth storage candidate
+
+PROVISIONAL / NOT ACCEPTED. Approved laboratory QA upload based on branch HEAD
+9bed5e04bf54f04f2e5f7d2441dcacb2017f7505. All 108 Mini App files and15 UI evidence
+files are preserved byte-identically; they are not Backend-owned manifest entries.
+
+Architect/coordinator delegations set the scope, safety boundaries and review
+criteria; Backend implemented and locally tested the candidate. This records
+collaboration, not an independent architect acceptance of this new source.
+
+The root lock pins @clerk/backend3.27.0. Its actual Session/User model conversion
+is used behind an injected, worker-isolated transport. Raw actor/deprovisioned
+presence and security types are checked before SDK defaults could invent null/
+false. The application-process global fetch is unchanged. GET-only pinned BAPI
+reads, bounded JSON/errors, no redirect/cookie, explicit secret binding and no
+native-fetch fallback remain technical boundaries. Tests use synthetic replies
+and key strings; no real credential, tenant or provider call is included.
+
+ClerkScopedAuthStore is an auth-only exchange row-port candidate: exact external
+identity gate, canonical person lock/scope, nullable Telegram, F1 origin/binding,
+retired sid, replay/proof digests and fresh DB-time checks with commit-before-ACK.
+Its SQL statements are exercised only by a global-queue statement double, not an
+actual database. It is not yet a full-domain HTTP storage adapter or a drop-in
+replacement for current production storage.
+
+The schema/RLS diff in contracts/clerk-storage.schema-rls.proposal.json is a
+non-executable review JSON proposal. No DDL/migration is created or applied.
+Actual database role, effective RLS/grants/index/constraint/lock behavior and all
+legacy reader/writer cutovers remain review/test prerequisites. No automatic
+legacy provenance backfill, identity merge or retention GC is enabled.
+
+Author checks:55/55 PASS (7 SDK,7 scoped-store,41 prior affected auth checks),
+typecheck exit0. Exact10 source files and5 evidence files retain frozen bytes.
+Current instructions: docs/api/clerk-sdk-scoped-storage-2026-11-07.md. The iframe,
+fresh reauth/challenge and retention options are text only in
+clerk-callback-reauth-retention-2026-11-07.md. Linking remains blocked409 (invalid/
+expired proof401); no factor, challenge TTL or GC policy was silently selected.
+
+```sh
+npm ci --ignore-scripts
+npm run setup:validator
+node --test tests/clerk-auth/sdk-binding.test.mjs tests/clerk-auth/scoped-store.test.mjs tests/clerk-auth/provider-adapter.test.mjs tests/clerk-auth/staff-parallel.test.mjs tests/clerk-auth/http.test.mjs tests/clerk-auth/family-context.test.mjs tests/clerk-auth/review-listener.test.mjs
+npm run typecheck
+```
+
+Student-only single active family and parallel Teacher/Admin/Owner sessions stay
+unchanged. Existing signature verifier/expiry/F1 handler, client/types, OpenAPI,
+Vercel entry and all Mini App source are byte-identical. No proof or answer key
+is added to public URLs/logs; no secret, real data, dependency cache/build or old
+source archive is added. Node modules are reproduced from locks, not uploaded.
+
+Real provider/DB/RLS, full scoped HTTP/domain composition, worker production
+bundling, browser callback/fresh reauth and independent QA are NOT_RUN. Main
+project, real provider, database, migration and deploy remain untouched.
+
+BACKEND-CURRENT-SHA256SUMS covers Backend-owned files only. Mini App's guard still
+pins prior Backend a36d41a/149 files, so UI owner must repin for this new candidate;
+it is not edited/bypassed. Frozen local/unuploaded metadata remains preparation
+provenance. Current publication intake:
+docs/api/clerk-sdk-storage-publication-verification-2026-11-07.json.
+
+## Prior Backenda36d41a publication — historical provider/timing/staff candidate
 
 PROVISIONAL / NOT ACCEPTED. Approved lab QA candidate, based on branch HEAD
 829b2585fc5bfd04feea34d028db8dd76dea27ce. Mini App107 files plus15 UI evidence files

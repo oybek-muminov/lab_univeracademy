@@ -1,0 +1,105 @@
+{
+  "status": "PUBLIC_LAB_QA_CANDIDATE_PROVISIONAL_NOT_ACCEPTED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "qa/current-flow-20261106",
+  "publication_base_commit": "9bed5e04bf54f04f2e5f7d2441dcacb2017f7505",
+  "author_base_commit": "a36d41ac52c2b12eda4f191020d7420edb5dd23f",
+  "source_manifest_sha256": "9779e41c808555c8a30f2a17f3cafdb144f9df6895698f5af251210d56180cbf",
+  "source_files": 10,
+  "evidence_files": 5,
+  "exact_frozen_source_and_evidence": true,
+  "architect_contribution": "Scope/constraints/review criteria came through architect/coordinator delegations; Backend implemented/tested. No independent architect code acceptance or QA closure claimed.",
+  "author_validation": {
+    "tests": "55/55 PASS",
+    "new_sdk_groups": 7,
+    "new_store_groups": 7,
+    "existing_groups": 41,
+    "typecheck_exit": 0,
+    "provider_replies": "synthetic raw BAPI/JWKS responses through actual SDK3.27.0 and real jose",
+    "storage": "parameterized SQL through statement/global-queue double; real SQL never executed",
+    "schema_rls": "unapplied JSON proposal",
+    "linking": "blocked409; invalid/expired proof401"
+  },
+  "sdk": {
+    "@clerk/backend": {
+      "version": "3.27.0",
+      "integrity": "sha512-pmhVVP9EsAOL1rlRU4xR0XSL1BJczxGAJIqv8c+C9fRz7TYzCndGUMSSE/Zg7i2QOA24ExJbEJUiOjILdUL2EQ=="
+    },
+    "@clerk/shared": {
+      "version": "4.44.1",
+      "integrity": "sha512-c06U6GtlLJNOKj900rHDSqjVRz0/0zb3RZXVGKUqTulfQxr4Ym543JE6cbOnZVJZCbm0fGPhdRKvHq6fO/SvVw=="
+    },
+    "standardwebhooks": {
+      "version": "1.1.1",
+      "integrity": "sha512-bCbX9ZEyFkWPsRz7Bl3NuQUJohmwGSev/yhr7vhaGPlc4AfIrspIRa6cPTBuI1ItmrTDJ4d/S2hCsfe4+vQGnQ=="
+    },
+    "jose": {
+      "version": "6.2.15",
+      "integrity": "sha512-qdF6ewcZARtef63fJ9AKKZPgxw+t7USH6HLXYcD4CrdmSvDp79rpJSPFEKc90QBeGS63u1KQtN2MZQHC0yDIzA=="
+    },
+    "typescript": {
+      "version": "5.9.3",
+      "integrity": "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="
+    }
+  },
+  "schema_rls": "Unapplied, non-executable JSON proposal; no SQL/migration applied",
+  "mini_app_preservation": {
+    "base_commit": "9bed5e04bf54f04f2e5f7d2441dcacb2017f7505",
+    "app_files": 108,
+    "app_tree": "9dabb44694f2c56e4cfd07ae63771306ff834adc",
+    "evidence_files": 15,
+    "evidence_prefix": "evidence/mini-app-clerk-sdk-2026-11-07/",
+    "guard_changed_or_bypassed": false,
+    "guard_pins": "a36d41a Backend149; UI-owner repin required"
+  },
+  "foreign_prefixes_excluded_from_backend_manifest": [
+    "apps/mini-app/",
+    "evidence/mini-app-clerk-sdk-2026-11-07/"
+  ],
+  "metadata_note": "Original local/unuploaded status remains frozen preparation provenance; this report describes authorized publication. No redundant test rerun for unchanged exact source.",
+  "not_run": [
+    "Real Clerk tenant, SDK credential transport/region and live raw field guarantees",
+    "Actual Postgres schema/FKs/indexes/locks/uniqueness/RLS/grants and pool reset",
+    "Full-domain scoped HTTP composition and legacy Telegram writer cutover",
+    "Real worker deployment/asset bundling and production bootstrap",
+    "Callback iframe/header/browser enforcement and PKCE/nonce bridge",
+    "Fresh interactive A/B reauth and challenge/retention policy implementation",
+    "Independent QA/load/capacity/deploy"
+  ],
+  "outside_actions": {
+    "main_project": false,
+    "real_provider": false,
+    "real_database": false,
+    "SQL_migration": false,
+    "deploy": false,
+    "force_push": false
+  },
+  "publication_secret_scan": {
+    "files": 18,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "aws_access",
+      "telegram_token",
+      "jwt_literal",
+      "opaque_proof_literal",
+      "credential_url",
+      "provider_key"
+    ],
+    "matches": [],
+    "data": "Frozen synthetic-only source/evidence; no credentials, real users, build/cache/dependencies"
+  },
+  "manifest_ownership": {
+    "backend_base_files": 149,
+    "backend_current_files": 163,
+    "foreign_files_unchanged": 123,
+    "source_and_evidence_hashes_verified": 15
+  },
+  "mini_app_guard_check": {
+    "command": "node apps/mini-app/tests/verify-backend-targets.mjs",
+    "exit": 1,
+    "result": "BACKEND_TARGET_SIZE_MISMATCH: BACKEND-CURRENT-SHA256SUMS",
+    "reason": "Guard pins a36d41a/149 Backend files; approved delta expands current ownership to163; UI-owner repin required",
+    "guard_changed_or_bypassed": false
+  }
+}
