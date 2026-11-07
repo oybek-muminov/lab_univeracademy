@@ -9,7 +9,8 @@ import { spawnSync } from 'node:child_process';
 
 const source = fileURLToPath(new URL('../../../', import.meta.url));
 const guard = 'apps/mini-app/tests/verify-backend-targets.mjs';
-const current = 'apps/mini-app/tests/fixtures/backend-6329367-manifest.json';
+const current = 'apps/mini-app/tests/fixtures/backend-b9efa597-manifest.json';
+const familyBaseline = 'apps/mini-app/tests/fixtures/backend-6329367-manifest.json';
 const clerkBaseline = 'apps/mini-app/tests/fixtures/backend-39b2d92-manifest.json';
 const vercelBaseline = 'apps/mini-app/tests/fixtures/backend-47ed6f8-manifest.json';
 const adaBaseline = 'apps/mini-app/tests/fixtures/backend-ada6600-manifest.json';
@@ -24,7 +25,7 @@ const manifest = JSON.parse(readFileSync(join(source, current), 'utf8'));
 function check(mutate, expected) {
   const root = mkdtempSync(join(tmpdir(), 'ua-current-guard-'));
   try {
-    for (const name of [guard, current, previous, productionBaseline, adaBaseline, vercelBaseline, clerkBaseline, history, ...copies, ...manifest.files.map(file => file.path)]) {
+    for (const name of [guard, current, previous, productionBaseline, adaBaseline, vercelBaseline, clerkBaseline, familyBaseline, history, ...copies, ...manifest.files.map(file => file.path)]) {
       const path = join(root, name); mkdirSync(dirname(path), { recursive: true });
       writeFileSync(path, readFileSync(join(source, name)));
     }
@@ -48,7 +49,7 @@ function oldAttempts(root) {
   return old; // Exact historical bytes; never executed or written over owner source.
 }
 
-test('current guard accepts all 117 exact Backend files and both browser owner copies', () => check());
+test('current guard accepts all 133 exact Backend files and both browser owner copies', () => check());
 test('same-size corruption of new attempts bytes is rejected', () => check(root => {
   const path = join(root, attempts), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
 }, 'BACKEND_TARGET_HASH_MISMATCH: ' + attempts));
@@ -158,4 +159,14 @@ test('pre-F1 student state padded to the current length is rejected', () => chec
 }, 'BACKEND_TARGET_HASH_MISMATCH: ' + studentState));
 test('missing F1 family-context regression dependency fails closed', () => check(root => {
   rmSync(join(root, 'tests/clerk-auth/family-context.test.mjs'));
+}, 'ENOENT'));
+
+test('previous F1 117-file manifest tampering is rejected', () => check(root => {
+  const path = join(root, familyBaseline); writeFileSync(path, readFileSync(path, 'utf8') + '\n');
+}, 'FAMILY_BASELINE_MANIFEST_MISMATCH'));
+test('Clerk review schema same-size corruption is rejected', () => check(root => {
+  const path = join(root, 'contracts/clerk-review.openapi.json'), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
+}, 'BACKEND_TARGET_HASH_MISMATCH: contracts/clerk-review.openapi.json'));
+test('missing Clerk review TCP listener fails closed', () => check(root => {
+  rmSync(join(root, 'runtime/clerk-review-server.mjs'));
 }, 'ENOENT'));

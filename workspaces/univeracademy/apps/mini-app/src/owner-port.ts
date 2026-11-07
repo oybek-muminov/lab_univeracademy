@@ -11,12 +11,14 @@ type Client = StudentClient;
 type View = { title: string; groupLabel: string; startAllowed: boolean };
 export type OwnerPortOptions = {
   mode: 'local_fixture' | 'production'; contractSha256: string; baseUrl: string;
+  loginMethod?: 'telegram' | 'clerk'; loginSignal?: AbortSignal;
   fetcher(request: Request): Promise<Response>; view(assignmentId: string, metadata?: StudentSchema['Meta']): View; assetUrl(value: string): string;
   now?: () => number;
   logoutReceiptPolicy?: { retentionMs: number; monotonicNow?: () => number };
 };
 export function createOwnerPort(options: OwnerPortOptions) {
   if (!['local_fixture', 'production'].includes(options.mode) || options.contractSha256 !== STUDENT_CONTRACT_SHA256) throw new Error('CONTRACT_HASH_MISMATCH');
+  if (options.loginMethod !== undefined && !['telegram', 'clerk'].includes(options.loginMethod)) throw new Error('LOGIN_METHOD_INVALID');
   // Native browser fetch must not receive the options object as its receiver.
   const fetcher = options.fetcher;
   const mapper = createWireMap({ assetUrl: options.assetUrl });
@@ -59,7 +61,8 @@ export function createOwnerPort(options: OwnerPortOptions) {
     fetcher: async () => { throw new Error('Use Backend-owned client operations'); },
     logoutReceiptPolicy: options.logoutReceiptPolicy,
     sessions: {
-      login: async raw => projectSession((await call(client => client.telegramLogin({ init_data: raw }))).data),
+      login: async raw => projectSession((await call(client => options.loginMethod === 'clerk'
+        ? client.exchangeClerkSession(raw) : client.telegramLogin({ init_data: raw }), options.loginSignal)).data),
       rotate: async refresh => projectSession((await call(client => client.refresh({ refresh_token: refresh }))).data),
       logout: async (refresh, signal) => {
         const ack = (await call(client => client.logoutByRefresh({ refresh_token: refresh }), signal)).data;
@@ -105,5 +108,6 @@ export function createOwnerPort(options: OwnerPortOptions) {
       mapper.history((await call(client => client.history(access, assignmentId))).data, context(assignmentId))),
   };
   return { port, auth: { login: transport.login, logout: transport.logout, person: transport.person,
+    clear: transport.clear,
     logoutReceipt: transport.logoutReceipt, retryLogoutReceipt: transport.retryLogoutReceipt, cancelLogoutReceipt: transport.cancelLogoutReceipt } };
 }

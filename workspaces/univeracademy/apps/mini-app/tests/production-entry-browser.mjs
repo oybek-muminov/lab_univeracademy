@@ -1,6 +1,7 @@
 import { build, preview } from 'vite';
 import { spawn } from 'node:child_process';
 import { readdir, readFile } from 'node:fs/promises';
+import { STUDENT_CONTRACT_SHA256 } from '../src/owner-client/student-client.ts';
 const servers = [];
 async function serve(outDir) {
   const server = await preview({ configFile: false, build: { outDir }, preview: { host: '127.0.0.1', port: 0 } });
@@ -11,7 +12,7 @@ try {
   let args;
   if (process.argv.includes('--production-gates')) {
     const values = { VITE_MINI_APP_ORIGIN: 'https://app.invalid', VITE_API_ORIGIN: 'https://api.example.test',
-      VITE_STUDENT_CONTRACT_SHA256: '9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4',
+      VITE_STUDENT_CONTRACT_SHA256: STUDENT_CONTRACT_SHA256,
       VITE_TELEGRAM_SDK_ENABLED: 'true' };
     const saved = Object.fromEntries(Object.keys(values).map(k => [k, process.env[k]]));
     const builds = [];

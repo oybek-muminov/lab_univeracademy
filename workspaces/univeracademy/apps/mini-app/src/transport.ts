@@ -201,6 +201,12 @@ export function createStudentTransport(options: {
   return {
     withAccess,
     request,
+    // Local cancellation only. Retire pending login/read callbacks immediately;
+    // this is never a server logout ACK or an automatic exchange/refresh replay.
+    clear() {
+      if (receipt) endReceipt(receipt, 'cancelled');
+      proof = null; rotating = null; authEpoch++;
+    },
     async login(rawInitData: string) {
       if (receipt) endReceipt(receipt, 'cancelled');
       const epoch = ++authEpoch; proof = null; rotating = null;

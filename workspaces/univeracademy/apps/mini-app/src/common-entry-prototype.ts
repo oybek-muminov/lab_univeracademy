@@ -27,6 +27,7 @@ const messages: Record<string, string> = {
 export function createCommonEntryPrototype(options: {
   mode: 'synthetic'; context: 'browser' | 'telegram_webview'; provider: EntryDemoProvider;
   authorize(evidence: EntryEvidence): Promise<{ person: string; port: StudentPort }>;
+  retire?(): Promise<'confirmed' | 'unconfirmed' | 'none'>;
 }) {
   if (options.mode !== 'synthetic') throw new EntryDemoFailure('SYNTHETIC_MODE_REQUIRED');
   let state: EntryDemoSnapshot = Object.freeze({ step: 'choose', busy: false, maskedEmail: '', notice: '', flow: null });
@@ -38,17 +39,33 @@ export function createCommonEntryPrototype(options: {
     state = Object.freeze({ ...state, ...value }); listeners.forEach(notify => notify());
   }
   function check(generation: number) { if (disposed || generation !== epoch) throw new EntryDemoFailure('SUPERSEDED'); }
-  function reset() {
+  function clearLocal() {
     epoch++; pending = null; challenge = null; email = '';
     update({ step: 'choose', busy: false, maskedEmail: '', notice: '', flow: null });
+  }
+  function retire() {
+    // Eager invocation invalidates the old connection before any late callback.
+    return new Promise<'confirmed' | 'unconfirmed' | 'none'>(resolve => resolve(options.retire?.() ?? 'none'));
+  }
+  function reset() { clearLocal(); void retire().catch(() => {}); }
+  async function logout() {
+    clearLocal(); const generation = epoch;
+    try {
+      const receipt = await retire(); check(generation);
+      update({ notice: receipt === 'confirmed' ? 'Server sessiya yopilganini tasdiqladi.'
+        : receipt === 'unconfirmed' ? 'Kirish bekor qilindi. Server holati tasdiqlanmagan; yangidan kiring.' : '' });
+    } catch (error) {
+      check(generation); update({ notice: 'Sessiya lokal yopildi. Server tasdig‘i kelmadi; yangidan kiring.' }); throw error;
+    }
   }
   function run(step: Step, failureStep: Step, action: (generation: number) => Promise<void>): Promise<void> {
     if (disposed) return Promise.resolve();
     if (pending) return pending;
-    const generation = epoch;
+    const generation = ++epoch;
     update({ step, busy: true, notice: '', flow: null });
     const task = (async () => { await action(generation); })().catch(error => {
       if (disposed || generation !== epoch) return;
+      void retire().catch(() => {}); // Rejected bootstrap cannot retain an app proof.
       const code = error instanceof EntryDemoFailure ? error.code : 'UNCONFIRMED';
       const expired = code === 'CODE_EXPIRED';
       if (expired) { challenge = null; email = ''; }
@@ -113,7 +130,7 @@ export function createCommonEntryPrototype(options: {
   }
   return {
     snapshot: () => state, subscribe(notify: () => void) { listeners.add(notify); return () => { listeners.delete(notify); }; },
-    google, sendCode, verifyCode, resend: () => email ? sendCode(email) : Promise.resolve(), reset,
+    google, sendCode, verifyCode, resend: () => email ? sendCode(email) : Promise.resolve(), reset, logout,
     // Preview reset does not claim a real Clerk/server logout receipt.
     dispose() { reset(); disposed = true; listeners.clear(); },
   };

@@ -173,4 +173,4 @@ get initDataUnsafe() { throw new Error('UNSAFE_IDENTITY_READ'); } } };
     finally:
         browser.close()
 print(json.dumps({'status': 'AUTHOR_SYNTHETIC_BROWSER_PASS', 'cases': results,
-    'realTelegram': 'NOT_RUN', 'productionClient': 'PINNED_54c110d7', 'corsServer': 'NOT_RUN', 'nativeApiRequests': 0}))
+    'realTelegram': 'NOT_RUN', 'productionClient': 'PINNED_61cf1d2d_REVIEW', 'corsServer': 'NOT_RUN', 'nativeApiRequests': 0}))

@@ -25,7 +25,8 @@ for (const mode of ['production', 'auth_prototype']) {
     if (!name.endsWith('.js') && !name.endsWith('.css')) continue;
     const code = await readFile(outDir + '/assets/' + name, 'utf8');
     if (['synthetic-google-evidence', 'synthetic-email-evidence', 'synthetic-challenge-', '246810',
-      'entry-google-mark', 'Lokal prototip', 'Namuna uchun faqat example.test'].some(marker => code.includes(marker)))
+      'entry-google-mark', 'Lokal prototip', 'Namuna uchun faqat example.test',
+      '__UA_SYNTHETIC_CLERK_PROVIDER__', 'synthetic-challenge-review'].some(marker => code.includes(marker)))
       throw new Error('AUTH_PROTOTYPE_IN_PRODUCTION:' + name);
   }
 }

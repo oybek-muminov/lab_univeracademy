@@ -5,15 +5,18 @@ import type { createCommonEntryPrototype } from './common-entry-prototype.ts';
 import './common-entry-prototype.css';
 
 type Runtime = ReturnType<typeof createCommonEntryPrototype>;
-export function CommonEntryPreview({ runtime }: { runtime: Runtime }) {
+export function CommonEntryPreview({ runtime, httpReview = false }: { runtime: Runtime; httpReview?: boolean }) {
   const state = useSyncExternalStore(runtime.subscribe, runtime.snapshot);
   const [email, setEmail] = useState('oquvchi@example.test');
   const [code, setCode] = useState('');
   useEffect(() => { if (state.step !== 'code') setCode(''); }, [state.step]);
   const reset = async () => { runtime.reset(); setCode(''); };
+  const logout = async () => { try { await runtime.logout(); } catch { /* runtime owns sanitized status */ } };
   if (state.step === 'ready' && state.flow) return <>
-    <p className="entry-demo-banner" role="status">Lokal namuna · Haqiqiy Clerk/Google yoki test xizmatiga ulanmagan.</p>
-    <StudentApp studentFlow={state.flow} mode="local_fixture" onEnter={reset} onLogout={reset} />
+    <p className="entry-demo-banner" role="status">{httpReview
+      ? 'Lokal review · Sun’iy provider va RAM HTTP · PROVISIONAL / NOT ACCEPTED'
+      : 'Lokal namuna · Haqiqiy Clerk/Google yoki test xizmatiga ulanmagan.'}</p>
+    <StudentApp studentFlow={state.flow} mode="local_fixture" onEnter={reset} onLogout={logout} />
   </>;
   const choosing = state.step === 'choose' || state.step === 'sending';
   return <main className="shell entry-shell">
