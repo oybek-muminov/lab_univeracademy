@@ -1,11 +1,80 @@
 {
   "openapi": "3.1.0",
   "info": {
-    "title": "UniverAcademy local candidate student slice — NOT ACCEPTED",
-    "version": "0.2.9-admin-assignment-policy-a-candidate.1",
-    "description": "PROVISIONAL, NOT ACCEPTED. New user decision freezes Rasch for a later phase and restores statistical bonus instead of the optional Rasch action. Exactly two active scoring mechanisms: ordinary and optional group statistical bonus. Unanswered counts as incorrect by explicit new user reply. Teacher own-group/subject optional action, Owner existing authority; no Admin activation. Question default45/editable, positive fractional points, initial individual off, ordinary display2, protected Asia/Tashkent admission, current-self-submitted population and frozen one-shot/recovery attribution retained from latest mechanics. API wire and numerical/storage proposals require Backend review; no implementation, migration or deployment performed. Local decision delta: transfer blocked only by a started current active attempt; revoke unstarted recovery eligibility on successful transfer and retain history. User selected policy A: Admin assignment requires existing manage_content and current group/subject scope; manage_roster is independent for roster mutations. No inherited acceptance."
+    "title": "UniverAcademy student Clerk exchange review — NOT ACCEPTED",
+    "version": "0.3.0-clerk-exchange-review.1",
+    "description": "PROVISIONAL / NOT ACCEPTED. Exchange-only derived review view. Other behavior retains the exact baseline; no inherited acceptance."
   },
   "paths": {
+    "/auth/clerk": {
+      "post": {
+        "operationId": "exchangeClerkSession",
+        "summary": "Exchange verified Clerk session for a student opaque application session",
+        "description": "LOCAL CANDIDATE / NOT ACCEPTED. Explicit Clerk v2 RS256 bearer profile, case-sensitive user_/sess_ IDs, authorized party and current provider liveness plus server identity mapping. Existing account is reused; absent mapping creates only an incomplete ungrouped student. Same email/name never links identities. New successful student login supersedes old app family; retired provider sessions cannot reclaim it. No staff entitlement or device policy is inferred. PROVISIONAL / NOT ACCEPTED. Active opaque families require F1 server provenance and an immutable provider binding; missing or unmarked active context fails closed with 503.",
+        "security": [
+          {
+            "ClerkSessionBearer": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ClerkExchangeRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "headers": {
+              "Cache-Control": {
+                "schema": {
+                  "const": "no-store",
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessSession"
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "401": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "403": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "404": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "409": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "422": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "429": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "500": {
+            "$ref": "#/components/responses/ErrorResponse"
+          },
+          "503": {
+            "$ref": "#/components/responses/ErrorResponse"
+          }
+        }
+      }
+    },
     "/auth/telegram": {
       "post": {
         "operationId": "telegramLogin",
@@ -1514,6 +1583,11 @@
           }
         ]
       },
+      "ClerkExchangeRequest": {
+        "type": "object",
+        "properties": {},
+        "additionalProperties": false
+      },
       "DecimalDisplay2": {
         "type": "string",
         "pattern": "^(0|[1-9][0-9]*)\\.[0-9]{2}(?![\\s\\S])",
@@ -1603,7 +1677,12 @@
                   "GRADING_POLICY_UNRESOLVED",
                   "INVALID_GRADING_CONFIG",
                   "STATISTICAL_BONUS_NOT_READY",
-                  "BONUS_EMPTY_COHORT"
+                  "BONUS_EMPTY_COHORT",
+                  "CLERK_TOKEN_INVALID",
+                  "CLERK_SESSION_REVOKED",
+                  "CLERK_IDENTITY_REVOKED",
+                  "CLERK_SESSION_SUPERSEDED",
+                  "CLERK_TOKEN_REPLAY"
                 ]
               },
               "message": {
@@ -2798,6 +2877,11 @@
       }
     },
     "securitySchemes": {
+      "ClerkSessionBearer": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "Clerk session JWT v2; RS256; sub=user_… sid=sess_…; no cookie fallback"
+      },
       "StudentSession": {
         "type": "http",
         "scheme": "bearer",
@@ -2806,9 +2890,8 @@
     }
   },
   "x-source": {
-    "full_openapi_sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
-    "status": "PROVISIONAL_TEST_ONLY_NO_PRODUCTION_ACCEPTANCE",
-    "checkpoint_commit": "dc2bf835c7eee35e2471b2c14764957131543cfd",
-    "schema_origin": "882f base plus confirmed Admin assignment policy A; transfer-active-only rule retained"
+    "full_openapi_sha256": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28",
+    "base_openapi_sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "status": "PROVISIONAL / NOT ACCEPTED"
   }
 }

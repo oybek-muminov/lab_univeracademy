@@ -1,0 +1,45 @@
+$ node --test tests/clerk-auth/review-listener.test.mjs tests/clerk-auth/family-context.test.mjs tests/enrollment/production-client.test.mjs
+✔ F1: revoked Clerk session with deleted family binding never authenticates /me or issues refresh proofs (100.522985ms)
+✔ unknown/missing/conflicting family origin fails closed even for a Telegram-associated person with legacy login enabled (16.773807ms)
+✔ explicit successful HMAC login stamps Telegram origin; missing marker/conflicting Clerk binding never inherits that origin (14.651715ms)
+✔ recognized revoked-family logout ACK cannot repair missing binding, extend retention, revive old proof or revoke the new family (14.562524ms)
+✔ refresh guard follows its body proof despite invalid/unrelated bearer; logout never falls back from invalid bearer (14.163272ms)
+✔ exchange-only review is pinned, all 206 schemas compile with strict formats, and existing staff/student payload contracts remain exact (8.950165ms)
+✔ existing production client exchange sends only bearer + empty JSON body, rejects stale pin and preserves safe errors without retries (5.01539ms)
+✔ TCP listener preserves existing account, save revision and deadline across single-device login, then submit/result/history and body-only logout (103.873594ms)
+✔ TCP exchange creates a fresh ungrouped student, ignores no identity from client and leaves optional linking/staff device policy blocked (30.2159ms)
+✖ TCP F1 regression: revoked provider denies401, deleted binding/unmarked origin denies503 without new proofs; no synthetic control routes or CORS bypass (23.956166ms)
+✔ production constructor requires explicit pinned HTTPS endpoint/transport and rejects local fixture destinations before I/O (1.815799ms)
+✔ production and local constructors share the same operation surface; production requests suppress cookies, redirects and cache (47.163161ms)
+✔ production constructor preserves wire paths, save CAS and explicit submit/start idempotency keys (3.267482ms)
+✔ production constructor keeps refresh coalescing and never retries a consumed/uncertain proof or failed command (3.313191ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1280.899007
+
+✖ failing tests:
+
+test at tests/clerk-auth/review-listener.test.mjs:115:1
+✖ TCP F1 regression: revoked provider denies401, deleted binding/unmarked origin denies503 without new proofs; no synthetic control routes or CORS bypass (23.956166ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 404
+  
+      at TestContext.<anonymous> (file:///workspace/qa-clerk-http-review-20261107/workspaces/univeracademy/tests/clerk-auth/review-listener.test.mjs:137:10)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 404,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+exit_code=1

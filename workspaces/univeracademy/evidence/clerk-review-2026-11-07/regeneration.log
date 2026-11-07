@@ -1,0 +1,10 @@
+$ python3 -B tools/generate-clerk-review.py
+{"status": "PROVISIONAL / NOT ACCEPTED", "full_sha256": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28", "student_slice_sha256": "5bb3f266acd8f699ff10df8ef0522852b5d7657af0df349f95d7ac52440020cb", "paths": 60, "schemas": 206, "student_paths": 13, "student_schemas": 48}
+
+exit_code=0
+$ node node_modules/openapi-typescript/bin/cli.js packages/api-client/student-openapi.json -o packages/api-client/student-types.d.ts
+✨ openapi-typescript 7.13.0
+🚀 packages/api-client/student-openapi.json → packages/api-client/student-types.d.ts [106.1ms]
+
+exit_code=0
+REGENERATION_BYTE_IDENTICAL: {"contracts/clerk-review.openapi.json": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28", "packages/api-client/student-openapi.json": "5bb3f266acd8f699ff10df8ef0522852b5d7657af0df349f95d7ac52440020cb", "packages/api-client/student-client.ts": "61cf1d2d0681f3bf25a610c73eff7470159bca45679c5def42101e9a58017494", "packages/api-client/student-types.d.ts": "bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc"}

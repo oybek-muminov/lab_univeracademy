@@ -1,0 +1,15 @@
+$ npm run typecheck
+
+> univeracademy-student-points-local-candidate@0.0.0-local-candidate typecheck
+> tsc --noEmit --allowImportingTsExtensions --target es2023 --module esnext --moduleResolution bundler --lib es2023,dom,dom.iterable --strict supabase/functions/univeracademy-api/*.ts packages/api-client/student-client.ts supabase/functions/univeracademy-api/storage/*.ts
+
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.2
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.2
+npm notice To update run: npm install -g npm@12.2.2
+npm notice
+
+exit_code=0
+$ node node_modules/typescript/bin/tsc --noEmit --allowImportingTsExtensions --target es2023 --module esnext --moduleResolution bundler --lib es2023,dom,dom.iterable --strict packages/api-client/student-client.ts tests/clerk-auth/review-types.test.ts
+
+exit_code=0

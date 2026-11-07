@@ -1,0 +1,168 @@
+{
+  "status": "PROVISIONAL / NOT ACCEPTED",
+  "base_commit": "6329367b7346484f58e458f1b62396cfd764e6ec",
+  "base_backend_manifest_sha256": "d7f8e4f94cd0474c37a635e7743616090f30ec901ebc70c7dc9d956f8cc830d9",
+  "source_files": 12,
+  "modified_existing": 5,
+  "new_source_files": 7,
+  "files": [
+    {
+      "path": "contracts/clerk-review.openapi.json",
+      "bytes": 433064,
+      "sha256": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "packages/api-client/student-openapi.json",
+      "bytes": 86307,
+      "sha256": "5bb3f266acd8f699ff10df8ef0522852b5d7657af0df349f95d7ac52440020cb",
+      "change": "modify",
+      "before_sha256": "af533b41ccb5078b7c5c566209eefde26738252d37d77146afba47224ba1db89"
+    },
+    {
+      "path": "packages/api-client/student-client.ts",
+      "bytes": 8952,
+      "sha256": "61cf1d2d0681f3bf25a610c73eff7470159bca45679c5def42101e9a58017494",
+      "change": "modify",
+      "before_sha256": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae"
+    },
+    {
+      "path": "packages/api-client/student-types.d.ts",
+      "bytes": 48905,
+      "sha256": "bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc",
+      "change": "modify",
+      "before_sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+    },
+    {
+      "path": "runtime/clerk-review-server.mjs",
+      "bytes": 2390,
+      "sha256": "04941545a0f98e4fb0f52c490af3129c7fbbe44720b7ee6b199dc6dfed24db16",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/backend/validator/view-builder.cjs",
+      "bytes": 10788,
+      "sha256": "0c12d242980b3899a4ded8bb8072ad8cf512170098ee8dd6e639198cd9833303",
+      "change": "modify",
+      "before_sha256": "394ca91c0de19c3f29df23152d5c2269f7adfecb69de7afa5a9d0d6e1c290685"
+    },
+    {
+      "path": "tests/clerk-auth/fixture.mjs",
+      "bytes": 5683,
+      "sha256": "0b63ea0f565df816675bf636f329db3d41ec94f1d39c8ba0284aed8a5735c797",
+      "change": "modify",
+      "before_sha256": "f80662d9193ddebf03c600638f8a2ab95ec96541c1522a5a3ebcb3cede3eb108"
+    },
+    {
+      "path": "tests/clerk-auth/review-listener.test.mjs",
+      "bytes": 11315,
+      "sha256": "a3afc3af48b87bf6a7859b21ca6abea92ba0ad4b77d9b19f1128d34e537d1e57",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "tests/clerk-auth/review-types.test.ts",
+      "bytes": 689,
+      "sha256": "81fffa224c5f3b27a0d56ee5c3e25f91475a0cc14a0c28a13fb594b40bedd534",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "tools/generate-clerk-review.py",
+      "bytes": 5560,
+      "sha256": "3649c8fd251aa8b40ae0e9042a2bfac56e26c945b247d6a52546b927fb253f5e",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "docs/api/clerk-review-handoff-2026-11-07.md",
+      "bytes": 8625,
+      "sha256": "32380352894e059cdb294de0adf3d43d411ec323ffd81ffc1b1b1aa673476016",
+      "change": "add",
+      "before_sha256": null
+    },
+    {
+      "path": "docs/api/identity-link-return-proposal-2026-11-07.md",
+      "bytes": 11986,
+      "sha256": "b9fd5708d9271c898cdf6ce0c606b45638083c7bc8cbae1489d162f111438b97",
+      "change": "add",
+      "before_sha256": null
+    }
+  ],
+  "unchanged_protected": [
+    {
+      "path": "contracts/review-only.openapi.json",
+      "sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4"
+    },
+    {
+      "path": "contracts/clerk-auth.proposal.patch.json",
+      "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "sha256": "570dd8fe5b952c9b0ee58e67cefdc5a6713b21dceea1c6857e56a76801816029"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-state.ts",
+      "sha256": "208f220a3b72a572a37ab0ffba6763193b67beb3732aebe521f2295039333f72"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "sha256": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-http.ts",
+      "sha256": "5e1e68edcbac4e1a601bbfbd2c3cf011bc827037c6c4d0e35ac096d23c932e47"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-http.ts",
+      "sha256": "5b8960fb74ad536416c64a2a567b7c1455d959d7a8e30c9009efb4464db81ac8"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1c8f0f50a9052a773496de0aef29817f9fec17a7dd33384353e3c33da303103c"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503"
+    },
+    {
+      "path": "tests/backend/validator/tooling/package-lock.json",
+      "sha256": "bf49238f558d7a6f85562a52998e31f105f9e69e66892f785da9ab8cfca9bdf7"
+    },
+    {
+      "path": "api/index.mjs",
+      "sha256": "e8c6699dbfac16771857c2b684b1198ac53950cf71469149200b619fb9412a4b"
+    },
+    {
+      "path": "runtime/vercel-node.mjs",
+      "sha256": "eb95ef50e999b44403f20fa2bdd51923443f1ef6038f60c7588bda1820537171"
+    },
+    {
+      "path": "BACKEND-CURRENT-SHA256SUMS",
+      "sha256": "d7f8e4f94cd0474c37a635e7743616090f30ec901ebc70c7dc9d956f8cc830d9"
+    }
+  ],
+  "ui_files_unchanged": 82,
+  "dependencies": {
+    "node": "24.22.1",
+    "jose": "6.2.15",
+    "openapi-typescript": "7.13.0",
+    "typescript": "5.9.3",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1"
+  },
+  "tests": {
+    "new_and_affected": "23/23 PASS",
+    "strict_review_components_compiled": 206,
+    "typecheck_exit": 0,
+    "compile_only_types_exit": 0,
+    "regeneration": "4/4 byte-identical",
+    "tcp_listener_start_stop": "PASS"
+  },
+  "real_provider_database_deploy": "NOT_RUN",
+  "protocol_proposal_tests": "NOT_RUN",
+  "upload": "NOT_PERFORMED"
+}

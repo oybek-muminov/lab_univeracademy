@@ -1,4 +1,52 @@
-# Current Backend publication — F1 family-context safety fix
+# Current Backend publication — Clerk exchange review and local HTTP candidate
+
+PROVISIONAL / NOT ACCEPTED. Approved laboratory upload, based on current branch
+HEAD d1bdd0e6f43ae465eef53b3e0ac7b60520eeeb68. All 83 Mini App files and its F1
+Backend guard repin are preserved. This does not enable production/provider auth.
+
+The existing student client now exposes exchangeClerkSession(ClerkJWT, {}) using
+POST /api/v1/auth/clerk, bearer header and strict empty JSON. The response retains
+SuccessSession and opaque app proofs; no second client or provider SDK was added.
+The review-only full schema is contracts/clerk-review.openapi.json, version
+0.3.0-clerk-exchange-review.1, SHA256
+f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28.
+It adds only the student exchange/security/request and five implemented student
+error codes; all old paths/staff security remain exact. The original OpenAPI,
+F1 runtime/verifiers, production entry points and dependency locks are unchanged.
+
+The ephemeral-RSA/current-liveness fixture uses the F1 handler via the existing
+127.0.0.1 Node transport. No HTTP fixture proof/control routes, raw token logs,
+real provider credentials, cache/build or historical source archives are added.
+
+```sh
+npm ci --ignore-scripts
+npm run setup:validator
+node runtime/clerk-review-server.mjs 8797 http://127.0.0.1:5198
+```
+
+Actor arguments, the in-memory proof helper, client signature, schema/client/types
+hashes, exact test commands and limits are in
+`docs/api/clerk-review-handoff-2026-11-07.md`. Author validation: 23/23 PASS,
+206 review components compile with strict formats, both typecheck commands exit0,
+4/4 generated artifacts reproduce byte-for-byte, CLI/TCP start/stop PASS.
+Exact tested source/log bytes are preserved; old local-preparation metadata says
+unuploaded and remains frozen provenance. The current publication intake is
+`docs/api/clerk-review-publication-verification-2026-11-07.json`.
+
+`docs/api/identity-link-return-proposal-2026-11-07.md` is text only: two independent
+account proofs, one-use state, PKCE/bound external-browser return, conflict/replay
+checks and profile/history preservation. No email-text auto-merge. Real linking,
+upstream Clerk email-association review, fresh reauth, TTL/retention and staff
+device policy remain open. Linking stays409; staff without reviewed device gate
+stays503; old unmarked active families stay503, without implicit backfill.
+Real Clerk/Google/browser OAuth/DB/RLS/deploy and independent QA remain NOT_RUN.
+
+BACKEND-CURRENT-SHA256SUMS covers this Backend publication. Mini App's current guard
+still pins the prior F1 Backend117 snapshot and needs UI-owner repinning for this
+candidate before combined QA; it is neither changed nor bypassed here. No main
+project, real database/provider, migration, credential/OAuth, domain or deploy change.
+
+## Prior Backend6329367 publication — historical F1 family-context fix
 
 Based on branch HEADd94cf2feb5d6050bae04d80d530fc02201caae36. This publication
 contains the approved local F1 fix and regression evidence, preserving all current

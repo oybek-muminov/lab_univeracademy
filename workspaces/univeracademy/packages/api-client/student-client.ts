@@ -2,8 +2,9 @@ import type { components } from "./student-types.d.ts";
 
 type Schema = components["schemas"];
 export type StudentSchema = Schema;
-export const STUDENT_CONTRACT_SHA256 = "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4";
-export const STUDENT_CONTRACT_VERSION = "0.2.9-admin-assignment-policy-a-candidate.1";
+export const STUDENT_CONTRACT_SHA256 = "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28";
+export const STUDENT_CONTRACT_VERSION = "0.3.0-clerk-exchange-review.1";
+export const STUDENT_CONTRACT_REVIEW_STATUS = "PROVISIONAL / NOT ACCEPTED";
 
 export class StudentClientProtocolError extends Error {
   constructor(code: string) { super(code); this.name = "StudentClientProtocolError"; }
@@ -108,6 +109,10 @@ function buildStudentClient(root: string, transport: (request: Request) => Promi
   const pendingRefresh = new Map<string, Promise<Schema["SuccessSession"]>>();
   const attemptedRefresh = new Set<string>();
   return {
+    // Review candidate only. Clerk JWT is exchanged once; opaque app proofs are
+    // used for me/exams/refresh. Never persist this JWT or put it in a URL.
+    exchangeClerkSession: (clerkSessionToken: string, input: Schema["ClerkExchangeRequest"] = {}) =>
+      send<Schema["SuccessSession"]>("POST", "/auth/clerk", { accessToken: clerkSessionToken, body: input }),
     telegramLogin: (input: Schema["TelegramLogin"]) =>
       send<Schema["SuccessSession"]>("POST", "/auth/telegram", { body: input }),
     refresh(input: Schema["Refresh"]): Promise<Schema["SuccessSession"]> {

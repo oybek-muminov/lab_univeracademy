@@ -9,13 +9,13 @@ import {createLocalStudentClient,STUDENT_CONTRACT_SHA256} from "../../packages/a
 // Contract harness: one global queue and whole-state clone, not PostgreSQL/RLS.
 export class ClerkMemory {
   time=clock;events=[];beforeWork;failCommit;tail=Promise.resolve();
-  constructor(state){this.state=state;}
+  constructor(state,liveClock){this.state=state;this.liveClock=liveClock;this.time=liveClock?liveClock():clock;}
   async transaction(work){
     const prior=this.tail;let release;this.tail=new Promise(r=>{release=r;});await prior;
     this.events.push("lock");
     try{
       if(this.beforeWork){const hook=this.beforeWork;this.beforeWork=null;await hook();}
-      const state=structuredClone(this.state),now=this.time;
+      const state=structuredClone(this.state),now=this.liveClock?this.liveClock():this.time;this.time=now;
       const result=await work({state,now:()=>now});
       const failure=this.failCommit;this.failCommit=null;
       if(failure==="before")throw new ApiFault("SERVICE_UNAVAILABLE",503);
@@ -29,12 +29,12 @@ const keys=generateKeyPair("RS256",{modulusLength:2048});
 export const issuer="https://clerk.example.com",uiOrigin="https://student.example.com";
 export const users={student:"user_StudentCaseA1",other:"user_StudentCaseB2",admin:"user_AdminCaseC3",teacher:"user_TeacherCaseD4"};
 export const sids={first:"sess_StudentFirstA1",second:"sess_StudentSecondB2",admin:"sess_AdminCaseC3",teacher:"sess_TeacherCaseD4"};
-export async function clerkFixture({fresh=false,staffGate=false,legacyTelegram=false}={}){
+export async function clerkFixture({fresh=false,staffGate=false,legacyTelegram=false,now}={}){
   const domain=initialStaffState();
   if(fresh){domain.student.people={};domain.student.grants={};domain.student.families={};domain.student.access={};domain.student.refresh={};domain.student.consumedInitData={};domain.memberships={};domain.staff={};}
-  const store=new ClerkMemory({domain,identities:{},familyBindings:{},studentSessions:{},consumedTokens:{}});
+  const store=new ClerkMemory({domain,identities:{},familyBindings:{},studentSessions:{},consumedTokens:{}},now);
   const live=new Map(),pair=await keys,jwk=await exportJWK(pair.publicKey);jwk.kid="clerk-synthetic-rsa";
-  const verifier={issuer,authorizedParties:[uiOrigin],audience:{kind:"clerk_default_no_audience"},trustedKeys:createLocalJWKSet({keys:[jwk]}),now:()=>store.time};
+  const verifier={issuer,authorizedParties:[uiOrigin],audience:{kind:"clerk_default_no_audience"},trustedKeys:createLocalJWKSet({keys:[jwk]}),now:()=>now?now():store.time};
   const bind=(userId,personId)=>{store.state.identities[clerkIdentityKey({issuer,userId})]={personId,enabled:true};};
   const activate=(userId,sessionId)=>{live.set(sessionId,{issuer,userId,sessionId,status:"active",accountEnabled:true,expiresAt:store.time+86400000});};
   if(!fresh){
@@ -63,7 +63,7 @@ export async function clerkFixture({fresh=false,staffGate=false,legacyTelegram=f
   const client=createLocalStudentClient({mode:"local_fixture",contractSha256:STUDENT_CONTRACT_SHA256,baseUrl:"https://local.invalid/api/v1",transport:request=>handler(request)});
   const snapshot=()=>structuredClone(store.state);
   const resetHandler=()=>{handler=createClerkCandidateHandler(deps);};
-  return{store,live,verifier,deps,bind,activate,seen,sign,call,exchange,client,snapshot,resetHandler,pair,
+  return{store,live,verifier,deps,bind,activate,seen,sign,call,exchange,client,snapshot,resetHandler,pair,handler:request=>handler(request),
     person:()=>store.state.identities[clerkIdentityKey({issuer,userId:users.student})]?.personId,
     session:key=>store.state.studentSessions[clerkSessionKey({issuer,userId:users.student,sessionId:key})]};
 }

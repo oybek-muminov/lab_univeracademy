@@ -1,0 +1,34 @@
+$ node --test tests/clerk-auth/review-listener.test.mjs tests/clerk-auth/family-context.test.mjs tests/clerk-auth/http.test.mjs tests/enrollment/production-client.test.mjs
+✔ F1: revoked Clerk session with deleted family binding never authenticates /me or issues refresh proofs (155.241029ms)
+✔ unknown/missing/conflicting family origin fails closed even for a Telegram-associated person with legacy login enabled (24.125049ms)
+✔ explicit successful HMAC login stamps Telegram origin; missing marker/conflicting Clerk binding never inherits that origin (22.906553ms)
+✔ recognized revoked-family logout ACK cannot repair missing binding, extend retention, revive old proof or revoke the new family (47.548564ms)
+✔ refresh guard follows its body proof despite invalid/unrelated bearer; logout never falls back from invalid bearer (28.164768ms)
+✔ fresh Clerk account is a new UUID student with no Telegram/group/grant/staff rights; JWT/email/name never auto-merges (227.188605ms)
+✔ existing mapping preserves the same account, answers/revisions/deadline; new Clerk session supersedes only the old student family (29.041095ms)
+✔ invalid/expired/disabled/revoked login does not consume proof, create account or disturb an active family (32.379609ms)
+✔ JWT exchange replay is one-use; concurrent first logins serialize to one canonical account and one active app family (17.328684ms)
+✔ provider/session binding and current liveness guard opaque access and refresh; outages never grant offline access (19.856811ms)
+✔ unknown exchange COMMIT is not ACKed; a fresh JWT for the still-current session recovers without a second account (10.621255ms)
+✔ Telegram link remains authenticated but blocked; optional existing Telegram association never auto-links or lets old Clerk session reclaim (34.685663ms)
+✔ staff device policy has no default; student/claim/cached owner authority cannot become staff (9.208909ms)
+✔ explicit fixture-only staff gate reuses current scope/capabilities and immutable receipts; revocation defeats old JWT replay (42.300233ms)
+✔ exchange-only review is pinned, all 206 schemas compile with strict formats, and existing staff/student payload contracts remain exact (13.622901ms)
+✔ existing production client exchange sends only bearer + empty JSON body, rejects stale pin and preserves safe errors without retries (7.492532ms)
+✔ TCP listener preserves existing account, save revision and deadline across single-device login, then submit/result/history and body-only logout (155.71648ms)
+✔ TCP exchange creates a fresh ungrouped student, ignores no identity from client and leaves optional linking/staff device policy blocked (40.342661ms)
+✔ TCP F1 regression: revoked provider denies401, deleted binding/unmarked origin denies503 without new proofs; no synthetic control routes or CORS bypass (40.310347ms)
+✔ production constructor requires explicit pinned HTTPS endpoint/transport and rejects local fixture destinations before I/O (2.514812ms)
+✔ production and local constructors share the same operation surface; production requests suppress cookies, redirects and cache (82.647864ms)
+✔ production constructor preserves wire paths, save CAS and explicit submit/start idempotency keys (3.709081ms)
+✔ production constructor keeps refresh coalescing and never retries a consumed/uncertain proof or failed command (3.513515ms)
+ℹ tests 23
+ℹ suites 0
+ℹ pass 23
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2295.243768
+
+exit_code=0

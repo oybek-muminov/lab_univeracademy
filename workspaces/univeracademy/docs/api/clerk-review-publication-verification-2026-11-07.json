@@ -1,0 +1,116 @@
+{
+  "status": "PUBLIC_LAB_QA_CANDIDATE_PROVISIONAL_NOT_ACCEPTED",
+  "target_repository": "oybek-muminov/lab_univeracademy",
+  "target_branch": "qa/current-flow-20261106",
+  "publication_base_commit": "d1bdd0e6f43ae465eef53b3e0ac7b60520eeeb68",
+  "author_candidate_base_commit": "6329367b7346484f58e458f1b62396cfd764e6ec",
+  "frozen_source_manifest_sha256": "d4a0323ce17b700c6ab2b07b9f50830201bd0d8dbfc181eea44ef52e490c9dcc",
+  "source_files": 12,
+  "copied_evidence_files": 8,
+  "source_and_logs_byte_identical": true,
+  "author_checks": {
+    "new_and_affected": "23/23 PASS",
+    "strict_review_components_compiled": 206,
+    "typecheck_exit": 0,
+    "compile_only_types_exit": 0,
+    "regeneration": "4/4 byte-identical",
+    "tcp_listener_start_stop": "PASS"
+  },
+  "runtime_protected_unchanged": [
+    {
+      "path": "contracts/review-only.openapi.json",
+      "sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4"
+    },
+    {
+      "path": "contracts/clerk-auth.proposal.patch.json",
+      "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "sha256": "570dd8fe5b952c9b0ee58e67cefdc5a6713b21dceea1c6857e56a76801816029"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-state.ts",
+      "sha256": "208f220a3b72a572a37ab0ffba6763193b67beb3732aebe521f2295039333f72"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "sha256": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-http.ts",
+      "sha256": "5e1e68edcbac4e1a601bbfbd2c3cf011bc827037c6c4d0e35ac096d23c932e47"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-http.ts",
+      "sha256": "5b8960fb74ad536416c64a2a567b7c1455d959d7a8e30c9009efb4464db81ac8"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1c8f0f50a9052a773496de0aef29817f9fec17a7dd33384353e3c33da303103c"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503"
+    },
+    {
+      "path": "tests/backend/validator/tooling/package-lock.json",
+      "sha256": "bf49238f558d7a6f85562a52998e31f105f9e69e66892f785da9ab8cfca9bdf7"
+    },
+    {
+      "path": "api/index.mjs",
+      "sha256": "e8c6699dbfac16771857c2b684b1198ac53950cf71469149200b619fb9412a4b"
+    },
+    {
+      "path": "runtime/vercel-node.mjs",
+      "sha256": "eb95ef50e999b44403f20fa2bdd51923443f1ef6038f60c7588bda1820537171"
+    }
+  ],
+  "mini_app": {
+    "files_preserved": 83,
+    "tree": "ef841c6fdc0494bea5182fa90856d2b3a1b8d1a1",
+    "guard_pins": "prior F1 Backend117; new review candidate needs explicit UI-owner repin",
+    "guard_changed_or_bypassed": false,
+    "observed_guard": {
+      "exit_code": 1,
+      "diagnostic": "BACKEND_TARGET_SIZE_MISMATCH: BACKEND-CURRENT-SHA256SUMS",
+      "interpretation": "Guard intentionally blocks changed Backend until UI owner repins; no bypass."
+    }
+  },
+  "current_backend_manifest": "BACKEND-CURRENT-SHA256SUMS",
+  "metadata_note": "Frozen preparation docs/report preserve original local/unuploaded status; this report describes authorized lab publication. Source was not retested redundantly during upload.",
+  "not_accepted_or_enabled": [
+    "Original OpenAPI replacement",
+    "Six older staff security edits",
+    "Link/merge/return protocol",
+    "Clerk production bootstrap",
+    "Staff device policy",
+    "Durable Clerk identity/family metadata",
+    "Implicit migration of unmarked sessions"
+  ],
+  "not_run": [
+    "Independent QA",
+    "Full OpenAPI validation",
+    "Real Clerk/Google",
+    "Browser OAuth return",
+    "Postgres/RLS",
+    "Deploy/capacity"
+  ],
+  "scope_limits": {
+    "main_project": false,
+    "real_db": false,
+    "provider": false,
+    "migration": false,
+    "deploy": false,
+    "force_push": false
+  },
+  "public_privacy_scan": {
+    "files": 23,
+    "matches": [],
+    "data": "Synthetic fixtures only; no real profile or credential added."
+  },
+  "whitespace_check": {
+    "source_and_metadata": "PASS",
+    "frozen_raw_logs": "Four whitespace-only assertion separator lines retained byte-identically in the two initial failure logs; no source whitespace fault."
+  }
+}

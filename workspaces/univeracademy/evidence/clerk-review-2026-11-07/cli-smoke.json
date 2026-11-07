@@ -1,0 +1,15 @@
+{
+  "entrypoint": "node runtime/clerk-review-server.mjs 0 http://127.0.0.1:5198",
+  "status": "PASS",
+  "startup": {
+    "status": "PROVISIONAL / NOT ACCEPTED",
+    "baseUrl": "http://127.0.0.1:45375/api/v1",
+    "syntheticClerk": true,
+    "realProvider": false,
+    "durableDB": false,
+    "proofRoutes": false
+  },
+  "anonymous_me": 401,
+  "graceful_stop_exit": 0,
+  "proofs_logged": false
+}

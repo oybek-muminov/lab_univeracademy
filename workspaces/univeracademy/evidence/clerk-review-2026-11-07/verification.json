@@ -1,0 +1,73 @@
+{
+  "status": "LOCAL_PASS_NOT_INDEPENDENT_QA",
+  "base_commit": "6329367b7346484f58e458f1b62396cfd764e6ec",
+  "manifest_sha256": "d4a0323ce17b700c6ab2b07b9f50830201bd0d8dbfc181eea44ef52e490c9dcc",
+  "source_hashes_frozen": 12,
+  "secret_scan": {
+    "files": 18,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "aws_access",
+      "telegram_token",
+      "jwt_literal",
+      "credential_url",
+      "provider_key"
+    ],
+    "matches": [],
+    "data": "Existing synthetic fixtures only; no real profile, key or provider credential added."
+  },
+  "protected_files_unchanged": 13,
+  "mini_app_files_unchanged": 82,
+  "logs": [
+    {
+      "path": "evidence/clerk-review-2026-11-07/cli-smoke.json",
+      "bytes": 395,
+      "sha256": "7c7ba48a66edb9c51337505a130d74d1119eeeb0b830e6c697126b979d96cfb1"
+    },
+    {
+      "path": "evidence/clerk-review-2026-11-07/initial-error-enum-mismatch.log",
+      "bytes": 5076,
+      "sha256": "7e692ce4d218aad70287ae271cb7e3b341d69d8d8f407121445fa7eb086e1f6d"
+    },
+    {
+      "path": "evidence/clerk-review-2026-11-07/regeneration.log",
+      "bytes": 1089,
+      "sha256": "909236ad2c412741d22bfb50eb281d226c960c7d4549804efde3df69386df08c"
+    },
+    {
+      "path": "evidence/clerk-review-2026-11-07/tests.log",
+      "bytes": 3515,
+      "sha256": "ca4ef3ef579f1c6b4e2463393ec3a9a03502c250ba883c28e4d88c351e7480dd"
+    },
+    {
+      "path": "evidence/clerk-review-2026-11-07/transport-auth-order-expectation.log",
+      "bytes": 3135,
+      "sha256": "99024b79894893dc3f387d8679883771849c480090289e70c7419961754b94a6"
+    },
+    {
+      "path": "evidence/clerk-review-2026-11-07/typecheck.log",
+      "bytes": 858,
+      "sha256": "d2fbe9e2039dddfd15f59e2f771551898703dc2e56430268fa7297497e46f8bc"
+    }
+  ],
+  "current_contract_sha256": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28",
+  "old_session_limit": "Unmarked active families deny503. No implicit backfill.",
+  "pending": [
+    "Independent QA",
+    "Full OpenAPI validation",
+    "Real Clerk liveness/claim configuration and durable store",
+    "Nullable Telegram SQL readers",
+    "Two-proof association / external-return protocol implementation and TTL/retention review",
+    "Clerk upstream email-association behavior review",
+    "Staff device policy",
+    "Mini App candidate pin/integration and browser OAuth test"
+  ],
+  "outside_actions": {
+    "upload": false,
+    "real_provider": false,
+    "real_database": false,
+    "migration": false,
+    "deploy": false
+  }
+}

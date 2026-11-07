@@ -1,0 +1,47 @@
+$ node --test tests/clerk-auth/review-listener.test.mjs tests/clerk-auth/family-context.test.mjs tests/enrollment/production-client.test.mjs
+✔ F1: revoked Clerk session with deleted family binding never authenticates /me or issues refresh proofs (94.435897ms)
+✔ unknown/missing/conflicting family origin fails closed even for a Telegram-associated person with legacy login enabled (30.127172ms)
+✔ explicit successful HMAC login stamps Telegram origin; missing marker/conflicting Clerk binding never inherits that origin (20.753765ms)
+✔ recognized revoked-family logout ACK cannot repair missing binding, extend retention, revive old proof or revoke the new family (17.357182ms)
+✔ refresh guard follows its body proof despite invalid/unrelated bearer; logout never falls back from invalid bearer (18.526031ms)
+✔ exchange-only review is pinned, all 206 schemas compile with strict formats, and existing staff/student payload contracts remain exact (7.193646ms)
+✔ existing production client exchange sends only bearer + empty JSON body, rejects stale pin and preserves safe errors without retries (5.615465ms)
+✔ TCP listener preserves existing account, save revision and deadline across single-device login, then submit/result/history and body-only logout (134.311878ms)
+✔ TCP exchange creates a fresh ungrouped student, ignores no identity from client and leaves optional linking/staff device policy blocked (40.572586ms)
+✖ TCP F1 regression: revoked provider denies401, deleted binding/unmarked origin denies503 without new proofs; no synthetic control routes or CORS bypass (13.047489ms)
+✔ production constructor requires explicit pinned HTTPS endpoint/transport and rejects local fixture destinations before I/O (2.188738ms)
+✔ production and local constructors share the same operation surface; production requests suppress cookies, redirects and cache (89.077653ms)
+✔ production constructor preserves wire paths, save CAS and explicit submit/start idempotency keys (3.829961ms)
+✔ production constructor keeps refresh coalescing and never retries a consumed/uncertain proof or failed command (6.943884ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 13
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2198.195886
+
+✖ failing tests:
+
+test at tests/clerk-auth/review-listener.test.mjs:110:1
+✖ TCP F1 regression: revoked provider denies401, deleted binding/unmarked origin denies503 without new proofs; no synthetic control routes or CORS bypass (13.047489ms)
+  AssertionError [ERR_ASSERTION]: Error: [{"instancePath":"/error/code","schemaPath":"#/properties/error/properties/code/enum","keyword":"enum","params":{"allowedValues":["INIT_DATA_INVALID","INIT_DATA_EXPIRED","INIT_DATA_REPLAY","REFRESH_INVALID","REFRESH_EXPIRED","REFRESH_REUSED","SESSION_REVOKED","ACCOUNT_DISABLED","APP_SESSION_EXPIRED","ACCESS_SUPERSEDED","STAFF_NOT_APPROVED","STAFF_TOKEN_INVALID","FORBIDDEN","NOT_FOUND","MALFORMED_REQUEST","INVALID_CURSOR","VALIDATION_ERROR","INVALID_TIMEZONE","RATE_LIMITED","INTERNAL_ERROR","SERVICE_UNAVAILABLE","IDEMPOTENCY_CONFLICT","REVISION_CONFLICT","RESOURCE_REVISION_CONFLICT","STATE_REVISION_CONFLICT","REQUEST_TARGET_CHANGED","REQUEST_PRECONDITION_MISMATCH","REQUEST_TERMINAL","ALREADY_APPROVED_TEACHER","ADMISSION_CLOSED","RECOVERY_ADMISSION_CLOSED","NORMAL_ATTEMPT_USED","ACTIVE_EXAM_OR_RECOVERY","PROFILE_INCOMPLETE","ATTEMPT_NOT_COMPLETED","ATTEMPT_TERMINAL","ATTEMPT_EXPIRED","ATTEMPT_SUPERSEDED","EXAM_ACCESS_REVOKED","INVALID_OPTION","VERSION_FROZEN","ASSET_NOT_VALIDATED","ASSET_PURPOSE_MISMATCH","UPLOAD_REJECTED","REVIEW_BARRIER_INCOMPLETE","REVIEW_NOT_OPEN","REVIEW_CLOSED","REVIEW_EXPOSURE_OWNER_ACK_REQUIRED","CAPABILITY_REQUIRED","SUBJECT_NOT_APPROVED","LOGOUT_PROOF_REQUIRED","LOGOUT_PROOF_MISMATCH","MALFORMED_JSON","UPLOAD_EXPIRED","UPLOAD_NOT_READY","UPLOAD_HASH_MISMATCH","ASSET_SCOPE_INVALID","IDENTIFIER_MISMATCH","INVALID_TIME_WINDOW","INVALID_REVIEW_WINDOW","RESPONSE_INVARIANT_FAILED","ADMIN_TRANSFER_REQUIRED","ACTIVE_GROUP_EXISTS","MEMBERSHIP_STATE_CONFLICT","MEMBERSHIP_CHANGED","GRADING_POLICY_UNRESOLVED","INVALID_GRADING_CONFIG","STATISTICAL_BONUS_NOT_READY","BONUS_EMPTY_COHORT"]},"message":"must be equal to one of the allowed values"}]
+  
+  false !== true
+  
+      at wire (file:///workspace/qa-clerk-http-review-20261107/workspaces/univeracademy/tests/clerk-auth/review-listener.test.mjs:19:10)
+      at deny (file:///workspace/qa-clerk-http-review-20261107/workspaces/univeracademy/tests/clerk-auth/review-listener.test.mjs:122:21)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async TestContext.<anonymous> (file:///workspace/qa-clerk-http-review-20261107/workspaces/univeracademy/tests/clerk-auth/review-listener.test.mjs:126:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+exit_code=1
