@@ -1,0 +1,81 @@
+{
+  "status": "PUBLIC_LAB_QA_CANDIDATE_PROVISIONAL_NOT_ACCEPTED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "qa/current-flow-20261106",
+  "publication_base_commit": "829b2585fc5bfd04feea34d028db8dd76dea27ce",
+  "author_candidate_base_commit": "b9efa5978498d9150db43531da89820e80dc51ee",
+  "source_manifest_sha256": "3c4074c2956a85f325b114ce9221841a865e27e83106bc737a07bf037506c0a3",
+  "verification_sha256": "536388b8c1289bbee6fb03a3bcf8641aed9e58762ffe652ebffbb24e0bc4ebb1",
+  "source_files": 11,
+  "evidence_files": 8,
+  "exact_frozen_bytes_verified": true,
+  "author_checks": {
+    "tests": "41/41 PASS",
+    "timing_groups": 10,
+    "staff_parallel_groups": 3,
+    "typecheck_exit": 0,
+    "pre_fix_timing_red": "7 test groups;2PASS/5FAIL before fix and staff decision; six synthetic proofs redacted",
+    "provider_network": "substituted responses only",
+    "real_database_provider_deploy": "NOT_RUN",
+    "D1_D2_callback_protocol_tests": "NOT_RUN"
+  },
+  "runtime_hashes": {
+    "supabase/functions/univeracademy-api/clerk-http.ts": "3d2ebe945d2a8313f88034b588310abbaa8c5306a81843312bc1be5fe216e2f5",
+    "supabase/functions/univeracademy-api/clerk-provider.ts": "347d026a27549082921898068d2e49af11480d1e98ede1ae125d52f5c91180cf"
+  },
+  "approved_policy": {
+    "student": "new successful login replaces old student family; failed login preserves it",
+    "teacher_admin_owner": "parallel sessions allowed; no student fence/global logout; current authority checks retained",
+    "linking": "blocked409, invalid/expired proof401; no association mutation"
+  },
+  "mini_app_preservation": {
+    "source_commit": "829b2585fc5bfd04feea34d028db8dd76dea27ce",
+    "app_files": 107,
+    "app_tree": "5e54366532571268a1bbaee5708945a62f7bcde9",
+    "evidence_files": 15,
+    "evidence_prefix": "evidence/mini-app-clerk-sdk-2026-11-07/",
+    "guard_modified_or_bypassed": false,
+    "guard_pins": "b9efa597 Backend133; explicit UI-owner repin required",
+    "observed_guard": {
+      "exit_code": 1,
+      "diagnostic": "BACKEND_TARGET_SIZE_MISMATCH: BACKEND-CURRENT-SHA256SUMS",
+      "meaning": "Expected checkpoint mismatch; UI owner must repin before combined QA."
+    }
+  },
+  "frozen_metadata_note": "Original local/unuploaded status and prior logs remain preparation provenance. This report describes approved publication; no current test closure is inherited.",
+  "foreign_prefixes_excluded_from_backend_manifest": [
+    "apps/mini-app/",
+    "evidence/mini-app-clerk-sdk-2026-11-07/"
+  ],
+  "pending": [
+    "Concrete SDK/tenant claim and credential binding review",
+    "Durable nullable-Telegram/F1 identity/fence/replay relational adapter",
+    "Actual fresh DB clock and commit-boundary integration",
+    "Cross-system provider revocation/freshness races after last returned evidence",
+    "D1 association and D2 callback implementation/TTL/replay tests; linking remains blocked",
+    "Independent QA/real provider/Postgres/RLS/browser/deployment tests"
+  ],
+  "outside_actions": {
+    "main_project": false,
+    "real_provider": false,
+    "real_database": false,
+    "SQL_migration": false,
+    "deploy": false,
+    "force_push": false
+  },
+  "backend_manifest": {
+    "owned_files": 149,
+    "checksum_entries": 148,
+    "foreign_ui_files_excluded": 122
+  },
+  "privacy_scan": {
+    "files": 22,
+    "matches": [],
+    "synthetic_only": true,
+    "red_log_synthetic_proofs_redacted": 6
+  },
+  "whitespace_check": {
+    "source_and_metadata": "PASS",
+    "raw_logs": "Unedited captured assertion separator whitespace may remain; exact raw evidence bytes retained."
+  }
+}

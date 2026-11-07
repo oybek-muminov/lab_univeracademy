@@ -1,0 +1,75 @@
+{
+  "status": "LOCAL_CHECKS_PASS_NOT_INDEPENDENT_QA",
+  "base_commit": "b9efa5978498d9150db43531da89820e80dc51ee",
+  "source_manifest_sha256": "3c4074c2956a85f325b114ce9221841a865e27e83106bc737a07bf037506c0a3",
+  "logs": [
+    {
+      "path": "evidence/clerk-provider-2026-11-07/initial-fixture-key-rotation.log",
+      "bytes": 2405,
+      "sha256": "c638b7338860cb899accec580025309ec6aa33cf63f03ba1931e30fcd16c838f",
+      "role": "pre-fix/previous-phase evidence"
+    },
+    {
+      "path": "evidence/clerk-provider-2026-11-07/tests.log",
+      "bytes": 1477,
+      "sha256": "a0b0a2b68f67fafdc0aac8fd0153e623b596b36aa8f72e7526cc7ad4fa057c35",
+      "role": "pre-fix/previous-phase evidence"
+    },
+    {
+      "path": "evidence/clerk-provider-2026-11-07/timing-red.log",
+      "bytes": 6175,
+      "sha256": "64a5c84bba11d48660256f57dcfe9f78c920dd241387445f653c5ecb4c35b8f0",
+      "role": "pre-fix/previous-phase evidence"
+    },
+    {
+      "path": "evidence/clerk-provider-2026-11-07/timing-tests.log",
+      "bytes": 5926,
+      "sha256": "1fd318b2152f7110f88ddfee279191a9599e917a71cabf643b0bca788b180bbd",
+      "role": "current"
+    },
+    {
+      "path": "evidence/clerk-provider-2026-11-07/timing-typecheck.log",
+      "bytes": 594,
+      "sha256": "36f6f167f98f9ef69c152569dfd8bcd0837c181ba693a19cf46be63476829a8d",
+      "role": "current"
+    },
+    {
+      "path": "evidence/clerk-provider-2026-11-07/typecheck.log",
+      "bytes": 594,
+      "sha256": "36f6f167f98f9ef69c152569dfd8bcd0837c181ba693a19cf46be63476829a8d",
+      "role": "pre-fix/previous-phase evidence"
+    }
+  ],
+  "secret_scan": {
+    "files": 17,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "aws_access",
+      "telegram_token",
+      "jwt_literal",
+      "opaque_proof_literal",
+      "credential_url",
+      "provider_key"
+    ],
+    "matches": []
+  },
+  "unchanged_base_files": 212,
+  "mini_app_files_unchanged": 83,
+  "outside_actions": {
+    "upload": false,
+    "commit_push": false,
+    "real_provider": false,
+    "real_database": false,
+    "SQL_migration": false,
+    "deploy": false
+  },
+  "pending": [
+    "Concrete SDK/tenant claim and credential binding review",
+    "Durable nullable-Telegram/F1 identity/fence/replay relational adapter",
+    "Actual fresh DB clock and commit-boundary integration",
+    "Cross-system provider revocation/freshness races after last returned evidence",
+    "D1 association and D2 callback implementation/TTL/replay tests; linking remains blocked",
+    "Independent QA/real provider/Postgres/RLS/browser/deployment tests"
+  ]
+}

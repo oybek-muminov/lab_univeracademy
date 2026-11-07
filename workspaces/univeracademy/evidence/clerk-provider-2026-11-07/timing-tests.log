@@ -1,0 +1,52 @@
+$ node --test tests/clerk-auth/provider-adapter.test.mjs tests/clerk-auth/staff-parallel.test.mjs tests/clerk-auth/http.test.mjs tests/clerk-auth/family-context.test.mjs tests/clerk-auth/review-listener.test.mjs
+✔ F1: revoked Clerk session with deleted family binding never authenticates /me or issues refresh proofs (92.799537ms)
+✔ unknown/missing/conflicting family origin fails closed even for a Telegram-associated person with legacy login enabled (21.02805ms)
+✔ explicit successful HMAC login stamps Telegram origin; missing marker/conflicting Clerk binding never inherits that origin (42.662738ms)
+✔ recognized revoked-family logout ACK cannot repair missing binding, extend retention, revive old proof or revoke the new family (14.173508ms)
+✔ refresh guard follows its body proof despite invalid/unrelated bearer; logout never falls back from invalid bearer (24.089773ms)
+✔ fresh Clerk account is a new UUID student with no Telegram/group/grant/staff rights; JWT/email/name never auto-merges (376.308138ms)
+✔ existing mapping preserves the same account, answers/revisions/deadline; new Clerk session supersedes only the old student family (68.500523ms)
+✔ invalid/expired/disabled/revoked login does not consume proof, create account or disturb an active family (29.640555ms)
+✔ JWT exchange replay is one-use; concurrent first logins serialize to one canonical account and one active app family (16.566458ms)
+✔ provider/session binding and current liveness guard opaque access and refresh; outages never grant offline access (36.687432ms)
+✔ unknown exchange COMMIT is not ACKed; a fresh JWT for the still-current session recovers without a second account (41.784472ms)
+✔ Telegram link remains authenticated but blocked; optional existing Telegram association never auto-links or lets old Clerk session reclaim (60.401175ms)
+✔ approved parallel staff policy permits a valid Admin while student/claim/cached owner authority cannot become staff (12.458536ms)
+✔ parallel staff sessions retain current scope/capabilities and immutable receipts; revocation defeats old JWT replay (21.862488ms)
+✔ production settings require explicit HTTPS issuer/azp/audience/limits and bindings; construction performs no I/O (360.866329ms)
+✔ real jose signature validation uses only issuer-pinned public JWKS; no bearer/cookie/redirect and cached keys confer no liveness cache (52.923ms)
+✔ signature/issuer/azp/audience/expiry/pending/impersonation remain enforced and an unknown key can rotate through the same pinned transport (117.755223ms)
+✔ JWKS status/redirect/mime/JSON/size/private-key faults fail503 and never fall back to arbitrary key material (64.269707ms)
+✔ current provider session/user identity, enabled flags and expiry boundaries deny401; missing or malformed security fields deny503 (2.529036ms)
+✔ provider404 normalizes to401, credential/rate-limit/server/transport faults to503 without logging provider messages (24.19836ms)
+✔ bounded provider reads and JWKS timeout fail503; post-read clock catches session expiry and clock regression (97.443199ms)
+✔ adapter integrates with the F1-protected handler: new nullable-Telegram identity, replay/failed-login rollback and deleted binding stay closed (41.223466ms)
+✔ provider-backed login retains saved answers/revision/deadline and old-session fencing; failed provider reads preserve the current family (61.627447ms)
+✔ timing: before JWT/provider expiry after delayed reply; new profile/proofs and old-family preservation (77.689676ms)
+✔ timing: equal JWT/provider expiry after delayed reply; new profile/proofs and old-family preservation (70.94496ms)
+✔ timing: after JWT/provider expiry after delayed reply; new profile/proofs and old-family preservation (135.931425ms)
+✔ timing: delayed user response rechecks account flags and mapping without consuming proof or revoking the old family (43.828042ms)
+✔ timing: opaque refresh/access cannot use a pre-provider captured transaction clock (59.426552ms)
+✔ timing: linking remains blocked409 before exp and denies401 at/after exp, with no login/link side effects (25.990475ms)
+✔ timing: staff JWT expiry after provider read denies before scope work; a live authorized parallel session succeeds (61.409571ms)
+✔ timing: returned session state is revalidated after a delayed user reply; no stale active-state decision (51.771407ms)
+✔ timing: server clock regression after provider reply fails503 without state/proof mutation (8.776812ms)
+✔ timing: an exchange body cannot select linking purpose or canonical account (7.04641ms)
+✔ exchange-only review is pinned, all 206 schemas compile with strict formats, and existing staff/student payload contracts remain exact (10.670952ms)
+✔ existing production client exchange sends only bearer + empty JSON body, rejects stale pin and preserves safe errors without retries (5.598418ms)
+✔ TCP listener preserves existing account, save revision and deadline across single-device login, then submit/result/history and body-only logout (158.277918ms)
+✔ TCP exchange creates a fresh ungrouped student, keeps linking blocked and allows currently authorized parallel staff (43.111977ms)
+✔ TCP F1 regression: revoked provider denies401, deleted binding/unmarked origin denies503 without new proofs; no synthetic control routes or CORS bypass (62.18763ms)
+✔ teacher/Admin/Owner can authenticate a second provider session without revoking the first or creating student fences (146.768781ms)
+✔ parallel staff authentication still checks each session's liveness and the current role/approval/capability/subject scope before receipt replay (35.137603ms)
+✔ only a new successful student login supersedes its old app family; staff sessions and attempt history remain independent (16.482951ms)
+ℹ tests 41
+ℹ suites 0
+ℹ pass 41
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4153.326089
+
+exit_code=0

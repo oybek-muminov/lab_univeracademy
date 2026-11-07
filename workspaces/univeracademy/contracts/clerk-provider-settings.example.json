@@ -1,0 +1,20 @@
+{
+  "status": "LOCAL_PRODUCTION_AUTH_CONFIGURATION_CANDIDATE_NOT_ACCEPTED",
+  "environment_key": "UA_CLERK_PROVIDER_SETTINGS",
+  "settings": {
+    "issuer": "https://clerk-instance.example.invalid",
+    "authorizedParties": ["https://student.example.invalid"],
+    "audience": {"kind": "clerk_default_no_audience"},
+    "jwksCacheMs": 300000,
+    "jwksCooldownMs": 30000,
+    "timeoutMs": 3000,
+    "maxJwksBytes": 65536
+  },
+  "notes": [
+    "Placeholders only. No tenant, domain, provider or secret is configured.",
+    "Technical cache/timeout/response limits are explicit candidate values, not approved session TTLs.",
+    "Alternatively audience may be {kind: required, value: exact-reviewed-audience}.",
+    "Trusted server bindings must supply getSession/getUser and JWKS fetch. There is no native-fetch fallback.",
+    "No Clerk SDK is installed or pinned by this candidate. Actual SDK/read transport and deployment bootstrap remain pending."
+  ]
+}

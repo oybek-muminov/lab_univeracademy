@@ -21,8 +21,7 @@ export type ClerkTransaction={state:ClerkCandidateState;now:()=>number};
 export type ClerkTransactions={transaction<T>(work:(tx:ClerkTransaction)=>Promise<T>):Promise<T>};
 export type ClerkCandidateDependencies={mode:"local_candidate";transactions:ClerkTransactions;
   verifier:ClerkVerifierConfiguration;liveness:ClerkLiveness;sessionPolicy:SessionPolicy;numericPresentation:NumericPresentation;
-  legacyTelegram?:{botToken:string};staff?:{validate:(schema:string,value:unknown)=>boolean;newAssignmentId:()=>string;
-    deviceGate?:(tx:ClerkTransaction,identity:ClerkIdentity,personId:string)=>Promise<boolean>}};
+  legacyTelegram?:{botToken:string};staff?:{validate:(schema:string,value:unknown)=>boolean;newAssignmentId:()=>string}};
 
 const identity=(p:ClerkProof):ClerkIdentity=>({issuer:p.issuer,userId:p.userId,sessionId:p.sessionId});
 function bearer(request:Request):string{
@@ -64,12 +63,31 @@ function ensureStudent(state:ClerkCandidateState,id:ClerkIdentity,policy:Session
   }
   fail("SERVICE_UNAVAILABLE",503);
 }
+function serverTime(tx:ClerkTransaction,deps:ClerkCandidateDependencies,floor=0):number{
+  const lockedAt=tx.now(),now=deps.verifier.now();
+  if(!Number.isSafeInteger(lockedAt)||lockedAt<0||!Number.isSafeInteger(now)||now<lockedAt||now<floor)
+    fail("SERVICE_UNAVAILABLE",503);
+  return now;
+}
+function checkCurrentTime(tx:ClerkTransaction,proof:ClerkProof,deps:ClerkCandidateDependencies,providerExpires:number,floor:number):number{
+  const now=serverTime(tx,deps,floor);checkClerkProof(proof,now);
+  if(now>=providerExpires)fail("CLERK_SESSION_REVOKED",401);
+  return now;
+}
+async function verifyCurrentClerk(tx:ClerkTransaction,proof:ClerkProof,deps:ClerkCandidateDependencies){
+  const before=serverTime(tx,deps);checkClerkProof(proof,before);
+  const providerExpires=await requireLiveClerk(identity(proof),before,deps.liveness);
+  const now=checkCurrentTime(tx,proof,deps,providerExpires,before);
+  return {now,providerExpires};
+}
 async function exchange(tx:ClerkTransaction,proof:ClerkProof,deps:ClerkCandidateDependencies){
-  const {state}=tx,now=tx.now(),policy=checkSessionPolicy(deps.sessionPolicy);checkClerkProof(proof,now);
-  const id=identity(proof),providerExpires=await requireLiveClerk(id,now,deps.liveness);
+  const {state}=tx,policy=checkSessionPolicy(deps.sessionPolicy);
+  const checked=await verifyCurrentClerk(tx,proof,deps),{providerExpires}=checked,id=identity(proof);
+  const digest=await proofHash(JSON.stringify([proof.issuer,proof.userId,proof.sessionId,proof.tokenId]));
+  // All provider/clock/digest awaits precede account creation and supersession.
+  const now=checkCurrentTime(tx,proof,deps,providerExpires,checked.now);
   const person=ensureStudent(state,id,policy),personId=person.profile.person_id,key=clerkSessionKey(id);
   currentStudentSession(state,id,personId);
-  const digest=await proofHash(JSON.stringify([proof.issuer,proof.userId,proof.sessionId,proof.tokenId]));
   if(state.consumedTokens[digest])fail("CLERK_TOKEN_REPLAY",409);
   const expiresAt=Math.min(now+policy.familyTtlMs,providerExpires);utc(expiresAt);
   if(expiresAt<=now)fail("CLERK_SESSION_REVOKED",401);
@@ -82,6 +100,8 @@ async function exchange(tx:ClerkTransaction,proof:ClerkProof,deps:ClerkCandidate
   state.domain.student.families[familyId]={personId,expiresAt,revokedAt:null,logoutRetainUntil:null,authProvider:"clerk"};
   state.familyBindings[familyId]=id;state.consumedTokens[digest]=true;
   const proofs=await issueProofs(state.domain.student,familyId,now,policy);
+  const finishedAt=checkCurrentTime(tx,proof,deps,providerExpires,now);
+  if(finishedAt>=proofs.expiresAt)fail("APP_SESSION_EXPIRED",401);
   return {access_token:proofs.accessToken,refresh_token:proofs.refreshToken,expires_at:utc(proofs.expiresAt),
     refresh_expires_at:utc(proofs.refreshExpiresAt),token_type:"Bearer",profile:profileWire(person)};
 }
@@ -101,16 +121,16 @@ async function familyHint(state:ClerkCandidateState,request:Request,raw:string):
   if(request.method!=="POST"||!/\/auth\/logout\/?$/.test(path))return undefined;
   return bodyFamily(); // Logout's bearer-first/no-fallback branch remains above.
 }
-async function guardBoundFamily(tx:ClerkTransaction,request:Request,raw:string,deps:ClerkCandidateDependencies):Promise<void>{
-  const id=await familyHint(tx.state,request,raw);if(!id)return;
-  const family=tx.state.domain.student.families[id],binding=tx.state.familyBindings[id],now=tx.now();
+async function guardBoundFamily(tx:ClerkTransaction,request:Request,raw:string,deps:ClerkCandidateDependencies):Promise<number>{
+  const id=await familyHint(tx.state,request,raw),now=serverTime(tx,deps);if(!id)return now;
+  const family=tx.state.domain.student.families[id],binding=tx.state.familyBindings[id];
   // Core handler retains its expired/revoked proof and logout tombstone branches.
-  if(!family||family.revokedAt!==null||now>=family.expiresAt)return;
+  if(!family||family.revokedAt!==null||now>=family.expiresAt)return now;
   // Missing Clerk metadata must not be interpreted as a legacy Telegram login.
   // Only a successful server-verified HMAC login below stamps that provenance.
   if(family.authProvider==="telegram"){
     if(Object.hasOwn(tx.state.familyBindings,id)||!deps.legacyTelegram?.botToken)fail("SERVICE_UNAVAILABLE",503);
-    return;
+    return now;
   }
   if(family.authProvider!=="clerk"||!binding)fail("SERVICE_UNAVAILABLE",503);
   if(binding.issuer!==deps.verifier.issuer)fail("CLERK_IDENTITY_REVOKED",401);
@@ -118,7 +138,9 @@ async function guardBoundFamily(tx:ClerkTransaction,request:Request,raw:string,d
   if(person.profile.person_id!==family.personId)fail("RESPONSE_INVARIANT_FAILED",500);
   currentStudentSession(tx.state,binding,family.personId);
   if(!tx.state.studentSessions[clerkSessionKey(binding)])fail("RESPONSE_INVARIANT_FAILED",500);
-  await requireLiveClerk(binding,now,deps.liveness);
+  const providerExpires=await requireLiveClerk(binding,now,deps.liveness),checkedAt=serverTime(tx,deps,now);
+  if(checkedAt>=providerExpires)fail("CLERK_SESSION_REVOKED",401);
+  return checkedAt;
 }
 function staffRecord(state:ClerkCandidateState,proof:ClerkProof,now:number):StaffAccessRecord{
   const person=mapped(state,proof),record=state.domain.staff[proof.userId];
@@ -145,7 +167,7 @@ export function createClerkCandidateHandler(deps:ClerkCandidateDependencies){
       if(path==="/api/v1/auth/telegram/link"&&request.method==="POST"){
         const proof=await createClerkVerifier(deps.verifier)(bearer(request));
         await deps.transactions.transaction(async tx=>{
-          checkClerkProof(proof,tx.now());await requireLiveClerk(proof,tx.now(),deps.liveness);mapped(tx.state,proof);
+          await verifyCurrentClerk(tx,proof,deps);mapped(tx.state,proof);
           fail("IDENTITY_LINK_POLICY_UNRESOLVED",409); // No auto merge/email match/link mutation.
         });
         fail("RESPONSE_INVARIANT_FAILED",500);
@@ -157,12 +179,14 @@ export function createClerkCandidateHandler(deps:ClerkCandidateDependencies){
         return await createStaffHttpHandler({contractSha:STAFF_CONTRACT_SHA,validate:p.validate,newAssignmentId:p.newAssignmentId,
           verifyStaffToken:async candidate=>{if(candidate!==token)fail("CLERK_TOKEN_INVALID",401);return adapted;},reconcileMembershipDependencies:reconcileMembershipEffects,
           transactions:{transaction:work=>deps.transactions.transaction(async tx=>{
-            const now=tx.now();checkClerkProof(proof,now);await requireLiveClerk(proof,now,deps.liveness);
+            const checked=await verifyCurrentClerk(tx,proof,deps);
+            const now=checkCurrentTime(tx,proof,deps,checked.providerExpires,checked.now);
+            // Approved policy: staff sessions may run in parallel. Student
+            // family/sid retirement is never applied to staff authentication.
             const current=staffRecord(tx.state,proof,now);
-            if(typeof p.deviceGate!=="function")fail("STAFF_DEVICE_POLICY_UNRESOLVED",503);
-            if(await p.deviceGate(tx,proof,current.personId)!==true)fail("STAFF_SESSION_NOT_AUTHORIZED",401);
             const view={...tx.state.domain,staff:{[proof.userId]:current}},before=JSON.stringify(view.staff);
-            const outcome=await work({state:view,now:()=>now});
+            const outcome=await work({state:view,now:()=>checkCurrentTime(tx,proof,deps,checked.providerExpires,now)});
+            checkCurrentTime(tx,proof,deps,checked.providerExpires,now);
             if(JSON.stringify(view.staff)!==before)fail("RESPONSE_INVARIANT_FAILED",500);
             const {staff:_,...domain}=view;Object.assign(tx.state.domain,domain);return outcome;
           })}})(request);
@@ -170,13 +194,13 @@ export function createClerkCandidateHandler(deps:ClerkCandidateDependencies){
       const raw=await request.clone().text();
       return await createStudentHttpHandler({sessionPolicy:deps.sessionPolicy,numericPresentation:deps.numericPresentation,botToken:deps.legacyTelegram?.botToken,
         transactions:{transaction:work=>deps.transactions.transaction(async tx=>{
-          await guardBoundFamily(tx,request,raw,deps);
+          const checkedAt=await guardBoundFamily(tx,request,raw,deps);
           const oldIds=new Set(Object.keys(tx.state.domain.student.families));
-          const outcome=await work({state:tx.state.domain.student,now:tx.now});
+          const outcome=await work({state:tx.state.domain.student,now:()=>serverTime(tx,deps,checkedAt)});
           if(path==="/api/v1/auth/telegram"&&request.method==="POST")for(const [id,family]of Object.entries(tx.state.domain.student.families))
             if(!oldIds.has(id)&&family.revokedAt===null){
               family.authProvider="telegram";
-              retireOtherSessions(tx.state,family.personId,tx.now());
+              retireOtherSessions(tx.state,family.personId,serverTime(tx,deps,checkedAt));
             }
           return outcome;
         })}})(request);

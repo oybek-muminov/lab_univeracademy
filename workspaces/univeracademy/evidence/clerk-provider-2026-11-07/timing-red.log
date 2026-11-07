@@ -1,0 +1,107 @@
+$ node --test --test-name-pattern ^timing: tests/clerk-auth/provider-adapter.test.mjs
+✔ timing: before JWT/provider expiry after delayed reply; new profile/proofs and old-family preservation (168.427629ms)
+✖ timing: equal JWT/provider expiry after delayed reply; new profile/proofs and old-family preservation (4.938704ms)
+✖ timing: after JWT/provider expiry after delayed reply; new profile/proofs and old-family preservation (6.009586ms)
+✔ timing: delayed user response rechecks account flags and mapping without consuming proof or revoking the old family (30.901807ms)
+✖ timing: opaque refresh/access cannot use a pre-provider captured transaction clock (16.506818ms)
+✖ timing: linking remains blocked409 before exp and denies401 at/after exp, with no login/link side effects (12.197966ms)
+✖ timing: staff JWT expiry after provider read denies before device/scope work; missing device policy still503 for a live JWT (9.694957ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 2
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1483.294295
+
+✖ failing tests:
+
+test at tests/clerk-auth/provider-adapter.test.mjs:176:3
+✖ timing: equal JWT/provider expiry after delayed reply; new profile/proofs and old-family preservation (4.938704ms)
+  AssertionError [ERR_ASSERTION]: {"fresh":true,"deadline":"jwt","boundary":"equal","reply":{"status":200,"json":{"data":{"access_token":"[REDACTED_SYNTHETIC_PROOF]","refresh_token":"[REDACTED_SYNTHETIC_PROOF]","expires_at":"2026-11-05T12:00:15.000Z","refresh_expires_at":"2026-11-05T12:02:00.000Z","token_type":"Bearer","profile":{"person_id":"c8c05826-380f-46dd-8cb5-3313884b04f3","first_name":"","last_name":"","roles":["student"],"registration_complete":false,"active_group_id":null,"qadam_id":"3284658439"}}}}}
+  
+  200 !== 401
+  
+      at TestContext.<anonymous> (file:///workspace/qa-clerk-provider-candidate-20261107/workspaces/univeracademy/tests/clerk-auth/provider-adapter.test.mjs:187:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 401,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/clerk-auth/provider-adapter.test.mjs:176:3
+✖ timing: after JWT/provider expiry after delayed reply; new profile/proofs and old-family preservation (6.009586ms)
+  AssertionError [ERR_ASSERTION]: {"fresh":true,"deadline":"jwt","boundary":"after","reply":{"status":200,"json":{"data":{"access_token":"[REDACTED_SYNTHETIC_PROOF]","refresh_token":"[REDACTED_SYNTHETIC_PROOF]","expires_at":"2026-11-05T12:00:15.000Z","refresh_expires_at":"2026-11-05T12:02:00.000Z","token_type":"Bearer","profile":{"person_id":"b1f39335-921b-433d-8950-516009299065","first_name":"","last_name":"","roles":["student"],"registration_complete":false,"active_group_id":null,"qadam_id":"6817397122"}}}}}
+  
+  200 !== 401
+  
+      at TestContext.<anonymous> (file:///workspace/qa-clerk-provider-candidate-20261107/workspaces/univeracademy/tests/clerk-auth/provider-adapter.test.mjs:187:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 401,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/clerk-auth/provider-adapter.test.mjs:217:1
+✖ timing: opaque refresh/access cannot use a pre-provider captured transaction clock (16.506818ms)
+  AssertionError [ERR_ASSERTION]: {"boundary":"equal","operation":"refresh","reply":{"status":200,"json":{"data":{"access_token":"[REDACTED_SYNTHETIC_PROOF]","refresh_token":"[REDACTED_SYNTHETIC_PROOF]","expires_at":"2026-11-05T12:00:01.000Z","refresh_expires_at":"2026-11-05T12:00:01.000Z","token_type":"Bearer","profile":{"person_id":"00000000-0000-4000-8000-000000000001","first_name":"Sun’iy","last_name":"O‘quvchi","roles":["student"],"registration_complete":true,"active_group_id":"00000000-0000-4000-8000-000000000040","qadam_id":"0100000001"}}}}}
+  
+  200 !== 401
+  
+      at TestContext.<anonymous> (file:///workspace/qa-clerk-provider-candidate-20261107/workspaces/univeracademy/tests/clerk-auth/provider-adapter.test.mjs:226:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 200,
+    expected: 401,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/clerk-auth/provider-adapter.test.mjs:231:1
+✖ timing: linking remains blocked409 before exp and denies401 at/after exp, with no login/link side effects (12.197966ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  409 !== 401
+  
+      at TestContext.<anonymous> (file:///workspace/qa-clerk-provider-candidate-20261107/workspaces/univeracademy/tests/clerk-auth/provider-adapter.test.mjs:237:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 409,
+    expected: 401,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/clerk-auth/provider-adapter.test.mjs:241:1
+✖ timing: staff JWT expiry after provider read denies before device/scope work; missing device policy still503 for a live JWT (9.694957ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  503 !== 401
+  
+      at TestContext.<anonymous> (file:///workspace/qa-clerk-provider-candidate-20261107/workspaces/univeracademy/tests/clerk-auth/provider-adapter.test.mjs:248:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 503,
+    expected: 401,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+exit_code=1
+
+Synthetic proof redactions: 6; status/assertion evidence retained.

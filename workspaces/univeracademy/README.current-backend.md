@@ -1,4 +1,59 @@
-# Current Backend publication — Clerk exchange review and local HTTP candidate
+# Current Backend publication — Clerk provider, fresh time and staff parallel sessions
+
+PROVISIONAL / NOT ACCEPTED. Approved lab QA candidate, based on branch HEAD
+829b2585fc5bfd04feea34d028db8dd76dea27ce. Mini App107 files plus15 UI evidence files
+from that commit are preserved byte-for-byte and excluded from Backend ownership.
+No production/provider/database/deployment activation is included.
+
+This publishes the tested local provider adapter, strict production-settings
+example, fresh post-provider JWT/session expiry checks, approved student-only
+single-device rule and parallel Teacher/Admin/Owner authentication. Provider
+reads are injected; tests use synthetic RSA/JWKS/Session/User replies. The real
+Clerk SDK/tenant/secret transport and durable storage remain unconfigured.
+
+At/after JWT exp or provider session expiry the login denies401, with no new
+profile/proof/replay/family commit or old-session disturbance. Fresh server time
+also reaches opaque access/refresh and staff work. Regressing/invalid clock denies
+503. The current provider/user models are rechecked after awaits; this is not a
+promise of an atomic provider/DB snapshot or instantaneous later revocation.
+
+Only a successful student exchange supersedes its old student family. Staff uses
+current provider bearer, canonical roles, approval, capabilities and scope on
+existing staff operations; no student fence, global provider logout or new staff
+login DTO is introduced. Staff-only accounts cannot use the student exchange.
+
+Author evidence:41/41 PASS plus typecheck exit0; the exact tested11 source files
+and8 evidence files are preserved, with no redundant test rerun during upload.
+`evidence/clerk-provider-2026-11-07/timing-tests.log` and `timing-typecheck.log` are
+current. The pre-fix timing log retains the failure with six synthetic proofs
+redacted. Earlier9-test logs/LOCAL_NOT_UPLOADED metadata remain historical
+preparation provenance, not claims of current QA acceptance.
+
+```sh
+npm ci --ignore-scripts
+npm run setup:validator
+node --test tests/clerk-auth/provider-adapter.test.mjs tests/clerk-auth/staff-parallel.test.mjs tests/clerk-auth/http.test.mjs tests/clerk-auth/family-context.test.mjs tests/clerk-auth/review-listener.test.mjs
+npm run typecheck
+```
+
+`docs/api/clerk-timing-d1-d2-2026-11-07.md` explains timing, staff policy and D1/D2
+states; `clerk-provider-candidate-2026-11-07.md` describes auth bindings and strict
+configuration; `clerk-atomic-storage-plan-2026-11-07.md` is unapplied design only.
+Linking remains409 for valid proof and401 for invalid/expired proof; no association,
+email auto-merge, callback bridge or new product permission is enabled.
+
+Original OpenAPI/client/types, crypto verifier, production/Vercel entries and
+locks remain unchanged. Old unmarked active families still deny503 without
+implicit backfill. Nullable-Telegram/F1 durable mapping/fence/replay, real SDK
+bindings, actual fresh DB clock/commit boundary, real provider/DB/RLS/browser/
+deployment and independent QA remain pending/NOT_RUN. No SQL/migration is created.
+
+`BACKEND-CURRENT-SHA256SUMS` covers Backend-owned files only. The Mini App guard
+still pins Backend b9efa597/133 files; UI owner must repin it for this candidate
+before combined QA. It is neither edited nor bypassed. Publication intake and
+privacy evidence: `docs/api/clerk-provider-publication-verification-2026-11-07.json`.
+
+## Prior Backendb9efa597 publication — historical Clerk exchange review
 
 PROVISIONAL / NOT ACCEPTED. Approved laboratory upload, based on current branch
 HEAD d1bdd0e6f43ae465eef53b3e0ac7b60520eeeb68. All 83 Mini App files and its F1

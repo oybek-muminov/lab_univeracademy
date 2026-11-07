@@ -1,0 +1,20 @@
+$ node --test tests/clerk-auth/provider-adapter.test.mjs
+✔ production settings require explicit HTTPS issuer/azp/audience/limits and bindings; construction performs no I/O (61.052608ms)
+✔ real jose signature validation uses only issuer-pinned public JWKS; no bearer/cookie/redirect and cached keys confer no liveness cache (18.553678ms)
+✔ signature/issuer/azp/audience/expiry/pending/impersonation remain enforced and an unknown key can rotate through the same pinned transport (48.092141ms)
+✔ JWKS status/redirect/mime/JSON/size/private-key faults fail503 and never fall back to arbitrary key material (20.054197ms)
+✔ current provider session/user identity, enabled flags and expiry boundaries deny401; missing or malformed security fields deny503 (2.819611ms)
+✔ provider404 normalizes to401, credential/rate-limit/server/transport faults to503 without logging provider messages (6.986051ms)
+✔ bounded provider reads and JWKS timeout fail503; post-read clock catches session expiry and clock regression (85.888551ms)
+✔ adapter integrates with the unchanged F1 handler: new nullable-Telegram identity, replay/failed-login rollback and deleted binding stay closed (18.653585ms)
+✔ provider-backed login retains saved answers/revision/deadline and old-session fencing; failed provider reads preserve the current family (17.444145ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1065.199337
+
+exit_code=0

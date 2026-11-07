@@ -91,7 +91,7 @@ test("TCP listener preserves existing account, save revision and deadline across
   await assert.rejects(client.me(second.access_token), error => error.status === 401);
 });
 
-test("TCP exchange creates a fresh ungrouped student, ignores no identity from client and leaves optional linking/staff device policy blocked", async t => {
+test("TCP exchange creates a fresh ungrouped student, keeps linking blocked and allows currently authorized parallel staff", async t => {
   const local = await startClerkReviewServer(); t.after(() => local.close());
   const { lab } = local, client = lab.client(local.baseUrl), token = await lab.sign(lab.actors.fresh);
   const before = lab.snapshot();
@@ -109,7 +109,7 @@ test("TCP exchange creates a fresh ungrouped student, ignores no identity from c
   assert.equal(link.status, 409); assert.equal((await link.json()).error.code, "IDENTITY_LINK_POLICY_UNRESOLVED");
   lab.activate(lab.users.admin, lab.sids.admin);
   const staff = await fetch(local.baseUrl + `/admin/versions/${staffIds.draft}`, { method: "PATCH", headers: { authorization: "Bearer " + await lab.sign({ userId: lab.users.admin, sessionId: lab.sids.admin }), "content-type": "application/json", "idempotency-key": "review-staff-default-deny" }, body: JSON.stringify(versionBody()) });
-  assert.equal(staff.status, 503); assert.equal((await staff.json()).error.code, "STAFF_DEVICE_POLICY_UNRESOLVED");
+  assert.equal(staff.status, 200);
 });
 
 test("TCP F1 regression: revoked provider denies401, deleted binding/unmarked origin denies503 without new proofs; no synthetic control routes or CORS bypass", async t => {

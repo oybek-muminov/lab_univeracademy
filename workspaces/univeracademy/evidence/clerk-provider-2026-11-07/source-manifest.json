@@ -1,0 +1,124 @@
+{
+  "status": "LOCAL_PROVISIONAL_NOT_ACCEPTED_NOT_DEPLOY_READY",
+  "revision": "POST_PROVIDER_TIME_AND_APPROVED_STAFF_PARALLEL",
+  "base_commit": "b9efa5978498d9150db43531da89820e80dc51ee",
+  "previous_source_manifest_sha256": "416f93f817b7a6669050b5f20fa1c3a382c33107f2db1d8d5ea1f07467a164e1",
+  "source_files": 11,
+  "modified_base_files": 4,
+  "new_source_files": 7,
+  "files": [
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 14711,
+      "sha256": "3d2ebe945d2a8313f88034b588310abbaa8c5306a81843312bc1be5fe216e2f5",
+      "change": "modify",
+      "before_commit_sha256": "570dd8fe5b952c9b0ee58e67cefdc5a6713b21dceea1c6857e56a76801816029",
+      "previous_local_candidate_sha256": null
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-provider.ts",
+      "bytes": 9747,
+      "sha256": "347d026a27549082921898068d2e49af11480d1e98ede1ae125d52f5c91180cf",
+      "change": "add",
+      "before_commit_sha256": null,
+      "previous_local_candidate_sha256": "491edbb92d78b54b8a9bd38c423a1265b6be3d4c888ca73563fa07d5bc2e943c"
+    },
+    {
+      "path": "contracts/clerk-provider-settings.example.json",
+      "bytes": 957,
+      "sha256": "4648a275902c8b920b9b3cd7e2bed081e5794b8b72c53e4a27ec9adf9a9de9a5",
+      "change": "add",
+      "before_commit_sha256": null,
+      "previous_local_candidate_sha256": "4648a275902c8b920b9b3cd7e2bed081e5794b8b72c53e4a27ec9adf9a9de9a5"
+    },
+    {
+      "path": "tests/clerk-auth/provider-adapter.test.mjs",
+      "bytes": 21868,
+      "sha256": "29587109cb40ce005417bee69a14eca9c9426e063b51ca159c682f040dc40aee",
+      "change": "add",
+      "before_commit_sha256": null,
+      "previous_local_candidate_sha256": "e48978897b31842052b884143a64d0e5a7f97c9e047f249b158f5f348259b92c"
+    },
+    {
+      "path": "tests/clerk-auth/staff-parallel.test.mjs",
+      "bytes": 3798,
+      "sha256": "bfa54cb9f778a5202705e415f92d25497640f8847acc963182064c6ef8328a45",
+      "change": "add",
+      "before_commit_sha256": null,
+      "previous_local_candidate_sha256": null
+    },
+    {
+      "path": "tests/clerk-auth/fixture.mjs",
+      "bytes": 5634,
+      "sha256": "1dae0182015c155aec6da31e88e1f51dc75d15e3d777c1df1ddc6c485bda8d11",
+      "change": "modify",
+      "before_commit_sha256": "0b63ea0f565df816675bf636f329db3d41ec94f1d39c8ba0284aed8a5735c797",
+      "previous_local_candidate_sha256": null
+    },
+    {
+      "path": "tests/clerk-auth/http.test.mjs",
+      "bytes": 12183,
+      "sha256": "db182096422e367993ba15f34d3a412bf65a1b269f1a4f4954dd7436c13a3a59",
+      "change": "modify",
+      "before_commit_sha256": "ae6549e5fb5b657fc15801529467efcd00fe82a6f986552b13747fb7a749913c",
+      "previous_local_candidate_sha256": null
+    },
+    {
+      "path": "tests/clerk-auth/review-listener.test.mjs",
+      "bytes": 11215,
+      "sha256": "040c085d8649094e0ff18d8c00c6ec72d385461787dc55af548fcbbe04a0ff1f",
+      "change": "modify",
+      "before_commit_sha256": "a3afc3af48b87bf6a7859b21ca6abea92ba0ad4b77d9b19f1128d34e537d1e57",
+      "previous_local_candidate_sha256": null
+    },
+    {
+      "path": "docs/api/clerk-provider-candidate-2026-11-07.md",
+      "bytes": 8033,
+      "sha256": "00678c8870d83da0857e329d763afe1d0620fab4819e623fe7e258a2f77849b5",
+      "change": "add",
+      "before_commit_sha256": null,
+      "previous_local_candidate_sha256": "76e9671b5b6ef0a67ad4d07294786186d2f703c71314c73ea5ff64e9dfb64991"
+    },
+    {
+      "path": "docs/api/clerk-atomic-storage-plan-2026-11-07.md",
+      "bytes": 11069,
+      "sha256": "93068754a462782c5c0ab11d4723405b3ca23a6dfa247ccea8c6f8d3ebd2ee0e",
+      "change": "add",
+      "before_commit_sha256": null,
+      "previous_local_candidate_sha256": "9bf33e7fabd95d89a13e0417270013f0a53c394200086d24630a6894a3312511"
+    },
+    {
+      "path": "docs/api/clerk-timing-d1-d2-2026-11-07.md",
+      "bytes": 11111,
+      "sha256": "0fd76309a328351bb5186b4a9689fccd3827c55faf3f016c067d55686276dec8",
+      "change": "add",
+      "before_commit_sha256": null,
+      "previous_local_candidate_sha256": null
+    }
+  ],
+  "runtime_manifest": {
+    "supabase/functions/univeracademy-api/clerk-http.ts": "3d2ebe945d2a8313f88034b588310abbaa8c5306a81843312bc1be5fe216e2f5",
+    "supabase/functions/univeracademy-api/clerk-provider.ts": "347d026a27549082921898068d2e49af11480d1e98ede1ae125d52f5c91180cf"
+  },
+  "unchanged_base_files": 212,
+  "mini_app_files_unchanged": 83,
+  "original_crypto_verifier_sha256": "de761c43816009e4348742c3a00875488eb3fa67e01af4ed732b290e31f015bd",
+  "existing_base_backend_manifest_sha256": "dd139fa0e74962c0a0d68207522724e3db3bd32d2cbd717f849df55076941899",
+  "dependencies_changed": false,
+  "policy": {
+    "student": "new successful login replaces old student family; failed login preserves it",
+    "teacher_admin_owner": "parallel sessions allowed; no student fence/global logout; current authority checks retained",
+    "linking": "blocked409, invalid/expired proof401; no association mutation"
+  },
+  "validation": {
+    "tests": "41/41 PASS",
+    "timing_groups": 10,
+    "staff_parallel_groups": 3,
+    "typecheck_exit": 0,
+    "pre_fix_timing_red": "7 test groups;2PASS/5FAIL before fix and staff decision; six synthetic proofs redacted",
+    "provider_network": "substituted responses only",
+    "real_database_provider_deploy": "NOT_RUN",
+    "D1_D2_callback_protocol_tests": "NOT_RUN"
+  },
+  "upload": "NOT_PERFORMED"
+}

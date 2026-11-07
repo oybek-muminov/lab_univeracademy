@@ -102,18 +102,18 @@ test("Telegram link remains authenticated but blocked; optional existing Telegra
   assert.equal((await fresh.call("POST","/auth/telegram",{init_data:raw})).status,503);
 });
 
-test("staff device policy has no default; student/claim/cached owner authority cannot become staff",async()=>{
+test("approved parallel staff policy permits a valid Admin while student/claim/cached owner authority cannot become staff",async()=>{
   const f=await clerkFixture();f.activate(users.admin,sids.admin);const before=f.snapshot();
   const admin=await f.sign({userId:users.admin,sessionId:sids.admin});
-  const denied=await f.call("PATCH",`/admin/versions/${staffIds.draft}`,versionBody(),admin,{"idempotency-key":"clerk-admin-draft"});
-  assert.equal(denied.status,503);assert.equal(denied.json.error.code,"STAFF_DEVICE_POLICY_UNRESOLVED");assert.deepEqual(f.store.state,before);
+  const allowed=await f.call("PATCH",`/admin/versions/${staffIds.draft}`,versionBody(),admin,{"idempotency-key":"clerk-admin-draft"});
+  assert.equal(allowed.status,200);assert.deepEqual(f.store.state.studentSessions,before.studentSessions);
   f.activate(users.student,sids.first);f.store.state.domain.staff[users.student]={...structuredClone(f.store.state.domain.staff[users.admin]),personId:ids.person,roles:["owner"]};
   const poisoned=f.snapshot(),forged=await f.sign({claims:{role:"owner",o:{rol:"admin",per:"*"}}});
   assert.equal((await f.call("PATCH",`/admin/versions/${staffIds.draft}`,versionBody(),forged,{"idempotency-key":"clerk-student-forge"})).status,403);assert.deepEqual(f.store.state,poisoned);
 });
 
-test("explicit fixture-only staff gate reuses current scope/capabilities and immutable receipts; revocation defeats old JWT replay",async()=>{
-  const f=await clerkFixture({staffGate:true});f.activate(users.admin,sids.admin);const token=await f.sign({userId:users.admin,sessionId:sids.admin});
+test("parallel staff sessions retain current scope/capabilities and immutable receipts; revocation defeats old JWT replay",async()=>{
+  const f=await clerkFixture();f.activate(users.admin,sids.admin);const token=await f.sign({userId:users.admin,sessionId:sids.admin});
   const call=()=>f.call("PATCH",`/admin/versions/${staffIds.draft}`,versionBody(),token,{"idempotency-key":"clerk-current-admin"});
   const first=await call();assert.equal(first.status,200,JSON.stringify(first));assert.deepEqual(await call(),first);
   for(const [change,status]of [
@@ -125,6 +125,6 @@ test("explicit fixture-only staff gate reuses current scope/capabilities and imm
     [()=>{f.store.state.identities[clerkIdentityKey({issuer,userId:users.admin})].enabled=false;},401]]){
     const saved=f.snapshot();change();const before=f.snapshot();assert.equal((await call()).status,status);assert.deepEqual(f.store.state,before);f.store.state=saved;
   }
-  f.deps.staff.deviceGate=async()=>false;assert.equal((await call()).status,401);
+  f.live.get(sids.admin).status="revoked";assert.equal((await call()).status,401);
   assert.equal(f.store.state.domain.audit.length,1);
 });
