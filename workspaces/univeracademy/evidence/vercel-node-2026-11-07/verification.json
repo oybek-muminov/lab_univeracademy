@@ -1,0 +1,52 @@
+{
+  "status": "LOCAL_SYNTHETIC_PASS; DEFAULT_API_UNCONFIGURED_503",
+  "base": "29217c3a0ad8fad1140435c752857a60ef71b441",
+  "tests": {
+    "command": "node --test tests/vercel-node/adapter.test.mjs tests/vercel-node/pool-port.test.mjs tests/first-test/cors.test.mjs",
+    "total": 12,
+    "new": 9,
+    "affected_cors_regressions": 3,
+    "pass": 12,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0
+  },
+  "typecheck": {
+    "command": "npm run typecheck",
+    "scope": "existing TS backend/storage; JS adapter executed by Node tests",
+    "exit": 0
+  },
+  "source_manifest_sha256": "bec1d1c2a0f2c747b468cdd02973807f6e5bbad88ef1a66cdf012a7ef1a90510",
+  "production_bootstrap": "NOT_IMPLEMENTED; api/index.mjs passes undefined configuration; env alone cannot enable business API",
+  "public_env_settings": [
+    "UA_API_ORIGIN",
+    "UA_ALLOWED_ORIGINS JSON array"
+  ],
+  "named_prepared_statement_setting": "transactionPoolPort strips name and keeps text/bound values",
+  "unchanged": {
+    "package-lock.json": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503",
+    "contracts/review-only.openapi.json": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "packages/api-client/student-client.ts": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "packages/api-client/student-types.d.ts": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+  },
+  "mini_app_tree_preserved": "719d1606cf6d309ac5e59025d72883e8a3f8a707",
+  "privacy": {
+    "unreviewed_matches": [],
+    "reviewed_synthetic_negative_case": [
+      {
+        "path": "tests/vercel-node/adapter.test.mjs",
+        "rule": "credential_url",
+        "line": 13
+      }
+    ],
+    "real_credential_data_added": false
+  },
+  "not_run": [
+    "actual node-postgres driver/package and SSL connection",
+    "Supavisor and real Postgres/schema/RLS/isolation",
+    "real staff session/JWKS/bootstrap integration",
+    "Vercel build/original URL rewrite/preview/deployment",
+    "actual public domains, browser Telegram launch and load/capacity"
+  ],
+  "main_repo_real_DB_schema_migration_domain_provider_remote_deploy_changes": false
+}

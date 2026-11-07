@@ -1,4 +1,47 @@
-# Current Backend publication — first-test relational commands and local CORS
+# Current Backend publication — Vercel Node transport candidate
+
+Based on branch HEAD29217c3a0ad8fad1140435c752857a60ef71b441, preserving its full
+Mini App subtree. This publication adds only the reviewed Vercel Node adaptation,
+transaction-pool port and their tests/docs. No framework/API/client/schema change.
+No real DB/provider/domain, migration or deployment operation is included.
+
+`api/index.mjs` is the Node Web fetch entry. `vercel.json` proposes routing only
+`/api/v1/:path*` to it; actual Vercel build/rewrite/project-root delivery is NOT_RUN.
+The runtime reuses the existing configured handler, retains raw bodies and proof/
+CAS/deadline/session behavior, and accepts explicit public HTTPS origins/CORS.
+Required public settings: UA_API_ORIGIN and UA_ALLOWED_ORIGINS (JSON array).
+
+**Production bootstrap is still incomplete.** The default entry passes undefined
+HttpConfiguration and API requests remain503. Public env settings alone do not
+enable the API. Reviewed real pool/TLS, bot secret, policy/numeric ports, validator,
+current staff/session/JWKS and schema/RLS integration are still required.
+
+Author validation:12/12 PASS (9 new plus3 affected local-CORS regressions),
+typecheck exit0. Exact tested source/log bytes are published without rerunning
+unchanged tests. See `evidence/vercel-node-2026-11-07/` and
+`docs/api/vercel-node-local-proposal-2026-11-07.md`; their original local-preparation
+status is frozen provenance. Current publication intake is recorded in
+`docs/api/vercel-node-publication-verification-2026-11-07.json`.
+
+```sh
+npm ci --ignore-scripts
+npm run setup:validator
+npm run test:vercel-node
+npm run typecheck
+```
+
+`transactionPoolPort` forwards text/bound parameters without Statement.name to a
+checked-out native-driver client. Real pg/Supavisor/TLS execution is NOT_RUN. The
+plan specifies one client per transaction, module-scoped pool, TLS verification,
+no query pipelining/session-state reliance or automatic retry after unknown COMMIT.
+
+Mini App files/guard remain unchanged. Its manifest still pins83 Backend files
+fromada6600b, so UI-owner repinning is required before combined QA. Current shared
+client/types match its copies. All current Backend bytes are listed in
+BACKEND-CURRENT-SHA256SUMS; previous reports/sums are historical provenance.
+No secret, real data, cache/build or old archive is added.
+
+## Prior Backendada6600b publication — historical first-test checkpoint
 
 This update is based on branch HEAD2ef530bba05aa121479f93fdfca118b64fb61ae2,
 preserving its complete current Mini App subtree. It adds Teacher/Owner

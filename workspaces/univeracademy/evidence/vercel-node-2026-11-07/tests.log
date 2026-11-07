@@ -1,0 +1,20 @@
+✔ local OPTIONS permits exact configured Mini App origin, methods and proof/idempotency headers without invoking storage/auth (81.36816ms)
+✔ unlisted/null/malformed origin, unknown method/header and missing preflight proof are denied before application writes (4.95434ms)
+✔ local CORS preserves API error status/headers/body, exposes Retry-After, and has no wildcard/production origin default (1.914951ms)
+✔ Vercel Node fetch transport requires explicit HTTPS origins and never defaults to fixture/pool configuration (11.484742ms)
+✔ public HTTPS OPTIONS works without DB/auth but exact origins, methods, headers and /api/v1 boundary remain mandatory (7.544332ms)
+✔ raw body boundary limits chunks and length without parsing/reserializing JSON or leaking input (8.791497ms)
+✔ warm entry caches only its configured handler and sanitizes bad/missing environment/bootstrap failures (5.40214ms)
+✔ default api module is the Web fetch export and fails503 until real server bindings are supplied; routing proposal has no SPA/API wildcard takeover (10.262737ms)
+✔ existing production handler over Vercel fetch keeps Teacher/Admin/student flow, raw Unicode, CAS, deadline, wire and one-device behavior (240.16065ms)
+✔ transaction pool port strips every Statement.name, preserves parameterization and uses one checked-out driver client through COMMIT (2.453668ms)
+✔ pool bridge forwards transaction advisory locks and unknown COMMIT discard without retry or a false ACK (1.550427ms)
+✔ pool bridge retains callback exception identity and rollback/release, and rejects a malformed driver without fallback (1.026542ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1662.104544

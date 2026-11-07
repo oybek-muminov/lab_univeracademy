@@ -1,0 +1,79 @@
+{
+  "status": "LOCAL_CANDIDATE_ONLY; NOT_COMMITTED_OR_UPLOADED",
+  "base": "29217c3a0ad8fad1140435c752857a60ef71b441",
+  "source_files_changed_or_added": 9,
+  "files": [
+    {
+      "path": "api/index.mjs",
+      "bytes": 616,
+      "sha256": "e8c6699dbfac16771857c2b684b1198ac53950cf71469149200b619fb9412a4b",
+      "before": null
+    },
+    {
+      "path": "runtime/vercel-node.mjs",
+      "bytes": 4161,
+      "sha256": "eb95ef50e999b44403f20fa2bdd51923443f1ef6038f60c7588bda1820537171",
+      "before": null
+    },
+    {
+      "path": "runtime/local-cors.mjs",
+      "bytes": 3289,
+      "sha256": "c8c7cf03b13c0b86723a64732098fe19e9fa1daa26bbcf085b64baf4d7d995c2",
+      "before": {
+        "bytes": 2582,
+        "sha256": "3d56b5594b99ed7a85113ee47a65cd114fe4ae9fa9ba2bdfba1986676d1effee"
+      }
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/transaction-pool-port.ts",
+      "bytes": 1102,
+      "sha256": "79b9dcf8a9c27ef1ccc3f86a9233e8988731e17b2d9bdd330e3aa3872f084153",
+      "before": null
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 163,
+      "sha256": "29c44dcff6c14b92cdd84a68afaba6dae869577dfceba54dfd911eb2d9427148",
+      "before": null
+    },
+    {
+      "path": "package.json",
+      "bytes": 1646,
+      "sha256": "3cea34429f7719c62c6034edeadffaa9756ba5262fb2338e7443637399a84937",
+      "before": {
+        "bytes": 1578,
+        "sha256": "e4895525569006a768de312bb957eb912bab124fccb8463410c5e72f2b86e8bd"
+      }
+    },
+    {
+      "path": "tests/vercel-node/adapter.test.mjs",
+      "bytes": 11454,
+      "sha256": "a3c38ef203b6fdd39ae9cbdcebecd1dc5bf20744b9104d4f0cd075819a3d9629",
+      "before": null
+    },
+    {
+      "path": "tests/vercel-node/pool-port.test.mjs",
+      "bytes": 3692,
+      "sha256": "8cad9affbcab42ca1daa74da7153de4f8b3d44b443120f199fb4df96216c98a2",
+      "before": null
+    },
+    {
+      "path": "docs/api/vercel-node-local-proposal-2026-11-07.md",
+      "bytes": 10434,
+      "sha256": "bf84218a2ce8fc7d02fc819ea24a96c18e9a47c556d1285ace710c136f4b4ccc",
+      "before": null
+    },
+    {
+      "path": "evidence/vercel-node-2026-11-07/tests.log",
+      "bytes": 1747,
+      "sha256": "54d4e91a60c2c69110af7b0666d5939abefc008fca71c604f8c711686a009c70",
+      "before": null
+    },
+    {
+      "path": "evidence/vercel-node-2026-11-07/typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f",
+      "before": null
+    }
+  ]
+}

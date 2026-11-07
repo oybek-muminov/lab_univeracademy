@@ -1,0 +1,58 @@
+{
+  "status": "AUTHOR_SYNTHETIC_VALIDATION_PASS; REAL_VERCEL_BOOTSTRAP_BUILD_DB_QA_PENDING",
+  "branch": "qa/current-flow-20261106",
+  "publication_parent": "29217c3a0ad8fad1140435c752857a60ef71b441",
+  "preparation_source_manifest": "evidence/vercel-node-2026-11-07/source-manifest.json",
+  "preparation_source_manifest_sha256": "bec1d1c2a0f2c747b468cdd02973807f6e5bbad88ef1a66cdf012a7ef1a90510",
+  "preparation_verification_sha256": "acca8e406b70e0d9dc692722f7787377b971d9899ec208d347d2650a1ce3ce9a",
+  "preparation_status_preserved_as_historical_provenance": true,
+  "validation": {
+    "command": "node --test tests/vercel-node/adapter.test.mjs tests/vercel-node/pool-port.test.mjs tests/first-test/cors.test.mjs",
+    "source": "exact tested local candidate and frozen logs; tests not redundantly rerun during upload",
+    "tests": 12,
+    "new": 9,
+    "affected_local_cors_regressions": 3,
+    "pass": 12,
+    "fail": 0,
+    "skipped": 0,
+    "exit": 0,
+    "typecheck": "npm run typecheck: exit0; typed backend/storage; JS adapter executed by Node tests",
+    "source_and_dependencies_match_tested_candidate": true
+  },
+  "entry": {
+    "module": "api/index.mjs",
+    "export": "default { fetch(Request): Promise<Response> }",
+    "factory": "createVercelNodeFunction({apiOrigin,allowedOrigins,configuration})",
+    "public_environment": ["UA_API_ORIGIN", "UA_ALLOWED_ORIGINS JSON array"],
+    "production_bootstrap": "NOT_IMPLEMENTED; default undefined HttpConfiguration; business API stays503",
+    "routing": "/api/v1/:path* -> /api/index; actual Vercel rewrite/build NOT_RUN"
+  },
+  "mini_app": {
+    "files_preserved": 67,
+    "parent_git_tree": "719d1606cf6d309ac5e59025d72883e8a3f8a707",
+    "client_and_types_match_shared_unchanged_bytes": true,
+    "guard_exit": 1,
+    "guard": "BACKEND_TARGET_SIZE_MISMATCH: BACKEND-CURRENT-SHA256SUMS; still pins ada6600b/83 files",
+    "guard_modified_or_bypassed": false,
+    "needed": "UI owner repins the strict Backend manifest, then combined repository QA"
+  },
+  "privacy": {
+    "unreviewed_targeted_scan_matches": 0,
+    "reviewed_synthetic_negative_case": "tests/vercel-node/adapter.test.mjs rejects a user:pass URL; no real credential",
+    "real_data_or_real_credential_added": false,
+    "cache_build_old_archives_added": false
+  },
+  "unchanged_sha256": {
+    "client": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "types": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+    "api": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "dependency_lock": "0bae0a104f118c3bce3dc555ab9005820f4b66ae08259996516f566bc0bdb503"
+  },
+  "not_run": [
+    "Real node-postgres driver, pooler/TLS/schema/Postgres/RLS/isolation",
+    "Real staff/session/JWKS production bootstrap and policies",
+    "Existing Vercel project settings/root/build/rewrite/preview/deployment",
+    "Real public domain, browser Telegram launch and capacity/load"
+  ],
+  "main_project_real_Supabase_provider_domain_deploy_changes": false
+}

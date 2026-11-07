@@ -1,8 +1,22 @@
 // Local browser transport only. CORS grants no application authority; the
 // configured handler still verifies all student/staff proofs and current scope.
 export function withLocalCors(handler, allowedOrigins = []) {
-  if (!Array.isArray(allowedOrigins)) throw Error("INVALID_LOCAL_ORIGINS");
+  return withOriginCors(handler,allowedOrigins,"local");
+}
+export function publicHttpsOrigin(value) {
+  const url = new URL(value);
+  if (value !== url.origin || url.protocol !== "https:" || url.hostname.includes("*") ||
+      ["localhost","0.0.0.0","[::]","[::1]"].includes(url.hostname) ||
+      url.hostname.endsWith(".localhost") || /^127\./.test(url.hostname)) throw Error("INVALID_HTTPS_ORIGIN");
+  return value;
+}
+export function withPublicCors(handler, allowedOrigins) {
+  return withOriginCors(handler,allowedOrigins,"public_https");
+}
+function withOriginCors(handler, allowedOrigins, mode) {
+  if (!Array.isArray(allowedOrigins)) throw Error(mode==="local"?"INVALID_LOCAL_ORIGINS":"INVALID_HTTPS_ORIGINS");
   const origins = new Set(allowedOrigins.map(value => {
+    if (mode === "public_https") return publicHttpsOrigin(value);
     const url = new URL(value);
     if (value !== url.origin || !["http:", "https:"].includes(url.protocol) ||
         !["127.0.0.1", "localhost", "[::1]"].includes(url.hostname)) throw Error("INVALID_LOCAL_ORIGIN");
