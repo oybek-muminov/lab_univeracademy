@@ -1,0 +1,210 @@
+{
+  "status": "AUTHOR_COMBINED_SOURCE_QA_PASS_INDEPENDENT_QA_PENDING",
+  "backend_base_commit": "39b2d92acb30b6fffa4c0a0638a49218417beffb",
+  "branch": "qa/current-flow-20261106",
+  "api_status": "Original0.2.9 API remains provisional; Clerk0.3 proposal is unapplied/NOT ACCEPTED",
+  "connection_boundary": {
+    "prototype_UI_to_Clerk_candidate_HTTP": "NOT_CONNECTED; separate synthetic UI/provider ports and separate Backend candidate tests",
+    "production_Clerk_or_Google": "NOT_CONNECTED",
+    "production_main": "Existing Telegram bootstrap; no domain configured",
+    "account_linking": "NOT_IMPLEMENTED; Backend candidate blocked409, no merge",
+    "WebView_external_browser_return": "NOT_IMPLEMENTED; preview button disabled",
+    "staff_device_policy": "NOT_ACCEPTED; Backend candidate missing gate503"
+  },
+  "backend_guard": {
+    "files": 108,
+    "browser_copies": 2,
+    "current_manifest_sha256": "60b6cc33f3ea951c402b06aeff3ef2eaa0ff7bb2d561d1f91aeec004b076447a",
+    "checks": "Unconditional byte-size/SHA256 and browser-copy loops unchanged",
+    "historical_manifests_unchanged": {
+      "combined-259b675e-manifest.json": "259b675e3e3ce2ad093af0029dc6252d1aad1fd6390048c2789e31cb6715e9be",
+      "current-flow-backend-manifest.json": "45dab2f5f56d2c0366a57d9d3d7db4bdcd36d8d0b73c6666d900d8a9da57e797",
+      "production-backend-manifest.json": "bb8f1a619d677826225253614771863136cab7616c16bfdf35aaaf1a12b6b669",
+      "backend-ada6600-manifest.json": "9321fe841690a3511b2399661fa7c8b860315f55dfed2389362d2c2a62f69619",
+      "backend-47ed6f8-manifest.json": "ed4058842c6bef9dd18791424abff99418c931a9821c74fca38e09b4f34e9aee"
+    }
+  },
+  "owner_client_sha256": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+  "owner_types_sha256": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21",
+  "api_sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+  "clerk_proposal": {
+    "path": "contracts/clerk-auth.proposal.patch.json",
+    "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019",
+    "status": "UNAPPLIED_NOT_ACCEPTED"
+  },
+  "checks": [
+    {
+      "command": "node --unhandled-rejections=strict --test --test-reporter=tap tests/*.test.mjs",
+      "cwd": "apps/mini-app",
+      "result": "PASS",
+      "tests": 215,
+      "fail": 0,
+      "includes": {
+        "guard": 26,
+        "common_entry_controller": 24,
+        "production_loopback_HTTP": 1
+      }
+    },
+    {
+      "command": "node --test --test-reporter=tap tests/clerk-auth/contract.test.mjs tests/clerk-auth/verifier.test.mjs tests/clerk-auth/http.test.mjs tests/storage-auth/staff-jwt.test.mjs",
+      "cwd": "workspaces/univeracademy",
+      "result": "PASS",
+      "tests": 20,
+      "fail": 0,
+      "mode": "Ephemeral synthetic RSA/local JWK/liveness/memory transactions; no provider network"
+    },
+    {
+      "command": "node tests/common-entry-browser.mjs <local-screens-dir>",
+      "cwd": "apps/mini-app",
+      "result": "PASS",
+      "browser_cases": 9,
+      "build_exclusion_cases": 2,
+      "widths": [
+        320,
+        390,
+        1280
+      ],
+      "externalRequests": 0,
+      "httpMutations": 0,
+      "popups": 0
+    },
+    {
+      "command": "npm run check && npm run build",
+      "cwd": "apps/mini-app",
+      "result": "PASS"
+    },
+    {
+      "command": "npm run typecheck",
+      "cwd": "workspaces/univeracademy",
+      "result": "PASS"
+    },
+    {
+      "command": "node apps/mini-app/tests/verify-backend-targets.mjs",
+      "cwd": "workspaces/univeracademy",
+      "result": "PASS",
+      "targets": 108,
+      "browser_copies": 2
+    }
+  ],
+  "protected_source_sha256": {
+    "src/style.css": "ecb015daf0ee0cfe727b4155ce3e5cbd785f3cd8b159f62ac422005b568df661",
+    "src/student-app.tsx": "a9868d0deede70a42ffe81eb6b70ec32c565739f8f46e4a451ffa730847f271e",
+    "src/flow.ts": "7be4a1418209828e2b95178dc86929fd103f5c37a16a3a08980538e6faeba0e7",
+    "src/transport.ts": "fff27d8201db371f09363679757119ecb178661f9c44ad3825d34b497c6377e9",
+    "src/wire-map.ts": "6af2f6c1df81aeaa5f01768b4ac5a3a02e7ef62a5a21c40d5e353163e2789548",
+    "src/owner-port.ts": "591019fb833cf007d6018b233d5267140024d972f39269fd779a81ff27bb611e",
+    "src/production-entry.tsx": "a726d8c85d8956d289370eddbd62bf2b4b152bbb6e3c0318f8579c322a8bece5",
+    "src/production-connection.ts": "9d3adaee8e8549c5f5c155a85d29a94a3d9a396ab97afed20727c42d23760492",
+    "src/production-runtime.ts": "b0c70d9426ec7a0cdacda47b991bbc86ce410e9e0bd0ca93047d03eb8ea54fda",
+    "src/telegram-bootstrap.ts": "492988f7bee8e5e4fc57ecf2feef7fe11bff62d4ba83286920b96ec79a67f67c",
+    "src/owner-client/student-client.ts": "54c110d7736a2537e384bddaaab2e91a78e2e56fe3d365fd7d688fa51ab65fae",
+    "src/owner-client/student-types.d.ts": "9e7c643f0a1788918e178732677dfa5a8a78209d3a2ba8f5d88d1396dad18c21"
+  },
+  "Backend_preserved": "108/108 exact bytes unchanged from base",
+  "privacy": {
+    "status": "PASS",
+    "real_credentials_or_user_data_added": false,
+    "synthetic_email_domain": "example.test",
+    "public_mock_OTP": "246810; not a real credential",
+    "production_bundle_prototype_key_or_proof_markers": "ABSENT"
+  },
+  "domain": "univeracademy.uz is only planned/reserved per user; no origin/DNS/OAuth/provider settings applied",
+  "not_run": [
+    "Real Clerk/Google/email/Telegram WebView",
+    "Durable DB/RLS/Clerk identity storage/liveness/provider/Vercel bootstrap/deploy",
+    "UI to candidate HTTP integration",
+    "Independent QA of this combined commit"
+  ],
+  "not_performed": [
+    "Main UniverAcademy repo changes",
+    "Real account creation/linking or credentials/provider configuration",
+    "Real DB/provider/deploy"
+  ],
+  "evidence_log_identities": [
+    {
+      "path": "mini-app-tests.tap",
+      "bytes": 46642,
+      "sha256": "9dc51cab9089617c9bbc66ab3b483e4d8516aeaa96713a6ef25a9ddcfea52bd7"
+    },
+    {
+      "path": "backend-clerk-tests.tap",
+      "bytes": 6084,
+      "sha256": "98524f799a8ccb5006aedfc2de308dc381ea4cce23dd28b7875185d175318dd0"
+    },
+    {
+      "path": "browser.log",
+      "bytes": 3675,
+      "sha256": "b69ca71afe834c3c90bc109dbc38f38a6fddd9978bb78a9d86c97d4aa0cfe5e7"
+    },
+    {
+      "path": "mini-app-typecheck.log",
+      "bytes": 263,
+      "sha256": "ddc260d0ab04bbc1803bbc81e1bcac17f9e8e36dc769870e80d1e19c71bdab0b"
+    },
+    {
+      "path": "mini-app-build.log",
+      "bytes": 898,
+      "sha256": "4991b84be80b530448bfc721cf826f0964e0f3f8c6db0a33b5a49dabb87b4482"
+    },
+    {
+      "path": "backend-typecheck.log",
+      "bytes": 561,
+      "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+    },
+    {
+      "path": "guard-before.log",
+      "bytes": 688,
+      "sha256": "d62dd1cf0f4529479ddef31aa366ad102650a828703ff2b80a2ed11cbb05cdfb"
+    }
+  ],
+  "screenshots_local_only": [
+    {
+      "name": "1280-choose-synthetic.png",
+      "bytes": 57645,
+      "sha256": "0ac95f1142d639122190ce646cdd483aa98513ed3f21c2ea6db96098f6917f5e",
+      "width": 1280,
+      "height": 900,
+      "publication": "LOCAL_ONLY; PNG not uploaded"
+    },
+    {
+      "name": "320-choose-synthetic.png",
+      "bytes": 49886,
+      "sha256": "8257f4825f68ca6f5ab38422c46eb9510acfcb9cc5e6c7c6411999547f826ccd",
+      "width": 320,
+      "height": 914,
+      "publication": "LOCAL_ONLY; PNG not uploaded"
+    },
+    {
+      "name": "390-app-ready-synthetic.png",
+      "bytes": 51540,
+      "sha256": "8455fc289f4a80cdec0eececd8be08e3fa3378e2c028bd6a3736d61f24b508b3",
+      "width": 390,
+      "height": 983,
+      "publication": "LOCAL_ONLY; PNG not uploaded"
+    },
+    {
+      "name": "390-choose-synthetic.png",
+      "bytes": 49877,
+      "sha256": "0cfe15e202026ca9d2d334340c0bebaa04718d7673ec0666caff1433ba55ecef",
+      "width": 390,
+      "height": 900,
+      "publication": "LOCAL_ONLY; PNG not uploaded"
+    },
+    {
+      "name": "390-code-synthetic.png",
+      "bytes": 38452,
+      "sha256": "2c89197bc9ac5c09170841b513c50c62ae3745d5c2e9ff7d55617703859318e8",
+      "width": 390,
+      "height": 900,
+      "publication": "LOCAL_ONLY; PNG not uploaded"
+    },
+    {
+      "name": "390-webview-handoff-not-connected.png",
+      "bytes": 38161,
+      "sha256": "258978423d63ab50d685eeadc759014eaa563cd929b2f477cbbe75875ebd6ee7",
+      "width": 390,
+      "height": 900,
+      "publication": "LOCAL_ONLY; PNG not uploaded"
+    }
+  ]
+}

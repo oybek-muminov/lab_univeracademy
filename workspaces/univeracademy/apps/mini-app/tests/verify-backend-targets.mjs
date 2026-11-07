@@ -22,12 +22,16 @@ const adaBaselineRaw = readFileSync(new URL('./fixtures/backend-ada6600-manifest
 assert.equal(sha256(adaBaselineRaw), '9321fe841690a3511b2399661fa7c8b860315f55dfed2389362d2c2a62f69619',
   'ADA6600_BASELINE_MANIFEST_MISMATCH');
 assert.equal(JSON.parse(adaBaselineRaw).files.length, 83);
-const runtimeRaw = readFileSync(new URL('./fixtures/backend-47ed6f8-manifest.json', import.meta.url));
-assert.equal(sha256(runtimeRaw), 'ed4058842c6bef9dd18791424abff99418c931a9821c74fca38e09b4f34e9aee',
+const vercelBaselineRaw = readFileSync(new URL('./fixtures/backend-47ed6f8-manifest.json', import.meta.url));
+assert.equal(sha256(vercelBaselineRaw), 'ed4058842c6bef9dd18791424abff99418c931a9821c74fca38e09b4f34e9aee',
+  'VERCEL_BASELINE_MANIFEST_MISMATCH');
+assert.equal(JSON.parse(vercelBaselineRaw).files.length, 95);
+const runtimeRaw = readFileSync(new URL('./fixtures/backend-39b2d92-manifest.json', import.meta.url));
+assert.equal(sha256(runtimeRaw), '60b6cc33f3ea951c402b06aeff3ef2eaa0ff7bb2d561d1f91aeec004b076447a',
   'RUNTIME_MANIFEST_MISMATCH');
 const runtime = JSON.parse(runtimeRaw);
-assert.equal(runtime.source_commit, '47ed6f87323812da561ddf219cf13a1eb852f5f7');
-assert.equal(runtime.files.length, 95);
+assert.equal(runtime.source_commit, '39b2d92acb30b6fffa4c0a0638a49218417beffb');
+assert.equal(runtime.files.length, 108);
 export const BACKEND_SOURCE_COMMIT = runtime.source_commit;
 const repo = new URL('../../../', import.meta.url);
 for (const file of runtime.files) {

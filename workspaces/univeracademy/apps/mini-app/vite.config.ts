@@ -3,6 +3,7 @@ import { defineConfig, loadEnv } from 'vite';
 export default defineConfig(({ mode, command }) => {
   const env = loadEnv(mode, process.cwd(), 'VITE_');
   return {
+    define: { __AUTH_PROTOTYPE_PREVIEW__: JSON.stringify(command === 'serve' && mode === 'auth_prototype') },
     // Prepared host integration only; no SDK network request occurs during build.
     // Default builds do not inject a remote SDK. Browser tests intercept this URL.
     plugins: [{ name: 'telegram-sdk-entry', transformIndexHtml() {

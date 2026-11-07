@@ -4,7 +4,9 @@ import './style.css';
 const demoRoot = () => createRoot(document.getElementById('root')!);
 
 // Backend-owned local client is available only through explicit DEV fixture mode.
-if (import.meta.env.DEV && import.meta.env.MODE === 'local_fixture') {
+if (import.meta.env.DEV && __AUTH_PROTOTYPE_PREVIEW__) {
+  void import('./common-entry-prototype.tsx').then(({ CommonEntryPrototypeApp }) => demoRoot().render(<CommonEntryPrototypeApp />));
+} else if (import.meta.env.DEV && import.meta.env.MODE === 'local_fixture') {
   void import('./local-http.tsx').then(({ LocalHttpApp }) => demoRoot().render(<LocalHttpApp />));
 } else if (import.meta.env.DEV || import.meta.env.MODE === 'demo') {
   void import('./demo.tsx').then(({ DemoApp }) => demoRoot().render(<DemoApp />));

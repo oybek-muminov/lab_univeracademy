@@ -1,0 +1,233 @@
+{
+  "status": "COMBINED_MINI_APP_SOURCE_FOR_LAB_QA",
+  "backend_base_commit": "39b2d92acb30b6fffa4c0a0638a49218417beffb",
+  "branch": "qa/current-flow-20261106",
+  "file_count_excluding_this_manifest": 19,
+  "self_excluded": "COMMON-ENTRY-COMBINED-SOURCES.json",
+  "files": [
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/CLERK-COMMON-ENTRY-PLAN.md",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 9774,
+        "sha256": "020b55b01779dd0a01aa50a6928bd878e8a1b057ca40cb3f8d32db98eaaa2126"
+      },
+      "git_blob_sha": "fb8cb08dc4a2680bb7688c2cb1d9d50018ee64d2"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/COMMON-ENTRY-COMBINED-QA.json",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 8393,
+        "sha256": "34a5eaf937feb07dcecf40b27e308b5f8c3fd4127d1d63f81e42b47c1f36e8d4"
+      },
+      "git_blob_sha": "3442e9f4eb831075cb9ca252e4f9cd5e835fb16c"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/README.md",
+      "change": "modified",
+      "before": {
+        "bytes": 4059,
+        "sha256": "799a355ad2f26a71a908b916bb2ebe1afc0a18b071f9b035b478fe14e980a8c6"
+      },
+      "after": {
+        "bytes": 5115,
+        "sha256": "a639137701c9bd9f12feb3f77f4e0389865cb3ef3df1f48e3ed53575dfd495de"
+      },
+      "git_blob_sha": "eacd9331f6c113c94a8f38a8853a32b4e6217c72"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/package.json",
+      "change": "modified",
+      "before": {
+        "bytes": 1054,
+        "sha256": "079813e752e81a0dcb81976d26a054c9ca4fe87b957b34ac9bfdd8603acd44ea"
+      },
+      "after": {
+        "bytes": 1281,
+        "sha256": "942a0aa320c9812a2d535cb280b2cd3ab05576e242f3e7fa3fd6dfe6f0e5d236"
+      },
+      "git_blob_sha": "3019d13761d384c78ad9a34440138d3037bcfc60"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/auth-prototype-env.d.ts",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 122,
+        "sha256": "33caa9d1817b64bb5094302b3c3dd2e396a83147059c9a454220196ad98322ea"
+      },
+      "git_blob_sha": "4955d6a2a63e7d2240af0be98877063d1082c67a"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-demo.ts",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 1935,
+        "sha256": "c1d8d4e9e17324edfdc15cc261ce2cf102d29b299c015ab795cc738cac2f7d2b"
+      },
+      "git_blob_sha": "fdc34a27676afe9eceb1e6ab2144ecdf30f9567d"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-prototype.css",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 1304,
+        "sha256": "a44bad58fcdb90d9c8b8d5262c98c559c3099ec59644e2b026aa089f823334d1"
+      },
+      "git_blob_sha": "b645cf83220a6a278c111324b84b18dcb875bc98"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-prototype.ts",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 6710,
+        "sha256": "ca97d5a015deb5696069728c651f7037878faf437e055c31b7e297337959f965"
+      },
+      "git_blob_sha": "202abca54af40090a4ad560822f93db00e95021b"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-prototype.tsx",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 5039,
+        "sha256": "db5219e477e9b72131c995d8dc2d2271b72f708866fe44c24489ce051f80b178"
+      },
+      "git_blob_sha": "89b3dbf7d8a4570652ba81a31c9beb83f918841b"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/src/main.tsx",
+      "change": "modified",
+      "before": {
+        "bytes": 910,
+        "sha256": "218dd2737e6bffae07d74d2c6297b112a0b4524aebf504335b8bae95cd98392d"
+      },
+      "after": {
+        "bytes": 1107,
+        "sha256": "1af2e873d2b6acdeb0ddeb8fe92f1cf4e8d387d93f4a02e2aba268bfecd2bf7d"
+      },
+      "git_blob_sha": "a2d5f8dc5a486de25c3d3d559ac3653b9d8e3b94"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry-browser.mjs",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 1995,
+        "sha256": "d3c695327a44f6c3e3df03821052570c557fb528487ff1d8de0fad4191a4bfd6"
+      },
+      "git_blob_sha": "b6f436321cc23960a4611f8f7ff83dc53876b9cf"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry-browser.py",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 6863,
+        "sha256": "93667ecd13e53de9c82f0a95f485eb58f6d2dd330c471d2690f0ec6add6b9dc9"
+      },
+      "git_blob_sha": "105902daaaa013248cc88fcca93886566a965289"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry-prototype.test.mjs",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 10823,
+        "sha256": "b157161935542e31e3ed5a70aba9fe16e113f2bb814a667931e8d65de52db2e7"
+      },
+      "git_blob_sha": "31c1b5dc2e138f018ff61d8e401cb4e66de45b4e"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry.fixture.html",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 240,
+        "sha256": "8599407e3aa68532bc9ccbea0f656214e8b930946da552fb78ece3923b0c22e9"
+      },
+      "git_blob_sha": "ef06aa80ef16f8d922d9bef348aa08cc1fef3f87"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry.fixture.mjs",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 807,
+        "sha256": "60695ea7ff25bb49bfc149c0030b2fa461b74af6a620076e28b55cc4205a325b"
+      },
+      "git_blob_sha": "3c068aaaeb9f690477f784badf85a8b1b86f3421"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/current-flow-guard.test.mjs",
+      "change": "modified",
+      "before": {
+        "bytes": 7608,
+        "sha256": "32516bbf723826b9a830e9e76dfa8cd30f3751b628fc89a56f0553a9cea1dbb7"
+      },
+      "after": {
+        "bytes": 9012,
+        "sha256": "5362a39b1ab8ab0b4bf4b97c5875b17710a9d5d3a3b6bfc13e49005bb175cbe9"
+      },
+      "git_blob_sha": "32d92e3f48de304b4c2a1cb6f66258e890ea683b"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-39b2d92-manifest.json",
+      "change": "added",
+      "before": null,
+      "after": {
+        "bytes": 19054,
+        "sha256": "60b6cc33f3ea951c402b06aeff3ef2eaa0ff7bb2d561d1f91aeec004b076447a"
+      },
+      "git_blob_sha": "e3a117069d364753238a077bcb87cac93b9a0b0b"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/verify-backend-targets.mjs",
+      "change": "modified",
+      "before": {
+        "bytes": 2909,
+        "sha256": "4501433065537cb879b227e80aca71951fba0943910ddbaeee518296bd4c5ba8"
+      },
+      "after": {
+        "bytes": 3230,
+        "sha256": "c14901473ada0fb892ddda45bfdf0812c20aecd8cfcf5cad0971d4398ea837cc"
+      },
+      "git_blob_sha": "abe73932cfcb51592f304c34903e9a462a306e91"
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/vite.config.ts",
+      "change": "modified",
+      "before": {
+        "bytes": 902,
+        "sha256": "4e0aae28dbfc7bb2af92d363dea9e3fd381b3976676f42700b2b5e0f238229c3"
+      },
+      "after": {
+        "bytes": 1012,
+        "sha256": "081c5779316f23907dac36fae2fe726ce8c78c61c2fba6ec25ee96e4dd8f5a5f"
+      },
+      "git_blob_sha": "aefae19a5e0be9d48cba10ebe07172e8c63232a9"
+    }
+  ],
+  "deleted_paths": [],
+  "backend_preserved": 108,
+  "privacy": {
+    "files": 19,
+    "patterns": [
+      "private_key",
+      "jwt",
+      "github_token",
+      "bot_token",
+      "aws_key",
+      "provider_key"
+    ],
+    "matches": 0,
+    "synthetic_code_and_proofs_are_explicit_fixtures": true
+  },
+  "prototype_boundary": "DEV serve-only synthetic ports; no real Clerk or new exchange HTTP wiring; link/return not implemented"
+}

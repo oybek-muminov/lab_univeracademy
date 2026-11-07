@@ -1,4 +1,23 @@
-# Mini App: production owner client review
+# Clerk umumiy kirish oynasi — lokal QA nomzodi
+
+Birlashgan asos: Backend `39b2d92acb30b6fffa4c0a0638a49218417beffb`.
+[Google/email OTP rejasi](CLERK-COMMON-ENTRY-PLAN.md) va prototip faqat
+`npm run dev:auth-prototype` lokal rejimida ishlaydi. Telegram ixtiyoriy;
+Telegram hisobini bog‘lash va WebViewdan tashqi brauzerga qaytish ulanmagan.
+
+Backend Clerk exchange uchun lokal handler va unapplied/NOT ACCEPTED kontrakt
+patchini beradi. Generated student client/types o‘zgarmagan. Prototip sun’iy
+provider/authorize portlarida qoladi; candidate HTTPga yoki real Clerk/Googlega
+ulanmaydi. Production entry oldingi Telegram bootstrapni saqlaydi.
+
+Guard108 Backend fayli va browser client/types nusxalarini aniq pinlaydi,
+historical16/44/71/83/95 manifestlar saqlanadi. Hozirgi author tekshiruvlari
+[COMMON-ENTRY-COMBINED-QA.json](COMMON-ENTRY-COMBINED-QA.json)da; avvalgi
+QA fayllari yangi Clerk integratsiyasi isboti deb olinmaydi. Mustaqil QA kutiladi.
+Domain/DNS, real credentials/provider/DB, upload to main yoki deploy bajarilmaydi.
+
+## Oldingi production owner review — tarixiy manba
+
 
 Current composition targets Backend `1335762a8e133311849b2dad1ddc6be3ccf9bb53`.
 Production main now connects the Telegram bootstrap to Backend

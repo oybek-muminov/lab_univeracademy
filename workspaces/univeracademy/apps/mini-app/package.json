@@ -6,6 +6,9 @@
   "engines": { "node": ">=24" },
   "scripts": {
     "dev": "vite --host 127.0.0.1",
+    "dev:auth-prototype": "vite --host 127.0.0.1 --mode auth_prototype",
+    "test:auth-prototype": "node --test tests/common-entry-prototype.test.mjs",
+    "test:auth-prototype-browser": "node tests/common-entry-browser.mjs",
     "check": "tsc --noEmit",
     "test": "node --test tests/*.test.mjs",
     "test:current-flow": "node tests/current-flow-driver.mjs",

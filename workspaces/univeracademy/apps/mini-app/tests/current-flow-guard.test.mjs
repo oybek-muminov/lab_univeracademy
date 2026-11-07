@@ -9,7 +9,8 @@ import { spawnSync } from 'node:child_process';
 
 const source = fileURLToPath(new URL('../../../', import.meta.url));
 const guard = 'apps/mini-app/tests/verify-backend-targets.mjs';
-const current = 'apps/mini-app/tests/fixtures/backend-47ed6f8-manifest.json';
+const current = 'apps/mini-app/tests/fixtures/backend-39b2d92-manifest.json';
+const vercelBaseline = 'apps/mini-app/tests/fixtures/backend-47ed6f8-manifest.json';
 const adaBaseline = 'apps/mini-app/tests/fixtures/backend-ada6600-manifest.json';
 const productionBaseline = 'apps/mini-app/tests/fixtures/production-backend-manifest.json';
 const previous = 'apps/mini-app/tests/fixtures/current-flow-backend-manifest.json';
@@ -22,7 +23,7 @@ const manifest = JSON.parse(readFileSync(join(source, current), 'utf8'));
 function check(mutate, expected) {
   const root = mkdtempSync(join(tmpdir(), 'ua-current-guard-'));
   try {
-    for (const name of [guard, current, previous, productionBaseline, adaBaseline, history, ...copies, ...manifest.files.map(file => file.path)]) {
+    for (const name of [guard, current, previous, productionBaseline, adaBaseline, vercelBaseline, history, ...copies, ...manifest.files.map(file => file.path)]) {
       const path = join(root, name); mkdirSync(dirname(path), { recursive: true });
       writeFileSync(path, readFileSync(join(source, name)));
     }
@@ -46,7 +47,7 @@ function oldAttempts(root) {
   return old; // Exact historical bytes; never executed or written over owner source.
 }
 
-test('current guard accepts all 95 exact Backend files and both browser owner copies', () => check());
+test('current guard accepts all 108 exact Backend files and both browser owner copies', () => check());
 test('same-size corruption of new attempts bytes is rejected', () => check(root => {
   const path = join(root, attempts), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
 }, 'BACKEND_TARGET_HASH_MISMATCH: ' + attempts));
@@ -111,4 +112,20 @@ test('new Vercel configuration wrong size is rejected', () => check(root => {
 }, 'BACKEND_TARGET_SIZE_MISMATCH: vercel.json'));
 test('missing new transaction-pool dependency fails closed', () => check(root => {
   rmSync(join(root, 'supabase/functions/univeracademy-api/storage/transaction-pool-port.ts'));
+}, 'ENOENT'));
+
+test('previous Vercel 95-file manifest tampering is rejected', () => check(root => {
+  const path = join(root, vercelBaseline); writeFileSync(path, readFileSync(path, 'utf8') + '\n');
+}, 'VERCEL_BASELINE_MANIFEST_MISMATCH'));
+test('new Clerk HTTP target same-size corruption is rejected', () => check(root => {
+  const path = join(root, 'supabase/functions/univeracademy-api/clerk-http.ts'), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
+}, 'BACKEND_TARGET_HASH_MISMATCH: supabase/functions/univeracademy-api/clerk-http.ts'));
+test('new Clerk verifier target same-size corruption is rejected', () => check(root => {
+  const path = join(root, 'supabase/functions/univeracademy-api/clerk-auth.ts'), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
+}, 'BACKEND_TARGET_HASH_MISMATCH: supabase/functions/univeracademy-api/clerk-auth.ts'));
+test('Clerk proposal wrong size is rejected', () => check(root => {
+  const path = join(root, 'contracts/clerk-auth.proposal.patch.json'); writeFileSync(path, readFileSync(path, 'utf8') + '\n');
+}, 'BACKEND_TARGET_SIZE_MISMATCH: contracts/clerk-auth.proposal.patch.json'));
+test('missing Clerk fixture dependency fails closed', () => check(root => {
+  rmSync(join(root, 'tests/clerk-auth/fixture.mjs'));
 }, 'ENOENT'));
