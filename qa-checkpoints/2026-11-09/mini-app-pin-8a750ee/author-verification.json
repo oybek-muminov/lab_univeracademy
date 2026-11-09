@@ -1,0 +1,251 @@
+{
+  "captured_at_utc": "2026-11-09T15:40:56.560808+00:00",
+  "verdict": "LOCAL_AUTHOR_PASS_NOT_INDEPENDENT_QA",
+  "scope": "EXACT_PIN_INTEGRITY_AND_BOUNDED_LOCAL_SYNTHETIC_CONSUMER_COMPATIBILITY",
+  "base": "8a750ee01eed794bda1942bc1bd0e89829c3a704",
+  "candidate_commit": null,
+  "runtime": {
+    "node": "v24.22.1",
+    "npm": "11.9.0"
+  },
+  "pristine_guard": "PASS_BEFORE_NEGATIVES",
+  "mini_tests": {
+    "tests": 310,
+    "pass": 310,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "build_including_tsc": "PASS",
+  "guard_controls": {
+    "positive": 1,
+    "negative": 63,
+    "new_target_negative_controls": 9,
+    "all_diagnostics_bound_to_deliberate_target": true,
+    "bytes": 17217,
+    "sha256": "faa23201a026dad3b9bfbb0ff2abaf18736c12392df56cd093419ee2bf8f7aee"
+  },
+  "source_integrity": {
+    "before_file_count": 598,
+    "after_file_count": 599,
+    "unchanged_old_source_files": 596,
+    "only_changed_paths": [
+      "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-8a750ee-manifest.json",
+      "workspaces/univeracademy/apps/mini-app/tests/verify-backend-targets.mjs",
+      "workspaces/univeracademy/apps/mini-app/tests/current-flow-guard.test.mjs"
+    ],
+    "historical_files_unchanged": 132,
+    "all_package_and_lock_files_unchanged": [
+      "LANDING_SOURCE/landing/package-lock.json",
+      "LANDING_SOURCE/landing/package.json",
+      "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/package-lock.json",
+      "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/package.json",
+      "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/package-lock.json",
+      "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/package.json",
+      "workspaces/univeracademy/apps/mini-app/package-lock.json",
+      "workspaces/univeracademy/apps/mini-app/package.json",
+      "workspaces/univeracademy/package-lock.json",
+      "workspaces/univeracademy/package.json",
+      "workspaces/univeracademy/tests/backend/validator/tooling/package-lock.json",
+      "workspaces/univeracademy/tests/backend/validator/tooling/package.json"
+    ]
+  },
+  "consumer_coverage": {
+    "production_owner_port_and_connection": [
+      "production bootstrap/owner client over loopback HTTP: register, timer, CAS clear/resume, submit, result/history, logout",
+      "actual production connection uses Backend constructor/flags and server title without inventing a group"
+    ],
+    "registration_and_empty_exams": [
+      "email evidence creates a fresh ungrouped student; canonical profile controls registration and empty exams",
+      "email SDK proof enters server-owned registration and an ungrouped student has no tests"
+    ],
+    "start_save_clear_resume": [
+      "pending answer is not confirmed; clearing uses the next revision",
+      "real HTTP: register/start/server timer/CAS clear/submit/history use owner client and1dp points",
+      "real HTTP: new device revokes old context and resumes saved answers/generation/deadline",
+      "production bootstrap/owner client over loopback HTTP: register, timer, CAS clear/resume, submit, result/history, logout"
+    ],
+    "deadline_and_CAS": [
+      "provider revocation hides the old flow; a new verified session resumes server answers and deadline",
+      "CAS conflict preserves both intents until explicit selection at fresh revision",
+      "real HTTP: register/start/server timer/CAS clear/submit/history use owner client and1dp points",
+      "real HTTP: new device revokes old context and resumes saved answers/generation/deadline",
+      "receipt retry never extends its first-clear deadline, including equality",
+      "receipt deadline aborts an unresponsive hook and releases the retry capability",
+      "receipt 429 honors Retry-After for explicit retry without moving its deadline",
+      "receipt synchronous boundary: deadline-inline leaves no orphan rejection or abort listener",
+      "all seven lifecycle projections preserve server deadline/current generation without copying successor content",
+      "terminal content and active content without a deadline cannot be rendered as a valid attempt"
+    ],
+    "result_and_history": [
+      "Clerk review entry exchanges once, uses opaque proofs and completes save/clear/resume, submit/result/history and body-only logout over TCP",
+      "public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout",
+      "ordinary result does not wait for, add or inherit a nullable bonus",
+      "production bootstrap/owner client over loopback HTTP: register, timer, CAS clear/resume, submit, result/history, logout",
+      "history retains canonical displays and can localize repeatedly without changing attribution",
+      "ordinary null is independent of cancellation; terminal history requires an ordinary result"
+    ],
+    "refresh_and_logout_receipt": [
+      "prebuilt: own SDK signout observer does not supersede captured app logout ACK",
+      "Clerk review entry exchanges once, uses opaque proofs and completes save/clear/resume, submit/result/history and body-only logout over TCP",
+      "a delayed logout ACK cannot clear or alter a newer login; logout rejection remains observed",
+      "logout during an exchange body wait clears locally and never claims a server ACK or revives its late session",
+      "failed logout stays locally signed out, reports uncertainty and cannot resurrect the old flow",
+      "local transport clear invalidates pending login and an old success without a server logout claim",
+      "logout captures a specific session, waits for app receipt and never uses global SDK signout",
+      "failed app receipt still requests targeted provider signout without implying app ACK",
+      "public SDK facade -> production owner client -> real loopback exchange -> save/resume/result/history -> targeted logout",
+      "logout local clear precedes HTTP ACK, blocks new SDK auth until captured cleanup and cannot auto-reactivate",
+      "real HTTP: lost logout ACK retries only explicitly with identical refresh proof and no bearer",
+      "real HTTP: late logout ACK cannot revoke or overwrite a fresh same-person login",
+      "real HTTP: concurrent client expiry checks share exactly one refresh operation",
+      "receipt accepts its own post-clear ACK and gives the hook only original refresh proof",
+      "receipt retries are explicit and keep the original operation and proof",
+      "only the same receipt operation is single-flight; repeated logout does not clear twice",
+      "receipt retry never extends its first-clear deadline, including equality",
+      "receipt deadline aborts an unresponsive hook and releases the retry capability",
+      "late receipt success cannot touch a fresh same-second login",
+      "late receipt success cannot touch a fresh different-person login",
+      "late receipt 401 cannot touch a fresh same-second login",
+      "late receipt 401 cannot touch a fresh different-person login",
+      "late receipt parse-error cannot touch a fresh same-second login",
+      "late receipt parse-error cannot touch a fresh different-person login",
+      "terminal receipt proof errors stop retention and never trigger refresh or replay",
+      "receipt 429 honors Retry-After for explicit retry without moving its deadline",
+      "an old logout completion cannot confirm or discard the newer logout operation",
+      "reload has no receipt proof; omitted policy enables no retained-proof retry",
+      "production bootstrap/owner client over loopback HTTP: register, timer, CAS clear/resume, submit, result/history, logout",
+      "body-only owner logout gains no Authorization, refresh or hidden retry",
+      "receipt synchronous boundary: auth-policy leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: offline-no-policy leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: validation-policy leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: malformed-policy leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: auth-no-policy leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: offline-with-policy leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: limited-policy leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: retry-sync-auth leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: cancel-inline leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: relogin-inline leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: deadline-inline leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: ack leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: async-auth leaves no orphan rejection or abort listener",
+      "receipt synchronous boundary: thenable-error leaves no orphan rejection or abort listener",
+      "RAM hydration retry refreshes an expired session without replaying Telegram data",
+      "logout clears visible context immediately and sends a body-only receipt",
+      "late logout 200 cannot change a fresh login",
+      "late logout 401 cannot change a fresh login",
+      "pending old registration is isolated in a retired flow after logout and fresh login",
+      "disposal during pending login conceals data and does not claim server logout",
+      "logout during pending login cannot resurrect that connection after a fresh launch",
+      "a singleton connection cannot be reused after logout for a new launch",
+      "a synchronous owner logout hook throw is handled by the returned rejection",
+      "expired access refreshes once for concurrent requests before any mutation is sent",
+      "a late 401 for an old proof does not rotate the new refresh proof again",
+      "401 mutations are never replayed automatically; lost refresh requires a fresh launch",
+      "a pending rotation cannot restore proofs after logout or overwrite a fresh login",
+      "F1 body-read epoch: success, logout-only",
+      "F1 body-read epoch: success, logout-and-same-person-login",
+      "F1 body-read epoch: revoked 401, logout-only",
+      "F1 body-read epoch: revoked 401, logout-and-same-person-login",
+      "F1 body-read epoch: expired 401, logout-only",
+      "F1 body-read epoch: expired 401, logout-and-same-person-login",
+      "F1 body-read epoch: JSON parse failure, logout-only",
+      "F1 body-read epoch: JSON parse failure, logout-and-same-person-login"
+    ],
+    "cancellation_and_late_response_isolation": [
+      "prebuilt: own SDK signout observer does not supersede captured app logout ACK",
+      "prebuilt: SDK revocation clears app context and late old data never changes a new login",
+      "cancelled provider completion never exchanges or replaces the newer email flow",
+      "cancel after exchange headers rejects the late body and preserves a newer login even when fetch ignores abort",
+      "cancel while profile body is pending retires the known app session and cannot expose its old payload",
+      "lost exchange reply is not replayed, and a fresh verified proof recovers without restoring the cancelled context",
+      "logout during an exchange body wait clears locally and never claims a server ACK or revives its late session",
+      "cancelled SDK send cannot mutate a new auth attempt; SDK single-flight ends before explicit re-entry",
+      "late finalize after cancel is quarantined and signs out only its captured session before new SDK auth",
+      "cancel cleanup never signs out an unrelated SDK session activated outside the captured operation",
+      "provider CANCELLED cannot authorize the app",
+      "late provider success after reset cannot enter the new context",
+      "late app authorization cannot change a fresh flow after reset",
+      "late rejection after reset does not overwrite a new ready flow",
+      "dispose prevents late responses and further actions; no unhandled synchronous hook rejection",
+      "cancel after SDK finalize began cannot exchange its late session; explicit re-entry uses fresh proof",
+      "SDK-CANCEL-1 fixed bindings same-size corruption is rejected",
+      "SDK-CANCEL-1 fixed worker same-size corruption is rejected",
+      "missing SDK-CANCEL-1 regression dependency fails closed",
+      "previous SDK-CANCEL-1 172-file manifest tampering is rejected",
+      "all lifecycle states are distinct; ready/cancelled/lapsed do not fetch or invent a result",
+      "real HTTP: late logout ACK cannot revoke or overwrite a fresh same-person login",
+      "real HTTP: delayed200 me body is superseded before affecting fresh login",
+      "real HTTP: delayed401 me body is superseded before affecting fresh login",
+      "late receipt success cannot touch a fresh same-second login",
+      "late receipt success cannot touch a fresh different-person login",
+      "late receipt 401 cannot touch a fresh same-second login",
+      "late receipt 401 cannot touch a fresh different-person login",
+      "late receipt parse-error cannot touch a fresh same-second login",
+      "late receipt parse-error cannot touch a fresh different-person login",
+      "explicit cancel aborts the operation and makes its proof unavailable",
+      "receipt synchronous boundary: cancel-inline leaves no orphan rejection or abort listener",
+      "late logout 200 cannot change a fresh login",
+      "late logout 401 cannot change a fresh login",
+      "late old bootstrap body cannot replace the next session UI",
+      "a late 401 for an old proof does not rotate the new refresh proof again",
+      "a pending rotation cannot restore proofs after logout or overwrite a fresh login",
+      "ordinary null is independent of cancellation; terminal history requires an ordinary result",
+      "cancelled predecessor bonus remains historical; successor has no inherited result or invented history identity"
+    ]
+  },
+  "patch_checks": [
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "--cached",
+        "/workspace/mini-pin-8a750ee-evidence-20261109/candidate.patch"
+      ],
+      "cwd": "/workspace/mini-pin-8a750ee-20261109",
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "--reverse",
+        "/workspace/mini-pin-8a750ee-evidence-20261109/candidate.patch"
+      ],
+      "cwd": "/workspace/mini-pin-8a750ee-20261109",
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "browser": {
+    "status": "NOT_RUN",
+    "reason": "Only three guard/fixture/test paths changed; no UI, entry, transport, dependency or build failure/effect required conditional browser expansion."
+  },
+  "R03_internal_acceptance": "RETAINED_PER_COORDINATOR_NOT_RETESTED_HERE",
+  "Mini_acceptance": "PENDING_INDEPENDENT_QA",
+  "R1_integration": "OPEN",
+  "removal_E2E": "BLOCKED",
+  "real_DB_and_providers": "NOT_RUN",
+  "setup_issue": {
+    "initial_label": "setup-root",
+    "exit": 254,
+    "cause": "Default npm cache /home/agent/.npm/_cacache was unavailable.",
+    "resolution": "Ordinary task-owned writable cache flag; all three lock-based installs completed.",
+    "access_or_tool_denial": false
+  },
+  "publication": "NOT_UPLOADED_NOT_AUTHORIZED",
+  "source_manifest": {
+    "bytes": 3871,
+    "sha256": "b7470d7db9ae81f5f8e6daf8990ee6476abfb5a7df8b09cf916ce597adfbde3b"
+  },
+  "coverage": {
+    "bytes": 86282,
+    "sha256": "c0508d2a2be3e31204c44ec8feed369a1c63993146546c2458fcbba8e82abae9"
+  }
+}

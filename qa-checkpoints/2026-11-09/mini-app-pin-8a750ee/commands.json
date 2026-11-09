@@ -1,0 +1,165 @@
+[
+  {
+    "label": "guard-positive",
+    "argv": [
+      "node",
+      "apps/mini-app/tests/verify-backend-targets.mjs"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:34:21.234861+00:00",
+    "finished_at_utc": "2026-11-09T15:34:21.304758+00:00",
+    "duration_seconds": 0.07,
+    "exit": 0,
+    "log": "guard-positive.log",
+    "log_bytes": 0,
+    "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "label": "setup-root",
+    "argv": [
+      "npm",
+      "ci",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:34:44.767949+00:00",
+    "finished_at_utc": "2026-11-09T15:34:47.227322+00:00",
+    "duration_seconds": 2.459,
+    "exit": 254,
+    "log": "setup-root.log",
+    "log_bytes": 29819,
+    "log_sha256": "49ad6e0cd33da53dd95d145cc3257e7085fbbaeadcb7e901721d434973011125"
+  },
+  {
+    "label": "coverage",
+    "argv": [
+      "python3",
+      "/workspace/mini-pin-8a750ee-evidence-20261109/verify-coverage.py"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:35:53.185545+00:00",
+    "finished_at_utc": "2026-11-09T15:35:53.826768+00:00",
+    "duration_seconds": 0.641,
+    "exit": 0,
+    "log": "coverage.log",
+    "log_bytes": 148,
+    "log_sha256": "d5bc0b7d51c12e4f1ae7832ec89889deee18619b87073bca6951ae2f919676e7"
+  },
+  {
+    "label": "setup-root-writable-cache",
+    "argv": [
+      "npm",
+      "ci",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund",
+      "--cache",
+      "/workspace/mini-pin-8a750ee-npm-cache"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:36:07.400572+00:00",
+    "finished_at_utc": "2026-11-09T15:36:09.947314+00:00",
+    "duration_seconds": 2.547,
+    "exit": 0,
+    "log": "setup-root-writable-cache.log",
+    "log_bytes": 233,
+    "log_sha256": "f55c5e37c755e0e3b509588a7c99abdabfb2fcfc10094aa4e16f6ae00431c959"
+  },
+  {
+    "label": "setup-validator",
+    "argv": [
+      "npm",
+      "ci",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund",
+      "--cache",
+      "/workspace/mini-pin-8a750ee-npm-cache",
+      "--prefix",
+      "tests/backend/validator/tooling"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:36:09.985397+00:00",
+    "finished_at_utc": "2026-11-09T15:36:10.707449+00:00",
+    "duration_seconds": 0.722,
+    "exit": 0,
+    "log": "setup-validator.log",
+    "log_bytes": 27,
+    "log_sha256": "45a592ebd7e180277aa5c3d23a90ba0934c78f1f505fe2fbae5f02403173afbd"
+  },
+  {
+    "label": "setup-mini",
+    "argv": [
+      "npm",
+      "ci",
+      "--ignore-scripts",
+      "--no-audit",
+      "--no-fund",
+      "--cache",
+      "/workspace/mini-pin-8a750ee-npm-cache",
+      "--prefix",
+      "apps/mini-app"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:36:10.769179+00:00",
+    "finished_at_utc": "2026-11-09T15:36:13.035714+00:00",
+    "duration_seconds": 2.267,
+    "exit": 0,
+    "log": "setup-mini.log",
+    "log_bytes": 25,
+    "log_sha256": "6a0918433553952113085588ec6fbebf33181e177c53d66d72b7ee7f04327b53"
+  },
+  {
+    "label": "mini-tests",
+    "argv": [
+      "npm",
+      "--prefix",
+      "apps/mini-app",
+      "test"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:36:40.719530+00:00",
+    "finished_at_utc": "2026-11-09T15:37:06.065883+00:00",
+    "duration_seconds": 25.346,
+    "exit": 0,
+    "log": "mini-tests.log",
+    "log_bytes": 29107,
+    "log_sha256": "c9910f75f0e5b851264ad6a4357ef11cf754b821ecee167654231eb0dbb28b37",
+    "test_trace_path": "/workspace/mini-pin-8a750ee-evidence-20261109/guard-controls.jsonl"
+  },
+  {
+    "label": "mini-build",
+    "argv": [
+      "npm",
+      "--prefix",
+      "apps/mini-app",
+      "run",
+      "build"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:37:06.102549+00:00",
+    "finished_at_utc": "2026-11-09T15:37:07.042690+00:00",
+    "duration_seconds": 0.94,
+    "exit": 0,
+    "log": "mini-build.log",
+    "log_bytes": 898,
+    "log_sha256": "60eb24b43bf116301e67ce8a56c19942168c31641437c8ca75872bfae977ed16"
+  },
+  {
+    "label": "finalize",
+    "argv": [
+      "python3",
+      "/workspace/mini-pin-8a750ee-evidence-20261109/finalize-evidence.py"
+    ],
+    "cwd": "/workspace/mini-pin-8a750ee-20261109/workspaces/univeracademy",
+    "started_at_utc": "2026-11-09T15:40:56.348280+00:00",
+    "finished_at_utc": "2026-11-09T15:40:56.567544+00:00",
+    "duration_seconds": 0.219,
+    "exit": 0,
+    "log": "finalize.log",
+    "log_bytes": 459,
+    "log_sha256": "66b8eeb6d2d79e20650f74c15eca46ab88947a5a3929b450647ba487612562aa"
+  }
+]

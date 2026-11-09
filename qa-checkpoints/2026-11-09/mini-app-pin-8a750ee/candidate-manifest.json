@@ -1,0 +1,111 @@
+{
+  "candidate_id": "mini-app-pin-8a750ee-local-20261109",
+  "status": "UNCOMMITTED_LOCAL_AUTHOR_CANDIDATE_NOT_INDEPENDENT_QA",
+  "backend_sha": "8a750ee01eed794bda1942bc1bd0e89829c3a704",
+  "candidate_parent": "8a750ee01eed794bda1942bc1bd0e89829c3a704",
+  "candidate_commit": null,
+  "backend_parent": "6a84c6f13725839abf6cde8cd5bc02899ee4cfe2",
+  "backend_tree": "5a7ed4b51af9fe8c18a4fd52772d9d5eb36d09d0",
+  "changed_paths": [
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-8a750ee-manifest.json",
+      "before": null,
+      "after": {
+        "bytes": 36420,
+        "sha256": "9deefd433a9c4709ef037a5142c8a4e39db8f3fb0c2bd3f96fcb20f7d654632e"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/verify-backend-targets.mjs",
+      "before": {
+        "bytes": 5216,
+        "sha256": "9640ff6f956cf1192ba8bafd82106ef66e08bb6f5fb27288f8a24068ba3b2658"
+      },
+      "after": {
+        "bytes": 5991,
+        "sha256": "d3ceb1dbcb77fc9c56a3d34f9a4b9eaaf527b3f0ada89117382b5bf4d18f2501"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/current-flow-guard.test.mjs",
+      "before": {
+        "bytes": 16920,
+        "sha256": "51f8d71a314f7a35cf049be95e045750a52b7cf039024081039d0f9d9e25e221"
+      },
+      "after": {
+        "bytes": 20493,
+        "sha256": "b5105bf1192779ed512def004910390341870424b21b190b053666e9ae613761"
+      }
+    }
+  ],
+  "source_file_count": 3,
+  "source_bytes": 62904,
+  "active_fixture": {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-8a750ee-manifest.json",
+    "bytes": 36420,
+    "sha256": "9deefd433a9c4709ef037a5142c8a4e39db8f3fb0c2bd3f96fcb20f7d654632e"
+  },
+  "targets": {
+    "unique": 194,
+    "bytes": 2207847
+  },
+  "patch": {
+    "file": "candidate.patch",
+    "bytes": 48297,
+    "sha256": "13e1c3816e8cee9278868a41ee353d7808a89f5f570b379a02d625f3b918e881"
+  },
+  "patch_checks": [
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "--cached",
+        "/workspace/mini-pin-8a750ee-evidence-20261109/candidate.patch"
+      ],
+      "cwd": "/workspace/mini-pin-8a750ee-20261109",
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "apply",
+        "--check",
+        "--reverse",
+        "/workspace/mini-pin-8a750ee-evidence-20261109/candidate.patch"
+      ],
+      "cwd": "/workspace/mini-pin-8a750ee-20261109",
+      "exit": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "historical_snapshots_preserved": 132,
+  "dependency_locks_preserved": [
+    "LANDING_SOURCE/landing/package-lock.json",
+    "LANDING_SOURCE/landing/package.json",
+    "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/package-lock.json",
+    "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/package.json",
+    "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/package-lock.json",
+    "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/package.json",
+    "workspaces/univeracademy/apps/mini-app/package-lock.json",
+    "workspaces/univeracademy/apps/mini-app/package.json",
+    "workspaces/univeracademy/package-lock.json",
+    "workspaces/univeracademy/package.json",
+    "workspaces/univeracademy/tests/backend/validator/tooling/package-lock.json",
+    "workspaces/univeracademy/tests/backend/validator/tooling/package.json"
+  ],
+  "outside_scope": [
+    "UI",
+    "transport",
+    "entry",
+    "client/types/contracts",
+    "dependencies/locks",
+    "Backend source",
+    "DB/providers",
+    "deploy",
+    "upload/publication"
+  ]
+}

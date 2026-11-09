@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFileSync, writeFileSync, mkdirSync, mkdtempSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, appendFileSync, existsSync, mkdirSync, mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -9,7 +9,8 @@ import { spawnSync } from 'node:child_process';
 
 const source = fileURLToPath(new URL('../../../', import.meta.url));
 const guard = 'apps/mini-app/tests/verify-backend-targets.mjs';
-const current = 'apps/mini-app/tests/fixtures/backend-fa82166-manifest.json';
+const current = 'apps/mini-app/tests/fixtures/backend-8a750ee-manifest.json';
+const backend191Baseline = 'apps/mini-app/tests/fixtures/backend-fa82166-manifest.json';
 const sdkCancelBaseline = 'apps/mini-app/tests/fixtures/backend-c78c293-manifest.json';
 const sdkStorageBaseline = 'apps/mini-app/tests/fixtures/backend-6f2dbee7-manifest.json';
 const providerBaseline = 'apps/mini-app/tests/fixtures/backend-a36d41a-manifest.json';
@@ -25,18 +26,52 @@ const history = 'apps/mini-app/tests/fixtures/combined-259b675e-manifest.json';
 const attempts = 'supabase/functions/univeracademy-api/attempts.ts';
 const sha = value => createHash('sha256').update(value).digest('hex');
 const manifest = JSON.parse(readFileSync(join(source, current), 'utf8'));
+const manifestErrors = new Map([
+  ['BASELINE_MANIFEST_MISMATCH', history], ['RUNTIME_MANIFEST_MISMATCH', current],
+  ['PREVIOUS_RUNTIME_MANIFEST_MISMATCH', previous],
+  ['PRODUCTION_BASELINE_MANIFEST_MISMATCH', productionBaseline],
+  ['ADA6600_BASELINE_MANIFEST_MISMATCH', adaBaseline],
+  ['VERCEL_BASELINE_MANIFEST_MISMATCH', vercelBaseline],
+  ['CLERK_BASELINE_MANIFEST_MISMATCH', clerkBaseline],
+  ['FAMILY_BASELINE_MANIFEST_MISMATCH', familyBaseline],
+  ['CLERK_REVIEW_BASELINE_MANIFEST_MISMATCH', reviewBaseline],
+  ['CLERK_PROVIDER_BASELINE_MANIFEST_MISMATCH', providerBaseline],
+  ['CLERK_SDK_STORAGE_BASELINE_MANIFEST_MISMATCH', sdkStorageBaseline],
+  ['CLERK_SDK_CANCEL_BASELINE_MANIFEST_MISMATCH', sdkCancelBaseline],
+  ['BACKEND_191_BASELINE_MANIFEST_MISMATCH', backend191Baseline],
+]);
+let pristinePassed = false;
 
 function check(mutate, expected) {
+  if (expected) assert(pristinePassed, 'PRISTINE_GUARD_CONTROL_REQUIRED');
   const root = mkdtempSync(join(tmpdir(), 'ua-current-guard-'));
   try {
-    for (const name of [guard, current, previous, productionBaseline, adaBaseline, vercelBaseline, clerkBaseline, familyBaseline, reviewBaseline, providerBaseline, sdkStorageBaseline, sdkCancelBaseline, history, ...copies, ...manifest.files.map(file => file.path)]) {
+    const inputs = [...new Set([guard, current, backend191Baseline, previous, productionBaseline, adaBaseline, vercelBaseline, clerkBaseline, familyBaseline, reviewBaseline, providerBaseline, sdkStorageBaseline, sdkCancelBaseline, history, ...copies, ...manifest.files.map(file => file.path)])];
+    const before = new Map();
+    for (const name of inputs) {
       const path = join(root, name); mkdirSync(dirname(path), { recursive: true });
-      writeFileSync(path, readFileSync(join(source, name)));
+      const bytes = readFileSync(join(source, name));
+      before.set(name, sha(bytes)); writeFileSync(path, bytes);
     }
     mutate?.(root);
+    const changed = inputs.filter(name => !existsSync(join(root, name)) ||
+      sha(readFileSync(join(root, name))) !== before.get(name));
+    assert.equal(changed.length, expected ? 1 : 0, 'CONTROL_MUST_CHANGE_ONLY_ITS_DELIBERATE_TARGET');
     const result = spawnSync(process.execPath, [guard], { cwd: root, encoding: 'utf8' });
     assert.equal(result.status, expected ? 1 : 0, result.stderr);
-    if (expected) assert(result.stderr.includes(expected), result.stderr);
+    if (expected) {
+      assert(result.stderr.includes(expected), result.stderr);
+      const suffix = expected.split(': ')[1];
+      const target = expected === 'ENOENT' ? changed[0] :
+        expected.startsWith('OWNER_CLIENT_') ? 'apps/mini-app/src/owner-client/' + suffix :
+        expected.startsWith('BACKEND_TARGET_') ? suffix : manifestErrors.get(expected);
+      assert.equal(changed[0], target, 'DIAGNOSTIC_MUST_IDENTIFY_THE_DELIBERATE_TARGET');
+      if (expected === 'ENOENT') assert(result.stderr.includes(target), result.stderr);
+    } else pristinePassed = true;
+    if (process.env.UA_MINI_PIN_GUARD_TRACE_PATH) appendFileSync(process.env.UA_MINI_PIN_GUARD_TRACE_PATH,
+      JSON.stringify({ control: expected ? 'negative' : 'pristine_positive', target: changed[0] ?? null,
+        expected: expected ?? null, status: result.status, deliberate_target_verified: true,
+        stderr_sha256: sha(Buffer.from(result.stderr)) }) + '\n');
   } finally { rmSync(root, { recursive: true, force: true }); }
 }
 
@@ -53,7 +88,28 @@ function oldAttempts(root) {
   return old; // Exact historical bytes; never executed or written over owner source.
 }
 
-test('current guard accepts all 191 exact Backend files and both browser owner copies', () => check());
+test('current guard accepts all 194 exact Backend files and both browser owner copies', () => check());
+test('previous Backend191 manifest tampering is rejected', () => check(root => {
+  const path = join(root, backend191Baseline); writeFileSync(path, readFileSync(path, 'utf8') + '\n');
+}, 'BACKEND_191_BASELINE_MANIFEST_MISMATCH'));
+test('exact old 191-file manifest cannot replace the current 194-file manifest', () => check(root => {
+  writeFileSync(join(root, current), readFileSync(join(root, backend191Baseline)));
+}, 'RUNTIME_MANIFEST_MISMATCH'));
+for (const target of [
+  'supabase/functions/univeracademy-api/membership-activity.ts',
+  'tests/membership/removal-active.test.mjs',
+  'docs/api/removal-active-invariant-local-2026-11-09.md',
+]) {
+  test('missing newly pinned target is rejected: ' + target, () => check(root => {
+    rmSync(join(root, target));
+  }, 'ENOENT'));
+  test('newly pinned target wrong size is rejected: ' + target, () => check(root => {
+    const path = join(root, target); writeFileSync(path, Buffer.concat([readFileSync(path), Buffer.from('\n')]));
+  }, 'BACKEND_TARGET_SIZE_MISMATCH: ' + target));
+  test('newly pinned target same-size corruption is rejected: ' + target, () => check(root => {
+    const path = join(root, target), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
+  }, 'BACKEND_TARGET_HASH_MISMATCH: ' + target));
+}
 test('same-size corruption of new attempts bytes is rejected', () => check(root => {
   const path = join(root, attempts), bytes = readFileSync(path); bytes[0] ^= 1; writeFileSync(path, bytes);
 }, 'BACKEND_TARGET_HASH_MISMATCH: ' + attempts));
@@ -228,7 +284,7 @@ test('missing SDK-CANCEL-1 regression dependency fails closed', () => check(root
 test('previous SDK-CANCEL-1 172-file manifest tampering is rejected', () => check(root => {
   const path = join(root, sdkCancelBaseline); writeFileSync(path, readFileSync(path, 'utf8') + '\n');
 }, 'CLERK_SDK_CANCEL_BASELINE_MANIFEST_MISMATCH'));
-test('exact old 172-file manifest cannot replace the current 191-file manifest', () => check(root => {
+test('exact old 172-file manifest cannot replace the current 194-file manifest', () => check(root => {
   writeFileSync(join(root, current), readFileSync(join(root, sdkCancelBaseline)));
 }, 'RUNTIME_MANIFEST_MISMATCH'));
 test('new TCP abort bridge same-size corruption is rejected', () => check(root => {

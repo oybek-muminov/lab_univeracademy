@@ -50,12 +50,23 @@ const sdkCancelBaselineRaw = readFileSync(new URL('./fixtures/backend-c78c293-ma
 assert.equal(sha256(sdkCancelBaselineRaw), 'f085f2666c7cb3811da2ede722428ea275aa01e258b77666769447174c23fd06',
   'CLERK_SDK_CANCEL_BASELINE_MANIFEST_MISMATCH');
 assert.equal(JSON.parse(sdkCancelBaselineRaw).files.length, 172);
-const runtimeRaw = readFileSync(new URL('./fixtures/backend-fa82166-manifest.json', import.meta.url));
-assert.equal(sha256(runtimeRaw), '1a2588f66f261029753b5756e3783adc5940834839b0bfc339f7bc7ffa31f4f7',
+const backend191Raw = readFileSync(new URL('./fixtures/backend-fa82166-manifest.json', import.meta.url));
+assert.equal(sha256(backend191Raw), '1a2588f66f261029753b5756e3783adc5940834839b0bfc339f7bc7ffa31f4f7',
+  'BACKEND_191_BASELINE_MANIFEST_MISMATCH');
+assert.equal(JSON.parse(backend191Raw).files.length, 191);
+// The new manifest alone supplies active rows. Retained checksum contents and
+// older manifest rows are historical evidence, never an inventory fallback.
+const runtimeRaw = readFileSync(new URL('./fixtures/backend-8a750ee-manifest.json', import.meta.url));
+assert.equal(sha256(runtimeRaw), '9deefd433a9c4709ef037a5142c8a4e39db8f3fb0c2bd3f96fcb20f7d654632e',
   'RUNTIME_MANIFEST_MISMATCH');
 const runtime = JSON.parse(runtimeRaw);
-assert.equal(runtime.source_commit, 'fa82166a5eaaa05a8ae254913039771e03e20bfb');
-assert.equal(runtime.files.length, 191);
+assert.equal(runtime.source_commit, '8a750ee01eed794bda1942bc1bd0e89829c3a704');
+assert.equal(runtime.files.length, 194);
+assert.equal(runtime.target_count, 194);
+assert.equal(new Set(runtime.files.map(file => file.path)).size, 194, 'RUNTIME_TARGET_DUPLICATE');
+assert.equal(runtime.target_bytes, 2207847);
+assert.equal(runtime.files.reduce((total, file) => total + file.bytes, 0), 2207847,
+  'RUNTIME_TARGET_BYTES_MISMATCH');
 export const BACKEND_SOURCE_COMMIT = runtime.source_commit;
 const repo = new URL('../../../', import.meta.url);
 for (const file of runtime.files) {
