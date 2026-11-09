@@ -1,0 +1,178 @@
+✔ L1-valid-credential-canonical-actor (30.636504ms)
+✔ L1-reject-command-proof (4.752739ms)
+✔ L1-reject-command-state (3.636958ms)
+✔ L1-reject-command-now (2.982999ms)
+✔ L1-reject-command-role (2.646706ms)
+✔ L1-reject-command-decision (2.531352ms)
+✔ L1-reject-command-callback (2.648858ms)
+✔ L1-reject-command-port (3.757228ms)
+✔ L1-forged-credential (11.343974ms)
+✔ L1-no-default-or-production-undefined (2.675177ms)
+✔ L1-no-default-or-production-production (2.661066ms)
+✔ L1-missing-binding (3.461615ms)
+✔ L2-post-wait-mapping-revoked (7.241228ms)
+✔ L2-post-wait-provider-revoked (5.356805ms)
+✔ L2-post-wait-provider-fault (4.421483ms)
+✔ L2-post-wait-disabled (4.584798ms)
+✔ L2-post-wait-scope-revoked (5.54031ms)
+✔ L2-post-wait-provider-expiry-equality (10.439087ms)
+✔ L2-proof-expiry-0 (6.858104ms)
+✔ L2-proof-expiry-1 (6.142451ms)
+✔ L2-clock-after-wait-observed (9.011559ms)
+✔ L3-missing-receipt (4.741314ms)
+✔ L3-boolean-only (4.747612ms)
+✔ L3-stale-transaction (6.53559ms)
+✔ L3-stale-protection (4.229807ms)
+✔ L3-stale-frame (4.788364ms)
+✔ L3-scope (6.590848ms)
+✔ L3-enumeration-omitted (5.190716ms)
+✔ L3-duplicate-key (4.865729ms)
+✔ L3-duplicate-enumeration-id (6.145241ms)
+✔ L3-contradictory-fact (6.160108ms)
+✔ L3-declared-row-missing (6.463773ms)
+✔ L3-missing-participants (6.052217ms)
+✔ L3-affected-closure-omitted (4.504858ms)
+✔ L3-proven-empty-enumeration (6.452216ms)
+✔ L3-off-group-peer-active (7.409541ms)
+✔ L3-off-group-peer-ready (10.098208ms)
+✔ L3-recovery-anchor-missing (6.310754ms)
+✔ L4-C04-deadline:-1 (10.383405ms)
+✔ L4-C04-deadline:0 (6.944764ms)
+✔ L4-C04-deadline:1 (7.868958ms)
+✔ L4-C04-mixed:true:true (8.063699ms)
+✔ L4-C04-mixed:true:false (8.46406ms)
+✔ L4-C04-mixed:false:true (8.314455ms)
+✔ L4-C04-mixed:false:false (11.516893ms)
+✔ L4-R03-deadline:-1 (7.727936ms)
+✔ L4-R03-deadline:0 (9.914823ms)
+✔ L4-R03-deadline:1 (7.576184ms)
+✔ L4-R03-mixed:true:true (6.975579ms)
+✔ L4-R03-mixed:true:false (5.983054ms)
+✔ L4-R03-mixed:false:true (6.809271ms)
+✔ L4-R03-mixed:false:false (6.004034ms)
+✔ L4-clean-denial-group (6.124996ms)
+✔ L4-clean-denial-membership (9.889539ms)
+✔ L4-owner-allowed (8.2535ms)
+✔ L4-teacher-not-expanded (4.831328ms)
+✔ L5-literal-expiry-0 (6.362461ms)
+✔ L5-literal-expiry-1 (6.853206ms)
+✔ L5-started-recovery-completion-markers (8.44399ms)
+✔ B-unstarted-ready-preserved-wait (8.018882ms)
+✔ B-unstarted-ready-preserved-continue (10.078058ms)
+✔ B-unstarted-ready-preserved-denial (8.022848ms)
+✔ L5-forbidden-delta-membership (8.994935ms)
+✔ L5-forbidden-delta-group (7.240176ms)
+✔ L5-forbidden-delta-grant (3.302357ms)
+✔ L5-forbidden-delta-auth (2.656149ms)
+✔ L5-forbidden-delta-profile (2.488568ms)
+✔ L5-forbidden-delta-receipt (2.393445ms)
+✔ L5-forbidden-delta-audit (2.772553ms)
+✔ L5-forbidden-delta-answer (2.260456ms)
+✔ L5-forbidden-delta-deadline (2.569428ms)
+✔ L5-forbidden-delta-snapshot (2.630891ms)
+✔ L5-flush-does-not-receive-mutable-state-writer (8.613694ms)
+✔ L6-loader-exception (4.636355ms)
+✔ L6-flush-storage (6.464914ms)
+✔ L6-flush-CAS (6.185937ms)
+✔ L6-partial-flush (6.690913ms)
+✔ L6-arbitrary409-reply (6.197885ms)
+✔ L6-rollback-ACK-loss-discards-without-confirmation (6.758721ms)
+✔ L7-COMMIT-ACK-loss-committed (10.293409ms)
+✔ L7-COMMIT-ACK-loss-uncommitted (7.573436ms)
+✖ L7-value-visible-only-after-COMMIT-ACK (8.320334ms)
+✔ L7-wrong-transaction-ACK-cannot-certify-success (28.336564ms)
+ℹ Error: Test "L1-valid-credential-canonical-actor" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L1-valid-credential-canonical-actor" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L2-clock-after-wait-observed" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L2-clock-after-wait-observed" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L3-proven-empty-enumeration" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L3-proven-empty-enumeration" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L3-off-group-peer-active" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L3-off-group-peer-active" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L3-off-group-peer-ready" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L3-off-group-peer-ready" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-C04-deadline:-1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-C04-deadline:-1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-C04-deadline:0" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-C04-deadline:0" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-C04-deadline:1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-C04-deadline:1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-C04-mixed:true:true" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-C04-mixed:true:true" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-C04-mixed:true:false" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-C04-mixed:true:false" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-C04-mixed:false:true" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-C04-mixed:false:true" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-C04-mixed:false:false" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-C04-mixed:false:false" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-R03-deadline:-1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-R03-deadline:-1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-R03-deadline:0" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-R03-deadline:0" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-R03-deadline:1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-R03-deadline:1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-R03-mixed:true:true" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-R03-mixed:true:true" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-R03-mixed:true:false" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-R03-mixed:true:false" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-R03-mixed:false:true" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-R03-mixed:false:true" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-R03-mixed:false:false" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-R03-mixed:false:false" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-clean-denial-group" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-clean-denial-group" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-clean-denial-membership" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-clean-denial-membership" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L4-owner-allowed" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L4-owner-allowed" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L5-literal-expiry-0" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L5-literal-expiry-0" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L5-literal-expiry-1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L5-literal-expiry-1" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L5-started-recovery-completion-markers" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L5-started-recovery-completion-markers" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "B-unstarted-ready-preserved-wait" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "B-unstarted-ready-preserved-wait" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "B-unstarted-ready-preserved-continue" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "B-unstarted-ready-preserved-continue" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "B-unstarted-ready-preserved-denial" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "B-unstarted-ready-preserved-denial" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L5-flush-does-not-receive-mutable-state-writer" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L5-flush-does-not-receive-mutable-state-writer" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L6-flush-storage" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L6-flush-storage" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L6-flush-CAS" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L6-flush-CAS" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L6-partial-flush" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L6-partial-flush" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L6-arbitrary409-reply" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L6-arbitrary409-reply" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L6-rollback-ACK-loss-discards-without-confirmation" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L6-rollback-ACK-loss-discards-without-confirmation" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L7-COMMIT-ACK-loss-committed" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L7-COMMIT-ACK-loss-committed" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ Error: Test "L7-COMMIT-ACK-loss-uncommitted" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an uncaughtException event.
+ℹ Error: Test "L7-COMMIT-ACK-loss-uncommitted" at tests/membership/preflight-adapter.test.mjs:127:30 generated asynchronous activity after the test ended. This activity created the error "Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused." and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ tests 83
+ℹ suites 0
+ℹ pass 82
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 953.351353
+
+✖ failing tests:
+
+test at tests/membership/preflight-adapter.test.mjs:127:30
+✖ L7-value-visible-only-after-COMMIT-ACK (8.320334ms)
+  Error [ERR_INSPECTOR_COMMAND]: Inspector error -32000: Can only perform operation while paused.
+      at #onMessage (node:inspector:93:15)
+      at Connection.<anonymous> (node:inspector:66:67)
+      at Session.post (node:inspector:139:22)
+      at node:internal/util:492:21
+      at new Promise (<anonymous>)
+      at Session.post (node:internal/util:478:12)
+      at Session.<anonymous> (file:///tmp/univeracademy-r1-int-01b-9dg4wbqf/repo/workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs:115:25) {
+    code: 'ERR_INSPECTOR_COMMAND'
+  }

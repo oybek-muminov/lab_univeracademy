@@ -1,0 +1,41 @@
+{
+  "base_commit": "9dee2eaeb9e2c4833ab3c1f03a06e387121f7b17",
+  "command": [
+    "node",
+    "--unhandled-rejections=strict",
+    "--test",
+    "tests/membership/preflight-adapter.test.mjs"
+  ],
+  "environment_overrides": {
+    "UA_R1_TRACE_PATH": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/evidence/focused-01-cases.json",
+    "npm_config_cache": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/npm-cache",
+    "npm_config_update_notifier": "false"
+  },
+  "cwd": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/repo/workspaces/univeracademy",
+  "start_utc": "2026-11-09T17:23:04.742482+00:00",
+  "end_utc": "2026-11-09T17:23:05.746624+00:00",
+  "exit": 1,
+  "log_sha256": "90e96bbbddeb3045af3e3ce77626abb6196b7aa88e40fae84be36ea2caf8ce88",
+  "all_source_files": 349,
+  "base_files_unchanged": 346,
+  "source_before_sha256": "ed2405e5e8234d58739cae26b29d0b2d97303accac6ec5b5a28a91f909b8bff5",
+  "source_after_sha256": "ed2405e5e8234d58739cae26b29d0b2d97303accac6ec5b5a28a91f909b8bff5",
+  "source_bytes_changed_during_run": false,
+  "candidate_files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+      "bytes": 6296,
+      "sha256": "b46d86758cebd908ea35dc2d5b88430b6b9ce9bd65f4f07392a46c6d95f6f6fb"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+      "bytes": 15420,
+      "sha256": "f1b135547d5829722030d783b786e0ed1e7f15704e6d470fc009a66c1320ba9a"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+      "bytes": 31854,
+      "sha256": "775ef83da423982a1c5b71e42a4c5ccbb54bad418d7b5e2b2d782e667a573a76"
+    }
+  ]
+}

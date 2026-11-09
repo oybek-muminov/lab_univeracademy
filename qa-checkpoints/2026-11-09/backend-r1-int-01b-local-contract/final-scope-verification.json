@@ -1,0 +1,33 @@
+{
+  "started_utc": "2026-11-09T17:39:00.971961+00:00",
+  "finished_utc": "2026-11-09T17:39:01.835647+00:00",
+  "base_commit": "9dee2eaeb9e2c4833ab3c1f03a06e387121f7b17",
+  "actual_candidate_root": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/repo",
+  "baseline_comparison": "All 346 files independently read via local git show exact-base:path in original own object store",
+  "baseline_files_verified": 346,
+  "candidate_files_verified": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+      "bytes": 6401,
+      "sha256": "1d2e298d633beb7b4be98e0446e9324220a06ae0c5fba6a9baaca50c4754f56b"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+      "bytes": 15991,
+      "sha256": "6eab8c2c749616d1b1b9c4e5c17fabe73de3f7ad07e9455f3328210eedc315fc"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+      "bytes": 35568,
+      "sha256": "c63aa81e50931304723211ec5546eafdb8e10dc668b74fb19dd2a940d1f46926"
+    }
+  ],
+  "actual_regular_files": 349,
+  "unexpected_regular_files": [],
+  "final_typecheck_source_pins_equal": true,
+  "case_dataset_saved_json_roundtrip_records": 91,
+  "source_changes_since_final_runs": false,
+  "source_writes_performed": false,
+  "network_or_remote_actions": false,
+  "verdict": "PASS"
+}

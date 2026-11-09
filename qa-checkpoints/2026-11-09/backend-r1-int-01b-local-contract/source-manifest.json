@@ -1,0 +1,45 @@
+{
+  "candidate": "R1-INT-01b-local-contract-v1",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "proposed_branch": "qa/current-flow-20261106",
+  "base_commit": "9dee2eaeb9e2c4833ab3c1f03a06e387121f7b17",
+  "source_change": "Exactly three new files; all absent at exact base; no existing source modified",
+  "files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+      "bytes": 6401,
+      "sha256": "1d2e298d633beb7b4be98e0446e9324220a06ae0c5fba6a9baaca50c4754f56b",
+      "baseline": "ABSENT"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+      "bytes": 15991,
+      "sha256": "6eab8c2c749616d1b1b9c4e5c17fabe73de3f7ad07e9455f3328210eedc315fc",
+      "baseline": "ABSENT"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+      "bytes": 35568,
+      "sha256": "c63aa81e50931304723211ec5546eafdb8e10dc668b74fb19dd2a940d1f46926",
+      "baseline": "ABSENT"
+    }
+  ],
+  "source_file_count": 3,
+  "source_bytes": 57960,
+  "candidate_patch": {
+    "path": "candidate.patch",
+    "bytes": 59807,
+    "sha256": "de06d97b41a1c487c9c3ffde863a57c54e00a8affb79d8501ffe40ecbe689205"
+  },
+  "baseline_fingerprints": {
+    "path": "base-fingerprints.json",
+    "sha256": "49a2d41859b2abd7214083087a1e56ff7427fa388da0edc2e10a44b3e6b441ba",
+    "files": 346
+  },
+  "final_before_after_fingerprint": {
+    "path": "frozen-final-source-before.json",
+    "sha256": "6c021cf6ceff91e45e4e9daee184463f8aa88c2f6cf9d746bf0b7e2fcd016f06",
+    "files": 349
+  },
+  "publication_status": "LOCAL_ONLY_NOT_APPROVED_OR_UPLOADED"
+}

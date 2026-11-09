@@ -1,0 +1,615 @@
+diff --git a/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts b/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..2414a96904093a59cdd1ee66e6d96a05688aea4b
+--- /dev/null
++++ b/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts
+@@ -0,0 +1,81 @@
++import { fail } from "./fault.ts";
++import { guardRemovalActiveTest, REMOVAL_DECISION } from "./membership-activity.ts";
++import type { RemovalActiveTestOutcome } from "./membership-activity.ts";
++import { currentStaff, groupScope, requireRosterAuthority } from "./staff-state.ts";
++import { StorageUnavailable } from "./storage/postgres-transaction.ts";
++import { expiryDelta, immutable, invariant, record, revision, text, validateCoverage } from "./storage/membership-preflight-port.ts";
++import type { LocalMembershipPreflightPort, PreflightCommand, Protection, VerifiedActor } from "./storage/membership-preflight-port.ts";
++
++const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
++function command(value: unknown): PreflightCommand {
++  if (!record(value)) fail("VALIDATION_ERROR", 422);
++  const names = ["credential", "studentId", "groupId", "expectedGroupRevision", "expectedMembershipRevision"];
++  const own = Reflect.ownKeys(value);
++  if (own.length !== names.length || own.some(k => typeof k !== "string" || !names.includes(k))) fail("VALIDATION_ERROR", 422);
++  for (const name of names) if (!Object.hasOwn(Object.getOwnPropertyDescriptor(value, name) ?? {}, "value")) fail("VALIDATION_ERROR", 422);
++  if (typeof value.credential !== "string" || !value.credential.length || value.credential.length > 16384 ||
++      typeof value.studentId !== "string" || !uuid.test(value.studentId) || typeof value.groupId !== "string" || !uuid.test(value.groupId) ||
++      !revision(value.expectedGroupRevision) || !revision(value.expectedMembershipRevision)) fail("VALIDATION_ERROR", 422);
++  return Object.freeze({ credential: value.credential, studentId: value.studentId.toLowerCase(), groupId: value.groupId.toLowerCase(),
++    expectedGroupRevision: value.expectedGroupRevision, expectedMembershipRevision: value.expectedMembershipRevision });
++}
++function actor(value: VerifiedActor): VerifiedActor {
++  invariant(record(value) && typeof value.actorId === "string" && uuid.test(value.actorId) && record(value.proof));
++  const p = value.proof;
++  invariant(p.kind === "staff_verified" && text(p.subject) && revision(p.notBefore) && revision(p.expiresAt) && p.expiresAt > p.notBefore);
++  return immutable({ actorId: value.actorId.toLowerCase(), proof: { ...p } });
++}
++function outcome(value: RemovalActiveTestOutcome): RemovalActiveTestOutcome {
++  if (value === REMOVAL_DECISION.CONTINUE || value === REMOVAL_DECISION.DENY_GROUP_REVISION || value === REMOVAL_DECISION.DENY_MEMBERSHIP_REVISION) return value;
++  invariant(record(value) && Object.keys(value).length === 1 && value.kind === "wait_for_active_test");
++  return Object.freeze({ kind: "wait_for_active_test" });
++}
++
++/** Local contract composition ONLY. No SQL implementation, production default,
++ * HTTP route, Teacher expansion, final removal or unstarted-recovery revocation.
++ * Port attestations are trusted obligations, not real DB completeness/locks. */
++export function createMembershipPreflight(options: { mode?: unknown; port?: LocalMembershipPreflightPort } = {}) {
++  const p = options?.port;
++  if (options?.mode !== "local_contract" || typeof p?.verifyAndLocate !== "function" || typeof p.transaction !== "function") fail("SERVICE_UNAVAILABLE", 503);
++  const verify = p.verifyAndLocate.bind(p), transaction = p.transaction.bind(p);
++  return async (input: unknown): Promise<RemovalActiveTestOutcome> => {
++    const c = command(input), verified = actor(await verify(c.credential));
++    const { credential: _, ...rest } = c;
++    const scope = Object.freeze(rest);
++    let entered = false, transactionId: string | undefined, result: RemovalActiveTestOutcome | undefined;
++    const ack = await transaction(verified, async tx => {
++      invariant(!entered); entered = true;
++      invariant(text(tx.transactionId) && text(tx.protectionId) && text(tx.frameId));
++      if (typeof tx.prepareAndRefresh !== "function" || typeof tx.flushExpiry !== "function") fail("SERVICE_UNAVAILABLE", 503);
++      const binding: Protection = Object.freeze({ transactionId: tx.transactionId, protectionId: tx.protectionId, frameId: tx.frameId });
++      transactionId = binding.transactionId;
++      const prepare = tx.prepareAndRefresh.bind(tx), flush = tx.flushExpiry.bind(tx);
++      const frame = await prepare(verified, scope);
++      // NO external awaited port operation between this final frame and guard.
++      invariant(record(frame) && frame.transactionId === binding.transactionId && frame.protectionId === binding.protectionId && frame.frameId === binding.frameId);
++      invariant(frame.actor?.actorId === verified.actorId && frame.actor.proof === verified.proof);
++      invariant(revision(frame.now) && frame.now <= 8_640_000_000_000_000 && revision(frame.providerExpiresAt));
++      if (frame.now >= frame.providerExpiresAt) fail("STAFF_TOKEN_INVALID", 401);
++      invariant(record(frame.state) && record(frame.state.staff));
++      const staff = currentStaff(frame.state, verified.proof, frame.now);
++      invariant(staff.personId === verified.actorId); requireRosterAuthority(staff);
++      if (!groupScope(staff, scope.groupId)) fail("NOT_FOUND", 404);
++      validateCoverage(frame, binding, verified, scope);
++      // Detach aliases before the only mutable domain computation. Neither the
++      // caller nor flush receives this state or a general continuation writer.
++      const state = structuredClone(frame.state), before = structuredClone(state), now = frame.now;
++      const guarded = await guardRemovalActiveTest({ state, now: () => now }, scope.studentId, REMOVAL_DECISION.CONTINUE,
++        { proof: verified.proof, groupId: scope.groupId, expectedGroupRevision: scope.expectedGroupRevision, expectedMembershipRevision: scope.expectedMembershipRevision });
++      result = outcome(guarded);
++      const delta = expiryDelta(before, state, now, { ...binding, actorId: verified.actorId, studentId: scope.studentId, groupId: scope.groupId });
++      if (delta.attempts.length || delta.series.length || delta.gates.length) {
++        const reply: unknown = await flush(delta);
++        invariant(reply === undefined); // Arbitrary409 is not a clean denial.
++      }
++      return result;
++    });
++    // An invalid post-transaction ACK cannot certify success OR rollback.
++    if (!entered || !result || !ack || ack.transactionId !== transactionId || ack.value !== result) throw new StorageUnavailable("commit_unknown");
++    return result;
++  };
++}
+diff --git a/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts b/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts
+new file mode 100644
+index 0000000000000000000000000000000000000000..1b1d14148e7b882d071bb35908e6d6c21b55e7d2
+--- /dev/null
++++ b/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts
+@@ -0,0 +1,232 @@
++import { fail } from "../fault.ts";
++import type { AttemptRecord } from "../attempts.ts";
++import type { StaffState, VerifiedStaffProof } from "../staff-state.ts";
++
++export type Enumeration<K> = { enumerationId: string; keys: readonly K[] };
++export type CoverageReceipt = {
++  version: "r1-local-v1"; transactionId: string; protectionId: string; frameId: string;
++  scope: { actorId: string; studentId: string; groupId: string };
++  enumerations: {
++    targetSeries: Enumeration<string>; affectedAssignments: Enumeration<string>;
++    participants: Enumeration<readonly [assignmentId: string, personId: string]>;
++    recoveryAnchors: Enumeration<readonly [seriesKey: string, assignmentId: string]>;
++  };
++  rows: { [collection: string]: { present: readonly string[]; absent: readonly string[] } };
++};
++export type PreflightCommand = Readonly<{
++  credential: string; studentId: string; groupId: string;
++  expectedGroupRevision: number; expectedMembershipRevision: number;
++}>;
++export type PreflightScope = Omit<PreflightCommand, "credential">;
++export type VerifiedActor = Readonly<{ actorId: string; proof: VerifiedStaffProof }>;
++export type Protection = Readonly<{ transactionId: string; protectionId: string; frameId: string }>;
++export type PreparedFrame = Protection & {
++  actor: VerifiedActor; now: number; providerExpiresAt: number;
++  state: StaffState; coverage: CoverageReceipt;
++};
++type CompletedAttempt = Pick<AttemptRecord,
++  "status" | "completedAt" | "stateRevision" | "seriesStateRevision" | "ordinary">;
++export type ExpiryDelta = Readonly<{
++  binding: Protection & { actorId: string; studentId: string; groupId: string };
++  attempts: readonly {
++    attemptId: string;
++    expected: { generation: number; stateRevision: number; seriesStateRevision: number; status: "in_progress"; ordinary: null };
++    next: CompletedAttempt;
++  }[];
++  series: readonly {
++    seriesKey: string;
++    expected: { currentAttemptId: string; generation: number; officialAttemptId: string | null;
++      recoveryState: string; recovery: unknown };
++    next: { officialAttemptId: string; recoveryState: string; recovery: unknown };
++  }[];
++  gates: readonly {
++    assignmentId: string; expected: { revision: number; barrierRevision: number };
++    next: { eligible_unresolved_count: number; active_count: number; recovery_ready_count: number;
++      barrier_complete: boolean; barrier_revision: number };
++  }[];
++}>;
++export type LocalPreflightTransaction = Protection & {
++  /** One final frame AFTER all waiting load/lock/provider work and a reread of
++   * current mapping, liveness, authority and server clock. Denial must throw.
++   * Return the same immutable verified actor/proof identity; do not replace or
++   * mutate the command scope. The frame's IDs bind to this transaction boundary.
++   * Enumeration/protection stays stable through guard, flush and completion.
++   * No SQL or peer-lock protocol is implemented or certified by this interface. */
++  prepareAndRefresh(actor: VerifiedActor, scope: PreflightScope): Promise<PreparedFrame>;
++  /** Apply only this immutable CAS delta, atomically in the SAME transaction.
++   * No membership/group/grant/auth/profile/receipt/audit/answer/snapshot writes. */
++  flushExpiry(delta: ExpiryDelta): Promise<void>;
++};
++export type LocalMembershipPreflightPort = {
++  /** Existing server verifier + canonical mapping, never request-supplied proof. */
++  verifyAndLocate(credential: string): Promise<VerifiedActor>;
++  /** Exactly one callback. Resolve ONLY after COMMIT ACK, with its same value.
++   * Callback/flush faults roll back. Rollback ACK loss discards connection and
++   * cannot certify rollback. COMMIT ACK loss throws StorageUnavailable with
++   * outcome commit_unknown, whether the double committed or not. No retry.
++   * Authority/revocation, student and peer lifecycle, membership/grant/assignment
++   * writers must share this protection boundary. That obligation is UNPROVEN. */
++  transaction<T>(actor: VerifiedActor, work: (tx: LocalPreflightTransaction) => Promise<T>):
++    Promise<{ transactionId: string; value: T }>;
++};
++
++export function invariant(condition: unknown): asserts condition {
++  if (!condition) fail("RESPONSE_INVARIANT_FAILED", 500);
++}
++export function record(value: unknown): value is Record<string, unknown> {
++  return value !== null && typeof value === "object" && !Array.isArray(value) &&
++    [Object.prototype, null].includes(Object.getPrototypeOf(value));
++}
++export const text = (value: unknown): value is string => typeof value === "string" && value.length > 0 && value.length <= 512;
++export const revision = (value: unknown): value is number => typeof value === "number" && Number.isSafeInteger(value) && value >= 0;
++export function same(a: unknown, b: unknown): boolean {
++  if (Object.is(a, b)) return true;
++  if (!a || !b || typeof a !== "object" || typeof b !== "object" || Array.isArray(a) !== Array.isArray(b)) return false;
++  const ak = Reflect.ownKeys(a), bk = Reflect.ownKeys(b);
++  return ak.length === bk.length && ak.every(k => Object.hasOwn(b, k) && same(Reflect.get(a, k), Reflect.get(b, k)));
++}
++export function immutable<T>(value: T): T {
++  if (value && typeof value === "object" && !Object.isFrozen(value)) {
++    for (const key of Reflect.ownKeys(value)) immutable(Reflect.get(value, key));
++    Object.freeze(value);
++  }
++  return value;
++}
++function keys(value: unknown): string[] {
++  invariant(Array.isArray(value) && value.every(text));
++  invariant(new Set(value).size === value.length);
++  return value;
++}
++const equalKeys = (a: readonly string[], b: readonly string[]) => same([...a].sort(), [...b].sort());
++function pairs(value: unknown): readonly (readonly [string, string])[] {
++  invariant(Array.isArray(value) && value.every(v => Array.isArray(v) && v.length === 2 && v.every(text)));
++  invariant(new Set(value.map(v => JSON.stringify(v))).size === value.length);
++  return value;
++}
++const collections = ["staff", "groups", "people", "memberships", "grants", "assignments", "series", "attempts", "recoveryAssignments"] as const;
++
++/** Checks INTERNAL receipt consistency, not the truth of a trusted port's
++ * exhaustive enumeration/physical locks. Consistently omitted hidden rows
++ * cannot be discovered by a local double. Empty enumeration != missing query. */
++export function validateCoverage(frame: PreparedFrame, binding: Protection, actor: VerifiedActor, scope: PreflightScope): void {
++  const s = frame.state, st = s.student, r = frame.coverage;
++  invariant(record(r) && r.version === "r1-local-v1" && record(r.scope) && record(r.enumerations) && record(r.rows));
++  invariant(r.transactionId === binding.transactionId && r.protectionId === binding.protectionId && r.frameId === binding.frameId);
++  invariant(same(r.scope, { actorId: actor.actorId, studentId: scope.studentId, groupId: scope.groupId }));
++  const enums = r.enumerations;
++  const allEnums = [enums.targetSeries, enums.affectedAssignments, enums.participants, enums.recoveryAnchors];
++  invariant(allEnums.every(e => record(e) && text(e.enumerationId) && Array.isArray(e.keys)));
++  invariant(new Set(allEnums.map(e => e.enumerationId)).size === 4);
++  const target = keys(enums.targetSeries.keys), affected = keys(enums.affectedAssignments.keys);
++  const participants = pairs(enums.participants.keys), anchors = pairs(enums.recoveryAnchors.keys);
++  invariant(record(st) && record(s.staff) && record(s.groups) && record(s.memberships) && record(s.recoveryAssignments));
++  for (const k of ["people", "grants", "assignments", "series", "attempts"] as const) invariant(record(st[k]));
++  const grantKeys: string[] = [];
++  for (const [person, grants] of Object.entries(st.grants)) {
++    invariant(record(grants)); for (const id of Object.keys(grants)) grantKeys.push(person + "/" + id);
++  }
++  const maps: Record<typeof collections[number], string[]> = {
++    staff: Object.keys(s.staff), groups: Object.keys(s.groups), people: Object.keys(st.people), memberships: Object.keys(s.memberships),
++    grants: grantKeys, assignments: Object.keys(st.assignments), series: Object.keys(st.series), attempts: Object.keys(st.attempts),
++    recoveryAssignments: Object.keys(s.recoveryAssignments),
++  };
++  invariant(equalKeys(Object.keys(r.rows), collections));
++  for (const c of collections) {
++    const facts = r.rows[c]; invariant(record(facts));
++    const present = keys(facts.present), absent = keys(facts.absent);
++    invariant(equalKeys(present, maps[c]) && absent.every(k => !present.includes(k)));
++  }
++  const fact = (c: typeof collections[number], k: string) => invariant(r.rows[c].present.includes(k) || r.rows[c].absent.includes(k));
++  const present = (c: typeof collections[number], k: string) => invariant(r.rows[c].present.includes(k));
++  present("staff", actor.proof.subject);
++  // Explicitly absent target/group/membership is distinguishable from an
++  // omitted projection; the existing guard retains its NOT_FOUND oracle.
++  fact("groups", scope.groupId); fact("people", scope.studentId); fact("memberships", scope.studentId);
++  invariant(equalKeys(target, Object.keys(st.series).filter(k => k.startsWith(scope.studentId + "/"))));
++  const current = (key: string) => {
++    const series = st.series[key]; invariant(series && text(series.currentAttemptId)); present("attempts", series.currentAttemptId);
++    const a = st.attempts[series.currentAttemptId];
++    invariant(a && record(a.published) && Array.isArray(a.answers) && Array.isArray(a.questionOrder) && Object.hasOwn(a, "ordinary"));
++    present("assignments", a.assignmentId);
++    if (!key.startsWith(scope.studentId + "/")) invariant(a.id === series.currentAttemptId &&
++      key === a.personId + "/" + a.published.demoId && a.generation === series.generation);
++    return a; // C04/R03 target identity/lifecycle validation remains in guard.
++  };
++  const elapsedAssignments = new Set<string>(), demos = new Set<string>();
++  for (const key of target) {
++    const a = current(key);
++    if (a.status === "in_progress" && frame.now >= a.deadlineAt) { elapsedAssignments.add(a.assignmentId); demos.add(a.published.demoId); }
++  }
++  for (const [id, a] of Object.entries(st.assignments)) invariant(a.admission.assignmentId === id && record(a.reviewGate));
++  const closure = Object.entries(st.assignments).filter(([id, a]) => elapsedAssignments.has(id) || demos.has(a.published.demoId)).map(([id]) => id);
++  invariant(equalKeys(affected, closure));
++  const participantKeys = new Set(participants.map(p => JSON.stringify(p)));
++  const needParticipant = (assignment: string, person: string) => invariant(participantKeys.has(JSON.stringify([assignment, person])));
++  for (const [assignment, person] of participants) {
++    invariant(affected.includes(assignment)); present("assignments", assignment); present("people", person); present("memberships", person);
++    fact("grants", person + "/" + assignment);
++    const key = person + "/" + st.assignments[assignment].published.demoId; fact("series", key);
++    if (st.series[key]) current(key);
++  }
++  for (const [person, grants] of Object.entries(st.grants)) for (const assignment of Object.keys(grants))
++    if (affected.includes(assignment)) needParticipant(assignment, person);
++  const expectedAnchors: (readonly [string, string])[] = [];
++  for (const [key, series] of Object.entries(st.series)) {
++    const person = key.split("/")[0], a = current(key);
++    if (affected.includes(a.assignmentId)) needParticipant(a.assignmentId, person);
++    if (series.recoveryState === "ready") {
++      fact("recoveryAssignments", key);
++      const anchor = s.recoveryAssignments[key] ?? a.assignmentId;
++      invariant(text(anchor)); present("assignments", anchor);
++      if (person === scope.studentId || affected.includes(anchor)) expectedAnchors.push([key, anchor]);
++      if (affected.includes(anchor)) needParticipant(anchor, person);
++    }
++  }
++  invariant(equalKeys(anchors.map(p => JSON.stringify(p)), expectedAnchors.map(p => JSON.stringify(p))));
++}
++
++/** A net-delta whitelist, not transient writer instrumentation. The adapter's
++ * detached guard state is never exposed to a continuation or a port writer. */
++export function expiryDelta(before: StaffState, after: StaffState, now: number,
++  binding: ExpiryDelta["binding"]): ExpiryDelta {
++  const expected = structuredClone(before), attempts: ExpiryDelta["attempts"][number][] = [];
++  const series: ExpiryDelta["series"][number][] = [], gates: ExpiryDelta["gates"][number][] = [];
++  invariant(equalKeys(Object.keys(before.student.attempts), Object.keys(after.student.attempts)));
++  const affectedIds = new Set<string>(), affectedDemos = new Set<string>();
++  for (const [id, next] of Object.entries(after.student.attempts)) {
++    const old = before.student.attempts[id]; if (same(old, next)) continue;
++    const key = binding.studentId + "/" + old.published.demoId, priorSeries = before.student.series[key];
++    invariant(old.personId === binding.studentId && old.id === id && priorSeries?.currentAttemptId === id && priorSeries.generation === old.generation);
++    invariant(old.status === "in_progress" && old.ordinary === null && now >= old.deadlineAt);
++    invariant([old.generation, old.stateRevision, old.seriesStateRevision, next.stateRevision, next.seriesStateRevision].every(revision));
++    invariant(next.status === "expired" && next.completedAt === old.deadlineAt && next.stateRevision === old.stateRevision + 1 &&
++      next.seriesStateRevision === old.seriesStateRevision + 1 && next.ordinary !== null && next.ordinary.calculatedAt === now);
++    const completion: CompletedAttempt = { status: next.status, completedAt: next.completedAt, stateRevision: next.stateRevision,
++      seriesStateRevision: next.seriesStateRevision, ordinary: next.ordinary };
++    invariant(same({ ...old, ...completion }, next));
++    expected.student.attempts[id] = structuredClone(next);
++    attempts.push({ attemptId: id, expected: { generation: old.generation, stateRevision: old.stateRevision, seriesStateRevision: old.seriesStateRevision,
++      status: "in_progress", ordinary: null }, next: structuredClone(completion) });
++    const desired = { ...priorSeries, officialAttemptId: id, ...(next.generation > 1 ? { recoveryState: "none" as const, recovery: null } : {}) };
++    invariant(same(after.student.series[key], desired)); expected.student.series[key] = structuredClone(desired);
++    series.push({ seriesKey: key, expected: { currentAttemptId: priorSeries.currentAttemptId, generation: priorSeries.generation,
++      officialAttemptId: priorSeries.officialAttemptId, recoveryState: priorSeries.recoveryState, recovery: structuredClone(priorSeries.recovery) },
++      next: { officialAttemptId: id, recoveryState: desired.recoveryState, recovery: structuredClone(desired.recovery) } });
++    affectedIds.add(old.assignmentId); affectedDemos.add(old.published.demoId);
++  }
++  for (const [id, a] of Object.entries(after.student.assignments)) {
++    const old = before.student.assignments[id]; invariant(old);
++    if (same(old, a)) continue;
++    invariant(affectedIds.has(id) || affectedDemos.has(a.published.demoId));
++    const b = old.reviewGate, g = a.reviewGate;
++    invariant(revision(b.revision) && revision(b.barrier_revision) && revision(g.barrier_revision) && g.barrier_revision === b.barrier_revision + 1);
++    invariant([g.eligible_unresolved_count, g.active_count, g.recovery_ready_count].every(revision) && typeof g.barrier_complete === "boolean");
++    const next = { eligible_unresolved_count: g.eligible_unresolved_count as number, active_count: g.active_count as number,
++      recovery_ready_count: g.recovery_ready_count as number, barrier_complete: g.barrier_complete, barrier_revision: g.barrier_revision };
++    invariant(same({ ...old, reviewGate: { ...b, ...next } }, a));
++    expected.student.assignments[id] = structuredClone(a);
++    gates.push({ assignmentId: id, expected: { revision: b.revision, barrierRevision: b.barrier_revision }, next });
++  }
++  invariant(same(expected, after)); // Includes every forbidden/unloaded collection.
++  return immutable({ binding: { ...binding }, attempts, series, gates });
++}
+diff --git a/workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs b/workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs
+new file mode 100644
+index 0000000000000000000000000000000000000000..60b81cf4583a745a84a0ffcbfcf12b971e0032bf
+--- /dev/null
++++ b/workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs
+@@ -0,0 +1,284 @@
++import { test, after } from "node:test";
++import assert from "node:assert/strict";
++import { readFileSync, writeFileSync } from "node:fs";
++import { createHash } from "node:crypto";
++import { Session } from "node:inspector/promises";
++import { generateKeyPair, SignJWT } from "jose";
++import { createMembershipPreflight } from "../../supabase/functions/univeracademy-api/membership-preflight.ts";
++import { expiryDelta } from "../../supabase/functions/univeracademy-api/storage/membership-preflight-port.ts";
++import { createStaffJwtVerifier } from "../../supabase/functions/univeracademy-api/staff-jwt.ts";
++import { ApiFault } from "../../supabase/functions/univeracademy-api/fault.ts";
++import { StorageUnavailable } from "../../supabase/functions/univeracademy-api/storage/postgres-transaction.ts";
++
++const clone=structuredClone,id=n=>"00000000-0000-4000-8000-"+String(n).padStart(12,"0");
++const P=id(1),Q=id(2),J=id(10),D=id(20),G=id(40),H=id(41),A=id(900),B=id(901),U=id(501),K=P+"/"+D;
++const C=Date.UTC(2026,10,5,12),T=C+60000;
++const ordinary=(earned=1,percentage=50,at=T)=>({earned:{numerator:BigInt(earned),denominator:1n},maximum:{numerator:2n,denominator:1n},percentage:{numerator:BigInt(percentage),denominator:1n},calculatedAt:at});
++function fixture(){
++  const published={demoId:D,versionId:id(30),durationMs:60000,individualEnabled:false,questions:[
++    {id:id(100),optionIds:[id(200),id(201),id(202),id(203)],correctOptionId:id(200),individualPoints:{numerator:5n,denominator:2n}},
++    {id:id(101),optionIds:[id(204),id(205),id(206),id(207)],correctOptionId:id(204),individualPoints:{numerator:5n,denominator:2n}}]};
++  return {student:{people:{[P]:{telegramId:null,enabled:true,profile:{person_id:P,roles:["student"],registration_complete:true,
++      active_group_id:G,first_name:"Port",last_name:"Synthetic",qadam_id:"0100000001"}}},families:{},access:{},refresh:{},consumedInitData:{},
++    grants:{[P]:{[J]:{rostered:true,membershipEpoch:7,grantEpoch:7}}},
++    assignments:{[J]:{admission:{assignmentId:J,groupId:G,activeGroupId:G,rostered:true,profileComplete:true,membershipEpoch:7,grantEpoch:7,opensAt:C-1000,closesAt:C+1000},published:clone(published),title:"Literal preflight",instructions:[],contents:{},cancelled:false,
++      reviewGate:{id:id(50),status:"blocked",revision:0,barrier_revision:0,barrier_complete:false,eligible_unresolved_count:1,active_count:0,recovery_ready_count:0,timezone:"Asia/Tashkent",first_opened_at:null,opens_at:null,closes_at:null}}},
++    series:{[K]:{currentAttemptId:A,generation:1,normalAttemptUsed:true,officialAttemptId:null,recoveryState:"none",recovery:null}},
++    attempts:{[A]:{id:A,personId:P,assignmentId:J,groupId:G,generation:1,status:"in_progress",startedAt:C,deadlineAt:T,completedAt:null,stateRevision:2,seriesStateRevision:2,published,
++      questionOrder:published.questions.map(q=>({questionId:q.id,optionIds:[...q.optionIds]})),answers:[{questionId:id(100),selectedOptionId:id(200),revision:1,savedAt:C,seriesStateRevision:2}],ordinary:null}},
++    receipts:{keep:{payload:"student-sentinel"}},bonuses:{keep:{marker:7n}},cancellations:{}},
++    staff:{[U]:{personId:U,enabled:true,approved:true,roles:["admin"],approvedSubjectIds:["physics"],capabilities:{manage_roster:true,manage_content:true},scope:{all_groups:false,group_ids:[G],all_subjects:false,subject_ids:["physics"]}}},
++    groups:{[G]:{id:G,revision:4,status:"active"}},memberships:{[P]:{affinityGroupId:G,active:true,revision:7,epoch:7}},versions:{},recoveryAssignments:{},
++    notifications:{keep:{studentId:P,assignmentId:J,epoch:7,status:"queued"}},approvals:{keep:{studentId:P,epoch:7,status:"pending"}},
++    receipts:{keep:{payload:"staff-sentinel"}},audit:[{actorId:U,action:"preserve",targetId:P,revision:7,at:C}]};
++}
++// Independent literal expected state; no candidate expiry/grading/reconcile helper.
++function expectedExpiry(s,now=T,{peerActive=false,peerReady=false}={}){
++  const out=clone(s),a=out.student.attempts[A];
++  Object.assign(a,{status:"expired",completedAt:T,stateRevision:3,seriesStateRevision:3,ordinary:ordinary(1,50,now)});
++  Object.assign(out.student.series[K],{officialAttemptId:A,...(a.generation>1?{recoveryState:"none",recovery:null}:{})});
++  Object.assign(out.student.assignments[J].reviewGate,{eligible_unresolved_count:peerActive||peerReady?1:0,
++    active_count:peerActive?1:0,recovery_ready_count:peerReady?1:0,barrier_complete:!peerActive&&!peerReady,barrier_revision:1});
++  return out;
++}
++function peer(s,kind){
++  s.groups[H]={id:H,revision:1,status:"active"};s.student.people[Q]={...clone(s.student.people[P]),profile:{...clone(s.student.people[P].profile),person_id:Q,active_group_id:H}};
++  s.memberships[Q]={affinityGroupId:H,active:true,revision:7,epoch:7};s.student.grants[Q]={[J]:{rostered:true,membershipEpoch:7,grantEpoch:7}};
++  const key=Q+"/"+D,a={...clone(s.student.attempts[A]),id:B,personId:Q,groupId:H,deadlineAt:T+1000};
++  s.student.series[key]={...clone(s.student.series[K]),currentAttemptId:B};
++  if(kind==="ready"){
++    Object.assign(a,{status:"submitted",completedAt:C+100,stateRevision:3,seriesStateRevision:3,ordinary:ordinary()});
++    Object.assign(s.student.series[key],{officialAttemptId:B,recoveryState:"ready",recovery:{opensAt:T+10000,closesAt:T+20000,durationMs:1000}});
++    s.recoveryAssignments[key]=J;
++  }
++  s.student.attempts[B]=a;return key;
++}
++function second(s){
++  const demo=id(21),assignment=id(11),key=P+"/"+demo,a={...clone(s.student.attempts[A]),id:B,assignmentId:assignment,published:{...clone(s.student.attempts[A].published),demoId:demo},ordinary:null};
++  s.student.assignments[assignment]=clone(s.student.assignments[J]);Object.assign(s.student.assignments[assignment].admission,{assignmentId:assignment});s.student.assignments[assignment].published=clone(a.published);s.student.assignments[assignment].reviewGate.id=id(51);
++  s.student.grants[P][assignment]={rostered:true,membershipEpoch:7,grantEpoch:7};s.student.series[key]={...clone(s.student.series[K]),currentAttemptId:B};s.student.attempts[B]=a;
++  return {key,assignment,a};
++}
++// Synthetic enumeration only. A consistently lying port can omit a hidden
++// participant; this local contract cannot prove actual SQL exhaustiveness.
++function receipt(s,scope,actor,ids,now){
++  const ts=Object.keys(s.student.series).filter(k=>k.startsWith(P+"/"));
++  const elapsed=ts.map(k=>s.student.attempts[s.student.series[k].currentAttemptId]).filter(a=>a&&a.status==="in_progress"&&now>=a.deadlineAt);
++  const affected=Object.keys(s.student.assignments).filter(j=>elapsed.some(a=>a.assignmentId===j||a.published.demoId===s.student.assignments[j].published.demoId));
++  const participants=affected.flatMap(j=>Object.keys(s.student.people).map(p=>[j,p]));
++  const anchors=Object.entries(s.student.series).filter(([k,v])=>v.recoveryState==="ready"&&(k.startsWith(P+"/")||affected.includes(s.recoveryAssignments[k]??s.student.attempts[v.currentAttemptId]?.assignmentId)))
++    .map(([k,v])=>[k,s.recoveryAssignments[k]??s.student.attempts[v.currentAttemptId]?.assignmentId]);
++  const maps={staff:s.staff,groups:s.groups,people:s.student.people,memberships:s.memberships,assignments:s.student.assignments,series:s.student.series,attempts:s.student.attempts,recoveryAssignments:s.recoveryAssignments};
++  const rows=Object.fromEntries(Object.entries(maps).map(([k,v])=>[k,{present:Object.keys(v),absent:[]}]));
++  rows.grants={present:Object.entries(s.student.grants).flatMap(([p,g])=>Object.keys(g).map(j=>p+"/"+j)),absent:[]};
++  for(const [j,p]of participants){if(!s.student.grants[p]?.[j])rows.grants.absent.push(p+"/"+j);const k=p+"/"+s.student.assignments[j].published.demoId;if(!s.student.series[k])rows.series.absent.push(k);}
++  for(const [k]of anchors)if(!Object.hasOwn(s.recoveryAssignments,k))rows.recoveryAssignments.absent.push(k);
++  for(const [c,k]of [["groups",scope.groupId],["people",scope.studentId],["memberships",scope.studentId]])if(!Object.hasOwn(maps[c],k))rows[c].absent.push(k);
++  for(const facts of Object.values(rows))facts.absent=[...new Set(facts.absent)];
++  const e=(name,keys)=>({enumerationId:ids.frameId+":"+name,keys});
++  return {version:"r1-local-v1",...ids,scope:{actorId:actor.actorId,studentId:scope.studentId,groupId:scope.groupId},
++    enumerations:{targetSeries:e("target",ts),affectedAssignments:e("affected",affected),participants:e("participants",participants),recoveryAnchors:e("anchors",anchors)},rows};
++}
++
++function watch(raw,writes){
++  const cache=new WeakMap(),reverse=new WeakMap();
++  function strip(v,seen=new WeakSet()){
++    if(!v||typeof v!=="object")return v;if(reverse.has(v))return reverse.get(v);if(seen.has(v))return v;seen.add(v);
++    for(const k of Reflect.ownKeys(v)){const d=Reflect.getOwnPropertyDescriptor(v,k);if(d&&"value"in d){const x=strip(d.value,seen);if(x!==d.value)Reflect.defineProperty(v,k,{...d,value:x});}}
++    return v;
++  }
++  function wrap(v,path){
++    if(!v||typeof v!=="object")return v;if(cache.has(v))return cache.get(v);
++    const note=(op,k)=>writes.push({op,path:path+"/"+String(k)});
++    const p=new Proxy(v,{get(t,k){return wrap(Reflect.get(t,k,t),path+"/"+String(k));},
++      set(t,k,x){note("set",k);return Reflect.set(t,k,strip(x),t);},
++      defineProperty(t,k,d){note("defineProperty",k);return Reflect.defineProperty(t,k,{...d,...("value"in d?{value:strip(d.value)}:{})});},
++      deleteProperty(t,k){note("delete",k);return Reflect.deleteProperty(t,k);},setPrototypeOf(t,v){note("setPrototypeOf","");return Reflect.setPrototypeOf(t,v);},preventExtensions(t){note("preventExtensions","");return Reflect.preventExtensions(t);}});
++    cache.set(v,p);reverse.set(p,v);return p;
++  }
++  return wrap(raw,"");
++}
++const sourcePaths=["supabase/functions/univeracademy-api/membership-preflight.ts","supabase/functions/univeracademy-api/storage/membership-preflight-port.ts","tests/membership/preflight-adapter.test.mjs"];
++const project=new URL("../../",import.meta.url),fingerprints=sourcePaths.map(path=>{const b=readFileSync(new URL(path,project));return{path,bytes:b.length,sha256:createHash("sha256").update(b).digest("hex")};});
++const guardURL=new URL("supabase/functions/univeracademy-api/membership-activity.ts",project),guardSource=readFileSync(guardURL,"utf8");
++const guardSHA=createHash("sha256").update(guardSource).digest("hex");assert.equal(guardSHA,"afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86");
++const session=new Session();session.connect();await session.post("Debugger.enable");
++let current;
++globalThis.__r1GuardWriteObserver=raw=>{assert.ok(current);current.guardRaw=raw;current.guardBefore=clone(raw);return watch(raw,current.guardWrites);};
++session.on("Debugger.paused",message=>{
++  const observed=current;
++  try{
++    const frame=message.params.callFrames[0];assert.equal(frame.functionName,"guardRemovalActiveTest");assert.ok(observed);
++    observed.directGuard++;observed.ledger.push("guard.enter");
++    // Dispatch both inspector commands inside the paused callback, before any
++    // Promise continuation; same-thread V8 resumes when this callback returns.
++    void session.post("Debugger.evaluateOnCallFrame",{callFrameId:frame.callFrameId,expression:"tx.state = globalThis.__r1GuardWriteObserver(tx.state)"})
++      .then(r=>{if(r.exceptionDetails)observed.instrumentationError="GUARD_OBSERVER_INSTALL_FAILED";},e=>{observed.instrumentationError=e.message;});
++    void session.post("Debugger.resume").catch(e=>{observed.instrumentationError=e.message;});
++  }catch(e){if(observed)observed.instrumentationError=e.message;}
++});
++const breakpoint=await session.post("Debugger.setBreakpointByUrl",{url:guardURL.href,lineNumber:guardSource.split("\n").findIndex(l=>l.includes("if (decision !== REMOVAL_DECISION.CONTINUE"))});
++assert.ok(breakpoint.locations.length);
++await session.post("Profiler.enable");await session.post("Profiler.startPreciseCoverage",{callCount:true,detailed:true});
++const key=await generateKeyPair("RS256"),otherKey=await generateKeyPair("RS256");
++async function token({expires=C+1000000,signer=key.privateKey}={}){
++  return new SignJWT({role:"authenticated",session_id:id(700)}).setProtectedHeader({alg:"RS256",kid:"offline"}).setIssuer("https://offline.invalid").setAudience("local-preflight").setSubject(U).setIssuedAt(C/1000).setExpirationTime(expires/1000).sign(signer);
++}
++const validToken=await token();
++const command=(overrides={})=>({credential:validToken,studentId:P,groupId:G,expectedGroupRevision:4,expectedMembershipRevision:7,...overrides});
++const results=[];
++function scenario(name,work){test(name,async()=>{
++  const ctx={case_id:name,started_utc:new Date().toISOString(),ledger:[],directGuard:0,guardWrites:[],portWrites:[],flushes:0,verifyCalls:0,transactions:0,acknowledgements:0};
++  current=ctx;await session.post("Profiler.takePreciseCoverage");let failure;
++  try{await work(ctx);assert.equal(ctx.instrumentationError,undefined);ctx.verdict="PASS";}
++  catch(e){failure=e;ctx.verdict="FAIL";ctx.assertion={name:e.name,message:e.message,stack:e.stack};}
++  finally{
++    const coverage=await session.post("Profiler.takePreciseCoverage"),calls={maintenance:0,reconcile:0};
++    for(const script of coverage.result)if(script.url.startsWith(new URL("supabase/",project).href))for(const f of script.functions){if(f.functionName==="materializeElapsedAttempts")calls.maintenance+=f.ranges[0].count;if(f.functionName==="reconcileMembershipEffects")calls.reconcile+=f.ranges[0].count;}
++    ctx.observed_functions=calls;
++    try{
++      const corrupt=name.startsWith("L4-C04-")||name.startsWith("L4-R03-");
++      const expected=ctx.directGuard===0||corrupt?{maintenance:0,reconcile:0}:{maintenance:1,reconcile:ctx.guardWrites.length?1:0};
++      assert.deepEqual(calls,ctx.expectedFunctions??expected);
++      if(ctx.directGuard)assert.equal(ctx.ledger.indexOf("guard.enter"),ctx.ledger.indexOf("frame.return")+1);
++    }catch(e){if(!failure){failure=e;ctx.verdict="FAIL";ctx.assertion={name:e.name,message:e.message,stack:e.stack};}}
++    ctx.guardStaged=ctx.guardRaw?clone(ctx.guardRaw):null;delete ctx.guardRaw;
++    if(ctx.readStore)ctx.committed=ctx.readStore();delete ctx.readStore;
++    ctx.portStaged??=null;ctx.preparedProjection??=null;
++    ctx.evidence_layer??="OFFLINE_NATIVE_JWT_LOCAL_CONTRACT_RECORDING_DOUBLE";
++    ctx.staging_started=ctx.transactions>0;
++    ctx.finished_utc=new Date().toISOString();ctx.exit=failure?1:0;ctx.source_fingerprints=fingerprints;ctx.guard_source_sha256=guardSHA;
++    ctx.command=[process.execPath,...process.execArgv,...process.argv.slice(1)];results.push(ctx);current=undefined;
++  }
++  if(failure)throw failure;
++});}
++function double(ctx,initial=fixture(),options={}){
++  let durable=clone(initial),draft,prepared,identity;ctx.initial=clone(initial);
++  const verifier=createStaffJwtVerifier({issuer:"https://offline.invalid",audience:"local-preflight",algorithms:["RS256"],trustedKeys:async()=>key.publicKey,now:()=>C});
++  const ids={transactionId:ctx.case_id+":tx",protectionId:ctx.case_id+":protect",frameId:ctx.case_id+":frame"};
++  const port={
++    async verifyAndLocate(credential){ctx.verifyCalls++;ctx.ledger.push("credential.verify");const proof=await verifier(credential);ctx.ledger.push("mapping.locate");identity={actorId:U,proof};return identity;},
++    async transaction(actor,work){
++      ctx.transactions++;ctx.ledger.push("tx.begin");draft=clone(durable);ctx.ledger.push("protection.acquire");
++      const watched=watch(draft,ctx.portWrites);
++      const tx={...ids,
++        async prepareAndRefresh(verified,scope){
++          ctx.ledger.push("prepare.load");ctx.ledger.push("prepare.wait");if(options.wait)await options.wait();
++          prepared=clone(draft);
++          ctx.ledger.push("refresh.mapping");if(options.mappingRevoked)throw new ApiFault("STAFF_TOKEN_INVALID",401);
++          ctx.ledger.push("refresh.provider");if(options.providerFault)throw new ApiFault("SERVICE_UNAVAILABLE",503);if(options.providerRevoked)throw new ApiFault("STAFF_TOKEN_INVALID",401);
++          ctx.ledger.push("refresh.authority");if(options.authority)options.authority(prepared);
++          ctx.ledger.push("refresh.clock");const now=options.now??T;
++          if(options.scopeMutation)scope.expectedGroupRevision=0;
++          const frame={...ids,actor:verified,now,providerExpiresAt:options.providerExpiresAt??C+900000,state:prepared,coverage:receipt(prepared,scope,verified,ids,now)};
++          if(options.frame)options.frame(frame);
++          ctx.ledger.push("frame.return");return frame;
++        },
++        async flushExpiry(delta){
++          ctx.flushes++;ctx.ledger.push("flush.begin");ctx.delta=clone(delta);
++          assert.equal(Object.isFrozen(delta),true);assert.deepEqual(Object.keys(delta).sort(),["attempts","binding","gates","series"]);
++          if(options.flushReply)return {status:409};
++          if(options.forbiddenWriter)delta.membership={active:false};
++          if(options.flushFaultBefore)throw options.flushFaultBefore;
++          assert.deepEqual(delta.binding,{...ids,actorId:U,studentId:P,groupId:G});
++          for(const a of delta.attempts){const old=draft.student.attempts[a.attemptId];assert.deepEqual({generation:old.generation,stateRevision:old.stateRevision,seriesStateRevision:old.seriesStateRevision,status:old.status,ordinary:old.ordinary},a.expected);if(options.casFault)throw new ApiFault("STATE_REVISION_CONFLICT",409);Object.assign(watched.student.attempts[a.attemptId],clone(a.next));if(options.partialFlush)throw new StorageUnavailable("not_committed");}
++          for(const s of delta.series){const old=draft.student.series[s.seriesKey];assert.deepEqual({currentAttemptId:old.currentAttemptId,generation:old.generation,officialAttemptId:old.officialAttemptId,recoveryState:old.recoveryState,recovery:old.recovery},s.expected);Object.assign(watched.student.series[s.seriesKey],clone(s.next));}
++          for(const g of delta.gates){const old=draft.student.assignments[g.assignmentId].reviewGate;assert.deepEqual({revision:old.revision,barrierRevision:old.barrier_revision},g.expected);Object.assign(watched.student.assignments[g.assignmentId].reviewGate,clone(g.next));}
++          ctx.ledger.push("flush.done");
++        },
++      };
++      let committing=false;
++      try{
++        if(options.loadFault)throw options.loadFault;
++        const value=await work(tx);if(options.callbackAgain)await work(tx);ctx.ledger.push("callback.return");committing=true;ctx.ledger.push("commit.attempt");
++        if(options.commit==="uncommitted"){ctx.ledger.push("connection.discard");throw new StorageUnavailable("commit_unknown");}
++        durable=clone(draft);
++        if(options.commit==="committed"){ctx.ledger.push("connection.discard");throw new StorageUnavailable("commit_unknown");}
++        if(options.beforeAck)await options.beforeAck();ctx.ledger.push("commit.ack");
++        return options.badAck?{transactionId:"foreign-tx",value}:{transactionId:ids.transactionId,value};
++      }catch(e){if(!committing){ctx.ledger.push("rollback.attempt");if(options.rollbackAckLost)ctx.ledger.push("connection.discard");else ctx.ledger.push("rollback.ack");}throw e;}
++      finally{ctx.portStaged=clone(draft);ctx.committed=clone(durable);ctx.preparedProjection=prepared?clone(prepared):null;}
++    },
++  };
++  const preflight=createMembershipPreflight({mode:"local_contract",port});
++  ctx.readStore=()=>clone(durable);
++  return {port,preflight,read:()=>clone(durable),get identity(){return identity;}};
++}
++async function call(ctx,d,input=command()){
++  try{const value=await d.preflight(input);ctx.acknowledgements++;ctx.ledger.push("caller.resolve");ctx.outcome=clone(value);return value;}
++  catch(e){ctx.outcome={name:e.name,code:e.code,status:e.status,...(e.outcome?{storage_outcome:e.outcome}:{})};throw e;}
++}
++const technical=e=>e.code==="RESPONSE_INVARIANT_FAILED"&&e.status===500;
++function assertCommitted(ctx,d,expected){ctx.expectedCommitted=clone(expected);assert.deepEqual(d.read(),expected);}
++function unchanged(ctx,d,s){assertCommitted(ctx,d,s);ctx.expectedPortStaged=clone(s);assert.deepEqual(ctx.portStaged,s);assert.equal(ctx.acknowledgements,0);}
++
++scenario("L1-valid-credential-canonical-actor",async ctx=>{const s=fixture(),d=double(ctx,s,{now:T-1});assert.deepEqual(await call(ctx,d),{kind:"wait_for_active_test"});assert.equal(d.identity.actorId,U);assert.equal(ctx.verifyCalls,1);assert.equal(ctx.directGuard,1);assert.equal(ctx.flushes,0);assertCommitted(ctx,d,s);});
++for(const name of ["proof","state","now","role","decision","callback","port"])scenario("L1-reject-command-"+name,async ctx=>{const d=double(ctx);let reads=0;const input=command();Object.defineProperty(input,name,{get(){reads++;throw Error("REQUEST_HOOK");},enumerable:true});await assert.rejects(call(ctx,d,input),e=>e.code==="VALIDATION_ERROR");assert.equal(reads,0);assert.equal(ctx.verifyCalls,0);assert.equal(ctx.transactions,0);assert.equal(ctx.directGuard,0);});
++scenario("L1-forged-credential",async ctx=>{const d=double(ctx);await assert.rejects(call(ctx,d,command({credential:await token({signer:otherKey.privateKey})})),e=>e.code==="STAFF_TOKEN_INVALID");assert.equal(ctx.transactions,0);assert.equal(ctx.directGuard,0);});
++for(const mode of [undefined,"production"])scenario("L1-no-default-or-production-"+mode,async ctx=>{const d=double(ctx);assert.throws(()=>createMembershipPreflight({mode,port:d.port}),e=>e.code==="SERVICE_UNAVAILABLE");assert.equal(ctx.verifyCalls,0);});
++scenario("L1-missing-binding",async ctx=>{assert.throws(()=>createMembershipPreflight({mode:"local_contract"}),e=>e.code==="SERVICE_UNAVAILABLE");assert.equal(ctx.directGuard,0);});
++scenario("L1-port-cannot-retarget-command-scope",async ctx=>{const s=fixture(),d=double(ctx,s,{scopeMutation:true});await assert.rejects(call(ctx,d),e=>e instanceof TypeError);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);});
++for(const [name,opts,code,status]of [
++  ["mapping-revoked",{mappingRevoked:true},"STAFF_TOKEN_INVALID",401],
++  ["provider-revoked",{providerRevoked:true},"STAFF_TOKEN_INVALID",401],
++  ["provider-fault",{providerFault:true},"SERVICE_UNAVAILABLE",503],
++  ["disabled",{authority:s=>{s.staff[U].enabled=false;}},"ACCOUNT_DISABLED",403],
++  ["scope-revoked",{authority:s=>{s.staff[U].scope.group_ids=[];}},"NOT_FOUND",404],
++  ["provider-expiry-equality",{providerExpiresAt:T},"STAFF_TOKEN_INVALID",401],
++])scenario("L2-post-wait-"+name,async ctx=>{const s=fixture(),d=double(ctx,s,{wait:async()=>{ctx.ledger.push("wait.finished");},...opts});await assert.rejects(call(ctx,d),e=>e.code===code&&e.status===status);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);assert.equal(ctx.flushes,0);assert.equal(ctx.portWrites.length,0);});
++for(const offset of [0,1])scenario("L2-proof-expiry-"+offset,async ctx=>{const s=fixture(),d=double(ctx,s,{now:T+offset});await assert.rejects(call(ctx,d,command({credential:await token({expires:T})})),e=>e.code==="STAFF_TOKEN_INVALID");unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);assert.equal(ctx.flushes,0);});
++scenario("L2-clock-after-wait-observed",async ctx=>{const s=fixture(),d=double(ctx,s,{wait:async()=>{ctx.ledger.push("deadline-crossed");},now:T});assert.equal((await call(ctx,d)).kind,"continue_existing_policy");assertCommitted(ctx,d,expectedExpiry(s));assert.ok(ctx.ledger.indexOf("refresh.clock")<ctx.ledger.indexOf("guard.enter"));assert.ok(ctx.ledger.indexOf("guard.enter")<ctx.ledger.indexOf("flush.begin"));});
++const badFrames=[
++  ["missing-receipt",f=>{delete f.coverage;}],["boolean-only",f=>{f.coverage={complete:true};}],
++  ["stale-transaction",f=>{f.coverage.transactionId="stale";}],["stale-protection",f=>{f.coverage.protectionId="stale";}],["stale-frame",f=>{f.coverage.frameId="stale";}],
++  ["scope",f=>{f.coverage.scope.groupId=H;}],["enumeration-omitted",f=>{delete f.coverage.enumerations.targetSeries;}],
++  ["duplicate-key",f=>{f.coverage.enumerations.targetSeries.keys.push(K);}],["duplicate-enumeration-id",f=>{f.coverage.enumerations.participants.enumerationId=f.coverage.enumerations.targetSeries.enumerationId;}],
++  ["contradictory-fact",f=>{f.coverage.rows.attempts.absent.push(A);}],["declared-row-missing",f=>{delete f.state.student.attempts[A];}],
++  ["missing-participants",f=>{f.coverage.enumerations.participants.keys=[];}],["affected-closure-omitted",f=>{f.coverage.enumerations.affectedAssignments.keys=[];}],
++  ["actor-frame-binding",f=>{f.actor={...f.actor,actorId:Q};}],["forged-frame-proof",f=>{f.actor={...f.actor,proof:{...f.actor.proof}};}],
++];
++for(const [name,edit]of badFrames)scenario("L3-"+name,async ctx=>{const s=fixture(),d=double(ctx,s,{frame:edit});await assert.rejects(call(ctx,d),technical);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);assert.equal(ctx.flushes,0);assert.equal(ctx.guardWrites.length,0);});
++scenario("L3-proven-empty-enumeration",async ctx=>{const s=fixture();s.student.series={};s.student.attempts={};const d=double(ctx,s);assert.equal((await call(ctx,d)).kind,"continue_existing_policy");assertCommitted(ctx,d,s);assert.equal(ctx.directGuard,1);assert.equal(ctx.flushes,0);});
++scenario("L3-explicit-absent-peer-grant-and-series",async ctx=>{const s=fixture();s.student.people[Q]=clone(s.student.people[P]);s.student.people[Q].profile.person_id=Q;s.memberships[Q]={affinityGroupId:H,active:false,revision:1,epoch:1};const d=double(ctx,s);await call(ctx,d);assertCommitted(ctx,d,expectedExpiry(s));assert.equal(ctx.directGuard,1);});
++for(const kind of ["active","ready"])scenario("L3-off-group-peer-"+kind,async ctx=>{const s=fixture();peer(s,kind);const d=double(ctx,s);assert.equal((await call(ctx,d)).kind,"continue_existing_policy");assertCommitted(ctx,d,expectedExpiry(s,T,{peerActive:kind==="active",peerReady:kind==="ready"}));assert.equal(d.read().student.assignments[J].reviewGate.barrier_complete,false);assert.deepEqual(Object.keys(ctx.outcome),["kind"]);assert.equal(ctx.directGuard,1);});
++scenario("L3-recovery-anchor-missing",async ctx=>{const s=fixture();peer(s,"ready");const d=double(ctx,s,{frame:f=>{f.coverage.enumerations.recoveryAnchors.keys=[];}});await assert.rejects(call(ctx,d),technical);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);assert.equal(ctx.flushes,0);});
++scenario("L3-peer-foreign-record-rejected",async ctx=>{const s=fixture();peer(s,"active");s.student.attempts[B].personId=P;const d=double(ctx,s);await assert.rejects(call(ctx,d),technical);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);});
++scenario("L3-explicit-absent-target-uses-guard-not-found",async ctx=>{const s=fixture();s.student.people={};s.memberships={};s.student.grants={};s.student.series={};s.student.attempts={};const d=double(ctx,s);ctx.expectedFunctions={maintenance:0,reconcile:0};await assert.rejects(call(ctx,d),e=>e.code==="NOT_FOUND"&&e.status===404);unchanged(ctx,d,s);assert.equal(ctx.directGuard,1);assert.equal(ctx.flushes,0);});
++for(const corrupt of ["C04","R03"]){
++  const damage=s=>{if(corrupt==="C04")s.student.attempts[A].id=id(999);else s.student.attempts[A].ordinary=ordinary(2,100,T-50);};
++  for(const offset of [-1,0,1])scenario(`L4-${corrupt}-deadline:${offset}`,async ctx=>{const s=fixture();damage(s);const d=double(ctx,s,{now:T+offset});await assert.rejects(call(ctx,d),technical);unchanged(ctx,d,s);assert.equal(ctx.directGuard,1);assert.equal(ctx.guardWrites.length,0);assert.equal(ctx.flushes,0);});
++  for(const sf of [true,false])for(const af of [true,false])scenario(`L4-${corrupt}-mixed:${sf}:${af}`,async ctx=>{const s=fixture(),other=second(s);damage(s);const valid=s.student.attempts[B],invalid=s.student.attempts[A];s.student.series=sf?{[other.key]:s.student.series[other.key],[K]:s.student.series[K]}:{[K]:s.student.series[K],[other.key]:s.student.series[other.key]};s.student.attempts=af?{[B]:valid,[A]:invalid}:{[A]:invalid,[B]:valid};const d=double(ctx,s);await assert.rejects(call(ctx,d),technical);unchanged(ctx,d,s);assert.equal(ctx.directGuard,1);assert.equal(ctx.guardWrites.length,0);assert.equal(ctx.flushes,0);});
++}
++for(const [name,field,reason]of [["group","expectedGroupRevision","group_revision_conflict"],["membership","expectedMembershipRevision","membership_revision_conflict"]])scenario("L4-clean-denial-"+name,async ctx=>{const s=fixture(),d=double(ctx,s);assert.deepEqual(await call(ctx,d,command({[field]:0})),{kind:"recognized_denial",reason});assertCommitted(ctx,d,expectedExpiry(s));assert.equal(ctx.directGuard,1);assert.equal(ctx.flushes,1);});
++scenario("L4-owner-allowed",async ctx=>{const s=fixture();s.staff[U].roles=["owner"];s.staff[U].capabilities.manage_roster=false;const d=double(ctx,s,{now:T-1});assert.equal((await call(ctx,d)).kind,"wait_for_active_test");assertCommitted(ctx,d,s);});
++scenario("L4-teacher-not-expanded",async ctx=>{const s=fixture();s.staff[U].roles=["teacher"];const d=double(ctx,s);await assert.rejects(call(ctx,d),e=>e.code==="FORBIDDEN"&&e.status===403);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);});
++for(const offset of [0,1])scenario("L5-literal-expiry-"+offset,async ctx=>{const s=fixture(),d=double(ctx,s,{now:T+offset});assert.equal((await call(ctx,d)).kind,"continue_existing_policy");assertCommitted(ctx,d,expectedExpiry(s,T+offset));assert.equal(ctx.guardWrites.length,7);assert.equal(ctx.flushes,1);assert.ok(ctx.portWrites.length>0);assert.equal(ctx.directGuard,1);});
++scenario("L5-started-recovery-completion-markers",async ctx=>{const s=fixture();s.student.attempts[A].generation=2;Object.assign(s.student.series[K],{generation:2,recoveryState:"active",recovery:{opensAt:C-1,closesAt:T+1,durationMs:60000}});const d=double(ctx,s);await call(ctx,d);assertCommitted(ctx,d,expectedExpiry(s));assert.equal(d.read().student.series[K].recoveryState,"none");});
++for(const status of ["wait","continue","denial"])scenario("B-unstarted-ready-preserved-"+status,async ctx=>{const s=fixture(),extra=second(s);Object.assign(extra.a,{status:"submitted",completedAt:C+100,ordinary:ordinary()});Object.assign(s.student.series[extra.key],{officialAttemptId:B,recoveryState:"ready",recovery:{opensAt:T+1000,closesAt:T+2000,durationMs:500}});s.recoveryAssignments[extra.key]=extra.assignment;
++  if(status!=="wait")Object.assign(s.student.attempts[A],{status:"submitted",completedAt:C+100,ordinary:ordinary()});
++  const d=double(ctx,s,{now:T-1}),value=await call(ctx,d,command(status==="denial"?{expectedGroupRevision:0}:{}));assert.equal(value.kind,status==="wait"?"wait_for_active_test":status==="denial"?"recognized_denial":"continue_existing_policy");assertCommitted(ctx,d,s);assert.equal(ctx.flushes,0);
++});
++for(const [name,edit]of [
++  ["membership",s=>{s.memberships[P].active=false;}],["group",s=>{s.groups[G].revision++;}],["grant",s=>{s.student.grants[P][J].rostered=false;}],
++  ["auth",s=>{s.student.families.bad={personId:P};}],["profile",s=>{s.student.people[P].profile.first_name="changed";}],
++  ["receipt",s=>{s.receipts.bad={payload:"bad"};}],["audit",s=>{s.audit.push({action:"bad"});}],
++  ["answer",s=>{s.student.attempts[A].answers[0].revision++;}],["deadline",s=>{s.student.attempts[A].deadlineAt++;}],
++  ["snapshot",s=>{s.student.attempts[A].published.durationMs++;}],
++])scenario("L5-forbidden-delta-"+name,async ctx=>{const before=fixture(),after=expectedExpiry(before);edit(after);ctx.evidence_layer="DELTA_WHITELIST_UNIT_NOT_GUARD_RUN";ctx.initial=clone(before);ctx.forbiddenProposed=clone(after);ctx.forbiddenProposal=name;assert.throws(()=>expiryDelta(before,after,T,{transactionId:"t",protectionId:"p",frameId:"f",actorId:U,studentId:P,groupId:G}),technical);assert.equal(ctx.directGuard,0);assert.equal(ctx.flushes,0);});
++scenario("L5-flush-does-not-receive-mutable-state-writer",async ctx=>{const s=fixture(),d=double(ctx,s,{forbiddenWriter:true});await assert.rejects(call(ctx,d),e=>e instanceof TypeError);unchanged(ctx,d,s);assert.equal(ctx.guardWrites.length,7);assert.equal(ctx.portWrites.length,0);});
++scenario("L5-unsafe-expiry-revision-never-flushed",async ctx=>{const s=fixture();s.student.attempts[A].stateRevision=Number.MAX_SAFE_INTEGER;const d=double(ctx,s);await assert.rejects(call(ctx,d),technical);unchanged(ctx,d,s);assert.equal(ctx.flushes,0);assert.equal(ctx.directGuard,1);});
++for(const [name,options]of [
++  ["loader-exception",{loadFault:Error("SYNTHETIC_LOADER")}],["flush-storage",{flushFaultBefore:new StorageUnavailable("not_committed")}],
++  ["flush-CAS",{casFault:true}],["partial-flush",{partialFlush:true}],["arbitrary409-reply",{flushReply:true}],
++])scenario("L6-"+name,async ctx=>{const s=fixture(),d=double(ctx,s,options);await assert.rejects(call(ctx,d));assertCommitted(ctx,d,s);assert.equal(ctx.acknowledgements,0);assert.ok(ctx.ledger.includes("rollback.ack"));assert.equal(ctx.ledger.includes("commit.ack"),false);if(name==="partial-flush")assert.ok(ctx.portWrites.length>0);});
++scenario("L6-rollback-ACK-loss-discards-without-confirmation",async ctx=>{const s=fixture(),d=double(ctx,s,{partialFlush:true,rollbackAckLost:true});await assert.rejects(call(ctx,d));assertCommitted(ctx,d,s);assert.equal(ctx.ledger.includes("rollback.ack"),false);assert.ok(ctx.ledger.includes("connection.discard"));assert.equal(ctx.acknowledgements,0);});
++for(const mode of ["committed","uncommitted"])scenario("L7-COMMIT-ACK-loss-"+mode,async ctx=>{const s=fixture(),d=double(ctx,s,{commit:mode});await assert.rejects(call(ctx,d),e=>e instanceof StorageUnavailable&&e.outcome==="commit_unknown"&&e.status===503);assertCommitted(ctx,d,mode==="committed"?expectedExpiry(s):s);assert.equal(ctx.acknowledgements,0);assert.equal(ctx.transactions,1);assert.equal(ctx.verifyCalls,1);assert.equal(ctx.ledger.filter(x=>x==="commit.attempt").length,1);assert.equal(ctx.ledger.includes("rollback.attempt"),false);assert.ok(ctx.ledger.includes("connection.discard"));});
++scenario("L7-value-visible-only-after-COMMIT-ACK",async ctx=>{let release;const gate=new Promise(r=>{release=r;});const s=fixture(),d=double(ctx,s,{beforeAck:async()=>{ctx.ledger.push("ack.pending");await gate;}});const pending=call(ctx,d);while(!ctx.ledger.includes("ack.pending"))await new Promise(r=>setImmediate(r));assert.equal(ctx.acknowledgements,0);release();await pending;assert.ok(ctx.ledger.indexOf("commit.ack")<ctx.ledger.indexOf("caller.resolve"));});
++scenario("L7-wrong-transaction-ACK-cannot-certify-success",async ctx=>{const s=fixture(),d=double(ctx,s,{badAck:true});await assert.rejects(call(ctx,d),e=>e.outcome==="commit_unknown");assertCommitted(ctx,d,expectedExpiry(s));assert.equal(ctx.acknowledgements,0);assert.equal(ctx.ledger.includes("rollback.attempt"),false);});
++scenario("L7-port-callback-reentry-cannot-repeat-mutation",async ctx=>{const s=fixture(),d=double(ctx,s,{callbackAgain:true});await assert.rejects(call(ctx,d),technical);assertCommitted(ctx,d,s);assert.equal(ctx.directGuard,1);assert.equal(ctx.flushes,1);assert.equal(ctx.acknowledgements,0);});
++
++after(async()=>{
++  await session.post("Profiler.stopPreciseCoverage");await session.post("Debugger.removeBreakpoint",{breakpointId:breakpoint.breakpointId});session.disconnect();delete globalThis.__r1GuardWriteObserver;
++  if(process.env.UA_R1_TRACE_PATH)writeFileSync(process.env.UA_R1_TRACE_PATH,JSON.stringify({scope:"AUTHOR_LOCAL_CONTRACT_OFFLINE_VERIFIER_RECORDING_DOUBLE_NOT_INDEPENDENT_QA",base:"9dee2eaeb9e2c4833ab3c1f03a06e387121f7b17",source_fingerprints:fingerprints,
++    observation_limits:"Debugger first guard identity line measures direct invocation; test-only argument Proxy observes subsequent reachable JS mutations. Probe attachment is excluded. Port-draft writes separately recorded. Precise coverage measures maintenance/reconcile. Net state snapshots are not transient traces. No SQL/provider locks or real COMMIT proof.",cases:results},(_,v)=>typeof v==="bigint"?{$bigint:String(v)}:v,2)+"\n");
++});

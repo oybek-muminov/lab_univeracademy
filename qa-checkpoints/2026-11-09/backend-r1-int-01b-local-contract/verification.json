@@ -1,0 +1,275 @@
+{
+  "candidate": "R1-INT-01b-local-contract-v1",
+  "base_commit": "9dee2eaeb9e2c4833ab3c1f03a06e387121f7b17",
+  "evidence_layer": "AUTHOR_LOCAL_CONTRACT_OFFLINE_VERIFIER_RECORDING_DOUBLE_NOT_INDEPENDENT_QA",
+  "scope": "Three-new-file local_contract explicit-port adapter; Admin/Owner internal preflight only",
+  "tests": {
+    "new_cases": 91,
+    "existing_guard_regressions": 59,
+    "total": 150,
+    "pass": 150,
+    "fail": 0,
+    "skip": 0,
+    "new_case_groups": {
+      "L1": 13,
+      "L2": 9,
+      "L3": 22,
+      "L4": 18,
+      "L5": 15,
+      "B": 3,
+      "L6": 6,
+      "L7": 5
+    },
+    "run": {
+      "base_commit": "9dee2eaeb9e2c4833ab3c1f03a06e387121f7b17",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/preflight-adapter.test.mjs",
+        "tests/membership/removal-active.test.mjs"
+      ],
+      "environment_overrides": {
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/evidence/frozen-final-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "cwd": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-09T17:30:24.090710+00:00",
+      "end_utc": "2026-11-09T17:30:26.089327+00:00",
+      "exit": 0,
+      "log_sha256": "3923885a73dcb6a19e955735348f90d5c1f9054443b8e94a556e8b390fa7e685",
+      "all_source_files": 349,
+      "base_files_unchanged": 346,
+      "source_before_sha256": "6c021cf6ceff91e45e4e9daee184463f8aa88c2f6cf9d746bf0b7e2fcd016f06",
+      "source_after_sha256": "6c021cf6ceff91e45e4e9daee184463f8aa88c2f6cf9d746bf0b7e2fcd016f06",
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+          "bytes": 6401,
+          "sha256": "1d2e298d633beb7b4be98e0446e9324220a06ae0c5fba6a9baaca50c4754f56b"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+          "bytes": 15991,
+          "sha256": "6eab8c2c749616d1b1b9c4e5c17fabe73de3f7ad07e9455f3328210eedc315fc"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+          "bytes": 35568,
+          "sha256": "c63aa81e50931304723211ec5546eafdb8e10dc668b74fb19dd2a940d1f46926"
+        }
+      ]
+    },
+    "literal_command_with_overrides": "UA_R1_TRACE_PATH=/tmp/univeracademy-r1-int-01b-9dg4wbqf/evidence/frozen-final-cases.json npm_config_cache=/tmp/univeracademy-r1-int-01b-9dg4wbqf/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/preflight-adapter.test.mjs tests/membership/removal-active.test.mjs"
+  },
+  "typecheck": {
+    "run": {
+      "base_commit": "9dee2eaeb9e2c4833ab3c1f03a06e387121f7b17",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "environment_overrides": {
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/evidence/frozen-typecheck-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "cwd": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-09T17:30:26.281944+00:00",
+      "end_utc": "2026-11-09T17:30:28.179748+00:00",
+      "exit": 0,
+      "log_sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc",
+      "all_source_files": 349,
+      "base_files_unchanged": 346,
+      "source_before_sha256": "6c021cf6ceff91e45e4e9daee184463f8aa88c2f6cf9d746bf0b7e2fcd016f06",
+      "source_after_sha256": "6c021cf6ceff91e45e4e9daee184463f8aa88c2f6cf9d746bf0b7e2fcd016f06",
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+          "bytes": 6401,
+          "sha256": "1d2e298d633beb7b4be98e0446e9324220a06ae0c5fba6a9baaca50c4754f56b"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+          "bytes": 15991,
+          "sha256": "6eab8c2c749616d1b1b9c4e5c17fabe73de3f7ad07e9455f3328210eedc315fc"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+          "bytes": 35568,
+          "sha256": "c63aa81e50931304723211ec5546eafdb8e10dc668b74fb19dd2a940d1f46926"
+        }
+      ]
+    },
+    "literal_command_with_overrides": "UA_R1_TRACE_PATH=/tmp/univeracademy-r1-int-01b-9dg4wbqf/evidence/frozen-typecheck-cases.json npm_config_cache=/tmp/univeracademy-r1-int-01b-9dg4wbqf/npm-cache npm_config_update_notifier=false npm run typecheck"
+  },
+  "patch_replay": {
+    "metadata": "replay-verification.json",
+    "sha256": "8fee44b29c75fcf7f20c7d4b64d33dd5f97498395eed0743a0dbc51768f06dcf",
+    "applied_parity": 3,
+    "reverse_restored_absent": 3,
+    "explicit_cwd": "/tmp/univeracademy-r1-int-01b-9dg4wbqf/patch-replay",
+    "sequential_after_typecheck": true
+  },
+  "source_manifest": {
+    "path": "source-manifest.json",
+    "sha256": "f39d57e9964207f46e46d6d445e0098fb618bf6e3184994b9b39fb24b330a19a"
+  },
+  "case_dataset": {
+    "path": "case-results.json",
+    "sha256": "2a777be066d53c9bf2899e071b65b6d8ee6c15010937734ef578a66721e6ce9c",
+    "cases": 91,
+    "state_pool_entries": 45
+  },
+  "history": [
+    {
+      "label": "focused-01",
+      "metadata": "focused-01-run.json",
+      "exit": 1,
+      "start_utc": "2026-11-09T17:23:04.742482+00:00",
+      "end_utc": "2026-11-09T17:23:05.746624+00:00",
+      "log_sha256": "90e96bbbddeb3045af3e3ce77626abb6196b7aa88e40fae84be36ea2caf8ce88",
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+          "bytes": 6296,
+          "sha256": "b46d86758cebd908ea35dc2d5b88430b6b9ce9bd65f4f07392a46c6d95f6f6fb"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+          "bytes": 15420,
+          "sha256": "f1b135547d5829722030d783b786e0ed1e7f15704e6d470fc009a66c1320ba9a"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+          "bytes": 31854,
+          "sha256": "775ef83da423982a1c5b71e42a4c5ccbb54bad418d7b5e2b2d782e667a573a76"
+        }
+      ],
+      "release_evidence": false
+    },
+    {
+      "label": "focused-02",
+      "metadata": "focused-02-run.json",
+      "exit": 0,
+      "start_utc": "2026-11-09T17:23:42.856509+00:00",
+      "end_utc": "2026-11-09T17:23:43.995623+00:00",
+      "log_sha256": "bb25f76fd472fe8e3efff3cceef50f0b8a5c55f141c4c4dacaa6a289b9395df5",
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+          "bytes": 6296,
+          "sha256": "b46d86758cebd908ea35dc2d5b88430b6b9ce9bd65f4f07392a46c6d95f6f6fb"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+          "bytes": 15420,
+          "sha256": "f1b135547d5829722030d783b786e0ed1e7f15704e6d470fc009a66c1320ba9a"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+          "bytes": 32151,
+          "sha256": "24ba643e25a86ab5221b601ed635f7c3570abf988732953a48ceff938fd64cfe"
+        }
+      ],
+      "release_evidence": false
+    },
+    {
+      "label": "focused-03",
+      "metadata": "focused-03-run.json",
+      "exit": 0,
+      "start_utc": "2026-11-09T17:26:37.142276+00:00",
+      "end_utc": "2026-11-09T17:26:38.266763+00:00",
+      "log_sha256": "e33f223d601723de2512815d68399e08ee7e16d9643989c6dcfc19a976e4f3af",
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+          "bytes": 6401,
+          "sha256": "1d2e298d633beb7b4be98e0446e9324220a06ae0c5fba6a9baaca50c4754f56b"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+          "bytes": 15643,
+          "sha256": "a0011115d94426841e6dedb683bc0509abf23b39d50824ba49d555b50c0418ed"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+          "bytes": 34158,
+          "sha256": "ffa6f46c80c7d14295dabf36e989ee3d9192dd7f95484dbf92ed642eca71899d"
+        }
+      ],
+      "release_evidence": false
+    },
+    {
+      "label": "final-affected",
+      "metadata": "final-affected-run.json",
+      "exit": 0,
+      "start_utc": "2026-11-09T17:28:58.427205+00:00",
+      "end_utc": "2026-11-09T17:29:00.329645+00:00",
+      "log_sha256": "5e4fb295d06c8c094bdf89759ce964071f6bf55a4ff1ff2e7e53ae64901b4b59",
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+          "bytes": 6401,
+          "sha256": "1d2e298d633beb7b4be98e0446e9324220a06ae0c5fba6a9baaca50c4754f56b"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+          "bytes": 15829,
+          "sha256": "02c863d8272b29749110c1b3abe49f4e6d97c44ebdd92739ab14d7e7f323b72f"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+          "bytes": 35593,
+          "sha256": "c93bd30cf00e65dd1fab2c28d3983c2f20433b220d0f0f30687fa551769f9b58"
+        }
+      ],
+      "release_evidence": false
+    }
+  ],
+  "original_harness_failure": {
+    "run": "focused-01",
+    "classification": "TEST_ONLY_INSPECTOR_LISTENER_LIFETIME",
+    "original_exit": 1,
+    "observed": "82 PASS / 1 FAIL plus post-test async inspector errors (Can only perform operation while paused)",
+    "correction": "Test-only paused listener dispatches evaluate and resume synchronously before yielding; promise results/errors captured separately",
+    "production_adapter_port_byte_identical_between_focused_01_and_02": true,
+    "initial_unrecorded_typecheck": "Ad-hoc exit0 before test file existed; UTC/log not captured; not release evidence"
+  },
+  "measurement": {
+    "direct_guard": "Debugger pause at accepted guard first identity check; actual invocation counter, not async V8 coverage entry",
+    "guard_writes": "Test-only Proxy injected into guard argument state at pause; captures reachable set/define/delete/prototype/preventExtensions operations after probe attachment; attachment excluded",
+    "port_writes": "Separate recording-double durable-draft Proxy; never summed with guard writes as physical DB operations",
+    "maintenance_reconcile": "Named function invocation counts from inspector precise coverage",
+    "positive_control": "L5-literal-expiry-0: direct guard1, maintenance1, reconcile1, guard write attempts7, port write attempts13; includes same-value gate writes",
+    "snapshot_limit": "State snapshots and expiryDelta whitelist are net comparisons, not transient write instrumentation",
+    "forbidden_delta_unit_controls": "10 L5-forbidden-delta cases call expiryDelta directly on deliberately altered literal states; guard/port not invoked; labeled separate layer",
+    "real_db_provider": "NOT_RUN"
+  },
+  "unchanged": [
+    "all 346 exact-base archived source files",
+    "accepted membership-activity.ts and shared expiry",
+    "staff-http.ts",
+    "configured/production entry and SQL loaders",
+    "contracts/package/locks",
+    "Mini pins and historical published evidence"
+  ],
+  "port_obligations_unproven": [
+    "truthfully exhaustive enumeration versus consistently omitted hidden rows",
+    "stable protection through enumeration/use/commit across authority, revocation, peer lifecycle and membership/grant/assignment writers",
+    "live provider revocation and mapping correctness",
+    "real PostgreSQL locking/isolation/RLS/CAS/durability and actual COMMIT/rollback acknowledgements"
+  ],
+  "remaining_status": {
+    "independent_QA_for_this_candidate": "PENDING_NOT_RUN",
+    "R1_integration": "OPEN",
+    "final_removal_HTTP_DB_E2E": "BLOCKED",
+    "production_binding_SQL_Teacher_expansion": "OUT_OF_SCOPE",
+    "B_ready_recovery": "preserved in preflight; future successful final removal only revokes atomically",
+    "publication": "NOT_ATTEMPTED_NO_APPROVAL"
+  }
+}
