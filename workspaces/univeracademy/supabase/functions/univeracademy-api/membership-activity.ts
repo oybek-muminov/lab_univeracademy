@@ -60,7 +60,8 @@ function checkCurrentAttemptContext(state: StaffState, studentId: string): void 
   for (const [key, series] of Object.entries(s.series)) {
     if (!key.startsWith(studentId + "/")) continue;
     const record = s.attempts[series.currentAttemptId];
-    if (!record || record.personId !== studentId || key !== seriesKey(studentId, record.published.demoId) ||
+    if (!record || record.id !== series.currentAttemptId ||
+        record.personId !== studentId || key !== seriesKey(studentId, record.published.demoId) ||
         record.generation !== series.generation) fail("RESPONSE_INVARIANT_FAILED", 500);
   }
   for (const record of Object.values(s.attempts))

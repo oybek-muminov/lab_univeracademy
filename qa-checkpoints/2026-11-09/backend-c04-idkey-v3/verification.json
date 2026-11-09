@@ -1,0 +1,65 @@
+{
+  "status": "LOCAL_C04_CORRECTION_READY_FOR_COORDINATOR_REVIEW_NO_UPLOAD_AUTHORIZATION",
+  "base_commit": "21b8ee4a49fb02fbdb4b12de5139549caa277d64",
+  "source_manifest_sha256": "cccfb1ee2e347cdbf4afccffbbeb769e992f4d4a09576b3a95937b9e9eed0017",
+  "author_validation_not_independent_QA": true,
+  "tests": {
+    "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-backend-20261109/c04-idkey-candidate-v3/accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+    "count": 72,
+    "pass": 72,
+    "fail": 0,
+    "skip": 0,
+    "preflight": 41,
+    "affected_existing": 31,
+    "exit": 0
+  },
+  "typecheck": {
+    "command": "npm run typecheck",
+    "exit": 0,
+    "production_TS_changed_after_run": false
+  },
+  "C04": {
+    "red_source_commit": "21b8ee4a49fb02fbdb4b12de5139549caa277d64",
+    "red_expected_rejection_assertions": 4,
+    "red_assertions_failed": 4,
+    "positive_red_controls_passed": 2,
+    "green_required_cases": 4,
+    "green_pass": 4,
+    "state_equals_S0": true,
+    "maintenance_node_set_operations": 0,
+    "valid_elapsed_first_order_exercised": true
+  },
+  "oracle": "Expected state does not import/call materializeElapsedAttempts, canonical(), expiry/grading/reconciliation helpers. Explicit pinned fixture field/value whitelist with lossless deep comparison.",
+  "trace_limits": {
+    "write_paths": "NET_BEFORE_AFTER_DIFF_ONLY",
+    "C04_set_counters": "Actual test-only Proxy set counters on attempt-map, series-field and gate nodes; not global trace",
+    "preexecution_counters": "Invocation/external writer/old reconciler/clock/state reads separately zero"
+  },
+  "patch_apply_byte_parity": "PASS_3_OF_3_BASE_APPLY_AND_REVERSE_CHECK",
+  "diff_and_all_source_whitespace": "PASS",
+  "other_source_paths_changed": false,
+  "local_dependency_symlinks_excluded": [
+    "workspaces/univeracademy/node_modules",
+    "workspaces/univeracademy/tests/backend/validator/tooling/node_modules"
+  ],
+  "old_approved_15_and_red_probe_evidence": "UNCHANGED_CHECKSUMS_VERIFIED",
+  "environment_read_check": {
+    "running_connected": true,
+    "shell_and_own_files": true,
+    "GitHub_exact_source_read": true,
+    "failure": null,
+    "GitHub_read_ref": "21b8ee4a49fb02fbdb4b12de5139549caa277d64"
+  },
+  "handoff": "Source document is self-contained with GitHub base; no existing /tmp artifact required to resume",
+  "remaining": [
+    "Independent v3 source review pending unpublished bytes; QA runtime executor remains failed/offline per coordinator. Author PASS is not QA.",
+    "R1/C04 closure and Mini readiness remain open",
+    "Mini Backend191 pin still expected staff-http mismatch; no repin",
+    "Removal HTTP/schema/mapping, ready-recovery removal, registered_at, cursor, queue and real DB/provider/deploy are outside scope"
+  ],
+  "outside_actions": {
+    "commit_or_upload_or_push": false,
+    "other_environment": false,
+    "provider_database_deploy": false
+  }
+}

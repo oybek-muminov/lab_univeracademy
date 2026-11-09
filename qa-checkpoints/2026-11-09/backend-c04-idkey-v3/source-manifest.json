@@ -1,0 +1,45 @@
+{
+  "status": "NEW_LOCAL_C04_CORRECTION_NOT_UPLOADED_NOT_ACCEPTED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "baseline_branch": "qa/current-flow-20261106",
+  "base_commit": "21b8ee4a49fb02fbdb4b12de5139549caa277d64",
+  "local_branch": "backend/c04-idkey-20261109",
+  "worktree": "/workspace/lab_univeracademy-c04",
+  "same_original_executor": true,
+  "source_files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+      "change": "modified",
+      "bytes": 6460,
+      "sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "base_bytes": 6411,
+      "base_sha256": "a5976d5421ddd671ef61b5d8a73f4d1e39228659eee772c41d02934728616282"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/removal-active.test.mjs",
+      "change": "modified",
+      "bytes": 21966,
+      "sha256": "529594facb496ed761691ba181d8dbac008a4db636f15475e3a53ca1e0db8382",
+      "base_bytes": 17099,
+      "base_sha256": "a1c86377d4807cc7cb9c05fa81654d05847c70b33f847653e8a1c2bf3ec5151e"
+    },
+    {
+      "path": "workspaces/univeracademy/docs/api/removal-active-invariant-local-2026-11-09.md",
+      "change": "modified",
+      "bytes": 11926,
+      "sha256": "5b027a92b745ee9b8a5b019a78ddfc64dd5df8d6b14fc23e2770d7517b8d58b3",
+      "base_bytes": 8287,
+      "base_sha256": "7c59de401c07cb3b83ad133d9209ff866cb33691e38b41a959b0d7024e570f7a"
+    }
+  ],
+  "patch_sha256": "c02ee3a3412cce2f97c9288847d1aade679be96365fd8746311f915580bd5c8d",
+  "staff_http_unchanged": {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-http.ts",
+    "bytes": 16079,
+    "sha256": "76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2"
+  },
+  "published_v2_manifest_sha256": "87e6ed033439d3ced27231d0a2b09e399ccc6ed816f31ddcdbe3bfe44687edec",
+  "old_approved_15_files": "UNCHANGED",
+  "node": "v24.22.1",
+  "dependency_lock_sha256": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222"
+}

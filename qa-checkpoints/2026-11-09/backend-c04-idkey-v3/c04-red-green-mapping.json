@@ -1,0 +1,129 @@
+{
+  "red_published_commit": "21b8ee4a49fb02fbdb4b12de5139549caa277d64",
+  "red_source_sha256": "a5976d5421ddd671ef61b5d8a73f4d1e39228659eee772c41d02934728616282",
+  "red_run": "6 tests:2 PASS controls,4 FAIL safety assertions",
+  "green_cases": [
+    {
+      "case_id": "C04-IDKEY-BEFORE",
+      "red": {
+        "result_kind": "continue_existing_policy",
+        "error": null,
+        "status": null,
+        "state_equals_S0": true,
+        "write_paths": [],
+        "stored_attempt_status": "in_progress"
+      },
+      "green": {
+        "case_id": "C04-IDKEY-BEFORE",
+        "write_paths": [],
+        "now": 1793880059999,
+        "deadline": 1793880060000,
+        "technical_error": "RESPONSE_INVARIANT_FAILED",
+        "maintenance_node_set_operations": {
+          "attemptMap": 0,
+          "series": 0,
+          "gate": 0
+        },
+        "counter_scope": "Only attempt-map, series-field and review-gate set operations in this test"
+      }
+    },
+    {
+      "case_id": "C04-IDKEY-EQUALITY",
+      "red": {
+        "result_kind": "continue_existing_policy",
+        "error": null,
+        "status": null,
+        "state_equals_S0": true,
+        "write_paths": [],
+        "stored_attempt_status": "in_progress"
+      },
+      "green": {
+        "case_id": "C04-IDKEY-EQUALITY",
+        "write_paths": [],
+        "now": 1793880060000,
+        "deadline": 1793880060000,
+        "technical_error": "RESPONSE_INVARIANT_FAILED",
+        "maintenance_node_set_operations": {
+          "attemptMap": 0,
+          "series": 0,
+          "gate": 0
+        },
+        "counter_scope": "Only attempt-map, series-field and review-gate set operations in this test"
+      }
+    },
+    {
+      "case_id": "C04-IDKEY-AFTER",
+      "red": {
+        "result_kind": "continue_existing_policy",
+        "error": null,
+        "status": null,
+        "state_equals_S0": true,
+        "write_paths": [],
+        "stored_attempt_status": "in_progress"
+      },
+      "green": {
+        "case_id": "C04-IDKEY-AFTER",
+        "write_paths": [],
+        "now": 1793880060001,
+        "deadline": 1793880060000,
+        "technical_error": "RESPONSE_INVARIANT_FAILED",
+        "maintenance_node_set_operations": {
+          "attemptMap": 0,
+          "series": 0,
+          "gate": 0
+        },
+        "counter_scope": "Only attempt-map, series-field and review-gate set operations in this test"
+      }
+    },
+    {
+      "case_id": "C04-IDKEY-MIXED",
+      "red": {
+        "result_kind": "continue_existing_policy",
+        "error": null,
+        "status": null,
+        "state_equals_S0": false,
+        "write_paths": [
+          "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+          "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+          "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/completedAt",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/ordinary",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/seriesStateRevision",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/stateRevision",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/status",
+          "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+        ],
+        "valid_series_attempt_status_before": "in_progress",
+        "valid_series_attempt_status_after": "expired",
+        "invalid_series_attempt_status_after": "in_progress"
+      },
+      "green": {
+        "case_id": "C04-IDKEY-MIXED",
+        "write_paths": [],
+        "validation_order": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempt_order": [
+          "765371ff-dcaa-4da2-bea5-f08f82f9d59d",
+          "0bb69f96-e67f-46ef-bdc7-52d0d1e730d8"
+        ],
+        "valid_elapsed_attempt": "765371ff-dcaa-4da2-bea5-f08f82f9d59d",
+        "invalid_map_key": "0bb69f96-e67f-46ef-bdc7-52d0d1e730d8",
+        "invalid_record_id": "00000000-0000-4000-8000-000000000999",
+        "now": 1793880060001,
+        "deadline": 1793880060000,
+        "technical_error": "RESPONSE_INVARIANT_FAILED",
+        "maintenance_node_set_operations": {
+          "attemptMap": 0,
+          "series": 0,
+          "gate": 0
+        },
+        "counter_scope": "Only attempt-map, series-field and review-gate set operations in this test"
+      }
+    }
+  ],
+  "oracle": "Direct S0 for rejection; explicit fixed-fixture fields/ratios and baseline field whitelist for positive expiry. No production maintenance/grading/reconciliation helper creates expected state.",
+  "trace_boundary": "write_paths = before/after diff; maintenance_node_set_operations = actual limited Proxy set counters on named test nodes, not global/DB transient trace.",
+  "harness_setup_note": "Earlier mixed harness omitted setup token and got401; preserved locally as initial harness error, excluded from valid source red evidence."
+}

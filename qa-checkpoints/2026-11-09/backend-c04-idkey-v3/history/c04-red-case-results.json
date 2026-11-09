@@ -1,0 +1,169 @@
+{
+  "published_commit": "21b8ee4a49fb02fbdb4b12de5139549caa277d64",
+  "source_file": "/workspace/lab_univeracademy/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+  "source_sha256": "a5976d5421ddd671ef61b5d8a73f4d1e39228659eee772c41d02934728616282",
+  "evidence_kind": "AUTHOR_RUNTIME_NOT_INDEPENDENT_QA",
+  "source_changed": false,
+  "trace_kind": "BEFORE_AFTER_STATE_DIFF_NOT_TRANSIENT_OPERATION_TRACE",
+  "cases": [
+    {
+      "case_id": "C04-IDKEY-BEFORE",
+      "source_sha256": "a5976d5421ddd671ef61b5d8a73f4d1e39228659eee772c41d02934728616282",
+      "input": {
+        "map_key": "565588b4-4625-4241-b64c-f18645b4174d",
+        "record_id": "00000000-0000-4000-8000-000000000999",
+        "series_current_attempt_id": "565588b4-4625-4241-b64c-f18645b4174d",
+        "generation": 1,
+        "now": 1793880059999,
+        "deadline": 1793880060000,
+        "decision": "CONTINUE",
+        "actor_scope_and_CAS": "VALID"
+      },
+      "expected": {
+        "technical_error": "RESPONSE_INVARIANT_FAILED",
+        "status": 500,
+        "state": "S0",
+        "write_paths": []
+      },
+      "actual": {
+        "result_kind": "continue_existing_policy",
+        "error": null,
+        "status": null,
+        "state_equals_S0": true,
+        "write_paths": [],
+        "stored_attempt_status": "in_progress"
+      },
+      "classification": "AUTHOR_RUNTIME_COUNTEREXAMPLE",
+      "oracle": "Direct expected technical rejection and full S0 equality; no canonical/helper-generated expected state"
+    },
+    {
+      "case_id": "C04-IDKEY-EQUALITY",
+      "source_sha256": "a5976d5421ddd671ef61b5d8a73f4d1e39228659eee772c41d02934728616282",
+      "input": {
+        "map_key": "0342a861-b993-41cd-8ea2-8165ab5c3f98",
+        "record_id": "00000000-0000-4000-8000-000000000999",
+        "series_current_attempt_id": "0342a861-b993-41cd-8ea2-8165ab5c3f98",
+        "generation": 1,
+        "now": 1793880060000,
+        "deadline": 1793880060000,
+        "decision": "CONTINUE",
+        "actor_scope_and_CAS": "VALID"
+      },
+      "expected": {
+        "technical_error": "RESPONSE_INVARIANT_FAILED",
+        "status": 500,
+        "state": "S0",
+        "write_paths": []
+      },
+      "actual": {
+        "result_kind": "continue_existing_policy",
+        "error": null,
+        "status": null,
+        "state_equals_S0": true,
+        "write_paths": [],
+        "stored_attempt_status": "in_progress"
+      },
+      "classification": "AUTHOR_RUNTIME_COUNTEREXAMPLE",
+      "oracle": "Direct expected technical rejection and full S0 equality; no canonical/helper-generated expected state"
+    },
+    {
+      "case_id": "C04-IDKEY-AFTER",
+      "source_sha256": "a5976d5421ddd671ef61b5d8a73f4d1e39228659eee772c41d02934728616282",
+      "input": {
+        "map_key": "772feb18-723e-41fd-b9ef-7c3501abb157",
+        "record_id": "00000000-0000-4000-8000-000000000999",
+        "series_current_attempt_id": "772feb18-723e-41fd-b9ef-7c3501abb157",
+        "generation": 1,
+        "now": 1793880060001,
+        "deadline": 1793880060000,
+        "decision": "CONTINUE",
+        "actor_scope_and_CAS": "VALID"
+      },
+      "expected": {
+        "technical_error": "RESPONSE_INVARIANT_FAILED",
+        "status": 500,
+        "state": "S0",
+        "write_paths": []
+      },
+      "actual": {
+        "result_kind": "continue_existing_policy",
+        "error": null,
+        "status": null,
+        "state_equals_S0": true,
+        "write_paths": [],
+        "stored_attempt_status": "in_progress"
+      },
+      "classification": "AUTHOR_RUNTIME_COUNTEREXAMPLE",
+      "oracle": "Direct expected technical rejection and full S0 equality; no canonical/helper-generated expected state"
+    },
+    {
+      "case_id": "C04-IDKEY-MIXED",
+      "source_sha256": "a5976d5421ddd671ef61b5d8a73f4d1e39228659eee772c41d02934728616282",
+      "input": {
+        "valid_elapsed_record_first": "41d17f75-d6e2-48e0-a94d-92e1861501a6",
+        "invalid_map_key": "ad58cc0e-cea6-4c03-bd60-2bae53cc8bb8",
+        "invalid_record_id": "00000000-0000-4000-8000-000000000999",
+        "validation_order": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "now": 1793880060001,
+        "decision": "CONTINUE",
+        "actor_scope_and_CAS": "VALID"
+      },
+      "expected": {
+        "technical_error": "RESPONSE_INVARIANT_FAILED",
+        "status": 500,
+        "state": "S0",
+        "write_paths": []
+      },
+      "actual": {
+        "result_kind": "continue_existing_policy",
+        "error": null,
+        "status": null,
+        "state_equals_S0": false,
+        "write_paths": [
+          "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+          "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+          "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/completedAt",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/ordinary",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/seriesStateRevision",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/stateRevision",
+          "/student/attempts/41d17f75-d6e2-48e0-a94d-92e1861501a6/status",
+          "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+        ],
+        "valid_series_attempt_status_before": "in_progress",
+        "valid_series_attempt_status_after": "expired",
+        "invalid_series_attempt_status_after": "in_progress"
+      },
+      "classification": "AUTHOR_RUNTIME_PARTIAL_MAINTENANCE_COUNTEREXAMPLE",
+      "oracle": "Technical failure and exact S0; no canonical/helper-derived expected state or changed-field count"
+    },
+    {
+      "case_id": "CONTROL-BEFORE",
+      "result": "wait_for_active_test",
+      "state_equals_S0": true,
+      "write_paths": [],
+      "oracle": "Direct S0 snapshot"
+    },
+    {
+      "case_id": "CONTROL-EQUALITY",
+      "result": "continue_existing_policy",
+      "error": null,
+      "independently_expected_state_matches": true,
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/92d02ca6-e358-41d2-af9a-bf292860b49f/completedAt",
+        "/student/attempts/92d02ca6-e358-41d2-af9a-bf292860b49f/ordinary",
+        "/student/attempts/92d02ca6-e358-41d2-af9a-bf292860b49f/seriesStateRevision",
+        "/student/attempts/92d02ca6-e358-41d2-af9a-bf292860b49f/stateRevision",
+        "/student/attempts/92d02ca6-e358-41d2-af9a-bf292860b49f/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "oracle": "Explicit fixture expiry/result/gate fields; no new helper used to build expected state"
+    }
+  ]
+}

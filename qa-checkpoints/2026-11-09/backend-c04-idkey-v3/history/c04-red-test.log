@@ -1,0 +1,72 @@
+✖ C04-IDKEY-BEFORE: key A with record.id B must reject technically with S0 intact (42.810927ms)
+✖ C04-IDKEY-EQUALITY: key A with record.id B must reject technically with S0 intact (7.795077ms)
+✖ C04-IDKEY-AFTER: key A with record.id B must reject technically with S0 intact (4.62462ms)
+✖ C04-IDKEY-MIXED: valid elapsed series first must not partially commit before invalid current ID rejection (7.399953ms)
+✔ CONTROL-BEFORE: key/id A stays waiting with exact S0 (6.097303ms)
+✔ CONTROL-EQUALITY: key/id A expires with independently specified fixture fields (3.681458ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 2
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 741.447058
+
+✖ failing tests:
+
+test at ../../tmp/univeracademy-backend-20261109/c04-idkey-review-20261109/reproducer-extended.test.mjs:46:3
+✖ C04-IDKEY-BEFORE: key A with record.id B must reject technically with S0 intact (42.810927ms)
+  AssertionError [ERR_ASSERTION]: Expected technical invariant failure, observed continue_existing_policy
+      at TestContext.<anonymous> (file:///tmp/univeracademy-backend-20261109/c04-idkey-review-20261109/reproducer-extended.test.mjs:58:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at ../../tmp/univeracademy-backend-20261109/c04-idkey-review-20261109/reproducer-extended.test.mjs:46:3
+✖ C04-IDKEY-EQUALITY: key A with record.id B must reject technically with S0 intact (7.795077ms)
+  AssertionError [ERR_ASSERTION]: Expected technical invariant failure, observed continue_existing_policy
+      at TestContext.<anonymous> (file:///tmp/univeracademy-backend-20261109/c04-idkey-review-20261109/reproducer-extended.test.mjs:58:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at ../../tmp/univeracademy-backend-20261109/c04-idkey-review-20261109/reproducer-extended.test.mjs:46:3
+✖ C04-IDKEY-AFTER: key A with record.id B must reject technically with S0 intact (4.62462ms)
+  AssertionError [ERR_ASSERTION]: Expected technical invariant failure, observed continue_existing_policy
+      at TestContext.<anonymous> (file:///tmp/univeracademy-backend-20261109/c04-idkey-review-20261109/reproducer-extended.test.mjs:58:12)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at ../../tmp/univeracademy-backend-20261109/c04-idkey-review-20261109/reproducer-extended.test.mjs:63:1
+✖ C04-IDKEY-MIXED: valid elapsed series first must not partially commit before invalid current ID rejection (7.399953ms)
+  AssertionError [ERR_ASSERTION]: Expected technical invariant failure, observed continue_existing_policy
+      at TestContext.<anonymous> (file:///tmp/univeracademy-backend-20261109/c04-idkey-review-20261109/reproducer-extended.test.mjs:100:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
