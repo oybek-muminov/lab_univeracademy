@@ -1,0 +1,81 @@
+✔ R1-CLEAN: returned denial commits only expiry and derived gate maintenance (40.746229ms)
+✖ R1-DIRTY: business denial must not commit continuation membership/grant/receipt/audit writes (15.470962ms)
+✔ R1-HTTP-CAS: actual existing transfer CAS denial writes only expiry maintenance (8.199674ms)
+✔ R2-BEFORE: actual coordinator keeps a lost COMMIT reply uncertain, no ACK or retry (5.973644ms)
+✔ R2-AFTER: actual coordinator keeps a lost COMMIT reply uncertain, no ACK or retry (5.221945ms)
+✔ R3-DISABLED: actual staff HTTP authorization denies before expiry maintenance (4.858044ms)
+✔ R3-CAPABILITY: actual staff HTTP authorization denies before expiry maintenance (4.16087ms)
+✔ R3-SCOPE: actual staff HTTP authorization denies before expiry maintenance (4.025235ms)
+✔ R3-EXPIRED-PROOF: actual staff HTTP authorization denies before expiry maintenance (6.800346ms)
+✔ R3-CURRENT: foreign and old-generation records stay byte-equivalent while only current target expires (4.071935ms)
+✔ R3-ORDINARY-EXCEPTION: exception keeps its identity and rolls back instead of becoming business denial (4.006485ms)
+✔ R3-STORAGE-EXCEPTION: exception keeps its identity and rolls back instead of becoming business denial (3.741979ms)
+✔ R4-REPEAT: later explicit checks do not rewrite completion/ordinary/answers/deadline (5.672801ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 12
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 802.755778
+
+✖ failing tests:
+
+test at ../../tmp/univeracademy-backend-20261109/architecture-risk-review/risk-review.test.mjs:61:1
+✖ R1-DIRTY: business denial must not commit continuation membership/grant/receipt/audit writes (15.470962ms)
+  AssertionError [ERR_ASSERTION]: denied continuation writes committed with expiry
+  + actual - expected
+  
+  + [
+  +   {
+  +     after: {
+  +       entries: 5,
+  +       sha256: '994ff1f4e7b1fb37d249235bd3c6e12f6d54aeab83918b28168a9ced5daf8772',
+  +       type: 'object'
+  +     },
+  +     before: '<absent>',
+  +     path: '/audit/0'
+  +   },
+  +   {
+  +     after: false,
+  +     before: true,
+  +     path: '/memberships/00000000-0000-4000-8000-000000000001/active'
+  +   },
+  +   {
+  +     after: 8,
+  +     before: 7,
+  +     path: '/memberships/00000000-0000-4000-8000-000000000001/epoch'
+  +   },
+  +   {
+  +     after: {
+  +       entries: 1,
+  +       sha256: '85fee6e5a7e78e2bfefc219914c1ff84423e1bcf2a1468b841153251855f1029',
+  +       type: 'object'
+  +     },
+  +     before: '<absent>',
+  +     path: '/receipts/scratch-business-denial'
+  +   },
+  +   {
+  +     after: false,
+  +     before: true,
+  +     path: '/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/rostered'
+  +   },
+  +   {
+  +     after: null,
+  +     before: '00000000-0000-4000-8000-000000000040',
+  +     path: '/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id'
+  +   }
+  + ]
+  - []
+  
+      at TestContext.<anonymous> (file:///tmp/univeracademy-backend-20261109/architecture-risk-review/risk-review.test.mjs:77:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ { path: '/audit/0', before: '<absent>', after: [Object] }, { path: '/memberships/00000000-0000-4000-8000-000000000001/active', before: true, after: false }, { path: '/memberships/00000000-0000-4000-8000-000000000001/epoch', before: 7, after: 8 }, { path: '/receipts/scratch-business-denial', before: '<absent>', after: [Object] }, { path: '/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/rostered', before: true, after: false }, { path: '/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id', before: '00000000-0000-4000-8000-000000000040', after: null } ],
+    expected: [],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

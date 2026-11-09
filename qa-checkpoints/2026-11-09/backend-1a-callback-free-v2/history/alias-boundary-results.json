@@ -1,0 +1,43 @@
+{
+  "status": "DESIGN_PROBE_ONLY_NO_CANDIDATE_CHANGES",
+  "probes": [
+    {
+      "id": "BOUNDARY-PROXY",
+      "snapshot_equal": true,
+      "write_trace": [
+        "active",
+        "active"
+      ],
+      "result": "Proxy sees nested write-and-restore made through its own view; equality alone misses it."
+    },
+    {
+      "id": "BOUNDARY-RAW-ALIAS",
+      "snapshot_equal": true,
+      "write_trace": [],
+      "actual_writes": 2,
+      "result": "Already captured raw alias bypasses a later proxy, including write-and-restore."
+    },
+    {
+      "id": "BOUNDARY-FROZEN-ALIAS",
+      "snapshot_equal": true,
+      "write_trace": [],
+      "caught_attempt": true,
+      "result": "Freeze prevents the raw mutation, but a callback can swallow that attempt; no proxy trace records it."
+    },
+    {
+      "id": "BOUNDARY-CAPTURED-WRITER",
+      "snapshot_equal": true,
+      "write_trace": [],
+      "external_writer_calls": 1,
+      "result": "State proxy/equality cannot stop an independently captured writer. This writer is a local counter, not I/O."
+    },
+    {
+      "id": "BOUNDARY-DATA-IDENTITY",
+      "recognized_decisions": 3,
+      "rejected_payloads": 5,
+      "callback_calls": 0,
+      "getter_or_proxy_get_calls": 0,
+      "result": "A proposed callback-free constant-identity boundary avoids executing continuation code."
+    }
+  ]
+}

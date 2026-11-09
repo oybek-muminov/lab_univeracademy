@@ -1,0 +1,63 @@
+{
+  "status": "NEW_LOCAL_CALLBACK_FREE_CORRECTION_AUTHOR_VALIDATED_NOT_UPLOADED_NOT_ACCEPTED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "base_commit": "e25aa562198cde41eb890fb541a538722117f8a0",
+  "baseline_branch": "qa/current-flow-20261106",
+  "local_branch": "backend/continuation-20261109",
+  "red_manifest_sha256": "5675512dabf829249c39534d7ae106cb651c085ac66a36cbcd32a78c3191dbfc",
+  "red_source_preserved_at": "/tmp/univeracademy-backend-20261109/red-source-preserved",
+  "red_and_probe_artifacts": "UNCHANGED_CHECKSUMS_MATCH",
+  "files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+      "change_from_base": "added",
+      "changed_from_red": true,
+      "bytes": 6411,
+      "sha256": "a5976d5421ddd671ef61b5d8a73f4d1e39228659eee772c41d02934728616282",
+      "red_bytes": 3414,
+      "red_sha256": "24db9ea1d3dfa42c1821768161bed62743b73d8062e900248d7aac31743a0892",
+      "base_bytes": null,
+      "base_sha256": null
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-http.ts",
+      "change_from_base": "modified",
+      "changed_from_red": false,
+      "bytes": 16079,
+      "sha256": "76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2",
+      "red_bytes": 16079,
+      "red_sha256": "76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2",
+      "base_bytes": 17079,
+      "base_sha256": "5b8960fb74ad536416c64a2a567b7c1455d959d7a8e30c9009efb4464db81ac8"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/removal-active.test.mjs",
+      "change_from_base": "added",
+      "changed_from_red": true,
+      "bytes": 17099,
+      "sha256": "a1c86377d4807cc7cb9c05fa81654d05847c70b33f847653e8a1c2bf3ec5151e",
+      "red_bytes": 12608,
+      "red_sha256": "12f5476cd73d3bb78ae0990a1063c81077a42c954a192ac8ef586ed0b1fa68ab",
+      "base_bytes": null,
+      "base_sha256": null
+    },
+    {
+      "path": "workspaces/univeracademy/docs/api/removal-active-invariant-local-2026-11-09.md",
+      "change_from_base": "added",
+      "changed_from_red": true,
+      "bytes": 8287,
+      "sha256": "7c59de401c07cb3b83ad133d9209ff866cb33691e38b41a959b0d7024e570f7a",
+      "red_bytes": 5948,
+      "red_sha256": "cd5f95cdd13898b06e879c0f8023bc22149fc50c738203d19e0798e8b07d4632",
+      "base_bytes": null,
+      "base_sha256": null
+    }
+  ],
+  "patch_sha256": "0c3dd0c670b3a31d76d1aa432bc34815244c50a26fab8fe82ea14b7a32aead94",
+  "node": "v24.22.1",
+  "dependency_lock_sha256": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222",
+  "contracts": {
+    "contracts/review-only.openapi.json": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+    "contracts/clerk-review.openapi.json": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28"
+  }
+}

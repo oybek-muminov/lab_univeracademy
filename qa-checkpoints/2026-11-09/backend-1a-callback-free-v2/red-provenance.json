@@ -1,0 +1,11 @@
+{
+  "red_manifest_sha256": "5675512dabf829249c39534d7ae106cb651c085ac66a36cbcd32a78c3191dbfc",
+  "red_patch_sha256": "f0dc1f26dab5a0dc0dfc5500ba4c92e36a4f53c605a710bb87b2c398b8600da1",
+  "red_four_source_files": "MATCH_ORIGINAL_MANIFEST_IN_RED_SOURCE_PRESERVED",
+  "red_and_review_checksums": "MATCH",
+  "boundary_probe_manifest_sha256": "e1aa1d8b40c5b75f7fae57cb7b17ce18ff579c290fbd5e295512228dd6c3d2bc",
+  "boundary_artifacts": "MATCH",
+  "old_R1_classification": "FAIL_UNEXPECTED_CONTINUATION_WRITES_COMMITTED",
+  "new_classification": "PRE_EXECUTION_REJECTION_CALLBACK_WRITER_AND_E_A_NEVER_RUN",
+  "old_logs_modified": false
+}

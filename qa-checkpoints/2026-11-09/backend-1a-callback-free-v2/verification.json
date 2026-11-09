@@ -1,0 +1,73 @@
+{
+  "status": "READY_FOR_COORDINATOR_SOURCE_REVIEW_NO_UPLOAD_AUTHORIZATION",
+  "validation": "AUTHOR_LOCAL_NOT_INDEPENDENT_QA",
+  "base_commit": "e25aa562198cde41eb890fb541a538722117f8a0",
+  "source_manifest_sha256": "87e6ed033439d3ced27231d0a2b09e399ccc6ed816f31ddcdbe3bfe44687edec",
+  "affected_tests": {
+    "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-backend-20261109/removal-active-callback-free-v2/accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+    "tests": 68,
+    "pass": 68,
+    "fail": 0,
+    "skipped": 0,
+    "new_preflight_tests": 37,
+    "existing_regressions": 31,
+    "exit": 0
+  },
+  "typecheck": {
+    "command": "npm run typecheck",
+    "exit": 0,
+    "typescript_source_changed_after_run": false
+  },
+  "identity_and_writer_boundary": {
+    "hostile_hook_cases": 10,
+    "legacy_writer_rejections": 4,
+    "classification": "PRE_EXECUTION_REJECTION_NOT_DIRTY_WRITES_THEN_ROLLBACK",
+    "payload_hooks": 0,
+    "writer_calls": 0,
+    "maintenance_on_rejected_payload": false
+  },
+  "fresh_context": {
+    "authority_scope_before_maintenance": true,
+    "authoritative_group_then_member_CAS": true,
+    "CONTINUE_cannot_bypass_stale_CAS_or_active_attempt": true,
+    "false_denial_hint_rejected": true,
+    "incomplete_current_attempt_context_rejected": true
+  },
+  "write_trace_count": 48,
+  "E_a_oracle": "Whole lossless state compared against existing canonical attempt maintenance and internal gate reconciliation; no hardcoded changed-field count",
+  "commit_uncertainty": {
+    "simulated_before_and_after": true,
+    "outcome": "commit_unknown",
+    "ACK": false,
+    "rollback_claim": false,
+    "automatic_retry": false,
+    "real_postgres": "NOT_RUN"
+  },
+  "patch_replay": {
+    "base_apply_check": "PASS",
+    "applied_bytes_match_4_files": "PASS",
+    "candidate_reverse_check": "PASS"
+  },
+  "diff_and_whitespace": "PASS",
+  "guard": {
+    "exit": 1,
+    "expected": "BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/staff-http.ts",
+    "candidate_bytes": 16079,
+    "pinned_bytes": 17079,
+    "modified_or_bypassed": false
+  },
+  "remaining": [
+    "Independent QA/source review",
+    "Removal HTTP/schema/mapping/receipt integration",
+    "Actual PostgreSQL SQL/RLS/constraints/locks/isolation/COMMIT",
+    "Real providers/devices/deployment",
+    "Ready recovery removal policy, registered_at, cursor and queue remain open"
+  ],
+  "outside_actions": {
+    "upload_attempted": false,
+    "approval_requested": false,
+    "commit_or_push": false,
+    "other_environment_access": false,
+    "real_services": false
+  }
+}

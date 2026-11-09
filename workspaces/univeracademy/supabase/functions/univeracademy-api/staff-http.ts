@@ -1,5 +1,5 @@
 import { ApiFault, fail } from "./fault.ts";
-import { expireForMembershipGuard } from "./attempts.ts";
+import { hasActiveAttempt, materializeElapsedAttempts } from "./membership-activity.ts";
 import { seriesKey } from "./student-state.ts";
 import { parseStaffJson } from "./staff-json.ts";
 import { addInitialMember, createPilotAssignment } from "./pilot-provisioning.ts";
@@ -47,19 +47,8 @@ function receiptKey(request: Request, actorId: string, path: string): string {
 }
 function materializeElapsedRights(state: StaffState, studentId: string, now: number): MembershipEffect | null {
   const s = state.student;
-  const assignments = new Set<string>(), demos = new Set<string>();
-  for (const record of Object.values(s.attempts)) {
-    if (record.personId !== studentId) continue;
-    const series = s.series[seriesKey(studentId, record.published.demoId)];
-    if (!series || series.currentAttemptId !== record.id || series.generation !== record.generation) continue;
-    const next = expireForMembershipGuard(record, now);
-    if (next !== record) {
-      s.attempts[record.id] = next;
-      series.officialAttemptId = next.id;
-      assignments.add(record.assignmentId); demos.add(record.published.demoId);
-      if (next.generation > 1) { series.recoveryState = "none"; series.recovery = null; }
-    }
-  }
+  const elapsed = materializeElapsedAttempts(state, studentId, now);
+  const assignments = new Set(elapsed?.assignmentIds), demos = new Set(elapsed?.demoIds);
   for (const [key, series] of Object.entries(s.series)) {
     if (key.startsWith(studentId + "/") && series.recoveryState === "ready" &&
         series.recovery && now >= series.recovery.closesAt) {
@@ -69,16 +58,6 @@ function materializeElapsedRights(state: StaffState, studentId: string, now: num
   }
   return demos.size ? { kind: "elapsed", studentId, assignmentIds: [...assignments], demoIds: [...demos], now } : null;
 }
-function hasActiveAttempt(state: StaffState, studentId: string, now: number): boolean {
-  const s = state.student;
-  return Object.values(s.attempts).some((record) => {
-    if (record.personId !== studentId) return false;
-    const series = s.series[seriesKey(studentId, record.published.demoId)];
-    if (!series || series.currentAttemptId !== record.id || series.generation !== record.generation) return false;
-    return record.status === "in_progress" && now < record.deadlineAt;
-  });
-}
-
 // Local staff routes for the existing API module; no listener, provider, default store or JWT setup.
 export function createStaffHttpHandler(deps: StaffHttpDependencies) {
   return async (request: Request): Promise<Response> => {
