@@ -1,0 +1,89 @@
+{
+  "status": "SUPPLEMENTARY_ISOLATED_R03_V4_TYPECHECK_NOT_REPLACEMENT_OF_ORIGINAL_RUN",
+  "reason": "Original persisted patch parity metadata omitted cwd; no original retained runner script proved historical isolation. Fresh isolated typecheck authorized as provenance correction.",
+  "historical_parity_cwd": null,
+  "historical_parity_cwd_status": "NOT_PROVEN_FROM_SAVED_METADATA_NOT_INFERRED_FROM_CURRENT_DIRECTORY",
+  "original_typecheck_cwd": "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/repo/workspaces/univeracademy",
+  "actual_cwd": "/tmp/univeracademy-r03-v4-typecheck-provenance-ghn1ma4_/frozen-source/workspaces/univeracademy",
+  "actual_cwd_device_inode": [
+    27,
+    1057081
+  ],
+  "original_cwd_device_inode": [
+    27,
+    1049353
+  ],
+  "cwd_distinct_from_original": true,
+  "runner_path": "/tmp/univeracademy-r03-v4-typecheck-provenance-ghn1ma4_/evidence/run-typecheck.py",
+  "runner_sha256": "d53a4ca10225ef992edbcf8173fbd73cbfdca0916ba81f5026e0085dcced3969",
+  "runner_invocation": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "/tmp/univeracademy-r03-v4-typecheck-provenance-ghn1ma4_/evidence/run-typecheck.py",
+    "/tmp/univeracademy-r03-v4-typecheck-provenance-ghn1ma4_"
+  ],
+  "command": [
+    "npm",
+    "run",
+    "typecheck"
+  ],
+  "environment_overrides": {
+    "npm_config_cache": "/tmp/univeracademy-r03-v4-typecheck-provenance-ghn1ma4_/npm-cache",
+    "npm_config_update_notifier": "false"
+  },
+  "literal_command": "npm_config_cache=/tmp/univeracademy-r03-v4-typecheck-provenance-ghn1ma4_/npm-cache npm_config_update_notifier=false npm run typecheck",
+  "start_utc": "2026-11-09T14:18:56.741539+00:00",
+  "end_utc": "2026-11-09T14:18:58.870017+00:00",
+  "exit": 0,
+  "log_sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc",
+  "log_bytes": 353,
+  "source_manifest_sha256": "fff9bf605dbed5c2a53b4f3e6c6409dfe45255e131c9a05985ae16f257053850",
+  "helper_sha256_before_after": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+  "source_snapshot_before_sha256": "a3f1962c39ec4fcbccc2eed22d368d152f35cb659519b79dad15057e635d4cd2",
+  "source_snapshot_after_sha256": "a3f1962c39ec4fcbccc2eed22d368d152f35cb659519b79dad15057e635d4cd2",
+  "copied_tracked_files": 345,
+  "all_source_and_lock_bytes_before_after_equal": true,
+  "lockfiles": [
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/package-lock.json",
+      "bytes": 42432,
+      "sha256": "e0d11ceeccc2325066fa02d61e7b6ecffde79f7e675b0080facc4675f87bf059",
+      "mode": "0o444",
+      "original_counterpart_equal": true,
+      "distinct_inode_from_original": true
+    },
+    {
+      "path": "workspaces/univeracademy/package-lock.json",
+      "bytes": 19609,
+      "sha256": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222",
+      "mode": "0o444",
+      "original_counterpart_equal": true,
+      "distinct_inode_from_original": true
+    },
+    {
+      "path": "workspaces/univeracademy/tests/backend/validator/tooling/package-lock.json",
+      "bytes": 2789,
+      "sha256": "bf49238f558d7a6f85562a52998e31f105f9e69e66892f785da9ab8cfca9bdf7",
+      "mode": "0o444",
+      "original_counterpart_equal": true,
+      "distinct_inode_from_original": true
+    }
+  ],
+  "original_approved_proposal_package_before": {
+    "files": 15,
+    "bytes": 356765,
+    "inventory_sha256": "5b08a48024f59a4cd950dc9b48b47b2fa8f9514a5c4ae721329809593dbd4ccd",
+    "all_match": true
+  },
+  "original_approved_proposal_package_after": {
+    "files": 15,
+    "bytes": 356765,
+    "inventory_sha256": "5b08a48024f59a4cd950dc9b48b47b2fa8f9514a5c4ae721329809593dbd4ccd",
+    "all_match": true
+  },
+  "original_package_files_or_inventory_modified": false,
+  "tests_run": false,
+  "commit_upload_push": false,
+  "branch_remote_real_services_other_environment": false,
+  "independent_QA": false,
+  "dependency_limit": "Uses existing same-executor dependencies via read-through symlinks; their lockfiles are frozen copied sources. This is compiler validation, not dependency reinstallation or real services."
+}

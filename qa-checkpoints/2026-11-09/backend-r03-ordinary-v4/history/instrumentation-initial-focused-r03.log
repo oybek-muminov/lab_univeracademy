@@ -1,0 +1,78 @@
+✔ R03-BEFORE: existing ordinary rejects before any maintenance (39.503087ms)
+✔ R03-EQUALITY: existing ordinary rejects before any maintenance (23.65304ms)
+✔ R03-AFTER: existing ordinary rejects before any maintenance (23.560922ms)
+✔ R03-MIXED seriesValidFirst=true attemptsValidFirst=true (25.922404ms)
+✔ R03-MIXED seriesValidFirst=true attemptsValidFirst=false (26.13263ms)
+✔ R03-MIXED seriesValidFirst=false attemptsValidFirst=true (27.938755ms)
+✔ R03-MIXED seriesValidFirst=false attemptsValidFirst=false (29.338761ms)
+✔ R03-CAS-GROUP matchingDenialHint=false: corrupt state cannot reach maintenance denial commit (27.837814ms)
+✔ R03-CAS-GROUP matchingDenialHint=true: corrupt state cannot reach maintenance denial commit (29.823329ms)
+✔ R03-CAS-MEMBER matchingDenialHint=false: corrupt state cannot reach maintenance denial commit (30.511184ms)
+✔ R03-CAS-MEMBER matchingDenialHint=true: corrupt state cannot reach maintenance denial commit (31.499851ms)
+✔ R03-PRIORITY-identity-first: existing rejection order precedes corrupt context (42.865493ms)
+✔ R03-PRIORITY-disabled-auth: existing rejection order precedes corrupt context (34.269557ms)
+✔ R03-PRIORITY-hidden-scope: existing rejection order precedes corrupt context (32.218431ms)
+✔ R03-VALID-ACTIVE: wait with null ordinary and unchanged S0 (34.726593ms)
+✖ R03-VALID-ELAPSED:0: literal expiry and instrumentation positive control (39.47953ms)
+✖ R03-VALID-ELAPSED:1: literal expiry and instrumentation positive control (36.119308ms)
+✔ R03-VALID-TERMINAL: existing ordinary remains exact and is never recalculated (35.101897ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 16
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1202.106526
+
+✖ failing tests:
+
+test at tests/membership/removal-active.test.mjs:388:27
+✖ R03-VALID-ELAPSED:0: literal expiry and instrumentation positive control (39.47953ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      active: 1,
+      context: 1,
+  +   guard: 2,
+  -   guard: 1,
+      maintenance: 1,
+      reconcile: 1
+    }
+  
+      at TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/repo/workspaces/univeracademy/tests/membership/removal-active.test.mjs:395:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { guard: 2, context: 1, maintenance: 1, reconcile: 1, active: 1 },
+    expected: { guard: 1, context: 1, maintenance: 1, reconcile: 1, active: 1 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:388:27
+✖ R03-VALID-ELAPSED:1: literal expiry and instrumentation positive control (36.119308ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      active: 1,
+      context: 1,
+  +   guard: 2,
+  -   guard: 1,
+      maintenance: 1,
+      reconcile: 1
+    }
+  
+      at TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/repo/workspaces/univeracademy/tests/membership/removal-active.test.mjs:395:10)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { guard: 2, context: 1, maintenance: 1, reconcile: 1, active: 1 },
+    expected: { guard: 1, context: 1, maintenance: 1, reconcile: 1, active: 1 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

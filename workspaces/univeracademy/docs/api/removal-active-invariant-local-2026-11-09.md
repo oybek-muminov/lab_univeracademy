@@ -1,3 +1,108 @@
+# R03 ordinary lifecycle guard — new local v4 candidate
+
+Candidate: `backend-r03-ordinary-v4-20261109`. Exact published base:
+`6a84c6f13725839abf6cde8cd5bc02899ee4cfe2` in
+`oybek-muminov/lab_univeracademy`, `qa/current-flow-20261106`.
+This candidate is a separate local archive in the original Backend executor;
+no local branch is created and no commit/upload/push is authorized or performed.
+Only membership-activity.ts, tests/membership/removal-active.test.mjs and this
+file change. Original published v3/v2 packages, inventories, logs and QA artifacts
+remain immutable. The historical C04 guide below is retained as provenance;
+its old work branch, pending-QA and NOT_UPLOADED statements describe that time.
+
+## Current decision and exact scope
+
+Architect decision relayed by dot, turn 01a1c08f-429e-7672-8fd2-f3cebf15d5c3:
+a target current record with `status === "in_progress" && ordinary !== null`
+is a contradictory lifecycle and must raise internal
+`RESPONSE_INVARIANT_FAILED`, status 500, preserving the entire S0. Retaining its
+100% bytes does not certify that score as a legitimate completed result.
+No expiry, CONTINUE, repair, deletion or guess is allowed for that input.
+The guard checks every target current record before any maintenance, so a
+valid elapsed series earlier in either iteration order cannot partly expire.
+
+The only production change adds this predicate inside the existing
+checkCurrentAttemptContext loop. Identity-first, current staff/scope, group then
+membership CAS, consistency validation, maintenance/reconcile ordering stays
+unchanged. This is an internal preflight oracle, not a new removal HTTP mapping.
+Shared attempts.ts complete()/expire(), transfer/student callers and
+membership-effects.ts are unchanged. This narrowly prevents the overwrite
+through this guard; it does not claim global lifecycle validation or repair.
+
+Published v3 and v2 both overwrite a deliberately injected existing ordinary
+100% to50% at the deadline with one correct answer of two. attempts.ts is
+byte-identical across both sources: its status/deadline expiry path calls
+complete(), which unconditionally recalculates ordinary. R03 predates C04.
+The contract pins ordinary creation to completion and forbids overwrite:
+contracts/review-only.openapi.json lines13029,13109,13138 at the v3 base.
+The 500 mapping for this internal guard is the explicit architecture decision.
+
+## Literal tests and measured evidence
+
+The new R03 fixture is adapted from the coordinator-delivered QA excerpt:
+QA turn01a1c08f-88f2-7762-aac6-992d369a56b4. It is built literally, not using
+candidate start/expiry/scoring/maintenance helpers. The original full QA
+common.mjs bytes were not delivered, so no original-artifact byte/hash parity
+is claimed. QA's original finding/log hashes and earlier author red logs remain
+historical evidence, not these new candidate results.
+
+The corrupt fixture has matching IDs/generation/auth/scope/CAS, in_progress,
+completedAt=null, one saved correct answer of two, and a literal old ordinary
+(earned2/max2/100%, calculatedAt=T-50). The new oracle requires exactly500,
+unchanged staged and committed S0, maintenance0/reconcile0/state-write attempts0.
+Tests cover deadline-1/equality/+1, four independent series/attempt insertion
+orders with a second valid elapsed current record, both group/member conflicts
+with CONTINUE or matching recognized denial hints, and unchanged priority for
+hostile identity payload, disabled actor and hidden scope.
+Positive controls cover valid active waiting, elapsed equality/+1 with a literal
+1/2/50% result and full expected-state equality, and terminal ordinary preserved.
+Expected expiry fields are literal fixture values, not candidate helpers.
+The existing C04 identity/context, callback/hostile, clean-denial, authorization,
+currentness, repeated-expiry and storage/commit_unknown regressions remain.
+
+New R03 instrumentation recursively observes reachable JS state set/define/
+delete/prototype/extensibility attempts, including same-value writes. Separate
+V8 precise coverage measures named maintenance/reconciliation entry counts;
+positive elapsed controls require both functions1 and seven state set attempts.
+Async guard coverage entry counts may include resume: a separate direct-call
+counter records guard invocation1. The first focused run incorrectly expected
+coverage guard1 rather than observed2 on the two elapsed controls; its original
+16PASS/2FAIL log is preserved as instrumentation-oracle history, not a source
+failure or a passing final run. No source fix was needed for that observation.
+Before/after path diffs are labelled net diffs, never transient-operation traces.
+These measurements are JS fixture evidence, not SQL, external I/O or hidden-
+writer proof. Domain-double committed S0 is not a real PostgreSQL COMMIT.
+
+From a fresh exact GitHub v3 baseline, apply only the stated predicate and the
+new tests/document delta; no prior scratch directory or another agent's files
+is required. Read AGENTS.md and preserve remote work. Use existing locks and
+Node24.22.1 (>=24 <25). Dependencies and installation instructions remain in the
+historical guide. Run the same four affected files plus typecheck, with optional
+UA_1A_TRACE_PATH and UA_R03_TRACE_PATH pointing at your own scratch artifacts:
+
+```sh
+node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs
+npm run typecheck
+```
+
+Final run UTC/commands/exit counts, current source/test hashes and log hashes
+are recorded in the new candidate verification and manifest. Author validation
+is not independent QA of these new bytes. Earlier independent QA of exact v3
+reported C04-IDKEY PASS and R1 subset64/64 PASS but full R1 closure OPEN because
+of R03. New R03/R1 acceptance remains pending independent review. Combined Mini
+QA remains BLOCKED by the unchanged staff-http.ts 16079 versus pinned17079;
+no guard is weakened or repinned. staff-http.ts remains SHA256
+76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2.
+
+Ready-recovery removal, registered_at, cursor, queue, HTTP/schema, UI, DB/RLS,
+provider, migration and deploy remain out of scope/NOT_RUN. No old13-file upload
+permission applies to the new bytes. A future publication needs a separately
+reviewed exact inventory and explicit user approval; this task performs none.
+
+---
+
+## Historical C04 v3 guide (retained original text)
+
 # C04-IDKEY local correction and Backend continuation handoff
 
 Repository: `oybek-muminov/lab_univeracademy`, baseline branch

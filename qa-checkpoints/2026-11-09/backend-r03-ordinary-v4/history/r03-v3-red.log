@@ -1,0 +1,248 @@
+✖ R03-BEFORE: existing ordinary rejects before any maintenance (36.177192ms)
+✖ R03-EQUALITY: existing ordinary rejects before any maintenance (32.374606ms)
+✖ R03-AFTER: existing ordinary rejects before any maintenance (32.476338ms)
+✖ R03-MIXED seriesValidFirst=true attemptsValidFirst=true (34.158251ms)
+✖ R03-MIXED seriesValidFirst=true attemptsValidFirst=false (32.722224ms)
+✖ R03-MIXED seriesValidFirst=false attemptsValidFirst=true (30.905503ms)
+✖ R03-MIXED seriesValidFirst=false attemptsValidFirst=false (33.013287ms)
+✖ R03-CAS-GROUP matchingDenialHint=false: corrupt state cannot reach maintenance denial commit (33.959782ms)
+✖ R03-CAS-GROUP matchingDenialHint=true: corrupt state cannot reach maintenance denial commit (36.410022ms)
+✖ R03-CAS-MEMBER matchingDenialHint=false: corrupt state cannot reach maintenance denial commit (34.485143ms)
+✖ R03-CAS-MEMBER matchingDenialHint=true: corrupt state cannot reach maintenance denial commit (35.766423ms)
+✔ R03-PRIORITY-identity-first: existing rejection order precedes corrupt context (38.989837ms)
+✔ R03-PRIORITY-disabled-auth: existing rejection order precedes corrupt context (34.403311ms)
+✔ R03-PRIORITY-hidden-scope: existing rejection order precedes corrupt context (36.363181ms)
+✔ R03-VALID-ACTIVE: wait with null ordinary and unchanged S0 (38.240149ms)
+✔ R03-VALID-ELAPSED:0: literal expiry and instrumentation positive control (37.084448ms)
+✔ R03-VALID-ELAPSED:1: literal expiry and instrumentation positive control (42.44472ms)
+✔ R03-VALID-TERMINAL: existing ordinary remains exact and is never recalculated (40.009504ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 7
+ℹ fail 11
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1303.431911
+
+✖ failing tests:
+
+test at tests/membership/removal-active.test.mjs:354:70
+✖ R03-BEFORE: existing ordinary rejects before any maintenance (36.177192ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:355:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:354:70
+✖ R03-EQUALITY: existing ordinary rejects before any maintenance (32.374606ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:355:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:354:70
+✖ R03-AFTER: existing ordinary rejects before any maintenance (32.476338ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:355:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:357:89
+✖ R03-MIXED seriesValidFirst=true attemptsValidFirst=true (34.158251ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:366:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:357:89
+✖ R03-MIXED seriesValidFirst=true attemptsValidFirst=false (32.722224ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:366:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:357:89
+✖ R03-MIXED seriesValidFirst=false attemptsValidFirst=true (30.905503ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:366:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:357:89
+✖ R03-MIXED seriesValidFirst=false attemptsValidFirst=false (33.013287ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:366:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:368:189
+✖ R03-CAS-GROUP matchingDenialHint=false: corrupt state cannot reach maintenance denial commit (33.959782ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:370:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:368:189
+✖ R03-CAS-GROUP matchingDenialHint=true: corrupt state cannot reach maintenance denial commit (36.410022ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:370:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:368:189
+✖ R03-CAS-MEMBER matchingDenialHint=false: corrupt state cannot reach maintenance denial commit (34.485143ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:370:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-active.test.mjs:368:189
+✖ R03-CAS-MEMBER matchingDenialHint=true: corrupt state cannot reach maintenance denial commit (35.766423ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + undefined
+  - 'RESPONSE_INVARIANT_FAILED'
+  
+      at r03Reject (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:350:10)
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs:370:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'RESPONSE_INVARIANT_FAILED',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

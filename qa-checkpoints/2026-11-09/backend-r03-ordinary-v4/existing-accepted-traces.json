@@ -1,0 +1,596 @@
+{
+  "scope": "AUTHOR_LOCAL_DOMAIN_PREFLIGHT_NOT_INDEPENDENT_QA",
+  "traces": [
+    {
+      "case_id": "CF-01",
+      "write_paths": []
+    },
+    {
+      "case_id": "CF-02",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/completedAt",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/ordinary",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/seriesStateRevision",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/stateRevision",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "canonical_E_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/completedAt",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/ordinary",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/seriesStateRevision",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/stateRevision",
+        "/student/attempts/f824880f-f33c-46a9-a0bb-80d1561e363f/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "CF-03",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/completedAt",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/ordinary",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/seriesStateRevision",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/stateRevision",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "canonical_E_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/completedAt",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/ordinary",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/seriesStateRevision",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/stateRevision",
+        "/student/attempts/563fc4b1-a931-4ca6-a343-2a692565195a/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "CF-04",
+      "write_paths": []
+    },
+    {
+      "case_id": "W02-continue",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/completedAt",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/ordinary",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/seriesStateRevision",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/stateRevision",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "reason": "group_revision_conflict",
+      "canonical_E_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/completedAt",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/ordinary",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/seriesStateRevision",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/stateRevision",
+        "/student/attempts/3b4ef189-def1-4fe5-845a-ae1cc51f9161/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "W02-matching-denial",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/completedAt",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/ordinary",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/seriesStateRevision",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/stateRevision",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "reason": "group_revision_conflict",
+      "canonical_E_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/completedAt",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/ordinary",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/seriesStateRevision",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/stateRevision",
+        "/student/attempts/b7dca6ab-12ea-49e3-8f69-b9619c42a4e2/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "W03-continue",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/completedAt",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/ordinary",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/seriesStateRevision",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/stateRevision",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "reason": "membership_revision_conflict",
+      "canonical_E_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/completedAt",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/ordinary",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/seriesStateRevision",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/stateRevision",
+        "/student/attempts/1b39b7ed-2886-4f03-972f-ea038b394641/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "W03-matching-denial",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/completedAt",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/ordinary",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/seriesStateRevision",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/stateRevision",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "reason": "membership_revision_conflict",
+      "canonical_E_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/completedAt",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/ordinary",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/seriesStateRevision",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/stateRevision",
+        "/student/attempts/1ebf1710-5dc0-4d41-8c4d-bc0ae5ac803a/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "CF-05",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/bed27f95-9e44-40bb-b585-2236e8bf4ade/completedAt",
+        "/student/attempts/bed27f95-9e44-40bb-b585-2236e8bf4ade/ordinary",
+        "/student/attempts/bed27f95-9e44-40bb-b585-2236e8bf4ade/seriesStateRevision",
+        "/student/attempts/bed27f95-9e44-40bb-b585-2236e8bf4ade/stateRevision",
+        "/student/attempts/bed27f95-9e44-40bb-b585-2236e8bf4ade/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "CF-06",
+      "write_paths": []
+    },
+    {
+      "case_id": "CF-07",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/6480a74b-9549-4732-bac1-c4821f67331d/completedAt",
+        "/student/attempts/6480a74b-9549-4732-bac1-c4821f67331d/ordinary",
+        "/student/attempts/6480a74b-9549-4732-bac1-c4821f67331d/seriesStateRevision",
+        "/student/attempts/6480a74b-9549-4732-bac1-c4821f67331d/stateRevision",
+        "/student/attempts/6480a74b-9549-4732-bac1-c4821f67331d/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "events": [
+        "lock",
+        "lock-wait-ended",
+        "clock",
+        "commit"
+      ]
+    },
+    {
+      "case_id": "AUTH-disabled",
+      "write_paths": [],
+      "status": 403,
+      "code": "ACCOUNT_DISABLED"
+    },
+    {
+      "case_id": "AUTH-capability",
+      "write_paths": [],
+      "status": 403,
+      "code": "CAPABILITY_REQUIRED"
+    },
+    {
+      "case_id": "AUTH-scope",
+      "write_paths": [],
+      "status": 404,
+      "code": "NOT_FOUND"
+    },
+    {
+      "case_id": "AUTH-teacher",
+      "write_paths": [],
+      "status": 403,
+      "code": "FORBIDDEN"
+    },
+    {
+      "case_id": "AUTH-expired-proof",
+      "write_paths": [],
+      "status": 401,
+      "code": "STAFF_TOKEN_INVALID"
+    },
+    {
+      "case_id": "AUTH-wrong-group",
+      "write_paths": [],
+      "status": 404,
+      "code": "NOT_FOUND"
+    },
+    {
+      "case_id": "CF-08:1000",
+      "write_paths": []
+    },
+    {
+      "case_id": "CF-08:-1000",
+      "write_paths": []
+    },
+    {
+      "case_id": "RECOVERY-active",
+      "write_paths": []
+    },
+    {
+      "case_id": "RECOVERY-expired",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/49e15b15-d8d1-48cb-b247-b1266e7c908e/completedAt",
+        "/student/attempts/49e15b15-d8d1-48cb-b247-b1266e7c908e/ordinary",
+        "/student/attempts/49e15b15-d8d1-48cb-b247-b1266e7c908e/seriesStateRevision",
+        "/student/attempts/49e15b15-d8d1-48cb-b247-b1266e7c908e/stateRevision",
+        "/student/attempts/49e15b15-d8d1-48cb-b247-b1266e7c908e/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/recovery",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/recoveryState"
+      ]
+    },
+    {
+      "case_id": "CURRENT-01",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/d567a767-889f-458b-85f7-205587f761e2/completedAt",
+        "/student/attempts/d567a767-889f-458b-85f7-205587f761e2/ordinary",
+        "/student/attempts/d567a767-889f-458b-85f7-205587f761e2/seriesStateRevision",
+        "/student/attempts/d567a767-889f-458b-85f7-205587f761e2/stateRevision",
+        "/student/attempts/d567a767-889f-458b-85f7-205587f761e2/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "CURRENT-wrong-generation",
+      "write_paths": []
+    },
+    {
+      "case_id": "CURRENT-missing-record",
+      "write_paths": []
+    },
+    {
+      "case_id": "CURRENT-missing-series",
+      "write_paths": []
+    },
+    {
+      "case_id": "C04-IDKEY-BEFORE",
+      "write_paths": [],
+      "now": 1793880059999,
+      "deadline": 1793880060000,
+      "technical_error": "RESPONSE_INVARIANT_FAILED",
+      "maintenance_node_set_operations": {
+        "attemptMap": 0,
+        "series": 0,
+        "gate": 0
+      },
+      "counter_scope": "Only attempt-map, series-field and review-gate set operations in this test"
+    },
+    {
+      "case_id": "C04-IDKEY-EQUALITY",
+      "write_paths": [],
+      "now": 1793880060000,
+      "deadline": 1793880060000,
+      "technical_error": "RESPONSE_INVARIANT_FAILED",
+      "maintenance_node_set_operations": {
+        "attemptMap": 0,
+        "series": 0,
+        "gate": 0
+      },
+      "counter_scope": "Only attempt-map, series-field and review-gate set operations in this test"
+    },
+    {
+      "case_id": "C04-IDKEY-AFTER",
+      "write_paths": [],
+      "now": 1793880060001,
+      "deadline": 1793880060000,
+      "technical_error": "RESPONSE_INVARIANT_FAILED",
+      "maintenance_node_set_operations": {
+        "attemptMap": 0,
+        "series": 0,
+        "gate": 0
+      },
+      "counter_scope": "Only attempt-map, series-field and review-gate set operations in this test"
+    },
+    {
+      "case_id": "C04-IDKEY-MIXED",
+      "write_paths": [],
+      "validation_order": [
+        "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+        "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+      ],
+      "attempt_order": [
+        "f832312b-6456-42be-b9fa-f7242252b76d",
+        "94d5899a-95e1-4581-953a-dbc94e47bc73"
+      ],
+      "valid_elapsed_attempt": "f832312b-6456-42be-b9fa-f7242252b76d",
+      "invalid_map_key": "94d5899a-95e1-4581-953a-dbc94e47bc73",
+      "invalid_record_id": "00000000-0000-4000-8000-000000000999",
+      "now": 1793880060001,
+      "deadline": 1793880060000,
+      "technical_error": "RESPONSE_INVARIANT_FAILED",
+      "maintenance_node_set_operations": {
+        "attemptMap": 0,
+        "series": 0,
+        "gate": 0
+      },
+      "counter_scope": "Only attempt-map, series-field and review-gate set operations in this test"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:getter",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:proxy",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:revoked-proxy",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:callable",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:callable-proxy",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:thenable",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:lookalike",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:arbitrary409",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:wrapped-singleton",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "IDENTITY-FIRST:coercible",
+      "write_paths": [],
+      "hooks": {
+        "get": 0,
+        "call": 0,
+        "context": 0,
+        "clock": 0
+      },
+      "classification": "PRE_EXECUTION_REJECTION"
+    },
+    {
+      "case_id": "REJECT-old-six-writes",
+      "write_paths": [],
+      "calls": 0,
+      "externalWrites": 0,
+      "reconciles": 0,
+      "guardClockReads": 0,
+      "guardStateReads": 0,
+      "classification": "PRE_EXECUTION_REJECTION_NOT_POST_WRITE_ROLLBACK"
+    },
+    {
+      "case_id": "REJECT-write-restore",
+      "write_paths": [],
+      "calls": 0,
+      "externalWrites": 0,
+      "reconciles": 0,
+      "guardClockReads": 0,
+      "guardStateReads": 0,
+      "classification": "PRE_EXECUTION_REJECTION_NOT_POST_WRITE_ROLLBACK"
+    },
+    {
+      "case_id": "REJECT-nested-raw-alias",
+      "write_paths": [],
+      "calls": 0,
+      "externalWrites": 0,
+      "reconciles": 0,
+      "guardClockReads": 0,
+      "guardStateReads": 0,
+      "classification": "PRE_EXECUTION_REJECTION_NOT_POST_WRITE_ROLLBACK"
+    },
+    {
+      "case_id": "REJECT-external-writer",
+      "write_paths": [],
+      "calls": 0,
+      "externalWrites": 0,
+      "reconciles": 0,
+      "guardClockReads": 0,
+      "guardStateReads": 0,
+      "classification": "PRE_EXECUTION_REJECTION_NOT_POST_WRITE_ROLLBACK"
+    },
+    {
+      "case_id": "EXCEPTION-canonical-score",
+      "write_paths": [],
+      "classification": "TECHNICAL_ROLLBACK"
+    },
+    {
+      "case_id": "EXCEPTION-internal-reconciliation",
+      "write_paths": [],
+      "classification": "TECHNICAL_ROLLBACK"
+    },
+    {
+      "case_id": "COMMIT-before",
+      "write_paths": [],
+      "ack": 0,
+      "automatic_retries": 0,
+      "outcome": "commit_unknown",
+      "counts": {
+        "connect": 1,
+        "commit": 1,
+        "rollback": 0
+      },
+      "real_postgres": "NOT_RUN"
+    },
+    {
+      "case_id": "COMMIT-after",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/7668401d-3de6-4bab-8214-3b13ade5133a/completedAt",
+        "/student/attempts/7668401d-3de6-4bab-8214-3b13ade5133a/ordinary",
+        "/student/attempts/7668401d-3de6-4bab-8214-3b13ade5133a/seriesStateRevision",
+        "/student/attempts/7668401d-3de6-4bab-8214-3b13ade5133a/stateRevision",
+        "/student/attempts/7668401d-3de6-4bab-8214-3b13ade5133a/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "ack": 0,
+      "automatic_retries": 0,
+      "outcome": "commit_unknown",
+      "counts": {
+        "connect": 1,
+        "commit": 1,
+        "rollback": 0
+      },
+      "real_postgres": "NOT_RUN"
+    },
+    {
+      "case_id": "ROLLBACK-ordinary",
+      "write_paths": [],
+      "exception_identity_preserved": true,
+      "counts": {
+        "connect": 1,
+        "commit": 0,
+        "rollback": 1
+      }
+    },
+    {
+      "case_id": "ROLLBACK-storage",
+      "write_paths": [],
+      "exception_identity_preserved": true,
+      "counts": {
+        "connect": 1,
+        "commit": 0,
+        "rollback": 1
+      }
+    },
+    {
+      "case_id": "REPEAT:1",
+      "write_paths": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00ebc12e-2e53-4901-838f-7ee0cedb5a7a/completedAt",
+        "/student/attempts/00ebc12e-2e53-4901-838f-7ee0cedb5a7a/ordinary",
+        "/student/attempts/00ebc12e-2e53-4901-838f-7ee0cedb5a7a/seriesStateRevision",
+        "/student/attempts/00ebc12e-2e53-4901-838f-7ee0cedb5a7a/stateRevision",
+        "/student/attempts/00ebc12e-2e53-4901-838f-7ee0cedb5a7a/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ]
+    },
+    {
+      "case_id": "REPEAT:2",
+      "write_paths": []
+    },
+    {
+      "case_id": "REPEAT:3",
+      "write_paths": []
+    }
+  ]
+}

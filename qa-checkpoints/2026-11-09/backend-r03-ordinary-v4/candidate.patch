@@ -1,0 +1,304 @@
+diff --git a/workspaces/univeracademy/docs/api/removal-active-invariant-local-2026-11-09.md b/workspaces/univeracademy/docs/api/removal-active-invariant-local-2026-11-09.md
+index f387954d7d54b0ed16339ef84f37f99ae52cadca..1e3afa8327e0b78693700c41966ac3371a6de699 100644
+--- a/workspaces/univeracademy/docs/api/removal-active-invariant-local-2026-11-09.md
++++ b/workspaces/univeracademy/docs/api/removal-active-invariant-local-2026-11-09.md
+@@ -1,3 +1,108 @@
++# R03 ordinary lifecycle guard — new local v4 candidate
++
++Candidate: `backend-r03-ordinary-v4-20261109`. Exact published base:
++`6a84c6f13725839abf6cde8cd5bc02899ee4cfe2` in
++`oybek-muminov/lab_univeracademy`, `qa/current-flow-20261106`.
++This candidate is a separate local archive in the original Backend executor;
++no local branch is created and no commit/upload/push is authorized or performed.
++Only membership-activity.ts, tests/membership/removal-active.test.mjs and this
++file change. Original published v3/v2 packages, inventories, logs and QA artifacts
++remain immutable. The historical C04 guide below is retained as provenance;
++its old work branch, pending-QA and NOT_UPLOADED statements describe that time.
++
++## Current decision and exact scope
++
++Architect decision relayed by dot, turn 01a1c08f-429e-7672-8fd2-f3cebf15d5c3:
++a target current record with `status === "in_progress" && ordinary !== null`
++is a contradictory lifecycle and must raise internal
++`RESPONSE_INVARIANT_FAILED`, status 500, preserving the entire S0. Retaining its
++100% bytes does not certify that score as a legitimate completed result.
++No expiry, CONTINUE, repair, deletion or guess is allowed for that input.
++The guard checks every target current record before any maintenance, so a
++valid elapsed series earlier in either iteration order cannot partly expire.
++
++The only production change adds this predicate inside the existing
++checkCurrentAttemptContext loop. Identity-first, current staff/scope, group then
++membership CAS, consistency validation, maintenance/reconcile ordering stays
++unchanged. This is an internal preflight oracle, not a new removal HTTP mapping.
++Shared attempts.ts complete()/expire(), transfer/student callers and
++membership-effects.ts are unchanged. This narrowly prevents the overwrite
++through this guard; it does not claim global lifecycle validation or repair.
++
++Published v3 and v2 both overwrite a deliberately injected existing ordinary
++100% to50% at the deadline with one correct answer of two. attempts.ts is
++byte-identical across both sources: its status/deadline expiry path calls
++complete(), which unconditionally recalculates ordinary. R03 predates C04.
++The contract pins ordinary creation to completion and forbids overwrite:
++contracts/review-only.openapi.json lines13029,13109,13138 at the v3 base.
++The 500 mapping for this internal guard is the explicit architecture decision.
++
++## Literal tests and measured evidence
++
++The new R03 fixture is adapted from the coordinator-delivered QA excerpt:
++QA turn01a1c08f-88f2-7762-aac6-992d369a56b4. It is built literally, not using
++candidate start/expiry/scoring/maintenance helpers. The original full QA
++common.mjs bytes were not delivered, so no original-artifact byte/hash parity
++is claimed. QA's original finding/log hashes and earlier author red logs remain
++historical evidence, not these new candidate results.
++
++The corrupt fixture has matching IDs/generation/auth/scope/CAS, in_progress,
++completedAt=null, one saved correct answer of two, and a literal old ordinary
++(earned2/max2/100%, calculatedAt=T-50). The new oracle requires exactly500,
++unchanged staged and committed S0, maintenance0/reconcile0/state-write attempts0.
++Tests cover deadline-1/equality/+1, four independent series/attempt insertion
++orders with a second valid elapsed current record, both group/member conflicts
++with CONTINUE or matching recognized denial hints, and unchanged priority for
++hostile identity payload, disabled actor and hidden scope.
++Positive controls cover valid active waiting, elapsed equality/+1 with a literal
++1/2/50% result and full expected-state equality, and terminal ordinary preserved.
++Expected expiry fields are literal fixture values, not candidate helpers.
++The existing C04 identity/context, callback/hostile, clean-denial, authorization,
++currentness, repeated-expiry and storage/commit_unknown regressions remain.
++
++New R03 instrumentation recursively observes reachable JS state set/define/
++delete/prototype/extensibility attempts, including same-value writes. Separate
++V8 precise coverage measures named maintenance/reconciliation entry counts;
++positive elapsed controls require both functions1 and seven state set attempts.
++Async guard coverage entry counts may include resume: a separate direct-call
++counter records guard invocation1. The first focused run incorrectly expected
++coverage guard1 rather than observed2 on the two elapsed controls; its original
++16PASS/2FAIL log is preserved as instrumentation-oracle history, not a source
++failure or a passing final run. No source fix was needed for that observation.
++Before/after path diffs are labelled net diffs, never transient-operation traces.
++These measurements are JS fixture evidence, not SQL, external I/O or hidden-
++writer proof. Domain-double committed S0 is not a real PostgreSQL COMMIT.
++
++From a fresh exact GitHub v3 baseline, apply only the stated predicate and the
++new tests/document delta; no prior scratch directory or another agent's files
++is required. Read AGENTS.md and preserve remote work. Use existing locks and
++Node24.22.1 (>=24 <25). Dependencies and installation instructions remain in the
++historical guide. Run the same four affected files plus typecheck, with optional
++UA_1A_TRACE_PATH and UA_R03_TRACE_PATH pointing at your own scratch artifacts:
++
++```sh
++node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs
++npm run typecheck
++```
++
++Final run UTC/commands/exit counts, current source/test hashes and log hashes
++are recorded in the new candidate verification and manifest. Author validation
++is not independent QA of these new bytes. Earlier independent QA of exact v3
++reported C04-IDKEY PASS and R1 subset64/64 PASS but full R1 closure OPEN because
++of R03. New R03/R1 acceptance remains pending independent review. Combined Mini
++QA remains BLOCKED by the unchanged staff-http.ts 16079 versus pinned17079;
++no guard is weakened or repinned. staff-http.ts remains SHA256
++76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2.
++
++Ready-recovery removal, registered_at, cursor, queue, HTTP/schema, UI, DB/RLS,
++provider, migration and deploy remain out of scope/NOT_RUN. No old13-file upload
++permission applies to the new bytes. A future publication needs a separately
++reviewed exact inventory and explicit user approval; this task performs none.
++
++---
++
++## Historical C04 v3 guide (retained original text)
++
+ # C04-IDKEY local correction and Backend continuation handoff
+ 
+ Repository: `oybek-muminov/lab_univeracademy`, baseline branch
+diff --git a/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts b/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts
+index d0e42ea0cc14659b11c7ad2a4c7f8fddba22ae4b..a5ad980e8d39bfcf6b856e91a5382292c2d1624b 100644
+--- a/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts
++++ b/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts
+@@ -62,7 +62,8 @@ function checkCurrentAttemptContext(state: StaffState, studentId: string): void
+     const record = s.attempts[series.currentAttemptId];
+     if (!record || record.id !== series.currentAttemptId ||
+         record.personId !== studentId || key !== seriesKey(studentId, record.published.demoId) ||
+-        record.generation !== series.generation) fail("RESPONSE_INVARIANT_FAILED", 500);
++        record.generation !== series.generation ||
++        (record.status === "in_progress" && record.ordinary !== null)) fail("RESPONSE_INVARIANT_FAILED", 500);
+   }
+   for (const record of Object.values(s.attempts))
+     if (record.personId === studentId && record.status === "in_progress" &&
+diff --git a/workspaces/univeracademy/tests/membership/removal-active.test.mjs b/workspaces/univeracademy/tests/membership/removal-active.test.mjs
+index 2adac6e8daed232ff5056a85a70fe6aa7f38ce51..d63aba4a27c0a6b8cb70ddde1770909cccc619a2 100644
+--- a/workspaces/univeracademy/tests/membership/removal-active.test.mjs
++++ b/workspaces/univeracademy/tests/membership/removal-active.test.mjs
+@@ -1,6 +1,8 @@
+ import { test, after } from "node:test";
+ import assert from "node:assert/strict";
+-import { writeFileSync } from "node:fs";
++import { writeFileSync, readFileSync } from "node:fs";
++import { createHash } from "node:crypto";
++import { Session } from "node:inspector/promises";
+ import { guardRemovalActiveTest, REMOVAL_DECISION as D } from "../../supabase/functions/univeracademy-api/membership-activity.ts";
+ import { PostgresTransactions, StorageUnavailable } from "../../supabase/functions/univeracademy-api/storage/postgres-transaction.ts";
+ import { staffFixture, staffIds } from "../backend/staff-fixture.ts";
+@@ -250,4 +252,161 @@ test("REPEAT: completion/ordinary are created once and later explicit checks wri
+   }
+   assert.equal(f.store.state.student.attempts[f.attemptId].stateRevision,original.student.attempts[f.attemptId].stateRevision+1);
+ });
+-after(()=>{if(process.env.UA_1A_TRACE_PATH)writeFileSync(process.env.UA_1A_TRACE_PATH,JSON.stringify({scope:"AUTHOR_LOCAL_DOMAIN_PREFLIGHT_NOT_INDEPENDENT_QA",traces},null,2)+"\n");});
++// R03: literal corruption fixture adapted from the coordinator-delivered QA
++// excerpt, not the original QA common.mjs bytes. No start/scoring/expiry helper
++// constructs this state or its expected outcome. Bigints remain exact.
++const r03A=id(900),r03B=id(901),r03T=clock+60000,r03K=seriesKey(ids.person,ids.demo);
++const r03SourceURL=new URL("../../supabase/functions/univeracademy-api/membership-activity.ts",import.meta.url);
++const r03SHA=createHash("sha256").update(readFileSync(r03SourceURL)).digest("hex");
++const r03TestSHA=createHash("sha256").update(readFileSync(new URL(import.meta.url))).digest("hex");
++const r03Rows=[];
++function r03Fixture(){
++  const published={demoId:ids.demo,versionId:id(30),durationMs:60000,individualEnabled:false,questions:[
++    {id:id(100),optionIds:[id(200),id(201),id(202),id(203)],correctOptionId:id(200),individualPoints:{numerator:5n,denominator:2n}},
++    {id:id(101),optionIds:[id(204),id(205),id(206),id(207)],correctOptionId:id(204),individualPoints:{numerator:5n,denominator:2n}}]};
++  const record={id:r03A,personId:ids.person,assignmentId:ids.assignment,groupId:ids.group,generation:1,status:"in_progress",
++    startedAt:clock,deadlineAt:r03T,completedAt:null,stateRevision:2,seriesStateRevision:2,published,
++    questionOrder:published.questions.map(q=>({questionId:q.id,optionIds:[...q.optionIds]})),
++    answers:[{questionId:id(100),selectedOptionId:id(200),revision:1,savedAt:clock,seriesStateRevision:2}],ordinary:null};
++  return {student:{
++    people:{[ids.person]:{telegramId:4000000001,enabled:true,profile:{person_id:ids.person,roles:["student"],registration_complete:true,
++      active_group_id:ids.group,first_name:"QA",last_name:"Synthetic",qadam_id:"0100000001"}}},
++    families:{},access:{},refresh:{},consumedInitData:{},grants:{[ids.person]:{[ids.assignment]:{rostered:true,membershipEpoch:7,grantEpoch:7}}},
++    assignments:{[ids.assignment]:{admission:{assignmentId:ids.assignment,groupId:ids.group,activeGroupId:ids.group,
++      rostered:true,profileComplete:true,membershipEpoch:7,grantEpoch:7,opensAt:clock-1000,closesAt:clock+1000},
++      published:clone(published),title:"Independent literal QA",instructions:[],contents:{},cancelled:false,
++      reviewGate:{id:id(50),status:"blocked",revision:0,barrier_revision:0,barrier_complete:false,eligible_unresolved_count:1,
++        active_count:0,recovery_ready_count:0,timezone:"Asia/Tashkent",first_opened_at:null,opens_at:null,closes_at:null}}},
++    series:{[r03K]:{currentAttemptId:r03A,generation:1,normalAttemptUsed:true,officialAttemptId:null,recoveryState:"none",recovery:null}},
++    attempts:{[r03A]:record},receipts:{preserve:{payload:"student-sentinel"}},bonuses:{preserve:{marker:7n}},cancellations:{}},
++    staff:{"synthetic-admin":{personId:id(501),enabled:true,approved:true,roles:["admin"],approvedSubjectIds:["physics"],
++      capabilities:{manage_roster:true,manage_content:true},scope:{all_groups:false,group_ids:[ids.group],all_subjects:false,subject_ids:["physics"]}}},
++    groups:{[ids.group]:{id:ids.group,revision:4}},memberships:{[ids.person]:{affinityGroupId:ids.group,active:true,revision:7,epoch:7}},
++    versions:{},recoveryAssignments:{},notifications:{preserve:{studentId:ids.person,assignmentId:ids.assignment,epoch:7,status:"queued"}},
++    approvals:{preserve:{studentId:ids.person,epoch:7,status:"pending"}},receipts:{preserve:{payload:"staff-sentinel"}},
++    audit:[{actorId:id(501),action:"preserve",targetId:ids.person,revision:7,at:clock}]};
++}
++const r03Context=()=>({proof:{kind:"staff_verified",subject:"synthetic-admin",notBefore:clock-1,expiresAt:clock+1000000},
++  groupId:ids.group,expectedGroupRevision:4,expectedMembershipRevision:7});
++const r03Ordinary=(earned,percentage,calculatedAt)=>({earned:{numerator:BigInt(earned),denominator:1n},
++  maximum:{numerator:2n,denominator:1n},percentage:{numerator:BigInt(percentage),denominator:1n},calculatedAt});
++function r03Corrupt(){const s=r03Fixture();s.student.attempts[r03A].ordinary=r03Ordinary(2,100,r03T-50);return s;}
++
++// Test-only recursive write-operation observation, including same-value sets.
++// This observes reachable JS state writes, not SQL, hidden/external writers, or
++// property reads. Profiler function call counts below are a separate mechanism.
++function r03Watch(raw){
++  const cache=new WeakMap(),reverse=new WeakMap(),writes=[];
++  function strip(v,seen=new WeakSet()){
++    if(!v||typeof v!=="object")return v;if(reverse.has(v))return reverse.get(v);if(seen.has(v))return v;seen.add(v);
++    for(const k of Reflect.ownKeys(v)){const d=Reflect.getOwnPropertyDescriptor(v,k);if(d&&"value"in d){const x=strip(d.value,seen);if(x!==d.value)Reflect.defineProperty(v,k,{...d,value:x});}}
++    return v;
++  }
++  function wrap(v,path){
++    if(!v||typeof v!=="object")return v;if(cache.has(v))return cache.get(v);
++    const note=(op,key)=>writes.push({op,path:path+"/"+String(key)});
++    const proxy=new Proxy(v,{
++      get(t,k){return wrap(Reflect.get(t,k,t),path+"/"+String(k));},
++      set(t,k,value){note("set",k);return Reflect.set(t,k,strip(value),t);},
++      defineProperty(t,k,d){note("defineProperty",k);return Reflect.defineProperty(t,k,{...d,...("value"in d?{value:strip(d.value)}:{})});},
++      deleteProperty(t,k){note("delete",k);return Reflect.deleteProperty(t,k);},
++      setPrototypeOf(t,v){note("setPrototypeOf","");return Reflect.setPrototypeOf(t,v);},
++      preventExtensions(t){note("preventExtensions","");return Reflect.preventExtensions(t);},
++    });cache.set(v,proxy);reverse.set(proxy,v);return proxy;
++  }
++  return {state:wrap(raw,""),writes};
++}
++async function r03Observe(s,caseId,{now=r03T,context=r03Context(),decision=D.CONTINUE}={}){
++  const started=new Date().toISOString(),draft=clone(s),w=r03Watch(draft),session=new Session();
++  const names={guardRemovalActiveTest:"guard",checkCurrentAttemptContext:"context",materializeElapsedAttempts:"maintenance",
++    reconcileMembershipEffects:"reconcile",hasActiveAttempt:"active"};
++  const calls={guard:0,context:0,maintenance:0,reconcile:0,active:0},functions=[];
++  let value,error,clockReads=0,stateReads=0,guardInvocations=0;
++  session.connect();
++  try{
++    await session.post("Profiler.enable");await session.post("Profiler.startPreciseCoverage",{callCount:true,detailed:true});
++    await session.post("Profiler.takePreciseCoverage");
++    try{guardInvocations++;value=await guardRemovalActiveTest({get state(){stateReads++;return w.state;},now(){clockReads++;return now;}},ids.person,decision,context);}
++    catch(caught){error=caught;}
++    const coverage=await session.post("Profiler.takePreciseCoverage"),prefix=new URL("../../supabase/",import.meta.url).href;
++    for(const script of coverage.result)if(script.url.startsWith(prefix))for(const f of script.functions)if(names[f.functionName]){
++      calls[names[f.functionName]]+=f.ranges[0].count;functions.push({name:f.functionName,count:f.ranges[0].count});
++    }
++  }finally{await session.post("Profiler.stopPreciseCoverage");session.disconnect();}
++  const committed=error?clone(s):draft;
++  const row={case_id:caseId,order:{series:Object.keys(s.student.series),attempts:Object.keys(s.student.attempts)},
++    source_sha256:r03SHA,test_sha256:r03TestSHA,started_utc:started,finished_utc:new Date().toISOString(),now,
++    command:[process.execPath,...process.execArgv,...process.argv.slice(1)],
++    outcome:error?{code:error.code,status:error.status}:value,
++    observed_function_entry_counts:calls,coverage_functions:functions,guard_invocations:guardInvocations,
++    coverage_limit:"V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
++    clockReads,stateReads,state_write_attempts:w.writes.length,
++    observed_state_writes:w.writes,staged_net_diff:paths(s,draft),committed_net_diff:paths(s,committed),
++    commit_scope:"LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"};
++  r03Rows.push(row);assert.equal(guardInvocations,1);return {value,error,draft,committed,writes:w.writes,calls,row};
++}
++async function r03Reject(s,name,options={}){
++  const before=clone(s),r=await r03Observe(s,name,options);
++  assert.equal(r.error?.code,"RESPONSE_INVARIANT_FAILED");assert.equal(r.error?.status,500);assert.equal(r.value,undefined);
++  assert.deepEqual(r.draft,before);assert.deepEqual(r.committed,before);assert.deepEqual(s,before);
++  assert.deepEqual(r.calls,{guard:1,context:1,maintenance:0,reconcile:0,active:0});assert.equal(r.writes.length,0);
++}
++for(const [name,offset]of [["BEFORE",-1],["EQUALITY",0],["AFTER",1]])test(`R03-${name}: existing ordinary rejects before any maintenance`,async()=>{
++  await r03Reject(r03Corrupt(),`R03-${name}`,{now:r03T+offset});
++});
++for(const seriesValidFirst of [true,false])for(const attemptsValidFirst of [true,false])test(`R03-MIXED seriesValidFirst=${seriesValidFirst} attemptsValidFirst=${attemptsValidFirst}`,async()=>{
++  const s=r03Corrupt(),J=id(11),demo=id(21),key=seriesKey(ids.person,demo);
++  const record={...clone(s.student.attempts[r03A]),id:r03B,assignmentId:J,published:{...clone(s.student.attempts[r03A].published),demoId:demo,versionId:id(31)},deadlineAt:r03T-100,ordinary:null};
++  const series={...clone(s.student.series[r03K]),currentAttemptId:r03B};
++  const assignment=clone(s.student.assignments[ids.assignment]);Object.assign(assignment.admission,{assignmentId:J});
++  assignment.published=clone(record.published);assignment.reviewGate.id=id(51);s.student.assignments[J]=assignment;
++  s.student.grants[ids.person][J]={rostered:true,membershipEpoch:7,grantEpoch:7};
++  s.student.series=seriesValidFirst?{[key]:series,[r03K]:s.student.series[r03K]}:{[r03K]:s.student.series[r03K],[key]:series};
++  s.student.attempts=attemptsValidFirst?{[r03B]:record,[r03A]:s.student.attempts[r03A]}:{[r03A]:s.student.attempts[r03A],[r03B]:record};
++  await r03Reject(s,`R03-MIXED:${seriesValidFirst}:${attemptsValidFirst}`);
++});
++for(const [name,field,denial]of [["GROUP","expectedGroupRevision",D.DENY_GROUP_REVISION],["MEMBER","expectedMembershipRevision",D.DENY_MEMBERSHIP_REVISION]])for(const hint of [false,true])test(`R03-CAS-${name} matchingDenialHint=${hint}: corrupt state cannot reach maintenance denial commit`,async()=>{
++  const context=r03Context();context[field]--;
++  await r03Reject(r03Corrupt(),`R03-CAS-${name}:${hint}`,{context,decision:hint?denial:D.CONTINUE});
++});
++for(const name of ["identity-first","disabled-auth","hidden-scope"])test(`R03-PRIORITY-${name}: existing rejection order precedes corrupt context`,async()=>{
++  const s=r03Corrupt();let hooks=0,decision=D.CONTINUE;
++  if(name==="identity-first")decision={get kind(){hooks++;throw Error("UNEXPECTED_PAYLOAD_READ");}};
++  if(name==="disabled-auth")s.staff["synthetic-admin"].enabled=false;
++  if(name==="hidden-scope")s.staff["synthetic-admin"].scope.group_ids=[];
++  const r=await r03Observe(s,`R03-PRIORITY-${name}`,{decision});
++  const [code,status]=name==="identity-first"?["RESPONSE_INVARIANT_FAILED",500]:name==="disabled-auth"?["ACCOUNT_DISABLED",403]:["NOT_FOUND",404];
++  assert.equal(r.error?.code,code);assert.equal(r.error?.status,status);assert.equal(hooks,0);
++  assert.deepEqual(r.draft,s);assert.deepEqual(r.committed,s);assert.equal(r.writes.length,0);
++  assert.deepEqual(r.calls,{guard:1,context:0,maintenance:0,reconcile:0,active:0});
++  if(name==="identity-first"){assert.equal(r.row.clockReads,0);assert.equal(r.row.stateReads,0);}
++});
++test("R03-VALID-ACTIVE: wait with null ordinary and unchanged S0",async()=>{
++  const s=r03Fixture(),r=await r03Observe(s,"R03-VALID-ACTIVE",{now:r03T-1});
++  assert.equal(r.error,undefined);assert.deepEqual(r.value,{kind:"wait_for_active_test"});assert.deepEqual(r.committed,s);assert.equal(r.writes.length,0);
++  assert.deepEqual(r.calls,{guard:1,context:1,maintenance:1,reconcile:0,active:1});
++});
++for(const offset of [0,1])test(`R03-VALID-ELAPSED:${offset}: literal expiry and instrumentation positive control`,async()=>{
++  const s=r03Fixture(),expected=clone(s),now=r03T+offset;
++  Object.assign(expected.student.attempts[r03A],{status:"expired",completedAt:r03T,stateRevision:3,seriesStateRevision:3,ordinary:r03Ordinary(1,50,now)});
++  expected.student.series[r03K].officialAttemptId=r03A;
++  Object.assign(expected.student.assignments[ids.assignment].reviewGate,{eligible_unresolved_count:0,active_count:0,recovery_ready_count:0,barrier_complete:true,barrier_revision:1});
++  const r=await r03Observe(s,`R03-VALID-ELAPSED:${offset}`,{now});
++  assert.equal(r.error,undefined);assert.equal(r.value,D.CONTINUE);assert.deepEqual(r.committed,expected);
++  assert.ok(r.calls.guard>=1);assert.deepEqual({...r.calls,guard:1},{guard:1,context:1,maintenance:1,reconcile:1,active:1});assert.equal(r.writes.length,7);
++  assert.equal(r.writes.filter(w=>w.path.endsWith("/active_count")||w.path.endsWith("/recovery_ready_count")).length,2);
++});
++test("R03-VALID-TERMINAL: existing ordinary remains exact and is never recalculated",async()=>{
++  const s=r03Fixture();Object.assign(s.student.attempts[r03A],{status:"expired",completedAt:r03T,stateRevision:3,seriesStateRevision:3,ordinary:r03Ordinary(1,50,r03T)});
++  s.student.series[r03K].officialAttemptId=r03A;
++  const r=await r03Observe(s,"R03-VALID-TERMINAL",{now:r03T+100});
++  assert.equal(r.error,undefined);assert.equal(r.value,D.CONTINUE);assert.deepEqual(r.committed,s);assert.equal(r.writes.length,0);
++  assert.deepEqual(r.calls,{guard:1,context:1,maintenance:1,reconcile:0,active:1});
++});
++after(()=>{
++  if(process.env.UA_1A_TRACE_PATH)writeFileSync(process.env.UA_1A_TRACE_PATH,JSON.stringify({scope:"AUTHOR_LOCAL_DOMAIN_PREFLIGHT_NOT_INDEPENDENT_QA",traces},null,2)+"\n");
++  if(process.env.UA_R03_TRACE_PATH)writeFileSync(process.env.UA_R03_TRACE_PATH,JSON.stringify({
++    scope:"AUTHOR_R03_LITERAL_FIXTURE_NOT_ORIGINAL_QA_ARTIFACT_BYTES",cases:r03Rows,
++    limits:"Recursive JS state-write observation and V8 precise function-call coverage are separate; no real SQL COMMIT, external effect or hidden-writer proof",
++  },null,2)+"\n");
++});

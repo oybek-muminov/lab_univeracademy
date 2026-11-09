@@ -1,0 +1,2323 @@
+{
+  "scope": "AUTHOR_R03_LITERAL_FIXTURE_NOT_ORIGINAL_QA_ARTIFACT_BYTES",
+  "cases": [
+    {
+      "case_id": "R03-BEFORE",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.103Z",
+      "finished_utc": "2026-11-09T13:59:28.136Z",
+      "now": 1793880059999,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "wait_for_active_test"
+      },
+      "observed_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 0,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 7,
+      "state_write_attempts": 0,
+      "observed_state_writes": [],
+      "staged_net_diff": [],
+      "committed_net_diff": [],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-EQUALITY",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.139Z",
+      "finished_utc": "2026-11-09T13:59:28.170Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 8,
+      "state_write_attempts": 7,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-AFTER",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.171Z",
+      "finished_utc": "2026-11-09T13:59:28.202Z",
+      "now": 1793880060001,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 8,
+      "state_write_attempts": 7,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-MIXED:true:true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.204Z",
+      "finished_utc": "2026-11-09T13:59:28.236Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 8,
+      "state_write_attempts": 14,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000901"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-MIXED:true:false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.238Z",
+      "finished_utc": "2026-11-09T13:59:28.269Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 8,
+      "state_write_attempts": 14,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000901"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-MIXED:false:true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.270Z",
+      "finished_utc": "2026-11-09T13:59:28.300Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 8,
+      "state_write_attempts": 14,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000901"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-MIXED:false:false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.301Z",
+      "finished_utc": "2026-11-09T13:59:28.334Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 8,
+      "state_write_attempts": 14,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000901"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000901/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000021/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-CAS-GROUP:false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.335Z",
+      "finished_utc": "2026-11-09T13:59:28.368Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "recognized_denial",
+        "reason": "group_revision_conflict"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 0
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 7,
+      "state_write_attempts": 7,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-CAS-GROUP:true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.368Z",
+      "finished_utc": "2026-11-09T13:59:28.404Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "recognized_denial",
+        "reason": "group_revision_conflict"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 0
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 7,
+      "state_write_attempts": 7,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-CAS-MEMBER:false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.405Z",
+      "finished_utc": "2026-11-09T13:59:28.439Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "recognized_denial",
+        "reason": "membership_revision_conflict"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 0
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 7,
+      "state_write_attempts": 7,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-CAS-MEMBER:true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.439Z",
+      "finished_utc": "2026-11-09T13:59:28.474Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "recognized_denial",
+        "reason": "membership_revision_conflict"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 0
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 7,
+      "state_write_attempts": 7,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/calculatedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/earned/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary/percentage/numerator",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-PRIORITY-identity-first",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.475Z",
+      "finished_utc": "2026-11-09T13:59:28.513Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "observed_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "coverage_functions": [
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 0,
+      "stateReads": 0,
+      "state_write_attempts": 0,
+      "observed_state_writes": [],
+      "staged_net_diff": [],
+      "committed_net_diff": [],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-PRIORITY-disabled-auth",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.514Z",
+      "finished_utc": "2026-11-09T13:59:28.548Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "code": "ACCOUNT_DISABLED",
+        "status": 403
+      },
+      "observed_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "coverage_functions": [
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 1,
+      "state_write_attempts": 0,
+      "observed_state_writes": [],
+      "staged_net_diff": [],
+      "committed_net_diff": [],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-PRIORITY-hidden-scope",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.549Z",
+      "finished_utc": "2026-11-09T13:59:28.584Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "code": "NOT_FOUND",
+        "status": 404
+      },
+      "observed_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "coverage_functions": [
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 4,
+      "state_write_attempts": 0,
+      "observed_state_writes": [],
+      "staged_net_diff": [],
+      "committed_net_diff": [],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-VALID-ACTIVE",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.586Z",
+      "finished_utc": "2026-11-09T13:59:28.623Z",
+      "now": 1793880059999,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "wait_for_active_test"
+      },
+      "observed_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 0,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 7,
+      "state_write_attempts": 0,
+      "observed_state_writes": [],
+      "staged_net_diff": [],
+      "committed_net_diff": [],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-VALID-ELAPSED:0",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.624Z",
+      "finished_utc": "2026-11-09T13:59:28.660Z",
+      "now": 1793880060000,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 8,
+      "state_write_attempts": 7,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-VALID-ELAPSED:1",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.661Z",
+      "finished_utc": "2026-11-09T13:59:28.702Z",
+      "now": 1793880060001,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 2
+        },
+        {
+          "name": "reconcileMembershipEffects",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 8,
+      "state_write_attempts": 7,
+      "observed_state_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete"
+        },
+        {
+          "op": "set",
+          "path": "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+        }
+      ],
+      "staged_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "committed_net_diff": [
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/completedAt",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/ordinary",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/seriesStateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/stateRevision",
+        "/student/attempts/00000000-0000-4000-8000-000000000900/status",
+        "/student/series/00000000-0000-4000-8000-000000000001~100000000-0000-4000-8000-000000000020/officialAttemptId"
+      ],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    },
+    {
+      "case_id": "R03-VALID-TERMINAL",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "started_utc": "2026-11-09T13:59:28.703Z",
+      "finished_utc": "2026-11-09T13:59:28.742Z",
+      "now": 1793880060100,
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "--test-coverage-functions=0",
+        "--test-concurrency=0",
+        "--inspect-publish-uid=stderr,http",
+        "--inspect-port=127.0.0.1:9229",
+        "--stack-trace-limit=10",
+        "--report-signal=SIGUSR2",
+        "--test-coverage-lines=0",
+        "--secure-heap-min=2",
+        "--test-isolation=process",
+        "--heap-prof-interval=524288",
+        "--cpu-prof-interval=1000",
+        "--v8-pool-size=4",
+        "--trace-event-file-pattern=node_trace.${rotation}.log",
+        "--unhandled-rejections=strict",
+        "--test-coverage-branches=0",
+        "--watch-kill-signal=SIGTERM",
+        "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+        "--experimental-addon-modules",
+        "--test-name-pattern=R03-",
+        "--use-largepages=off",
+        "--max-http-header-size=16384",
+        "--test-timeout=0",
+        "--node-snapshot",
+        "--secure-heap=0",
+        "--network-family-autoselection-attempt-timeout=250",
+        "--heapsnapshot-near-heap-limit=0",
+        "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy/tests/membership/removal-active.test.mjs"
+      ],
+      "outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "observed_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 0,
+        "active": 1
+      },
+      "coverage_functions": [
+        {
+          "name": "materializeElapsedAttempts",
+          "count": 1
+        },
+        {
+          "name": "hasActiveAttempt",
+          "count": 1
+        },
+        {
+          "name": "checkCurrentAttemptContext",
+          "count": 1
+        },
+        {
+          "name": "guardRemovalActiveTest",
+          "count": 1
+        }
+      ],
+      "guard_invocations": 1,
+      "coverage_limit": "V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+      "clockReads": 1,
+      "stateReads": 7,
+      "state_write_attempts": 0,
+      "observed_state_writes": [],
+      "staged_net_diff": [],
+      "committed_net_diff": [],
+      "commit_scope": "LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"
+    }
+  ],
+  "limits": "Recursive JS state-write observation and V8 precise function-call coverage are separate; no real SQL COMMIT, external effect or hidden-writer proof"
+}

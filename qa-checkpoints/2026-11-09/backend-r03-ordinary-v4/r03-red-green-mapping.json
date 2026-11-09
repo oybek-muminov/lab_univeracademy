@@ -1,0 +1,907 @@
+{
+  "scope": "NEW_AUTHOR_LITERAL_ORACLE_RED_REPLAY_TO_NEW_LOCAL_CORRECTION_NOT_QA_ARTIFACT_BYTES",
+  "base": "6a84c6f13725839abf6cde8cd5bc02899ee4cfe2",
+  "red_run": {
+    "scope": "AUTHOR_NEW_ORACLE_RED_REPLAY_NOT_ORIGINAL_QA_ARTIFACT",
+    "base_commit": "6a84c6f13725839abf6cde8cd5bc02899ee4cfe2",
+    "source_byte_identical_to_base": true,
+    "command": [
+      "node",
+      "--unhandled-rejections=strict",
+      "--test",
+      "--test-name-pattern=R03-",
+      "tests/membership/removal-active.test.mjs"
+    ],
+    "literal_command": "UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/history/r03-v3-red-traces.json node --unhandled-rejections=strict --test --test-name-pattern=R03- tests/membership/removal-active.test.mjs",
+    "cwd": "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/red-baseline/workspaces/univeracademy",
+    "start_utc": "2026-11-09T13:59:27.430838+00:00",
+    "end_utc": "2026-11-09T13:59:28.782457+00:00",
+    "exit": 1,
+    "log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40",
+    "source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+    "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+    "test_only_overlay_on_base": true
+  },
+  "green_run": {
+    "command": [
+      "node",
+      "--unhandled-rejections=strict",
+      "--test",
+      "tests/membership/removal-active.test.mjs",
+      "tests/local-content-pilot.test.mjs",
+      "tests/first-test/http.test.mjs",
+      "tests/clerk-auth/domain-http.test.mjs"
+    ],
+    "literal_command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+    "cwd": "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/repo/workspaces/univeracademy",
+    "start_utc": "2026-11-09T13:57:27.318306+00:00",
+    "end_utc": "2026-11-09T13:57:30.950595+00:00",
+    "exit": 0,
+    "log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+    "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+    "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44"
+  },
+  "red_counts": {
+    "tests": 18,
+    "pass": 7,
+    "fail": 11,
+    "skip": 0
+  },
+  "green_R03_counts": {
+    "tests": 18,
+    "pass": 18,
+    "fail": 0,
+    "skip": 0
+  },
+  "QA_original_references_from_coordinator_not_locally_fetched": {
+    "finding_id": "QA-R03-ORDINARY-OVERWRITE",
+    "finding_sha256": "55c6e2b16c3fa1c8e7362e323330b5eb5d19481a05acd269add475d55b5d8158",
+    "probe_sha256": "5b10760619f8bd1df71840d5b7fd0b5c07c7a49fb303ca7eb611170a5bb8b983",
+    "full_common_sha256": "fff2dc85d9cabd862739027302ea18806b59285dcfd2b65f4eebc4e36a568529",
+    "common_excerpt_is_not_full_original_bytes": true,
+    "original_QA_log_v3_sha256": "7419d1d324675d5e44c278413306db3ccb4a45c5885ff140c3aa3404b0420cf7",
+    "original_QA_log_v2_sha256": "ea401f6a9d5c41a20b4fd5aa789b56a8abeb8514af47dcd590dc7276982e84cb"
+  },
+  "oracle_authority": "Architect01a1c08f-429e-7672-8fd2-f3cebf15d5c3: exact internal500/S0/no guessed repair for in_progress+ordinary!=null; older QA preservation oracle narrower",
+  "cases": [
+    {
+      "case_id": "R03-BEFORE",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.007Z",
+      "finished_utc": "2026-11-09T13:57:30.056Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "wait_for_active_test"
+      },
+      "red_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 0,
+        "active": 1
+      },
+      "red_state_write_attempts": 0,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-EQUALITY",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.058Z",
+      "finished_utc": "2026-11-09T13:57:30.105Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "red_state_write_attempts": 7,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-AFTER",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.107Z",
+      "finished_utc": "2026-11-09T13:57:30.153Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "red_state_write_attempts": 7,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-MIXED:true:true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.154Z",
+      "finished_utc": "2026-11-09T13:57:30.206Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "red_state_write_attempts": 14,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-MIXED:true:false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.208Z",
+      "finished_utc": "2026-11-09T13:57:30.256Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "red_state_write_attempts": 14,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-MIXED:false:true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.258Z",
+      "finished_utc": "2026-11-09T13:57:30.306Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "red_state_write_attempts": 14,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-MIXED:false:false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.308Z",
+      "finished_utc": "2026-11-09T13:57:30.352Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "red_state_write_attempts": 14,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-CAS-GROUP:false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.353Z",
+      "finished_utc": "2026-11-09T13:57:30.397Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "recognized_denial",
+        "reason": "group_revision_conflict"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 0
+      },
+      "red_state_write_attempts": 7,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-CAS-GROUP:true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.398Z",
+      "finished_utc": "2026-11-09T13:57:30.441Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "recognized_denial",
+        "reason": "group_revision_conflict"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 0
+      },
+      "red_state_write_attempts": 7,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-CAS-MEMBER:false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.443Z",
+      "finished_utc": "2026-11-09T13:57:30.496Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "recognized_denial",
+        "reason": "membership_revision_conflict"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 0
+      },
+      "red_state_write_attempts": 7,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-CAS-MEMBER:true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.497Z",
+      "finished_utc": "2026-11-09T13:57:30.544Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "500, S0 staged+committed and no maintenance/reconcile/writes",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "recognized_denial",
+        "reason": "membership_revision_conflict"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 0
+      },
+      "red_state_write_attempts": 7,
+      "red_oracle_verdict": "FAIL",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-PRIORITY-identity-first",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.546Z",
+      "finished_utc": "2026-11-09T13:57:30.593Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "identity/auth priority or literal valid-state control",
+      "new_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "red_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "red_state_write_attempts": 0,
+      "red_oracle_verdict": "PASS",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-PRIORITY-disabled-auth",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.595Z",
+      "finished_utc": "2026-11-09T13:57:30.642Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "identity/auth priority or literal valid-state control",
+      "new_outcome": {
+        "code": "ACCOUNT_DISABLED",
+        "status": 403
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "code": "ACCOUNT_DISABLED",
+        "status": 403
+      },
+      "red_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "red_state_write_attempts": 0,
+      "red_oracle_verdict": "PASS",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-PRIORITY-hidden-scope",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.643Z",
+      "finished_utc": "2026-11-09T13:57:30.699Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "identity/auth priority or literal valid-state control",
+      "new_outcome": {
+        "code": "NOT_FOUND",
+        "status": 404
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "code": "NOT_FOUND",
+        "status": 404
+      },
+      "red_function_entry_counts": {
+        "guard": 1,
+        "context": 0,
+        "maintenance": 0,
+        "reconcile": 0,
+        "active": 0
+      },
+      "red_state_write_attempts": 0,
+      "red_oracle_verdict": "PASS",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-VALID-ACTIVE",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.700Z",
+      "finished_utc": "2026-11-09T13:57:30.750Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "identity/auth priority or literal valid-state control",
+      "new_outcome": {
+        "kind": "wait_for_active_test"
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 0,
+        "active": 1
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "wait_for_active_test"
+      },
+      "red_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 0,
+        "active": 1
+      },
+      "red_state_write_attempts": 0,
+      "red_oracle_verdict": "PASS",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-VALID-ELAPSED:0",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.754Z",
+      "finished_utc": "2026-11-09T13:57:30.803Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "identity/auth priority or literal valid-state control",
+      "new_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "new_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "new_state_write_attempts": 7,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "red_state_write_attempts": 7,
+      "red_oracle_verdict": "PASS",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-VALID-ELAPSED:1",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.804Z",
+      "finished_utc": "2026-11-09T13:57:30.862Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "identity/auth priority or literal valid-state control",
+      "new_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "new_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "new_state_write_attempts": 7,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 2,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 1,
+        "active": 1
+      },
+      "red_state_write_attempts": 7,
+      "red_oracle_verdict": "PASS",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    },
+    {
+      "case_id": "R03-VALID-TERMINAL",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "source_sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "test_sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "command": "UA_1A_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/existing-accepted-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/evidence/r03-accepted-traces.json node --unhandled-rejections=strict --test tests/membership/removal-active.test.mjs tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/clerk-auth/domain-http.test.mjs",
+      "started_utc": "2026-11-09T13:57:30.863Z",
+      "finished_utc": "2026-11-09T13:57:30.918Z",
+      "test_exit": 0,
+      "verdict": "PASS",
+      "final_log_sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177",
+      "expected": "identity/auth priority or literal valid-state control",
+      "new_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "new_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 0,
+        "active": 1
+      },
+      "new_state_write_attempts": 0,
+      "red_source_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4",
+      "red_outcome": {
+        "kind": "continue_existing_policy"
+      },
+      "red_function_entry_counts": {
+        "guard": 1,
+        "context": 1,
+        "maintenance": 1,
+        "reconcile": 0,
+        "active": 1
+      },
+      "red_state_write_attempts": 0,
+      "red_oracle_verdict": "PASS",
+      "red_log_sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+    }
+  ]
+}

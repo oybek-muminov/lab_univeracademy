@@ -62,7 +62,8 @@ function checkCurrentAttemptContext(state: StaffState, studentId: string): void 
     const record = s.attempts[series.currentAttemptId];
     if (!record || record.id !== series.currentAttemptId ||
         record.personId !== studentId || key !== seriesKey(studentId, record.published.demoId) ||
-        record.generation !== series.generation) fail("RESPONSE_INVARIANT_FAILED", 500);
+        record.generation !== series.generation ||
+        (record.status === "in_progress" && record.ordinary !== null)) fail("RESPONSE_INVARIANT_FAILED", 500);
   }
   for (const record of Object.values(s.attempts))
     if (record.personId === studentId && record.status === "in_progress" &&

@@ -1,0 +1,74 @@
+{
+  "status": "NEW_LOCAL_R03_V4_CANDIDATE_NOT_UPLOADED_NOT_ACCEPTED",
+  "candidate_id": "backend-r03-ordinary-v4-20261109",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "baseline_branch": "qa/current-flow-20261106",
+  "base_commit": "6a84c6f13725839abf6cde8cd5bc02899ee4cfe2",
+  "source_root": "/tmp/univeracademy-r03-candidate-v4-vv6_2lg3/repo",
+  "no_local_branch_created": true,
+  "production_scope": "Only checkCurrentAttemptContext adds in_progress AND ordinary!==null rejection before all maintenance; no shared expiry change",
+  "source_files": [
+    {
+      "path": "workspaces/univeracademy/docs/api/removal-active-invariant-local-2026-11-09.md",
+      "bytes": 18404,
+      "sha256": "dbd3c47189917bf9ea57837f020d47e8b67f8d59c54d9cf9f2bdc4993efdda36",
+      "base_bytes": 11926,
+      "base_sha256": "5b027a92b745ee9b8a5b019a78ddfc64dd5df8d6b14fc23e2770d7517b8d58b3"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+      "bytes": 6533,
+      "sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86",
+      "base_bytes": 6460,
+      "base_sha256": "a7198a2bd3b5a3a726dc3a47cb3ca5a3870dfe6d2bd57b5a0f002ef1aef5ffd4"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/removal-active.test.mjs",
+      "bytes": 35811,
+      "sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "base_bytes": 21966,
+      "base_sha256": "529594facb496ed761691ba181d8dbac008a4db636f15475e3a53ca1e0db8382"
+    }
+  ],
+  "source_files_count": 3,
+  "source_bytes": 60748,
+  "patch_sha256": "f6bdeaca77e4198775e4b934e37eab4946af5520c2cf20f41357bb2bdc677a82",
+  "patch_bytes": 23864,
+  "unchanged_references": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-http.ts",
+      "bytes": 16079,
+      "sha256": "76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2",
+      "byte_identical_to_base": true
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+      "bytes": 9616,
+      "sha256": "b4bc54e39fef6799b6ff83a4be3c474471afd2e4c76e888767e999064a4d9e20",
+      "byte_identical_to_base": true
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+      "bytes": 3347,
+      "sha256": "e83249cec808cda4c3a66fb8bbd0dd327195737444a686eb8893391da92dd407",
+      "byte_identical_to_base": true
+    },
+    {
+      "path": "workspaces/univeracademy/apps/mini-app/tests/verify-backend-targets.mjs",
+      "bytes": 5216,
+      "sha256": "9640ff6f956cf1192ba8bafd82106ef66e08bb6f5fb27288f8a24068ba3b2658",
+      "byte_identical_to_base": true
+    },
+    {
+      "path": "workspaces/univeracademy/package-lock.json",
+      "bytes": 19609,
+      "sha256": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222",
+      "byte_identical_to_base": true
+    }
+  ],
+  "node": "v24.22.1",
+  "original_C04_v3_manifest_sha256": "cccfb1ee2e347cdbf4afccffbbeb769e992f4d4a09576b3a95937b9e9eed0017",
+  "original_C04_v3_patch_sha256": "c02ee3a3412cce2f97c9288847d1aade679be96365fd8746311f915580bd5c8d",
+  "original_C04_v3_inventory_sha256": "43bd29ea0abbd2efd35be389cbcf9ab971a035c071289321fd30cbfe9bccd017",
+  "original_C04_v3_local_13_files": "UNCHANGED_142549_BYTES"
+}

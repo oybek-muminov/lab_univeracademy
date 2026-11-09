@@ -1,6 +1,8 @@
 import { test, after } from "node:test";
 import assert from "node:assert/strict";
-import { writeFileSync } from "node:fs";
+import { writeFileSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { Session } from "node:inspector/promises";
 import { guardRemovalActiveTest, REMOVAL_DECISION as D } from "../../supabase/functions/univeracademy-api/membership-activity.ts";
 import { PostgresTransactions, StorageUnavailable } from "../../supabase/functions/univeracademy-api/storage/postgres-transaction.ts";
 import { staffFixture, staffIds } from "../backend/staff-fixture.ts";
@@ -250,4 +252,161 @@ test("REPEAT: completion/ordinary are created once and later explicit checks wri
   }
   assert.equal(f.store.state.student.attempts[f.attemptId].stateRevision,original.student.attempts[f.attemptId].stateRevision+1);
 });
-after(()=>{if(process.env.UA_1A_TRACE_PATH)writeFileSync(process.env.UA_1A_TRACE_PATH,JSON.stringify({scope:"AUTHOR_LOCAL_DOMAIN_PREFLIGHT_NOT_INDEPENDENT_QA",traces},null,2)+"\n");});
+// R03: literal corruption fixture adapted from the coordinator-delivered QA
+// excerpt, not the original QA common.mjs bytes. No start/scoring/expiry helper
+// constructs this state or its expected outcome. Bigints remain exact.
+const r03A=id(900),r03B=id(901),r03T=clock+60000,r03K=seriesKey(ids.person,ids.demo);
+const r03SourceURL=new URL("../../supabase/functions/univeracademy-api/membership-activity.ts",import.meta.url);
+const r03SHA=createHash("sha256").update(readFileSync(r03SourceURL)).digest("hex");
+const r03TestSHA=createHash("sha256").update(readFileSync(new URL(import.meta.url))).digest("hex");
+const r03Rows=[];
+function r03Fixture(){
+  const published={demoId:ids.demo,versionId:id(30),durationMs:60000,individualEnabled:false,questions:[
+    {id:id(100),optionIds:[id(200),id(201),id(202),id(203)],correctOptionId:id(200),individualPoints:{numerator:5n,denominator:2n}},
+    {id:id(101),optionIds:[id(204),id(205),id(206),id(207)],correctOptionId:id(204),individualPoints:{numerator:5n,denominator:2n}}]};
+  const record={id:r03A,personId:ids.person,assignmentId:ids.assignment,groupId:ids.group,generation:1,status:"in_progress",
+    startedAt:clock,deadlineAt:r03T,completedAt:null,stateRevision:2,seriesStateRevision:2,published,
+    questionOrder:published.questions.map(q=>({questionId:q.id,optionIds:[...q.optionIds]})),
+    answers:[{questionId:id(100),selectedOptionId:id(200),revision:1,savedAt:clock,seriesStateRevision:2}],ordinary:null};
+  return {student:{
+    people:{[ids.person]:{telegramId:4000000001,enabled:true,profile:{person_id:ids.person,roles:["student"],registration_complete:true,
+      active_group_id:ids.group,first_name:"QA",last_name:"Synthetic",qadam_id:"0100000001"}}},
+    families:{},access:{},refresh:{},consumedInitData:{},grants:{[ids.person]:{[ids.assignment]:{rostered:true,membershipEpoch:7,grantEpoch:7}}},
+    assignments:{[ids.assignment]:{admission:{assignmentId:ids.assignment,groupId:ids.group,activeGroupId:ids.group,
+      rostered:true,profileComplete:true,membershipEpoch:7,grantEpoch:7,opensAt:clock-1000,closesAt:clock+1000},
+      published:clone(published),title:"Independent literal QA",instructions:[],contents:{},cancelled:false,
+      reviewGate:{id:id(50),status:"blocked",revision:0,barrier_revision:0,barrier_complete:false,eligible_unresolved_count:1,
+        active_count:0,recovery_ready_count:0,timezone:"Asia/Tashkent",first_opened_at:null,opens_at:null,closes_at:null}}},
+    series:{[r03K]:{currentAttemptId:r03A,generation:1,normalAttemptUsed:true,officialAttemptId:null,recoveryState:"none",recovery:null}},
+    attempts:{[r03A]:record},receipts:{preserve:{payload:"student-sentinel"}},bonuses:{preserve:{marker:7n}},cancellations:{}},
+    staff:{"synthetic-admin":{personId:id(501),enabled:true,approved:true,roles:["admin"],approvedSubjectIds:["physics"],
+      capabilities:{manage_roster:true,manage_content:true},scope:{all_groups:false,group_ids:[ids.group],all_subjects:false,subject_ids:["physics"]}}},
+    groups:{[ids.group]:{id:ids.group,revision:4}},memberships:{[ids.person]:{affinityGroupId:ids.group,active:true,revision:7,epoch:7}},
+    versions:{},recoveryAssignments:{},notifications:{preserve:{studentId:ids.person,assignmentId:ids.assignment,epoch:7,status:"queued"}},
+    approvals:{preserve:{studentId:ids.person,epoch:7,status:"pending"}},receipts:{preserve:{payload:"staff-sentinel"}},
+    audit:[{actorId:id(501),action:"preserve",targetId:ids.person,revision:7,at:clock}]};
+}
+const r03Context=()=>({proof:{kind:"staff_verified",subject:"synthetic-admin",notBefore:clock-1,expiresAt:clock+1000000},
+  groupId:ids.group,expectedGroupRevision:4,expectedMembershipRevision:7});
+const r03Ordinary=(earned,percentage,calculatedAt)=>({earned:{numerator:BigInt(earned),denominator:1n},
+  maximum:{numerator:2n,denominator:1n},percentage:{numerator:BigInt(percentage),denominator:1n},calculatedAt});
+function r03Corrupt(){const s=r03Fixture();s.student.attempts[r03A].ordinary=r03Ordinary(2,100,r03T-50);return s;}
+
+// Test-only recursive write-operation observation, including same-value sets.
+// This observes reachable JS state writes, not SQL, hidden/external writers, or
+// property reads. Profiler function call counts below are a separate mechanism.
+function r03Watch(raw){
+  const cache=new WeakMap(),reverse=new WeakMap(),writes=[];
+  function strip(v,seen=new WeakSet()){
+    if(!v||typeof v!=="object")return v;if(reverse.has(v))return reverse.get(v);if(seen.has(v))return v;seen.add(v);
+    for(const k of Reflect.ownKeys(v)){const d=Reflect.getOwnPropertyDescriptor(v,k);if(d&&"value"in d){const x=strip(d.value,seen);if(x!==d.value)Reflect.defineProperty(v,k,{...d,value:x});}}
+    return v;
+  }
+  function wrap(v,path){
+    if(!v||typeof v!=="object")return v;if(cache.has(v))return cache.get(v);
+    const note=(op,key)=>writes.push({op,path:path+"/"+String(key)});
+    const proxy=new Proxy(v,{
+      get(t,k){return wrap(Reflect.get(t,k,t),path+"/"+String(k));},
+      set(t,k,value){note("set",k);return Reflect.set(t,k,strip(value),t);},
+      defineProperty(t,k,d){note("defineProperty",k);return Reflect.defineProperty(t,k,{...d,...("value"in d?{value:strip(d.value)}:{})});},
+      deleteProperty(t,k){note("delete",k);return Reflect.deleteProperty(t,k);},
+      setPrototypeOf(t,v){note("setPrototypeOf","");return Reflect.setPrototypeOf(t,v);},
+      preventExtensions(t){note("preventExtensions","");return Reflect.preventExtensions(t);},
+    });cache.set(v,proxy);reverse.set(proxy,v);return proxy;
+  }
+  return {state:wrap(raw,""),writes};
+}
+async function r03Observe(s,caseId,{now=r03T,context=r03Context(),decision=D.CONTINUE}={}){
+  const started=new Date().toISOString(),draft=clone(s),w=r03Watch(draft),session=new Session();
+  const names={guardRemovalActiveTest:"guard",checkCurrentAttemptContext:"context",materializeElapsedAttempts:"maintenance",
+    reconcileMembershipEffects:"reconcile",hasActiveAttempt:"active"};
+  const calls={guard:0,context:0,maintenance:0,reconcile:0,active:0},functions=[];
+  let value,error,clockReads=0,stateReads=0,guardInvocations=0;
+  session.connect();
+  try{
+    await session.post("Profiler.enable");await session.post("Profiler.startPreciseCoverage",{callCount:true,detailed:true});
+    await session.post("Profiler.takePreciseCoverage");
+    try{guardInvocations++;value=await guardRemovalActiveTest({get state(){stateReads++;return w.state;},now(){clockReads++;return now;}},ids.person,decision,context);}
+    catch(caught){error=caught;}
+    const coverage=await session.post("Profiler.takePreciseCoverage"),prefix=new URL("../../supabase/",import.meta.url).href;
+    for(const script of coverage.result)if(script.url.startsWith(prefix))for(const f of script.functions)if(names[f.functionName]){
+      calls[names[f.functionName]]+=f.ranges[0].count;functions.push({name:f.functionName,count:f.ranges[0].count});
+    }
+  }finally{await session.post("Profiler.stopPreciseCoverage");session.disconnect();}
+  const committed=error?clone(s):draft;
+  const row={case_id:caseId,order:{series:Object.keys(s.student.series),attempts:Object.keys(s.student.attempts)},
+    source_sha256:r03SHA,test_sha256:r03TestSHA,started_utc:started,finished_utc:new Date().toISOString(),now,
+    command:[process.execPath,...process.execArgv,...process.argv.slice(1)],
+    outcome:error?{code:error.code,status:error.status}:value,
+    observed_function_entry_counts:calls,coverage_functions:functions,guard_invocations:guardInvocations,
+    coverage_limit:"V8 async function entry counts can include resume; guard_invocations counts direct calls separately",
+    clockReads,stateReads,state_write_attempts:w.writes.length,
+    observed_state_writes:w.writes,staged_net_diff:paths(s,draft),committed_net_diff:paths(s,committed),
+    commit_scope:"LOCAL_DOMAIN_DOUBLE_ONLY_NOT_SQL_COMMIT"};
+  r03Rows.push(row);assert.equal(guardInvocations,1);return {value,error,draft,committed,writes:w.writes,calls,row};
+}
+async function r03Reject(s,name,options={}){
+  const before=clone(s),r=await r03Observe(s,name,options);
+  assert.equal(r.error?.code,"RESPONSE_INVARIANT_FAILED");assert.equal(r.error?.status,500);assert.equal(r.value,undefined);
+  assert.deepEqual(r.draft,before);assert.deepEqual(r.committed,before);assert.deepEqual(s,before);
+  assert.deepEqual(r.calls,{guard:1,context:1,maintenance:0,reconcile:0,active:0});assert.equal(r.writes.length,0);
+}
+for(const [name,offset]of [["BEFORE",-1],["EQUALITY",0],["AFTER",1]])test(`R03-${name}: existing ordinary rejects before any maintenance`,async()=>{
+  await r03Reject(r03Corrupt(),`R03-${name}`,{now:r03T+offset});
+});
+for(const seriesValidFirst of [true,false])for(const attemptsValidFirst of [true,false])test(`R03-MIXED seriesValidFirst=${seriesValidFirst} attemptsValidFirst=${attemptsValidFirst}`,async()=>{
+  const s=r03Corrupt(),J=id(11),demo=id(21),key=seriesKey(ids.person,demo);
+  const record={...clone(s.student.attempts[r03A]),id:r03B,assignmentId:J,published:{...clone(s.student.attempts[r03A].published),demoId:demo,versionId:id(31)},deadlineAt:r03T-100,ordinary:null};
+  const series={...clone(s.student.series[r03K]),currentAttemptId:r03B};
+  const assignment=clone(s.student.assignments[ids.assignment]);Object.assign(assignment.admission,{assignmentId:J});
+  assignment.published=clone(record.published);assignment.reviewGate.id=id(51);s.student.assignments[J]=assignment;
+  s.student.grants[ids.person][J]={rostered:true,membershipEpoch:7,grantEpoch:7};
+  s.student.series=seriesValidFirst?{[key]:series,[r03K]:s.student.series[r03K]}:{[r03K]:s.student.series[r03K],[key]:series};
+  s.student.attempts=attemptsValidFirst?{[r03B]:record,[r03A]:s.student.attempts[r03A]}:{[r03A]:s.student.attempts[r03A],[r03B]:record};
+  await r03Reject(s,`R03-MIXED:${seriesValidFirst}:${attemptsValidFirst}`);
+});
+for(const [name,field,denial]of [["GROUP","expectedGroupRevision",D.DENY_GROUP_REVISION],["MEMBER","expectedMembershipRevision",D.DENY_MEMBERSHIP_REVISION]])for(const hint of [false,true])test(`R03-CAS-${name} matchingDenialHint=${hint}: corrupt state cannot reach maintenance denial commit`,async()=>{
+  const context=r03Context();context[field]--;
+  await r03Reject(r03Corrupt(),`R03-CAS-${name}:${hint}`,{context,decision:hint?denial:D.CONTINUE});
+});
+for(const name of ["identity-first","disabled-auth","hidden-scope"])test(`R03-PRIORITY-${name}: existing rejection order precedes corrupt context`,async()=>{
+  const s=r03Corrupt();let hooks=0,decision=D.CONTINUE;
+  if(name==="identity-first")decision={get kind(){hooks++;throw Error("UNEXPECTED_PAYLOAD_READ");}};
+  if(name==="disabled-auth")s.staff["synthetic-admin"].enabled=false;
+  if(name==="hidden-scope")s.staff["synthetic-admin"].scope.group_ids=[];
+  const r=await r03Observe(s,`R03-PRIORITY-${name}`,{decision});
+  const [code,status]=name==="identity-first"?["RESPONSE_INVARIANT_FAILED",500]:name==="disabled-auth"?["ACCOUNT_DISABLED",403]:["NOT_FOUND",404];
+  assert.equal(r.error?.code,code);assert.equal(r.error?.status,status);assert.equal(hooks,0);
+  assert.deepEqual(r.draft,s);assert.deepEqual(r.committed,s);assert.equal(r.writes.length,0);
+  assert.deepEqual(r.calls,{guard:1,context:0,maintenance:0,reconcile:0,active:0});
+  if(name==="identity-first"){assert.equal(r.row.clockReads,0);assert.equal(r.row.stateReads,0);}
+});
+test("R03-VALID-ACTIVE: wait with null ordinary and unchanged S0",async()=>{
+  const s=r03Fixture(),r=await r03Observe(s,"R03-VALID-ACTIVE",{now:r03T-1});
+  assert.equal(r.error,undefined);assert.deepEqual(r.value,{kind:"wait_for_active_test"});assert.deepEqual(r.committed,s);assert.equal(r.writes.length,0);
+  assert.deepEqual(r.calls,{guard:1,context:1,maintenance:1,reconcile:0,active:1});
+});
+for(const offset of [0,1])test(`R03-VALID-ELAPSED:${offset}: literal expiry and instrumentation positive control`,async()=>{
+  const s=r03Fixture(),expected=clone(s),now=r03T+offset;
+  Object.assign(expected.student.attempts[r03A],{status:"expired",completedAt:r03T,stateRevision:3,seriesStateRevision:3,ordinary:r03Ordinary(1,50,now)});
+  expected.student.series[r03K].officialAttemptId=r03A;
+  Object.assign(expected.student.assignments[ids.assignment].reviewGate,{eligible_unresolved_count:0,active_count:0,recovery_ready_count:0,barrier_complete:true,barrier_revision:1});
+  const r=await r03Observe(s,`R03-VALID-ELAPSED:${offset}`,{now});
+  assert.equal(r.error,undefined);assert.equal(r.value,D.CONTINUE);assert.deepEqual(r.committed,expected);
+  assert.ok(r.calls.guard>=1);assert.deepEqual({...r.calls,guard:1},{guard:1,context:1,maintenance:1,reconcile:1,active:1});assert.equal(r.writes.length,7);
+  assert.equal(r.writes.filter(w=>w.path.endsWith("/active_count")||w.path.endsWith("/recovery_ready_count")).length,2);
+});
+test("R03-VALID-TERMINAL: existing ordinary remains exact and is never recalculated",async()=>{
+  const s=r03Fixture();Object.assign(s.student.attempts[r03A],{status:"expired",completedAt:r03T,stateRevision:3,seriesStateRevision:3,ordinary:r03Ordinary(1,50,r03T)});
+  s.student.series[r03K].officialAttemptId=r03A;
+  const r=await r03Observe(s,"R03-VALID-TERMINAL",{now:r03T+100});
+  assert.equal(r.error,undefined);assert.equal(r.value,D.CONTINUE);assert.deepEqual(r.committed,s);assert.equal(r.writes.length,0);
+  assert.deepEqual(r.calls,{guard:1,context:1,maintenance:1,reconcile:0,active:1});
+});
+after(()=>{
+  if(process.env.UA_1A_TRACE_PATH)writeFileSync(process.env.UA_1A_TRACE_PATH,JSON.stringify({scope:"AUTHOR_LOCAL_DOMAIN_PREFLIGHT_NOT_INDEPENDENT_QA",traces},null,2)+"\n");
+  if(process.env.UA_R03_TRACE_PATH)writeFileSync(process.env.UA_R03_TRACE_PATH,JSON.stringify({
+    scope:"AUTHOR_R03_LITERAL_FIXTURE_NOT_ORIGINAL_QA_ARTIFACT_BYTES",cases:r03Rows,
+    limits:"Recursive JS state-write observation and V8 precise function-call coverage are separate; no real SQL COMMIT, external effect or hidden-writer proof",
+  },null,2)+"\n");
+});
