@@ -1,0 +1,49 @@
+{
+  "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+  "command": [
+    "node",
+    "--unhandled-rejections=strict",
+    "--test",
+    "tests/membership/preflight-adapter.test.mjs",
+    "tests/membership/removal-active.test.mjs"
+  ],
+  "environment_overrides": {
+    "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-02-cases.json",
+    "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-02-legacy-traces.json",
+    "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-02-legacy-r03-traces.json",
+    "npm_config_cache": "/tmp/univeracademy-removal-auth01-pkdmbgxh/npm-cache",
+    "npm_config_update_notifier": "false"
+  },
+  "cwd": "/tmp/univeracademy-removal-auth01-pkdmbgxh/repo/workspaces/univeracademy",
+  "start_utc": "2026-11-09T19:40:10.214266+00:00",
+  "end_utc": "2026-11-09T19:40:12.100656+00:00",
+  "exit": 1,
+  "log_sha256": "aec4b0668fb2b1fbf924e9a1f6cd750b846b4389b99736d4c57f9e7bedc4504c",
+  "all_source_files": 350,
+  "unchanged_baseline_files": 346,
+  "source_before_sha256": "c5496c72d23c3e6872b0f331e7f55d66a01f1ac385b31e90045a421ce327425d",
+  "source_after_sha256": "c5496c72d23c3e6872b0f331e7f55d66a01f1ac385b31e90045a421ce327425d",
+  "source_bytes_changed_during_run": false,
+  "candidate_files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+      "bytes": 7617,
+      "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+      "bytes": 7061,
+      "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/removal-authority.ts",
+      "bytes": 812,
+      "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+      "bytes": 52324,
+      "sha256": "f63696cc7379255169767f82177144e02b85f74f105aadea4f711bdbbb54c25d"
+    }
+  ]
+}

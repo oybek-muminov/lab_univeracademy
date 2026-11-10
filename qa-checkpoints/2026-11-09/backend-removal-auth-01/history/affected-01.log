@@ -1,0 +1,91 @@
+file:///tmp/univeracademy-removal-auth01-pkdmbgxh/repo/workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs:18
+const P=id(1),Q=id(2),J=id(10),D=id(20),G=id(40),H=id(41),A=id(900),B=id(901),U=id(501),K=P+"/"+D;
+                               ^
+
+SyntaxError: Identifier 'D' has already been declared
+    at compileSourceTextModule (node:internal/modules/esm/utils:319:16)
+    at ModuleLoader.moduleStrategy (node:internal/modules/esm/translators:89:18)
+    at #translate (node:internal/modules/esm/loader:438:20)
+    at afterLoad (node:internal/modules/esm/loader:506:29)
+    at ModuleLoader.loadAndTranslate (node:internal/modules/esm/loader:511:12)
+    at #getOrCreateModuleJobAfterResolve (node:internal/modules/esm/loader:564:36)
+    at afterResolve (node:internal/modules/esm/loader:611:52)
+    at ModuleLoader.getOrCreateModuleJob (node:internal/modules/esm/loader:617:12)
+    at node:internal/modules/esm/loader:636:32
+    at TracingChannel.tracePromise (node:diagnostics_channel:370:14)
+
+Node.js v24.22.1
+✖ tests/membership/preflight-adapter.test.mjs (34.069788ms)
+✔ CF-01: CONTINUE cannot bypass a current active attempt (58.65778ms)
+✔ CF-02: deadline equality/after commits canonical E(a) only (6.806826ms)
+✔ CF-03: deadline equality/after commits canonical E(a) only (5.245123ms)
+✔ CF-04: submitted attempt produces no writes or queued continuation (6.195875ms)
+✔ W02-continue: authoritative clean CAS denial commits E(a) only (4.820993ms)
+✔ W02-matching-denial: authoritative clean CAS denial commits E(a) only (4.302072ms)
+✔ W03-continue: authoritative clean CAS denial commits E(a) only (4.376844ms)
+✔ W03-matching-denial: authoritative clean CAS denial commits E(a) only (3.713585ms)
+✔ CF-05: group CAS precedes member CAS; CONTINUE cannot bypass either (3.428206ms)
+✔ CF-06: false or stale denial singleton fails before maintenance (5.320947ms)
+✔ CF-07: lock-wait changes to authoritative CAS/time are observed (6.879766ms)
+✔ AUTH-disabled: authorization/privacy precedes E(a) (3.788999ms)
+✔ AUTH-capability: authorization/privacy precedes E(a) (3.465882ms)
+✔ AUTH-scope: authorization/privacy precedes E(a) (3.474094ms)
+✔ AUTH-teacher: authorization/privacy precedes E(a) (3.102585ms)
+✔ AUTH-expired-proof: authorization/privacy precedes E(a) (3.543629ms)
+✔ AUTH-wrong-group: authorization/privacy precedes E(a) (3.54445ms)
+✔ CF-08: unstarted ready recovery remains unchanged for later policy (7.023853ms)
+✔ RECOVERY-active: current started recovery keeps existing completion semantics (5.222479ms)
+✔ RECOVERY-expired: current started recovery keeps existing completion semantics (3.908609ms)
+✔ CURRENT-01: foreign and historical generations stay equal while current target expires (3.402546ms)
+✔ CURRENT-wrong-generation: incomplete authoritative context fails closed (3.434836ms)
+✔ CURRENT-missing-record: incomplete authoritative context fails closed (3.624281ms)
+✔ CURRENT-missing-series: incomplete authoritative context fails closed (4.855802ms)
+✔ C04-IDKEY-BEFORE: malformed key/value ID rejects before maintenance (7.097103ms)
+✔ C04-IDKEY-EQUALITY: malformed key/value ID rejects before maintenance (2.943095ms)
+✔ C04-IDKEY-AFTER: malformed key/value ID rejects before maintenance (4.050734ms)
+✔ C04-IDKEY-MIXED: valid elapsed series first cannot partially maintain before invalid current ID rejection (6.079259ms)
+✔ IDENTITY-FIRST: hostile payloads cause no property, context, clock, call or thenable hooks (0.795017ms)
+✔ REJECT-old-six-writes: callback capability never executes or starts maintenance (4.758975ms)
+✔ REJECT-write-restore: callback capability never executes or starts maintenance (2.811305ms)
+✔ REJECT-nested-raw-alias: callback capability never executes or starts maintenance (3.418991ms)
+✔ REJECT-external-writer: callback capability never executes or starts maintenance (3.342837ms)
+✔ CLOCK: invalid post-lock time fails closed (21.405072ms)
+✔ EXCEPTION-canonical-score: technical maintenance failure rolls back E(a) (5.224436ms)
+✔ EXCEPTION-internal-reconciliation: technical maintenance failure rolls back E(a) (2.889321ms)
+✔ COMMIT-before: ACK loss stays unknown with no ACK, rollback claim or retry (4.831754ms)
+✔ COMMIT-after: ACK loss stays unknown with no ACK, rollback claim or retry (11.10306ms)
+✔ ROLLBACK-ordinary: exception identity survives, never becomes a clean denial (25.422195ms)
+✔ ROLLBACK-storage: exception identity survives, never becomes a clean denial (3.930904ms)
+✔ REPEAT: completion/ordinary are created once and later explicit checks write nothing (5.38645ms)
+✔ R03-BEFORE: existing ordinary rejects before any maintenance (38.866048ms)
+✔ R03-EQUALITY: existing ordinary rejects before any maintenance (48.754945ms)
+✔ R03-AFTER: existing ordinary rejects before any maintenance (43.0404ms)
+✔ R03-MIXED seriesValidFirst=true attemptsValidFirst=true (43.178068ms)
+✔ R03-MIXED seriesValidFirst=true attemptsValidFirst=false (38.650063ms)
+✔ R03-MIXED seriesValidFirst=false attemptsValidFirst=true (52.186005ms)
+✔ R03-MIXED seriesValidFirst=false attemptsValidFirst=false (49.167317ms)
+✔ R03-CAS-GROUP matchingDenialHint=false: corrupt state cannot reach maintenance denial commit (61.204048ms)
+✔ R03-CAS-GROUP matchingDenialHint=true: corrupt state cannot reach maintenance denial commit (42.735044ms)
+✔ R03-CAS-MEMBER matchingDenialHint=false: corrupt state cannot reach maintenance denial commit (44.106024ms)
+✔ R03-CAS-MEMBER matchingDenialHint=true: corrupt state cannot reach maintenance denial commit (42.018377ms)
+✔ R03-PRIORITY-identity-first: existing rejection order precedes corrupt context (45.734416ms)
+✔ R03-PRIORITY-disabled-auth: existing rejection order precedes corrupt context (47.958483ms)
+✔ R03-PRIORITY-hidden-scope: existing rejection order precedes corrupt context (48.305186ms)
+✔ R03-VALID-ACTIVE: wait with null ordinary and unchanged S0 (49.389323ms)
+✔ R03-VALID-ELAPSED:0: literal expiry and instrumentation positive control (54.212124ms)
+✔ R03-VALID-ELAPSED:1: literal expiry and instrumentation positive control (53.924409ms)
+✔ R03-VALID-TERMINAL: existing ordinary remains exact and is never recalculated (50.237334ms)
+ℹ tests 60
+ℹ suites 0
+ℹ pass 59
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1858.44168
+
+✖ failing tests:
+
+test at tests/membership/preflight-adapter.test.mjs:1:1
+✖ tests/membership/preflight-adapter.test.mjs (34.069788ms)
+  'test failed'

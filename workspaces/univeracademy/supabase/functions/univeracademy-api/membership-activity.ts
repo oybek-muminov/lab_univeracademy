@@ -4,6 +4,7 @@ import { seriesKey } from "./student-state.ts";
 import { currentStaff, groupScope, requireRosterAuthority } from "./staff-state.ts";
 import type { MembershipEffect, StaffState, StaffTransaction, VerifiedStaffProof } from "./staff-state.ts";
 import { reconcileMembershipEffects } from "./membership-effects.ts";
+import { requireRemovalAuthority } from "./removal-authority.ts";
 
 type ElapsedAttempts = Extract<MembershipEffect, { kind: "elapsed" }>;
 
@@ -79,10 +80,26 @@ export async function guardRemovalActiveTest(tx: StaffTransaction, studentId: st
   // FIRST: never inspect, coerce, await or log an unrecognized decision payload.
   if (decision !== REMOVAL_DECISION.CONTINUE && decision !== REMOVAL_DECISION.DENY_GROUP_REVISION &&
       decision !== REMOVAL_DECISION.DENY_MEMBERSHIP_REVISION) fail("RESPONSE_INVARIANT_FAILED", 500);
+  return guardActiveTest(tx, studentId, decision, context, false);
+}
+
+/** Separate removal-specific entry. The policy is hard-wired here, never
+ * selected by a request, an options field, a decision or a caller callback. */
+export async function guardRosterRemovalActiveTest(tx: StaffTransaction, studentId: string,
+  decision: unknown, context: RemovalGuardContext): Promise<RemovalActiveTestOutcome> {
+  // FIRST, including for this entry: unrecognized payloads execute no hooks.
+  if (decision !== REMOVAL_DECISION.CONTINUE && decision !== REMOVAL_DECISION.DENY_GROUP_REVISION &&
+      decision !== REMOVAL_DECISION.DENY_MEMBERSHIP_REVISION) fail("RESPONSE_INVARIANT_FAILED", 500);
+  return guardActiveTest(tx, studentId, decision, context, true);
+}
+
+async function guardActiveTest(tx: StaffTransaction, studentId: string,
+  decision: unknown, context: RemovalGuardContext, rosterRemoval: boolean): Promise<RemovalActiveTestOutcome> {
   const now = tx.now(); // The transaction port supplies server time after locks.
   checkClock(now);
   const staff = currentStaff(tx.state, context.proof, now);
-  requireRosterAuthority(staff); // Preserve the existing Admin/Owner boundary.
+  if (rosterRemoval) requireRemovalAuthority(staff, context.groupId);
+  else requireRosterAuthority(staff); // Preserve the legacy Admin/Owner boundary.
   const group = tx.state.groups[context.groupId], person = tx.state.student.people[studentId];
   const membership = tx.state.memberships[studentId];
   if (!group || !groupScope(staff, context.groupId) || !person?.enabled ||
@@ -101,6 +118,6 @@ export async function guardRemovalActiveTest(tx: StaffTransaction, studentId: st
   // A returned clean CAS denial commits canonical maintenance, without a writer.
   if (current !== REMOVAL_DECISION.CONTINUE) return current;
   if (hasActiveAttempt(tx.state, studentId, now)) return { kind: "wait_for_active_test" };
-  // Not removal approval. Ready recovery and all later policy remain undecided.
+  // Not removal approval. Ready rights stay intact; B applies to future final removal.
   return REMOVAL_DECISION.CONTINUE;
 }

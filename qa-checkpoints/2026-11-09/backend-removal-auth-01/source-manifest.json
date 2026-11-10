@@ -1,0 +1,64 @@
+{
+  "candidate": "REMOVAL-AUTH-01-local-v1",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "proposed_branch": "qa/current-flow-20261106",
+  "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+  "base_tree": "a77d06f483eb662913a5c7924ba6ed6040555475",
+  "source_files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+      "bytes": 7617,
+      "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b",
+      "baseline": {
+        "bytes": 6533,
+        "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+        "sha256": "afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+      "bytes": 7061,
+      "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf",
+      "baseline": {
+        "bytes": 6401,
+        "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+        "sha256": "1d2e298d633beb7b4be98e0446e9324220a06ae0c5fba6a9baaca50c4754f56b"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/removal-authority.ts",
+      "bytes": 812,
+      "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7",
+      "baseline": "ABSENT"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+      "bytes": 52377,
+      "sha256": "9b989fd50294146601f4176b45bb4f0f3ed5d20b0d122d3aa98dc4880dbbc6d7",
+      "baseline": {
+        "bytes": 35568,
+        "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+        "sha256": "c63aa81e50931304723211ec5546eafdb8e10dc668b74fb19dd2a940d1f46926"
+      }
+    }
+  ],
+  "source_count": 4,
+  "source_bytes": 67867,
+  "scope": "One new removal authority module; three modified files; no other source paths",
+  "patch": {
+    "path": "candidate.patch",
+    "bytes": 33747,
+    "sha256": "2bba2f1f35b2bbe9c05fd670c8edaa83aa78f985c1ca46fb6137d343629d6e7a"
+  },
+  "source_snapshot": {
+    "path": "affected-03-source-before.json",
+    "files": 350,
+    "sha256": "804b1ed57a2dbae817c0ba4cadab21e3a057a58a1e08513eac08cc3bc3886509"
+  },
+  "base_parity": {
+    "path": "base-git-blob-parity.json",
+    "files": 349,
+    "sha256": "1b53b99ae1719e2137ec27119441e2bf2d98381442d5b9fe02cffa86b22ca4df"
+  },
+  "status": "LOCAL_ONLY_NOT_UPLOADED_OR_APPROVED"
+}

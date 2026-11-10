@@ -1,10 +1,11 @@
 import { fail } from "./fault.ts";
-import { guardRemovalActiveTest, REMOVAL_DECISION } from "./membership-activity.ts";
+import { guardRemovalActiveTest, guardRosterRemovalActiveTest, REMOVAL_DECISION } from "./membership-activity.ts";
 import type { RemovalActiveTestOutcome } from "./membership-activity.ts";
 import { currentStaff, groupScope, requireRosterAuthority } from "./staff-state.ts";
 import { StorageUnavailable } from "./storage/postgres-transaction.ts";
 import { expiryDelta, immutable, invariant, record, revision, text, validateCoverage } from "./storage/membership-preflight-port.ts";
 import type { LocalMembershipPreflightPort, PreflightCommand, Protection, VerifiedActor } from "./storage/membership-preflight-port.ts";
+import { requireRemovalAuthority } from "./removal-authority.ts";
 
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 function command(value: unknown): PreflightCommand {
@@ -35,6 +36,15 @@ function outcome(value: RemovalActiveTestOutcome): RemovalActiveTestOutcome {
  * HTTP route, Teacher expansion, final removal or unstarted-recovery revocation.
  * Port attestations are trusted obligations, not real DB completeness/locks. */
 export function createMembershipPreflight(options: { mode?: unknown; port?: LocalMembershipPreflightPort } = {}) {
+  return createPreflight(options, false);
+}
+
+/** Local removal-specific entry; does not implement final removal or transfer. */
+export function createRosterRemovalPreflight(options: { mode?: unknown; port?: LocalMembershipPreflightPort } = {}) {
+  return createPreflight(options, true);
+}
+
+function createPreflight(options: { mode?: unknown; port?: LocalMembershipPreflightPort }, rosterRemoval: boolean) {
   const p = options?.port;
   if (options?.mode !== "local_contract" || typeof p?.verifyAndLocate !== "function" || typeof p.transaction !== "function") fail("SERVICE_UNAVAILABLE", 503);
   const verify = p.verifyAndLocate.bind(p), transaction = p.transaction.bind(p);
@@ -58,13 +68,16 @@ export function createMembershipPreflight(options: { mode?: unknown; port?: Loca
       if (frame.now >= frame.providerExpiresAt) fail("STAFF_TOKEN_INVALID", 401);
       invariant(record(frame.state) && record(frame.state.staff));
       const staff = currentStaff(frame.state, verified.proof, frame.now);
-      invariant(staff.personId === verified.actorId); requireRosterAuthority(staff);
+      invariant(staff.personId === verified.actorId);
+      if (rosterRemoval) requireRemovalAuthority(staff, scope.groupId);
+      else requireRosterAuthority(staff);
       if (!groupScope(staff, scope.groupId)) fail("NOT_FOUND", 404);
       validateCoverage(frame, binding, verified, scope);
       // Detach aliases before the only mutable domain computation. Neither the
       // caller nor flush receives this state or a general continuation writer.
       const state = structuredClone(frame.state), before = structuredClone(state), now = frame.now;
-      const guarded = await guardRemovalActiveTest({ state, now: () => now }, scope.studentId, REMOVAL_DECISION.CONTINUE,
+      const guard = rosterRemoval ? guardRosterRemovalActiveTest : guardRemovalActiveTest;
+      const guarded = await guard({ state, now: () => now }, scope.studentId, REMOVAL_DECISION.CONTINUE,
         { proof: verified.proof, groupId: scope.groupId, expectedGroupRevision: scope.expectedGroupRevision, expectedMembershipRevision: scope.expectedMembershipRevision });
       result = outcome(guarded);
       const delta = expiryDelta(before, state, now, { ...binding, actorId: verified.actorId, studentId: scope.studentId, groupId: scope.groupId });

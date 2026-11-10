@@ -4,7 +4,11 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { Session } from "node:inspector/promises";
 import { generateKeyPair, SignJWT } from "jose";
-import { createMembershipPreflight } from "../../supabase/functions/univeracademy-api/membership-preflight.ts";
+import { createMembershipPreflight, createRosterRemovalPreflight } from "../../supabase/functions/univeracademy-api/membership-preflight.ts";
+import { guardRemovalActiveTest, guardRosterRemovalActiveTest, REMOVAL_DECISION as RD } from "../../supabase/functions/univeracademy-api/membership-activity.ts";
+import { requireRosterAuthority } from "../../supabase/functions/univeracademy-api/staff-state.ts";
+import { staffFixture, staffIds, transferBody } from "../backend/staff-fixture.ts";
+import { ids as transferIds } from "../backend/http-fixture.ts";
 import { expiryDelta } from "../../supabase/functions/univeracademy-api/storage/membership-preflight-port.ts";
 import { createStaffJwtVerifier } from "../../supabase/functions/univeracademy-api/staff-jwt.ts";
 import { ApiFault } from "../../supabase/functions/univeracademy-api/fault.ts";
@@ -98,27 +102,29 @@ function watch(raw,writes){
   }
   return wrap(raw,"");
 }
-const sourcePaths=["supabase/functions/univeracademy-api/membership-preflight.ts","supabase/functions/univeracademy-api/storage/membership-preflight-port.ts","tests/membership/preflight-adapter.test.mjs"];
+const sourcePaths=["supabase/functions/univeracademy-api/removal-authority.ts","supabase/functions/univeracademy-api/membership-activity.ts","supabase/functions/univeracademy-api/membership-preflight.ts","tests/membership/preflight-adapter.test.mjs"];
 const project=new URL("../../",import.meta.url),fingerprints=sourcePaths.map(path=>{const b=readFileSync(new URL(path,project));return{path,bytes:b.length,sha256:createHash("sha256").update(b).digest("hex")};});
 const guardURL=new URL("supabase/functions/univeracademy-api/membership-activity.ts",project),guardSource=readFileSync(guardURL,"utf8");
-const guardSHA=createHash("sha256").update(guardSource).digest("hex");assert.equal(guardSHA,"afcb1e1af61c2ab44fa8b4e501463c304c57d283d535ba929d77e57748ea4f86");
+const guardSHA=createHash("sha256").update(guardSource).digest("hex");assert.equal(guardSHA,"c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b");
 const session=new Session();session.connect();await session.post("Debugger.enable");
 let current;
 globalThis.__r1GuardWriteObserver=raw=>{assert.ok(current);current.guardRaw=raw;current.guardBefore=clone(raw);return watch(raw,current.guardWrites);};
 session.on("Debugger.paused",message=>{
   const observed=current;
   try{
-    const frame=message.params.callFrames[0];assert.equal(frame.functionName,"guardRemovalActiveTest");assert.ok(observed);
-    observed.directGuard++;observed.ledger.push("guard.enter");
+    const frame=message.params.callFrames[0];assert.ok(["guardRemovalActiveTest","guardRosterRemovalActiveTest"].includes(frame.functionName));assert.ok(observed);
+    observed.directGuard++;(observed.guardEntries??=[]).push(frame.functionName);observed.ledger.push("guard.enter");
     // Dispatch both inspector commands inside the paused callback, before any
     // Promise continuation; same-thread V8 resumes when this callback returns.
-    void session.post("Debugger.evaluateOnCallFrame",{callFrameId:frame.callFrameId,expression:"tx.state = globalThis.__r1GuardWriteObserver(tx.state)"})
+    void session.post("Debugger.evaluateOnCallFrame",{callFrameId:frame.callFrameId,expression:"(decision === REMOVAL_DECISION.CONTINUE || decision === REMOVAL_DECISION.DENY_GROUP_REVISION || decision === REMOVAL_DECISION.DENY_MEMBERSHIP_REVISION) ? (tx.state = globalThis.__r1GuardWriteObserver(tx.state)) : undefined"})
       .then(r=>{if(r.exceptionDetails)observed.instrumentationError="GUARD_OBSERVER_INSTALL_FAILED";},e=>{observed.instrumentationError=e.message;});
     void session.post("Debugger.resume").catch(e=>{observed.instrumentationError=e.message;});
   }catch(e){if(observed)observed.instrumentationError=e.message;}
 });
-const breakpoint=await session.post("Debugger.setBreakpointByUrl",{url:guardURL.href,lineNumber:guardSource.split("\n").findIndex(l=>l.includes("if (decision !== REMOVAL_DECISION.CONTINUE"))});
-assert.ok(breakpoint.locations.length);
+const identityLines=guardSource.split("\n").flatMap((line,lineNumber)=>line.includes("if (decision !== REMOVAL_DECISION.CONTINUE && decision !== REMOVAL_DECISION.DENY_GROUP_REVISION")?[lineNumber]:[]);
+assert.equal(identityLines.length,2);
+const breakpoints=[];
+for(const lineNumber of identityLines){const b=await session.post("Debugger.setBreakpointByUrl",{url:guardURL.href,lineNumber});assert.ok(b.locations.length);breakpoints.push(b);}
 await session.post("Profiler.enable");await session.post("Profiler.startPreciseCoverage",{callCount:true,detailed:true});
 const key=await generateKeyPair("RS256"),otherKey=await generateKeyPair("RS256");
 async function token({expires=C+1000000,signer=key.privateKey}={}){
@@ -140,7 +146,7 @@ function scenario(name,work){test(name,async()=>{
       const corrupt=name.startsWith("L4-C04-")||name.startsWith("L4-R03-");
       const expected=ctx.directGuard===0||corrupt?{maintenance:0,reconcile:0}:{maintenance:1,reconcile:ctx.guardWrites.length?1:0};
       assert.deepEqual(calls,ctx.expectedFunctions??expected);
-      if(ctx.directGuard)assert.equal(ctx.ledger.indexOf("guard.enter"),ctx.ledger.indexOf("frame.return")+1);
+      if(ctx.directGuard&&!ctx.direct_guard_case)assert.equal(ctx.ledger.indexOf("guard.enter"),ctx.ledger.indexOf("frame.return")+1);
     }catch(e){if(!failure){failure=e;ctx.verdict="FAIL";ctx.assertion={name:e.name,message:e.message,stack:e.stack};}}
     ctx.guardStaged=ctx.guardRaw?clone(ctx.guardRaw):null;delete ctx.guardRaw;
     if(ctx.readStore)ctx.committed=ctx.readStore();delete ctx.readStore;
@@ -200,7 +206,8 @@ function double(ctx,initial=fixture(),options={}){
       finally{ctx.portStaged=clone(draft);ctx.committed=clone(durable);ctx.preparedProjection=prepared?clone(prepared):null;}
     },
   };
-  const preflight=createMembershipPreflight({mode:"local_contract",port});
+  const factory=options.entry==="roster"?createRosterRemovalPreflight:createMembershipPreflight;
+  const preflight=factory({mode:"local_contract",port,...options.factoryOptions});
   ctx.readStore=()=>clone(durable);
   return {port,preflight,read:()=>clone(durable),get identity(){return identity;}};
 }
@@ -277,8 +284,98 @@ scenario("L7-value-visible-only-after-COMMIT-ACK",async ctx=>{let release;const 
 scenario("L7-wrong-transaction-ACK-cannot-certify-success",async ctx=>{const s=fixture(),d=double(ctx,s,{badAck:true});await assert.rejects(call(ctx,d),e=>e.outcome==="commit_unknown");assertCommitted(ctx,d,expectedExpiry(s));assert.equal(ctx.acknowledgements,0);assert.equal(ctx.ledger.includes("rollback.attempt"),false);});
 scenario("L7-port-callback-reentry-cannot-repeat-mutation",async ctx=>{const s=fixture(),d=double(ctx,s,{callbackAgain:true});await assert.rejects(call(ctx,d),technical);assertCommitted(ctx,d,s);assert.equal(ctx.directGuard,1);assert.equal(ctx.flushes,1);assert.equal(ctx.acknowledgements,0);});
 
+// REMOVAL-AUTH-01. Existing L1-L7/B assertions above retain their legacy entry.
+const teacher=s=>{s.staff[U].roles=["teacher"];};
+const guardContext=()=>({proof:{kind:"staff_verified",subject:U,notBefore:C-1,expiresAt:C+1000000},groupId:G,expectedGroupRevision:4,expectedMembershipRevision:7});
+async function direct(ctx,s,{legacy=false,now=T-1,decision=RD.CONTINUE,context=guardContext(),boundary}={}){
+  ctx.direct_guard_case=true;ctx.evidence_layer="DIRECT_DOMAIN_GUARD_NO_SQL_TRANSACTION";ctx.initial=clone(s);
+  const draft=clone(s);ctx.clockReads=0;
+  const tx=boundary??{state:draft,now(){ctx.clockReads++;return now;}};
+  const entry=legacy?guardRemovalActiveTest:guardRosterRemovalActiveTest;
+  let error;
+  try{const value=await entry(tx,P,decision,context);ctx.outcome=clone(value);return value;}
+  catch(e){error=e;ctx.outcome={name:e.name,code:e.code,status:e.status};throw e;}
+  finally{ctx.committed=clone(error?s:draft);ctx.portStaged=null;ctx.domain_boundary="On error, preserved S0 models caller rollback; no real transaction was run";}
+}
+const authorityCases=[
+  ["teacher-explicit",s=>teacher(s)],
+  ["teacher-capability-before-hidden-target",s=>{teacher(s);s.staff[U].capabilities.manage_roster=false;delete s.groups[G];delete s.student.people[P];},"CAPABILITY_REQUIRED",403],
+  ["admin-capability-before-hidden-target",s=>{s.staff[U].capabilities.manage_roster=false;delete s.groups[G];delete s.student.people[P];},"CAPABILITY_REQUIRED",403],
+  ["teacher-no-explicit-grant",s=>{teacher(s);s.staff[U].scope.group_ids=[];},"NOT_FOUND",404],
+  ["teacher-all-groups-only",s=>{teacher(s);s.staff[U].scope.group_ids=[];s.staff[U].scope.all_groups=true;},"NOT_FOUND",404],
+  ["teacher-subject-only",s=>{teacher(s);s.staff[U].scope.group_ids=[];s.staff[U].capabilities.manage_content=false;s.staff[U].approvedSubjectIds=["physics"];},"NOT_FOUND",404],
+  ["teacher-content-only",s=>{teacher(s);s.staff[U].scope.group_ids=[];s.staff[U].approvedSubjectIds=[];s.staff[U].capabilities.manage_content=true;},"NOT_FOUND",404],
+  ["teacher-admin-all-groups",s=>{s.staff[U].roles=["teacher","admin"];s.staff[U].scope.group_ids=[];s.staff[U].scope.all_groups=true;}],
+  ["teacher-admin-no-capability",s=>{s.staff[U].roles=["teacher","admin"];s.staff[U].scope.all_groups=true;s.staff[U].capabilities.manage_roster=false;},"CAPABILITY_REQUIRED",403],
+  ["owner-teacher-bypass",s=>{s.staff[U].roles=["teacher","owner"];s.staff[U].capabilities.manage_roster=false;s.staff[U].scope.group_ids=[];}],
+  ["owner-teacher-disabled",s=>{s.staff[U].roles=["teacher","owner"];s.staff[U].enabled=false;},"ACCOUNT_DISABLED",403],
+  ["owner-teacher-unapproved",s=>{s.staff[U].roles=["teacher","owner"];s.staff[U].approved=false;},"STAFF_NOT_APPROVED",403],
+  ["other-role",s=>{s.staff[U].roles=["student"];},"FORBIDDEN",403],
+];
+for(const mode of ["factory","guard"])for(const [name,edit,code,status]of authorityCases)scenario(`AUTH-${mode}-${name}`,async ctx=>{
+  const s=fixture();edit(s);if(code)ctx.expectedFunctions={maintenance:0,reconcile:0};
+  const d=mode==="factory"?double(ctx,s,{entry:"roster",now:T-1}):null;
+  const invoke=()=>d?call(ctx,d):direct(ctx,s);
+  if(code)await assert.rejects(invoke(),e=>e.code===code&&e.status===status);
+  else assert.deepEqual(await invoke(),{kind:"wait_for_active_test"});
+  if(d)assertCommitted(ctx,d,s);else{ctx.expectedCommitted=clone(s);assert.deepEqual(ctx.committed,s);}
+  assert.equal(ctx.directGuard,mode==="guard"||!code?1:0);assert.equal(ctx.flushes,0);assert.equal(ctx.guardWrites.length,0);assert.equal(ctx.portWrites.length,0);
+  if(ctx.directGuard)assert.deepEqual(ctx.guardEntries,["guardRosterRemovalActiveTest"]);
+});
+for(const mode of ["factory","guard"])for(const capability of [true,false])scenario(`AUTH-legacy-${mode}-teacher-cap:${capability}`,async ctx=>{
+  const s=fixture();teacher(s);s.staff[U].capabilities.manage_roster=capability;ctx.expectedFunctions={maintenance:0,reconcile:0};
+  if(mode==="factory"){const d=double(ctx,s);await assert.rejects(call(ctx,d),e=>e.code==="FORBIDDEN"&&e.status===403);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);}
+  else{await assert.rejects(direct(ctx,s,{legacy:true}),e=>e.code==="FORBIDDEN"&&e.status===403);assert.deepEqual(ctx.committed,s);assert.deepEqual(ctx.guardEntries,["guardRemovalActiveTest"]);}
+});
+for(const role of ["admin","owner"])scenario("AUTH-legacy-direct-"+role,async ctx=>{const s=fixture();s.staff[U].roles=[role];if(role==="owner"){s.staff[U].capabilities.manage_roster=false;s.staff[U].scope.group_ids=[];}assert.deepEqual(await direct(ctx,s,{legacy:true}),{kind:"wait_for_active_test"});assert.deepEqual(ctx.committed,s);assert.deepEqual(ctx.guardEntries,["guardRemovalActiveTest"]);});
+for(const mode of ["factory","guard"])for(const [name,payload]of [
+  ["getter",hooks=>({get kind(){hooks.payload++;throw Error("HOSTILE_GET");}})],
+  ["proxy",hooks=>new Proxy({},{get(){hooks.payload++;throw Error("HOSTILE_PROXY");},ownKeys(){hooks.payload++;throw Error("HOSTILE_KEYS");},getPrototypeOf(){hooks.payload++;throw Error("HOSTILE_PROTO");}})],
+  ["revoked",()=>{const p=Proxy.revocable({},{});p.revoke();return p.proxy;}],
+  ["callable",hooks=>()=>{hooks.payload++;}],
+  ["thenable",hooks=>({get then(){hooks.payload++;throw Error("HOSTILE_THEN");}})],
+  ["lookalike",()=>({...RD.CONTINUE})],
+]){
+  if(mode==="factory")continue; // Decisions are not factory command fields.
+  for(const legacy of [true,false])scenario(`AUTH-identity-${legacy?"legacy":"roster"}-${name}`,async ctx=>{
+    const s=fixture();teacher(s);const hooks={payload:0,clock:0,state:0,context:0};const decision=payload(hooks);
+    const boundary={get now(){hooks.clock++;throw Error("EARLY_CLOCK");},get state(){hooks.state++;throw Error("EARLY_STATE");}};
+    const context=new Proxy({},{get(){hooks.context++;throw Error("EARLY_CONTEXT");}});ctx.expectedFunctions={maintenance:0,reconcile:0};
+    await assert.rejects(direct(ctx,s,{legacy,decision,boundary,context}),technical);
+    assert.deepEqual(hooks,{payload:0,clock:0,state:0,context:0});ctx.hooks=hooks;assert.equal(ctx.directGuard,1);assert.equal(ctx.guardWrites.length,0);assert.deepEqual(ctx.committed,s);
+  });
+}
+scenario("AUTH-new-command-field-precedes-verifier",async ctx=>{const s=fixture();teacher(s);const d=double(ctx,s,{entry:"roster"});let reads=0;const c=command();Object.defineProperty(c,"policy",{enumerable:true,get(){reads++;throw Error("POLICY_HOOK");}});await assert.rejects(call(ctx,d,c),e=>e.code==="VALIDATION_ERROR"&&e.status===422);assert.equal(reads,0);assert.equal(ctx.verifyCalls,0);assert.equal(ctx.transactions,0);assert.equal(ctx.directGuard,0);assertCommitted(ctx,d,s);});
+for(const entry of ["legacy","roster"])scenario("AUTH-options-cannot-select-policy-"+entry,async ctx=>{const s=fixture();teacher(s);s.staff[U].scope.group_ids=[];let hooks=0;const d=double(ctx,s,{entry, factoryOptions:{policy:entry==="legacy"?"roster":"owner",role:"owner",guard:()=>{hooks++;}}});await assert.rejects(call(ctx,d),e=>e.code===(entry==="legacy"?"FORBIDDEN":"NOT_FOUND"));assert.equal(hooks,0);assert.equal(ctx.directGuard,0);assertCommitted(ctx,d,s);});
+for(const mode of [undefined,"production"])scenario("AUTH-new-no-default-or-production-"+mode,async ctx=>{const d=double(ctx);assert.throws(()=>createRosterRemovalPreflight({mode,port:d.port}),e=>e.code==="SERVICE_UNAVAILABLE"&&e.status===503);assert.equal(ctx.verifyCalls,0);assert.equal(ctx.directGuard,0);});
+for(const [name,options,code,status]of [
+  ["grant-revoked",{authority:s=>{s.staff[U].scope.group_ids=[];}},"NOT_FOUND",404],
+  ["capability-revoked",{authority:s=>{s.staff[U].capabilities.manage_roster=false;}},"CAPABILITY_REQUIRED",403],
+  ["approval-revoked",{authority:s=>{s.staff[U].approved=false;}},"STAFF_NOT_APPROVED",403],
+  ["disabled",{authority:s=>{s.staff[U].enabled=false;}},"ACCOUNT_DISABLED",403],
+])scenario("AUTH-post-wait-"+name,async ctx=>{const s=fixture();teacher(s);const d=double(ctx,s,{entry:"roster",wait:async()=>{ctx.ledger.push("wait.finished");},...options});await assert.rejects(call(ctx,d),e=>e.code===code&&e.status===status);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);assert.equal(ctx.flushes,0);assert.equal(ctx.guardWrites.length,0);assert.equal(ctx.portWrites.length,0);});
+for(const offset of [0,1])for(const owner of [false,true])scenario(`AUTH-proof-expiry-${owner?"owner-teacher":"teacher"}-${offset}`,async ctx=>{const s=fixture();teacher(s);if(owner)s.staff[U].roles.push("owner");const d=double(ctx,s,{entry:"roster",now:T+offset});await assert.rejects(call(ctx,d,command({credential:await token({expires:T})})),e=>e.code==="STAFF_TOKEN_INVALID"&&e.status===401);unchanged(ctx,d,s);assert.equal(ctx.directGuard,0);assert.equal(ctx.flushes,0);});
+for(const [name,edit]of [
+  ["missing",s=>{delete s.student.people[P];}],["disabled",s=>{s.student.people[P].enabled=false;}],
+  ["incomplete",s=>{s.student.people[P].profile.registration_complete=false;}],["foreign-affinity",s=>{s.memberships[P].affinityGroupId=H;}],
+])scenario("AUTH-target-"+name,async ctx=>{const s=fixture();teacher(s);edit(s);const d=double(ctx,s,{entry:"roster",now:T-1});ctx.expectedFunctions={maintenance:0,reconcile:0};await assert.rejects(call(ctx,d),e=>e.code==="NOT_FOUND"&&e.status===404);unchanged(ctx,d,s);assert.equal(ctx.directGuard,1);assert.equal(ctx.flushes,0);});
+scenario("AUTH-inactive-preflight-is-not-final-removal409",async ctx=>{const s=fixture();teacher(s);s.memberships[P].active=false;s.student.people[P].profile.active_group_id=null;s.student.series={};s.student.attempts={};const d=double(ctx,s,{entry:"roster"});assert.equal((await call(ctx,d)).kind,"continue_existing_policy");assertCommitted(ctx,d,s);assert.equal(ctx.flushes,0);});
+scenario("AUTH-shared-transfer-teacher-still-forbidden",async ctx=>{const f=staffFixture(),s=clone(f.store.state);assert.ok(s.staff["synthetic-teacher"].scope.group_ids.includes(transferIds.group));assert.ok(s.staff["synthetic-teacher"].scope.group_ids.includes(staffIds.targetGroup));const reply=await f.call(`/admin/students/${transferIds.person}/transfer`,transferBody(),{role:"synthetic-teacher-proof"});assert.equal(reply.status,403);assert.equal(reply.json.error.code,"FORBIDDEN");assert.deepEqual(f.store.state,s);ctx.initial=s;ctx.expectedCommitted=s;ctx.committed=clone(f.store.state);ctx.outcome={status:reply.status,code:reply.json.error.code};ctx.transfer_events=f.store.events;ctx.evidence_layer="EXISTING_TRANSFER_HTTP_RAM_CONTROL_NOT_PREFLIGHT";assert.equal(ctx.directGuard,0);});
+for(const role of ["admin","owner"])scenario("AUTH-shared-authority-"+role,async ctx=>{const s=fixture();s.staff[U].roles=[role];if(role==="owner")s.staff[U].capabilities.manage_roster=false;const before=clone(s);requireRosterAuthority(s.staff[U]);assert.deepEqual(s,before);ctx.initial=before;ctx.committed=clone(s);ctx.evidence_layer="UNCHANGED_SHARED_AUTHORITY_UNIT_NOT_PREFLIGHT";});
+for(const corrupt of ["C04","R03"]){
+  const damage=s=>{if(corrupt==="C04")s.student.attempts[A].id=id(999);else s.student.attempts[A].ordinary=ordinary(2,100,T-50);};
+  for(const offset of [-1,0,1])scenario(`AUTH-DOM-${corrupt}-deadline:${offset}`,async ctx=>{const s=fixture();teacher(s);damage(s);ctx.expectedFunctions={maintenance:0,reconcile:0};const d=double(ctx,s,{entry:"roster",now:T+offset});await assert.rejects(call(ctx,d),technical);unchanged(ctx,d,s);assert.deepEqual(ctx.guardEntries,["guardRosterRemovalActiveTest"]);assert.equal(ctx.guardWrites.length,0);assert.equal(ctx.flushes,0);});
+  for(const sf of [true,false])for(const af of [true,false])scenario(`AUTH-DOM-${corrupt}-mixed:${sf}:${af}`,async ctx=>{const s=fixture();teacher(s);const other=second(s);damage(s);const valid=s.student.attempts[B],invalid=s.student.attempts[A];s.student.series=sf?{[other.key]:s.student.series[other.key],[K]:s.student.series[K]}:{[K]:s.student.series[K],[other.key]:s.student.series[other.key]};s.student.attempts=af?{[B]:valid,[A]:invalid}:{[A]:invalid,[B]:valid};ctx.expectedFunctions={maintenance:0,reconcile:0};const d=double(ctx,s,{entry:"roster"});await assert.rejects(call(ctx,d),technical);unchanged(ctx,d,s);assert.equal(ctx.directGuard,1);assert.equal(ctx.guardWrites.length,0);assert.equal(ctx.flushes,0);});
+  for(const field of ["expectedGroupRevision","expectedMembershipRevision"])scenario(`AUTH-DOM-${corrupt}-corrupt-before-CAS-${field}`,async ctx=>{const s=fixture();teacher(s);damage(s);ctx.expectedFunctions={maintenance:0,reconcile:0};const d=double(ctx,s,{entry:"roster"});await assert.rejects(call(ctx,d,command({[field]:0})),technical);unchanged(ctx,d,s);assert.equal(ctx.guardWrites.length,0);assert.equal(ctx.flushes,0);});
+}
+for(const [name,field,reason]of [["group","expectedGroupRevision","group_revision_conflict"],["membership","expectedMembershipRevision","membership_revision_conflict"]])scenario("AUTH-DOM-clean-CAS-"+name,async ctx=>{const s=fixture();teacher(s);const d=double(ctx,s,{entry:"roster"});assert.deepEqual(await call(ctx,d,command({[field]:0})),{kind:"recognized_denial",reason});assertCommitted(ctx,d,expectedExpiry(s));assert.equal(ctx.guardWrites.length,7);assert.equal(ctx.flushes,1);assert.deepEqual(ctx.guardEntries,["guardRosterRemovalActiveTest"]);});
+for(const offset of [0,1])scenario("AUTH-DOM-literal-expiry-"+offset,async ctx=>{const s=fixture();teacher(s);const d=double(ctx,s,{entry:"roster",now:T+offset});assert.equal((await call(ctx,d)).kind,"continue_existing_policy");assertCommitted(ctx,d,expectedExpiry(s,T+offset));assert.equal(ctx.guardWrites.length,7);assert.equal(ctx.portWrites.length,13);assert.equal(ctx.flushes,1);});
+for(const [name,options]of [["flush-storage",{flushFaultBefore:new StorageUnavailable("not_committed")}],["flush-CAS",{casFault:true}],["partial-flush",{partialFlush:true}],["arbitrary409",{flushReply:true}],["immutable-delta-writer",{forbiddenWriter:true}]])scenario("AUTH-DOM-rollback-"+name,async ctx=>{const s=fixture();teacher(s);const d=double(ctx,s,{entry:"roster",...options});await assert.rejects(call(ctx,d));assertCommitted(ctx,d,s);assert.equal(ctx.acknowledgements,0);assert.ok(ctx.ledger.includes("rollback.ack"));assert.equal(ctx.ledger.includes("commit.attempt"),false);});
+for(const mode of ["committed","uncommitted"])scenario("AUTH-DOM-COMMIT-ACK-loss-"+mode,async ctx=>{const s=fixture();teacher(s);const d=double(ctx,s,{entry:"roster",commit:mode});await assert.rejects(call(ctx,d),e=>e instanceof StorageUnavailable&&e.outcome==="commit_unknown"&&e.status===503);assertCommitted(ctx,d,mode==="committed"?expectedExpiry(s):s);assert.equal(ctx.acknowledgements,0);assert.equal(ctx.transactions,1);assert.equal(ctx.verifyCalls,1);assert.equal(ctx.ledger.filter(x=>x==="commit.attempt").length,1);assert.equal(ctx.ledger.includes("rollback.attempt"),false);});
+for(const status of ["wait","continue","denial"])scenario("AUTH-B-ready-preserved-"+status,async ctx=>{const s=fixture();teacher(s);const extra=second(s);Object.assign(extra.a,{status:"submitted",completedAt:C+100,ordinary:ordinary()});Object.assign(s.student.series[extra.key],{officialAttemptId:B,recoveryState:"ready",recovery:{opensAt:T+1000,closesAt:T+2000,durationMs:500}});s.recoveryAssignments[extra.key]=extra.assignment;if(status!=="wait")Object.assign(s.student.attempts[A],{status:"submitted",completedAt:C+100,ordinary:ordinary()});const d=double(ctx,s,{entry:"roster",now:T-1});const result=await call(ctx,d,command(status==="denial"?{expectedGroupRevision:0}:{}));assert.equal(result.kind,status==="wait"?"wait_for_active_test":status==="denial"?"recognized_denial":"continue_existing_policy");assertCommitted(ctx,d,s);assert.equal(ctx.flushes,0);assert.equal(ctx.guardWrites.length,0);});
+
 after(async()=>{
-  await session.post("Profiler.stopPreciseCoverage");await session.post("Debugger.removeBreakpoint",{breakpointId:breakpoint.breakpointId});session.disconnect();delete globalThis.__r1GuardWriteObserver;
-  if(process.env.UA_R1_TRACE_PATH)writeFileSync(process.env.UA_R1_TRACE_PATH,JSON.stringify({scope:"AUTHOR_LOCAL_CONTRACT_OFFLINE_VERIFIER_RECORDING_DOUBLE_NOT_INDEPENDENT_QA",base:"9dee2eaeb9e2c4833ab3c1f03a06e387121f7b17",source_fingerprints:fingerprints,
+  await session.post("Profiler.stopPreciseCoverage");for(const b of breakpoints)await session.post("Debugger.removeBreakpoint",{breakpointId:b.breakpointId});session.disconnect();delete globalThis.__r1GuardWriteObserver;
+  if(process.env.UA_R1_TRACE_PATH)writeFileSync(process.env.UA_R1_TRACE_PATH,JSON.stringify({scope:"AUTHOR_LOCAL_CONTRACT_OFFLINE_VERIFIER_RECORDING_DOUBLE_NOT_INDEPENDENT_QA",base:"b3d86559a743e13dcca65f2f6d227227ef297abf",source_fingerprints:fingerprints,
     observation_limits:"Debugger first guard identity line measures direct invocation; test-only argument Proxy observes subsequent reachable JS mutations. Probe attachment is excluded. Port-draft writes separately recorded. Precise coverage measures maintenance/reconcile. Net state snapshots are not transient traces. No SQL/provider locks or real COMMIT proof.",cases:results},(_,v)=>typeof v==="bigint"?{$bigint:String(v)}:v,2)+"\n");
 });

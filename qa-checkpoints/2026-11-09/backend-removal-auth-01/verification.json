@@ -1,0 +1,290 @@
+{
+  "candidate": "REMOVAL-AUTH-01-local-v1",
+  "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+  "evidence_layer": "AUTHOR_LOCAL_CONTRACT_OFFLINE_VERIFIER_RECORDING_DOUBLE_NOT_INDEPENDENT_QA",
+  "tests": {
+    "total": 247,
+    "pass": 247,
+    "fail": 0,
+    "skip": 0,
+    "new_authority_cases": 97,
+    "existing_adapter_cases": 91,
+    "unchanged_guard_tests": 59,
+    "new_case_groups": {
+      "factory": 13,
+      "guard": 13,
+      "legacy": 6,
+      "identity": 12,
+      "new": 3,
+      "options": 2,
+      "post": 4,
+      "proof": 4,
+      "target": 4,
+      "inactive": 1,
+      "shared": 3,
+      "DOM": 29,
+      "B": 3
+    },
+    "run": {
+      "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/preflight-adapter.test.mjs",
+        "tests/membership/removal-active.test.mjs"
+      ],
+      "environment_overrides": {
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-03-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-03-legacy-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-03-legacy-r03-traces.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-auth01-pkdmbgxh/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "cwd": "/tmp/univeracademy-removal-auth01-pkdmbgxh/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-09T19:40:28.471703+00:00",
+      "end_utc": "2026-11-09T19:40:31.528683+00:00",
+      "exit": 0,
+      "log_sha256": "a5456c81f18e4f6fa3c8034e2de584a97093f60dabc5fba2c80a4a41efdf8092",
+      "all_source_files": 350,
+      "unchanged_baseline_files": 346,
+      "source_before_sha256": "804b1ed57a2dbae817c0ba4cadab21e3a057a58a1e08513eac08cc3bc3886509",
+      "source_after_sha256": "804b1ed57a2dbae817c0ba4cadab21e3a057a58a1e08513eac08cc3bc3886509",
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+          "bytes": 7617,
+          "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+          "bytes": 7061,
+          "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/removal-authority.ts",
+          "bytes": 812,
+          "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+          "bytes": 52377,
+          "sha256": "9b989fd50294146601f4176b45bb4f0f3ed5d20b0d122d3aa98dc4880dbbc6d7"
+        }
+      ]
+    },
+    "literal_command": "UA_R1_TRACE_PATH=/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-03-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-03-legacy-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-03-legacy-r03-traces.json npm_config_cache=/tmp/univeracademy-removal-auth01-pkdmbgxh/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/preflight-adapter.test.mjs tests/membership/removal-active.test.mjs"
+  },
+  "typecheck": {
+    "run": {
+      "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "environment_overrides": {
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/typecheck-final-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/typecheck-final-legacy-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/typecheck-final-legacy-r03-traces.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-auth01-pkdmbgxh/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "cwd": "/tmp/univeracademy-removal-auth01-pkdmbgxh/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-09T19:41:22.372152+00:00",
+      "end_utc": "2026-11-09T19:41:24.585480+00:00",
+      "exit": 0,
+      "log_sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc",
+      "all_source_files": 350,
+      "unchanged_baseline_files": 346,
+      "source_before_sha256": "804b1ed57a2dbae817c0ba4cadab21e3a057a58a1e08513eac08cc3bc3886509",
+      "source_after_sha256": "804b1ed57a2dbae817c0ba4cadab21e3a057a58a1e08513eac08cc3bc3886509",
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+          "bytes": 7617,
+          "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+          "bytes": 7061,
+          "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/removal-authority.ts",
+          "bytes": 812,
+          "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+          "bytes": 52377,
+          "sha256": "9b989fd50294146601f4176b45bb4f0f3ed5d20b0d122d3aa98dc4880dbbc6d7"
+        }
+      ]
+    },
+    "literal_command": "UA_R1_TRACE_PATH=/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/typecheck-final-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/typecheck-final-legacy-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/typecheck-final-legacy-r03-traces.json npm_config_cache=/tmp/univeracademy-removal-auth01-pkdmbgxh/npm-cache npm_config_update_notifier=false npm run typecheck"
+  },
+  "replay": {
+    "file": "replay-verification.json",
+    "sha256": "9725273772b56aa268d2dfd2b9b46f5dc53dc82de2f3fc45f94f1af3f291b41a",
+    "applied_byte_parity": 4,
+    "reverse_base": 3,
+    "reverse_absent": 1,
+    "separate_cwd": "/tmp/univeracademy-removal-auth01-pkdmbgxh/patch-replay",
+    "after_typecheck": true
+  },
+  "source_manifest": {
+    "file": "source-manifest.json",
+    "sha256": "986197f78711b31eb7285a8a5e691876f7e2ea918633c8d5e2216895bde6221d"
+  },
+  "case_results": {
+    "file": "case-results.json",
+    "sha256": "37a3581b8bf7cce4b6bea3a6e324ed919c47187d14349704be9735abe6fce33b",
+    "records": 188,
+    "new": 97,
+    "state_pool_entries": 83
+  },
+  "original_failures": {
+    "runs": {
+      "affected-01": {
+        "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+        "command": [
+          "node",
+          "--unhandled-rejections=strict",
+          "--test",
+          "tests/membership/preflight-adapter.test.mjs",
+          "tests/membership/removal-active.test.mjs"
+        ],
+        "environment_overrides": {
+          "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-01-cases.json",
+          "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-01-legacy-traces.json",
+          "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-01-legacy-r03-traces.json",
+          "npm_config_cache": "/tmp/univeracademy-removal-auth01-pkdmbgxh/npm-cache",
+          "npm_config_update_notifier": "false"
+        },
+        "cwd": "/tmp/univeracademy-removal-auth01-pkdmbgxh/repo/workspaces/univeracademy",
+        "start_utc": "2026-11-09T19:39:52.236092+00:00",
+        "end_utc": "2026-11-09T19:39:54.155770+00:00",
+        "exit": 1,
+        "log_sha256": "cb71f0ca0de6eac5611027d74dc3fd2952f5969b7d8a2662f66ae5ca17bbfb18",
+        "all_source_files": 350,
+        "unchanged_baseline_files": 346,
+        "source_before_sha256": "1ffc849778e96fdf516fdf39b4ce14842916cba8c8aacad3b323dc0179f8f441",
+        "source_after_sha256": "1ffc849778e96fdf516fdf39b4ce14842916cba8c8aacad3b323dc0179f8f441",
+        "source_bytes_changed_during_run": false,
+        "candidate_files": [
+          {
+            "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+            "bytes": 7617,
+            "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b"
+          },
+          {
+            "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+            "bytes": 7061,
+            "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf"
+          },
+          {
+            "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/removal-authority.ts",
+            "bytes": 812,
+            "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7"
+          },
+          {
+            "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+            "bytes": 52321,
+            "sha256": "b3d4acfb3025900a02aa005135b1f65b1387314c9a4b8ff5edcc70b847436646"
+          }
+        ]
+      },
+      "affected-02": {
+        "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+        "command": [
+          "node",
+          "--unhandled-rejections=strict",
+          "--test",
+          "tests/membership/preflight-adapter.test.mjs",
+          "tests/membership/removal-active.test.mjs"
+        ],
+        "environment_overrides": {
+          "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-02-cases.json",
+          "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-02-legacy-traces.json",
+          "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-auth01-pkdmbgxh/evidence/affected-02-legacy-r03-traces.json",
+          "npm_config_cache": "/tmp/univeracademy-removal-auth01-pkdmbgxh/npm-cache",
+          "npm_config_update_notifier": "false"
+        },
+        "cwd": "/tmp/univeracademy-removal-auth01-pkdmbgxh/repo/workspaces/univeracademy",
+        "start_utc": "2026-11-09T19:40:10.214266+00:00",
+        "end_utc": "2026-11-09T19:40:12.100656+00:00",
+        "exit": 1,
+        "log_sha256": "aec4b0668fb2b1fbf924e9a1f6cd750b846b4389b99736d4c57f9e7bedc4504c",
+        "all_source_files": 350,
+        "unchanged_baseline_files": 346,
+        "source_before_sha256": "c5496c72d23c3e6872b0f331e7f55d66a01f1ac385b31e90045a421ce327425d",
+        "source_after_sha256": "c5496c72d23c3e6872b0f331e7f55d66a01f1ac385b31e90045a421ce327425d",
+        "source_bytes_changed_during_run": false,
+        "candidate_files": [
+          {
+            "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+            "bytes": 7617,
+            "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b"
+          },
+          {
+            "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+            "bytes": 7061,
+            "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf"
+          },
+          {
+            "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/removal-authority.ts",
+            "bytes": 812,
+            "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7"
+          },
+          {
+            "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+            "bytes": 52324,
+            "sha256": "f63696cc7379255169767f82177144e02b85f74f105aadea4f711bdbbb54c25d"
+          }
+        ]
+      }
+    },
+    "classification": "TEST_SETUP_FAILURES_NOT_PRODUCTION_FAILURES",
+    "affected-01": "SyntaxError: imported D decision alias collided with existing D demo ID; adapter module did not load; 59 guard tests PASS, one module FAIL",
+    "affected-02": "Debugger selector matched two identity checks PLUS internal CAS check (3 != 2); adapter setup failed before case execution; 59 guard tests PASS, one module FAIL",
+    "corrections": "Only the test import alias and exact identity-breakpoint selector changed between the recorded red and green runs",
+    "production_files_identical_in_red_and_green": true
+  },
+  "instrumentation": {
+    "entry": "Debugger pauses on each of the TWO public identity checks; guardEntries records exact legacy/roster export; directGuard counts actual calls",
+    "hostile_decision": "Probe attaches state Proxy only for the three genuine singleton identities; hostile decisions never read tx.state/clock/context or payload hooks",
+    "writes": "Guard and port-draft reachable JS operation attempts are separate Proxy observations, not physical DB writes",
+    "maintenance_reconcile": "Named function precise-coverage counts; async entry counts are not direct guard invocation counts",
+    "calibration": "AUTH-DOM-literal-expiry-0: roster direct1, maintenance1, reconcile1, guard writes7, port writes13, flush1",
+    "snapshots": "Net before/after comparisons, not transient operation traces",
+    "direct_layer": "Direct guard cases run no SQL transaction; committed S0 on error is an explicit caller-rollback model, not real durability proof",
+    "transfer_layer": "One unchanged existing transfer HTTP/RAM denial control and two pure shared-authority controls are labeled separately",
+    "acknowledgements": "Counter counts caller successful resolutions; commit.ack ledger separately records the double port ACK"
+  },
+  "oracle": "Independent literal two-question/one-correct scoring/expiry/gate expectations; no candidate expiry/grading/reconcile helper creates expected states",
+  "preserved": [
+    "legacy Admin/Owner and Teacher denial including missing capability",
+    "group CAS before membership CAS and C04/R03 before maintenance",
+    "port coverage/transaction contract",
+    "shared staff-state and staff-http transfer authority",
+    "shared expiry, routes, contracts, package/locks",
+    "Mini pins and historical evidence",
+    "unstarted ready rights for wait/denial/CONTINUE"
+  ],
+  "limits": [
+    "truthfully exhaustive projection and stable authority/grant/peer writer protection remain trusted-port obligations",
+    "no SQL/locks/RLS/CAS/durability or live revocation proof",
+    "no final inactive409 or receipt replay/mutation implementation",
+    "new helper is a dependency delta for later Mini alignment; Mini QA/repin NOT_RUN"
+  ],
+  "remaining": {
+    "independent_QA": "PENDING_NOT_RUN",
+    "R1_integration": "OPEN",
+    "final_removal_HTTP_DB_E2E": "BLOCKED",
+    "real_DB_provider": "NOT_RUN",
+    "publication": "NOT_ATTEMPTED_NO_APPROVAL"
+  }
+}

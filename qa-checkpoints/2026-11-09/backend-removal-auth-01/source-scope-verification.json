@@ -1,0 +1,80 @@
+{
+  "candidate": "REMOVAL-AUTH-01-local-v1",
+  "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+  "archive_scope": "AGENTS.md plus workspaces/univeracademy; source archive, not a new git commit",
+  "started_utc": "2026-11-09T19:47:41.566716+00:00",
+  "finished_utc": "2026-11-09T19:47:41.849653+00:00",
+  "all_source_files": 350,
+  "unchanged_baseline_files": 346,
+  "modified_baseline_files": 3,
+  "new_paths": 1,
+  "exact_changed_files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+      "bytes": 7617,
+      "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+      "bytes": 7061,
+      "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/removal-authority.ts",
+      "bytes": 812,
+      "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+      "bytes": 52377,
+      "sha256": "9b989fd50294146601f4176b45bb4f0f3ed5d20b0d122d3aa98dc4880dbbc6d7"
+    }
+  ],
+  "protected_unchanged": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-state.ts",
+      "bytes": 5721,
+      "sha256": "1b7fe85fe33f91e9be623cf716a6d6967f2291ddd73edca1bd6fa6972ddaa69b"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-http.ts",
+      "bytes": 16079,
+      "sha256": "76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+      "bytes": 15991,
+      "sha256": "6eab8c2c749616d1b1b9c4e5c17fabe73de3f7ad07e9455f3328210eedc315fc"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+      "bytes": 9616,
+      "sha256": "b4bc54e39fef6799b6ff83a4be3c474471afd2e4c76e888767e999064a4d9e20"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+      "bytes": 3347,
+      "sha256": "e83249cec808cda4c3a66fb8bbd0dd327195737444a686eb8893391da92dd407"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/configured-http.ts",
+      "bytes": 8697,
+      "sha256": "3ab2e3c9393080c41347bf98f1e83d1a0a1ca3b64dbc847bf6a2c9d52ef7c708"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/student-http.ts",
+      "bytes": 17650,
+      "sha256": "32bc06bab2e7422544ee5b0f5831330755c8befaa579d8d7e5fee1b0db24cee0"
+    }
+  ],
+  "source_snapshot_sha256": "804b1ed57a2dbae817c0ba4cadab21e3a057a58a1e08513eac08cc3bc3886509",
+  "source_bytes_changed_since_final_checks": false,
+  "unexpected_regular_files": [],
+  "saved_case_dataset_roundtrip": 188,
+  "original_previous_candidate_files_unchanged": 19,
+  "original_previous_local_only_unchanged": 25,
+  "original_inventory_unchanged": true,
+  "source_mutation_performed": false,
+  "remote_write_performed": false,
+  "verdict": "PASS"
+}
