@@ -1,0 +1,38 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: packages/api-client/staff-openapi.json
++ actual - expected
+
++ 'a1bdcd4e7177388e6eb0cf77bdde00a4a962ca7ac13fb921277f863ea0acacff'
+- '9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4'
+
+    at file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:27:36
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'a1bdcd4e7177388e6eb0cf77bdde00a4a962ca7ac13fb921277f863ea0acacff',
+  expected: '9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1
+✖ tests/membership/removal-http.test.mjs (609.188203ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 621.403049
+
+✖ failing tests:
+
+test at tests/membership/removal-http.test.mjs:1:1
+✖ tests/membership/removal-http.test.mjs (609.188203ms)
+  'test failed'

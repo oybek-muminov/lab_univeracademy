@@ -1,0 +1,198 @@
+{
+  "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+  "status": "FINALIZED_LOCAL_AUTHOR_CANDIDATE_NOT_UPLOADED_NOT_INDEPENDENTLY_ACCEPTED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "qa/current-flow-20261106",
+  "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+  "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+  "files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "bytes": 5504,
+      "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b",
+      "baseline": "ABSENT"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+      "bytes": 47840,
+      "sha256": "e5a392c95f6838d54037a8dce5db42ba0b8267ab9e89d452cd3bf1260bd2e160",
+      "baseline": "ABSENT"
+    }
+  ],
+  "source_files": 2,
+  "source_bytes": 53344,
+  "patch": {
+    "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/candidate.patch",
+    "bytes": 54528,
+    "sha256": "5c67b29f517d301da6d33ca77c084d1be97e37d12b2f44faadf6c9576567c388"
+  },
+  "source_lock_snapshot": {
+    "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+    "bytes": 134037,
+    "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+    "files": 692,
+    "start_utc": "2026-11-10T07:53:15.716440+00:00",
+    "end_utc": "2026-11-10T07:53:15.811315+00:00"
+  },
+  "oracle_authority": "Parent relay of architect turn 01a1c433-ccab-764d-a7c0-706f81f5adc5",
+  "run_bindings": {
+    "http-r2-green": {
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-http.test.mjs"
+      ],
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-10T07:53:15.811453+00:00",
+      "end_utc": "2026-11-10T07:53:17.261783+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 172,
+        "pass": 172,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green.log",
+        "bytes": 8971,
+        "sha256": "db73b58c03633c3d0df5d852ec19d015523261ebfab3e8417c87bb816b364ed6"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:15.716440+00:00",
+        "end_utc": "2026-11-10T07:53:15.811315+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:17.262085+00:00",
+        "end_utc": "2026-11-10T07:53:17.353498+00:00"
+      }
+    },
+    "domain-r2-final": {
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-command.test.mjs"
+      ],
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-10T07:53:34.973468+00:00",
+      "end_utc": "2026-11-10T07:53:36.506272+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 117,
+        "pass": 117,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final.log",
+        "bytes": 6251,
+        "sha256": "05d42a73752ef5377a93ed8b9ca0e007b249c202f9ce78c530383956097b4bf6"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:34.840391+00:00",
+        "end_utc": "2026-11-10T07:53:34.973242+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:36.506471+00:00",
+        "end_utc": "2026-11-10T07:53:36.679578+00:00"
+      }
+    },
+    "staff-student-r2-final": {
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/first-test/http.test.mjs",
+        "tests/persistent-http/http.test.mjs",
+        "tests/enrollment/identity-staff.test.mjs"
+      ],
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-10T07:53:34.939275+00:00",
+      "end_utc": "2026-11-10T07:53:37.985975+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 29,
+        "pass": 29,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final.log",
+        "bytes": 3787,
+        "sha256": "874f4027c98da202946ae155dd56ba92401ce0b35378fe83802a342891448a41"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:34.798194+00:00",
+        "end_utc": "2026-11-10T07:53:34.938968+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:37.986192+00:00",
+        "end_utc": "2026-11-10T07:53:38.071818+00:00"
+      }
+    },
+    "typecheck-final": {
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-10T07:53:34.915752+00:00",
+      "end_utc": "2026-11-10T07:53:37.805867+00:00",
+      "exit": 0,
+      "counts": {},
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final.log",
+        "bytes": 353,
+        "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:34.805329+00:00",
+        "end_utc": "2026-11-10T07:53:34.915612+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:37.806042+00:00",
+        "end_utc": "2026-11-10T07:53:37.911957+00:00"
+      }
+    }
+  }
+}

@@ -1,0 +1,258 @@
+✔ HTTP-literal-success-Teacher (52.994907ms)
+✔ HTTP-authority-success-Admin (4.891229ms)
+✔ HTTP-authority-success-Owner (4.038545ms)
+✔ HTTP-authority-success-Owner-Teacher (4.083123ms)
+✔ HTTP-authority-success-Admin-Teacher-all (4.479334ms)
+✔ HTTP-B-success-ready-future=false (4.07519ms)
+✔ HTTP-B-success-ready-future=true (3.601993ms)
+✔ HTTP-peer-barrier-active (4.439864ms)
+✔ HTTP-peer-barrier-future-ready (4.106468ms)
+✔ HTTP-peer-barrier-both (4.738797ms)
+✔ HTTP-validation-malformed (7.12708ms)
+✔ HTTP-validation-empty (2.15629ms)
+✔ HTTP-validation-null (1.668942ms)
+✔ HTTP-validation-array (1.682562ms)
+✔ HTTP-validation-active (2.266508ms)
+✔ HTTP-validation-bad-status (2.712484ms)
+✔ HTTP-validation-student-format (1.541588ms)
+✔ HTTP-validation-negative-group (1.780871ms)
+✔ HTTP-validation-negative-member (1.70782ms)
+✔ HTTP-validation-fraction-group (1.725907ms)
+✔ HTTP-validation-unsafe-group (2.09673ms)
+✔ HTTP-validation-rounded-group (2.052373ms)
+✔ HTTP-validation-rounded-member (1.833451ms)
+✔ HTTP-validation-boolean-CAS (1.600287ms)
+✔ HTTP-validation-missing-key (2.363174ms)
+✔ HTTP-validation-short-key (1.489269ms)
+✔ HTTP-validation-long-key (2.823643ms)
+✔ HTTP-validation-missing-student_id (1.786219ms)
+✔ HTTP-validation-missing-status (1.62192ms)
+✔ HTTP-validation-missing-expected_revision (1.415727ms)
+✔ HTTP-validation-missing-expected_membership_revision (1.454116ms)
+✔ HTTP-request-cannot-bind-proof (1.390309ms)
+✔ HTTP-request-cannot-bind-state (1.577063ms)
+✔ HTTP-request-cannot-bind-now (1.344269ms)
+✔ HTTP-request-cannot-bind-role (1.539445ms)
+✔ HTTP-request-cannot-bind-decision (6.163738ms)
+✔ HTTP-request-cannot-bind-callback (2.097621ms)
+✔ HTTP-request-cannot-bind-transactions (1.534287ms)
+✔ HTTP-request-cannot-bind-verifyStaffToken (1.486184ms)
+✔ HTTP-key-boundary-8 (3.918453ms)
+✔ HTTP-key-boundary-128 (3.182467ms)
+✔ HTTP-integer-equivalent-source-lexemes (3.276921ms)
+✔ HTTP-trailing-slash-canonical-receipt (3.567491ms)
+✔ HTTP-route-wrong-prefix (1.656823ms)
+✔ HTTP-route-extra-suffix (1.363578ms)
+✔ HTTP-route-bad-group (1.367193ms)
+✔ HTTP-route-encoded-group (1.336598ms)
+✔ HTTP-route-GET (1.350378ms)
+✔ HTTP-route-POST (1.54263ms)
+✔ HTTP-route-DELETE (1.275795ms)
+✔ HTTP-token-header-missing (0.631558ms)
+✔ HTTP-token-header-scheme (0.650747ms)
+✔ HTTP-token-header-extra-token (0.427869ms)
+✔ HTTP-offline-JWT-signature (1.835463ms)
+✔ HTTP-offline-JWT-issuer (1.885359ms)
+✔ HTTP-offline-JWT-audience (1.174982ms)
+✔ HTTP-offline-JWT-missing-staff (1.864508ms)
+✔ HTTP-offline-JWT-role (1.196906ms)
+✔ HTTP-offline-JWT-anonymous (1.520607ms)
+✔ HTTP-offline-JWT-expired (1.9717ms)
+✔ HTTP-verifier-fault-fail-closed (0.961188ms)
+✔ HTTP-current-authority-privacy-Teacher-no-cap (1.759539ms)
+✔ HTTP-current-authority-privacy-Admin-no-cap (6.348279ms)
+✔ HTTP-current-authority-privacy-Teacher-all-only (2.112023ms)
+✔ HTTP-current-authority-privacy-Teacher-no-grant (2.145264ms)
+✔ HTTP-current-authority-privacy-Teacher-subject-only (4.749404ms)
+✔ HTTP-current-authority-privacy-Teacher-content-only (11.508184ms)
+✔ HTTP-current-authority-privacy-Admin-no-scope (1.862134ms)
+✔ HTTP-current-authority-privacy-disabled (1.441496ms)
+✔ HTTP-current-authority-privacy-unapproved (1.305129ms)
+✔ HTTP-current-authority-privacy-other-role (1.461066ms)
+✔ HTTP-current-authority-privacy-missing-student (2.439911ms)
+✔ HTTP-current-authority-privacy-disabled-student (1.929917ms)
+✔ HTTP-current-authority-privacy-incomplete-student (2.008706ms)
+✔ HTTP-current-authority-privacy-foreign-affinity (2.010429ms)
+✔ HTTP-capability-before-body-target-teacher (1.28578ms)
+✔ HTTP-capability-before-body-target-admin (1.314854ms)
+✔ HTTP-post-wait-revocation-grant (1.344419ms)
+✔ HTTP-post-wait-revocation-capability (1.39739ms)
+✔ HTTP-post-wait-revocation-approval (1.575369ms)
+✔ HTTP-post-wait-revocation-disable (1.193661ms)
+✔ HTTP-post-lock-proof-expiry:0 (1.468176ms)
+✔ HTTP-post-lock-proof-expiry:1 (1.791938ms)
+✔ HTTP-binding-fail-closed-default (0.631188ms)
+✔ HTTP-binding-fail-closed-production (0.742206ms)
+✔ HTTP-binding-fail-closed-transactions (0.658879ms)
+✔ HTTP-binding-fail-closed-verifier (0.567721ms)
+✔ HTTP-binding-fail-closed-validator (0.519778ms)
+✔ HTTP-binding-fail-closed-contract (0.414899ms)
+✔ HTTP-binding-captured-not-request-selectable (5.254139ms)
+✔ HTTP-clean-CAS-group:-1 (2.852717ms)
+✔ HTTP-clean-CAS-member:-1 (2.585882ms)
+✔ HTTP-clean-CAS-group:0 (3.99594ms)
+✔ HTTP-clean-CAS-member:0 (3.234115ms)
+✔ HTTP-clean-CAS-group:1 (3.456022ms)
+✔ HTTP-clean-CAS-member:1 (3.70547ms)
+✔ HTTP-group-CAS-precedes-member-CAS (2.767738ms)
+✔ HTTP-active-waits (2.491409ms)
+✔ HTTP-literal-expiry-then-remove:0 (3.945805ms)
+✔ HTTP-literal-expiry-then-remove:1 (4.378812ms)
+✔ HTTP-inactive-before-wait:-1 (3.111889ms)
+✔ HTTP-inactive-before-wait:0 (4.329126ms)
+✔ HTTP-inactive-before-wait:1 (5.691882ms)
+✔ HTTP-CAS-preserves-ready:false:group (4.388877ms)
+✔ HTTP-CAS-preserves-ready:false:member (2.904555ms)
+✔ HTTP-CAS-preserves-ready:true:group (2.605843ms)
+✔ HTTP-CAS-preserves-ready:true:member (2.744853ms)
+✔ HTTP-invariant-IDKEY:-1 (3.269059ms)
+✔ HTTP-invariant-IDKEY:0 (2.46634ms)
+✔ HTTP-invariant-IDKEY:1 (2.485559ms)
+✔ HTTP-invariant-ORDINARY:-1 (2.535055ms)
+✔ HTTP-invariant-ORDINARY:0 (2.559372ms)
+✔ HTTP-invariant-ORDINARY:1 (2.778874ms)
+✔ HTTP-matching-replay-historical-inactive (2.527483ms)
+✔ HTTP-matching-replay-readded-ready (2.889453ms)
+✔ HTTP-matching-replay-later-elapsed-recovery (3.069386ms)
+✔ HTTP-replay-current-rights-capability (2.00469ms)
+✔ HTTP-replay-current-rights-grant (2.331186ms)
+✔ HTTP-replay-current-rights-approval (1.742243ms)
+✔ HTTP-replay-current-rights-disabled (2.122239ms)
+✔ HTTP-replay-current-rights-hidden-target (3.314297ms)
+✔ HTTP-replay-expired-proof (1.747501ms)
+✔ HTTP-replay-field-order-canonical (2.520182ms)
+✔ HTTP-mismatched-replay-revision (8.347069ms)
+✔ HTTP-mismatched-replay-member-revision (2.45952ms)
+✔ HTTP-mismatched-replay-status (2.405879ms)
+✔ HTTP-replay-current-affinity-Owner (2.516897ms)
+✔ HTTP-replay-current-affinity-Admin-both (2.413771ms)
+✔ HTTP-replay-current-affinity-Admin-all (2.071963ms)
+✔ HTTP-replay-current-affinity-Teacher-both (2.088067ms)
+✔ HTTP-replay-current-affinity-Teacher-no-H (2.136691ms)
+✔ HTTP-replay-current-affinity-Teacher-no-G (1.472943ms)
+✔ HTTP-replay-current-affinity-Admin-no-H (2.115839ms)
+✔ HTTP-real-recording-store-detached-body-and-replay (4.469519ms)
+✔ HTTP-two-errors-fresh-request-id (0.822207ms)
+✔ HTTP-technical-rollback-notification (3.038959ms)
+✔ HTTP-technical-rollback-barrier (3.099721ms)
+✔ HTTP-technical-rollback-receipt (2.817563ms)
+✔ HTTP-technical-rollback-audit (3.062866ms)
+✖ HTTP-technical-arbitrary409-is-not-clean-denial (9.907958ms)
+✔ HTTP-response-schema-failure-before-commit (5.502486ms)
+✔ HTTP-known-precommit-failure (3.702155ms)
+✔ HTTP-loader-failure (1.37158ms)
+✔ HTTP-rollback-ACK-loss-no-confirmed-rollback (3.06532ms)
+✔ HTTP-COMMIT-ACK-loss-committed (4.334264ms)
+✔ HTTP-COMMIT-ACK-loss-uncommitted (3.40235ms)
+✔ HTTP-no-response-before-transaction-resolution:false (4.445252ms)
+✔ HTTP-no-response-before-transaction-resolution:true (2.96036ms)
+✔ HTTP-observer-negative-calibration (0.610175ms)
+✔ HTTP-native-plain-ready (3.348138ms)
+✔ HTTP-native-plain-replay (2.164814ms)
+✔ HTTP-thrown-business-code-is-technical:RESOURCE_REVISION_CONFLICT (4.124676ms)
+✔ HTTP-thrown-business-code-is-technical:STATE_REVISION_CONFLICT (3.876289ms)
+✔ HTTP-thrown-business-code-is-technical:MEMBERSHIP_STATE_CONFLICT (3.201275ms)
+✔ HTTP-thrown-business-code-is-technical:ACTIVE_EXAM_OR_RECOVERY (3.01296ms)
+✔ HTTP-native-plain-Ea (3.412956ms)
+✔ HTTP-native-plain-rollback (3.218051ms)
+✔ HTTP-wait-preserves-other-ready:false (3.1908ms)
+✔ HTTP-wait-preserves-other-ready:true (2.701247ms)
+✔ HTTP-parser-retains-existing-duplicate-key-behavior (3.300015ms)
+✔ HTTP-UUID-normalization-real-hex-letters (4.048ms)
+✔ HTTP-Ea-clean409-waits-for-ACK (9.511225ms)
+✔ HTTP-started-recovery-waits (2.810913ms)
+✖ HTTP-validator-exception:ApiFault:replay=false (3.332154ms)
+✔ HTTP-validator-exception:unknown:replay=false (3.493899ms)
+✖ HTTP-validator-exception:ApiFault:replay=true (2.165004ms)
+✔ HTTP-validator-exception:unknown:replay=true (2.34762ms)
+✔ HTTP-validator-false-replay-precommit (2.863463ms)
+✔ HTTP-rollback-ACK-loss-original-invariant (2.941912ms)
+✖ HTTP-rollback-ACK-loss-original-arbitrary409 (3.22436ms)
+✔ HTTP-unexpected-verifier-exception-is-internal500 (0.955429ms)
+✔ HTTP-postcommit-response-failure-keeps-committed-command (3.511136ms)
+ℹ tests 172
+ℹ suites 0
+ℹ pass 168
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1481.246266
+
+✖ failing tests:
+
+test at tests/membership/removal-http.test.mjs:110:30
+✖ HTTP-technical-arbitrary409-is-not-clean-denial (9.907958ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(validate("Error",r.json))
+  
+      at bad (file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:148:363)
+      at file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:256:196
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:111:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-http.test.mjs:110:30
+✖ HTTP-validator-exception:ApiFault:replay=false (3.332154ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(validate("Error",r.json))
+  
+      at bad (file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:148:363)
+      at file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:289:43
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:111:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-http.test.mjs:110:30
+✖ HTTP-validator-exception:ApiFault:replay=true (2.165004ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(validate("Error",r.json))
+  
+      at bad (file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:148:363)
+      at file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:289:43
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:111:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-http.test.mjs:110:30
+✖ HTTP-rollback-ACK-loss-original-arbitrary409 (3.22436ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(validate("Error",r.json))
+  
+      at bad (file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:148:363)
+      at file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:296:109
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:111:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

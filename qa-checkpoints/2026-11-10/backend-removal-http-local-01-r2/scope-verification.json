@@ -1,0 +1,42 @@
+{
+  "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+  "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+  "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+  "utc": "2026-11-10T07:55:20.094877+00:00",
+  "base_blobs": 690,
+  "final_files": 692,
+  "unchanged_base_blobs": 690,
+  "modified_base_blobs": 0,
+  "new_files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "bytes": 5504,
+      "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+      "bytes": 47840,
+      "sha256": "e5a392c95f6838d54037a8dce5db42ba0b8267ab9e89d452cd3bf1260bd2e160"
+    }
+  ],
+  "unexpected_paths": [],
+  "v1_draft_preserved": {
+    "files": 1432,
+    "before_bytes": 302685,
+    "before_sha256": "820bb6b57536dd50f733b377ee548110142b9eb4f7c61d3c1e65ecd7ed9d6d4a",
+    "after_bytes": 302685,
+    "after_sha256": "820bb6b57536dd50f733b377ee548110142b9eb4f7c61d3c1e65ecd7ed9d6d4a",
+    "old_inventory_bytes": 8252,
+    "old_inventory_sha256": "3f67049ea29a6e1312e905ddc0326f80df2a1c512a321e0bab06d6f89d93f029",
+    "unchanged": true
+  },
+  "other_frozen_packages_preserved": {
+    "domain_original": 755,
+    "shared_original": 393,
+    "removal_auth_original": 389,
+    "shared_reconciled": 697
+  },
+  "production_entry_configured_handler_admission_transfer_domain_guard_authority_and_storage_ports_byte_identical": true,
+  "remote_write": false,
+  "verdict": "PASS"
+}

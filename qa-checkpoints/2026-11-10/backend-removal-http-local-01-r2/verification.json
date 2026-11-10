@@ -1,0 +1,1291 @@
+{
+  "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+  "status": "FINALIZED_LOCAL_AUTHOR_CANDIDATE_NOT_UPLOADED_NOT_INDEPENDENTLY_ACCEPTED",
+  "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+  "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+  "claim_layer": "AUTHOR_LOCAL_OFFLINE_JWT_FETCH_HTTP_AND_RECORDING_DOUBLE_NOT_DB",
+  "oracle_authority": "Parent relay of architect turn 01a1c433-ccab-764d-a7c0-706f81f5adc5",
+  "pending_oracles": [],
+  "source_manifest": {
+    "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-manifest.json",
+    "bytes": 8140,
+    "sha256": "6e3aa78de43f292ef42f46b32a32f1657dce361eb5647ecddd91b561389cb8bf"
+  },
+  "final_runs": {
+    "http-r2-green": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-http.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-http.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T07:53:15.811453+00:00",
+      "end_utc": "2026-11-10T07:53:17.261783+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 172,
+        "pass": 172,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green.log",
+        "bytes": 8971,
+        "sha256": "db73b58c03633c3d0df5d852ec19d015523261ebfab3e8417c87bb816b364ed6"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:15.716440+00:00",
+        "end_utc": "2026-11-10T07:53:15.811315+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:17.262085+00:00",
+        "end_utc": "2026-11-10T07:53:17.353498+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5504,
+          "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 47840,
+          "sha256": "e5a392c95f6838d54037a8dce5db42ba0b8267ab9e89d452cd3bf1260bd2e160"
+        }
+      ]
+    },
+    "domain-r2-final": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-command.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-command.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T07:53:34.973468+00:00",
+      "end_utc": "2026-11-10T07:53:36.506272+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 117,
+        "pass": 117,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/domain-r2-final.log",
+        "bytes": 6251,
+        "sha256": "05d42a73752ef5377a93ed8b9ca0e007b249c202f9ce78c530383956097b4bf6"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:34.840391+00:00",
+        "end_utc": "2026-11-10T07:53:34.973242+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:36.506471+00:00",
+        "end_utc": "2026-11-10T07:53:36.679578+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5504,
+          "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 47840,
+          "sha256": "e5a392c95f6838d54037a8dce5db42ba0b8267ab9e89d452cd3bf1260bd2e160"
+        }
+      ]
+    },
+    "staff-student-r2-final": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/first-test/http.test.mjs",
+        "tests/persistent-http/http.test.mjs",
+        "tests/enrollment/identity-staff.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/first-test/http.test.mjs tests/persistent-http/http.test.mjs tests/enrollment/identity-staff.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T07:53:34.939275+00:00",
+      "end_utc": "2026-11-10T07:53:37.985975+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 29,
+        "pass": 29,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/staff-student-r2-final.log",
+        "bytes": 3787,
+        "sha256": "874f4027c98da202946ae155dd56ba92401ce0b35378fe83802a342891448a41"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:34.798194+00:00",
+        "end_utc": "2026-11-10T07:53:34.938968+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:37.986192+00:00",
+        "end_utc": "2026-11-10T07:53:38.071818+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5504,
+          "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 47840,
+          "sha256": "e5a392c95f6838d54037a8dce5db42ba0b8267ab9e89d452cd3bf1260bd2e160"
+        }
+      ]
+    },
+    "typecheck-final": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache npm_config_update_notifier=false npm run typecheck",
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T07:53:34.915752+00:00",
+      "end_utc": "2026-11-10T07:53:37.805867+00:00",
+      "exit": 0,
+      "counts": {},
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/typecheck-final.log",
+        "bytes": 353,
+        "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:34.805329+00:00",
+        "end_utc": "2026-11-10T07:53:34.915612+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:37.806042+00:00",
+        "end_utc": "2026-11-10T07:53:37.911957+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5504,
+          "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 47840,
+          "sha256": "e5a392c95f6838d54037a8dce5db42ba0b8267ab9e89d452cd3bf1260bd2e160"
+        }
+      ]
+    }
+  },
+  "counts": {
+    "http": 172,
+    "domain": 117,
+    "staff_student": 29,
+    "total": 318,
+    "fail": 0,
+    "skipped": 0,
+    "typecheck_exit": 0
+  },
+  "case_results": {
+    "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/case-results.json",
+    "bytes": 3002649,
+    "sha256": "51efff4dd17cff107cd72201f844fc922211b618bd7decd02188ae78f3e66a3a"
+  },
+  "important_traces": [
+    {
+      "case_id": "HTTP-response-schema-failure-before-commit",
+      "http": {
+        "status": 500,
+        "json": {
+          "error": {
+            "code": "RESPONSE_INVARIANT_FAILED",
+            "message": "RESPONSE_INVARIANT_FAILED",
+            "request_id": "5e0b9fff-98c2-4f5b-93c2-5dedc3ae5e83"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 27,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500,
+        "message": "RESPONSE_INVARIANT_FAILED"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "write:set:/audit/1",
+        "write:set:/audit/length",
+        "validate:MembershipMutation",
+        "rollback.attempt",
+        "rollback.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-validator-false-replay-precommit",
+      "http": {
+        "status": 500,
+        "json": {
+          "error": {
+            "code": "RESPONSE_INVARIANT_FAILED",
+            "message": "RESPONSE_INVARIANT_FAILED",
+            "request_id": "49ff9529-62da-4724-a466-00165e55411e"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 0,
+      "direct_effect": 0,
+      "attempted_writes": 0,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500,
+        "message": "RESPONSE_INVARIANT_FAILED"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "validate:MembershipMutation",
+        "rollback.attempt",
+        "rollback.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-validator-exception:ApiFault:replay=false",
+      "http": {
+        "status": 409,
+        "json": {
+          "error": {
+            "code": "STATE_REVISION_CONFLICT",
+            "message": "STATE_REVISION_CONFLICT",
+            "request_id": "b0dd4de0-e08b-4a6c-9029-74f7821c8015"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 27,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "STATE_REVISION_CONFLICT",
+        "status": 409,
+        "message": "STATE_REVISION_CONFLICT"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "write:set:/audit/1",
+        "write:set:/audit/length",
+        "validate:MembershipMutation",
+        "rollback.attempt",
+        "rollback.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-validator-exception:unknown:replay=false",
+      "http": {
+        "status": 500,
+        "json": {
+          "error": {
+            "code": "INTERNAL_ERROR",
+            "message": "INTERNAL_ERROR",
+            "request_id": "45ab831e-ea3d-4327-9e46-2bd62f1abdcb"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 27,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "Error",
+        "message": "SYNTHETIC_VALIDATOR_EXCEPTION"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "write:set:/audit/1",
+        "write:set:/audit/length",
+        "validate:MembershipMutation",
+        "rollback.attempt",
+        "rollback.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-clean-CAS-group:0",
+      "http": {
+        "status": 409,
+        "json": {
+          "error": {
+            "code": "RESOURCE_REVISION_CONFLICT",
+            "message": "RESOURCE_REVISION_CONFLICT",
+            "request_id": "54a4b714-9959-4a77-9f07-2ba64d689c56"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 7,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 1,
+      "commit_acks": 1,
+      "callback_returned": true,
+      "transaction_error": null,
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/attempts/00000000-0000-4000-8000-000000000900",
+        "write:set:/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+        "effect.enter",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "work.return:denied",
+        "commit.attempt",
+        "commit.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-Ea-clean409-waits-for-ACK",
+      "http": {
+        "status": 409,
+        "json": {
+          "error": {
+            "code": "RESOURCE_REVISION_CONFLICT",
+            "message": "RESOURCE_REVISION_CONFLICT",
+            "request_id": "40eeac3c-47fd-4d48-a469-90faefa4acd9"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 7,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 1,
+      "commit_acks": 1,
+      "callback_returned": true,
+      "transaction_error": null,
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/attempts/00000000-0000-4000-8000-000000000900",
+        "write:set:/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+        "effect.enter",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "work.return:denied",
+        "commit.attempt",
+        "commit.wait",
+        "commit.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-rollback-ACK-loss-no-confirmed-rollback",
+      "http": {
+        "status": 500,
+        "json": {
+          "error": {
+            "code": "INTERNAL_ERROR",
+            "message": "INTERNAL_ERROR",
+            "request_id": "77fcc90e-d7d6-46f0-ab86-40c2b9e5a27b"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 12,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "Error",
+        "message": "SYNTHETIC_STORAGE_FAILURE"
+      },
+      "committed_state_guarantee": "NONE: rollback ACK is unobservable to handler",
+      "rollback_claim": "ACK_UNKNOWN; original error retained, not commit_unknown",
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "rollback.attempt",
+        "rollback.ack.lost",
+        "connection.discard",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-rollback-ACK-loss-original-invariant",
+      "http": {
+        "status": 500,
+        "json": {
+          "error": {
+            "code": "RESPONSE_INVARIANT_FAILED",
+            "message": "RESPONSE_INVARIANT_FAILED",
+            "request_id": "4076a8a5-cdc3-489e-a79d-97942c928a5c"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 12,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500,
+        "message": "RESPONSE_INVARIANT_FAILED"
+      },
+      "committed_state_guarantee": "NONE: only the original error is observable",
+      "rollback_claim": "ACK_UNKNOWN; no confirmed rollback, no commit_unknown reclassification",
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "rollback.attempt",
+        "rollback.ack.lost",
+        "connection.discard",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-rollback-ACK-loss-original-arbitrary409",
+      "http": {
+        "status": 409,
+        "json": {
+          "error": {
+            "code": "RESOURCE_REVISION_CONFLICT",
+            "message": "RESOURCE_REVISION_CONFLICT",
+            "request_id": "c404e5c2-4ddb-4443-aff5-11fe5160b753"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 12,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "RESOURCE_REVISION_CONFLICT",
+        "status": 409,
+        "message": "RESOURCE_REVISION_CONFLICT"
+      },
+      "committed_state_guarantee": "NONE: only the original error is observable",
+      "rollback_claim": "ACK_UNKNOWN; no confirmed rollback, no commit_unknown reclassification",
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "rollback.attempt",
+        "rollback.ack.lost",
+        "connection.discard",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-COMMIT-ACK-loss-committed",
+      "http": {
+        "status": 503,
+        "json": {
+          "error": {
+            "code": "SERVICE_UNAVAILABLE",
+            "message": "SERVICE_UNAVAILABLE",
+            "request_id": "3ae05b80-e61e-4963-b29c-14da5e56e14b"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 27,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 1,
+      "commit_acks": 0,
+      "callback_returned": true,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "SERVICE_UNAVAILABLE",
+        "status": 503,
+        "outcome": "commit_unknown",
+        "message": "SERVICE_UNAVAILABLE"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "write:set:/audit/1",
+        "write:set:/audit/length",
+        "validate:MembershipMutation",
+        "work.return:removed",
+        "commit.attempt",
+        "commit.ack.lost",
+        "connection.discard",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-COMMIT-ACK-loss-uncommitted",
+      "http": {
+        "status": 503,
+        "json": {
+          "error": {
+            "code": "SERVICE_UNAVAILABLE",
+            "message": "SERVICE_UNAVAILABLE",
+            "request_id": "b6b13455-dacc-4697-9240-026ddbb80805"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 27,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 1,
+      "commit_acks": 0,
+      "callback_returned": true,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "SERVICE_UNAVAILABLE",
+        "status": 503,
+        "outcome": "commit_unknown",
+        "message": "SERVICE_UNAVAILABLE"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "write:set:/audit/1",
+        "write:set:/audit/length",
+        "validate:MembershipMutation",
+        "work.return:removed",
+        "commit.attempt",
+        "commit.ack.lost",
+        "connection.discard",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-thrown-business-code-is-technical:STATE_REVISION_CONFLICT",
+      "http": {
+        "status": 409,
+        "json": {
+          "error": {
+            "code": "STATE_REVISION_CONFLICT",
+            "message": "STATE_REVISION_CONFLICT",
+            "request_id": "09ac0b9a-d34b-4ad9-9acd-9cc988fdcb77"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 12,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "STATE_REVISION_CONFLICT",
+        "status": 409,
+        "message": "STATE_REVISION_CONFLICT"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "rollback.attempt",
+        "rollback.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-validation-active",
+      "http": {
+        "status": 422,
+        "json": {
+          "error": {
+            "code": "VALIDATION_ERROR",
+            "message": "VALIDATION_ERROR",
+            "request_id": "0a49705d-2321-4d6e-9179-6e6d7f2fd88d"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 0,
+      "direct_effect": 0,
+      "attempted_writes": 0,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "VALIDATION_ERROR",
+        "status": 422,
+        "message": "VALIDATION_ERROR"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "rollback.attempt",
+        "rollback.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-mismatched-replay-status",
+      "http": {
+        "status": 409,
+        "json": {
+          "error": {
+            "code": "IDEMPOTENCY_CONFLICT",
+            "message": "IDEMPOTENCY_CONFLICT",
+            "request_id": "2d2e8f20-e8c8-412e-ba63-a936404adca9"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 0,
+      "direct_effect": 0,
+      "attempted_writes": 0,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 0,
+      "commit_acks": 0,
+      "callback_returned": false,
+      "transaction_error": {
+        "name": "ApiFault",
+        "code": "IDEMPOTENCY_CONFLICT",
+        "status": 409,
+        "message": "IDEMPOTENCY_CONFLICT"
+      },
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "rollback.attempt",
+        "rollback.ack",
+        "response.resolved"
+      ]
+    },
+    {
+      "case_id": "HTTP-postcommit-response-failure-keeps-committed-command",
+      "http": {
+        "status": 500,
+        "json": {
+          "error": {
+            "code": "INTERNAL_ERROR",
+            "message": "INTERNAL_ERROR",
+            "request_id": "3b7a072f-0b9e-49c4-bcab-8dcc3c9aebec"
+          }
+        },
+        "headers": {
+          "cache-control": "no-store",
+          "content-type": "application/json; charset=utf-8"
+        }
+      },
+      "direct_domain": 1,
+      "direct_guard": 1,
+      "direct_effect": 1,
+      "attempted_writes": 27,
+      "verifier_calls": 1,
+      "transaction_calls": 1,
+      "commit_attempts": 1,
+      "commit_acks": 1,
+      "callback_returned": true,
+      "transaction_error": null,
+      "committed_state_guarantee": "Recording-double observation only, not SQL durability",
+      "rollback_claim": null,
+      "ledger": [
+        "verifier.start",
+        "verifier.verified",
+        "transaction.begin",
+        "lock.acquired",
+        "clock.after-lock",
+        "validate:MemberWrite",
+        "domain.enter",
+        "receipt.lookup",
+        "guard.enter",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "write:set:/audit/1",
+        "write:set:/audit/length",
+        "validate:MembershipMutation",
+        "work.return:removed",
+        "commit.attempt",
+        "commit.ack",
+        "delivery.failure.after-ack",
+        "response.resolved"
+      ]
+    }
+  ],
+  "history": {
+    "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/history/failure-mapping.json",
+    "bytes": 29089,
+    "sha256": "a4fdbd822e6ada3e27613c809e144600a4437961c31b449df6d6fa7cb12bdaa6"
+  },
+  "scope": {
+    "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/scope-verification.json",
+    "bytes": 1546,
+    "sha256": "66015d300a3e8a09f95e8e2d2190f21c5a1546aa47c1dd9152c6e2dcffd527b8"
+  },
+  "replay": {
+    "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/replay-verification.json",
+    "bytes": 3259,
+    "sha256": "fa84fe62a4794f6544dee929fcb038016f52fe03abe1ffa2df6c75d30b13c153"
+  },
+  "final_exception_rules": [
+    "Success response validation inside callback: false throws RESPONSE_INVARIANT_FAILED500 before COMMIT; validator ApiFault retains code/status and unknown error is INTERNAL_ERROR500. Both remain exceptions.",
+    "Only returned clean denial/wait outcomes proceed to transaction resolution then HTTP409. HTTP409 from a thrown ApiFault is not evidence of commit.",
+    "Rollback ACK loss is ledger/model knowledge only; driver original error mapping is preserved, no confirmed rollback or committed S0 guarantee and no commit_unknown reclassification.",
+    "Both committed/uncommitted COMMIT-ACK loss use StorageUnavailable(commit_unknown):503, no success/retry/rollback claim.",
+    "Post-commit Response failure does not undo committed command.",
+    "Schema-valid active is not prefiltered: new visible active command422, same-key changed status after removed receipt409."
+  ],
+  "instrumentation": {
+    "entries": "Direct domain/guard/effect debugger entry breakpoints; not async V8 entry counts.",
+    "writes": "Reachable Proxy set/define/delete attempts, including failing attempts; raw aliases are outside exhaustive observation. Four native/plain controls mark writes NOT_INSTRUMENTED.",
+    "clone": "Only registered observer proxies unwrap before real native structuredClone; unknown Proxy/function negative controls and original native/plain controls retained.",
+    "retry": "Observed one verifier, transaction, direct domain and COMMIT attempt in ACK-loss cases; retries field is an annotation rather than a measured retry hook.",
+    "uncertainty": "Rollback-ACK-loss records omit committed and expected_committed fields. model_only_committed_snapshot is explicitly not a handler or durability guarantee.",
+    "transport": "In-process Fetch Request/Response; existing affected regression listeners use localhost and statement doubles. No new production/listener activation."
+  },
+  "literal_oracle": "All expected domain states and HTTP envelopes are explicit fixture assignments, independent of candidate scoring/guard/reconcile helpers.",
+  "remaining": [
+    "Independent QA pending on separately approved published bytes",
+    "R1 integration OPEN; removal HTTP/real-DB E2E BLOCKED",
+    "No production route registration/default store, SQL/protection implementation, live provider, migration/deploy or Mini changes",
+    "Trusted bindings must refresh mapping/liveness/rights/clock after waits and provide exhaustive protected target/peer/recovery state; actual locks/RLS/isolation/durability remain unproved"
+  ]
+}

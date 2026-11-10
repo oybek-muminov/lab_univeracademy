@@ -1,0 +1,241 @@
+✔ HTTP-literal-success-Teacher (50.178761ms)
+✔ HTTP-authority-success-Admin (4.965225ms)
+✔ HTTP-authority-success-Owner (3.99742ms)
+✔ HTTP-authority-success-Owner-Teacher (3.729157ms)
+✔ HTTP-authority-success-Admin-Teacher-all (4.578574ms)
+✔ HTTP-B-success-ready-future=false (4.328287ms)
+✔ HTTP-B-success-ready-future=true (3.610138ms)
+✔ HTTP-peer-barrier-active (4.016619ms)
+✔ HTTP-peer-barrier-future-ready (4.102608ms)
+✔ HTTP-peer-barrier-both (4.139634ms)
+✔ HTTP-validation-malformed (5.746499ms)
+✔ HTTP-validation-empty (2.353899ms)
+✔ HTTP-validation-null (1.393064ms)
+✔ HTTP-validation-array (1.54321ms)
+✔ HTTP-validation-active (2.57428ms)
+✔ HTTP-validation-bad-status (1.585844ms)
+✔ HTTP-validation-student-format (1.62977ms)
+✔ HTTP-validation-negative-group (1.450671ms)
+✔ HTTP-validation-negative-member (1.511272ms)
+✔ HTTP-validation-fraction-group (1.425323ms)
+✔ HTTP-validation-unsafe-group (1.905335ms)
+✔ HTTP-validation-rounded-group (1.846907ms)
+✔ HTTP-validation-rounded-member (1.431061ms)
+✔ HTTP-validation-boolean-CAS (1.380596ms)
+✔ HTTP-validation-missing-key (1.362318ms)
+✔ HTTP-validation-short-key (1.743551ms)
+✔ HTTP-validation-long-key (2.245907ms)
+✔ HTTP-validation-missing-student_id (1.639725ms)
+✔ HTTP-validation-missing-status (1.505153ms)
+✔ HTTP-validation-missing-expected_revision (1.540847ms)
+✔ HTTP-validation-missing-expected_membership_revision (1.265433ms)
+✔ HTTP-request-cannot-bind-proof (1.66341ms)
+✔ HTTP-request-cannot-bind-state (1.37707ms)
+✔ HTTP-request-cannot-bind-now (1.471252ms)
+✔ HTTP-request-cannot-bind-role (1.29743ms)
+✔ HTTP-request-cannot-bind-decision (5.286457ms)
+✔ HTTP-request-cannot-bind-callback (1.935379ms)
+✔ HTTP-request-cannot-bind-transactions (1.433175ms)
+✔ HTTP-request-cannot-bind-verifyStaffToken (1.29718ms)
+✔ HTTP-key-boundary-8 (3.467804ms)
+✔ HTTP-key-boundary-128 (3.167031ms)
+✔ HTTP-integer-equivalent-source-lexemes (3.318569ms)
+✔ HTTP-trailing-slash-canonical-receipt (3.218539ms)
+✔ HTTP-route-wrong-prefix (1.641538ms)
+✔ HTTP-route-extra-suffix (1.535738ms)
+✔ HTTP-route-bad-group (1.437631ms)
+✔ HTTP-route-encoded-group (1.237951ms)
+✔ HTTP-route-GET (1.380025ms)
+✔ HTTP-route-POST (1.377962ms)
+✔ HTTP-route-DELETE (1.485273ms)
+✔ HTTP-token-header-missing (0.649447ms)
+✔ HTTP-token-header-scheme (0.551129ms)
+✔ HTTP-token-header-extra-token (0.654033ms)
+✔ HTTP-offline-JWT-signature (1.746946ms)
+✔ HTTP-offline-JWT-issuer (1.780537ms)
+✔ HTTP-offline-JWT-audience (1.159864ms)
+✔ HTTP-offline-JWT-missing-staff (1.759325ms)
+✔ HTTP-offline-JWT-role (1.402048ms)
+✔ HTTP-offline-JWT-anonymous (1.172383ms)
+✔ HTTP-offline-JWT-expired (1.754779ms)
+✔ HTTP-verifier-fault-fail-closed (0.85781ms)
+✔ HTTP-current-authority-privacy-Teacher-no-cap (2.078725ms)
+✔ HTTP-current-authority-privacy-Admin-no-cap (6.161083ms)
+✔ HTTP-current-authority-privacy-Teacher-all-only (2.04251ms)
+✔ HTTP-current-authority-privacy-Teacher-no-grant (2.142762ms)
+✔ HTTP-current-authority-privacy-Teacher-subject-only (3.313773ms)
+✔ HTTP-current-authority-privacy-Teacher-content-only (1.964634ms)
+✔ HTTP-current-authority-privacy-Admin-no-scope (6.710829ms)
+✔ HTTP-current-authority-privacy-disabled (1.528729ms)
+✔ HTTP-current-authority-privacy-unapproved (1.27727ms)
+✔ HTTP-current-authority-privacy-other-role (1.757748ms)
+✔ HTTP-current-authority-privacy-missing-student (2.10207ms)
+✔ HTTP-current-authority-privacy-disabled-student (2.079978ms)
+✔ HTTP-current-authority-privacy-incomplete-student (1.965665ms)
+✔ HTTP-current-authority-privacy-foreign-affinity (1.932915ms)
+✔ HTTP-capability-before-body-target-teacher (1.422979ms)
+✔ HTTP-capability-before-body-target-admin (1.284591ms)
+✔ HTTP-post-wait-revocation-grant (1.266304ms)
+✔ HTTP-post-wait-revocation-capability (1.322328ms)
+✔ HTTP-post-wait-revocation-approval (1.309519ms)
+✔ HTTP-post-wait-revocation-disable (1.23759ms)
+✔ HTTP-post-lock-proof-expiry:0 (1.520666ms)
+✔ HTTP-post-lock-proof-expiry:1 (1.744052ms)
+✔ HTTP-binding-fail-closed-default (0.533372ms)
+✔ HTTP-binding-fail-closed-production (0.435084ms)
+✔ HTTP-binding-fail-closed-transactions (0.437638ms)
+✔ HTTP-binding-fail-closed-verifier (0.542296ms)
+✔ HTTP-binding-fail-closed-validator (0.39195ms)
+✔ HTTP-binding-fail-closed-contract (0.416697ms)
+✔ HTTP-binding-captured-not-request-selectable (4.89465ms)
+✔ HTTP-clean-CAS-group:-1 (2.58056ms)
+✔ HTTP-clean-CAS-member:-1 (2.375081ms)
+✔ HTTP-clean-CAS-group:0 (3.856428ms)
+✔ HTTP-clean-CAS-member:0 (3.430448ms)
+✔ HTTP-clean-CAS-group:1 (3.247542ms)
+✔ HTTP-clean-CAS-member:1 (3.462335ms)
+✔ HTTP-group-CAS-precedes-member-CAS (2.623264ms)
+✔ HTTP-active-waits (2.436253ms)
+✔ HTTP-literal-expiry-then-remove:0 (3.940414ms)
+✔ HTTP-literal-expiry-then-remove:1 (4.531813ms)
+✔ HTTP-inactive-before-wait:-1 (2.668762ms)
+✔ HTTP-inactive-before-wait:0 (4.244782ms)
+✔ HTTP-inactive-before-wait:1 (4.891425ms)
+✔ HTTP-CAS-preserves-ready:false:group (3.034813ms)
+✔ HTTP-CAS-preserves-ready:false:member (3.007362ms)
+✔ HTTP-CAS-preserves-ready:true:group (2.659418ms)
+✔ HTTP-CAS-preserves-ready:true:member (3.03331ms)
+✔ HTTP-invariant-IDKEY:-1 (2.755182ms)
+✔ HTTP-invariant-IDKEY:0 (3.143125ms)
+✔ HTTP-invariant-IDKEY:1 (2.472688ms)
+✔ HTTP-invariant-ORDINARY:-1 (3.102084ms)
+✔ HTTP-invariant-ORDINARY:0 (2.770886ms)
+✔ HTTP-invariant-ORDINARY:1 (2.537445ms)
+✔ HTTP-matching-replay-historical-inactive (2.576824ms)
+✔ HTTP-matching-replay-readded-ready (2.537154ms)
+✔ HTTP-matching-replay-later-elapsed-recovery (2.324114ms)
+✔ HTTP-replay-current-rights-capability (1.881939ms)
+✔ HTTP-replay-current-rights-grant (1.667717ms)
+✔ HTTP-replay-current-rights-approval (1.841058ms)
+✔ HTTP-replay-current-rights-disabled (1.572665ms)
+✔ HTTP-replay-current-rights-hidden-target (2.351786ms)
+✔ HTTP-replay-expired-proof (1.940177ms)
+✔ HTTP-replay-field-order-canonical (2.449874ms)
+✔ HTTP-mismatched-replay-revision (8.140609ms)
+✔ HTTP-mismatched-replay-member-revision (2.140748ms)
+✔ HTTP-mismatched-replay-status (2.246667ms)
+✔ HTTP-replay-current-affinity-Owner (2.61406ms)
+✔ HTTP-replay-current-affinity-Admin-both (2.21456ms)
+✔ HTTP-replay-current-affinity-Admin-all (2.372257ms)
+✔ HTTP-replay-current-affinity-Teacher-both (2.156782ms)
+✔ HTTP-replay-current-affinity-Teacher-no-H (2.073497ms)
+✔ HTTP-replay-current-affinity-Teacher-no-G (1.581207ms)
+✔ HTTP-replay-current-affinity-Admin-no-H (2.139507ms)
+✔ HTTP-real-recording-store-detached-body-and-replay (4.917022ms)
+✔ HTTP-two-errors-fresh-request-id (1.134015ms)
+✔ HTTP-technical-rollback-notification (3.516066ms)
+✔ HTTP-technical-rollback-barrier (3.209636ms)
+✔ HTTP-technical-rollback-receipt (2.963285ms)
+✔ HTTP-technical-rollback-audit (3.342805ms)
+✔ HTTP-technical-arbitrary409-is-not-clean-denial (2.977707ms)
+✔ HTTP-response-schema-failure-before-commit (2.957576ms)
+✔ HTTP-known-precommit-failure (4.080635ms)
+✔ HTTP-loader-failure (1.074726ms)
+✔ HTTP-rollback-ACK-loss-no-confirmed-rollback (2.985168ms)
+✔ HTTP-COMMIT-ACK-loss-committed (4.395228ms)
+✔ HTTP-COMMIT-ACK-loss-uncommitted (3.166551ms)
+✔ HTTP-no-response-before-transaction-resolution:false (3.863509ms)
+✔ HTTP-no-response-before-transaction-resolution:true (2.88684ms)
+✔ HTTP-observer-negative-calibration (0.536356ms)
+✔ HTTP-native-plain-ready (3.597007ms)
+✔ HTTP-native-plain-replay (2.16845ms)
+✖ HTTP-thrown-business-code-is-technical:RESOURCE_REVISION_CONFLICT (3.734394ms)
+✖ HTTP-thrown-business-code-is-technical:STATE_REVISION_CONFLICT (3.718231ms)
+✖ HTTP-thrown-business-code-is-technical:MEMBERSHIP_STATE_CONFLICT (3.135735ms)
+✖ HTTP-thrown-business-code-is-technical:ACTIVE_EXAM_OR_RECOVERY (3.335375ms)
+ℹ tests 155
+ℹ suites 0
+ℹ pass 151
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1334.377384
+
+✖ failing tests:
+
+test at tests/membership/removal-http.test.mjs:110:30
+✖ HTTP-thrown-business-code-is-technical:RESOURCE_REVISION_CONFLICT (3.734394ms)
+  AssertionError [ERR_ASSERTION]: {"error":{"code":"RESOURCE_REVISION_CONFLICT","message":"RESOURCE_REVISION_CONFLICT","request_id":"674cce8c-ef44-445b-ac9b-e07c0a99d7f4"}}
+  
+  409 !== 503
+  
+      at bad (file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:148:36)
+      at file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:272:303
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:111:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 409,
+    expected: 503,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-http.test.mjs:110:30
+✖ HTTP-thrown-business-code-is-technical:STATE_REVISION_CONFLICT (3.718231ms)
+  AssertionError [ERR_ASSERTION]: {"error":{"code":"STATE_REVISION_CONFLICT","message":"STATE_REVISION_CONFLICT","request_id":"0cb57e6a-c641-4d5f-ac69-5ef2ce107110"}}
+  
+  409 !== 503
+  
+      at bad (file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:148:36)
+      at file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:272:303
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:111:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 409,
+    expected: 503,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-http.test.mjs:110:30
+✖ HTTP-thrown-business-code-is-technical:MEMBERSHIP_STATE_CONFLICT (3.135735ms)
+  AssertionError [ERR_ASSERTION]: {"error":{"code":"MEMBERSHIP_STATE_CONFLICT","message":"MEMBERSHIP_STATE_CONFLICT","request_id":"33555ad6-fcf5-49f2-99b6-d2eadfa88def"}}
+  
+  409 !== 503
+  
+      at bad (file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:148:36)
+      at file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:272:303
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:111:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 409,
+    expected: 503,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-http.test.mjs:110:30
+✖ HTTP-thrown-business-code-is-technical:ACTIVE_EXAM_OR_RECOVERY (3.335375ms)
+  AssertionError [ERR_ASSERTION]: {"error":{"code":"ACTIVE_EXAM_OR_RECOVERY","message":"ACTIVE_EXAM_OR_RECOVERY","request_id":"cbc8b678-0ada-4cfd-b6db-9972f42004e8"}}
+  
+  409 !== 503
+  
+      at bad (file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:148:36)
+      at file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:272:303
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy/tests/membership/removal-http.test.mjs:111:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 409,
+    expected: 503,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

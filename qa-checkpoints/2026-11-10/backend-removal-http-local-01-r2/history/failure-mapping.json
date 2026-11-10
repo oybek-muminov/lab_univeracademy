@@ -1,0 +1,474 @@
+{
+  "authoritative_oracle": "Parent relay of architect turn 01a1c433-ccab-764d-a7c0-706f81f5adc5",
+  "original_pin_failure": {
+    "classification": "Harness startup pin-path mismatch. STAFF_CONTRACT_SHA pins the full review-only.openapi.json; generated staff-openapi has another hash. No HTTP case ran before assertion failure.",
+    "run": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-http.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-acfdj66x/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-http.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-acfdj66x/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T06:43:44.187245+00:00",
+      "end_utc": "2026-11-10T06:43:44.853418+00:00",
+      "exit": 1,
+      "counts": {
+        "tests": 1,
+        "pass": 0,
+        "fail": 1,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-01.log",
+        "bytes": 1234,
+        "sha256": "687ac1cf417f4eb5f5d2edebbfe1fd979e79b48e64925297ad32db20e49063a6"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/source-snapshots/96e849699a7b5f6f668b91613e28ccc53fb194534f7c3dfc1d513219c563c253.json",
+        "bytes": 134037,
+        "sha256": "96e849699a7b5f6f668b91613e28ccc53fb194534f7c3dfc1d513219c563c253",
+        "files": 692,
+        "start_utc": "2026-11-10T06:43:44.082010+00:00",
+        "end_utc": "2026-11-10T06:43:44.187093+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/source-snapshots/96e849699a7b5f6f668b91613e28ccc53fb194534f7c3dfc1d513219c563c253.json",
+        "bytes": 134037,
+        "sha256": "96e849699a7b5f6f668b91613e28ccc53fb194534f7c3dfc1d513219c563c253",
+        "files": 692,
+        "start_utc": "2026-11-10T06:43:44.853603+00:00",
+        "end_utc": "2026-11-10T06:43:44.942738+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5623,
+          "sha256": "32e865617975b5aea4834655957a92fa2e67297609137e04e26c95c3e7300033"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 40236,
+          "sha256": "bab022898a66b1e7b6c6ddafca4088d8897ad9089b5ca83806ad8fc1954d53c9"
+        }
+      ]
+    },
+    "first_corrected_run": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-http.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-acfdj66x/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-http.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-acfdj66x/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T06:44:15.543796+00:00",
+      "end_utc": "2026-11-10T06:44:17.028498+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 151,
+        "pass": 151,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-02.log",
+        "bytes": 7672,
+        "sha256": "5140f5a1ff73fa29b5ed55b0f29398c87a6898cdef0907161a2f3cfa964fbadb"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/source-snapshots/b7ed453156961860cc9e93a28f61171c1a7a7242e325d44eeb75583275622c1f.json",
+        "bytes": 134037,
+        "sha256": "b7ed453156961860cc9e93a28f61171c1a7a7242e325d44eeb75583275622c1f",
+        "files": 692,
+        "start_utc": "2026-11-10T06:44:15.443414+00:00",
+        "end_utc": "2026-11-10T06:44:15.543639+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/source-snapshots/b7ed453156961860cc9e93a28f61171c1a7a7242e325d44eeb75583275622c1f.json",
+        "bytes": 134037,
+        "sha256": "b7ed453156961860cc9e93a28f61171c1a7a7242e325d44eeb75583275622c1f",
+        "files": 692,
+        "start_utc": "2026-11-10T06:44:17.028694+00:00",
+        "end_utc": "2026-11-10T06:44:17.127217+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5623,
+          "sha256": "32e865617975b5aea4834655957a92fa2e67297609137e04e26c95c3e7300033"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 40344,
+          "sha256": "2595c679948de29d7a5c53a78d3d635a2fca7066ec904d35e225433dea68832d"
+        }
+      ]
+    }
+  },
+  "original_four_thrown409_failures": {
+    "classification": "SUPERSEDED_PROVISIONAL_ORACLE_FAILURES, not a remaining product defect under final clarification. Original HTTP409 from thrown ApiFault was rejected by the provisional503 expectation; the final architect explicitly preserves ApiFault409 while callback exception rolls back rather than returning a clean commit outcome. Original v1 filenames/classification remain untouched as history.",
+    "run": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-http.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-acfdj66x/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-http.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-acfdj66x/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T06:45:22.019773+00:00",
+      "end_utc": "2026-11-10T06:45:23.389630+00:00",
+      "exit": 1,
+      "counts": {
+        "tests": 155,
+        "pass": 151,
+        "fail": 4,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-03-product-red.log",
+        "bytes": 12250,
+        "sha256": "f2bf7f2b21070251c543532c305cbbe67bbaba10451d02192e163394169cb07a"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/source-snapshots/82f6678cdcce285e392e929bf10732ce90029d0b0e7a1e86f0f298ae9aefa752.json",
+        "bytes": 134037,
+        "sha256": "82f6678cdcce285e392e929bf10732ce90029d0b0e7a1e86f0f298ae9aefa752",
+        "files": 692,
+        "start_utc": "2026-11-10T06:45:21.926558+00:00",
+        "end_utc": "2026-11-10T06:45:22.019614+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/source-snapshots/82f6678cdcce285e392e929bf10732ce90029d0b0e7a1e86f0f298ae9aefa752.json",
+        "bytes": 134037,
+        "sha256": "82f6678cdcce285e392e929bf10732ce90029d0b0e7a1e86f0f298ae9aefa752",
+        "files": 692,
+        "start_utc": "2026-11-10T06:45:23.389866+00:00",
+        "end_utc": "2026-11-10T06:45:23.476413+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5623,
+          "sha256": "32e865617975b5aea4834655957a92fa2e67297609137e04e26c95c3e7300033"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 40819,
+          "sha256": "d7047570e693c5a19efdb8fe50ae85e615a414bb8bbafa028e4ea4a876857d5c"
+        }
+      ]
+    },
+    "intermediate_503_run": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-http.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-acfdj66x/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-http.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-acfdj66x/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-acfdj66x/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T06:46:05.740586+00:00",
+      "end_utc": "2026-11-10T06:46:07.207899+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 155,
+        "pass": 155,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/http-04.log",
+        "bytes": 7988,
+        "sha256": "391777f38f67e9ab7b54517b4f46caa249966f05228e0a45d44833e6f6af8f71"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/source-snapshots/8dd2036446aaaef0427aa4b88ef56caaadf37a62f61b42b1dc98409bb0b47150.json",
+        "bytes": 134037,
+        "sha256": "8dd2036446aaaef0427aa4b88ef56caaadf37a62f61b42b1dc98409bb0b47150",
+        "files": 692,
+        "start_utc": "2026-11-10T06:46:05.629247+00:00",
+        "end_utc": "2026-11-10T06:46:05.740433+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/source-snapshots/8dd2036446aaaef0427aa4b88ef56caaadf37a62f61b42b1dc98409bb0b47150.json",
+        "bytes": 134037,
+        "sha256": "8dd2036446aaaef0427aa4b88ef56caaadf37a62f61b42b1dc98409bb0b47150",
+        "files": 692,
+        "start_utc": "2026-11-10T06:46:07.208160+00:00",
+        "end_utc": "2026-11-10T06:46:07.295747+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5707,
+          "sha256": "6e8311d1a7ac4421ea9a9a5c2a6936935f4d28f85d83780a9f5b426296ae0b10"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 40819,
+          "sha256": "d7047570e693c5a19efdb8fe50ae85e615a414bb8bbafa028e4ea4a876857d5c"
+        }
+      ]
+    },
+    "four_actual_rows": "case-results.json#/groups/v1_superseded_409_oracle_failures",
+    "final_oracle": "ApiFault retains code/status; distinguish returned clean denial through transaction events, not HTTP status alone."
+  },
+  "reported_v1_draft": {
+    "inventory": {
+      "path": "/tmp/univeracademy-removal-http01-acfdj66x/local-review-inventory.json",
+      "bytes": 8252,
+      "sha256": "3f67049ea29a6e1312e905ddc0326f80df2a1c512a321e0bab06d6f89d93f029"
+    },
+    "source": [
+      {
+        "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+        "bytes": 5707,
+        "sha256": "6e8311d1a7ac4421ea9a9a5c2a6936935f4d28f85d83780a9f5b426296ae0b10"
+      },
+      {
+        "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+        "bytes": 44088,
+        "sha256": "4cff9c9b42004a9eaac58f1fc78203b20700c96858e9abc82b921c741a143382"
+      }
+    ],
+    "patch": {
+      "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/candidate.patch",
+      "bytes": 50963,
+      "sha256": "b5f4aefa55e48c324564b9992e260f5f86d293003ee4f13b2d5ff51322790319"
+    },
+    "unchanged": true,
+    "reason_for_r2": "Reported v1 whitelisted faults and mapped thrown CAS/wait or unknown error to503; final clarification requires all ApiFault mappings unchanged and unknown INTERNAL_ERROR500. V1 source/evidence/inventory remain immutable."
+  },
+  "r2_first_failure": {
+    "classification": "FIXTURE_ERROR_ENUM_FAILURE: four injected ApiFault codes were synthetic values outside accepted Error.code enum. HTTP code/status passthrough was correct but strict schema assertions rejected those fixtures. Replace with existing STATE_REVISION_CONFLICT/RESOURCE_REVISION_CONFLICT; no validator/assertion softening and no production-byte change.",
+    "run": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-http.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-http.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T07:52:14.154458+00:00",
+      "end_utc": "2026-11-10T07:52:15.672759+00:00",
+      "exit": 1,
+      "counts": {
+        "tests": 172,
+        "pass": 168,
+        "fail": 4,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-final.log",
+        "bytes": 12896,
+        "sha256": "df509a6b07fb60eed7fb3a7f508489cf374b2ab444139ff2443ecc2b14580a0c"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f9c5fb23ff978698f3c84af21bb5288b35ceee21b14cf471ecf724f0fce498e0.json",
+        "bytes": 134037,
+        "sha256": "f9c5fb23ff978698f3c84af21bb5288b35ceee21b14cf471ecf724f0fce498e0",
+        "files": 692,
+        "start_utc": "2026-11-10T07:52:14.059994+00:00",
+        "end_utc": "2026-11-10T07:52:14.154304+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f9c5fb23ff978698f3c84af21bb5288b35ceee21b14cf471ecf724f0fce498e0.json",
+        "bytes": 134037,
+        "sha256": "f9c5fb23ff978698f3c84af21bb5288b35ceee21b14cf471ecf724f0fce498e0",
+        "files": 692,
+        "start_utc": "2026-11-10T07:52:15.673206+00:00",
+        "end_utc": "2026-11-10T07:52:15.775990+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5504,
+          "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 47821,
+          "sha256": "cc31de75b3a639c3ef4835df05e930626b656caa9a46daea6986b3225ad04831"
+        }
+      ]
+    },
+    "green_run": {
+      "candidate": "REMOVAL-HTTP-LOCAL-01-r2",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-http.test.mjs"
+      ],
+      "literal_command": "UA_REMOVAL_HTTP_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-http-cases.json UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-http.test.mjs",
+      "cwd": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_HTTP_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-http-cases.json",
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T07:53:15.811453+00:00",
+      "end_utc": "2026-11-10T07:53:17.261783+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 172,
+        "pass": 172,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/http-r2-green.log",
+        "bytes": 8971,
+        "sha256": "db73b58c03633c3d0df5d852ec19d015523261ebfab3e8417c87bb816b364ed6"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:15.716440+00:00",
+        "end_utc": "2026-11-10T07:53:15.811315+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/source-snapshots/f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a.json",
+        "bytes": 134037,
+        "sha256": "f1bd3736f17188d0758abcf16660d099cb287a3a1099710502c3369e6574435a",
+        "files": 692,
+        "start_utc": "2026-11-10T07:53:17.262085+00:00",
+        "end_utc": "2026-11-10T07:53:17.353498+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+          "bytes": 5504,
+          "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-http.test.mjs",
+          "bytes": 47840,
+          "sha256": "e5a392c95f6838d54037a8dce5db42ba0b8267ab9e89d452cd3bf1260bd2e160"
+        }
+      ]
+    },
+    "failed_rows": "case-results.json#/groups/r2_invalid_error_code_fixture_failures",
+    "production_sha256_unchanged": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b"
+  },
+  "v1_packaging_metadata_history": "Old v1 failure-mapping retains the initial scope-buffer shadowing record/script. It was corrected before the preserved v1 inventory. No v1 artifact has been rewritten here.",
+  "historical_source_files": [
+    {
+      "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/history/http-01-source/membership-removal-http.ts",
+      "bytes": 5623,
+      "sha256": "32e865617975b5aea4834655957a92fa2e67297609137e04e26c95c3e7300033"
+    },
+    {
+      "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/history/http-01-source/removal-http.test.mjs",
+      "bytes": 40236,
+      "sha256": "bab022898a66b1e7b6c6ddafca4088d8897ad9089b5ca83806ad8fc1954d53c9"
+    },
+    {
+      "path": "/tmp/univeracademy-removal-http01-acfdj66x/evidence/history/http-03-product-red-source/removal-http.test.mjs",
+      "bytes": 40819,
+      "sha256": "d7047570e693c5a19efdb8fe50ae85e615a414bb8bbafa028e4ea4a876857d5c"
+    },
+    {
+      "path": "/tmp/univeracademy-removal-http01-r2-p0hnde8o/evidence/history/r2-01-source/removal-http.test.mjs",
+      "bytes": 47821,
+      "sha256": "cc31de75b3a639c3ef4835df05e930626b656caa9a46daea6986b3225ad04831"
+    }
+  ],
+  "limits": "Exact original red source pairs are retained, with the two early v1 red runs sharing one handler blob. R2 failed handler equals final handler by hash. Random RSA keys/request IDs/times mean behavior is reproducible but log bytes are not. Full raw traces remain local; selected case file is self-contained for captured rows, including historical failures."
+}

@@ -1,0 +1,37 @@
+✔ empty storage creates an unprivileged student through HTTP; production constructor reads profile/empty exams after restart (195.091227ms)
+✔ invalid/expired queued login and a write failure leave no person, membership, replay or family behind (58.86961ms)
+✔ concurrent first logins create one canonical person; same initData is consumed once and only one fresh family stays active (64.388164ms)
+✔ unknown first-login COMMIT is never ACKed or auto-retried; fresh launch recovers the canonical identity (39.885797ms)
+✔ Qadam uniqueness retries collision without a seeded user or overwrite and exhausts only the configured bound (12.986878ms)
+✔ existing disabled or non-student identity is not recreated, enabled or silently granted the student role (32.38131ms)
+✔ staff authority comes from current normalized rows, never JWT metadata or a cached owner projection (62.861894ms)
+✔ group/subject/all-scope and Teacher approval readers reflect current revocation; roster stays independent (31.150816ms)
+✔ current mapping/access/approval/account/session revocation fails closed even with the same signed staff JWT (98.339935ms)
+✔ relational first test: fresh registration, Teacher question/duration/publish, Admin roster/assignment, student save/resume/result/history survive restart (436.587649ms)
+✔ draft question/metadata failures roll back revision, authored row, receipt and audit (191.228297ms)
+✔ membership failures roll back group/member revisions, epoch, person group, receipt and audit (204.383458ms)
+✔ assignment/grant/receipt/audit are atomic and retry never duplicates the grant (282.502746ms)
+✔ staff unknown COMMIT returns503, never ACKs/retries; same original command recovers exactly once (119.272674ms)
+✔ concurrent local draft CAS has one effect; published version is frozen and old receipt replay cannot edit it (52.548451ms)
+✔ Admin A test-only assignment succeeds, roster-only assignment fails, revoked/scope-invalid receipt replay has no effect (78.715351ms)
+✔ Teacher approval is current and private questions are not loaded after revoked approval (27.804954ms)
+✔ resource lock waits refresh DB clock, staff session and permission before private domain reads (95.412394ms)
+✔ assignment stale membership cannot grant; unsupported transfer never falls back to cached/RAM staff state (39.095666ms)
+✔ explicit multi-student grants are atomic; another member receives no implicit assignment (67.875504ms)
+✔ HTTP login/profile -> new published exam/start -> save/clear -> separate process resume -> submit/result/history persists exact state (640.757801ms)
+✔ HTTP expiry at deadline commits ordinary+terminal state before409 and survives server restart (47.791237ms)
+✔ HTTP failed write and unknown COMMIT never ACK; reconciliation preserves committed revisions without reapplying command (49.244558ms)
+✔ HTTP new login replaces the old family while answer, deadline and membership persist; bad login and old refresh cannot revoke it (68.621218ms)
+✔ production rejects missing storage/auth/policy and explicit contract-double kind; staff without ports remains unavailable (20.398495ms)
+✔ invalid bearer never falls back to valid logout body; refresh reuse revokes only its own family across HTTP (40.134733ms)
+✔ configured staff HTTP verifies real offline JWT, current scoped capability and required live session under the storage lock (44.185269ms)
+✔ staff liveness/configuration/revocation and post-lock expiry fail closed; transport malformation remains400 (36.007093ms)
+✔ HTTP access uses current membership epoch and keeps foreign attempts hidden without changing immutable data (27.338151ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2999.346979
