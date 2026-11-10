@@ -1,0 +1,30 @@
+✔ array keys: canonical indexes 0, 1 and 10 remain valid for public origins (3.940588ms)
+✔ array keys: canonical indexes 0, 1 and 10 remain valid for native algorithms (0.388026ms)
+✔ array keys: canonical indexes 0, 1 and 10 remain valid for clerk parties (0.568849ms)
+✔ array keys: extra noncanonical own key "00" is rejected (1.357859ms)
+✔ array keys: extra noncanonical own key "01" is rejected (0.600176ms)
+✔ array keys: extra noncanonical own key "+0" is rejected (0.571783ms)
+✔ array keys: extra noncanonical own key "-0" is rejected (0.646566ms)
+✔ array keys: extra noncanonical own key "0.0" is rejected (0.49707ms)
+✔ array keys: extra noncanonical own key "0e0" is rejected (1.435737ms)
+✔ array keys: extra noncanonical own key " 0" is rejected (0.412893ms)
+✔ array keys: extra noncanonical own key "0 " is rejected (0.416529ms)
+✔ array keys: extra noncanonical own key "0\n" is rejected (0.289166ms)
+✔ array keys: extra noncanonical own key "0\r" is rejected (0.305892ms)
+✔ array keys: extra noncanonical own key "0\r\n" is rejected (0.443169ms)
+✔ array keys: extra noncanonical own key "0 " is rejected (0.414957ms)
+✔ array keys: extra noncanonical own key "0 " is rejected (0.402438ms)
+✔ array keys: extra noncanonical own key "0\nx" is rejected (0.529429ms)
+✔ array keys: extra noncanonical own key "0\u0000" is rejected (0.587877ms)
+✔ array keys: extra noncanonical own key "-1" is rejected (0.46375ms)
+✔ array keys: extra noncanonical own key "4294967295" is rejected (0.439183ms)
+✔ array keys: trailing-line-terminator accessors are rejected without reading them (2.553394ms)
+✔ array keys: array proxies are rejected without executing traps (0.499163ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 199.789245

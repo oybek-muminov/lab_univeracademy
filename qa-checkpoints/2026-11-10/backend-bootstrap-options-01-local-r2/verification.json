@@ -1,0 +1,727 @@
+{
+  "candidate": "BOOTSTRAP-OPTIONS-01-local-r2-e8-proposal",
+  "status": "LOCAL_PROPOSAL_ONLY_NO_UPLOAD_APPROVAL",
+  "consolidation_notice": "Author-created compact record. Original author raw logs and one full snapshot are selected unchanged. Duplicate before/after arrays are references. This is not an original QA artifact.",
+  "source_manifest": {
+    "original_author_base": "f5c1446fd6820119e9d070cd58643af127fe277b",
+    "expected_publication_parent": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+    "expected_parent_tree": "f90a9cd35a5a7dc7aecc6001bf43e2286b65d15c",
+    "sources": [
+      {
+        "path": "workspaces/univeracademy/runtime/production-options.mjs",
+        "mode": "100644",
+        "bytes": 7544,
+        "sha256": "251a124def286b6b42f11602cdaf79fd73d42f1b696eba89e6d9697169937989"
+      },
+      {
+        "path": "workspaces/univeracademy/tests/vercel-node/production-options.test.mjs",
+        "mode": "100644",
+        "bytes": 21924,
+        "sha256": "052e7e8aa70519c35d03d2de7d673db3737b4bcfd9858ae351ee2761ae0fc2ac"
+      }
+    ],
+    "candidate_patch": {
+      "bytes": 30421,
+      "sha256": "2870f70086f1116658259a80287ad7084a6cee6b5310d9562f191410b37a7e05"
+    },
+    "author_snapshot": {
+      "bytes": 149235,
+      "sha256": "bf1e0be39606d3f57b7a0f0074f9f2859db8ab3b8a234ec7aec8cd8d2c9296d9"
+    }
+  },
+  "remote_observations": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "qa/current-flow-20261106",
+    "expected_parent": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+    "initial_head_observation": {
+      "observed_utc": "2026-11-10 10:51:13 UTC",
+      "url": "https://api.github.com/repos/oybek-muminov/lab_univeracademy/git/ref/heads/qa/current-flow-20261106",
+      "response": {
+        "ref": "refs/heads/qa/current-flow-20261106",
+        "node_id": "REF_kwDOVkBrJ9oAI3JlZnMvaGVhZHMvcWEvY3VycmVudC1mbG93LTIwMjYxMTA2",
+        "url": "https://api.github.com/repos/oybek-muminov/lab_univeracademy/git/refs/heads/qa/current-flow-20261106",
+        "object": {
+          "sha": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+          "type": "commit",
+          "url": "https://api.github.com/repos/oybek-muminov/lab_univeracademy/git/commits/e8c742ca518f084ada78f9a905ed65907c60f9b8"
+        }
+      }
+    },
+    "commit_metadata": {
+      "sha": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+      "tree": "f90a9cd35a5a7dc7aecc6001bf43e2286b65d15c",
+      "parents": [
+        "f5c1446fd6820119e9d070cd58643af127fe277b"
+      ],
+      "url": "https://github.com/oybek-muminov/lab_univeracademy/commit/e8c742ca518f084ada78f9a905ed65907c60f9b8"
+    },
+    "final_head_observation": {
+      "observed_utc": "2026-11-10 10:56:13 UTC",
+      "url": "https://api.github.com/repos/oybek-muminov/lab_univeracademy/git/ref/heads/qa/current-flow-20261106",
+      "response": {
+        "ref": "refs/heads/qa/current-flow-20261106",
+        "node_id": "REF_kwDOVkBrJ9oAI3JlZnMvaGVhZHMvcWEvY3VycmVudC1mbG93LTIwMjYxMTA2",
+        "url": "https://api.github.com/repos/oybek-muminov/lab_univeracademy/git/refs/heads/qa/current-flow-20261106",
+        "object": {
+          "sha": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+          "type": "commit",
+          "url": "https://api.github.com/repos/oybek-muminov/lab_univeracademy/git/commits/e8c742ca518f084ada78f9a905ed65907c60f9b8"
+        }
+      }
+    },
+    "head_unchanged_during_preparation": true
+  },
+  "archive_intake": {
+    "url": "https://codeload.github.com/oybek-muminov/lab_univeracademy/tar.gz/e8c742ca518f084ada78f9a905ed65907c60f9b8",
+    "method": "GET",
+    "start_utc": "2026-11-10T10:52:39.526514+00:00",
+    "end_utc": "2026-11-10T10:52:40.488826+00:00",
+    "archive_bytes": 6556367,
+    "archive_sha256": "6b39574b4ad21192a08e575e51d3f79da074f787ad5ff17a448a80298a68f1b4"
+  },
+  "base_scope": {
+    "verified_e8_tree": "f90a9cd35a5a7dc7aecc6001bf43e2286b65d15c",
+    "base_files": 712,
+    "preserved_f5_files": 690,
+    "e8_added_files": [
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/README.md",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/candidate.patch",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/case-results.json",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/domain-r2-final.log",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/history/failure-mapping.json",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/history/r2-error-code-fixture-failure.log",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/history/r2-error-code-fixture-test.mjs",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/history/v1-initial-handler.ts",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/history/v1-pin-failure.log",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/history/v1-pin-test.mjs",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/history/v1-provisional-409-test.mjs",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/history/v1-superseded-409-oracle.log",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/http-r2-green.log",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/replay-verification.json",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/scope-verification.json",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/source-manifest.json",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/sources-locks.frozen.json",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/staff-student-r2-final.log",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/typecheck.log",
+      "qa-checkpoints/2026-11-10/backend-removal-http-local-01-r2/verification.json",
+      "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "workspaces/univeracademy/tests/membership/removal-http.test.mjs"
+    ],
+    "candidate_source_paths": [
+      "workspaces/univeracademy/runtime/production-options.mjs",
+      "workspaces/univeracademy/tests/vercel-node/production-options.test.mjs"
+    ],
+    "preserved_e8_blobs": 712,
+    "modified_e8_blobs": [],
+    "source_candidate_files": 714,
+    "git_metadata_created": false,
+    "original_frozen_packages": {
+      "v1": {
+        "root": "/tmp/ua-bootstrap-options-f5-gmmq5z0e",
+        "files": 1406,
+        "unchanged": true,
+        "before_after_canonical_compact_json_sha256": "644611cf38c6d53cd1d0e042be239911632c085405c96a8037b1487f6043a258"
+      },
+      "r2": {
+        "root": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p",
+        "files": 1433,
+        "unchanged": true,
+        "before_after_canonical_compact_json_sha256": "4f2475afc1f34334610a0a4d745f97ef496f8ebe504756c239a70c49ef1c4675"
+      }
+    }
+  },
+  "new_e8_replay": {
+    "tool": "GNU patch; no Git metadata written",
+    "runtime_tests_rerun_here": false,
+    "commands": [
+      {
+        "argv": [
+          "patch",
+          "--batch",
+          "--dry-run",
+          "-p1",
+          "-i",
+          "/tmp/ua-bootstrap-e8-proposal-hwdo5kxo/evidence/candidate.patch"
+        ],
+        "cwd": "/tmp/ua-bootstrap-e8-proposal-hwdo5kxo/working/replay/lab_univeracademy-e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "start_utc": "2026-11-10T10:55:51.673976+00:00",
+        "end_utc": "2026-11-10T10:55:51.675910+00:00",
+        "exit": 0,
+        "output": "checking file workspaces/univeracademy/runtime/production-options.mjs\nchecking file workspaces/univeracademy/tests/vercel-node/production-options.test.mjs\n",
+        "output_sha256": "46181f32d27aac8fee18abc73e9f95a2c5943a003e5545e31b7869634e7bde16"
+      },
+      {
+        "argv": [
+          "patch",
+          "--batch",
+          "-p1",
+          "-i",
+          "/tmp/ua-bootstrap-e8-proposal-hwdo5kxo/evidence/candidate.patch"
+        ],
+        "cwd": "/tmp/ua-bootstrap-e8-proposal-hwdo5kxo/working/replay/lab_univeracademy-e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "start_utc": "2026-11-10T10:55:51.675947+00:00",
+        "end_utc": "2026-11-10T10:55:51.677700+00:00",
+        "exit": 0,
+        "output": "patching file workspaces/univeracademy/runtime/production-options.mjs\npatching file workspaces/univeracademy/tests/vercel-node/production-options.test.mjs\n",
+        "output_sha256": "dbb19ed750b119c9f671b99912703cd4258255d9dcea04df9d31542abc8bfb5a"
+      },
+      {
+        "argv": [
+          "patch",
+          "--batch",
+          "--dry-run",
+          "--reverse",
+          "-p1",
+          "-i",
+          "/tmp/ua-bootstrap-e8-proposal-hwdo5kxo/evidence/candidate.patch"
+        ],
+        "cwd": "/tmp/ua-bootstrap-e8-proposal-hwdo5kxo/working/replay/lab_univeracademy-e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "start_utc": "2026-11-10T10:55:51.747648+00:00",
+        "end_utc": "2026-11-10T10:55:51.751477+00:00",
+        "exit": 0,
+        "output": "checking file workspaces/univeracademy/runtime/production-options.mjs\nchecking file workspaces/univeracademy/tests/vercel-node/production-options.test.mjs\n",
+        "output_sha256": "46181f32d27aac8fee18abc73e9f95a2c5943a003e5545e31b7869634e7bde16"
+      },
+      {
+        "argv": [
+          "patch",
+          "--batch",
+          "--reverse",
+          "-p1",
+          "-i",
+          "/tmp/ua-bootstrap-e8-proposal-hwdo5kxo/evidence/candidate.patch"
+        ],
+        "cwd": "/tmp/ua-bootstrap-e8-proposal-hwdo5kxo/working/replay/lab_univeracademy-e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "start_utc": "2026-11-10T10:55:51.751529+00:00",
+        "end_utc": "2026-11-10T10:55:51.753311+00:00",
+        "exit": 0,
+        "output": "patching file workspaces/univeracademy/runtime/production-options.mjs\npatching file workspaces/univeracademy/tests/vercel-node/production-options.test.mjs\n",
+        "output_sha256": "dbb19ed750b119c9f671b99912703cd4258255d9dcea04df9d31542abc8bfb5a"
+      }
+    ],
+    "forward_final_source_tree_files": 714,
+    "forward_byte_mode_parity": true,
+    "reverse_original_base_blobs": 712,
+    "reverse_new_paths_absent": [
+      "workspaces/univeracademy/runtime/production-options.mjs",
+      "workspaces/univeracademy/tests/vercel-node/production-options.test.mjs"
+    ],
+    "verdict": "PASS_BYTE_MODE_PARITY_ONLY"
+  },
+  "original_author_evidence": {
+    "original_full_verification_identity": {
+      "bytes": 1866040,
+      "sha256": "9b06c1f87683d936ded710c6ec280fd44a76a6895f308baf87f82a4b317338bc"
+    },
+    "original_verification_field_order": [
+      "candidate",
+      "status",
+      "base_commit",
+      "base_tree",
+      "finding",
+      "runs",
+      "boundary_fingerprint_definition",
+      "boundaries",
+      "final_counts",
+      "before_targeted_counts_excluded_from_final_total",
+      "prerequisites",
+      "node",
+      "npm",
+      "tsc_on_path"
+    ],
+    "metadata_except_runs": {
+      "candidate": "BOOTSTRAP-OPTIONS-01-local-r2",
+      "status": "AUTHOR_LOCAL_NOT_INDEPENDENT_QA_NOT_PUBLISHED",
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "finding": {
+        "original_static_claim": "A final line terminator may let extra own key 0\\n pass the array-key regexp",
+        "classification": "NOT_REPRODUCED_ORIGINAL_STATIC_CLAIM_WITHDRAWN",
+        "demonstrated_behavior": "Unchanged v1 production source rejects all 17 tested noncanonical own keys across all three array seams",
+        "targeted_before_result": {
+          "pass": 22,
+          "fail": 0
+        },
+        "red_run": "NONE: targeted before control passed; no failure fabricated",
+        "production_fix": "NONE: no demonstrated boundary defect",
+        "test_revision": "22 targeted controls added, keeping all original 89 controls unchanged",
+        "limits": "Synthetic author checks only; no full configured factory, live provider/DB or exhaustive JS-object proof"
+      },
+      "boundary_fingerprint_definition": "SHA256 UTF-8 json.dumps(rows, sort_keys=True, separators=(comma,colon)); whole-repository path/bytes/sha256 arrays",
+      "boundaries": {
+        "boundary-before": {
+          "files": 692,
+          "serialized_bytes": 117401,
+          "before_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7",
+          "after_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "options-final": {
+          "files": 692,
+          "serialized_bytes": 117401,
+          "before_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7",
+          "after_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "pool-port-regression": {
+          "files": 692,
+          "serialized_bytes": 117401,
+          "before_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7",
+          "after_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "syntax-production": {
+          "files": 692,
+          "serialized_bytes": 117401,
+          "before_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7",
+          "after_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "syntax-test": {
+          "files": 692,
+          "serialized_bytes": 117401,
+          "before_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7",
+          "after_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "dependency-prerequisites": {
+          "files": 692,
+          "serialized_bytes": 117401,
+          "before_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7",
+          "after_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        }
+      },
+      "final_counts": {
+        "new_suite": 111,
+        "pool_port_regression": 3,
+        "pass": 114,
+        "fail": 0,
+        "skipped": 0
+      },
+      "before_targeted_counts_excluded_from_final_total": 22,
+      "prerequisites": {
+        "full_vercel_factory_suite": "NOT_RUN: jose and validator dependencies unavailable",
+        "npm_run_typecheck": "NOT_RUN: pinned TypeScript/tsc and dependency declarations unavailable",
+        "dependency_install": "NOT_ATTEMPTED"
+      },
+      "node": "v24.22.1",
+      "npm": "11.9.0",
+      "tsc_on_path": null
+    },
+    "original_individual_run_identities": {
+      "boundary-before": {
+        "bytes": 282719,
+        "sha256": "98ca8f8e5ad9f43a97718441b3146b2d16d13db5d99438ca32a43a0c90742b63"
+      },
+      "options-final": {
+        "bytes": 282672,
+        "sha256": "33b97efea5da5dd1127228fb9dc4917178bc058299f140b1e947039e31a5aa38"
+      },
+      "pool-port-regression": {
+        "bytes": 282665,
+        "sha256": "86331c5f07e7090310e2c064ed34923ba8701a7c20f598d2a0060e7fdce7028c"
+      },
+      "syntax-production": {
+        "bytes": 282517,
+        "sha256": "1212e2a6540e38df093f958c013db9b58e7ba9b02a00caa42e04119408b218aa"
+      },
+      "syntax-test": {
+        "bytes": 282526,
+        "sha256": "99566efcdca3880c7b5e3571010b760fb2cafd3640458e6feeb28ed3a1f3d975"
+      },
+      "dependency-prerequisites": {
+        "bytes": 282768,
+        "sha256": "7afbf0be40f9ecc28762032a0da608e46808c5b7dbbff285b77f60059463f957"
+      }
+    },
+    "runs_with_shared_snapshot_references": {
+      "boundary-before": {
+        "label": "boundary-before",
+        "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+        "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+        "command": [
+          "node",
+          "--unhandled-rejections=strict",
+          "--test",
+          "--test-name-pattern",
+          "^array keys:",
+          "tests/vercel-node/production-options.test.mjs"
+        ],
+        "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/repo/workspaces/univeracademy",
+        "environment_overrides": {},
+        "start_utc": "2026-11-10T10:22:49.229206+00:00",
+        "source_before": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "end_utc": "2026-11-10T10:22:49.478652+00:00",
+        "exit": 0,
+        "source_after": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "log_sha256": "d55a798294068b82e5f588b51b4528ae4936405551be296d41e2634540c8d532",
+        "log_bytes": 1835,
+        "counts": {
+          "tests": 22,
+          "pass": 22,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "source_unchanged": true
+      },
+      "options-final": {
+        "label": "options-final",
+        "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+        "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+        "command": [
+          "node",
+          "--unhandled-rejections=strict",
+          "--test",
+          "tests/vercel-node/production-options.test.mjs"
+        ],
+        "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/repo/workspaces/univeracademy",
+        "environment_overrides": {},
+        "start_utc": "2026-11-10T10:23:11.160284+00:00",
+        "source_before": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "end_utc": "2026-11-10T10:23:11.443980+00:00",
+        "exit": 0,
+        "source_after": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "log_sha256": "1a68596d1bce86f7229384dd7439a4ef799901b05f13ea90f5536a2679a1ff09",
+        "log_bytes": 7168,
+        "counts": {
+          "tests": 111,
+          "pass": 111,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "source_unchanged": true
+      },
+      "pool-port-regression": {
+        "label": "pool-port-regression",
+        "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+        "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+        "command": [
+          "node",
+          "--unhandled-rejections=strict",
+          "--test",
+          "tests/vercel-node/pool-port.test.mjs"
+        ],
+        "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/repo/workspaces/univeracademy",
+        "environment_overrides": {},
+        "start_utc": "2026-11-10T10:23:11.112875+00:00",
+        "source_before": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "end_utc": "2026-11-10T10:23:11.309397+00:00",
+        "exit": 0,
+        "source_after": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "log_sha256": "d9e616aa22fa93ef6717bb0e79d732d50db5d502029e2ccc802d7eb1735fbef8",
+        "log_bytes": 519,
+        "counts": {
+          "tests": 3,
+          "pass": 3,
+          "fail": 0,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0
+        },
+        "source_unchanged": true
+      },
+      "syntax-production": {
+        "label": "syntax-production",
+        "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+        "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+        "command": [
+          "node",
+          "--check",
+          "runtime/production-options.mjs"
+        ],
+        "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/repo/workspaces/univeracademy",
+        "environment_overrides": {},
+        "start_utc": "2026-11-10T10:23:11.163106+00:00",
+        "source_before": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "end_utc": "2026-11-10T10:23:11.198599+00:00",
+        "exit": 0,
+        "source_after": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "log_bytes": 0,
+        "counts": {},
+        "source_unchanged": true
+      },
+      "syntax-test": {
+        "label": "syntax-test",
+        "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+        "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+        "command": [
+          "node",
+          "--check",
+          "tests/vercel-node/production-options.test.mjs"
+        ],
+        "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/repo/workspaces/univeracademy",
+        "environment_overrides": {},
+        "start_utc": "2026-11-10T10:23:11.159933+00:00",
+        "source_before": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "end_utc": "2026-11-10T10:23:11.196843+00:00",
+        "exit": 0,
+        "source_after": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "log_bytes": 0,
+        "counts": {},
+        "source_unchanged": true
+      },
+      "dependency-prerequisites": {
+        "label": "dependency-prerequisites",
+        "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+        "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+        "command": [
+          "node",
+          "--input-type=module",
+          "-e",
+          "const names=[\"jose\",\"typescript\",\"ajv\"]; const result=names.map(name=>{try{return {name,resolved:import.meta.resolve(name)}}catch(e){return{name,status:\"UNAVAILABLE\",code:e.code}}}); process.stdout.write(JSON.stringify(result,null,2)+\"\\n\")"
+        ],
+        "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/repo/workspaces/univeracademy",
+        "environment_overrides": {},
+        "start_utc": "2026-11-10T10:23:11.708787+00:00",
+        "source_before": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "end_utc": "2026-11-10T10:23:11.738198+00:00",
+        "exit": 0,
+        "source_after": {
+          "selected_snapshot": "author-sources.frozen.json",
+          "reconstruct": "strip mode; retain path,bytes,sha256 field order and array order",
+          "files": 692,
+          "canonical_compact_json_bytes": 117401,
+          "canonical_compact_json_sha256": "33bc86d4630d2b57d0d3c6464c855032bfc340f0f925ebf30c4bace5815085f7"
+        },
+        "log_sha256": "f8db1796bd73cc9b35c736795e6ec42a047901378e63e1c18dd595f4b6e41fd1",
+        "log_bytes": 287,
+        "counts": {},
+        "source_unchanged": true
+      }
+    },
+    "reconstruction": "For each run restore both source arrays from author-sources.frozen.json stripping mode, with path/bytes/sha256 field order. Original per-run JSON is json.dumps(run,indent=2)+LF. Rebuild original verification by original_verification_field_order and replacing runs with restored run objects; indent=2+LF. Both byte roundtrips were checked.",
+    "original_f5_replay": {
+      "base_commit": "f5c1446fd6820119e9d070cd58643af127fe277b",
+      "base_tree": "2db3c4803b8e5e6489b4e760b1e0e679d9da66dd",
+      "tool": "GNU patch, no Git metadata written",
+      "commands": [
+        {
+          "argv": [
+            "patch",
+            "--batch",
+            "--dry-run",
+            "-p1",
+            "-i",
+            "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/evidence/candidate.patch"
+          ],
+          "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/patch-replay/lab_univeracademy-f5c1446fd6820119e9d070cd58643af127fe277b",
+          "start_utc": "2026-11-10T10:24:14.966503+00:00",
+          "end_utc": "2026-11-10T10:24:14.968558+00:00",
+          "exit": 0,
+          "output": "checking file workspaces/univeracademy/runtime/production-options.mjs\nchecking file workspaces/univeracademy/tests/vercel-node/production-options.test.mjs\n"
+        },
+        {
+          "argv": [
+            "patch",
+            "--batch",
+            "-p1",
+            "-i",
+            "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/evidence/candidate.patch"
+          ],
+          "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/patch-replay/lab_univeracademy-f5c1446fd6820119e9d070cd58643af127fe277b",
+          "start_utc": "2026-11-10T10:24:14.968569+00:00",
+          "end_utc": "2026-11-10T10:24:14.970264+00:00",
+          "exit": 0,
+          "output": "patching file workspaces/univeracademy/runtime/production-options.mjs\npatching file workspaces/univeracademy/tests/vercel-node/production-options.test.mjs\n"
+        },
+        {
+          "argv": [
+            "patch",
+            "--batch",
+            "--dry-run",
+            "--reverse",
+            "-p1",
+            "-i",
+            "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/evidence/candidate.patch"
+          ],
+          "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/patch-replay/lab_univeracademy-f5c1446fd6820119e9d070cd58643af127fe277b",
+          "start_utc": "2026-11-10T10:24:15.025039+00:00",
+          "end_utc": "2026-11-10T10:24:15.026891+00:00",
+          "exit": 0,
+          "output": "checking file workspaces/univeracademy/runtime/production-options.mjs\nchecking file workspaces/univeracademy/tests/vercel-node/production-options.test.mjs\n"
+        },
+        {
+          "argv": [
+            "patch",
+            "--batch",
+            "--reverse",
+            "-p1",
+            "-i",
+            "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/evidence/candidate.patch"
+          ],
+          "cwd": "/tmp/ua-bootstrap-options-f5-r2-y3ow2u8p/patch-replay/lab_univeracademy-f5c1446fd6820119e9d070cd58643af127fe277b",
+          "start_utc": "2026-11-10T10:24:15.026901+00:00",
+          "end_utc": "2026-11-10T10:24:15.028267+00:00",
+          "exit": 0,
+          "output": "patching file workspaces/univeracademy/runtime/production-options.mjs\npatching file workspaces/univeracademy/tests/vercel-node/production-options.test.mjs\n"
+        }
+      ],
+      "forward_byte_parity": [
+        {
+          "path": "workspaces/univeracademy/runtime/production-options.mjs",
+          "mode": "100644",
+          "bytes": 7544,
+          "sha256": "251a124def286b6b42f11602cdaf79fd73d42f1b696eba89e6d9697169937989"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/vercel-node/production-options.test.mjs",
+          "mode": "100644",
+          "bytes": 21924,
+          "sha256": "052e7e8aa70519c35d03d2de7d673db3737b4bcfd9858ae351ee2761ae0fc2ac"
+        }
+      ],
+      "reverse_base_blobs_preserved": 690,
+      "reversed_absent": [
+        "workspaces/univeracademy/runtime/production-options.mjs",
+        "workspaces/univeracademy/tests/vercel-node/production-options.test.mjs"
+      ],
+      "verdict": "PASS_BYTE_PARITY_ONLY"
+    },
+    "finding_classification": {
+      "original_static_claim": "A final line terminator may let extra own key 0\\n pass the array-key regexp",
+      "classification": "NOT_REPRODUCED_ORIGINAL_STATIC_CLAIM_WITHDRAWN",
+      "demonstrated_behavior": "Unchanged v1 production source rejects all 17 tested noncanonical own keys across all three array seams",
+      "targeted_before_result": {
+        "pass": 22,
+        "fail": 0
+      },
+      "red_run": "NONE: targeted before control passed; no failure fabricated",
+      "production_fix": "NONE: no demonstrated boundary defect",
+      "test_revision": "22 targeted controls added, keeping all original 89 controls unchanged",
+      "limits": "Synthetic author checks only; no full configured factory, live provider/DB or exhaustive JS-object proof"
+    },
+    "raw_log_aliases": {
+      "boundary-before.log": "author-targeted-before.log",
+      "options-final.log": "author-options-final.log",
+      "pool-port-regression.log": "author-pool-port-regression.log"
+    },
+    "empty_syntax_outputs": "Both original syntax logs are empty SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855; no duplicate empty files selected.",
+    "dependency_probe_output_included": [
+      {
+        "name": "jose",
+        "status": "UNAVAILABLE",
+        "code": "ERR_MODULE_NOT_FOUND"
+      },
+      {
+        "name": "typescript",
+        "status": "UNAVAILABLE",
+        "code": "ERR_MODULE_NOT_FOUND"
+      },
+      {
+        "name": "ajv",
+        "status": "UNAVAILABLE",
+        "code": "ERR_MODULE_NOT_FOUND"
+      }
+    ]
+  },
+  "qa_report_relay": {
+    "label": "AUTHOR-CREATED SUMMARY OF COORDINATOR-RELAYED QA REPORT; NOT ORIGINAL QA EVIDENCE",
+    "source_turn": "01a1c4ff-d616-70bd-bc19-1cf5b1b64c84",
+    "original_QA_files_present": false,
+    "QA_environment_accessed": false,
+    "relayed_original_INDEX_sha256": "c7cedc12c05eaa82aed398ba4a232c9cbed572e43e431aaea2ea1792886c8c13",
+    "verdict": "PASS \u2014 prepared options and bounded offline factory compatibility",
+    "f5_reported": {
+      "suite": 111,
+      "pool": 3,
+      "vercel_regression": 6,
+      "independent_factory_probe": 25,
+      "total": 145,
+      "typecheck_exit": 0,
+      "syntax_exit": 0,
+      "preserved_base_files": 690
+    },
+    "e8_reported": {
+      "suite": 111,
+      "pool": 3,
+      "independent_factory_probe": 25,
+      "total": 139,
+      "typecheck_exit": 0,
+      "preserved_base_files": 712
+    },
+    "claims": [
+      "Same two source hashes on both bases",
+      "Assembly does not invoke bindings",
+      "Actual native/Clerk branching and OPTIONS/API readiness separation checked",
+      "Synthetic authenticated API 200; production removal remains unwired 503",
+      "No source/runtime defect found",
+      "Withdrawn array-key claim: no red run or production fix",
+      "QA did not verify original full-file hashes of large author evidence received only as extracts"
+    ],
+    "limits": "These are relayed QA facts, not tests or raw-artifact verification performed during this proposal. Original QA report/index/probe were not read or copied."
+  },
+  "limits": [
+    "No new runtime suite/typecheck/factory probe was run for this proposal",
+    "Original author full factory/Vercel/typecheck were NOT RUN due absent pinned dependencies; reported QA results are separate",
+    "Selected raw author logs plus exact test source support recorded assertions, not exhaustive transient writes/network behavior or physical SQL durability",
+    "No real provider/DB, production wiring/readiness, credentials/settings/migration/deployment or R1 integration acceptance",
+    "No upload or Git write; explicit exact publication approval still required"
+  ]
+}

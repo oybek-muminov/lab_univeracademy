@@ -1,0 +1,4154 @@
+[
+  {
+    "path": "AGENTS.md",
+    "mode": "100644",
+    "bytes": 1441,
+    "sha256": "7c9e900335d9ec4b3516bb3fd580bbcd232b0692fc9c9edc206e66f769d3fb3b"
+  },
+  {
+    "path": "LANDING_SOURCE/FONT_SOURCES.json",
+    "mode": "100644",
+    "bytes": 2327,
+    "sha256": "3b8b1456afc5f0cc61e99525974b1a4693be4da9a7a6dc082f0f9d0c70d4cad3"
+  },
+  {
+    "path": "LANDING_SOURCE/MANIFEST.json",
+    "mode": "100644",
+    "bytes": 10653,
+    "sha256": "afb0ebcc712a29c76300a45a2133e118954f42be6bb9be3b80ad99ddef45187c"
+  },
+  {
+    "path": "LANDING_SOURCE/README.md",
+    "mode": "100644",
+    "bytes": 6827,
+    "sha256": "236f0e928477afed823ab25a1d027169413a35e20f454fbdd026f25cdc98db5c"
+  },
+  {
+    "path": "LANDING_SOURCE/SECRET_SCAN.json",
+    "mode": "100644",
+    "bytes": 236,
+    "sha256": "0257c2e5d4e45f4f9553e9abb8e60cbdc1d0c24b36ca8c1b22b175e75a648a9a"
+  },
+  {
+    "path": "LANDING_SOURCE/SHA256SUMS.txt",
+    "mode": "100644",
+    "bytes": 6183,
+    "sha256": "f7e09ccad3234e9bf80147b97e856c2584c20e174364758bc67881231fc98de5"
+  },
+  {
+    "path": "LANDING_SOURCE/SOURCE_PROVENANCE.json",
+    "mode": "100644",
+    "bytes": 8148,
+    "sha256": "0b03d88de1ddffb97bf01ad200d0174ac7451ed18d671a7406befd4f9f7c0f9c"
+  },
+  {
+    "path": "LANDING_SOURCE/VERIFICATION.json",
+    "mode": "100644",
+    "bytes": 2616,
+    "sha256": "cfa2c7efda642db69b6d7d1ba2a77986a8c589f01d2eb1733f9c6851c5b59006"
+  },
+  {
+    "path": "LANDING_SOURCE/VERIFY_MANIFEST.py",
+    "mode": "100644",
+    "bytes": 1179,
+    "sha256": "862c18cf8a4b6c118621b9da9022e56ec7951bb940252fd8577bb390ded25a8b"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/.env.example",
+    "mode": "100644",
+    "bytes": 119,
+    "sha256": "45745d82effd37c471396372e3f404267744ffc04864382626e9f0e849c02339"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/.gitignore",
+    "mode": "100644",
+    "bytes": 42,
+    "sha256": "05585fc7c0929a92b1a6a369dec8a6a22401a3caed0b8e495163c265fdf08792"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/DESIGN_VARIANTS.md",
+    "mode": "100644",
+    "bytes": 787,
+    "sha256": "558240e1a9f815778df6569813742d9b9f09a71b562ea79aff69783e859d81e5"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/README.md",
+    "mode": "100644",
+    "bytes": 13496,
+    "sha256": "ed2bc4bf1d0f46082d92926978ddc369eb301780ff03751b25ac220a5b83e37d"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/THIRD_PARTY_LICENSE_SHADCN.md",
+    "mode": "100644",
+    "bytes": 1063,
+    "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/components.json",
+    "mode": "100644",
+    "bytes": 319,
+    "sha256": "c27b0de0000b43c4c7e63c374a50e573de75c1be5f3e36c0d694886fda392db0"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/index.html",
+    "mode": "100644",
+    "bytes": 779,
+    "sha256": "0e372b56df4f218c1fb97df3eedbd2e117a484dbf0631e3a439ba10c16c08b8b"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/package-lock.json",
+    "mode": "100644",
+    "bytes": 106576,
+    "sha256": "d4837e59e801b3e2d48ae3cdc3f05d6fa3cbd35c7d66ed83b6dae568fc0984be"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/package.json",
+    "mode": "100644",
+    "bytes": 1026,
+    "sha256": "4be01e7b4613f5195f8f70205002fc8cf00ed95bee9bb05301b9721fea799344"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/favicon-16.png",
+    "mode": "100644",
+    "bytes": 761,
+    "sha256": "fa7365aef9f4c9bd52026d19e25037a93fdeac1f74bdb2d25557d13da2831234"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/favicon-32.png",
+    "mode": "100644",
+    "bytes": 1781,
+    "sha256": "5c95369d95103482eb42f46d0c89af397d80aea88762e84f5ee08f55c1bd59f3"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/favicon-48.png",
+    "mode": "100644",
+    "bytes": 3085,
+    "sha256": "1bf3d8976254bc285b4148df43c1838d30e26c04931574c2fb45e42088f01fb5"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/favicon-512.png",
+    "mode": "100644",
+    "bytes": 107372,
+    "sha256": "913b648ffda7407ec7946d1902cd52358368dad8dbc65d537289991ef081d03d"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/favicon.ico",
+    "mode": "100644",
+    "bytes": 127232,
+    "sha256": "dd30e6151d308445b808b68ec8ade0633e96ce5af759bba3e2c0888e81a9ef87"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/mobile-learning.svg",
+    "mode": "100644",
+    "bytes": 1402,
+    "sha256": "18c6df36e5ad7b06ed6eca19827b6f58a5a6b3d21e36398daea0bd3dc0782dbc"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/qadam-staircase-book.png",
+    "mode": "100644",
+    "bytes": 277561,
+    "sha256": "723c69e503d2e239311db88cfcca656f7c2f22b37f7b32fe04828fe6d09f0e25"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/subjects-atlas.svg",
+    "mode": "100644",
+    "bytes": 2852,
+    "sha256": "ab8758d84a4af38c80f198db45af84b33ecfe71d62d8332aa97f154c472b91df"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/subjects-connected.svg",
+    "mode": "100644",
+    "bytes": 1252,
+    "sha256": "f315269b65885dcb58e12be4a3741f3d79eb13095dbd4c823357d302db117477"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/brand/subjects-spectrum.svg",
+    "mode": "100644",
+    "bytes": 1771,
+    "sha256": "dcb2f8fffbb0ccf81cb1a65838323b481f11d2d97d425ac57244822bc3a0179c"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/public/favicon.svg",
+    "mode": "100644",
+    "bytes": 216,
+    "sha256": "c7f0e87416759c4a70ab8f3a9985c97e247d13e8b41aae7d367ff7c1a7a8e4ae"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/MobileNavigation.tsx",
+    "mode": "100644",
+    "bytes": 3776,
+    "sha256": "19ddd5e5b7ddb11e307b80acd07c39f018a102e478e93f18a6301796a7c11d6d"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/MobileStairs.tsx",
+    "mode": "100644",
+    "bytes": 1154,
+    "sha256": "dc4683a486635afec731d810002bf56030f3c88840d8233ddbb19c9c2580cd74"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/Road.tsx",
+    "mode": "100644",
+    "bytes": 4584,
+    "sha256": "dd9c64f458047745f4640ebc379b68bc6a833d145c9951bf61da1dbe902a42ee"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/SubjectArt.tsx",
+    "mode": "100644",
+    "bytes": 2862,
+    "sha256": "90c1d9134d66e70b72e3e8cf7cd914eafe25cc58766775ee0e053b4fca981bef"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/Subjects.tsx",
+    "mode": "100644",
+    "bytes": 8303,
+    "sha256": "ad1bebfc6a020cfff31e7c901df9be12148ab2027bbf38b3aaea94ef3c6645e2"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/components/ui/accordion.tsx",
+    "mode": "100644",
+    "bytes": 2015,
+    "sha256": "00dd6eef660f08ce85154106fa0fa4d943ed699c5ca7b06bb08732978bcebb49"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/components/ui/badge.tsx",
+    "mode": "100644",
+    "bytes": 1140,
+    "sha256": "dab689d836ad3292b41e7f4986b4e68e5d45c6903e4aeaae8972a82d4aebec29"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/components/ui/button.tsx",
+    "mode": "100644",
+    "bytes": 1902,
+    "sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/components/ui/card.tsx",
+    "mode": "100644",
+    "bytes": 1828,
+    "sha256": "525c4bb2c051987be64df0e92e1d90174912b219bf541e24ffbc4a3406de49e8"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/components/ui/dialog.tsx",
+    "mode": "100644",
+    "bytes": 3850,
+    "sha256": "d0e94d5bb26085b2707174fe9452ff6a566599466025c8e2318a3ea7ab00c99f"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/components/ui/sheet.tsx",
+    "mode": "100644",
+    "bytes": 4281,
+    "sha256": "389aea04d3a2d84db4644bab9b5bfce3e12c2dc19e7a2024f6fd40a5bfcfd1f6"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/index.css",
+    "mode": "100644",
+    "bytes": 41952,
+    "sha256": "f57dfe8aa7dfb801b14251b1abea490d9227e370104441a4036b8d1909ec660d"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/lib/utils.ts",
+    "mode": "100644",
+    "bytes": 166,
+    "sha256": "0c97f5ec0478867d5369a4369f811e1b779c7f2548f671ef252f1503a6392d9d"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/main.tsx",
+    "mode": "100644",
+    "bytes": 9419,
+    "sha256": "9df237b9f615fb7a2338b61bc643769e977dc34a367232ce83c6d1bad4b93d30"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/src/useStackedSections.ts",
+    "mode": "100644",
+    "bytes": 6092,
+    "sha256": "ef328d83d56bed90030b3c96fb8b83fbe3c35b69d1bb4d1fc1148b0901b50b7e"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/content.test.mjs",
+    "mode": "100644",
+    "bytes": 6881,
+    "sha256": "2dc59a2874a48491f65b1de9d945eff61efbd9710435a87179372b273defdf67"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/desktop-dialog-map.test.mjs",
+    "mode": "100644",
+    "bytes": 768,
+    "sha256": "f13b301376d7000fda24927ce73c1f0eb3345ed8041bea55697a3d22f193e38e"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/desktop-height.test.mjs",
+    "mode": "100644",
+    "bytes": 1383,
+    "sha256": "e8f7f8089bef571eeaefa9b02fb703e58ee8c6b4a4b5399af8f0964a0c99153d"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/editorial-dialog.test.mjs",
+    "mode": "100644",
+    "bytes": 1005,
+    "sha256": "f37f423b2a8f9296fcde11b6f621521576042a2750d56fbf978debb9a467e7ae"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/mobile-reference.test.mjs",
+    "mode": "100644",
+    "bytes": 5889,
+    "sha256": "e00ce873b6ce2689fc3062e84418e433ca8879cff17bab39a6243252b77fa7f2"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/mobile-sheet.test.mjs",
+    "mode": "100644",
+    "bytes": 650,
+    "sha256": "8a4fbcd246828b3eddcac540473bf7d04eb5f38a9c9b8ac71f3f9ab32fe5ec65"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/mobile.test.mjs",
+    "mode": "100644",
+    "bytes": 2500,
+    "sha256": "2de5a03b72adc91412e996c6f022b4184a5d980cc95977ee66f9b853668b0be9"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/scope.test.mjs",
+    "mode": "100644",
+    "bytes": 1829,
+    "sha256": "a5790074988220ead3be3c338c78a5a5b0996d700d5381df767e6d1a1bc529df"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/subject-stage-icons.test.mjs",
+    "mode": "100644",
+    "bytes": 647,
+    "sha256": "a672d12c14a307f4215f3726e5746cc725124f30fb78366784c71555fcb9abb6"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tests/subjects.test.mjs",
+    "mode": "100644",
+    "bytes": 2752,
+    "sha256": "aaec669a326146f4515214d036e359895196725a203539dc9738aeb9416a6081"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/tsconfig.json",
+    "mode": "100644",
+    "bytes": 409,
+    "sha256": "83eb3c5e867167759b622873e2a79de005caf0856e219df32a1cc24ffd456759"
+  },
+  {
+    "path": "LANDING_SOURCE/landing/vite.config.ts",
+    "mode": "100644",
+    "bytes": 345,
+    "sha256": "db653fe6635ab0eedcee40573ef619af40ded929e87bd550b336afb6bef608e6"
+  },
+  {
+    "path": "LANDING_SOURCE/support/fonts/onest/METADATA.pb",
+    "mode": "100644",
+    "bytes": 1009,
+    "sha256": "4cdcb62dc6cce7746ef080848a352e8ff7ac37fe543b4bde0aec6ab478e4123a"
+  },
+  {
+    "path": "LANDING_SOURCE/support/fonts/onest/OFL.txt",
+    "mode": "100644",
+    "bytes": 4384,
+    "sha256": "071195d8806e226faeee60259c28ca67b458227af5195a73f5cfcab06e3003bc"
+  },
+  {
+    "path": "LANDING_SOURCE/support/fonts/onest/Onest[wght].ttf",
+    "mode": "100644",
+    "bytes": 193056,
+    "sha256": "966c5c29b4755da84b6854d5c21dd4eaa2420225d0e9874de602de176d4a9f31"
+  },
+  {
+    "path": "LANDING_SOURCE/support/fonts/youngserif/METADATA.pb",
+    "mode": "100644",
+    "bytes": 818,
+    "sha256": "db1ddfcce283870fe515a57b7f75dad00b0bbe5efc3846fcb72a018b428790cb"
+  },
+  {
+    "path": "LANDING_SOURCE/support/fonts/youngserif/OFL.txt",
+    "mode": "100644",
+    "bytes": 4398,
+    "sha256": "737d8d343b674c6894f373de71a044b6782c130f2aebf180933d63ddf7a3dc19"
+  },
+  {
+    "path": "LANDING_SOURCE/support/fonts/youngserif/YoungSerif-Regular.ttf",
+    "mode": "100644",
+    "bytes": 106608,
+    "sha256": "42bb2602364b28569fdce5eeb6ab3d81cf8090ba81b211f1229ed69f33155523"
+  },
+  {
+    "path": "LANDING_SOURCE/support/verification/build.log",
+    "mode": "100644",
+    "bytes": 428,
+    "sha256": "cd4c1e44325e1130c4421cebebc2eadb66602c6d9b11d899777748f4047330cb"
+  },
+  {
+    "path": "LANDING_SOURCE/support/verification/install.log",
+    "mode": "100644",
+    "bytes": 28,
+    "sha256": "3c7a0a1e0d81f333b6cfd44ab5cd649954b2ed64172fa2ed27a7f39a07dd11d6"
+  },
+  {
+    "path": "LANDING_SOURCE/support/verification/tests.log",
+    "mode": "100644",
+    "bytes": 4172,
+    "sha256": "94362b58a7cf76178a8682d85ff051dc9a3805c008489f3b0181f449dda16464"
+  },
+  {
+    "path": "LANDING_SOURCE/support/verification/typecheck.log",
+    "mode": "100644",
+    "bytes": 66,
+    "sha256": "9a8cdea59a4dad150b9c9d164fee6b7f61d8ca3151b7522e6da3c3357f7afce5"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/MANIFEST.json",
+    "mode": "100644",
+    "bytes": 8309,
+    "sha256": "f42d827238bec9fda022da6e1c4ea8019f76855d9085e326a336d889792ae1da"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/ORIGINAL-SOURCE-MANIFEST.json",
+    "mode": "100644",
+    "bytes": 7788,
+    "sha256": "32f7f9ec7d19daef196b32a12f311380e0b6f7b04c384b3969dfb9db303d2cfb"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/README-RECOVERY.md",
+    "mode": "100644",
+    "bytes": 4857,
+    "sha256": "ee90fe491f195ee0c59a3274368da49927694651c5d7d0c4fce0133a719a3925"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/SHA256SUMS.txt",
+    "mode": "100644",
+    "bytes": 4797,
+    "sha256": "3c7a6b96ab5531cf96c50af7e1d2de02c9067ca7efedad0b6646521f4f653865"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/VALIDATION.json",
+    "mode": "100644",
+    "bytes": 605,
+    "sha256": "fcf7d1ccb1b4599944e4ff2315d2188e66c2fb906ba0b775f3562b351f316870"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/.gitignore",
+    "mode": "100644",
+    "bytes": 42,
+    "sha256": "05585fc7c0929a92b1a6a369dec8a6a22401a3caed0b8e495163c265fdf08792"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/.openai/hosting.json",
+    "mode": "100644",
+    "bytes": 106,
+    "sha256": "2ac16549f50f731e85bc3e7c260e1b0ba695aa868eef03224f12d35d2915e3a1"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/DESIGN_VARIANTS.md",
+    "mode": "100644",
+    "bytes": 787,
+    "sha256": "558240e1a9f815778df6569813742d9b9f09a71b562ea79aff69783e859d81e5"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/README.md",
+    "mode": "100644",
+    "bytes": 12314,
+    "sha256": "7bc84d4630ed6e3614fae6e44935174a40eb4120b3d8759a7577890512e27f6f"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/THIRD_PARTY_LICENSE_SHADCN.md",
+    "mode": "100644",
+    "bytes": 1063,
+    "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/components.json",
+    "mode": "100644",
+    "bytes": 319,
+    "sha256": "c27b0de0000b43c4c7e63c374a50e573de75c1be5f3e36c0d694886fda392db0"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/index.html",
+    "mode": "100644",
+    "bytes": 763,
+    "sha256": "eac781cd6fce4745b101e715848eb5dcb308462d509118d126a085d0d8fcf548"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/package-lock.json",
+    "mode": "100644",
+    "bytes": 106560,
+    "sha256": "e0b14cf4bc4196407e3fdc7c491a321c406451b2b5f2ae3b29221a45c2d1a157"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/package.json",
+    "mode": "100644",
+    "bytes": 1018,
+    "sha256": "ad1bd53b27a81849907d08ac6c4879f4eda0c12c7505a1354371c0e9b7de1697"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/favicon-16.png",
+    "mode": "100644",
+    "bytes": 761,
+    "sha256": "fa7365aef9f4c9bd52026d19e25037a93fdeac1f74bdb2d25557d13da2831234"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/favicon-32.png",
+    "mode": "100644",
+    "bytes": 1781,
+    "sha256": "5c95369d95103482eb42f46d0c89af397d80aea88762e84f5ee08f55c1bd59f3"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/favicon-48.png",
+    "mode": "100644",
+    "bytes": 3085,
+    "sha256": "1bf3d8976254bc285b4148df43c1838d30e26c04931574c2fb45e42088f01fb5"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/favicon-512.png",
+    "mode": "100644",
+    "bytes": 107372,
+    "sha256": "913b648ffda7407ec7946d1902cd52358368dad8dbc65d537289991ef081d03d"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/favicon.ico",
+    "mode": "100644",
+    "bytes": 127232,
+    "sha256": "dd30e6151d308445b808b68ec8ade0633e96ce5af759bba3e2c0888e81a9ef87"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/mobile-learning.svg",
+    "mode": "100644",
+    "bytes": 1402,
+    "sha256": "18c6df36e5ad7b06ed6eca19827b6f58a5a6b3d21e36398daea0bd3dc0782dbc"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/qadam-staircase-book.png",
+    "mode": "100644",
+    "bytes": 277561,
+    "sha256": "723c69e503d2e239311db88cfcca656f7c2f22b37f7b32fe04828fe6d09f0e25"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/subjects-atlas.svg",
+    "mode": "100644",
+    "bytes": 2852,
+    "sha256": "ab8758d84a4af38c80f198db45af84b33ecfe71d62d8332aa97f154c472b91df"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/subjects-connected.svg",
+    "mode": "100644",
+    "bytes": 1252,
+    "sha256": "f315269b65885dcb58e12be4a3741f3d79eb13095dbd4c823357d302db117477"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/brand/subjects-spectrum.svg",
+    "mode": "100644",
+    "bytes": 1771,
+    "sha256": "dcb2f8fffbb0ccf81cb1a65838323b481f11d2d97d425ac57244822bc3a0179c"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/public/favicon.svg",
+    "mode": "100644",
+    "bytes": 216,
+    "sha256": "c7f0e87416759c4a70ab8f3a9985c97e247d13e8b41aae7d367ff7c1a7a8e4ae"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/MobileNavigation.tsx",
+    "mode": "100644",
+    "bytes": 3768,
+    "sha256": "5f4e0d64c60ee08cdd481f30bd572a62c22040b4f210366e471b0d06670ed573"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/MobileStairs.tsx",
+    "mode": "100644",
+    "bytes": 1154,
+    "sha256": "dc4683a486635afec731d810002bf56030f3c88840d8233ddbb19c9c2580cd74"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/Road.tsx",
+    "mode": "100644",
+    "bytes": 4584,
+    "sha256": "dd9c64f458047745f4640ebc379b68bc6a833d145c9951bf61da1dbe902a42ee"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/SubjectArt.tsx",
+    "mode": "100644",
+    "bytes": 2862,
+    "sha256": "90c1d9134d66e70b72e3e8cf7cd914eafe25cc58766775ee0e053b4fca981bef"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/Subjects.tsx",
+    "mode": "100644",
+    "bytes": 7254,
+    "sha256": "62c7502971c1a9f05a39b431abc4385bfa25264b535743e565f8e7001e77a94f"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/components/ui/accordion.tsx",
+    "mode": "100644",
+    "bytes": 2015,
+    "sha256": "00dd6eef660f08ce85154106fa0fa4d943ed699c5ca7b06bb08732978bcebb49"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/components/ui/badge.tsx",
+    "mode": "100644",
+    "bytes": 1140,
+    "sha256": "dab689d836ad3292b41e7f4986b4e68e5d45c6903e4aeaae8972a82d4aebec29"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/components/ui/button.tsx",
+    "mode": "100644",
+    "bytes": 1902,
+    "sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/components/ui/card.tsx",
+    "mode": "100644",
+    "bytes": 1828,
+    "sha256": "525c4bb2c051987be64df0e92e1d90174912b219bf541e24ffbc4a3406de49e8"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/components/ui/dialog.tsx",
+    "mode": "100644",
+    "bytes": 3850,
+    "sha256": "d0e94d5bb26085b2707174fe9452ff6a566599466025c8e2318a3ea7ab00c99f"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/components/ui/sheet.tsx",
+    "mode": "100644",
+    "bytes": 4281,
+    "sha256": "389aea04d3a2d84db4644bab9b5bfce3e12c2dc19e7a2024f6fd40a5bfcfd1f6"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/index.css",
+    "mode": "100644",
+    "bytes": 38908,
+    "sha256": "c354f34e9bc9b91db9de7a6745c9b3e62bf6c9e84fc87ee6b3e59b4dc30f7bc3"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/lib/utils.ts",
+    "mode": "100644",
+    "bytes": 166,
+    "sha256": "0c97f5ec0478867d5369a4369f811e1b779c7f2548f671ef252f1503a6392d9d"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/main.tsx",
+    "mode": "100644",
+    "bytes": 9258,
+    "sha256": "d71a211fb429823593673ba73ccaed400c2a643c6cf98e2123f25fe268190c13"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/src/useStackedSections.ts",
+    "mode": "100644",
+    "bytes": 6092,
+    "sha256": "ef328d83d56bed90030b3c96fb8b83fbe3c35b69d1bb4d1fc1148b0901b50b7e"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/content.test.mjs",
+    "mode": "100644",
+    "bytes": 6881,
+    "sha256": "2dc59a2874a48491f65b1de9d945eff61efbd9710435a87179372b273defdf67"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/desktop-dialog-map.test.mjs",
+    "mode": "100644",
+    "bytes": 768,
+    "sha256": "f13b301376d7000fda24927ce73c1f0eb3345ed8041bea55697a3d22f193e38e"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/desktop-height.test.mjs",
+    "mode": "100644",
+    "bytes": 1383,
+    "sha256": "e8f7f8089bef571eeaefa9b02fb703e58ee8c6b4a4b5399af8f0964a0c99153d"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/mobile-reference.test.mjs",
+    "mode": "100644",
+    "bytes": 5889,
+    "sha256": "e00ce873b6ce2689fc3062e84418e433ca8879cff17bab39a6243252b77fa7f2"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/mobile-sheet.test.mjs",
+    "mode": "100644",
+    "bytes": 650,
+    "sha256": "8a4fbcd246828b3eddcac540473bf7d04eb5f38a9c9b8ac71f3f9ab32fe5ec65"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/mobile.test.mjs",
+    "mode": "100644",
+    "bytes": 2500,
+    "sha256": "2de5a03b72adc91412e996c6f022b4184a5d980cc95977ee66f9b853668b0be9"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/scope.test.mjs",
+    "mode": "100644",
+    "bytes": 1607,
+    "sha256": "76b4d4739889f7cfbeb901f1d40369022630ca147a9b029ab9dec0e4378d7c80"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/subject-stage-icons.test.mjs",
+    "mode": "100644",
+    "bytes": 647,
+    "sha256": "a672d12c14a307f4215f3726e5746cc725124f30fb78366784c71555fcb9abb6"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tests/subjects.test.mjs",
+    "mode": "100644",
+    "bytes": 2752,
+    "sha256": "aaec669a326146f4515214d036e359895196725a203539dc9738aeb9416a6081"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/tsconfig.json",
+    "mode": "100644",
+    "bytes": 409,
+    "sha256": "83eb3c5e867167759b622873e2a79de005caf0856e219df32a1cc24ffd456759"
+  },
+  {
+    "path": "Qadam-Sites-v47-fallback-NOT-Vercel-2026-11-05/source/vite.config.ts",
+    "mode": "100644",
+    "bytes": 345,
+    "sha256": "db653fe6635ab0eedcee40573ef619af40ded929e87bd550b336afb6bef608e6"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/BACKEND_IMPLEMENTATION_PLAN.md",
+    "mode": "100644",
+    "bytes": 2803,
+    "sha256": "219bec004ceaade62246945e07727ec9b6aa57b06c05327e21e3f738e9e81094"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/CHANGES.md",
+    "mode": "100644",
+    "bytes": 1316,
+    "sha256": "9ed2b31be4a43d99d2b573e7f499238ef7945fa18e3cd722dd1b9bad93f10a1d"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/DOT_TASK.md",
+    "mode": "100644",
+    "bytes": 2430,
+    "sha256": "c883ca828532973a101f146ec5715fdf9a7bf2acf4dcf0607efd9af094a34560"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/MANIFEST.json",
+    "mode": "100644",
+    "bytes": 4477,
+    "sha256": "6c8b34396f6ad394eed82ea93068e803a3899426a36f2e8af855906891998e3e"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/MVP_START_STATUS.md",
+    "mode": "100644",
+    "bytes": 3437,
+    "sha256": "0f13ced80d20bc2c990a7399754f32187c054eea0c5b9d44cd412dd3dd959dc9"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/NUMERIC_POLICY_RECOMMENDATION.md",
+    "mode": "100644",
+    "bytes": 2318,
+    "sha256": "7bba708e47b8fbed2acf01cdfd20780cba87319e8c2923cdf9dda4dc436b0030"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/QA_ACCEPTANCE_MATRIX.md",
+    "mode": "100644",
+    "bytes": 2256,
+    "sha256": "046176c97203c0f849df0b07c48dbd001ca7641465d0cb52f9660246a622b8aa"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/README.md",
+    "mode": "100644",
+    "bytes": 1361,
+    "sha256": "3434cf36dd0b4246b5462be8df0386e599b0e162b4042a7ebe80a91233b835d0"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/REVIEW-SOURCE-INDEX.json",
+    "mode": "100644",
+    "bytes": 1737,
+    "sha256": "42bedbf4b92dee55f23dcb708bac115e00a640223dc8780b93249b8b3c96df72"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/SHA256SUMS.txt",
+    "mode": "100644",
+    "bytes": 2047,
+    "sha256": "dff5f34c9dd8ac433e2289961e7e41ee1e4012161d5be19d0c7c2ba0566adc42"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/UNIVERACADEMY-API-CONTRACT-0.2.7-statistical-bonus-review.1.md",
+    "mode": "100644",
+    "bytes": 8518,
+    "sha256": "9e4bd9c4de81cf765afdece03c655d0f9274f992417db4a003f4ed90e6057a02"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/UNIVERACADEMY_MASTER_CONTEXT.md",
+    "mode": "100644",
+    "bytes": 129507,
+    "sha256": "9599ab1363c1cf570342ea53475aa9df0c7b8ac58165e84a0bed4ee995fe4f31"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/UNIVERACADEMY_MASTER_CONTEXT.md.diff",
+    "mode": "100644",
+    "bytes": 9374,
+    "sha256": "0b384197a0c2da8c55faf7916fcd4ddbe580009df12dba0fa76978c18417951c"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/USER_DECISION_2026-11-05.md",
+    "mode": "100644",
+    "bytes": 2713,
+    "sha256": "17c4489f6c00a5b5fd554a1da6b10fe3e1becf9f8a0dbab7a82255209bdeb74e"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/VALIDATION-RESULTS.json",
+    "mode": "100644",
+    "bytes": 236615,
+    "sha256": "3132233d646326b237d1917da59f06251bb9cfed264d724d609670e89ec02b4a"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/openapi-UniverAcademy-0.2.7-statistical-bonus-review.1.json",
+    "mode": "100644",
+    "bytes": 411140,
+    "sha256": "51deb7a41d223559022dcb7e17ff24985bd328e51c4a87c797a02763bb801149"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/openapi-UniverAcademy-0.2.7-statistical-bonus-review.1.json.diff",
+    "mode": "100644",
+    "bytes": 941040,
+    "sha256": "8f2842f9f3242b7d4bfeb07d8cfa0e15afa938800ffe1c70619aa41263174cd9"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/references/UNIVERACADEMY_GRADING_REQUIREMENTS_2026-11-05.md",
+    "mode": "100644",
+    "bytes": 4083,
+    "sha256": "e62bcb65b52f050093302909c0d460fa1b00de420b3d3a43806abf498ab91bbb"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/references/UniverAcademy-map-review-2026-11-05-review.3.zip",
+    "mode": "100644",
+    "bytes": 3051046,
+    "sha256": "bcc9916f8dcfed50c471987a9d39a4d050cb8fa3655ba02f435b95f17e96fd0d"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/references/openapi-UniverAcademy-0.2.3-grading-review.1.json",
+    "mode": "100644",
+    "bytes": 421646,
+    "sha256": "85e8ab4fd4a25d26dd2c03b30f0c9dd9e5d06353540d4fe6e9a76a09f3869ced"
+  },
+  {
+    "path": "UniverAcademy-statistical-bonus-review-2026-11-05/references/openapi-UniverAcademy-0.2.6-map-review.3.json",
+    "mode": "100644",
+    "bytes": 459720,
+    "sha256": "6304665591af8a35a488ce06ee169288f782436cc754aa87a00b35da8cae29cf"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/docs/api/README.md",
+    "mode": "100644",
+    "bytes": 2714,
+    "sha256": "b90df7a12bd4f68f58e2218c1cc9ac16d5409fafb69a4a465f383c3e1ccdbad5"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/docs/api/backend-checkpoint.json",
+    "mode": "100644",
+    "bytes": 9369,
+    "sha256": "3128095f694dfd5abed2c27adf4ffe9fc76859c0570d8586cc7d4d43af6d2b26"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/docs/api/backend-qa-checkpoint.md",
+    "mode": "100644",
+    "bytes": 7759,
+    "sha256": "9203d728d5bf6494ee0f0dbfa85fa789f53a3a078dc65f3cc09878dcd41fc86d"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/docs/api/backend-start.md",
+    "mode": "100644",
+    "bytes": 9076,
+    "sha256": "38dfee186433daeace100586d9e9c28c4363d3130892b73b84b2ecf9b0787d9b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/docs/api/mini-app-handoff.md",
+    "mode": "100644",
+    "bytes": 8906,
+    "sha256": "8f385ec897d4ea634c34c32a92beceded09a611b7c8957d6ffa9434387c2f888"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/supabase/functions/univeracademy-api/README.md",
+    "mode": "100644",
+    "bytes": 1739,
+    "sha256": "d49992cbb4eee58eada06c56592fcf353bc9b7cdf8c142566101f26abf96dd4d"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/supabase/functions/univeracademy-api/attempts.ts",
+    "mode": "100644",
+    "bytes": 9327,
+    "sha256": "acf2906760018be9eafa7b9a7b0d57bcc1e0486d4142a6acadc62a6515a01060"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/supabase/functions/univeracademy-api/fault.ts",
+    "mode": "100644",
+    "bytes": 422,
+    "sha256": "e405799dd809d8118f764e8fea8361f9117e2635b37e3afce93d63e64cafed8f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/supabase/functions/univeracademy-api/ordinary.ts",
+    "mode": "100644",
+    "bytes": 2775,
+    "sha256": "14fc961f952a2245665c5cd86308b68e49dbae462dc7e3e557fc6d1c91fbd21e"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/supabase/functions/univeracademy-api/telegram.ts",
+    "mode": "100644",
+    "bytes": 3303,
+    "sha256": "415f843c5139285cbe3a4338072e05e50d33bebcbee3059362a3118281b8a3b3"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/tests/backend/README.md",
+    "mode": "100644",
+    "bytes": 1140,
+    "sha256": "4132b514b64fc6462e27eb042af5b735c1a0a8fe2cc13015d68622e6b1dd008f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/tests/backend/attempts.test.ts",
+    "mode": "100644",
+    "bytes": 12268,
+    "sha256": "d08f8064163321321e2d4907c520a36ff9f48a5e9edad182bbfa1f3e38d1d202"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/tests/backend/fixtures.ts",
+    "mode": "100644",
+    "bytes": 1623,
+    "sha256": "2f86a6a75872b0a0e80e6cba3f08a69acff5bd932244bad87a67f1013189dba2"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/backend/tests/backend/telegram.test.ts",
+    "mode": "100644",
+    "bytes": 4254,
+    "sha256": "34d12665370bd1318686dd43b3eeb1689d4bff3a3a8a89b2fdebad842e724196"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/ARTIFACTS.sha256",
+    "mode": "100644",
+    "bytes": 2391,
+    "sha256": "a65c822dc4bd4f326c1261b0617eef0b391745898af155b4819b4ab1777ab8c6"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/CHECKPOINT.md",
+    "mode": "100644",
+    "bytes": 8044,
+    "sha256": "0231930c5582421b2ffd19c9524f3093cd60345ca14a667150903ee5e06f53b0"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/PUBLICATION.json",
+    "mode": "100644",
+    "bytes": 8328,
+    "sha256": "21c018395d173b741656c8f9b934f8d240940479d1fec0e3ef2fed6afb87c35b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/SCREEN-API-MAP.md",
+    "mode": "100644",
+    "bytes": 7301,
+    "sha256": "0f113382dc7066b4705408aebceae7b094d5e5cef9bfa7d8057132571b6fe822"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/.gitignore",
+    "mode": "100644",
+    "bytes": 11,
+    "sha256": "261840b2b4fec747a1a94657ad59a75def3975456e164a353c6234f7f644dab3"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/INTEGRATION-NOTES.md",
+    "mode": "100644",
+    "bytes": 5892,
+    "sha256": "faf89ef421decb25c50804b825ce7e57ca7818f2b9edcf50bb46a5516e230631"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/README.md",
+    "mode": "100644",
+    "bytes": 2839,
+    "sha256": "83861766b7072c0bf9134a959b42431fed0e887812d1a36a6a7d76c871b2f94f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/index.html",
+    "mode": "100644",
+    "bytes": 392,
+    "sha256": "2ef5f047b3b24c283e8a6d2b4a24f1890119918bb18423a5d4664039cbfabd8a"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/package-lock.json",
+    "mode": "100644",
+    "bytes": 39586,
+    "sha256": "f66c74833ac5ccf823c01af561239e1e9f1f6355a9c123e999f97c21926a6f11"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/package.json",
+    "mode": "100644",
+    "bytes": 600,
+    "sha256": "a447d40ecda7513cd8051ee2c7d3afd3825ea18a51334f518fd4d9b956c99c37"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/src/demo-port.ts",
+    "mode": "100644",
+    "bytes": 5928,
+    "sha256": "5c5118d91c0eee36559b0c422a0cc634a111a200375547c61af9269dc4bc6137"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/src/demo.tsx",
+    "mode": "100644",
+    "bytes": 12531,
+    "sha256": "28f53901901f7eeda929dda4c508c1bc27fb3619021b92c60ffa21d66da6dd19"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/src/flow.ts",
+    "mode": "100644",
+    "bytes": 7622,
+    "sha256": "ea66902fab8b8d9fc290740eeee17f62ef97e78a039bd68d0c58b3ba0ee2510d"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/src/main.tsx",
+    "mode": "100644",
+    "bytes": 596,
+    "sha256": "5f334ae5555e6006768127cd08c26743678339aefb7cb239e2941d8bf695e552"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/src/style.css",
+    "mode": "100644",
+    "bytes": 8838,
+    "sha256": "0706e7dd7dd782069e3a73d663b510349b2a38467b46e064f598baa0945513c7"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/tests/browser-smoke.py",
+    "mode": "100644",
+    "bytes": 5198,
+    "sha256": "8387524dc6919d492a5d7c356ffcee410e6333191b19d92553e98254dc5a42f0"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/tests/flow.test.mjs",
+    "mode": "100644",
+    "bytes": 4009,
+    "sha256": "e242e6a01871027cf3bdb598f2d3a0e5ab475eaf0e789cee3f1aefc747deb5cd"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/apps/mini-app/tsconfig.json",
+    "mode": "100644",
+    "bytes": 375,
+    "sha256": "86ccd56cd605e3df25f579b47a5a50662406cbd2cb4ae5bafb50b888ef7d9dab"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/evidence/browser-smoke.log",
+    "mode": "100644",
+    "bytes": 126,
+    "sha256": "2c259bcdd401a91d80a92d6a9e5dc360369e9fc47f7ba0fd8d46a1a259a190f9"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/evidence/node-tests.log",
+    "mode": "100644",
+    "bytes": 936,
+    "sha256": "6bc62e17865c025877fa7c07e6c98db1bfa5a3fcea0c0607311278ff100e125e"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/evidence/production-gate.log",
+    "mode": "100644",
+    "bytes": 461,
+    "sha256": "0cb45042cf60b2ce601fa3af46e0425659f563393f2337430b4b81e98a7bdb0f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/evidence/production-gate.py",
+    "mode": "100644",
+    "bytes": 1726,
+    "sha256": "071744c2b6e6806874a48a5b40a67ac101a9e7f99221511ef3cdadf038875891"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/evidence/test-results.json",
+    "mode": "100644",
+    "bytes": 1707,
+    "sha256": "97b6b68c9a16bf2ff3e52432f65825ebf52a46a09ccc37a0fb7716c7ee6020f4"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/evidence/typecheck-builds.log",
+    "mode": "100644",
+    "bytes": 1624,
+    "sha256": "2ea2b8aa628d2b4dfd4305b91d54ccd077da08043885240800e67da8b6c97419"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/privacy-review.json",
+    "mode": "100644",
+    "bytes": 6544,
+    "sha256": "1184aa1e8217e709e01e186210fcced927504f87e94218339d8f641a0f334e05"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2999,
+    "sha256": "614484f02f1600f82d688cb6b3609556d6fab898766e0e07d24b5d7af382c199"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/mini-app/source.sha256",
+    "mode": "100644",
+    "bytes": 1330,
+    "sha256": "ebfa5687c03b3dbaf256e4cfae65a8886bcd4ab39fa60cbfb10e7bf3423b69cf"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/round-2/backend-round-2-50-tests-0b5e2332aeda.zip",
+    "mode": "100644",
+    "bytes": 113790,
+    "sha256": "340f2aaa2f50c170689d929fe54608fa6b9d512929c5497c79181fd51d2768fc"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/round-2/univeracademy-bot33-round2-20261105.tar.gz",
+    "mode": "100644",
+    "bytes": 58498,
+    "sha256": "86356405ebd7c79071119bf5ad92a67de75cef06814235ef3d8d6f4f8b296a2d"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-05/round-2/univeracademy-bot50-f1-verified-20261105.tar.gz",
+    "mode": "100644",
+    "bytes": 60373,
+    "sha256": "6fbdc7618b295b669ff3f3c4fdb7dd3cdc1edb3afbd77afc25d714b62c03308e"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/HANDOFF.md",
+    "mode": "100644",
+    "bytes": 2385,
+    "sha256": "3b03914d77621e19ca62e68fe6cc2feae85c30feb5ac327c2e2dbeeb544ec492"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/backend172-guard.log",
+    "mode": "100644",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/backup-browser.log",
+    "mode": "100644",
+    "bytes": 1616,
+    "sha256": "76a8c821d4886d3c6a68916f1f6a20b10b3e59ca30fda2097a5089120947d14b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/build-typecheck.log",
+    "mode": "100644",
+    "bytes": 898,
+    "sha256": "20ba0c891c8378d771493e82458b293d38ae5e85d0d9ed136f26109a1588e2ac"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/candidate-manifest.json",
+    "mode": "100644",
+    "bytes": 8922,
+    "sha256": "5f4d0f22ade20e4609657b7366febe3014d4f4745254c01569da747def9e253b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/candidate.patch",
+    "mode": "100644",
+    "bytes": 86867,
+    "sha256": "e628afee2b6410b815dd3588431316b9cb26b5923a4161a24bd3d2ea23ce9b20"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/common-production-build.log",
+    "mode": "100644",
+    "bytes": 1716,
+    "sha256": "27b5602e677e8714a68aa791e6d4cccf3a06e0ccbdc00d4bde629e0c64563d74"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/integrity-privacy.json",
+    "mode": "100644",
+    "bytes": 970,
+    "sha256": "f2c0820adb2c4edf348818d444823e557a377c52a3295bbbb907854f041210fd"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/legacy-production-build.log",
+    "mode": "100644",
+    "bytes": 2193,
+    "sha256": "f3a6a7a9a152a3288568710841bd5c74cbd63e23062c2370bcb9b4b7ba882db8"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/prebuilt-browser.log",
+    "mode": "100644",
+    "bytes": 2393,
+    "sha256": "26e8b242014d8780980ef0325641821449a3c239a5acbb055a646d12b47832a1"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/publication-plan.json",
+    "mode": "100644",
+    "bytes": 9209,
+    "sha256": "cec18a25754b7fd4c5408e1c584bbbf361ff8c03eddc5343fc9c6bc16484514e"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/restore-candidate.py",
+    "mode": "100644",
+    "bytes": 1826,
+    "sha256": "0ee450f1ba4d678ca675b7f21486d5fecf6068a445705eeb62be1c04154999c5"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/restore-script.log",
+    "mode": "100644",
+    "bytes": 230,
+    "sha256": "b66327f8e48a7493e69b3b581721efed3100b019dc43ae783e76cc85be7b8e63"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/typecheck.log",
+    "mode": "100644",
+    "bytes": 263,
+    "sha256": "ddc260d0ab04bbc1803bbc81e1bcac17f9e8e36dc769870e80d1e19c71bdab0b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/unit.log",
+    "mode": "100644",
+    "bytes": 18013,
+    "sha256": "16da8de93bbe19275443c2a91793afbf8f0d2fa1c45826193f7ef81a9dba4d73"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-clerk-prebuilt/verification.json",
+    "mode": "100644",
+    "bytes": 3076,
+    "sha256": "19eab10f0e2e9aa8709546e440bb085d5ebf3b836e9f317951d115a38563f78b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/README.md",
+    "mode": "100644",
+    "bytes": 2427,
+    "sha256": "676f5f377500166edf867c949f955247873e53e2dbc77b8e557de799b7188935"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/candidate-manifest.json",
+    "mode": "100644",
+    "bytes": 5029,
+    "sha256": "9975da27073a63d2318025b4b88eb1377e1f05c3bf5f969fed3330712ac96ba2"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/candidate.patch",
+    "mode": "100644",
+    "bytes": 65495,
+    "sha256": "a1dd889f7e13e3430e30bd865a3a367fb515eee5e600034369da6eb13dae8e26"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/HANDOFF.md",
+    "mode": "100644",
+    "bytes": 2116,
+    "sha256": "abbeecfe4b18778c6cbc51c148c6807cc048e9921f4634ad146b1902154033b0"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/candidate-manifest.json",
+    "mode": "100644",
+    "bytes": 1538,
+    "sha256": "950f2a6c64b183bed60425f6acec45d6e3145d9c8893b5b7ae46472285a871f3"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/candidate.patch",
+    "mode": "100644",
+    "bytes": 41691,
+    "sha256": "1eff6f0455e2a6236641f8d002451c455f85f106e1ee10797ee7b0c56750c05c"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/guard191.tap",
+    "mode": "100644",
+    "bytes": 9712,
+    "sha256": "cec6acf4a35436d1e5d1097a088e61c217e258ce134b67ddb236c67408e199d4"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/guard/verification.json",
+    "mode": "100644",
+    "bytes": 1692,
+    "sha256": "8737af28ea1e19a680a7ed98c09605458a880f726147c844f1e1e2c326ccdb1a"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/affected-auth.log",
+    "mode": "100644",
+    "bytes": 13276,
+    "sha256": "c296e35b42505cc072fed5902987cd14b9394d608da7eea1ef2fa1116e9f0f44"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/common-build.log",
+    "mode": "100644",
+    "bytes": 1716,
+    "sha256": "e89e342904718d78dd20dc138dd74e58ea50df5d7468746e3477d8a9a6d34c44"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/default-build.log",
+    "mode": "100644",
+    "bytes": 898,
+    "sha256": "04da049d0ca43bd0a92e1975893ea1f8e466de9cfe4776e049922e8372fda9a4"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/empty-socket.log",
+    "mode": "100644",
+    "bytes": 761,
+    "sha256": "743c0ca682c7cce0c4666081cdd405583f63b9b223079a9704b9bc6a76a867eb"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/loader-patch.tap",
+    "mode": "100644",
+    "bytes": 994,
+    "sha256": "01bbec88c888de253aed79344f1a3bfbb75c31664041041eed57c0e2d3e85fec"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/obs-baseline.log",
+    "mode": "100644",
+    "bytes": 880,
+    "sha256": "5cb68dd8e860fa6509fcd615a8a19b6efa142dd38e1bacdbb7e4f8b1c8662ec6"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/obs-dev.log",
+    "mode": "100644",
+    "bytes": 241,
+    "sha256": "90718f47c89c8a6683220b9833e2ee0539a235b8430ea52ccdf6b46898b3829c"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/obs-fixed.log",
+    "mode": "100644",
+    "bytes": 1347,
+    "sha256": "36b7dd727e995effc5a83fe2b75a842c86e502c89669eca68de313db6ddd10b3"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/logs/prebuilt-regression.log",
+    "mode": "100644",
+    "bytes": 2393,
+    "sha256": "afab4de36ccf8c196bca993fdad37decc05b6efc679e689a84f17f62f68e1983"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/publication-plan.json",
+    "mode": "100644",
+    "bytes": 7176,
+    "sha256": "eeb47cbbbb0d9534a319161206949580cc337f926258208d4a7298cc6e0575e9"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-07/mini-app-guard191-obs-load-1/verification.json",
+    "mode": "100644",
+    "bytes": 5267,
+    "sha256": "febd8c8909a8f0135864f52de8f9582e434a2bbdcd9a0dfc31b6fad22f9f3b63"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/accepted-traces.json",
+    "mode": "100644",
+    "bytes": 22294,
+    "sha256": "0d441be1febb15d7595250db45b3574355e9b20d8e6c67bc516b218c9fcb522a"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/affected-tests.log",
+    "mode": "100644",
+    "bytes": 7096,
+    "sha256": "4e89f7542212774de24a995472d1b12ecf9743cee89aff31acdb94284d0e5929"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/candidate.patch",
+    "mode": "100644",
+    "bytes": 36519,
+    "sha256": "0c3dd0c670b3a31d76d1aa432bc34815244c50a26fab8fe82ea14b7a32aead94"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/guard.log",
+    "mode": "100644",
+    "bytes": 682,
+    "sha256": "e15a29d00d09760d3c20b3c4048b13b0b3c70ab11f4d1a6d1c5f8409d4a3f04e"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/history/alias-boundary-probe.mjs",
+    "mode": "100644",
+    "bytes": 5067,
+    "sha256": "05cc6452888c7155885263e204f1014cf7777ffdc03220acb4ffe85f4055c4f7"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/history/alias-boundary-results.json",
+    "mode": "100644",
+    "bytes": 1356,
+    "sha256": "2458b5f8e2a37b884bffa85f9b264b754628d5ceaff0192a2790b20b25e50d90"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/history/r1-red-test.log",
+    "mode": "100644",
+    "bytes": 3977,
+    "sha256": "d074c9456586377838ab439287afec3a7f0547cfa6a613e49f2d856415b65664"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/red-provenance.json",
+    "mode": "100644",
+    "bytes": 631,
+    "sha256": "597b7504467e8c6e24e08ff9f48dcbf8354186b1d83c8ec68f390c98d47cc22c"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2856,
+    "sha256": "87e6ed033439d3ced27231d0a2b09e399ccc6ed816f31ddcdbe3bfe44687edec"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/typecheck.log",
+    "mode": "100644",
+    "bytes": 561,
+    "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-1a-callback-free-v2/verification.json",
+    "mode": "100644",
+    "bytes": 2737,
+    "sha256": "afe6845feb1ba086859574df16aa2a739bf1245ed77701fd5fd78b66004f955f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/accepted-traces.json",
+    "mode": "100644",
+    "bytes": 24680,
+    "sha256": "871eb8f8859eee0688239e14aa6db35bd39b934c3014c9e8aa5e947ca3b5e549"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/affected-tests.log",
+    "mode": "100644",
+    "bytes": 7472,
+    "sha256": "795f4ebafdcd50765e6ac5153e655e4518741aacdbc35cb0d0c07878972898e9"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/c04-red-green-mapping.json",
+    "mode": "100644",
+    "bytes": 5207,
+    "sha256": "39be0fd47d12c1b19137fd4419753ec6d6d3dc5abc30751fcb8a3cbf936a5631"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/candidate.patch",
+    "mode": "100644",
+    "bytes": 38212,
+    "sha256": "c02ee3a3412cce2f97c9288847d1aade679be96365fd8746311f915580bd5c8d"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/history/c04-red-case-results.json",
+    "mode": "100644",
+    "bytes": 7283,
+    "sha256": "953978d0eff1a8fc76d056219267edf51e0d5cad93d33413da19dab58735d378"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/history/c04-red-reproducer.test.mjs",
+    "mode": "100644",
+    "bytes": 9999,
+    "sha256": "ccdb7aaa854a549f760b266adc39ef039f91828591c9cfcf576771eb2b0dfee7"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/history/c04-red-test.log",
+    "mode": "100644",
+    "bytes": 3714,
+    "sha256": "64b4f9ce551a92d5b9eb0e12ede08e71151995d133e265a6a010045767164a4d"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2021,
+    "sha256": "cccfb1ee2e347cdbf4afccffbbeb769e992f4d4a09576b3a95937b9e9eed0017"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/typecheck.log",
+    "mode": "100644",
+    "bytes": 561,
+    "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-c04-idkey-v3/verification.json",
+    "mode": "100644",
+    "bytes": 3048,
+    "sha256": "0ede2282dbec34df728a758255615f687ba960806113b10255f4e07bd7beb2f0"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/affected-tests.log",
+    "mode": "100644",
+    "bytes": 9096,
+    "sha256": "354ff5d93672a067ca4769d12073845517c8a3ca788c3be4c741c8e362952177"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/candidate.patch",
+    "mode": "100644",
+    "bytes": 23864,
+    "sha256": "f6bdeaca77e4198775e4b934e37eab4946af5520c2cf20f41357bb2bdc677a82"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/existing-accepted-traces.json",
+    "mode": "100644",
+    "bytes": 24680,
+    "sha256": "2064b1e624ab21a94ea866b3298200ab1bbe4c6f2f2b390336da8a768685e603"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/history/instrumentation-initial-classification.txt",
+    "mode": "100644",
+    "bytes": 403,
+    "sha256": "89a422819ba8c66d163292477ace5f7c9ffe1c44160aa411a5aca196d4bc2fdd"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/history/instrumentation-initial-focused-r03.log",
+    "mode": "100644",
+    "bytes": 3673,
+    "sha256": "d02535fc75f82d384a53e00b575241e7916def77ab1180e1085a261e9d5da5ae"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/history/r03-v3-red-traces.json",
+    "mode": "100644",
+    "bytes": 106251,
+    "sha256": "eeab49d4d17f0fe577f51cb9d3f7ef2b41beb930c8ce12683afd834c21e3fd67"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/history/r03-v3-red.log",
+    "mode": "100644",
+    "bytes": 12221,
+    "sha256": "14e25a2817115e5425712522d141cd74067afabfcf8b3f871add82484ce70a40"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/r03-accepted-traces.json",
+    "mode": "100644",
+    "bytes": 61475,
+    "sha256": "86d082462b05ba36b964668dcbf5cb084dc85b45f3bd57c3e6947c40ee675fc0"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/r03-red-green-mapping.json",
+    "mode": "100644",
+    "bytes": 39509,
+    "sha256": "bb103a4434b51a412c643a236439e74ce16aec1352fe979769a627abe9df7805"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/source-manifest.json",
+    "mode": "100644",
+    "bytes": 3350,
+    "sha256": "fff9bf605dbed5c2a53b4f3e6c6409dfe45255e131c9a05985ae16f257053850"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/typecheck-provenance/run-typecheck.py",
+    "mode": "100644",
+    "bytes": 6970,
+    "sha256": "d53a4ca10225ef992edbcf8173fbd73cbfdca0916ba81f5026e0085dcced3969"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/typecheck-provenance/sources-locks.before.json",
+    "mode": "100644",
+    "bytes": 114287,
+    "sha256": "a3f1962c39ec4fcbccc2eed22d368d152f35cb659519b79dad15057e635d4cd2"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/typecheck-provenance/typecheck-supplement.json",
+    "mode": "100644",
+    "bytes": 4080,
+    "sha256": "71aaa853b1e01531776514b880b64513e6f303e166a09e61ee8db32e48f0b501"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/typecheck-provenance/typecheck.log",
+    "mode": "100644",
+    "bytes": 353,
+    "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/typecheck.log",
+    "mode": "100644",
+    "bytes": 561,
+    "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r03-ordinary-v4/verification.json",
+    "mode": "100644",
+    "bytes": 10934,
+    "sha256": "35560ea2b75b4e01d9349632e758032c80a1c9ed3f10ca1438002bfb201e2875"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/README.md",
+    "mode": "100644",
+    "bytes": 9835,
+    "sha256": "a43eccff52ed18b2e433685b617ca8df5f22a52a78477e383aff0ab1716d3a18"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/base-fingerprints.json",
+    "mode": "100644",
+    "bytes": 70503,
+    "sha256": "49a2d41859b2abd7214083087a1e56ff7427fa388da0edc2e10a44b3e6b441ba"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/candidate.patch",
+    "mode": "100644",
+    "bytes": 59807,
+    "sha256": "de06d97b41a1c487c9c3ffde863a57c54e00a8affb79d8501ffe40ecbe689205"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/case-results.json",
+    "mode": "100644",
+    "bytes": 807524,
+    "sha256": "2a777be066d53c9bf2899e071b65b6d8ee6c15010937734ef578a66721e6ce9c"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/final-scope-verification.json",
+    "mode": "100644",
+    "bytes": 1398,
+    "sha256": "9572b6b4a17ca3db7e65bbf5df83ac227318f6d6f4b0dc964f1cbd34981b6e78"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/frozen-final-source-before.json",
+    "mode": "100644",
+    "bytes": 61316,
+    "sha256": "6c021cf6ceff91e45e4e9daee184463f8aa88c2f6cf9d746bf0b7e2fcd016f06"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/frozen-final.log",
+    "mode": "100644",
+    "bytes": 9237,
+    "sha256": "3923885a73dcb6a19e955735348f90d5c1f9054443b8e94a556e8b390fa7e685"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/frozen-typecheck.log",
+    "mode": "100644",
+    "bytes": 353,
+    "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/history/focused-01-run.json",
+    "mode": "100644",
+    "bytes": 1698,
+    "sha256": "534f7c1a3baa2dd9f41309f7edd4b87ba0911186b0960b009690ae020406c8a7"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/history/focused-01.log",
+    "mode": "100644",
+    "bytes": 31124,
+    "sha256": "90e96bbbddeb3045af3e3ce77626abb6196b7aa88e40fae84be36ea2caf8ce88"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/history-notes.txt",
+    "mode": "100644",
+    "bytes": 878,
+    "sha256": "58fad9dd2ed76fe5e6115e230378026ec69e86cc7bebb108e50cfbc264f5bc1b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/replay-verification.json",
+    "mode": "100644",
+    "bytes": 68213,
+    "sha256": "8fee44b29c75fcf7f20c7d4b64d33dd5f97498395eed0743a0dbc51768f06dcf"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/source-manifest.json",
+    "mode": "100644",
+    "bytes": 1705,
+    "sha256": "f39d57e9964207f46e46d6d445e0098fb618bf6e3184994b9b39fb24b330a19a"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-r1-int-01b-local-contract/verification.json",
+    "mode": "100644",
+    "bytes": 12747,
+    "sha256": "cef7c26bab439f85f8acf5ab019a360204eb69e4148e2dfaf19c6e181e77fc80"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/README.md",
+    "mode": "100644",
+    "bytes": 12088,
+    "sha256": "1796f86b7f33307ba06f2dd6c4b9e0e618798fb48143e980895a341179ea1b89"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/affected-03-legacy-r03-traces.json",
+    "mode": "100644",
+    "bytes": 61439,
+    "sha256": "15ba153ea6a071e593f5dfe46ffb1b71b25a157f5cbe220decf3cb4400bcd5ec"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/affected-03-legacy-traces.json",
+    "mode": "100644",
+    "bytes": 24680,
+    "sha256": "8668ca68fb7b245a783e50ad1cb071f26c4ea2cba5aa5e37ef53738e0167568d"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/affected-03-source-before.json",
+    "mode": "100644",
+    "bytes": 61504,
+    "sha256": "804b1ed57a2dbae817c0ba4cadab21e3a057a58a1e08513eac08cc3bc3886509"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/affected-03.log",
+    "mode": "100644",
+    "bytes": 14159,
+    "sha256": "a5456c81f18e4f6fa3c8034e2de584a97093f60dabc5fba2c80a4a41efdf8092"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/base-fingerprints.json",
+    "mode": "100644",
+    "bytes": 71261,
+    "sha256": "b774dee732cf3473309876e247601b0b4ad1f3cec8bd724b55e52b6844171aa5"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/base-git-blob-parity.json",
+    "mode": "100644",
+    "bytes": 94375,
+    "sha256": "1b53b99ae1719e2137ec27119441e2bf2d98381442d5b9fe02cffa86b22ca4df"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/candidate.patch",
+    "mode": "100644",
+    "bytes": 33747,
+    "sha256": "2bba2f1f35b2bbe9c05fd670c8edaa83aa78f985c1ca46fb6137d343629d6e7a"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/case-results.json",
+    "mode": "100644",
+    "bytes": 1496899,
+    "sha256": "37a3581b8bf7cce4b6bea3a6e324ed919c47187d14349704be9735abe6fce33b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/history/affected-01-run.json",
+    "mode": "100644",
+    "bytes": 2189,
+    "sha256": "348164881c2ebd4c54fc750877e029306539bbf71e90b6bd01da7c62fd3daad1"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/history/affected-01.log",
+    "mode": "100644",
+    "bytes": 6526,
+    "sha256": "cb71f0ca0de6eac5611027d74dc3fd2952f5969b7d8a2662f66ae5ca17bbfb18"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/history/affected-02-run.json",
+    "mode": "100644",
+    "bytes": 2189,
+    "sha256": "45413087efb39ab816b6a50d35a0f02742b2d82335abc49ed3b03a386753b502"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/history/affected-02.log",
+    "mode": "100644",
+    "bytes": 5936,
+    "sha256": "aec4b0668fb2b1fbf924e9a1f6cd750b846b4389b99736d4c57f9e7bedc4504c"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/replay-verification.json",
+    "mode": "100644",
+    "bytes": 6599,
+    "sha256": "9725273772b56aa268d2dfd2b9b46f5dc53dc82de2f3fc45f94f1af3f291b41a"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2562,
+    "sha256": "986197f78711b31eb7285a8a5e691876f7e2ea918633c8d5e2216895bde6221d"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/source-scope-verification.json",
+    "mode": "100644",
+    "bytes": 3313,
+    "sha256": "48e3aa55e5d613f96b501d330ec1bbf45df74c610e3e39aefcaadc681355843f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/typecheck-final.log",
+    "mode": "100644",
+    "bytes": 353,
+    "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/backend-removal-auth-01/verification.json",
+    "mode": "100644",
+    "bytes": 15090,
+    "sha256": "1d8046f9a7a06ce41e48df07efc551906b7e7599996a0090218ecd6f601c416c"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/author-verification.json",
+    "mode": "100644",
+    "bytes": 15956,
+    "sha256": "d824e25728fb640d8a3712bd5611b2d2d71c7c99beb30291eab1ee19d3180657"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/candidate-manifest.json",
+    "mode": "100644",
+    "bytes": 3871,
+    "sha256": "b7470d7db9ae81f5f8e6daf8990ee6476abfb5a7df8b09cf916ce597adfbde3b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/candidate.patch",
+    "mode": "100644",
+    "bytes": 48297,
+    "sha256": "13e1c3816e8cee9278868a41ee353d7808a89f5f570b379a02d625f3b918e881"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/commands.json",
+    "mode": "100644",
+    "bytes": 5072,
+    "sha256": "157e2dffcd9cc20dd3f5e591e91f24d2161f57a3b3be3504f5c06730574358c0"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/coverage.json",
+    "mode": "100644",
+    "bytes": 86282,
+    "sha256": "c0508d2a2be3e31204c44ec8feed369a1c63993146546c2458fcbba8e82abae9"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/finalize-evidence.py",
+    "mode": "100644",
+    "bytes": 11585,
+    "sha256": "4ea135afed16a6239685b3f50ef47cd7584064c797c26cb8369ead0358020fec"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/guard-controls.jsonl",
+    "mode": "100644",
+    "bytes": 17217,
+    "sha256": "faa23201a026dad3b9bfbb0ff2abaf18736c12392df56cd093419ee2bf8f7aee"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/guard-positive.log",
+    "mode": "100644",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/mini-build.log",
+    "mode": "100644",
+    "bytes": 898,
+    "sha256": "60eb24b43bf116301e67ce8a56c19942168c31641437c8ca75872bfae977ed16"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/mini-tests.log",
+    "mode": "100644",
+    "bytes": 29107,
+    "sha256": "c9910f75f0e5b851264ad6a4357ef11cf754b821ecee167654231eb0dbb28b37"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/run-command.py",
+    "mode": "100644",
+    "bytes": 1240,
+    "sha256": "3e7e7be0c8e44a325790f6a7f08ff2efdf5ad71d454afd6dd9e04afc0bf8cbc9"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/setup-mini.log",
+    "mode": "100644",
+    "bytes": 25,
+    "sha256": "6a0918433553952113085588ec6fbebf33181e177c53d66d72b7ee7f04327b53"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/setup-root-writable-cache.log",
+    "mode": "100644",
+    "bytes": 233,
+    "sha256": "f55c5e37c755e0e3b509588a7c99abdabfb2fcfc10094aa4e16f6ae00431c959"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/setup-root.log",
+    "mode": "100644",
+    "bytes": 29819,
+    "sha256": "49ad6e0cd33da53dd95d145cc3257e7085fbbaeadcb7e901721d434973011125"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/setup-validator.log",
+    "mode": "100644",
+    "bytes": 27,
+    "sha256": "45a592ebd7e180277aa5c3d23a90ba0934c78f1f505fe2fbae5f02403173afbd"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/sources-locks.after.json",
+    "mode": "100644",
+    "bytes": 121560,
+    "sha256": "735c3e67eea0bfdee92cc7c184368671aadd0242e00b57eedfd1dc1e99dcde8f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/sources-locks.before.json",
+    "mode": "100644",
+    "bytes": 121307,
+    "sha256": "5d5d332f887e1a88c714d1869ea23417203ebcf02443c308edcb5872fa15db76"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-09/mini-app-pin-8a750ee/verify-coverage.py",
+    "mode": "100644",
+    "bytes": 6433,
+    "sha256": "fb3aa2083ffee9d0562b5bf30b260ef40292dc6740aeed163f35f289396c97d6"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/README.md",
+    "mode": "100644",
+    "bytes": 9330,
+    "sha256": "e92488f7d9c3fabfe5535fca0e238a0c390f3abf84106c3f78b65fecc6b162e1"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/candidate.patch",
+    "mode": "100644",
+    "bytes": 51915,
+    "sha256": "6ecce43656795a2724e2533b7ee49b874c3b21c6858cca68f67af7ea1158a978"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/case-results.json",
+    "mode": "100644",
+    "bytes": 2965751,
+    "sha256": "6ba642ffe1d8ce13bbe62b83f73829285ba08e5b578fd9738de4a86e36cd949f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/domain-01.log",
+    "mode": "100644",
+    "bytes": 13367,
+    "sha256": "a419c769913e57424b34c88a6f4e2b95923d9795bd6e40b841255e9a8cf7594a"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/history/harness-red-green-mapping.json",
+    "mode": "100644",
+    "bytes": 23837,
+    "sha256": "1c10bce79b4b4ab6be3e46e8e86bd5cd59c72387a375fd1d850c2666ded774d0"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/membership-frozen.log",
+    "mode": "100644",
+    "bytes": 26244,
+    "sha256": "2fa1597cb9c54b23fd8e81a85a90d88cc729b07f473abfd7461a3fd31b5edd45"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/replay-verification.json",
+    "mode": "100644",
+    "bytes": 4064,
+    "sha256": "cf652adeaeec63d0bb496a28b73cc56edb3e408b8ee3125d0c0b3a60b31ab037"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/scope-verification.json",
+    "mode": "100644",
+    "bytes": 1711,
+    "sha256": "6fc47bdadf91fe195917d166179e2b009fb8dde5c83bccf13647e75175006d5c"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/source-manifest.json",
+    "mode": "100644",
+    "bytes": 4774,
+    "sha256": "f32b27eb911f89ebea9caa82dbec22e38aee4d19eba4acbc4accddf44f29f63f"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/sources-locks.frozen.json",
+    "mode": "100644",
+    "bytes": 118674,
+    "sha256": "cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/staff-student-final-bytes.log",
+    "mode": "100644",
+    "bytes": 5101,
+    "sha256": "5c76f20434059f20d0a243d01848b23889daa19055b7ad18d4467811cb3cbc7b"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/typecheck-final-bytes.log",
+    "mode": "100644",
+    "bytes": 353,
+    "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/verification.json",
+    "mode": "100644",
+    "bytes": 38701,
+    "sha256": "67e82e6b9182bb33268b44395173809294aa2d2cab7d82d7ee6e69180a2e7d78"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-removal-domain-01/whitespace-normalization.json",
+    "mode": "100644",
+    "bytes": 790,
+    "sha256": "a9b3ec0e8f1022c37e83d4c8ebd704b9c6a933bc45ccff40b2fcf9a16c941297"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/README.md",
+    "mode": "100644",
+    "bytes": 8064,
+    "sha256": "50fdcdd68fa2069510f9a152dea4306cf508248382d726a4ee9bacdcffddf6a4"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/candidate.patch",
+    "mode": "100644",
+    "bytes": 19922,
+    "sha256": "5c8ee8179c95a73531f36884e19cfc9881b5350d676226f348952796b46d9d8c"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/history/baseline-red-run.json",
+    "mode": "100644",
+    "bytes": 1906,
+    "sha256": "980623e3bc1f45f49a030a0abce138c7110218da3d635163e8d7bee452a275db"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/history/baseline-red.log",
+    "mode": "100644",
+    "bytes": 31572,
+    "sha256": "295017804244076366183c6032f7ef932d9094c71dc7150388ad45dcfad14f3e"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/history/red-green-mapping.json",
+    "mode": "100644",
+    "bytes": 119482,
+    "sha256": "79c2391dfe6d575c6b2bbb1f7593c847d975483de95241b69c580222567cd755"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/history/shared-green-run.json",
+    "mode": "100644",
+    "bytes": 1851,
+    "sha256": "4496e922cede9d36622661eb97975eef49746eda211184ba151b27cb9ce00c02"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/history/shared-green.log",
+    "mode": "100644",
+    "bytes": 18341,
+    "sha256": "d1f69088aa8966b5b88fa2d91c7e6af617df2429dc3b7b2dd30412a0930523e1"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/membership-regression.log",
+    "mode": "100644",
+    "bytes": 14116,
+    "sha256": "b8c72a55be45812a8aa68a196607f71f5a156c53d34cc48336d54183345dfb18"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/reconciliation-parity.json",
+    "mode": "100644",
+    "bytes": 1314,
+    "sha256": "b9943ff9ca59bf921e0ecb81b7fdeaadbd73b97a255b2a1fa91088ae10ac9960"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/regression-summary.json",
+    "mode": "100644",
+    "bytes": 397920,
+    "sha256": "aae616f0f8af25bcc8f4856a49a28638458bb24816cd10ef94ec3706696d92c9"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/replay-verification.json",
+    "mode": "100644",
+    "bytes": 3261,
+    "sha256": "16a01435f98f4d149d84d01bbc995d4f1916e92f967d306a6809acbc9ab545e7"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/scope-verification.json",
+    "mode": "100644",
+    "bytes": 1863,
+    "sha256": "feb52d79dd4ab7af1ea5db6f128e8a7c4dfbc5747c2ef00175c41ea7511be9b7"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/shared-final-shared-cases.json",
+    "mode": "100644",
+    "bytes": 2053235,
+    "sha256": "88db4dc7a85748a7980579bfe1612f681e2571120e29ab6b42c9633084c07bdc"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/shared-final.log",
+    "mode": "100644",
+    "bytes": 6128,
+    "sha256": "99ed29ee757984a9a28a2dfaaf70651a302d97fb1fc9dae23b2c5bc62286e271"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/source-manifest.json",
+    "mode": "100644",
+    "bytes": 4043,
+    "sha256": "7951ee5cd1aa800f63bbf52f9c2a7b1523eb9c85cd26d4e72e29cdc6f4fe13be"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/sources-locks.frozen.json",
+    "mode": "100644",
+    "bytes": 114354,
+    "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/student-http-regression.log",
+    "mode": "100644",
+    "bytes": 3964,
+    "sha256": "d67cf141f6bdb233cb46e62522318b24790c3452d5ec4e2db5dec278be460013"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/test-base-metadata-only.diff",
+    "mode": "100644",
+    "bytes": 2482,
+    "sha256": "00513a46ce9c3eb7e9c1ee27910e4a184171add7fff51c27f4a6a6bd696e2a7a"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/typecheck-final.log",
+    "mode": "100644",
+    "bytes": 353,
+    "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+  },
+  {
+    "path": "qa-checkpoints/2026-11-10/backend-shared-expiry-reconciled-63f0e9a/verification.json",
+    "mode": "100644",
+    "bytes": 70280,
+    "sha256": "53e2ffce9599ad05cdb04022119b58ddac3131eb7029b9c8184f72af6a89aa3b"
+  },
+  {
+    "path": "workspaces/univeracademy/.gitignore",
+    "mode": "100644",
+    "bytes": 99,
+    "sha256": "8e4c09e5149a50d6a0ec4b412baa6fdf196c3f4350d7d98e5767fc8fe20662d1"
+  },
+  {
+    "path": "workspaces/univeracademy/BACKEND-CURRENT-SHA256SUMS",
+    "mode": "100644",
+    "bytes": 21015,
+    "sha256": "0ca4a7676d7d78286f5fd3735f94be8635cbcb81e05639929a96d227867676e0"
+  },
+  {
+    "path": "workspaces/univeracademy/BACKEND-SHA256SUMS",
+    "mode": "100644",
+    "bytes": 4516,
+    "sha256": "5189eff514f03dbac1eda22207839f5208195325cf4f6dc47853766e73dfc535"
+  },
+  {
+    "path": "workspaces/univeracademy/CLIENT-PRODUCTION-HANDOFF.md",
+    "mode": "100644",
+    "bytes": 2840,
+    "sha256": "212c0e72c8a3bd4c0c4eb066f2a6c7d9037981c5d28dfc281c9129e747bc201b"
+  },
+  {
+    "path": "workspaces/univeracademy/README.backend.md",
+    "mode": "100644",
+    "bytes": 5851,
+    "sha256": "07c7eb54e46cd6e085cd35a71cd1f94e17d47d89f3dc03d2d019cdffda96f725"
+  },
+  {
+    "path": "workspaces/univeracademy/README.current-backend.md",
+    "mode": "100644",
+    "bytes": 27588,
+    "sha256": "ad6d96a8de83e700d005a1acd57b3df5e51b0eeeed27a1890ae8c6d21b5bd843"
+  },
+  {
+    "path": "workspaces/univeracademy/README.enrollment-staff.md",
+    "mode": "100644",
+    "bytes": 4254,
+    "sha256": "26b70e48719ba0de89c219019e611ac3688544a684119f2326424b389bc5889a"
+  },
+  {
+    "path": "workspaces/univeracademy/README.persistent-http.md",
+    "mode": "100644",
+    "bytes": 3426,
+    "sha256": "510e12bc1be2d52fa922a7dd2d511ee4b68742ee0fd9df6999e0e38612ccb231"
+  },
+  {
+    "path": "workspaces/univeracademy/README.storage-auth.md",
+    "mode": "100644",
+    "bytes": 1898,
+    "sha256": "1566d6ab399e25ebae0d38a5c5350c564038b4956192941906f5cf4737445630"
+  },
+  {
+    "path": "workspaces/univeracademy/api/index.mjs",
+    "mode": "100644",
+    "bytes": 616,
+    "sha256": "e8c6699dbfac16771857c2b684b1198ac53950cf71469149200b619fb9412a4b"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/.gitignore",
+    "mode": "100644",
+    "bytes": 70,
+    "sha256": "64454e0e0058cdbcf162740323917d39031f616131fbaa1568a4f9026ba22d71"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/CLERK-COMMON-ENTRY-PLAN.md",
+    "mode": "100644",
+    "bytes": 9774,
+    "sha256": "020b55b01779dd0a01aa50a6928bd878e8a1b057ca40cb3f8d32db98eaaa2126"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/CLERK-HTTP-REVIEW-INTEGRATION.md",
+    "mode": "100644",
+    "bytes": 6378,
+    "sha256": "361ca98ac63cab482826826afa76bad9865476b2ab986d5ce63bc4ba755af672"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/COMMON-ENTRY-COMBINED-QA.json",
+    "mode": "100644",
+    "bytes": 8393,
+    "sha256": "34a5eaf937feb07dcecf40b27e308b5f8c3fd4127d1d63f81e42b47c1f36e8d4"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/COMMON-ENTRY-COMBINED-SOURCES.json",
+    "mode": "100644",
+    "bytes": 7920,
+    "sha256": "821cf5eb88e9f1c9bcc9c02e5a6ca4edcfe08c18c5dd1e22aaae95e1287029d4"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/CURRENT-FLOW-QA.json",
+    "mode": "100644",
+    "bytes": 7666,
+    "sha256": "b3c1cc1987ae2ed3e5a6ba731c444b47faf720cbf2c68519ab5043f2301cb04c"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/CURRENT-FLOW-SOURCES.json",
+    "mode": "100644",
+    "bytes": 8606,
+    "sha256": "c5ef5c3d3c42b30b85ed1bc5e7b9c3f790f32c6d328e2f7e33a251066cdb7409"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/INTEGRATION-NOTES.md",
+    "mode": "100644",
+    "bytes": 5892,
+    "sha256": "faf89ef421decb25c50804b825ce7e57ca7818f2b9edcf50bb46a5516e230631"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/PRODUCTION-ENTRY.md",
+    "mode": "100644",
+    "bytes": 6547,
+    "sha256": "fbe20f57a131ff67fcf0a27cb709d8e683a2db82ed4a919f570fa5c89ab1c438"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/PRODUCTION-INTEGRATION-QA.json",
+    "mode": "100644",
+    "bytes": 6879,
+    "sha256": "9155b1d5a2323e823c08f39e82df19576df72b08f1ed7ae3b9a19c8024232db9"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/PRODUCTION-INTEGRATION-SOURCES.json",
+    "mode": "100644",
+    "bytes": 11628,
+    "sha256": "88eff4c07bc65200af951c3ccd81c99f70a3de9b59b5d38f6b185441ef8c4631"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/README.md",
+    "mode": "100644",
+    "bytes": 5115,
+    "sha256": "a639137701c9bd9f12feb3f77f4e0389865cb3ef3df1f48e3ed53575dfd495de"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/TELEGRAM-BOOTSTRAP.md",
+    "mode": "100644",
+    "bytes": 6109,
+    "sha256": "b192db7f49d3564e673c420546306a2f3c3e4f45d53e0d709486d7fc56e3ffa3"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/TRANSPORT-CHECKPOINT.md",
+    "mode": "100644",
+    "bytes": 7649,
+    "sha256": "84ba0a22c09139253dc9cffac24ccfc309b8fbac6bbf93f29288b6459828741f"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/WIRE-MAPPING.md",
+    "mode": "100644",
+    "bytes": 3887,
+    "sha256": "40cf6e69305a7dea983316d5d95e12ff0bf8311606ba7290f52dbff84826657e"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/clerk-prebuilt-local.md",
+    "mode": "100644",
+    "bytes": 5415,
+    "sha256": "8d6f72fe6f8ce2bf08bd273a4a24eef8ba1135035f244fa2fa7b39d8b9b99478"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/clerk-sdk-local-candidate.md",
+    "mode": "100644",
+    "bytes": 7876,
+    "sha256": "2ec90707ef9154df0bd5adb0358d60afd556ad91858ed1d0082e05d20832e902"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/email/uz-otp-review.html",
+    "mode": "100644",
+    "bytes": 1566,
+    "sha256": "d8c0da091a1471cfe7d7f81c67137e461fb6f86e590882383f69c1e89adbb8aa"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/email/uz-otp-review.txt",
+    "mode": "100644",
+    "bytes": 373,
+    "sha256": "1720cb6b9ceea287a9795b4bb149e7c7733f091284fc55d4ad2045070f012fbf"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/obs-load-1-local.md",
+    "mode": "100644",
+    "bytes": 4999,
+    "sha256": "90c562955826436599b5142f4ded610db5a55d1263cc51e07b34155bd3f362c5"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/review/README.md",
+    "mode": "100644",
+    "bytes": 5388,
+    "sha256": "31d8e07b52d6c198bae98b82590bee062762fdab584664c95c036d1b6da5c9b3"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/review/uz-otp-email-A.txt",
+    "mode": "100644",
+    "bytes": 297,
+    "sha256": "a24eb98bbd10ddc61500f758461eb253c4c4cb6addb99f022fee7ef8faaa3e7e"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.html",
+    "mode": "100644",
+    "bytes": 5758,
+    "sha256": "1b06db251679e9ed8f448b29021d90d1c8bb1e8112c40bc68172418b51d5ccd0"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/docs/review/uz-registration-otp-A.json",
+    "mode": "100644",
+    "bytes": 2571,
+    "sha256": "996440127fb2a67876e720d65cda71b8012facd0f3611c898635089bf7822b45"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/index.html",
+    "mode": "100644",
+    "bytes": 443,
+    "sha256": "ce7d1edfc92a76a921a409160204f56db60105b2a15b8f6441477b7d1563147d"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/package-lock.json",
+    "mode": "100644",
+    "bytes": 42432,
+    "sha256": "e0d11ceeccc2325066fa02d61e7b6ecffde79f7e675b0080facc4675f87bf059"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/package.json",
+    "mode": "100644",
+    "bytes": 2116,
+    "sha256": "a3a1094919d8d730651a66011c58923856d04c6f7eb84dd99f309b3e6f83ebe5"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/production.env.example",
+    "mode": "100644",
+    "bytes": 820,
+    "sha256": "6c8467c1502c1fe0a77d3a43e1af4adca728959c326ae2f0b319ab4c9d11ad07"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/auth-prototype-env.d.ts",
+    "mode": "100644",
+    "bytes": 122,
+    "sha256": "33caa9d1817b64bb5094302b3c3dd2e396a83147059c9a454220196ad98322ea"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/clerk-app-session.ts",
+    "mode": "100644",
+    "bytes": 2315,
+    "sha256": "a1d00af08b738a7d18ed6040a6ebcb408534ac4e521e5381b5768806d304d59d"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-entry.tsx",
+    "mode": "100644",
+    "bytes": 3789,
+    "sha256": "be3c0dc5f7f28217432827c925703f563661d2749ffb50a6092eb51e883832fc"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/clerk-prebuilt-session.ts",
+    "mode": "100644",
+    "bytes": 1513,
+    "sha256": "6cf3a8809c2db65f9a93e3f57a885f56b872aa64505c268842fd2529eaa4f21d"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/clerk-review-entry.ts",
+    "mode": "100644",
+    "bytes": 1020,
+    "sha256": "ee6cf2fb20c49203bfe303532829be7be23c0383c92b1c89e9c00f572a41a730"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/clerk-sdk-adapter.ts",
+    "mode": "100644",
+    "bytes": 7438,
+    "sha256": "b6cc5384ed70df445ba27f1a76b39405e6a6c16617bd6f967ace5ddd95c60684"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/common-backup-entry.tsx",
+    "mode": "100644",
+    "bytes": 2179,
+    "sha256": "e07931a5dd0e7356fe5b520a0f4a7d65bea40eb46f6827533eac6071a41a5dbd"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-demo.ts",
+    "mode": "100644",
+    "bytes": 1935,
+    "sha256": "c1d8d4e9e17324edfdc15cc261ce2cf102d29b299c015ab795cc738cac2f7d2b"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-prototype.css",
+    "mode": "100644",
+    "bytes": 1304,
+    "sha256": "a44bad58fcdb90d9c8b8d5262c98c559c3099ec59644e2b026aa089f823334d1"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-prototype.ts",
+    "mode": "100644",
+    "bytes": 907,
+    "sha256": "2fb9ef7de54c37452813dcccf074873881afe282631450d6ed13456b273d7aee"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/common-entry-prototype.tsx",
+    "mode": "100644",
+    "bytes": 5303,
+    "sha256": "55a572356bb65ee2f249a55b2eb28ba06bd0995389c0ec01ac3be289d63e4b82"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/common-production-entry.tsx",
+    "mode": "100644",
+    "bytes": 6017,
+    "sha256": "81359bc781cb4278b8f0a8c8b723adc4bb7233b7df7b304c2bf5a25073731de6"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/common-production-runtime.ts",
+    "mode": "100644",
+    "bytes": 2547,
+    "sha256": "db9e5c5ef70a3149863b7741033519baf1d5ff14f41246b402ce2096ffcc95e2"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/common-sign-in-view.tsx",
+    "mode": "100644",
+    "bytes": 3858,
+    "sha256": "69458469ac42f1a13035263b203183426418ebb795ae573c143f69c53419e2b5"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/demo-port.ts",
+    "mode": "100644",
+    "bytes": 8014,
+    "sha256": "69bd43b728d491f316532a26960ea0ab4d22cf11cea5ca96a219ce5163287a6d"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/demo.tsx",
+    "mode": "100644",
+    "bytes": 2230,
+    "sha256": "1abe861de816335acdb85f66b5f23cddad15dca7f0964c4c89c81711ddc9be92"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/display.ts",
+    "mode": "100644",
+    "bytes": 1583,
+    "sha256": "4d230dbd83d4f797f68d5ff8976cd332a3b6b3ff86ae6f7f35335cb6809588e6"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/flow.ts",
+    "mode": "100644",
+    "bytes": 11933,
+    "sha256": "221fd761a980e6f6e9cd50b8d2bbb81e3ec84a54421ac058d6af8178d3ae44bf"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/local-http.tsx",
+    "mode": "100644",
+    "bytes": 2127,
+    "sha256": "edc3ad739134d3f1d2038d2cf85af5935654cb73e35af89ea21e677cf3a01c89"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/local-owner-port.ts",
+    "mode": "100644",
+    "bytes": 402,
+    "sha256": "7407e00f6ce5c3333ca07180b2d03b90d118ebcb05ae969c1420a48a7ea6094f"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/main.tsx",
+    "mode": "100644",
+    "bytes": 1397,
+    "sha256": "eca147a3f4e3e1f1556402221cff58d339567a2edfdbfec7c8a30863b7586287"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/owner-client/student-client.ts",
+    "mode": "100644",
+    "bytes": 8952,
+    "sha256": "61cf1d2d0681f3bf25a610c73eff7470159bca45679c5def42101e9a58017494"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/owner-client/student-types.d.ts",
+    "mode": "100644",
+    "bytes": 48905,
+    "sha256": "bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/owner-port.ts",
+    "mode": "100644",
+    "bytes": 8375,
+    "sha256": "aea4712724f4c9ac2d7006b6f2812f375bda7fe1ff90ce9a6a8cfdab9412d0b9"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/production-connection.ts",
+    "mode": "100644",
+    "bytes": 2459,
+    "sha256": "fae2470b79995be98e4ed96ac5457a2dd141466127d559bf8a96e0780f378265"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/production-entry.tsx",
+    "mode": "100644",
+    "bytes": 2784,
+    "sha256": "a726d8c85d8956d289370eddbd62bf2b4b152bbb6e3c0318f8579c322a8bece5"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/production-runtime.ts",
+    "mode": "100644",
+    "bytes": 3579,
+    "sha256": "b0c70d9426ec7a0cdacda47b991bbc86ce410e9e0bd0ca93047d03eb8ea54fda"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/sign-in-controller.ts",
+    "mode": "100644",
+    "bytes": 9238,
+    "sha256": "d8ff17a8074648d8f4e93448913d162d719d97fac324fbc5afe50396a35de2a1"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/student-app.tsx",
+    "mode": "100644",
+    "bytes": 16011,
+    "sha256": "2db277621a20c2b556dc56f111f7f479707d3950470ba49d54356770cfbe0c90"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/style.css",
+    "mode": "100644",
+    "bytes": 10751,
+    "sha256": "b83824edd59f779f483adc3fe9c31c969fd385a46c470e540c428131665ad793"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/telegram-bootstrap.ts",
+    "mode": "100644",
+    "bytes": 9374,
+    "sha256": "492988f7bee8e5e4fc57ecf2feef7fe11bff62d4ba83286920b96ec79a67f67c"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/transport.ts",
+    "mode": "100644",
+    "bytes": 15791,
+    "sha256": "5375c2a31330f506c81f624b0ac0d8ee12987e31d5087fb54880c672895556f7"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/src/wire-map.ts",
+    "mode": "100644",
+    "bytes": 9274,
+    "sha256": "6af2f6c1df81aeaa5f01768b4ac5a3a02e7ef62a5a21c40d5e353163e2789548"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/browser-active-ui-driver.mjs",
+    "mode": "100644",
+    "bytes": 1655,
+    "sha256": "8bf7cce53cfb6a6e173809b7e1c17f75d752cc8049267f4c0e0d69b2d7e30364"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/browser-active-ui.py",
+    "mode": "100644",
+    "bytes": 8643,
+    "sha256": "d6ba27d741695fb1927c5bb7393b4c42dd9a1ddceab875499439a634bd202d0c"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/browser-http-driver.mjs",
+    "mode": "100644",
+    "bytes": 2860,
+    "sha256": "3e85b0269aa5c2b2727dbfce0d9550c2b611e72135d2ade27cc0bf16d619225c"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/browser-http.py",
+    "mode": "100644",
+    "bytes": 5033,
+    "sha256": "7142d7cacfd8456455b2aa8cea7f1ce0ec13b74ce9bd6623736046f9935e7c34"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/browser-numeric.py",
+    "mode": "100644",
+    "bytes": 3870,
+    "sha256": "cdac2e941f23c7a2e9cf4e917415ecfc2b257629f77fb24a7dac7e56c6c3abd6"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/browser-smoke.py",
+    "mode": "100644",
+    "bytes": 7090,
+    "sha256": "75b44b8b356b517c381b78b8206dd5684c52577c4fc9a3e16e82b5bd91eeddb4"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/check-wire-fixtures.py",
+    "mode": "100644",
+    "bytes": 1501,
+    "sha256": "8dad65b65bd2a23f73e83794c31b2016568b7b9e3ceb0bd91bde9d74b3ff7b35"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-browser.mjs",
+    "mode": "100644",
+    "bytes": 2261,
+    "sha256": "49b56cbbb23a23fc159c4149dc376dcfc08a2742ced309f2dee06f5f1f477706"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-browser.py",
+    "mode": "100644",
+    "bytes": 5078,
+    "sha256": "12bcaee62d88fb07ebe2a457f86bdf3855b1a38c24823d950b4eead4a42dfaab"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load-promise.test.mjs",
+    "mode": "100644",
+    "bytes": 2057,
+    "sha256": "39b758c70e89d17a75635f7c728b472e69c0c446f9e0833484fafb92cdba2adb"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load.fixture.html",
+    "mode": "100644",
+    "bytes": 249,
+    "sha256": "52267f2a7cd24ec84971da6e72503bba32bfdfdf353ac2c18d26997a541c4f6f"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-load.fixture.mjs",
+    "mode": "100644",
+    "bytes": 294,
+    "sha256": "7a4e73a048129fcd3a727d7a70d98884cb5a4fa9aa53461040c3e5c74839a1cc"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.mjs",
+    "mode": "100644",
+    "bytes": 1426,
+    "sha256": "43bae212363f1a72d03e1222f128e73c478e37cd62890a17b06ef2a871348c20"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-browser.py",
+    "mode": "100644",
+    "bytes": 9291,
+    "sha256": "4ff89c3a61ac830f8ddc3811459b4acb8693253a2d533050cafff234896d6fbf"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt-session.test.mjs",
+    "mode": "100644",
+    "bytes": 7218,
+    "sha256": "0c9e2d0107e5fea8c7d5dbdaff3f78c313d4b9283a255de643bd20f002ff02b3"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.html",
+    "mode": "100644",
+    "bytes": 345,
+    "sha256": "4aac86ba3b840c95a874bb71350ee8261d2c02f84d9de1cb27013b799d2a1287"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-prebuilt.fixture.mjs",
+    "mode": "100644",
+    "bytes": 4333,
+    "sha256": "79c413cbd755b34d534ac8f7ab1b8a54c2868abe77c9b82194bddbcc8a6963ca"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.mjs",
+    "mode": "100644",
+    "bytes": 1464,
+    "sha256": "88f896bd09e7854b79647441839d09e3665b27dd0805cd2e5add77cb22dad495"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-react-browser.py",
+    "mode": "100644",
+    "bytes": 7628,
+    "sha256": "c8019a37b80aec77bace7bf1ada7fc34efe1674cc1bf107c0e307ff9c1ce7bb6"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.html",
+    "mode": "100644",
+    "bytes": 329,
+    "sha256": "aee2688a4df76d1f0821f23d0a35661a564685596cac4a1c430cf7ed3b29b223"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-react.fixture.mjs",
+    "mode": "100644",
+    "bytes": 3679,
+    "sha256": "9290553faf0a2bf1cf5ad458ee9ca07bffaaa0528ce1a2d701e758242fb36859"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-review-browser.mjs",
+    "mode": "100644",
+    "bytes": 1537,
+    "sha256": "0e1c6190aa713bf023de38fce6e578661fe38541a7c020527fa3b54f21d3a80e"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-review-browser.py",
+    "mode": "100644",
+    "bytes": 11978,
+    "sha256": "494efcd52d6a5206cfa5c5b1243a3f1f81d5361b6bc2d8f7a583625e42ed1007"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-review-entry.test.mjs",
+    "mode": "100644",
+    "bytes": 13711,
+    "sha256": "fa9781f23e351098e888ffd2459afcb6f166c5c6d6b09db3d0c136aade6c21b0"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-review.fixture.html",
+    "mode": "100644",
+    "bytes": 285,
+    "sha256": "7936b10dd8f12c406d3eb77771ce4623a83727199b042816362b9d5dc078fa6e"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-review.fixture.mjs",
+    "mode": "100644",
+    "bytes": 1654,
+    "sha256": "fc072ab655bdf7a610a0099e959929310e395be394e8ba1dd13f8616f817bf31"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk-adapter.test.mjs",
+    "mode": "100644",
+    "bytes": 8343,
+    "sha256": "7dd551fb3326fc463d3baad6f7f1edde8eaad9a3ea21eb66a2beab0252a30790"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk-browser.mjs",
+    "mode": "100644",
+    "bytes": 1394,
+    "sha256": "5d6cdb222c342b7e22047e0eb1e7f30941bbd4c0e27a32a7e30c2d0f87671777"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk-browser.py",
+    "mode": "100644",
+    "bytes": 9796,
+    "sha256": "3098c5ebb41221653adc938bed07ec799e9e5eb661167e3cc28225ca531be5b9"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk.fixture.html",
+    "mode": "100644",
+    "bytes": 279,
+    "sha256": "2945b012a506c02a1cf4de55c12f6563e27855f83b6eb2817536f0b5b2b570ff"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/clerk-sdk.fixture.mjs",
+    "mode": "100644",
+    "bytes": 2137,
+    "sha256": "55aaf5bfcf2e9d18d36ad003c91af9cd8dd007f40ff2a0503cb26c9c9882a0d0"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry-browser.mjs",
+    "mode": "100644",
+    "bytes": 2066,
+    "sha256": "40387c8b5b0962e721e444b6833bcc1ecadd4e5a02e81625a1de4f28902f78a0"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry-browser.py",
+    "mode": "100644",
+    "bytes": 6863,
+    "sha256": "93667ecd13e53de9c82f0a95f485eb58f6d2dd330c471d2690f0ec6add6b9dc9"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry-prototype.test.mjs",
+    "mode": "100644",
+    "bytes": 10823,
+    "sha256": "b157161935542e31e3ed5a70aba9fe16e113f2bb814a667931e8d65de52db2e7"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry.fixture.html",
+    "mode": "100644",
+    "bytes": 240,
+    "sha256": "8599407e3aa68532bc9ccbea0f656214e8b930946da552fb78ece3923b0c22e9"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/common-entry.fixture.mjs",
+    "mode": "100644",
+    "bytes": 807,
+    "sha256": "60695ea7ff25bb49bfc149c0030b2fa461b74af6a620076e28b55cc4205a325b"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/common-production-runtime.test.mjs",
+    "mode": "100644",
+    "bytes": 10165,
+    "sha256": "149a584f75c84b3a4758235dde745903938bd77f62f60f00047bf202554fd6b4"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/current-flow-browser.py",
+    "mode": "100644",
+    "bytes": 11287,
+    "sha256": "8e39e045a116e8c6caf5cb5edbc99feed441d6be33f03ac092a3be316fa1ff1d"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/current-flow-driver.mjs",
+    "mode": "100644",
+    "bytes": 6606,
+    "sha256": "430074287ba7f66ae39c8bd69cac9c548edf9815d275e26eb53c82390eea5b1a"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/current-flow-guard.test.mjs",
+    "mode": "100644",
+    "bytes": 20493,
+    "sha256": "b5105bf1192779ed512def004910390341870424b21b190b053666e9ae613761"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/display-localization.test.mjs",
+    "mode": "100644",
+    "bytes": 2881,
+    "sha256": "249599a29d1e21a60bae56c8ce0943e7bad1136638d35abf5f56f4e536cf50c8"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-39b2d92-manifest.json",
+    "mode": "100644",
+    "bytes": 19054,
+    "sha256": "60b6cc33f3ea951c402b06aeff3ef2eaa0ff7bb2d561d1f91aeec004b076447a"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-47ed6f8-manifest.json",
+    "mode": "100644",
+    "bytes": 16740,
+    "sha256": "ed4058842c6bef9dd18791424abff99418c931a9821c74fca38e09b4f34e9aee"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-6329367-manifest.json",
+    "mode": "100644",
+    "bytes": 20668,
+    "sha256": "5036069d94b2a22326bed20dbe5f7ba62371102db081445ca103ce07606853cf"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-6f2dbee7-manifest.json",
+    "mode": "100644",
+    "bytes": 29114,
+    "sha256": "2a5f0b8fd2f4939932e0e50b4e30d14d0c84b502038852770dc456e09bc68fa0"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-8a750ee-manifest.json",
+    "mode": "100644",
+    "bytes": 36420,
+    "sha256": "9deefd433a9c4709ef037a5142c8a4e39db8f3fb0c2bd3f96fcb20f7d654632e"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-a36d41a-manifest.json",
+    "mode": "100644",
+    "bytes": 26543,
+    "sha256": "4b57143f14c6f6d77d1f30bec340f61f2f5cdea608d044a7f71df76e71473082"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-ada6600-manifest.json",
+    "mode": "100644",
+    "bytes": 14637,
+    "sha256": "9321fe841690a3511b2399661fa7c8b860315f55dfed2389362d2c2a62f69619"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-b9efa597-manifest.json",
+    "mode": "100644",
+    "bytes": 23580,
+    "sha256": "c9a2f4ceee5bd1ade89df05c618e0c302b2b3a454f3c2b909397beb0256db31b"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-c78c293-manifest.json",
+    "mode": "100644",
+    "bytes": 30773,
+    "sha256": "f085f2666c7cb3811da2ede722428ea275aa01e258b77666769447174c23fd06"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/backend-fa82166-manifest.json",
+    "mode": "100644",
+    "bytes": 34192,
+    "sha256": "1a2588f66f261029753b5756e3783adc5940834839b0bfc339f7bc7ffa31f4f7"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/clerk-sdk.fixture.mjs",
+    "mode": "100644",
+    "bytes": 2580,
+    "sha256": "d26c48301e6116796b1fc2127560fdcac8545c435881893e3486e32eed623996"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/combined-259b675e-manifest.json",
+    "mode": "100644",
+    "bytes": 15712,
+    "sha256": "259b675e3e3ce2ad093af0029dc6252d1aad1fd6390048c2789e31cb6715e9be"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/current-flow-backend-manifest.json",
+    "mode": "100644",
+    "bytes": 7679,
+    "sha256": "45dab2f5f56d2c0366a57d9d3d7db4bdcd36d8d0b73c6666d900d8a9da57e797"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/production-backend-manifest.json",
+    "mode": "100644",
+    "bytes": 12515,
+    "sha256": "bb8f1a619d677826225253614771863136cab7616c16bfdf35aaaf1a12b6b669"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/fixtures/wire.json",
+    "mode": "100644",
+    "bytes": 24296,
+    "sha256": "203ff687f78fb428ec027ad338f5d63b6c2437f86259db3b6e99f98ca563c3e8"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/flow.test.mjs",
+    "mode": "100644",
+    "bytes": 11194,
+    "sha256": "a70b4e5b414ac0b1f464c6883d01d35050c72256505cacd76942869df6b98977"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/http-integration.test.mjs",
+    "mode": "100644",
+    "bytes": 11355,
+    "sha256": "0642e72d9091605931a3d722f3367e909b73c56ba380ae8d58abc87cfcc1a914"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/logout-receipt.test.mjs",
+    "mode": "100644",
+    "bytes": 10288,
+    "sha256": "3a285651a38744b71330db6ba23e2fbc47b4fc77b3bf0c6a4f0ba58403d996c3"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/numeric-lab.mjs",
+    "mode": "100644",
+    "bytes": 994,
+    "sha256": "fd4bbe45a044ff3e538f58cfecfb01ee3e90dd0b860c8896e07643a950dc989c"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/production-connection-http.test.mjs",
+    "mode": "100644",
+    "bytes": 4057,
+    "sha256": "f84b44b20328d8469e2a1014f6497c0e2d8c168f657415b96ec80cf4b9084fc4"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.mjs",
+    "mode": "100644",
+    "bytes": 4181,
+    "sha256": "21926816fa1aa8ba84e46696e698cb120cde531eb4a71768f5a13c5f41fe30a4"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/production-entry-browser.py",
+    "mode": "100644",
+    "bytes": 12835,
+    "sha256": "64b53831b887c996ca90d3bca43e8e3e4ede29ec2975828657fa9741f0da4ceb"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/production-entry.fixture.html",
+    "mode": "100644",
+    "bytes": 244,
+    "sha256": "545e5515d6120d9ff13d97f5e0e03f179186904c305dfe828f8934c56edc56a8"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/production-entry.fixture.mjs",
+    "mode": "100644",
+    "bytes": 4940,
+    "sha256": "32f09dc81250ca59adf48d0c42bb26eaa2a807f0c0cd486767b40f02dede3d5b"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/production-owner-port.test.mjs",
+    "mode": "100644",
+    "bytes": 4720,
+    "sha256": "029027d91c37b6bab91b3ff6340042406ca13be4e3c6b4d3833e7be5dc8ff456"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/production-runtime.test.mjs",
+    "mode": "100644",
+    "bytes": 5885,
+    "sha256": "9a96c62141cdf9d65295ecd62d185115037d1ff81a017820b508636b7d993f06"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/receipt-sync-hook.test.mjs",
+    "mode": "100644",
+    "bytes": 6696,
+    "sha256": "e0bda0da820678aedc1e47e6504c1c667539466df6c45ec8b67766d1e30f92a2"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/telegram-bootstrap.test.mjs",
+    "mode": "100644",
+    "bytes": 18774,
+    "sha256": "6282dc11a6f68a8fabab1a2cad3e6656148aef4b710f8d9c063f75c067ba57a3"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/transport.test.mjs",
+    "mode": "100644",
+    "bytes": 12953,
+    "sha256": "4b01393bf07510abbaf65c2d4031a9dc6b07b2915850ddce9448a46e65084817"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/verify-backend-targets.mjs",
+    "mode": "100644",
+    "bytes": 5991,
+    "sha256": "d3ceb1dbcb77fc9c56a3d34f9a4b9eaaf527b3f0ada89117382b5bf4d18f2501"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tests/wire-map.test.mjs",
+    "mode": "100644",
+    "bytes": 14901,
+    "sha256": "5aa42380edff07f3bbcf5cbfb73e2d797028078691fff573ed397812a1290576"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tools/clerk-load-promise-fix.mjs",
+    "mode": "100644",
+    "bytes": 1319,
+    "sha256": "45be30aeec7dc8ec1c0c869da187f251fcf40f2413bdf5b2db955f8d4549fb07"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/tsconfig.json",
+    "mode": "100644",
+    "bytes": 375,
+    "sha256": "86ccd56cd605e3df25f579b47a5a50662406cbd2cb4ae5bafb50b888ef7d9dab"
+  },
+  {
+    "path": "workspaces/univeracademy/apps/mini-app/vite.config.ts",
+    "mode": "100644",
+    "bytes": 1217,
+    "sha256": "df00cc8cbb680b41d8c96ea1bc29268b04c99f65e2281f8631de26c364a0914f"
+  },
+  {
+    "path": "workspaces/univeracademy/contracts/clerk-auth.proposal.patch.json",
+    "mode": "100644",
+    "bytes": 7354,
+    "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019"
+  },
+  {
+    "path": "workspaces/univeracademy/contracts/clerk-domain.schema-rls.proposal.json",
+    "mode": "100644",
+    "bytes": 4640,
+    "sha256": "15252ecc611cde79603708f10c9e043ece0ee282723416ee8f0fb3e51ac333d7"
+  },
+  {
+    "path": "workspaces/univeracademy/contracts/clerk-provider-settings.example.json",
+    "mode": "100644",
+    "bytes": 957,
+    "sha256": "4648a275902c8b920b9b3cd7e2bed081e5794b8b72c53e4a27ec9adf9a9de9a5"
+  },
+  {
+    "path": "workspaces/univeracademy/contracts/clerk-review.openapi.json",
+    "mode": "100644",
+    "bytes": 433064,
+    "sha256": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28"
+  },
+  {
+    "path": "workspaces/univeracademy/contracts/clerk-storage.schema-rls.proposal.json",
+    "mode": "100644",
+    "bytes": 9621,
+    "sha256": "980585b91d4adcd93751ec50a939ac23f378e4610957c5674612c506bc4e20e2"
+  },
+  {
+    "path": "workspaces/univeracademy/contracts/review-only.openapi.json",
+    "mode": "100644",
+    "bytes": 430120,
+    "sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4"
+  },
+  {
+    "path": "workspaces/univeracademy/contracts/roster-return-policy.proposal.patch.json",
+    "mode": "100644",
+    "bytes": 12280,
+    "sha256": "416be738474fed55bd0390d891b5b03c73916b16caaa53a089ef2bc05c6d474f"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/backend-current-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 2287,
+    "sha256": "cd489421905854cd803f88e2d3ad2bdafa393558c5a7f6fe731d07f22e22d570"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-atomic-storage-plan-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 11069,
+    "sha256": "93068754a462782c5c0ab11d4723405b3ca23a6dfa247ccea8c6f8d3ebd2ee0e"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-auth-local-proposal-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 9978,
+    "sha256": "e3aa4624d9d61bb72f82943b7b475844768bc2ce5fd5b9bcc147bf8b3994b1d2"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-auth-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 3126,
+    "sha256": "1713a952205c5986c1023c0578c06a0612fb2b07459c4fefd934fa597042365b"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-callback-reauth-retention-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 7851,
+    "sha256": "2ccb3faab664fd06de6ce0f9793dfc1456f17bea2d430c24af0f779077b0c66e"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-domain-review-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 7611,
+    "sha256": "f93cdeb309a20026695b1ea8bb5638480f1c8fb105509c99928256436a5597db"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-domain-tcp-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 5608,
+    "sha256": "2427897db15f8400e101a471c58aed56e59ded93d7dfc1fd5f292a37e91258fd"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-f1-family-context-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 5976,
+    "sha256": "9834181d9e1b65d3e2858a9046ff9d5c7ac362f730c6c8b92ae70d13f6978f1f"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-f1-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 3753,
+    "sha256": "98bf1a845ff5dfe38ef2e2d9e89028fd98a59010bd93c0086ccbd669bec6c7a5"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-provider-candidate-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 8033,
+    "sha256": "00678c8870d83da0857e329d763afe1d0620fab4819e623fe7e258a2f77849b5"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-provider-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 3603,
+    "sha256": "29ebeec4730a16e7b926162329a6165519d90534c0d330a6684b1ceaa349e021"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-review-handoff-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 8625,
+    "sha256": "32380352894e059cdb294de0adf3d43d411ec323ffd81ffc1b1b1aa673476016"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-review-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 4346,
+    "sha256": "7d8fa44fd71ab6f2d5a282690b5b2f1480c9514089b95779ccb2c76c6339d75c"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-sdk-cancel-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 3504,
+    "sha256": "6d386c0543cb2f8cb4c8391bc3170628ab6e61ae8df3b512c46ae97965acb8f6"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-sdk-cancel-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 2865,
+    "sha256": "f8ab72eea05df04ece9fd3297872844d077c2d60935a6a4bed2d5d4b27556fc3"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-sdk-scoped-storage-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 9601,
+    "sha256": "9b5a116ff15800310bd7a089b61530c51feaebec08904cacf7f47a98b1f91fb8"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-sdk-storage-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 4446,
+    "sha256": "2a63a20500e780fce68457d82ac215d2cb24a67597880a4293f005b238ee861f"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/clerk-timing-d1-d2-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 11111,
+    "sha256": "0fd76309a328351bb5186b4a9689fccd3827c55faf3f016c067d55686276dec8"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/content-pilot-candidate-2026-11-06.md",
+    "mode": "100644",
+    "bytes": 4995,
+    "sha256": "5e1890d1ce21a6858c773dd60cfbff66f66d413f5caa6bdbaa8776b42a469e61"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/first-test-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 2717,
+    "sha256": "a16591353054ceff3e3dc86bfc3a877789f5abbe0f37f38585dfb423f20c329f"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/first-test-relational-local-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 7956,
+    "sha256": "21d9b02abeab25201fe637a51a6c70cce61b97a6dc312eea6bb2fd4a46ac7a6e"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/identity-link-return-proposal-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 11986,
+    "sha256": "b9fd5708d9271c898cdf6ce0c606b45638083c7bc8cbae1489d162f111438b97"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/identity-staff-readers-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 6933,
+    "sha256": "f4aa21ad78e95fec17fe085f56d77d86b1a233fb0ece9f932353bcec7ef28bc5"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/persistent-http-review-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 9473,
+    "sha256": "a235062899d80e769919ceac5cd212e4eed91ad5915c13063012ec20050188ef"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/removal-active-invariant-local-2026-11-09.md",
+    "mode": "100644",
+    "bytes": 18404,
+    "sha256": "dbd3c47189917bf9ea57837f020d47e8b67f8d59c54d9cf9f2bdc4993efdda36"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/storage-auth-local-proposal-2026-11-06.md",
+    "mode": "100644",
+    "bytes": 13069,
+    "sha256": "c3471587ea66dac673def00553da8cc4a6cfb8e221188e1da136e2c15e3f47d1"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/tcp-cancel-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 2697,
+    "sha256": "65fd1ce969ca8c48d2a31a5b3844e8f848629344a9193f3e07612c115e1b4cc2"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/vercel-node-local-proposal-2026-11-07.md",
+    "mode": "100644",
+    "bytes": 10434,
+    "sha256": "bf84218a2ce8fc7d02fc819ea24a96c18e9a47c556d1285ace710c136f4b4ccc"
+  },
+  {
+    "path": "workspaces/univeracademy/docs/api/vercel-node-publication-verification-2026-11-07.json",
+    "mode": "100644",
+    "bytes": 3037,
+    "sha256": "2440ef6b5fd622908cfd94871bbf2248bf839799c8d18a02eb74322780efe653"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-auth-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2750,
+    "sha256": "2b9bd03563d308abee6aa6b22c919908d19a2ca6c1a473ece9a18e02afa4223a"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-auth-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 2751,
+    "sha256": "ed91e30094f81dd094cbc1528adaf3c04efb462917b980d01839d3794afdaafc"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-auth-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 561,
+    "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-auth-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 2842,
+    "sha256": "c65f46dd85d6d2c8e27148edced712f66713cdc80ec82deb5843dfdf8f3f2bce"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-domain-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 8362,
+    "sha256": "ecccbde7939faae7128aad5f629078f3cb9083406ad75c58a1527ffa0e992155"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-domain-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 17742,
+    "sha256": "0b3eb2fbdcab26a35e69ffa377ae3bc7d206540e561baa89dbefab71c368968e"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-domain-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 353,
+    "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-domain-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 1610,
+    "sha256": "0e8d340bdc087a4daa392cf9ba3d0c754d0dcdddd4fb832bcd255c0fc9754bae"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-f1-2026-11-07/red.log",
+    "mode": "100644",
+    "bytes": 3678,
+    "sha256": "a56cb4eaca39dea22130d574b30a430988c52e2aec65f6489b90fedb41efa93a"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-f1-2026-11-07/repro-before.json",
+    "mode": "100644",
+    "bytes": 301,
+    "sha256": "23db3ea25580047c9cb671da8ca60489eee8f7a7572d1bf95ba43884fc7d5d68"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-f1-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2065,
+    "sha256": "3491adb3236e80e531e4b18c89c491ebc4d8acd2386371abbfdbd5c14f7901d4"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-f1-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 3425,
+    "sha256": "4ba86b3ca17c4348a7593818c4c2954ff71de082da07d2420b9eebb9c9e51b2e"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-f1-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 561,
+    "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-f1-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 4093,
+    "sha256": "b3455996b7548085270b8cac4a3ef68f07e4540abade97c3159bfff013b88d9f"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-provider-2026-11-07/initial-fixture-key-rotation.log",
+    "mode": "100644",
+    "bytes": 2405,
+    "sha256": "c638b7338860cb899accec580025309ec6aa33cf63f03ba1931e30fcd16c838f"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-provider-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 5420,
+    "sha256": "3c4074c2956a85f325b114ce9221841a865e27e83106bc737a07bf037506c0a3"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-provider-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 1477,
+    "sha256": "a0b0a2b68f67fafdc0aac8fd0153e623b596b36aa8f72e7526cc7ad4fa057c35"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-provider-2026-11-07/timing-red.log",
+    "mode": "100644",
+    "bytes": 6175,
+    "sha256": "64a5c84bba11d48660256f57dcfe9f78c920dd241387445f653c5ecb4c35b8f0"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-provider-2026-11-07/timing-tests.log",
+    "mode": "100644",
+    "bytes": 5926,
+    "sha256": "1fd318b2152f7110f88ddfee279191a9599e917a71cabf643b0bca788b180bbd"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-provider-2026-11-07/timing-typecheck.log",
+    "mode": "100644",
+    "bytes": 594,
+    "sha256": "36f6f167f98f9ef69c152569dfd8bcd0837c181ba693a19cf46be63476829a8d"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-provider-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 594,
+    "sha256": "36f6f167f98f9ef69c152569dfd8bcd0837c181ba693a19cf46be63476829a8d"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-provider-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 2581,
+    "sha256": "536388b8c1289bbee6fb03a3bcf8641aed9e58762ffe652ebffbb24e0bc4ebb1"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-review-2026-11-07/cli-smoke.json",
+    "mode": "100644",
+    "bytes": 395,
+    "sha256": "7c7ba48a66edb9c51337505a130d74d1119eeeb0b830e6c697126b979d96cfb1"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-review-2026-11-07/initial-error-enum-mismatch.log",
+    "mode": "100644",
+    "bytes": 5076,
+    "sha256": "7e692ce4d218aad70287ae271cb7e3b341d69d8d8f407121445fa7eb086e1f6d"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-review-2026-11-07/regeneration.log",
+    "mode": "100644",
+    "bytes": 1089,
+    "sha256": "909236ad2c412741d22bfb50eb281d226c960c7d4549804efde3df69386df08c"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-review-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 5872,
+    "sha256": "d4a0323ce17b700c6ab2b07b9f50830201bd0d8dbfc181eea44ef52e490c9dcc"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-review-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 3515,
+    "sha256": "ca4ef3ef579f1c6b4e2463393ec3a9a03502c250ba883c28e4d88c351e7480dd"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-review-2026-11-07/transport-auth-order-expectation.log",
+    "mode": "100644",
+    "bytes": 3135,
+    "sha256": "99024b79894893dc3f387d8679883771849c480090289e70c7419961754b94a6"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-review-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 858,
+    "sha256": "d2fbe9e2039dddfd15f59e2f771551898703dc2e56430268fa7297497e46f8bc"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-review-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 2521,
+    "sha256": "5e107ba264798c4c2223f31481807b186ab762d366670405a233291c768e77b0"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-cancel-2026-11-07/before.log",
+    "mode": "100644",
+    "bytes": 951,
+    "sha256": "6307c54776820a9d90a6a122ac2fc39585550b1be46f5e701ab404dd1bafd961"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-cancel-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 1164,
+    "sha256": "683437bf68c3cedfbb8ed04fd9037e03765756bed74765945b3c65114761986e"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-cancel-2026-11-07/source.patch",
+    "mode": "100644",
+    "bytes": 18393,
+    "sha256": "ec972ea5ce005ca15160fb0490b6591caa26118f660040d66b6488b0722ba3e7"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-cancel-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 8565,
+    "sha256": "2ad9fd868b8513f791e2bb768811bfdc1fa7116d33fe1f05820aa5cbf07a78a9"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-cancel-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 353,
+    "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-cancel-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 2196,
+    "sha256": "2222159d938fa4e4d2175c9d4b8bfd80bcb60baf42065a38745af2e1680bd514"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-storage-2026-11-07/sdk-inspection.json",
+    "mode": "100644",
+    "bytes": 1605,
+    "sha256": "deb635fa1f15fc5ac3f4f003240596a59879b79a0de38d58472948ef1f34a1a6"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-storage-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 4364,
+    "sha256": "9779e41c808555c8a30f2a17f3cafdb144f9df6895698f5af251210d56180cbf"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-storage-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 7801,
+    "sha256": "897ba23e6ccee08d35638641150158f845ca56f2694108394bd31cec4d25c9b9"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-storage-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 422,
+    "sha256": "e33adee6eb91aaf2de248b4d11b966150c05429d3e89e933844930e821ea4fe9"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/clerk-sdk-storage-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 2074,
+    "sha256": "75d707c917451575bc336182d94343879fe7a44bde2c4e7639770ef269ef17a5"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/first-test-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2840,
+    "sha256": "483a997017c2af919521c8100134e7e6da153e7afcbeef3ab9f266c801f6342d"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/first-test-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 4202,
+    "sha256": "4507ac1809046803540c291329d448ccef2ea11415dda24c519a0533aec44cf0"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/first-test-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 561,
+    "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/first-test-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 1750,
+    "sha256": "07053949e8cdc83432934121770f7e11c978667327696456a4e80b82f41e1e98"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/README.md",
+    "mode": "100644",
+    "bytes": 1364,
+    "sha256": "45a98478b70ef9dc253807d447e1eb627f5e192f522bc11de9bb2999bdb3bafc"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/RESTORE.md",
+    "mode": "100644",
+    "bytes": 1351,
+    "sha256": "df63058fffa0efcc2ccb0e6f716f19a4f1625a6850fa5a842c046620ef6d9045"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/browser.log",
+    "mode": "100644",
+    "bytes": 1513,
+    "sha256": "4a97cb5b94991b7c93c43801151d5175a8fcbe2894bee4b50ab20f67fc552b6e"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/build.log",
+    "mode": "100644",
+    "bytes": 898,
+    "sha256": "f861ee9ce6ead692b2ec7cb74d32d2e85b638044e5a1d9d4a3f693c16346eb87"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/candidate-manifest.json",
+    "mode": "100644",
+    "bytes": 8634,
+    "sha256": "6660ecae1c328092146b317f312b10dcadbf3924d6026378d9a1411b60147c74"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/common-build-gates.log",
+    "mode": "100644",
+    "bytes": 1716,
+    "sha256": "377845b86ac42cbf779d7a6962238db2b1b1e820d947523660f8329497c3dead"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/email-layout.json",
+    "mode": "100644",
+    "bytes": 174,
+    "sha256": "5b8f2f503cd3d62fdfce7d48decb269e03e2c825160b4b3d4457483c08cbc51e"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/full-suite.log",
+    "mode": "100644",
+    "bytes": 59544,
+    "sha256": "ae0933002abb0577baa527eb2caf7f591dbc9cb93157bd9732b46971cd05321b"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/privacy-check.json",
+    "mode": "100644",
+    "bytes": 478,
+    "sha256": "0be618391aa97efc18b32ae7d7abdb7deaf1004d7216584cd6263650823b70d3"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/qa-report.json",
+    "mode": "100644",
+    "bytes": 4566,
+    "sha256": "82699fff7e4048380fe743bdffd460e51f1404a011980f25c873d156fb08c497"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/qa-report.md",
+    "mode": "100644",
+    "bytes": 2939,
+    "sha256": "17b202677c61f629a0b778a4a4c05deaf9a8a3109fc59b4d5510b01bef6b0015"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/restored-common-build.log",
+    "mode": "100644",
+    "bytes": 755,
+    "sha256": "7e1529b5c0afe7ada277666acd419f9612d30d0734336112a0e312faf1a7201c"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/restored-new-suite.log",
+    "mode": "100644",
+    "bytes": 8277,
+    "sha256": "cbbe4e2c801ff3f13827f412e2777f731215dca3a4604dfae94c8f173b695244"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/telegram-build-gates.log",
+    "mode": "100644",
+    "bytes": 2193,
+    "sha256": "193a4e85923f6583c978882a519214d149c2d012429c46f679f142b8257b21b8"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/mini-app-clerk-sdk-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 263,
+    "sha256": "ddc260d0ab04bbc1803bbc81e1bcac17f9e8e36dc769870e80d1e19c71bdab0b"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/tcp-cancel-2026-11-07/before.log",
+    "mode": "100644",
+    "bytes": 1025,
+    "sha256": "3f63ceac7a154d1d0e94b7afed82f8bdcdfee4254950c55418483c75851bfb0a"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/tcp-cancel-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2614,
+    "sha256": "99bff54378d692aabdf3cbddde5dd0d05e4d0f765db9d91db7b22683e364b40f"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/tcp-cancel-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 7408,
+    "sha256": "134642f9ecb540828fc3fdbd0baabccd215b1b43b4451318a713ff5ef46df392"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/tcp-cancel-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 353,
+    "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/tcp-cancel-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 1535,
+    "sha256": "3a138b34a0cc185f4f4f50b5fcbf8ef7d5467ac696b5dcf652c4c321188e0aa9"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/vercel-node-2026-11-07/source-manifest.json",
+    "mode": "100644",
+    "bytes": 2482,
+    "sha256": "bec1d1c2a0f2c747b468cdd02973807f6e5bbad88ef1a66cdf012a7ef1a90510"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/vercel-node-2026-11-07/tests.log",
+    "mode": "100644",
+    "bytes": 1747,
+    "sha256": "54d4e91a60c2c69110af7b0666d5939abefc008fca71c604f8c711686a009c70"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/vercel-node-2026-11-07/typecheck.log",
+    "mode": "100644",
+    "bytes": 561,
+    "sha256": "efea2ea69ee34f38658c32817823ab5cc0e68bc27a99eba0bfe57ce934cb995f"
+  },
+  {
+    "path": "workspaces/univeracademy/evidence/vercel-node-2026-11-07/verification.json",
+    "mode": "100644",
+    "bytes": 2163,
+    "sha256": "acca8e406b70e0d9dc692722f7787377b971d9899ec208d347d2650a1ce3ce9a"
+  },
+  {
+    "path": "workspaces/univeracademy/package-lock.json",
+    "mode": "100644",
+    "bytes": 19609,
+    "sha256": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222"
+  },
+  {
+    "path": "workspaces/univeracademy/package.json",
+    "mode": "100644",
+    "bytes": 1744,
+    "sha256": "05bd3c8c58e5e898b577ca3106b8a77d018ef01a39d9975e5551453f507436a4"
+  },
+  {
+    "path": "workspaces/univeracademy/packages/api-client/staff-openapi.json",
+    "mode": "100644",
+    "bytes": 46045,
+    "sha256": "a1bdcd4e7177388e6eb0cf77bdde00a4a962ca7ac13fb921277f863ea0acacff"
+  },
+  {
+    "path": "workspaces/univeracademy/packages/api-client/staff-types.d.ts",
+    "mode": "100644",
+    "bytes": 28222,
+    "sha256": "669f574310968bb85565cedf11e3f44963438908dcd9294d60a854a02a1a9731"
+  },
+  {
+    "path": "workspaces/univeracademy/packages/api-client/student-client.ts",
+    "mode": "100644",
+    "bytes": 8952,
+    "sha256": "61cf1d2d0681f3bf25a610c73eff7470159bca45679c5def42101e9a58017494"
+  },
+  {
+    "path": "workspaces/univeracademy/packages/api-client/student-openapi.json",
+    "mode": "100644",
+    "bytes": 86307,
+    "sha256": "5bb3f266acd8f699ff10df8ef0522852b5d7657af0df349f95d7ac52440020cb"
+  },
+  {
+    "path": "workspaces/univeracademy/packages/api-client/student-types.d.ts",
+    "mode": "100644",
+    "bytes": 48905,
+    "sha256": "bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/clerk-review-server.mjs",
+    "mode": "100644",
+    "bytes": 2390,
+    "sha256": "04941545a0f98e4fb0f52c490af3129c7fbbe44720b7ee6b199dc6dfed24db16"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/clerk-sdk-bindings.mjs",
+    "mode": "100644",
+    "bytes": 6984,
+    "sha256": "fc8d588919e598ba599c4c724bd2cf12ae61bc38e9a5af18a5420adc44bb4ef7"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/clerk-sdk-worker.mjs",
+    "mode": "100644",
+    "bytes": 2062,
+    "sha256": "75aef2bbd53a86920d1a1786745ce33545627e147a1a8b6a5b3b95dd08e0604f"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/configured-server.mjs",
+    "mode": "100644",
+    "bytes": 2957,
+    "sha256": "a8d50828f7ee85b1b5624d939020dd847a696c49b3ad8f294ca616805772affe"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/content-pilot-driver.mjs",
+    "mode": "100644",
+    "bytes": 3294,
+    "sha256": "a118db0f7531e4005edd8388e93a25cfe2952cb223e80a752a6ddd617543466e"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/content-pilot-lab.mjs",
+    "mode": "100644",
+    "bytes": 2068,
+    "sha256": "4bda938261a208c9c632022a86a31e447c56e4cb38e4e209401d1c8e3b14cfee"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/content-pilot-server.mjs",
+    "mode": "100644",
+    "bytes": 653,
+    "sha256": "13174482a20e214d52a1e0f12033d6f609b85497cf83ae714fef945df6114c91"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/local-cors.mjs",
+    "mode": "100644",
+    "bytes": 3289,
+    "sha256": "c8c7cf03b13c0b86723a64732098fe19e9fa1daa26bbcf085b64baf4d7d995c2"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/local-lab.mjs",
+    "mode": "100644",
+    "bytes": 2154,
+    "sha256": "5cc1443c0fc9e0b23a50ee8e9ca195e47f2a041099ea6feeeaf3bfbc0bd87830"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/local-server.mjs",
+    "mode": "100644",
+    "bytes": 3505,
+    "sha256": "3b27100d39d89fbffdec938ffc5c4dbbdd2d1110ab71db604b055089ed081062"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/node-request-abort.mjs",
+    "mode": "100644",
+    "bytes": 642,
+    "sha256": "3511ce2225a1b8fb22e3c7723aa5e9913d9bed1e713e8c5daecfaed02d8bcbe8"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/production-options.mjs",
+    "mode": "100644",
+    "bytes": 7544,
+    "sha256": "251a124def286b6b42f11602cdaf79fd73d42f1b696eba89e6d9697169937989"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/ungrouped-driver.mjs",
+    "mode": "100644",
+    "bytes": 2282,
+    "sha256": "3a2ec8f1608c498b98de8e02abb5908839db51f8f13e5f95312c5dcfe5b8dab4"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/ungrouped-fixture.mjs",
+    "mode": "100644",
+    "bytes": 1753,
+    "sha256": "12efbe082d9db82749f2185db7f9284a51fb3e6b830aa015a5fd80e3188b5c08"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/ungrouped-lab.mjs",
+    "mode": "100644",
+    "bytes": 3494,
+    "sha256": "93abc2e195f37268eb0c9ccb990601c6612ae5ccd52c547fd370f44f03a1aa38"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/ungrouped-server.mjs",
+    "mode": "100644",
+    "bytes": 774,
+    "sha256": "3b6e687b1415dd0fd877e3589f3386fc8d07e421da000e04713e28d7b6a74611"
+  },
+  {
+    "path": "workspaces/univeracademy/runtime/vercel-node.mjs",
+    "mode": "100644",
+    "bytes": 4161,
+    "sha256": "eb95ef50e999b44403f20fa2bdd51923443f1ef6038f60c7588bda1820537171"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+    "mode": "100644",
+    "bytes": 9727,
+    "sha256": "b95d33d535d37ee1beeef6123985771b5c05e921ed3a4f9e0694eafaea381721"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/clerk-auth.ts",
+    "mode": "100644",
+    "bytes": 4980,
+    "sha256": "278d4d6deaaf9a9b53e1fa1feb6f677b29b81761b6c3eb3f85a3b80cf31f3565"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/clerk-http.ts",
+    "mode": "100644",
+    "bytes": 15215,
+    "sha256": "79fade5bdc4bb4e9ccbf09b2cf7de3101a7a11406457e4bbcb361074dbfc85e0"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/clerk-provider.ts",
+    "mode": "100644",
+    "bytes": 10057,
+    "sha256": "06a295c8a0fe24fd8815ebd1f35ae2e77a4895635ab7f5df2a9576926720739b"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/configured-http.ts",
+    "mode": "100644",
+    "bytes": 8697,
+    "sha256": "3ab2e3c9393080c41347bf98f1e83d1a0a1ca3b64dbc847bf6a2c9d52ef7c708"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/fault.ts",
+    "mode": "100644",
+    "bytes": 422,
+    "sha256": "e405799dd809d8118f764e8fea8361f9117e2635b37e3afce93d63e64cafed8f"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/individual-points.ts",
+    "mode": "100644",
+    "bytes": 729,
+    "sha256": "49f7108ad311b45b8491fa932eefff04ec4a4422969f17b84b522ea68ee1b8c2"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-activity.ts",
+    "mode": "100644",
+    "bytes": 7617,
+    "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+    "mode": "100644",
+    "bytes": 3852,
+    "sha256": "8bf5a68911587a16177650087fea108dac32a5aef5bba53cb8250f584da761c5"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-preflight.ts",
+    "mode": "100644",
+    "bytes": 7061,
+    "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts",
+    "mode": "100644",
+    "bytes": 7598,
+    "sha256": "3477846790c594c6baf96ea5a15a0be83bcde6f33328d57feb5c6917139e4ccb"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/ordinary.ts",
+    "mode": "100644",
+    "bytes": 2889,
+    "sha256": "acd083fa6874fb4c8dfd8ec7551c9b12842dca1c07c970a8c7f0f5988cf1fd52"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/pilot-provisioning.ts",
+    "mode": "100644",
+    "bytes": 9741,
+    "sha256": "c7967d846727e2ad00ae386654d07caf81de3b7b273b57ef4832c49a22c53cd3"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/removal-authority.ts",
+    "mode": "100644",
+    "bytes": 812,
+    "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-content.ts",
+    "mode": "100644",
+    "bytes": 5127,
+    "sha256": "913a89409e68425ff664def9c76f9be80478cd47f50e4144cff21a0547d49e0e"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-http.ts",
+    "mode": "100644",
+    "bytes": 16079,
+    "sha256": "76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-json.ts",
+    "mode": "100644",
+    "bytes": 1615,
+    "sha256": "8d93c68cce2dcdaf68ad96bf8f710d3f0a379e7db62db642583dd23218089b9d"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-jwt.ts",
+    "mode": "100644",
+    "bytes": 3535,
+    "sha256": "6b28fe7ab3c08a6f4c6b6867dd353a98dc397afd006236a510324c9e4cc3fc1b"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-state.ts",
+    "mode": "100644",
+    "bytes": 5790,
+    "sha256": "b6699ac9973c0054bcf84ccd7437b3f411f66303a288e31a9c657e5ed641a40d"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+    "mode": "100644",
+    "bytes": 8740,
+    "sha256": "aab9cb3964cbb9ecc196a0400790395c1512f4418d6ce85df29117f0cb15e010"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+    "mode": "100644",
+    "bytes": 22634,
+    "sha256": "02de46baf1ec90442bfb958c264f4192948afe08c9c2b4e3e2a767eac2b445d2"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+    "mode": "100644",
+    "bytes": 10501,
+    "sha256": "8d2f69c9a4a970c85ff2594fa23cd8cd7441d0ae3b74ee265919381f2d44ea77"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+    "mode": "100644",
+    "bytes": 15991,
+    "sha256": "6eab8c2c749616d1b1b9c4e5c17fabe73de3f7ad07e9455f3328210eedc315fc"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+    "mode": "100644",
+    "bytes": 5447,
+    "sha256": "6d78d355be8e0509eb0e2e337a64110d32417c52bf2770b7a46abb47002bb62f"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/session-rows.ts",
+    "mode": "100644",
+    "bytes": 6717,
+    "sha256": "492d043bbe322752a8ef3e2a5abd2daf1d117068fc00c74d0f9ec73143f5916b"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+    "mode": "100644",
+    "bytes": 3744,
+    "sha256": "cec02c6a6392c51fdcd004189fbcb504d1a48efbf20e5f6b2af912f5244ab700"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+    "mode": "100644",
+    "bytes": 15858,
+    "sha256": "744a44d3504b9b98b24e9b42fcd2f602c28869479e984166f02de22af2df95d9"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+    "mode": "100644",
+    "bytes": 13250,
+    "sha256": "a6a97239245a086d5e6c51fbb6ddd9977b2e781b5ef92071d89bbfd71a909595"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+    "mode": "100644",
+    "bytes": 3051,
+    "sha256": "ba1c07668261045f555dc2110d51eee6f74f37b19711416b13428a9068f05070"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/student-scope.ts",
+    "mode": "100644",
+    "bytes": 3575,
+    "sha256": "263238b744240af6e62cfd14c6dc00943bf840f7fe9c6e2ed18acbd914dd38bd"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/transaction-pool-port.ts",
+    "mode": "100644",
+    "bytes": 1102,
+    "sha256": "79b9dcf8a9c27ef1ccc3f86a9233e8988731e17b2d9bdd330e3aa3872f084153"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/student-http.ts",
+    "mode": "100644",
+    "bytes": 17650,
+    "sha256": "32bc06bab2e7422544ee5b0f5831330755c8befaa579d8d7e5fee1b0db24cee0"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/student-state.ts",
+    "mode": "100644",
+    "bytes": 7532,
+    "sha256": "208f220a3b72a572a37ab0ffba6763193b67beb3732aebe521f2295039333f72"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/student-wire.ts",
+    "mode": "100644",
+    "bytes": 9974,
+    "sha256": "a43b5e043ca19c2e45cf83e1b76dddf0a89422633eeb2eefa19e647a847699af"
+  },
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/telegram.ts",
+    "mode": "100644",
+    "bytes": 3303,
+    "sha256": "415f843c5139285cbe3a4338072e05e50d33bebcbee3059362a3118281b8a3b3"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/backend/http-fixture.ts",
+    "mode": "100644",
+    "bytes": 7081,
+    "sha256": "b3593fb05cc32f6edf876c2120c24934338f2fbc3f3e8f658c666cbd8e2841d1"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/backend/staff-fixture.ts",
+    "mode": "100644",
+    "bytes": 8646,
+    "sha256": "e173224b8d323b983e6510ec1cbddd3a108d79e72056a133a38a3fa9bda0814e"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/backend/validator/ajv-config.cjs",
+    "mode": "100644",
+    "bytes": 2461,
+    "sha256": "55865a95c45cab29495f77cbc41fb4cdfc94f83960ce6168a838c2e64f800253"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/backend/validator/base-ajv-config.cjs",
+    "mode": "100644",
+    "bytes": 2044,
+    "sha256": "74ef231957dc1b528f73ea61206a890d8c1fa16a9d97bca42bc8195b285ff774"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/backend/validator/tooling/package-lock.json",
+    "mode": "100644",
+    "bytes": 2789,
+    "sha256": "bf49238f558d7a6f85562a52998e31f105f9e69e66892f785da9ab8cfca9bdf7"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/backend/validator/tooling/package.json",
+    "mode": "100644",
+    "bytes": 76,
+    "sha256": "83086e236c60ca828b6d118d35f55c5834cc70e3b5d5cb8dfc8d628ffcd21149"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/backend/validator/view-builder.cjs",
+    "mode": "100644",
+    "bytes": 10788,
+    "sha256": "0c12d242980b3899a4ded8bb8072ad8cf512170098ee8dd6e639198cd9833303"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/contract.test.mjs",
+    "mode": "100644",
+    "bytes": 2639,
+    "sha256": "d1450ed5ddc892b42eea52aec84ee32c8fd9721b895ed97afb9337fd6689eb99"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/domain-executor.mjs",
+    "mode": "100644",
+    "bytes": 4815,
+    "sha256": "78bf1357f8876a1d8dc59caca9ca235761d552f9f9ddacc9794bba9d5a55a757"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/domain-http.test.mjs",
+    "mode": "100644",
+    "bytes": 13849,
+    "sha256": "24b8aef28ab138f65fecde222945ad8769635555c64925aeac16bf8886a18678"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/family-context.test.mjs",
+    "mode": "100644",
+    "bytes": 5841,
+    "sha256": "20977f27a559fb9b2a80f21899208c660dadbaac65ac80aabdf54d3894fae7ec"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/fixture.mjs",
+    "mode": "100644",
+    "bytes": 5634,
+    "sha256": "1dae0182015c155aec6da31e88e1f51dc75d15e3d777c1df1ddc6c485bda8d11"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/http.test.mjs",
+    "mode": "100644",
+    "bytes": 12183,
+    "sha256": "db182096422e367993ba15f34d3a412bf65a1b269f1a4f4954dd7436c13a3a59"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/provider-adapter.test.mjs",
+    "mode": "100644",
+    "bytes": 21868,
+    "sha256": "29587109cb40ce005417bee69a14eca9c9426e063b51ca159c682f040dc40aee"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/review-listener.test.mjs",
+    "mode": "100644",
+    "bytes": 11215,
+    "sha256": "040c085d8649094e0ff18d8c00c6ec72d385461787dc55af548fcbbe04a0ff1f"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/review-types.test.ts",
+    "mode": "100644",
+    "bytes": 689,
+    "sha256": "81fffa224c5f3b27a0d56ee5c3e25f91475a0cc14a0c28a13fb594b40bedd534"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/scoped-store.test.mjs",
+    "mode": "100644",
+    "bytes": 14224,
+    "sha256": "e301a111d26b64fc2de1bdb9d62a9c0f3308d4c7401c351ea828cfc7bfe52c64"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/sdk-binding.test.mjs",
+    "mode": "100644",
+    "bytes": 8171,
+    "sha256": "6e42092ca6ada3590b5a9b517e376cc72ab19474c35e50d34d5bf7f65b3a362f"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/sdk-cancel.test.mjs",
+    "mode": "100644",
+    "bytes": 10469,
+    "sha256": "0cd4918952b587929d0e4e446b5e1d7a4772ec039d7f401c23e34d99f5293c42"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/staff-parallel.test.mjs",
+    "mode": "100644",
+    "bytes": 3798,
+    "sha256": "bfa54cb9f778a5202705e415f92d25497640f8847acc963182064c6ef8328a45"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/tcp-cancel.test.mjs",
+    "mode": "100644",
+    "bytes": 6661,
+    "sha256": "89ff63e911cd10816cdfc2d33cfa5f7f57556fc476edd8817727fe605b469ffe"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/clerk-auth/verifier.test.mjs",
+    "mode": "100644",
+    "bytes": 4509,
+    "sha256": "73dc09ba11d9598b3e00daaf6b8b24b9468b32d6ad6ed17bc600677f579a8628"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/enrollment/identity-staff.test.mjs",
+    "mode": "100644",
+    "bytes": 15670,
+    "sha256": "ed14bfbd5f231463ebf2376304add8b6226645db3a4d811855a9b355e2335c0a"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/enrollment/production-client.test.mjs",
+    "mode": "100644",
+    "bytes": 4808,
+    "sha256": "4bbe5b112b5b81f738760748dee7aa25cf141e2ab990e16aaeb06bc4b5861165"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/first-test/cors.test.mjs",
+    "mode": "100644",
+    "bytes": 3479,
+    "sha256": "ef4ea2228157b718baa7f580bfe07403139a6d5294ed4609278dd0e3352eb6f1"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/first-test/executor.mjs",
+    "mode": "100644",
+    "bytes": 3803,
+    "sha256": "6734a0d8221092978b7676bd4835e03124ffe18b11c323523348ec8cbef7520e"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/first-test/fixture.mjs",
+    "mode": "100644",
+    "bytes": 7281,
+    "sha256": "6e9c113a2d754fcdf5ca54e382b949e21859beb61a77016bdebaab0be7f4f35f"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/first-test/http.test.mjs",
+    "mode": "100644",
+    "bytes": 13002,
+    "sha256": "c1b72ff57078ca3edaff572cf9282f4a69da65a7fbe7e9c2741bc3a4daa32f57"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/local-content-pilot.test.mjs",
+    "mode": "100644",
+    "bytes": 19865,
+    "sha256": "74c29b5306d0e09ec0efcda48afac04684230ef4347339617657de7daa190f2b"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/membership/preflight-adapter.test.mjs",
+    "mode": "100644",
+    "bytes": 52377,
+    "sha256": "9b989fd50294146601f4176b45bb4f0f3ed5d20b0d122d3aa98dc4880dbbc6d7"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/membership/removal-active.test.mjs",
+    "mode": "100644",
+    "bytes": 35811,
+    "sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/membership/removal-command.test.mjs",
+    "mode": "100644",
+    "bytes": 40020,
+    "sha256": "76d693b6074f1b3e89eac36bbfb05ee65c3ac490754ca2182490f94d58523cc2"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs",
+    "mode": "100644",
+    "bytes": 18548,
+    "sha256": "9de546a587d6b3aac367f9f17db704c9d54c318694c58c89cfbf6963abc3ab68"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/persistent-http/executor.mjs",
+    "mode": "100644",
+    "bytes": 7574,
+    "sha256": "ad86e0734e7e7cc19c310300f8417cde07c2d17c763b85a61714a7ae299f6cc6"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/persistent-http/http.test.mjs",
+    "mode": "100644",
+    "bytes": 17759,
+    "sha256": "ad3c1b5a1865b62c20cebc3769a7cc16f74eff45a019edb2dfc21b1335c1c260"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/storage-auth/disk-executor.mjs",
+    "mode": "100644",
+    "bytes": 7084,
+    "sha256": "4103509484ffcbd1f04b4924e9e99380ce60e206ae60de6c955f49657e8f8690"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/storage-auth/staff-jwt.test.mjs",
+    "mode": "100644",
+    "bytes": 4981,
+    "sha256": "801baa55d2c706c5d266e88e59c4a2c4489fcd30b0e588720b32fa18e36a24d3"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/storage-auth/storage.test.mjs",
+    "mode": "100644",
+    "bytes": 12570,
+    "sha256": "9f2729b65a61ab0f3b3a0436e8df6620474da009427651e092b65d2b9491bc22"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/vercel-node/adapter.test.mjs",
+    "mode": "100644",
+    "bytes": 11454,
+    "sha256": "a3c38ef203b6fdd39ae9cbdcebecd1dc5bf20744b9104d4f0cd075819a3d9629"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/vercel-node/pool-port.test.mjs",
+    "mode": "100644",
+    "bytes": 3692,
+    "sha256": "8cad9affbcab42ca1daa74da7153de4f8b3d44b443120f199fb4df96216c98a2"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/vercel-node/production-options.test.mjs",
+    "mode": "100644",
+    "bytes": 21924,
+    "sha256": "052e7e8aa70519c35d03d2de7d673db3737b4bcfd9858ae351ee2761ae0fc2ac"
+  },
+  {
+    "path": "workspaces/univeracademy/tools/generate-clerk-review.py",
+    "mode": "100644",
+    "bytes": 5560,
+    "sha256": "3649c8fd251aa8b40ae0e9042a2bfac56e26c945b247d6a52546b927fb253f5e"
+  },
+  {
+    "path": "workspaces/univeracademy/tools/generate-staff-contract.py",
+    "mode": "100644",
+    "bytes": 2125,
+    "sha256": "aa5bc79040dbdc9eeb7b9b211bb8ff57c8c21adc9aa2e4a62eed3e6dcc29dc3e"
+  },
+  {
+    "path": "workspaces/univeracademy/vercel.json",
+    "mode": "100644",
+    "bytes": 163,
+    "sha256": "29c44dcff6c14b92cdd84a68afaba6dae869577dfceba54dfd911eb2d9427148"
+  }
+]

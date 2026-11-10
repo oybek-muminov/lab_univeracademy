@@ -1,0 +1,11 @@
+✔ transaction pool port strips every Statement.name, preserves parameterization and uses one checked-out driver client through COMMIT (2.958726ms)
+✔ pool bridge forwards transaction advisory locks and unknown COMMIT discard without retry or a false ACK (1.15895ms)
+✔ pool bridge retains callback exception identity and rollback/release, and rejects a malformed driver without fallback (0.587437ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 149.775407
