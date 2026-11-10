@@ -1,0 +1,126 @@
+{
+  "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+  "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+  "patch": {
+    "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/candidate.patch",
+    "bytes": 41911,
+    "sha256": "6a5ac168d54e1c4e497da792386e2e3ee38374fb1859dbffe8626298330daf4c"
+  },
+  "steps": [
+    {
+      "step": "check",
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/candidate.patch"
+      ],
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/replay",
+      "start_utc": "2026-11-10T13:43:57.889142+00:00",
+      "end_utc": "2026-11-10T13:43:57.891829+00:00",
+      "exit": 0,
+      "output": "",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "step": "forward",
+      "command": [
+        "git",
+        "apply",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/candidate.patch"
+      ],
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/replay",
+      "start_utc": "2026-11-10T13:43:57.891925+00:00",
+      "end_utc": "2026-11-10T13:43:57.894169+00:00",
+      "exit": 0,
+      "output": "",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "candidate_byte_and_mode_parity": true,
+      "files": 739
+    },
+    {
+      "step": "reverse-check",
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "--check",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/candidate.patch"
+      ],
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/replay",
+      "start_utc": "2026-11-10T13:43:58.058100+00:00",
+      "end_utc": "2026-11-10T13:43:58.060719+00:00",
+      "exit": 0,
+      "output": "",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "step": "reverse",
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/candidate.patch"
+      ],
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/replay",
+      "start_utc": "2026-11-10T13:43:58.060757+00:00",
+      "end_utc": "2026-11-10T13:43:58.063360+00:00",
+      "exit": 0,
+      "output": "",
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_byte_and_mode_parity": true,
+      "files": 738
+    }
+  ],
+  "forward": {
+    "files": 739,
+    "all_bytes_modes_equal": true
+  },
+  "reverse": {
+    "files": 738,
+    "all_bytes_modes_equal": true
+  },
+  "revision_delta": {
+    "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/v1-to-r2-runner.diff",
+    "bytes": 1226,
+    "sha256": "5d9c84e6ecd7d2b2bd1f0494c4b6e2f71bacd4757be0ceeceed162b24c728ef4"
+  },
+  "revision_reconstruction": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/v1-to-r2-runner.diff"
+      ],
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/revision-replay",
+      "start_utc": "2026-11-10T13:43:58.263652+00:00",
+      "end_utc": "2026-11-10T13:43:58.266387+00:00",
+      "exit": 0,
+      "runner": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-1wzho5xb/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+        "bytes": 9563,
+        "sha256": "4fec2ee626f46f0eaf9b97c94a6c485bd228b20c95991fbb9dc217b366f8ca7c"
+      },
+      "test_bytes_identical": true
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/v1-to-r2-runner.diff"
+      ],
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/revision-replay",
+      "start_utc": "2026-11-10T13:43:58.266556+00:00",
+      "end_utc": "2026-11-10T13:43:58.268178+00:00",
+      "exit": 0,
+      "runner": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+        "bytes": 9620,
+        "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f"
+      },
+      "test_bytes_identical": true
+    }
+  ],
+  "git_objects_index_refs_written": false
+}

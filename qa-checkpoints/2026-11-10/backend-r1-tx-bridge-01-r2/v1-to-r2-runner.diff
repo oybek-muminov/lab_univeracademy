@@ -1,0 +1,19 @@
+diff --git a/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts b/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts
+index 4aedcad1b4c5890ed95e9bedfe119744cd6e4084..e5a00e04efb4f2f6fdb7539bd2e267c26395da49 100644
+--- a/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts
++++ b/workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts
+@@ -75,10 +75,12 @@
+       if (!Array.isArray(derived) || derived.length === 0) fail("RESPONSE_INVARIANT_FAILED", 500);
+       const copied: string[] = [];
+       for (let i = 0; i < derived.length; i++) {
+-        if (!Object.hasOwn(derived, i) || typeof derived[i] !== "string" || !uuid.test(derived[i])) {
++        if (!Object.hasOwn(derived, i)) fail("RESPONSE_INVARIANT_FAILED", 500);
++        const id = derived[i];
++        if (typeof id !== "string" || !uuid.test(id)) {
+           fail("RESPONSE_INVARIANT_FAILED", 500);
+         }
+-        copied.push(derived[i]);
++        copied.push(id);
+       }
+       const ids = Object.freeze([...new Set(copied)].sort());
+       const tx = await this.lockPeople(client, ids);

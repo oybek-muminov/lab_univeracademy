@@ -1,0 +1,83 @@
+{
+  "candidate": "R1-TX-BRIDGE-01-r2",
+  "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+  "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+  "files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+      "base": {
+        "bytes": 5447,
+        "sha256": "6d78d355be8e0509eb0e2e337a64110d32417c52bf2770b7a46abb47002bb62f",
+        "blob": "8aafa8a743a49e897bf8b21b37043653c74649ca",
+        "mode": "100644"
+      },
+      "candidate": {
+        "bytes": 9620,
+        "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f",
+        "blob": "e5a00e04efb4f2f6fdb7539bd2e267c26395da49",
+        "mode": "100644"
+      }
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs",
+      "base": null,
+      "candidate": {
+        "bytes": 33274,
+        "sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb",
+        "blob": "47d4a3028e63951fb0c7cd311b8ffb399a5e863d",
+        "mode": "100644"
+      }
+    }
+  ],
+  "predecessor": {
+    "candidate": "R1-TX-BRIDGE-01-v1",
+    "source_files": [
+      {
+        "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+        "bytes": 9563,
+        "sha256": "4fec2ee626f46f0eaf9b97c94a6c485bd228b20c95991fbb9dc217b366f8ca7c",
+        "blob": "4aedcad1b4c5890ed95e9bedfe119744cd6e4084",
+        "mode": "100644"
+      },
+      {
+        "path": "workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs",
+        "bytes": 31040,
+        "sha256": "b3691200bd6ef130881c1f788b7857a5e39e3772ca89a8f638f44fe9ec31b905",
+        "blob": "ab5ea630d60a18aef73ac08d43fde7f71d3345a9",
+        "mode": "100644"
+      }
+    ],
+    "inventory": {
+      "path": "/tmp/univeracademy-r1-tx-bridge01-1wzho5xb/publication-proposal-inventory.json",
+      "bytes": 5341,
+      "sha256": "dafd7ba8281be8a3dde2a2e454f1999873ade65c7b3434e28ed381e65ff85ab3"
+    }
+  },
+  "runtime_dependencies": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/fault.ts",
+      "bytes": 422,
+      "sha256": "e405799dd809d8118f764e8fea8361f9117e2635b37e3afce93d63e64cafed8f",
+      "blob": "9ccc1acd6589840c490b200fcec1c189416fa90e",
+      "mode": "100644"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+      "bytes": 30680,
+      "sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+      "blob": "ece0e52201765360bef1e757894c6c0c4c095ac2",
+      "mode": "100644"
+    }
+  ],
+  "patch": {
+    "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/candidate.patch",
+    "bytes": 41911,
+    "sha256": "6a5ac168d54e1c4e497da792386e2e3ee38374fb1859dbffe8626298330daf4c"
+  },
+  "revision_delta": {
+    "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/v1-to-r2-runner.diff",
+    "bytes": 1226,
+    "sha256": "5d9c84e6ecd7d2b2bd1f0494c4b6e2f71bacd4757be0ceeceed162b24c728ef4"
+  },
+  "production_change": "Read each own derived-ID element once; validate and copy that same captured value."
+}

@@ -1,0 +1,42 @@
+{
+  "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+  "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+  "base_blobs": 738,
+  "modified": [
+    "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+  ],
+  "added": [
+    "workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs"
+  ],
+  "deleted": [],
+  "unchanged_base_blobs": 737,
+  "unchanged_base_modes": 738,
+  "all_other_baseline_blobs_and_modes_preserved": true,
+  "frozen_v1": {
+    "root": "/tmp/univeracademy-r1-tx-bridge01-1wzho5xb",
+    "full_regular_file_count": 2242,
+    "all_bytes_unchanged": true,
+    "original_14_selected_files_unchanged": true,
+    "original_inventory": {
+      "path": "/tmp/univeracademy-r1-tx-bridge01-1wzho5xb/publication-proposal-inventory.json",
+      "bytes": 5341,
+      "sha256": "dafd7ba8281be8a3dde2a2e454f1999873ade65c7b3434e28ed381e65ff85ab3"
+    },
+    "before": {
+      "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/frozen-v1.before.json",
+      "bytes": 470766,
+      "sha256": "a96509526f57e75243306c5cfec70b678e00f30b57741e483fddda4e94c06224"
+    }
+  },
+  "original_97_oracles": {
+    "old_tests": 97,
+    "unchanged": true,
+    "normalization": "Remove only the contiguous appended B39/B40 block before the unchanged after hook; no metadata normalization needed.",
+    "old_test_bytes": 31040,
+    "old_test_sha256": "b3691200bd6ef130881c1f788b7857a5e39e3772ca89a8f638f44fe9ec31b905",
+    "new_test_bytes": 33274,
+    "new_test_sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb",
+    "inserted_block_bytes": 2234
+  },
+  "boundary_definition": "All regular repository files excluding node_modules, .git and symlinks; per-path byte/SHA256; Git modes separately checked."
+}

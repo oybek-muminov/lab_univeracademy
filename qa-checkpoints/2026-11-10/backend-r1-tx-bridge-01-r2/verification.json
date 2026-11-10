@@ -1,0 +1,543 @@
+{
+  "candidate": "R1-TX-BRIDGE-01-r2",
+  "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+  "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+  "source_manifest": {
+    "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-manifest.json",
+    "bytes": 3225,
+    "sha256": "f4141fbacd694348d0989fcf5297b904847b16fdc41838c9c0166674bef0d879"
+  },
+  "runs": {
+    "red-before": {
+      "candidate": "R1-TX-BRIDGE-01",
+      "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+      "actual_execution_base": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "--test-name-pattern",
+        "B39|B40",
+        "tests/membership/protection-postgres-transaction.test.mjs"
+      ],
+      "literal_command": "UA_TX_BRIDGE_TRACE_PATH=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/red-before-cases.json npm_config_cache=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test --test-name-pattern 'B39|B40' tests/membership/protection-postgres-transaction.test.mjs",
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_TX_BRIDGE_TRACE_PATH": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/red-before-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T13:41:17.604890+00:00",
+      "end_utc": "2026-11-10T13:41:17.878590+00:00",
+      "exit": 1,
+      "counts": {
+        "tests": 3,
+        "pass": 0,
+        "fail": 3,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/red-before.log",
+        "bytes": 2884,
+        "sha256": "09ba27deb421c70ca3213d4cc471c6a24a1945019c9c4e2769b3b16b442db558"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/108512105010d766f02cc1e6f2c6b73c6158e2ddb531182ecc77f42736f116bf.json",
+        "bytes": 143947,
+        "sha256": "108512105010d766f02cc1e6f2c6b73c6158e2ddb531182ecc77f42736f116bf",
+        "files": 739,
+        "start_utc": "2026-11-10T13:41:17.477326+00:00",
+        "end_utc": "2026-11-10T13:41:17.604748+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/108512105010d766f02cc1e6f2c6b73c6158e2ddb531182ecc77f42736f116bf.json",
+        "bytes": 143947,
+        "sha256": "108512105010d766f02cc1e6f2c6b73c6158e2ddb531182ecc77f42736f116bf",
+        "files": 739,
+        "start_utc": "2026-11-10T13:41:17.878777+00:00",
+        "end_utc": "2026-11-10T13:41:18.050439+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+          "bytes": 9563,
+          "sha256": "4fec2ee626f46f0eaf9b97c94a6c485bd228b20c95991fbb9dc217b366f8ca7c"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs",
+          "bytes": 33274,
+          "sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb"
+        }
+      ]
+    },
+    "green-targeted": {
+      "candidate": "R1-TX-BRIDGE-01",
+      "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+      "actual_execution_base": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "--test-name-pattern",
+        "B39|B40",
+        "tests/membership/protection-postgres-transaction.test.mjs"
+      ],
+      "literal_command": "UA_TX_BRIDGE_TRACE_PATH=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/green-targeted-cases.json npm_config_cache=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test --test-name-pattern 'B39|B40' tests/membership/protection-postgres-transaction.test.mjs",
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_TX_BRIDGE_TRACE_PATH": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/green-targeted-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T13:41:28.714483+00:00",
+      "end_utc": "2026-11-10T13:41:28.943411+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 3,
+        "pass": 3,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/green-targeted.log",
+        "bytes": 291,
+        "sha256": "b7de70a5c8cfeab0847dfc198baeba59084876f49d9999280cf323c88b76ee05"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1.json",
+        "bytes": 143947,
+        "sha256": "9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1",
+        "files": 739,
+        "start_utc": "2026-11-10T13:41:28.590470+00:00",
+        "end_utc": "2026-11-10T13:41:28.714290+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1.json",
+        "bytes": 143947,
+        "sha256": "9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1",
+        "files": 739,
+        "start_utc": "2026-11-10T13:41:28.943592+00:00",
+        "end_utc": "2026-11-10T13:41:29.116557+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+          "bytes": 9620,
+          "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs",
+          "bytes": 33274,
+          "sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb"
+        }
+      ]
+    },
+    "focused-final": {
+      "candidate": "R1-TX-BRIDGE-01-r2",
+      "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+      "actual_execution_base": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/protection-postgres-transaction.test.mjs"
+      ],
+      "literal_command": "UA_TX_BRIDGE_TRACE_PATH=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/focused-final-cases.json npm_config_cache=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/protection-postgres-transaction.test.mjs",
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_TX_BRIDGE_TRACE_PATH": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/focused-final-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T13:41:43.603120+00:00",
+      "end_utc": "2026-11-10T13:41:44.103915+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 100,
+        "pass": 100,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/focused-final.log",
+        "bytes": 5321,
+        "sha256": "e427c8e0130c04faa427a193aea03c7d2324418b9327fd9f5f83be6112e1b9eb"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1.json",
+        "bytes": 143947,
+        "sha256": "9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1",
+        "files": 739,
+        "start_utc": "2026-11-10T13:41:43.487794+00:00",
+        "end_utc": "2026-11-10T13:41:43.602968+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1.json",
+        "bytes": 143947,
+        "sha256": "9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1",
+        "files": 739,
+        "start_utc": "2026-11-10T13:41:44.104315+00:00",
+        "end_utc": "2026-11-10T13:41:44.226425+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+          "bytes": 9620,
+          "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs",
+          "bytes": 33274,
+          "sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb"
+        }
+      ]
+    },
+    "affected-final": {
+      "candidate": "R1-TX-BRIDGE-01-r2",
+      "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+      "actual_execution_base": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/vercel-node/pool-port.test.mjs",
+        "tests/storage-auth/storage.test.mjs",
+        "tests/storage-auth/staff-jwt.test.mjs",
+        "tests/membership/removal-active.test.mjs",
+        "tests/membership/protection-contract.test.mjs"
+      ],
+      "literal_command": "UA_TX_BRIDGE_TRACE_PATH=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/affected-final-cases.json npm_config_cache=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/vercel-node/pool-port.test.mjs tests/storage-auth/storage.test.mjs tests/storage-auth/staff-jwt.test.mjs tests/membership/removal-active.test.mjs tests/membership/protection-contract.test.mjs",
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_TX_BRIDGE_TRACE_PATH": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/affected-final-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T13:42:01.993827+00:00",
+      "end_utc": "2026-11-10T13:42:03.979686+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 241,
+        "pass": 241,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/affected-final.log",
+        "bytes": 15862,
+        "sha256": "766d2fdc8c346a845f4c266687baa1227d608ff0ae8136dd790618645c34d303"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1.json",
+        "bytes": 143947,
+        "sha256": "9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1",
+        "files": 739,
+        "start_utc": "2026-11-10T13:42:01.842380+00:00",
+        "end_utc": "2026-11-10T13:42:01.993619+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1.json",
+        "bytes": 143947,
+        "sha256": "9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1",
+        "files": 739,
+        "start_utc": "2026-11-10T13:42:03.980005+00:00",
+        "end_utc": "2026-11-10T13:42:04.134075+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+          "bytes": 9620,
+          "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs",
+          "bytes": 33274,
+          "sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb"
+        }
+      ]
+    },
+    "typecheck-final": {
+      "candidate": "R1-TX-BRIDGE-01-r2",
+      "base_commit": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "base_tree": "0fb5e8bde38df528ebe763c93eb015f111af0a15",
+      "actual_execution_base": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "literal_command": "UA_TX_BRIDGE_TRACE_PATH=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/typecheck-final-cases.json npm_config_cache=/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache npm_config_update_notifier=false npm run typecheck",
+      "cwd": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_TX_BRIDGE_TRACE_PATH": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/typecheck-final-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T13:42:01.993827+00:00",
+      "end_utc": "2026-11-10T13:42:04.287217+00:00",
+      "exit": 0,
+      "counts": {},
+      "log": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/typecheck-final.log",
+        "bytes": 353,
+        "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1.json",
+        "bytes": 143947,
+        "sha256": "9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1",
+        "files": 739,
+        "start_utc": "2026-11-10T13:42:01.840956+00:00",
+        "end_utc": "2026-11-10T13:42:01.993619+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/source-snapshots/9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1.json",
+        "bytes": 143947,
+        "sha256": "9298e654dfa93ccf939991c5ede926ddf6b06bca1cb0075be7bc07b9b8b0e9a1",
+        "files": 739,
+        "start_utc": "2026-11-10T13:42:04.287387+00:00",
+        "end_utc": "2026-11-10T13:42:04.392198+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+          "bytes": 9620,
+          "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs",
+          "bytes": 33274,
+          "sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb"
+        }
+      ]
+    }
+  },
+  "final_counts": {
+    "focused": 100,
+    "affected": 241,
+    "total": 341,
+    "fail": 0,
+    "skipped": 0,
+    "typecheck_exit": 0
+  },
+  "original_97_oracles": {
+    "old_tests": 97,
+    "unchanged": true,
+    "normalization": "Remove only the contiguous appended B39/B40 block before the unchanged after hook; no metadata normalization needed.",
+    "old_test_bytes": 31040,
+    "old_test_sha256": "b3691200bd6ef130881c1f788b7857a5e39e3772ca89a8f638f44fe9ec31b905",
+    "new_test_bytes": 33274,
+    "new_test_sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb",
+    "inserted_block_bytes": 2234
+  },
+  "red_before": {
+    "classification": "Three genuine product-contract failures on frozen v1 source; not harness failures.",
+    "cases": {
+      "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/red-before-cases.json",
+      "bytes": 25286,
+      "sha256": "2b3bd10715e166e29e6def99ffb7d6b485a7c682b4b2db3fbc6fd2a8491abfc7"
+    }
+  },
+  "red_green_same_test_bytes": true,
+  "red_green_mapping": [
+    {
+      "id": "B39-derived-own-getter-valid-1-then-invalid",
+      "red": {
+        "verdict": "FAIL",
+        "derivedIDReads": 2,
+        "work": 0,
+        "actualWorkIDs": null,
+        "observedError": {
+          "name": "ApiFault",
+          "message": "RESPONSE_INVARIANT_FAILED",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "queryEntries": {
+          "personContext": 0,
+          "personLock": 0,
+          "commit": 0,
+          "rollback": 1
+        },
+        "context_values": [],
+        "lock_values": []
+      },
+      "green": {
+        "verdict": "PASS",
+        "derivedIDReads": 1,
+        "work": 1,
+        "actualWorkIDs": [
+          "00000000-0000-4000-8000-000000000001"
+        ],
+        "observedError": null,
+        "queryEntries": {
+          "personContext": 1,
+          "personLock": 1,
+          "commit": 1,
+          "rollback": 0
+        },
+        "context_values": [
+          [
+            "[\"00000000-0000-4000-8000-000000000001\"]"
+          ]
+        ],
+        "lock_values": [
+          [
+            [
+              "00000000-0000-4000-8000-000000000001"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "id": "B39-derived-own-getter-valid-2-then-invalid",
+      "red": {
+        "verdict": "FAIL",
+        "derivedIDReads": 3,
+        "work": 1,
+        "actualWorkIDs": [
+          "not-a-uuid"
+        ],
+        "observedError": null,
+        "queryEntries": {
+          "personContext": 1,
+          "personLock": 1,
+          "commit": 1,
+          "rollback": 0
+        },
+        "context_values": [
+          [
+            "[\"not-a-uuid\"]"
+          ]
+        ],
+        "lock_values": [
+          [
+            [
+              "not-a-uuid"
+            ]
+          ]
+        ]
+      },
+      "green": {
+        "verdict": "PASS",
+        "derivedIDReads": 1,
+        "work": 1,
+        "actualWorkIDs": [
+          "00000000-0000-4000-8000-000000000001"
+        ],
+        "observedError": null,
+        "queryEntries": {
+          "personContext": 1,
+          "personLock": 1,
+          "commit": 1,
+          "rollback": 0
+        },
+        "context_values": [
+          [
+            "[\"00000000-0000-4000-8000-000000000001\"]"
+          ]
+        ],
+        "lock_values": [
+          [
+            [
+              "00000000-0000-4000-8000-000000000001"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "id": "B40-derived-own-getter-invalid-first",
+      "red": {
+        "verdict": "FAIL",
+        "derivedIDReads": 3,
+        "work": 1,
+        "actualWorkIDs": null,
+        "observedError": null,
+        "queryEntries": {
+          "personContext": 1,
+          "personLock": 1,
+          "commit": 1,
+          "rollback": 0
+        },
+        "context_values": [
+          [
+            "[\"00000000-0000-4000-8000-000000000001\"]"
+          ]
+        ],
+        "lock_values": [
+          [
+            [
+              "00000000-0000-4000-8000-000000000001"
+            ]
+          ]
+        ]
+      },
+      "green": {
+        "verdict": "PASS",
+        "derivedIDReads": 1,
+        "work": 0,
+        "actualWorkIDs": null,
+        "observedError": {
+          "name": "ApiFault",
+          "message": "RESPONSE_INVARIANT_FAILED",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "queryEntries": {
+          "personContext": 0,
+          "personLock": 0,
+          "commit": 0,
+          "rollback": 1
+        },
+        "context_values": [],
+        "lock_values": []
+      }
+    }
+  ],
+  "final_cases": {
+    "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/focused-final-cases.json",
+    "bytes": 825095,
+    "sha256": "7c80417297c8d600946ca1d6c3dc0b29035f66380d5fcc7616b0a3d6a60fb5ae"
+  },
+  "scope": {
+    "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/scope-verification.json",
+    "bytes": 1806,
+    "sha256": "c79c1cb8f8e7c29df3cbff6755f35f39323ae1b4f06ea5dfb0ed5ea924b2911d"
+  },
+  "replay": {
+    "path": "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/evidence/replay-verification.json",
+    "bytes": 4342,
+    "sha256": "4851506713c133dbfe3f67184baafa452289efae4143c2476da26109f1a810cf"
+  },
+  "independent_evidence": {
+    "status": "RELAYED_ONLY_NOT_ORIGINAL_FILES",
+    "summary": "Architect reproduced the same v1 defect; coordinator relayed independent QA 45 PASS / 1 FAIL. Their original files were not accessed, copied or executed. Defect-witness exit0 is not r2 acceptance."
+  },
+  "limitations": [
+    "Author local actual-runner/scripted-client evidence, not independent acceptance.",
+    "Existing v1 uncovered sinks-disabled child negative calibration and later rejection of an initially pending gate Promise remain uncovered; old 97 tests are unchanged.",
+    "No SQL casting/execution, real locks, RLS, live revocation, physical cleanup or durability proof.",
+    "Raw trusted prepare client is not a SQL sandbox. Model phase/release is synthetic.",
+    "Rollback uncertainty retains original error/discard without confirmed rollback; both COMMIT-loss recording states expose commit_unknown/503.",
+    "The red-before and green-targeted run records retain the original task-family candidate label; their distinct cwd/source hashes identify their actual source. Final records use the r2 label."
+  ]
+}

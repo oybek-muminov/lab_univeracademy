@@ -1,0 +1,781 @@
+{
+  "schema": "actual-runner-scripted-client-v1",
+  "base": "8bc48c4647099355a046bb395de5486e6afd251f",
+  "source_sha256": "4fec2ee626f46f0eaf9b97c94a6c485bd228b20c95991fbb9dc217b366f8ca7c",
+  "test_sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb",
+  "model_sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+  "layer": "actual PostgresTransactions, scripted PgClient and independent recording state",
+  "observationLimits": [
+    "No SQL execution or physical durability/lock confirmation.",
+    "Explicit set attempts cover this fixture; no exhaustive arbitrary-alias tracing.",
+    "Protection ledger is synthetic and is not the recording committed-state oracle.",
+    "Observer failure retains the actual last model phase/lease."
+  ],
+  "cases": [
+    {
+      "id": "B39-derived-own-getter-valid-1-then-invalid",
+      "gate": "single-read IDs",
+      "base": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "source_sha256": "4fec2ee626f46f0eaf9b97c94a6c485bd228b20c95991fbb9dc217b366f8ca7c",
+      "test_sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb",
+      "model_sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs"
+      ],
+      "started_utc": "2026-11-10T13:41:17.817Z",
+      "finished_utc": "2026-11-10T13:41:17.822Z",
+      "verdict": "FAIL",
+      "observations": [
+        {
+          "connections": 1,
+          "prepare": 1,
+          "work": 0,
+          "directGateInvocations": 0,
+          "observerInvocations": 3,
+          "automaticMutationRetry": 0,
+          "ledger": [
+            {
+              "event": "connect",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_begin",
+              "text": "BEGIN",
+              "values": [],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_begin",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "prepare.entry",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "trusted_authorization_anchor",
+              "text": "SELECT $1::text",
+              "values": [
+                "synthetic-anchor"
+              ],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "trusted_authorization_anchor",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "prepare.return",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.entry",
+              "kind": "rollback_start",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.return",
+              "kind": "rollback_start",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_rollback",
+              "text": "ROLLBACK",
+              "values": [],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_rollback",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.entry",
+              "kind": "rollback_ack",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.return",
+              "kind": "rollback_ack",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "release.entry",
+              "client": "checked-out-client",
+              "discard": false,
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "release.return",
+              "client": "checked-out-client",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.entry",
+              "kind": "cleanup",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.return",
+              "kind": "cleanup",
+              "phase": null,
+              "leaseHeld": null
+            }
+          ],
+          "events": [
+            {
+              "kind": "rollback_start",
+              "error": {
+                "name": "ApiFault",
+                "message": "RESPONSE_INVARIANT_FAILED",
+                "code": "RESPONSE_INVARIANT_FAILED",
+                "status": 500
+              }
+            },
+            {
+              "kind": "rollback_ack"
+            },
+            {
+              "kind": "cleanup",
+              "discardRequested": false,
+              "releaseInvocation": "returned"
+            }
+          ],
+          "releaseAttempts": [
+            false
+          ],
+          "attemptedWrites": [],
+          "S0": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "staged": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "recordingCommitted": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "derivedIDReads": 2,
+          "actualWorkIDs": null,
+          "observedError": {
+            "name": "ApiFault",
+            "message": "RESPONSE_INVARIANT_FAILED",
+            "code": "RESPONSE_INVARIANT_FAILED",
+            "status": 500
+          },
+          "queryEntries": {
+            "personContext": 0,
+            "personLock": 0,
+            "commit": 0,
+            "rollback": 1
+          }
+        }
+      ],
+      "assertion": {
+        "name": "AssertionError",
+        "message": "each own ID element is captured exactly once\n\n2 !== 1\n",
+        "code": "ERR_ASSERTION"
+      },
+      "stack": "AssertionError [ERR_ASSERTION]: each own ID element is captured exactly once\n\n2 !== 1\n\n    at file:///tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs:353:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs:25:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)"
+    },
+    {
+      "id": "B39-derived-own-getter-valid-2-then-invalid",
+      "gate": "single-read IDs",
+      "base": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "source_sha256": "4fec2ee626f46f0eaf9b97c94a6c485bd228b20c95991fbb9dc217b366f8ca7c",
+      "test_sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb",
+      "model_sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs"
+      ],
+      "started_utc": "2026-11-10T13:41:17.824Z",
+      "finished_utc": "2026-11-10T13:41:17.826Z",
+      "verdict": "FAIL",
+      "observations": [
+        {
+          "connections": 1,
+          "prepare": 1,
+          "work": 1,
+          "directGateInvocations": 1,
+          "observerInvocations": 2,
+          "automaticMutationRetry": 0,
+          "ledger": [
+            {
+              "event": "connect",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_begin",
+              "text": "BEGIN",
+              "values": [],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_begin",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "prepare.entry",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "trusted_authorization_anchor",
+              "text": "SELECT $1::text",
+              "values": [
+                "synthetic-anchor"
+              ],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "trusted_authorization_anchor",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "prepare.return",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_people_context",
+              "text": "SELECT set_config('ua.person_ids',$1,true)",
+              "values": [
+                "[\"not-a-uuid\"]"
+              ],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_people_context",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_people_lock",
+              "text": "SELECT id::text AS id FROM ua_private.people WHERE id = ANY($1::uuid[]) ORDER BY id FOR UPDATE",
+              "values": [
+                [
+                  "not-a-uuid"
+                ]
+              ],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_people_lock",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_clock",
+              "text": "SELECT floor(extract(epoch FROM clock_timestamp()) * 1000)::text AS now_ms",
+              "values": [],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_clock",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "work.entry",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "gate.entry",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "gate.return",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_commit",
+              "text": "COMMIT",
+              "values": [],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_commit",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.entry",
+              "kind": "commit_ack",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.return",
+              "kind": "commit_ack",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "release.entry",
+              "client": "checked-out-client",
+              "discard": false,
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "release.return",
+              "client": "checked-out-client",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.entry",
+              "kind": "cleanup",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.return",
+              "kind": "cleanup",
+              "phase": null,
+              "leaseHeld": null
+            }
+          ],
+          "events": [
+            {
+              "kind": "commit_ack"
+            },
+            {
+              "kind": "cleanup",
+              "discardRequested": false,
+              "releaseInvocation": "returned"
+            }
+          ],
+          "releaseAttempts": [
+            false
+          ],
+          "attemptedWrites": [],
+          "S0": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "staged": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "recordingCommitted": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "derivedIDReads": 3,
+          "actualWorkIDs": [
+            "not-a-uuid"
+          ],
+          "observedError": null,
+          "queryEntries": {
+            "personContext": 1,
+            "personLock": 1,
+            "commit": 1,
+            "rollback": 0
+          }
+        }
+      ],
+      "assertion": {
+        "name": "AssertionError",
+        "message": "each own ID element is captured exactly once\n\n3 !== 1\n",
+        "code": "ERR_ASSERTION"
+      },
+      "stack": "AssertionError [ERR_ASSERTION]: each own ID element is captured exactly once\n\n3 !== 1\n\n    at file:///tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs:353:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs:25:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+    },
+    {
+      "id": "B40-derived-own-getter-invalid-first",
+      "gate": "single-read IDs",
+      "base": "8bc48c4647099355a046bb395de5486e6afd251f",
+      "source_sha256": "4fec2ee626f46f0eaf9b97c94a6c485bd228b20c95991fbb9dc217b366f8ca7c",
+      "test_sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb",
+      "model_sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "/tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs"
+      ],
+      "started_utc": "2026-11-10T13:41:17.826Z",
+      "finished_utc": "2026-11-10T13:41:17.827Z",
+      "verdict": "FAIL",
+      "observations": [
+        {
+          "connections": 1,
+          "prepare": 1,
+          "work": 1,
+          "directGateInvocations": 1,
+          "observerInvocations": 2,
+          "automaticMutationRetry": 0,
+          "ledger": [
+            {
+              "event": "connect",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_begin",
+              "text": "BEGIN",
+              "values": [],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_begin",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "prepare.entry",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "trusted_authorization_anchor",
+              "text": "SELECT $1::text",
+              "values": [
+                "synthetic-anchor"
+              ],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "trusted_authorization_anchor",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "prepare.return",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_people_context",
+              "text": "SELECT set_config('ua.person_ids',$1,true)",
+              "values": [
+                "[\"00000000-0000-4000-8000-000000000001\"]"
+              ],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_people_context",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_people_lock",
+              "text": "SELECT id::text AS id FROM ua_private.people WHERE id = ANY($1::uuid[]) ORDER BY id FOR UPDATE",
+              "values": [
+                [
+                  "00000000-0000-4000-8000-000000000001"
+                ]
+              ],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_people_lock",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_clock",
+              "text": "SELECT floor(extract(epoch FROM clock_timestamp()) * 1000)::text AS now_ms",
+              "values": [],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_clock",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "work.entry",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "gate.entry",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "gate.return",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.entry",
+              "client": "checked-out-client",
+              "name": "ua_commit",
+              "text": "COMMIT",
+              "values": [],
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "query.resolve",
+              "client": "checked-out-client",
+              "name": "ua_commit",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.entry",
+              "kind": "commit_ack",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.return",
+              "kind": "commit_ack",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "release.entry",
+              "client": "checked-out-client",
+              "discard": false,
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "release.return",
+              "client": "checked-out-client",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.entry",
+              "kind": "cleanup",
+              "phase": null,
+              "leaseHeld": null
+            },
+            {
+              "event": "observe.return",
+              "kind": "cleanup",
+              "phase": null,
+              "leaseHeld": null
+            }
+          ],
+          "events": [
+            {
+              "kind": "commit_ack"
+            },
+            {
+              "kind": "cleanup",
+              "discardRequested": false,
+              "releaseInvocation": "returned"
+            }
+          ],
+          "releaseAttempts": [
+            false
+          ],
+          "attemptedWrites": [],
+          "S0": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "staged": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "recordingCommitted": {
+            "attempt": {
+              "status": "in_progress",
+              "revision": 2,
+              "ordinary": null
+            },
+            "membership": {
+              "active": true,
+              "revision": 7
+            },
+            "history": [
+              "sentinel"
+            ]
+          },
+          "derivedIDReads": 3,
+          "observedError": null,
+          "queryEntries": {
+            "personContext": 1,
+            "personLock": 1,
+            "commit": 1,
+            "rollback": 0
+          }
+        }
+      ],
+      "assertion": {
+        "name": "AssertionError",
+        "message": "Expected values to be strictly equal:\n\n3 !== 1\n",
+        "code": "ERR_ASSERTION"
+      },
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n3 !== 1\n\n    at file:///tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs:365:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-tx-bridge01-r2-zox4akeb/repo/workspaces/univeracademy/tests/membership/protection-postgres-transaction.test.mjs:25:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+    }
+  ]
+}
