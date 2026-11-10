@@ -1,0 +1,1820 @@
+{
+  "candidate": "R03-SHARED-EXPIRY-01-reconciled-63f0e9a",
+  "base_commit": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+  "base_tree": "22a3dc84ba98c647c9c8b7827e85e483888fd8fb",
+  "claim_layer": "AUTHOR_LOCAL_ONLY_NOT_INDEPENDENT_QA",
+  "source_manifest": {
+    "bytes": 4043,
+    "sha256": "7951ee5cd1aa800f63bbf52f9c2a7b1523eb9c85cd26d4e72e29cdc6f4fe13be"
+  },
+  "final_checks": {
+    "shared-final": {
+      "candidate": "R03-SHARED-EXPIRY-01-reconciled-63f0e9a",
+      "base_commit": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "base_tree": "22a3dc84ba98c647c9c8b7827e85e483888fd8fb",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/shared-expiry-invariant.test.mjs"
+      ],
+      "environment_overrides": {
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "literal_command": "UA_SHARED_EXPIRY_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final-shared-cases.json UA_R1_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final-adapter-cases.json UA_1A_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final-membership-traces.json UA_R03_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final-membership-r03-cases.json npm_config_cache=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/shared-expiry-invariant.test.mjs",
+      "cwd": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-10T03:42:14.409388+00:00",
+      "end_utc": "2026-11-10T03:42:15.629484+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 123,
+        "pass": 123,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/shared-final.log",
+        "bytes": 6128,
+        "sha256": "99ed29ee757984a9a28a2dfaaf70651a302d97fb1fc9dae23b2c5bc62286e271"
+      },
+      "source_before": {
+        "start_utc": "2026-11-10T03:42:14.354219+00:00",
+        "end_utc": "2026-11-10T03:42:14.409270+00:00",
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/source-snapshots/98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802.json",
+        "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+        "files": 654
+      },
+      "source_after": {
+        "start_utc": "2026-11-10T03:42:15.629670+00:00",
+        "end_utc": "2026-11-10T03:42:15.677812+00:00",
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/source-snapshots/98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802.json",
+        "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+        "files": 654
+      },
+      "source_bytes_changed_during_run": false,
+      "unchanged_base_files": 652,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+          "bytes": 9727,
+          "sha256": "b95d33d535d37ee1beeef6123985771b5c05e921ed3a4f9e0694eafaea381721"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs",
+          "bytes": 18548,
+          "sha256": "9de546a587d6b3aac367f9f17db704c9d54c318694c58c89cfbf6963abc3ab68"
+        }
+      ],
+      "trace_provenance": "This external metadata binds the actual accepted execution base; unchanged legacy regression trace tags remain historical and were not edited."
+    },
+    "membership-regression": {
+      "candidate": "R03-SHARED-EXPIRY-01-reconciled-63f0e9a",
+      "base_commit": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "base_tree": "22a3dc84ba98c647c9c8b7827e85e483888fd8fb",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/preflight-adapter.test.mjs",
+        "tests/membership/removal-active.test.mjs"
+      ],
+      "environment_overrides": {
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "literal_command": "UA_SHARED_EXPIRY_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression-shared-cases.json UA_R1_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression-adapter-cases.json UA_1A_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression-membership-traces.json UA_R03_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression-membership-r03-cases.json npm_config_cache=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/preflight-adapter.test.mjs tests/membership/removal-active.test.mjs",
+      "cwd": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-10T03:42:26.483827+00:00",
+      "end_utc": "2026-11-10T03:42:29.206910+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 247,
+        "pass": 247,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/membership-regression.log",
+        "bytes": 14116,
+        "sha256": "b8c72a55be45812a8aa68a196607f71f5a156c53d34cc48336d54183345dfb18"
+      },
+      "source_before": {
+        "start_utc": "2026-11-10T03:42:26.430793+00:00",
+        "end_utc": "2026-11-10T03:42:26.483725+00:00",
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/source-snapshots/98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802.json",
+        "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+        "files": 654
+      },
+      "source_after": {
+        "start_utc": "2026-11-10T03:42:29.207169+00:00",
+        "end_utc": "2026-11-10T03:42:29.254166+00:00",
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/source-snapshots/98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802.json",
+        "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+        "files": 654
+      },
+      "source_bytes_changed_during_run": false,
+      "unchanged_base_files": 652,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+          "bytes": 9727,
+          "sha256": "b95d33d535d37ee1beeef6123985771b5c05e921ed3a4f9e0694eafaea381721"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs",
+          "bytes": 18548,
+          "sha256": "9de546a587d6b3aac367f9f17db704c9d54c318694c58c89cfbf6963abc3ab68"
+        }
+      ],
+      "trace_provenance": "This external metadata binds the actual accepted execution base; unchanged legacy regression trace tags remain historical and were not edited."
+    },
+    "student-http-regression": {
+      "candidate": "R03-SHARED-EXPIRY-01-reconciled-63f0e9a",
+      "base_commit": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "base_tree": "22a3dc84ba98c647c9c8b7827e85e483888fd8fb",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/local-content-pilot.test.mjs",
+        "tests/persistent-http/http.test.mjs",
+        "tests/first-test/http.test.mjs"
+      ],
+      "environment_overrides": {
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "literal_command": "UA_SHARED_EXPIRY_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression-shared-cases.json UA_R1_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression-adapter-cases.json UA_1A_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression-membership-traces.json UA_R03_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression-membership-r03-cases.json npm_config_cache=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/local-content-pilot.test.mjs tests/persistent-http/http.test.mjs tests/first-test/http.test.mjs",
+      "cwd": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-10T03:42:29.645267+00:00",
+      "end_utc": "2026-11-10T03:42:31.961783+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 30,
+        "pass": 30,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/student-http-regression.log",
+        "bytes": 3964,
+        "sha256": "d67cf141f6bdb233cb46e62522318b24790c3452d5ec4e2db5dec278be460013"
+      },
+      "source_before": {
+        "start_utc": "2026-11-10T03:42:29.582806+00:00",
+        "end_utc": "2026-11-10T03:42:29.645159+00:00",
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/source-snapshots/98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802.json",
+        "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+        "files": 654
+      },
+      "source_after": {
+        "start_utc": "2026-11-10T03:42:31.962011+00:00",
+        "end_utc": "2026-11-10T03:42:32.008056+00:00",
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/source-snapshots/98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802.json",
+        "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+        "files": 654
+      },
+      "source_bytes_changed_during_run": false,
+      "unchanged_base_files": 652,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+          "bytes": 9727,
+          "sha256": "b95d33d535d37ee1beeef6123985771b5c05e921ed3a4f9e0694eafaea381721"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs",
+          "bytes": 18548,
+          "sha256": "9de546a587d6b3aac367f9f17db704c9d54c318694c58c89cfbf6963abc3ab68"
+        }
+      ],
+      "trace_provenance": "This external metadata binds the actual accepted execution base; unchanged legacy regression trace tags remain historical and were not edited."
+    },
+    "typecheck-final": {
+      "candidate": "R03-SHARED-EXPIRY-01-reconciled-63f0e9a",
+      "base_commit": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "base_tree": "22a3dc84ba98c647c9c8b7827e85e483888fd8fb",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "environment_overrides": {
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "literal_command": "UA_SHARED_EXPIRY_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final-shared-cases.json UA_R1_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final-adapter-cases.json UA_1A_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final-membership-traces.json UA_R03_TRACE_PATH=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final-membership-r03-cases.json npm_config_cache=/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/npm-cache npm_config_update_notifier=false npm run typecheck",
+      "cwd": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/repo/workspaces/univeracademy",
+      "start_utc": "2026-11-10T03:42:32.320205+00:00",
+      "end_utc": "2026-11-10T03:42:34.118384+00:00",
+      "exit": 0,
+      "counts": {},
+      "log": {
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/typecheck-final.log",
+        "bytes": 353,
+        "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+      },
+      "source_before": {
+        "start_utc": "2026-11-10T03:42:32.268817+00:00",
+        "end_utc": "2026-11-10T03:42:32.320106+00:00",
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/source-snapshots/98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802.json",
+        "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+        "files": 654
+      },
+      "source_after": {
+        "start_utc": "2026-11-10T03:42:34.118604+00:00",
+        "end_utc": "2026-11-10T03:42:34.170628+00:00",
+        "path": "/tmp/R03-SHARED-EXPIRY-01-reconciled-63f0e9a/evidence/source-snapshots/98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802.json",
+        "sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+        "files": 654
+      },
+      "source_bytes_changed_during_run": false,
+      "unchanged_base_files": 652,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+          "bytes": 9727,
+          "sha256": "b95d33d535d37ee1beeef6123985771b5c05e921ed3a4f9e0694eafaea381721"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs",
+          "bytes": 18548,
+          "sha256": "9de546a587d6b3aac367f9f17db704c9d54c318694c58c89cfbf6963abc3ab68"
+        }
+      ],
+      "trace_provenance": "This external metadata binds the actual accepted execution base; unchanged legacy regression trace tags remain historical and were not edited."
+    }
+  },
+  "counts": {
+    "shared": 123,
+    "membership_with_Teacher": 247,
+    "student_HTTP": 30,
+    "total_across_three_separate_runs": 400,
+    "fail": 0,
+    "skip": 0
+  },
+  "case_groups": {
+    "CORRUPT": 18,
+    "VALID": 6,
+    "LITERAL": 12,
+    "TERMINAL": 12,
+    "PRECEDENCE": 28,
+    "CLOCK": 6,
+    "START": 10,
+    "MIXED": 13,
+    "MEMBERSHIP": 3,
+    "HTTP": 15
+  },
+  "new_run_failures": [],
+  "local_packaging_issue": {
+    "action": "assemble-local-evidence.py",
+    "reason": "Metadata-only assemblers assumed optional order and expected_staged on the positive calibration; committed literal expected was recorded and remains checked",
+    "classification": "Metadata assembler failure after all four final checks passed; no source/test defect or retest",
+    "resolution": "Finish existing immutable evidence; copy order only when recorded",
+    "failed_scripts": {
+      "assemble-local-evidence.py": "cedbf3abf978f2887f5cdf84aa5dae4198e3d922cf3afa6b9161bed136eb4178",
+      "finish-local-evidence.py": "e3a8f7ffc75d82826a4eebcc6369101d346840234dbf7f34a9aac37fc13474c1"
+    }
+  },
+  "original_failures_preserved": {
+    "baseline": "Original b3 30 FAIL /1 positive PASS: expected product R03 gap, not rerun.",
+    "first_fixed": "Original b3 108 PASS /15 FAIL: expired HTTP synthetic access proof yielded correct 401; only test fixture refresh was fixed before reviewed final test. Not a new reconciled product failure.",
+    "history_records": [
+      {
+        "path": "history/baseline-red.log",
+        "bytes": 31572,
+        "sha256": "295017804244076366183c6032f7ef932d9094c71dc7150388ad45dcfad14f3e"
+      },
+      {
+        "path": "history/baseline-red-run.json",
+        "bytes": 1906,
+        "sha256": "980623e3bc1f45f49a030a0abce138c7110218da3d635163e8d7bee452a275db"
+      },
+      {
+        "path": "history/shared-green.log",
+        "bytes": 18341,
+        "sha256": "d1f69088aa8966b5b88fa2d91c7e6af617df2429dc3b7b2dd30412a0930523e1"
+      },
+      {
+        "path": "history/shared-green-run.json",
+        "bytes": 1851,
+        "sha256": "4496e922cede9d36622661eb97975eef49746eda211184ba151b27cb9ce00c02"
+      }
+    ],
+    "original_final_303": "Old-base author evidence only; not relabelled as this base."
+  },
+  "mixed_series_recording_double": [
+    {
+      "case_id": "SHARED-MIXED:-1:series-first=true:attempts-first=true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900",
+          "value": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793879999990,
+            "deadlineAt": 1793880059990,
+            "completedAt": 1793880059990,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880059999
+            }
+          }
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+          "value": "00000000-0000-4000-8000-000000000900"
+        }
+      ],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.277Z",
+      "finished_utc": "2026-11-10T03:42:15.281Z",
+      "staged_equals_S0": false,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:-1:series-first=true:attempts-first=false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.282Z",
+      "finished_utc": "2026-11-10T03:42:15.285Z",
+      "staged_equals_S0": true,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:-1:series-first=false:attempts-first=true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900",
+          "value": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793879999990,
+            "deadlineAt": 1793880059990,
+            "completedAt": 1793880059990,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880059999
+            }
+          }
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+          "value": "00000000-0000-4000-8000-000000000900"
+        }
+      ],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.285Z",
+      "finished_utc": "2026-11-10T03:42:15.288Z",
+      "staged_equals_S0": false,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:-1:series-first=false:attempts-first=false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.288Z",
+      "finished_utc": "2026-11-10T03:42:15.290Z",
+      "staged_equals_S0": true,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:0:series-first=true:attempts-first=true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900",
+          "value": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793879999990,
+            "deadlineAt": 1793880059990,
+            "completedAt": 1793880059990,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060000
+            }
+          }
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+          "value": "00000000-0000-4000-8000-000000000900"
+        }
+      ],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.290Z",
+      "finished_utc": "2026-11-10T03:42:15.294Z",
+      "staged_equals_S0": false,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:0:series-first=true:attempts-first=false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.294Z",
+      "finished_utc": "2026-11-10T03:42:15.297Z",
+      "staged_equals_S0": true,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:0:series-first=false:attempts-first=true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900",
+          "value": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793879999990,
+            "deadlineAt": 1793880059990,
+            "completedAt": 1793880059990,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060000
+            }
+          }
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+          "value": "00000000-0000-4000-8000-000000000900"
+        }
+      ],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.297Z",
+      "finished_utc": "2026-11-10T03:42:15.300Z",
+      "staged_equals_S0": false,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:0:series-first=false:attempts-first=false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.300Z",
+      "finished_utc": "2026-11-10T03:42:15.304Z",
+      "staged_equals_S0": true,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:1:series-first=true:attempts-first=true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900",
+          "value": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793879999990,
+            "deadlineAt": 1793880059990,
+            "completedAt": 1793880059990,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          }
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+          "value": "00000000-0000-4000-8000-000000000900"
+        }
+      ],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.304Z",
+      "finished_utc": "2026-11-10T03:42:15.307Z",
+      "staged_equals_S0": false,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:1:series-first=true:attempts-first=false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.307Z",
+      "finished_utc": "2026-11-10T03:42:15.310Z",
+      "staged_equals_S0": true,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:1:series-first=false:attempts-first=true",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000900",
+          "00000000-0000-4000-8000-000000000901"
+        ]
+      },
+      "calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900",
+          "value": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793879999990,
+            "deadlineAt": 1793880059990,
+            "completedAt": 1793880059990,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          }
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+          "value": "00000000-0000-4000-8000-000000000900"
+        }
+      ],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.310Z",
+      "finished_utc": "2026-11-10T03:42:15.312Z",
+      "staged_equals_S0": false,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED:1:series-first=false:attempts-first=false",
+      "order": {
+        "series": [
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021",
+          "00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020"
+        ],
+        "attempts": [
+          "00000000-0000-4000-8000-000000000901",
+          "00000000-0000-4000-8000-000000000900"
+        ]
+      },
+      "calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "attempted_writes": [],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.312Z",
+      "finished_utc": "2026-11-10T03:42:15.315Z",
+      "staged_equals_S0": true,
+      "committed_equals_S0": true,
+      "staged_equals_literal_expected": true,
+      "committed_equals_literal_expected": true
+    },
+    {
+      "case_id": "SHARED-MIXED-valid-write-calibration",
+      "calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "events": [
+        "begin",
+        "commit"
+      ],
+      "outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010",
+            "00000000-0000-4000-8000-000000000011"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020",
+            "00000000-0000-4000-8000-000000000021"
+          ],
+          "now": 1793880060001
+        }
+      },
+      "attempted_writes": [
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000900",
+          "value": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793879999990,
+            "deadlineAt": 1793880059990,
+            "completedAt": 1793880059990,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          }
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+          "value": "00000000-0000-4000-8000-000000000900"
+        },
+        {
+          "op": "set",
+          "path": "/student/attempts/00000000-0000-4000-8000-000000000901",
+          "value": {
+            "id": "00000000-0000-4000-8000-000000000901",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000011",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000021",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          }
+        },
+        {
+          "op": "set",
+          "path": "/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000021/officialAttemptId",
+          "value": "00000000-0000-4000-8000-000000000901"
+        }
+      ],
+      "verdict": "PASS",
+      "started_utc": "2026-11-10T03:42:15.315Z",
+      "finished_utc": "2026-11-10T03:42:15.318Z",
+      "staged_equals_S0": false,
+      "committed_equals_S0": false,
+      "staged_equals_literal_expected": "NOT_RECORDED_FOR_POSITIVE_CALIBRATION",
+      "committed_equals_literal_expected": true
+    }
+  ],
+  "measurement_limits": {
+    "pure": "Deep frozen input and net equality; transient input writes NOT_INSTRUMENTED.",
+    "HTTP": "Synthetic local RAM HTTP fixture, full net state unchanged; transient write attempts NOT_INSTRUMENTED.",
+    "mixed": "Reachable Proxy JS set/define/delete attempts plus staged and double-committed snapshots. Valid-first records staged writes then model rollback to committed S0. Not real PostgreSQL rollback, durability, or general maintenance0.",
+    "preflight": "Separate accepted guard controls retain measured direct guard and maintenance/reconcile/write counters. Legacy trace base tags remain unchanged; external run metadata binds actual 63f0e9a base."
+  },
+  "replay": {
+    "path": "replay-verification.json",
+    "bytes": 3261,
+    "sha256": "16a01435f98f4d149d84d01bbc995d4f1916e92f967d306a6809acbc9ab545e7"
+  },
+  "scope": {
+    "path": "scope-verification.json",
+    "bytes": 1863,
+    "sha256": "feb52d79dd4ab7af1ea5db6f128e8a7c4dfbc5747c2ef00175c41ea7511be9b7"
+  },
+  "remaining": {
+    "independent_QA": "PENDING for new two-file bytes",
+    "real_SQL_DB_provider": "NOT_RUN",
+    "Mini_QA": "NOT_RUN; not repeated",
+    "R1_integration": "OPEN",
+    "final_removal_HTTP_DB_E2E": "BLOCKED",
+    "upload": "NOT_ATTEMPTED; no approval for this package"
+  }
+}

@@ -1,0 +1,611 @@
+✖ SHARED-CORRUPT-view:-1 (24.085654ms)
+✖ SHARED-CORRUPT-view:0 (4.950271ms)
+✖ SHARED-CORRUPT-view:1 (2.922793ms)
+✖ SHARED-CORRUPT-save:-1 (3.510888ms)
+✖ SHARED-CORRUPT-save:0 (3.703116ms)
+✖ SHARED-CORRUPT-save:1 (3.955165ms)
+✖ SHARED-CORRUPT-submit:-1 (4.03884ms)
+✖ SHARED-CORRUPT-submit:0 (6.048762ms)
+✖ SHARED-CORRUPT-submit:1 (4.031319ms)
+✖ SHARED-CORRUPT-result:-1 (4.300344ms)
+✖ SHARED-CORRUPT-result:0 (5.386997ms)
+✖ SHARED-CORRUPT-result:1 (8.626407ms)
+✖ SHARED-CORRUPT-start:-1 (4.724992ms)
+✖ SHARED-CORRUPT-start:0 (4.107784ms)
+✖ SHARED-CORRUPT-start:1 (3.666592ms)
+✖ SHARED-CORRUPT-membership:-1 (3.947844ms)
+✖ SHARED-CORRUPT-membership:0 (3.596476ms)
+✖ SHARED-CORRUPT-membership:1 (3.616617ms)
+✖ SHARED-MIXED:-1:series-first=true:attempts-first=true (6.866315ms)
+✖ SHARED-MIXED:-1:series-first=true:attempts-first=false (17.221195ms)
+✖ SHARED-MIXED:-1:series-first=false:attempts-first=true (6.089113ms)
+✖ SHARED-MIXED:-1:series-first=false:attempts-first=false (4.785273ms)
+✖ SHARED-MIXED:0:series-first=true:attempts-first=true (4.310349ms)
+✖ SHARED-MIXED:0:series-first=true:attempts-first=false (4.519163ms)
+✖ SHARED-MIXED:0:series-first=false:attempts-first=true (5.017292ms)
+✖ SHARED-MIXED:0:series-first=false:attempts-first=false (8.825926ms)
+✖ SHARED-MIXED:1:series-first=true:attempts-first=true (4.411671ms)
+✖ SHARED-MIXED:1:series-first=true:attempts-first=false (4.255236ms)
+✖ SHARED-MIXED:1:series-first=false:attempts-first=true (4.818112ms)
+✖ SHARED-MIXED:1:series-first=false:attempts-first=false (4.025932ms)
+✔ SHARED-MIXED-valid-write-calibration (4.759083ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 1
+ℹ fail 30
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1055.276922
+
+✖ failing tests:
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-view:-1 (24.085654ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-view:0 (4.950271ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-view:1 (2.922793ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-save:-1 (3.510888ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-save:0 (3.703116ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-save:1 (3.955165ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-submit:-1 (4.03884ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-submit:0 (6.048762ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-submit:1 (4.031319ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-result:-1 (4.300344ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-result:0 (5.386997ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-result:1 (8.626407ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-start:-1 (4.724992ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-start:0 (4.107784ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-start:1 (3.666592ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-membership:-1 (3.947844ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-membership:0 (3.596476ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-CORRUPT-membership:1 (3.616617ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:58:60
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:-1:series-first=true:attempts-first=true (6.866315ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:-1:series-first=true:attempts-first=false (17.221195ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:-1:series-first=false:attempts-first=true (6.089113ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:-1:series-first=false:attempts-first=false (4.785273ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:0:series-first=true:attempts-first=true (4.310349ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:0:series-first=true:attempts-first=false (4.519163ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:0:series-first=false:attempts-first=true (5.017292ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:0:series-first=false:attempts-first=false (8.825926ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:1:series-first=true:attempts-first=true (4.411671ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:1:series-first=true:attempts-first=false (4.255236ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:1:series-first=false:attempts-first=true (4.818112ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-MIXED:1:series-first=false:attempts-first=false (4.025932ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.error)
+  
+      at fault (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:52:38)
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:121:46
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

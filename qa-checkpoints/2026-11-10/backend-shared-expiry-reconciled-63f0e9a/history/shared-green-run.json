@@ -1,0 +1,39 @@
+{
+  "base_commit": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+  "command": [
+    "node",
+    "--unhandled-rejections=strict",
+    "--test",
+    "tests/membership/shared-expiry-invariant.test.mjs"
+  ],
+  "environment_overrides": {
+    "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-shared-expiry01-nbrns5nt/evidence/shared-green-shared-cases.json",
+    "UA_R1_TRACE_PATH": "/tmp/univeracademy-shared-expiry01-nbrns5nt/evidence/shared-green-adapter-cases.json",
+    "UA_1A_TRACE_PATH": "/tmp/univeracademy-shared-expiry01-nbrns5nt/evidence/shared-green-membership-traces.json",
+    "UA_R03_TRACE_PATH": "/tmp/univeracademy-shared-expiry01-nbrns5nt/evidence/shared-green-membership-r03-cases.json",
+    "npm_config_cache": "/tmp/univeracademy-shared-expiry01-nbrns5nt/npm-cache",
+    "npm_config_update_notifier": "false"
+  },
+  "cwd": "/tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy",
+  "start_utc": "2026-11-10T01:19:27.873283+00:00",
+  "end_utc": "2026-11-10T01:19:29.129361+00:00",
+  "exit": 1,
+  "log_sha256": "d1f69088aa8966b5b88fa2d91c7e6af617df2429dc3b7b2dd30412a0930523e1",
+  "all_source_files": 350,
+  "unchanged_baseline_files": 348,
+  "source_before_sha256": "3d93f29fe66a2efa3f600ed5b8c765d225faf10399a21dad1922a18b2117d065",
+  "source_after_sha256": "3d93f29fe66a2efa3f600ed5b8c765d225faf10399a21dad1922a18b2117d065",
+  "source_bytes_changed_during_run": false,
+  "candidate_files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+      "bytes": 9727,
+      "sha256": "b95d33d535d37ee1beeef6123985771b5c05e921ed3a4f9e0694eafaea381721"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs",
+      "bytes": 18145,
+      "sha256": "52b971232574a53be430eff1d1f5be721b39ea2ec10a6aa9e53bb154f4ea92bd"
+    }
+  ]
+}

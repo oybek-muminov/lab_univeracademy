@@ -1,0 +1,38 @@
+✔ relational first test: fresh registration, Teacher question/duration/publish, Admin roster/assignment, student save/resume/result/history survive restart (300.899598ms)
+✔ draft question/metadata failures roll back revision, authored row, receipt and audit (186.204058ms)
+✔ membership failures roll back group/member revisions, epoch, person group, receipt and audit (185.31472ms)
+✔ assignment/grant/receipt/audit are atomic and retry never duplicates the grant (236.605124ms)
+✔ staff unknown COMMIT returns503, never ACKs/retries; same original command recovers exactly once (115.175978ms)
+✔ concurrent local draft CAS has one effect; published version is frozen and old receipt replay cannot edit it (45.124664ms)
+✔ Admin A test-only assignment succeeds, roster-only assignment fails, revoked/scope-invalid receipt replay has no effect (67.542337ms)
+✔ Teacher approval is current and private questions are not loaded after revoked approval (21.263899ms)
+✔ resource lock waits refresh DB clock, staff session and permission before private domain reads (73.526177ms)
+✔ assignment stale membership cannot grant; unsupported transfer never falls back to cached/RAM staff state (41.134044ms)
+✔ explicit multi-student grants are atomic; another member receives no implicit assignment (63.777337ms)
+✔ new HTTP publication, scoped Admin assignment, save/clear/resume/submit/result/history use no seed published version (165.502376ms)
+✔ Admin A remains independent of roster, with current capability/group/subject and revoked-replay checks on the new publication (75.819965ms)
+✔ new content routes retain Owner/approved-subject Teacher scope while Admin A grants assignment only (21.541488ms)
+✔ same-key publication/assignment retries use immutable snapshots and do not reapply authored changes (51.722736ms)
+✔ publish/assignment race never exposes a draft or partial snapshot; identical assignment can retry after publish (32.958874ms)
+✔ assignment commit failure rolls back snapshot/grants; lost ACK retries recover exactly one committed assignment (41.681064ms)
+✔ newly published active attempt blocks transfer before deadline, expires at equality and keeps answers/result/history (38.679168ms)
+✔ unstarted future recovery on the new published test is cancelled by transfer while exact history and receipt replay survive (48.061742ms)
+✔ start/transfer race for the newly published assignment has one serialized winner and no migrated running attempt (21.408668ms)
+✔ missing authoritative demo metadata or mismatched published identity cannot create a grant or substitute old content (26.461125ms)
+✔ HTTP login/profile -> new published exam/start -> save/clear -> separate process resume -> submit/result/history persists exact state (419.905235ms)
+✔ HTTP expiry at deadline commits ordinary+terminal state before409 and survives server restart (49.820055ms)
+✔ HTTP failed write and unknown COMMIT never ACK; reconciliation preserves committed revisions without reapplying command (44.582854ms)
+✔ HTTP new login replaces the old family while answer, deadline and membership persist; bad login and old refresh cannot revoke it (49.564119ms)
+✔ production rejects missing storage/auth/policy and explicit contract-double kind; staff without ports remains unavailable (25.763005ms)
+✔ invalid bearer never falls back to valid logout body; refresh reuse revokes only its own family across HTTP (53.946989ms)
+✔ configured staff HTTP verifies real offline JWT, current scoped capability and required live session under the storage lock (45.233582ms)
+✔ staff liveness/configuration/revocation and post-lock expiry fail closed; transport malformation remains400 (31.477209ms)
+✔ HTTP access uses current membership epoch and keeps foreign attempts hidden without changing immutable data (28.798159ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2268.249944

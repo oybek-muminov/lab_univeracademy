@@ -99,6 +99,8 @@ function complete(record: AttemptRecord, now: number, status: "submitted" | "exp
 
 function expire(record: AttemptRecord, now: number): AttemptRecord {
   checkClock(now);
+  if (record.status === "in_progress" && record.ordinary !== null)
+    fail("RESPONSE_INVARIANT_FAILED", 500);
   return record.status === "in_progress" && now >= record.deadlineAt
     ? complete(record, now, "expired") : record;
 }

@@ -1,0 +1,3611 @@
+{
+  "note": "Derived from unchanged original b3 red trace (not rerun) and new 63f0e9a green trace. Original 30 FAIL/1 PASS is product invariant gap; separate 15 expired-session fixture failures are harness setup. Old 303 PASS remains old-base evidence.",
+  "original_raw": {
+    "local_path": "/tmp/univeracademy-shared-expiry01-nbrns5nt/evidence/baseline-red-shared-cases.json",
+    "bytes": 717998,
+    "sha256": "50fbb75b1b5ebda1bbb9cb193d49fbabd0abbac076cdebb670b56b5b637e13a8"
+  },
+  "reconciled_raw": {
+    "path": "shared-final-shared-cases.json",
+    "bytes": 2053235,
+    "sha256": "88db4dc7a85748a7980579bfe1612f681e2571120e29ab6b42c9633084c07bdc"
+  },
+  "cases": [
+    {
+      "case_id": "SHARED-CORRUPT-view:-1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "in_progress",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": null,
+            "stateRevision": 2,
+            "seriesStateRevision": 2,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "100"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880059950
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "attemptId": "00000000-0000-4000-8000-000000000900",
+              "generation": 1,
+              "status": "in_progress",
+              "startedAt": 1793880000000,
+              "deadlineAt": 1793880060000,
+              "completedAt": null,
+              "serverNow": 1793880059999,
+              "questionOrder": [
+                {
+                  "questionId": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ]
+                },
+                {
+                  "questionId": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ]
+                }
+              ],
+              "answers": [
+                {
+                  "questionId": "00000000-0000-4000-8000-000000000100",
+                  "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                  "revision": 1,
+                  "savedAt": 1793880000000,
+                  "seriesStateRevision": 2
+                }
+              ]
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-view:0",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060000
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "attemptId": "00000000-0000-4000-8000-000000000900",
+              "generation": 1,
+              "status": "expired",
+              "startedAt": 1793880000000,
+              "deadlineAt": 1793880060000,
+              "completedAt": 1793880060000,
+              "serverNow": 1793880060000,
+              "questionOrder": [],
+              "answers": []
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-view:1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "attemptId": "00000000-0000-4000-8000-000000000900",
+              "generation": 1,
+              "status": "expired",
+              "startedAt": 1793880000000,
+              "deadlineAt": 1793880060000,
+              "completedAt": 1793880060000,
+              "serverNow": 1793880060001,
+              "questionOrder": [],
+              "answers": []
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-save:-1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "in_progress",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": null,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 2,
+                "savedAt": 1793880059999,
+                "seriesStateRevision": 3
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "100"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880059950
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+              "revision": 2,
+              "savedAt": 1793880059999,
+              "seriesStateRevision": 3
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-save:0",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060000
+            }
+          },
+          "response": {
+            "ok": false,
+            "error": {
+              "code": "ATTEMPT_EXPIRED",
+              "status": 409,
+              "name": "ApiFault"
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-save:1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          },
+          "response": {
+            "ok": false,
+            "error": {
+              "code": "ATTEMPT_EXPIRED",
+              "status": 409,
+              "name": "ApiFault"
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-submit:-1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "submitted",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880059999,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880059999
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880059999
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-submit:0",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060000
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060000
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-submit:1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-result:-1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "in_progress",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": null,
+            "stateRevision": 2,
+            "seriesStateRevision": 2,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "100"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880059950
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "100"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880059950
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-result:0",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060000
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060000
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-result:1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "record": {
+            "id": "00000000-0000-4000-8000-000000000900",
+            "personId": "00000000-0000-4000-8000-000000000001",
+            "assignmentId": "00000000-0000-4000-8000-000000000010",
+            "groupId": "00000000-0000-4000-8000-000000000040",
+            "generation": 1,
+            "status": "expired",
+            "startedAt": 1793880000000,
+            "deadlineAt": 1793880060000,
+            "completedAt": 1793880060000,
+            "stateRevision": 3,
+            "seriesStateRevision": 3,
+            "published": {
+              "demoId": "00000000-0000-4000-8000-000000000020",
+              "versionId": "00000000-0000-4000-8000-000000000030",
+              "durationMs": 60000,
+              "individualEnabled": false,
+              "questions": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000100",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000200",
+                    "00000000-0000-4000-8000-000000000201",
+                    "00000000-0000-4000-8000-000000000202",
+                    "00000000-0000-4000-8000-000000000203"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000101",
+                  "optionIds": [
+                    "00000000-0000-4000-8000-000000000204",
+                    "00000000-0000-4000-8000-000000000205",
+                    "00000000-0000-4000-8000-000000000206",
+                    "00000000-0000-4000-8000-000000000207"
+                  ],
+                  "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                  "individualPoints": {
+                    "numerator": {
+                      "$bigint": "5"
+                    },
+                    "denominator": {
+                      "$bigint": "2"
+                    }
+                  }
+                }
+              ]
+            },
+            "questionOrder": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ]
+              },
+              {
+                "questionId": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ]
+              }
+            ],
+            "answers": [
+              {
+                "questionId": "00000000-0000-4000-8000-000000000100",
+                "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+                "revision": 1,
+                "savedAt": 1793880000000,
+                "seriesStateRevision": 2
+              }
+            ],
+            "ordinary": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          },
+          "response": {
+            "ok": true,
+            "value": {
+              "earned": {
+                "numerator": {
+                  "$bigint": "1"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "maximum": {
+                "numerator": {
+                  "$bigint": "2"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "percentage": {
+                "numerator": {
+                  "$bigint": "50"
+                },
+                "denominator": {
+                  "$bigint": "1"
+                }
+              },
+              "calculatedAt": 1793880060001
+            }
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-start:-1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "id": "00000000-0000-4000-8000-000000000900",
+          "personId": "00000000-0000-4000-8000-000000000001",
+          "assignmentId": "00000000-0000-4000-8000-000000000010",
+          "groupId": "00000000-0000-4000-8000-000000000040",
+          "generation": 1,
+          "status": "in_progress",
+          "startedAt": 1793880000000,
+          "deadlineAt": 1793880060000,
+          "completedAt": null,
+          "stateRevision": 2,
+          "seriesStateRevision": 2,
+          "published": {
+            "demoId": "00000000-0000-4000-8000-000000000020",
+            "versionId": "00000000-0000-4000-8000-000000000030",
+            "durationMs": 60000,
+            "individualEnabled": false,
+            "questions": [
+              {
+                "id": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              }
+            ]
+          },
+          "questionOrder": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000200",
+                "00000000-0000-4000-8000-000000000201",
+                "00000000-0000-4000-8000-000000000202",
+                "00000000-0000-4000-8000-000000000203"
+              ]
+            },
+            {
+              "questionId": "00000000-0000-4000-8000-000000000101",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000204",
+                "00000000-0000-4000-8000-000000000205",
+                "00000000-0000-4000-8000-000000000206",
+                "00000000-0000-4000-8000-000000000207"
+              ]
+            }
+          ],
+          "answers": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+              "revision": 1,
+              "savedAt": 1793880000000,
+              "seriesStateRevision": 2
+            }
+          ],
+          "ordinary": {
+            "earned": {
+              "numerator": {
+                "$bigint": "2"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "maximum": {
+              "numerator": {
+                "$bigint": "2"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "percentage": {
+              "numerator": {
+                "$bigint": "100"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "calculatedAt": 1793880059950
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-start:0",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "id": "00000000-0000-4000-8000-000000000900",
+          "personId": "00000000-0000-4000-8000-000000000001",
+          "assignmentId": "00000000-0000-4000-8000-000000000010",
+          "groupId": "00000000-0000-4000-8000-000000000040",
+          "generation": 1,
+          "status": "expired",
+          "startedAt": 1793880000000,
+          "deadlineAt": 1793880060000,
+          "completedAt": 1793880060000,
+          "stateRevision": 3,
+          "seriesStateRevision": 3,
+          "published": {
+            "demoId": "00000000-0000-4000-8000-000000000020",
+            "versionId": "00000000-0000-4000-8000-000000000030",
+            "durationMs": 60000,
+            "individualEnabled": false,
+            "questions": [
+              {
+                "id": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              }
+            ]
+          },
+          "questionOrder": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000200",
+                "00000000-0000-4000-8000-000000000201",
+                "00000000-0000-4000-8000-000000000202",
+                "00000000-0000-4000-8000-000000000203"
+              ]
+            },
+            {
+              "questionId": "00000000-0000-4000-8000-000000000101",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000204",
+                "00000000-0000-4000-8000-000000000205",
+                "00000000-0000-4000-8000-000000000206",
+                "00000000-0000-4000-8000-000000000207"
+              ]
+            }
+          ],
+          "answers": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+              "revision": 1,
+              "savedAt": 1793880000000,
+              "seriesStateRevision": 2
+            }
+          ],
+          "ordinary": {
+            "earned": {
+              "numerator": {
+                "$bigint": "1"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "maximum": {
+              "numerator": {
+                "$bigint": "2"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "percentage": {
+              "numerator": {
+                "$bigint": "50"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "calculatedAt": 1793880060000
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-start:1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "id": "00000000-0000-4000-8000-000000000900",
+          "personId": "00000000-0000-4000-8000-000000000001",
+          "assignmentId": "00000000-0000-4000-8000-000000000010",
+          "groupId": "00000000-0000-4000-8000-000000000040",
+          "generation": 1,
+          "status": "expired",
+          "startedAt": 1793880000000,
+          "deadlineAt": 1793880060000,
+          "completedAt": 1793880060000,
+          "stateRevision": 3,
+          "seriesStateRevision": 3,
+          "published": {
+            "demoId": "00000000-0000-4000-8000-000000000020",
+            "versionId": "00000000-0000-4000-8000-000000000030",
+            "durationMs": 60000,
+            "individualEnabled": false,
+            "questions": [
+              {
+                "id": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              }
+            ]
+          },
+          "questionOrder": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000200",
+                "00000000-0000-4000-8000-000000000201",
+                "00000000-0000-4000-8000-000000000202",
+                "00000000-0000-4000-8000-000000000203"
+              ]
+            },
+            {
+              "questionId": "00000000-0000-4000-8000-000000000101",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000204",
+                "00000000-0000-4000-8000-000000000205",
+                "00000000-0000-4000-8000-000000000206",
+                "00000000-0000-4000-8000-000000000207"
+              ]
+            }
+          ],
+          "answers": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+              "revision": 1,
+              "savedAt": 1793880000000,
+              "seriesStateRevision": 2
+            }
+          ],
+          "ordinary": {
+            "earned": {
+              "numerator": {
+                "$bigint": "1"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "maximum": {
+              "numerator": {
+                "$bigint": "2"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "percentage": {
+              "numerator": {
+                "$bigint": "50"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "calculatedAt": 1793880060001
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-membership:-1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "id": "00000000-0000-4000-8000-000000000900",
+          "personId": "00000000-0000-4000-8000-000000000001",
+          "assignmentId": "00000000-0000-4000-8000-000000000010",
+          "groupId": "00000000-0000-4000-8000-000000000040",
+          "generation": 1,
+          "status": "in_progress",
+          "startedAt": 1793880000000,
+          "deadlineAt": 1793880060000,
+          "completedAt": null,
+          "stateRevision": 2,
+          "seriesStateRevision": 2,
+          "published": {
+            "demoId": "00000000-0000-4000-8000-000000000020",
+            "versionId": "00000000-0000-4000-8000-000000000030",
+            "durationMs": 60000,
+            "individualEnabled": false,
+            "questions": [
+              {
+                "id": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              }
+            ]
+          },
+          "questionOrder": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000200",
+                "00000000-0000-4000-8000-000000000201",
+                "00000000-0000-4000-8000-000000000202",
+                "00000000-0000-4000-8000-000000000203"
+              ]
+            },
+            {
+              "questionId": "00000000-0000-4000-8000-000000000101",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000204",
+                "00000000-0000-4000-8000-000000000205",
+                "00000000-0000-4000-8000-000000000206",
+                "00000000-0000-4000-8000-000000000207"
+              ]
+            }
+          ],
+          "answers": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+              "revision": 1,
+              "savedAt": 1793880000000,
+              "seriesStateRevision": 2
+            }
+          ],
+          "ordinary": {
+            "earned": {
+              "numerator": {
+                "$bigint": "2"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "maximum": {
+              "numerator": {
+                "$bigint": "2"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "percentage": {
+              "numerator": {
+                "$bigint": "100"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "calculatedAt": 1793880059950
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-membership:0",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "id": "00000000-0000-4000-8000-000000000900",
+          "personId": "00000000-0000-4000-8000-000000000001",
+          "assignmentId": "00000000-0000-4000-8000-000000000010",
+          "groupId": "00000000-0000-4000-8000-000000000040",
+          "generation": 1,
+          "status": "expired",
+          "startedAt": 1793880000000,
+          "deadlineAt": 1793880060000,
+          "completedAt": 1793880060000,
+          "stateRevision": 3,
+          "seriesStateRevision": 3,
+          "published": {
+            "demoId": "00000000-0000-4000-8000-000000000020",
+            "versionId": "00000000-0000-4000-8000-000000000030",
+            "durationMs": 60000,
+            "individualEnabled": false,
+            "questions": [
+              {
+                "id": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              }
+            ]
+          },
+          "questionOrder": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000200",
+                "00000000-0000-4000-8000-000000000201",
+                "00000000-0000-4000-8000-000000000202",
+                "00000000-0000-4000-8000-000000000203"
+              ]
+            },
+            {
+              "questionId": "00000000-0000-4000-8000-000000000101",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000204",
+                "00000000-0000-4000-8000-000000000205",
+                "00000000-0000-4000-8000-000000000206",
+                "00000000-0000-4000-8000-000000000207"
+              ]
+            }
+          ],
+          "answers": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+              "revision": 1,
+              "savedAt": 1793880000000,
+              "seriesStateRevision": 2
+            }
+          ],
+          "ordinary": {
+            "earned": {
+              "numerator": {
+                "$bigint": "1"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "maximum": {
+              "numerator": {
+                "$bigint": "2"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "percentage": {
+              "numerator": {
+                "$bigint": "50"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "calculatedAt": 1793880060000
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-CORRUPT-membership:1",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "id": "00000000-0000-4000-8000-000000000900",
+          "personId": "00000000-0000-4000-8000-000000000001",
+          "assignmentId": "00000000-0000-4000-8000-000000000010",
+          "groupId": "00000000-0000-4000-8000-000000000040",
+          "generation": 1,
+          "status": "expired",
+          "startedAt": 1793880000000,
+          "deadlineAt": 1793880060000,
+          "completedAt": 1793880060000,
+          "stateRevision": 3,
+          "seriesStateRevision": 3,
+          "published": {
+            "demoId": "00000000-0000-4000-8000-000000000020",
+            "versionId": "00000000-0000-4000-8000-000000000030",
+            "durationMs": 60000,
+            "individualEnabled": false,
+            "questions": [
+              {
+                "id": "00000000-0000-4000-8000-000000000100",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000200",
+                  "00000000-0000-4000-8000-000000000201",
+                  "00000000-0000-4000-8000-000000000202",
+                  "00000000-0000-4000-8000-000000000203"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000200",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              },
+              {
+                "id": "00000000-0000-4000-8000-000000000101",
+                "optionIds": [
+                  "00000000-0000-4000-8000-000000000204",
+                  "00000000-0000-4000-8000-000000000205",
+                  "00000000-0000-4000-8000-000000000206",
+                  "00000000-0000-4000-8000-000000000207"
+                ],
+                "correctOptionId": "00000000-0000-4000-8000-000000000204",
+                "individualPoints": {
+                  "numerator": {
+                    "$bigint": "5"
+                  },
+                  "denominator": {
+                    "$bigint": "2"
+                  }
+                }
+              }
+            ]
+          },
+          "questionOrder": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000200",
+                "00000000-0000-4000-8000-000000000201",
+                "00000000-0000-4000-8000-000000000202",
+                "00000000-0000-4000-8000-000000000203"
+              ]
+            },
+            {
+              "questionId": "00000000-0000-4000-8000-000000000101",
+              "optionIds": [
+                "00000000-0000-4000-8000-000000000204",
+                "00000000-0000-4000-8000-000000000205",
+                "00000000-0000-4000-8000-000000000206",
+                "00000000-0000-4000-8000-000000000207"
+              ]
+            }
+          ],
+          "answers": [
+            {
+              "questionId": "00000000-0000-4000-8000-000000000100",
+              "selectedOptionId": "00000000-0000-4000-8000-000000000200",
+              "revision": 1,
+              "savedAt": 1793880000000,
+              "seriesStateRevision": 2
+            }
+          ],
+          "ordinary": {
+            "earned": {
+              "numerator": {
+                "$bigint": "1"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "maximum": {
+              "numerator": {
+                "$bigint": "2"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "percentage": {
+              "numerator": {
+                "$bigint": "50"
+              },
+              "denominator": {
+                "$bigint": "1"
+              }
+            },
+            "calculatedAt": 1793880060001
+          }
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 1,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 0,
+        "reconcileMembershipEffects": 0
+      },
+      "original_attempted_writes": "NOT_INSTRUMENTED",
+      "reconciled_attempted_writes": "NOT_INSTRUMENTED"
+    },
+    {
+      "case_id": "SHARED-MIXED:-1:series-first=true:attempts-first=true",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020"
+          ],
+          "now": 1793880059999
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 2,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 2,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:-1:series-first=true:attempts-first=false",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020"
+          ],
+          "now": 1793880059999
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 2,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 0,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:-1:series-first=false:attempts-first=true",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020"
+          ],
+          "now": 1793880059999
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 2,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 2,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:-1:series-first=false:attempts-first=false",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020"
+          ],
+          "now": 1793880059999
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 2,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 0,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:0:series-first=true:attempts-first=true",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010",
+            "00000000-0000-4000-8000-000000000011"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020",
+            "00000000-0000-4000-8000-000000000021"
+          ],
+          "now": 1793880060000
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 2,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:0:series-first=true:attempts-first=false",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000011",
+            "00000000-0000-4000-8000-000000000010"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000021",
+            "00000000-0000-4000-8000-000000000020"
+          ],
+          "now": 1793880060000
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 0,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:0:series-first=false:attempts-first=true",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010",
+            "00000000-0000-4000-8000-000000000011"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020",
+            "00000000-0000-4000-8000-000000000021"
+          ],
+          "now": 1793880060000
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 2,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:0:series-first=false:attempts-first=false",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000011",
+            "00000000-0000-4000-8000-000000000010"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000021",
+            "00000000-0000-4000-8000-000000000020"
+          ],
+          "now": 1793880060000
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 0,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:1:series-first=true:attempts-first=true",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010",
+            "00000000-0000-4000-8000-000000000011"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020",
+            "00000000-0000-4000-8000-000000000021"
+          ],
+          "now": 1793880060001
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 2,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:1:series-first=true:attempts-first=false",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000011",
+            "00000000-0000-4000-8000-000000000010"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000021",
+            "00000000-0000-4000-8000-000000000020"
+          ],
+          "now": 1793880060001
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 0,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:1:series-first=false:attempts-first=true",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010",
+            "00000000-0000-4000-8000-000000000011"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020",
+            "00000000-0000-4000-8000-000000000021"
+          ],
+          "now": 1793880060001
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 2,
+        "complete": 1,
+        "ordinaryScore": 1,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 2,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED:1:series-first=false:attempts-first=false",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "FAIL",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000011",
+            "00000000-0000-4000-8000-000000000010"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000021",
+            "00000000-0000-4000-8000-000000000020"
+          ],
+          "now": 1793880060001
+        }
+      },
+      "reconciled_outcome": {
+        "name": "ApiFault",
+        "code": "RESPONSE_INVARIANT_FAILED",
+        "status": 500
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 1,
+        "complete": 0,
+        "ordinaryScore": 0,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "rollback"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 0,
+      "reconciled_committed_equals_S0": true
+    },
+    {
+      "case_id": "SHARED-MIXED-valid-write-calibration",
+      "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+      "new_base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+      "baseline_verdict": "PASS",
+      "final_verdict": "PASS",
+      "original_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010",
+            "00000000-0000-4000-8000-000000000011"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020",
+            "00000000-0000-4000-8000-000000000021"
+          ],
+          "now": 1793880060001
+        }
+      },
+      "reconciled_outcome": {
+        "ok": true,
+        "value": {
+          "kind": "elapsed",
+          "studentId": "00000000-0000-4000-8000-000000000001",
+          "assignmentIds": [
+            "00000000-0000-4000-8000-000000000010",
+            "00000000-0000-4000-8000-000000000011"
+          ],
+          "demoIds": [
+            "00000000-0000-4000-8000-000000000020",
+            "00000000-0000-4000-8000-000000000021"
+          ],
+          "now": 1793880060001
+        }
+      },
+      "original_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "reconciled_calls": {
+        "expire": 2,
+        "complete": 2,
+        "ordinaryScore": 2,
+        "materializeElapsedAttempts": 1,
+        "reconcileMembershipEffects": 0
+      },
+      "original_events": [
+        "begin",
+        "commit"
+      ],
+      "reconciled_events": [
+        "begin",
+        "commit"
+      ],
+      "original_attempted_writes": 4,
+      "original_committed_equals_S0": false,
+      "reconciled_attempted_writes": 4,
+      "reconciled_committed_equals_S0": false
+    }
+  ]
+}

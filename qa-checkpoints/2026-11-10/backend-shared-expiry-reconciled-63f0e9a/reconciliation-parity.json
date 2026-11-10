@@ -1,0 +1,33 @@
+{
+  "candidate": "R03-SHARED-EXPIRY-01-reconciled-63f0e9a",
+  "base": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+  "base_tree": "22a3dc84ba98c647c9c8b7827e85e483888fd8fb",
+  "old_base": "b3d86559a743e13dcca65f2f6d227227ef297abf",
+  "production_byte_identical": true,
+  "production": {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+    "bytes": 9727,
+    "sha256": "b95d33d535d37ee1beeef6123985771b5c05e921ed3a4f9e0694eafaea381721"
+  },
+  "test": {
+    "path": "workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs",
+    "old_bytes": 18548,
+    "old_sha256": "129d8e16ac4e0d85f9abc4785c52479c0083c1f1acf1d8cfb47f7a20e3050018",
+    "new_bytes": 18548,
+    "new_sha256": "9de546a587d6b3aac367f9f17db704c9d54c318694c58c89cfbf6963abc3ab68",
+    "replacement_count": 1,
+    "metadata_only": true,
+    "old_blob": "2cb69f37fe53f40d3e42f384bc1c6abd71bd94fc",
+    "new_blob": "4e1a44453492a500b7a2ce05f6a751429744846b"
+  },
+  "test_diff": {
+    "path": "test-base-metadata-only.diff",
+    "sha256": "00513a46ce9c3eb7e9c1ee27910e4a184171add7fff51c27f4a6a6bd696e2a7a"
+  },
+  "patch": {
+    "path": "candidate.patch",
+    "bytes": 19922,
+    "sha256": "5c8ee8179c95a73531f36884e19cfc9881b5350d676226f348952796b46d9d8c"
+  },
+  "other_sources_untouched": true
+}

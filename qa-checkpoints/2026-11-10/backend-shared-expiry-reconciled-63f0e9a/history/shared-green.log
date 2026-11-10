@@ -1,0 +1,403 @@
+✔ SHARED-CORRUPT-view:-1 (7.564202ms)
+✔ SHARED-CORRUPT-view:0 (2.885896ms)
+✔ SHARED-CORRUPT-view:1 (2.655169ms)
+✔ SHARED-CORRUPT-save:-1 (2.402378ms)
+✔ SHARED-CORRUPT-save:0 (2.236278ms)
+✔ SHARED-CORRUPT-save:1 (2.05254ms)
+✔ SHARED-CORRUPT-submit:-1 (2.175316ms)
+✔ SHARED-CORRUPT-submit:0 (2.495648ms)
+✔ SHARED-CORRUPT-submit:1 (2.315817ms)
+✔ SHARED-CORRUPT-result:-1 (2.107404ms)
+✔ SHARED-CORRUPT-result:0 (2.378502ms)
+✔ SHARED-CORRUPT-result:1 (2.178792ms)
+✔ SHARED-CORRUPT-start:-1 (2.347825ms)
+✔ SHARED-CORRUPT-start:0 (2.169027ms)
+✔ SHARED-CORRUPT-start:1 (2.288226ms)
+✔ SHARED-CORRUPT-membership:-1 (2.193844ms)
+✔ SHARED-CORRUPT-membership:0 (2.01189ms)
+✔ SHARED-CORRUPT-membership:1 (1.997428ms)
+✔ SHARED-VALID-ACTIVE-view (2.406344ms)
+✔ SHARED-VALID-ACTIVE-save (3.813753ms)
+✔ SHARED-VALID-ACTIVE-submit (3.070695ms)
+✔ SHARED-VALID-ACTIVE-result (2.373625ms)
+✔ SHARED-VALID-ACTIVE-start (2.877433ms)
+✔ SHARED-VALID-ACTIVE-membership (2.626956ms)
+✔ SHARED-LITERAL-EXPIRY-view:0 (2.70892ms)
+✔ SHARED-LITERAL-EXPIRY-view:1 (2.451292ms)
+✔ SHARED-LITERAL-EXPIRY-save:0 (2.414516ms)
+✔ SHARED-LITERAL-EXPIRY-save:1 (2.294956ms)
+✔ SHARED-LITERAL-EXPIRY-submit:0 (2.406784ms)
+✔ SHARED-LITERAL-EXPIRY-submit:1 (2.212161ms)
+✔ SHARED-LITERAL-EXPIRY-result:0 (2.057809ms)
+✔ SHARED-LITERAL-EXPIRY-result:1 (2.235817ms)
+✔ SHARED-LITERAL-EXPIRY-start:0 (2.150318ms)
+✔ SHARED-LITERAL-EXPIRY-start:1 (2.059351ms)
+✔ SHARED-LITERAL-EXPIRY-membership:0 (2.035536ms)
+✔ SHARED-LITERAL-EXPIRY-membership:1 (2.137229ms)
+✔ SHARED-TERMINAL-submitted-view (2.424872ms)
+✔ SHARED-TERMINAL-submitted-save (2.182647ms)
+✔ SHARED-TERMINAL-submitted-submit (2.361827ms)
+✔ SHARED-TERMINAL-submitted-result (2.415618ms)
+✔ SHARED-TERMINAL-submitted-start (2.307986ms)
+✔ SHARED-TERMINAL-submitted-membership (2.111841ms)
+✔ SHARED-TERMINAL-expired-view (2.218612ms)
+✔ SHARED-TERMINAL-expired-save (2.4239ms)
+✔ SHARED-TERMINAL-expired-submit (2.345342ms)
+✔ SHARED-TERMINAL-expired-result (2.214165ms)
+✔ SHARED-TERMINAL-expired-start (2.127694ms)
+✔ SHARED-TERMINAL-expired-membership (2.252612ms)
+✔ SHARED-PRECEDENCE-view-proof (2.302217ms)
+✔ SHARED-PRECEDENCE-view-disabled (2.608328ms)
+✔ SHARED-PRECEDENCE-view-foreign-person (2.395738ms)
+✔ SHARED-PRECEDENCE-view-missing-grant (2.174465ms)
+✔ SHARED-PRECEDENCE-view-stale-id (2.195998ms)
+✔ SHARED-PRECEDENCE-view-stale-generation (2.019301ms)
+✔ SHARED-PRECEDENCE-view-cancelled (2.175787ms)
+✔ SHARED-PRECEDENCE-save-proof (4.218302ms)
+✔ SHARED-PRECEDENCE-save-disabled (2.655909ms)
+✔ SHARED-PRECEDENCE-save-foreign-person (2.235246ms)
+✔ SHARED-PRECEDENCE-save-missing-grant (2.057969ms)
+✔ SHARED-PRECEDENCE-save-stale-id (2.043368ms)
+✔ SHARED-PRECEDENCE-save-stale-generation (2.072911ms)
+✔ SHARED-PRECEDENCE-save-cancelled (2.135065ms)
+✔ SHARED-PRECEDENCE-submit-proof (2.126502ms)
+✔ SHARED-PRECEDENCE-submit-disabled (1.975545ms)
+✔ SHARED-PRECEDENCE-submit-foreign-person (2.016828ms)
+✔ SHARED-PRECEDENCE-submit-missing-grant (2.3771ms)
+✔ SHARED-PRECEDENCE-submit-stale-id (2.312182ms)
+✔ SHARED-PRECEDENCE-submit-stale-generation (2.053122ms)
+✔ SHARED-PRECEDENCE-submit-cancelled (2.592885ms)
+✔ SHARED-PRECEDENCE-result-proof (2.178832ms)
+✔ SHARED-PRECEDENCE-result-disabled (2.220023ms)
+✔ SHARED-PRECEDENCE-result-foreign-person (2.145521ms)
+✔ SHARED-PRECEDENCE-result-missing-grant (2.190359ms)
+✔ SHARED-PRECEDENCE-result-stale-id (2.032701ms)
+✔ SHARED-PRECEDENCE-result-stale-generation (1.986021ms)
+✔ SHARED-PRECEDENCE-result-cancelled (2.276008ms)
+✔ SHARED-CLOCK-view (2.18422ms)
+✔ SHARED-CLOCK-save (2.19113ms)
+✔ SHARED-CLOCK-submit (2.005411ms)
+✔ SHARED-CLOCK-result (2.354296ms)
+✔ SHARED-CLOCK-start (2.14472ms)
+✔ SHARED-CLOCK-membership (2.463991ms)
+✔ SHARED-START-PRECEDENCE-proof (2.370409ms)
+✔ SHARED-START-PRECEDENCE-disabled (2.216177ms)
+✔ SHARED-START-PRECEDENCE-missing-grant (2.141506ms)
+✔ SHARED-START-PRECEDENCE-confirmation (2.239103ms)
+✔ SHARED-START-PRECEDENCE-profile (2.306353ms)
+✔ SHARED-START-PRECEDENCE-roster (2.140984ms)
+✔ SHARED-START-PRECEDENCE-epoch (2.351872ms)
+✔ SHARED-START-PRECEDENCE-foreign-existing (2.103188ms)
+✔ SHARED-START-PRECEDENCE-foreign-demo (2.595989ms)
+✔ SHARED-START-PRECEDENCE-other-assignment (2.101965ms)
+✔ SHARED-MIXED:-1:series-first=true:attempts-first=true (3.806462ms)
+✔ SHARED-MIXED:-1:series-first=true:attempts-first=false (2.636351ms)
+✔ SHARED-MIXED:-1:series-first=false:attempts-first=true (2.598393ms)
+✔ SHARED-MIXED:-1:series-first=false:attempts-first=false (2.517602ms)
+✔ SHARED-MIXED:0:series-first=true:attempts-first=true (2.635709ms)
+✔ SHARED-MIXED:0:series-first=true:attempts-first=false (2.624432ms)
+✔ SHARED-MIXED:0:series-first=false:attempts-first=true (2.843131ms)
+✔ SHARED-MIXED:0:series-first=false:attempts-first=false (4.446787ms)
+✔ SHARED-MIXED:1:series-first=true:attempts-first=true (2.804905ms)
+✔ SHARED-MIXED:1:series-first=true:attempts-first=false (2.467857ms)
+✔ SHARED-MIXED:1:series-first=false:attempts-first=true (2.547106ms)
+✔ SHARED-MIXED:1:series-first=false:attempts-first=false (2.445473ms)
+✔ SHARED-MIXED-valid-write-calibration (2.920207ms)
+✔ SHARED-MEMBERSHIP-CURRENTNESS-historical (2.613396ms)
+✔ SHARED-MEMBERSHIP-CURRENTNESS-foreign (2.731433ms)
+✔ SHARED-MEMBERSHIP-CURRENTNESS-stale-generation (2.537381ms)
+✖ SHARED-HTTP-view:-1 (113.590374ms)
+✖ SHARED-HTTP-view:0 (11.157583ms)
+✖ SHARED-HTTP-view:1 (10.229486ms)
+✖ SHARED-HTTP-save:-1 (9.081116ms)
+✖ SHARED-HTTP-save:0 (16.30138ms)
+✖ SHARED-HTTP-save:1 (9.954181ms)
+✖ SHARED-HTTP-submit:-1 (8.955647ms)
+✖ SHARED-HTTP-submit:0 (8.395093ms)
+✖ SHARED-HTTP-submit:1 (8.749938ms)
+✖ SHARED-HTTP-result:-1 (8.508394ms)
+✖ SHARED-HTTP-result:0 (7.638053ms)
+✖ SHARED-HTTP-result:1 (8.032697ms)
+✖ SHARED-HTTP-start:-1 (8.423425ms)
+✖ SHARED-HTTP-start:0 (7.792886ms)
+✖ SHARED-HTTP-start:1 (8.633663ms)
+ℹ tests 123
+ℹ suites 0
+ℹ pass 108
+ℹ fail 15
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1202.836
+
+✖ failing tests:
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-view:-1 (113.590374ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-view:0 (11.157583ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-view:1 (10.229486ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-save:-1 (9.081116ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-save:0 (16.30138ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-save:1 (9.954181ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-submit:-1 (8.955647ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-submit:0 (8.395093ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-submit:1 (8.749938ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-result:-1 (8.508394ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-result:0 (7.638053ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-result:1 (8.032697ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-start:-1 (8.423425ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-start:0 (7.792886ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/shared-expiry-invariant.test.mjs:51:33
+✖ SHARED-HTTP-start:1 (8.633663ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  401 !== 500
+  
+      at file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:133:153
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-shared-expiry01-nbrns5nt/repo/workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs:51:190)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 401,
+    expected: 500,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

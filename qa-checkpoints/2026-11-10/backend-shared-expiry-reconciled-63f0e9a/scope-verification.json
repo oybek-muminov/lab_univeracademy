@@ -1,0 +1,50 @@
+{
+  "candidate": "R03-SHARED-EXPIRY-01-reconciled-63f0e9a",
+  "base_commit": "63f0e9a557d689f775dfe7a1c5aab8c87d27acd5",
+  "base_tree": "22a3dc84ba98c647c9c8b7827e85e483888fd8fb",
+  "utc": "2026-11-10T03:46:05.231563+00:00",
+  "complete_base_blob_count": 653,
+  "final_file_count": 654,
+  "unchanged_base_files": 652,
+  "modified_baseline_files": 1,
+  "new_files": 1,
+  "allowed_changed_paths": [
+    "workspaces/univeracademy/supabase/functions/univeracademy-api/attempts.ts",
+    "workspaces/univeracademy/tests/membership/shared-expiry-invariant.test.mjs"
+  ],
+  "unexpected_paths": [],
+  "all_source_lock_files_before_after_sha256": "98a4e32d05ad7654fcdaf605b3e35c4688ef93fc0a0bc29c8a0e34209391c802",
+  "frozen_originals_before": {
+    "bytes": 168324,
+    "sha256": "224486c82749e7f7202be68dd5792be6dbc7c9981c6a7ea786839c21fe23f737"
+  },
+  "frozen_originals_after": {
+    "bytes": 168324,
+    "sha256": "224486c82749e7f7202be68dd5792be6dbc7c9981c6a7ea786839c21fe23f737"
+  },
+  "frozen_originals_identical": true,
+  "frozen_original_packages": {
+    "shared_original": {
+      "root": "/tmp/univeracademy-shared-expiry01-nbrns5nt",
+      "files": 393
+    },
+    "removal_auth_original": {
+      "root": "/tmp/univeracademy-removal-auth01-pkdmbgxh",
+      "files": 389
+    }
+  },
+  "original_REMOVAL_AUTH_inventory": {
+    "path": "/tmp/univeracademy-removal-auth01-pkdmbgxh/publication-inventory.json",
+    "bytes": 14062,
+    "sha256": "e40072fd2cd4ced6e095eadba9d754817e87914bd73311e015692d17805e7da8"
+  },
+  "original_shared_inventory": {
+    "path": "/tmp/univeracademy-shared-expiry01-nbrns5nt/local-review-inventory.json",
+    "bytes": 11747,
+    "sha256": "1df5641f28e375f21feede075127dfad549af3e2486192071783886fde2139e7"
+  },
+  "old_shared_passes_not_relabelled": true,
+  "remote_write": false,
+  "old_package_modified": false,
+  "verdict": "PASS"
+}
