@@ -1,0 +1,106 @@
+{
+  "actual_base": "d7064e9964f87576f48088234fe361fc314fdbc0",
+  "base_tree": "a789b1c6b9256b2a7ff37f40f13c2037d1376c07",
+  "candidate_cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/repo/workspaces/univeracademy",
+  "replay_cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/patch-replay-final",
+  "distinct_directories": true,
+  "patch": {
+    "bytes": 71338,
+    "sha256": "c30f123d1cb25ab6e5cf940fe44f66635218fb9df353b387bfa57de15315dc64"
+  },
+  "source_paths": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+      "bytes": 30680,
+      "sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+      "git_blob_sha": "ece0e52201765360bef1e757894c6c0c4c095ac2",
+      "mode": "100644",
+      "change": "added"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/protection-contract.test.mjs",
+      "bytes": 38971,
+      "sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+      "git_blob_sha": "731cf1274215e5ffdcbef711ae1685d77d1a8793",
+      "mode": "100644",
+      "change": "added"
+    }
+  ],
+  "commands": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=error-all",
+        "--check",
+        "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/candidate.patch"
+      ],
+      "literal_command": "git apply --whitespace=error-all --check /tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/candidate.patch",
+      "cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/patch-replay-final",
+      "start_utc": "2026-11-10T11:45:32.033684+00:00",
+      "end_utc": "2026-11-10T11:45:32.036495+00:00",
+      "exit": 0,
+      "output": "",
+      "output_bytes": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=error-all",
+        "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/candidate.patch"
+      ],
+      "literal_command": "git apply --whitespace=error-all /tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/candidate.patch",
+      "cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/patch-replay-final",
+      "start_utc": "2026-11-10T11:45:32.036559+00:00",
+      "end_utc": "2026-11-10T11:45:32.039335+00:00",
+      "exit": 0,
+      "output": "",
+      "output_bytes": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=error-all",
+        "--reverse",
+        "--check",
+        "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/candidate.patch"
+      ],
+      "literal_command": "git apply --whitespace=error-all --reverse --check /tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/candidate.patch",
+      "cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/patch-replay-final",
+      "start_utc": "2026-11-10T11:45:32.039541+00:00",
+      "end_utc": "2026-11-10T11:45:32.042003+00:00",
+      "exit": 0,
+      "output": "",
+      "output_bytes": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=error-all",
+        "--reverse",
+        "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/candidate.patch"
+      ],
+      "literal_command": "git apply --whitespace=error-all --reverse /tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/candidate.patch",
+      "cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/patch-replay-final",
+      "start_utc": "2026-11-10T11:45:32.042068+00:00",
+      "end_utc": "2026-11-10T11:45:32.043872+00:00",
+      "exit": 0,
+      "output": "",
+      "output_bytes": 0,
+      "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "forward_source_byte_and_mode_parity": 2,
+  "reverse_new_paths_absent": [
+    "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+    "workspaces/univeracademy/tests/membership/protection-contract.test.mjs"
+  ],
+  "preserved_base_blobs_and_modes": 721,
+  "verdict": "PASS"
+}

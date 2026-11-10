@@ -1,0 +1,1452 @@
+{
+  "candidate": "R1-PROTECTION-01-r2-reconciled-d7064e9",
+  "actual_base": "d7064e9964f87576f48088234fe361fc314fdbc0",
+  "base_tree": "a789b1c6b9256b2a7ff37f40f13c2037d1376c07",
+  "embedded_trace_label": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+  "source_files": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+      "bytes": 30680,
+      "sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+      "git_blob_sha": "ece0e52201765360bef1e757894c6c0c4c095ac2",
+      "mode": "100644",
+      "change": "added"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/protection-contract.test.mjs",
+      "bytes": 38971,
+      "sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+      "git_blob_sha": "731cf1274215e5ffdcbef711ae1685d77d1a8793",
+      "mode": "100644",
+      "change": "added"
+    }
+  ],
+  "final_runs": [
+    {
+      "candidate": "R1-PROTECTION-01-r2-reconciled-d7064e9",
+      "base_commit": "d7064e9964f87576f48088234fe361fc314fdbc0",
+      "base_tree": "a789b1c6b9256b2a7ff37f40f13c2037d1376c07",
+      "actual_execution_base": "d7064e9964f87576f48088234fe361fc314fdbc0",
+      "embedded_test_base_label": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/protection-contract.test.mjs"
+      ],
+      "literal_command": "UA_PROTECTION_TRACE_PATH=/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/protection-d706-final-cases.json npm_config_cache=/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/protection-contract.test.mjs",
+      "cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_PROTECTION_TRACE_PATH": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/protection-d706-final-cases.json",
+        "npm_config_cache": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T11:39:14.391656+00:00",
+      "end_utc": "2026-11-10T11:39:14.890836+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 162,
+        "pass": 162,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/protection-d706-final.log",
+        "bytes": 8254,
+        "sha256": "7684af6550ad08bf0f214a6dc3641586cbb4a49d59cd89c049f3790b76ba0891"
+      },
+      "source_before": {
+        "path": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/source-snapshots/e53f365375e9c0ee11f9e554d031fa32494ba3f87d1cc0b1e051e6c90e34b72c.json",
+        "bytes": 140485,
+        "sha256": "e53f365375e9c0ee11f9e554d031fa32494ba3f87d1cc0b1e051e6c90e34b72c",
+        "files": 723,
+        "start_utc": "2026-11-10T11:39:14.250078+00:00",
+        "end_utc": "2026-11-10T11:39:14.391523+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/source-snapshots/e53f365375e9c0ee11f9e554d031fa32494ba3f87d1cc0b1e051e6c90e34b72c.json",
+        "bytes": 140485,
+        "sha256": "e53f365375e9c0ee11f9e554d031fa32494ba3f87d1cc0b1e051e6c90e34b72c",
+        "files": 723,
+        "start_utc": "2026-11-10T11:39:14.891372+00:00",
+        "end_utc": "2026-11-10T11:39:15.003742+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+          "bytes": 30680,
+          "sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/protection-contract.test.mjs",
+          "bytes": 38971,
+          "sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111"
+        }
+      ]
+    },
+    {
+      "candidate": "R1-PROTECTION-01-r2-reconciled-d7064e9",
+      "base_commit": "d7064e9964f87576f48088234fe361fc314fdbc0",
+      "base_tree": "a789b1c6b9256b2a7ff37f40f13c2037d1376c07",
+      "actual_execution_base": "d7064e9964f87576f48088234fe361fc314fdbc0",
+      "embedded_test_base_label": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "literal_command": "UA_PROTECTION_TRACE_PATH=/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/typecheck-d706-final-cases.json npm_config_cache=/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/npm-cache npm_config_update_notifier=false npm run typecheck",
+      "cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_PROTECTION_TRACE_PATH": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/typecheck-d706-final-cases.json",
+        "npm_config_cache": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "start_utc": "2026-11-10T11:39:14.393876+00:00",
+      "end_utc": "2026-11-10T11:39:16.595783+00:00",
+      "exit": 0,
+      "counts": {},
+      "log": {
+        "path": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/typecheck-d706-final.log",
+        "bytes": 353,
+        "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+      },
+      "source_before": {
+        "path": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/source-snapshots/e53f365375e9c0ee11f9e554d031fa32494ba3f87d1cc0b1e051e6c90e34b72c.json",
+        "bytes": 140485,
+        "sha256": "e53f365375e9c0ee11f9e554d031fa32494ba3f87d1cc0b1e051e6c90e34b72c",
+        "files": 723,
+        "start_utc": "2026-11-10T11:39:14.260148+00:00",
+        "end_utc": "2026-11-10T11:39:14.393762+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/source-snapshots/e53f365375e9c0ee11f9e554d031fa32494ba3f87d1cc0b1e051e6c90e34b72c.json",
+        "bytes": 140485,
+        "sha256": "e53f365375e9c0ee11f9e554d031fa32494ba3f87d1cc0b1e051e6c90e34b72c",
+        "files": 723,
+        "start_utc": "2026-11-10T11:39:16.596023+00:00",
+        "end_utc": "2026-11-10T11:39:16.723823+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+          "bytes": 30680,
+          "sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/protection-contract.test.mjs",
+          "bytes": 38971,
+          "sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111"
+        }
+      ]
+    }
+  ],
+  "final_counts": {
+    "tests": 162,
+    "pass_count": 162,
+    "fail_count": 0,
+    "skipped": 0
+  },
+  "pack_reconstruction": [
+    {
+      "pack_local": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/case-results.pack.json",
+      "pack_bytes": 313552,
+      "pack_sha256": "86191b96729e0a206c35498fd3f3cb206f0a990067eb96dce72291d8411b362c",
+      "original": {
+        "local_authoritative_path": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/protection-d706-final-cases.json",
+        "bytes": 575310,
+        "sha256": "96e114c81f57eae31fca6a0f1b81f5ca35e02c98608576369cfffe529011fd25"
+      },
+      "actual_execution_base": "d7064e9964f87576f48088234fe361fc314fdbc0",
+      "embedded_base_label": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+      "references": 223,
+      "unique_objects": 23,
+      "all_case_states_and_raw_bytes_restored": true
+    },
+    {
+      "pack_local": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/red-before-cases.pack.json",
+      "pack_bytes": 89305,
+      "pack_sha256": "cf04df317eeb32c0ce5fce80f752262868af250bb6c14e9a308228ee4b8a7a70",
+      "original": {
+        "local_authoritative_path": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/evidence/review-red-before-cases.json",
+        "bytes": 143542,
+        "sha256": "dc2f303f49846325e01b892b7de8068da95cbc3fc96abc57f65a513d2a7291f5"
+      },
+      "actual_execution_base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+      "embedded_base_label": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+      "references": 24,
+      "unique_objects": 2,
+      "all_case_states_and_raw_bytes_restored": true
+    }
+  ],
+  "preserved_original_red_run": {
+    "candidate": "R1-PROTECTION-01-r2",
+    "base_commit": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+    "base_tree": "f90a9cd35a5a7dc7aecc6001bf43e2286b65d15c",
+    "command": [
+      "node",
+      "--unhandled-rejections=strict",
+      "--test",
+      "--test-name-pattern=^(F1|F2|F3)-",
+      "tests/membership/protection-contract.test.mjs"
+    ],
+    "literal_command": "UA_PROTECTION_TRACE_PATH=/tmp/univeracademy-r1-protection01-r2-im_x5bwp/evidence/review-red-before-cases.json npm_config_cache=/tmp/univeracademy-r1-protection01-r2-im_x5bwp/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test '--test-name-pattern=^(F1|F2|F3)-' tests/membership/protection-contract.test.mjs",
+    "cwd": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy",
+    "environment_overrides": {
+      "UA_PROTECTION_TRACE_PATH": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/evidence/review-red-before-cases.json",
+      "npm_config_cache": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/npm-cache",
+      "npm_config_update_notifier": "false"
+    },
+    "start_utc": "2026-11-10T10:57:41.634785+00:00",
+    "end_utc": "2026-11-10T10:57:41.903281+00:00",
+    "exit": 1,
+    "counts": {
+      "tests": 32,
+      "pass": 8,
+      "fail": 24,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "log": {
+      "path": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/evidence/review-red-before.log",
+      "bytes": 32037,
+      "sha256": "edfef4ce063c645a32e1fa8da355097a2fa390df445bb0c3ec080f0d4a05db6e"
+    },
+    "source_before": {
+      "path": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/evidence/source-snapshots/c4d603f31c4c89e56f6d0064958271e2413c1b6b78c86d00a21f932ff17f9144.json",
+      "bytes": 138635,
+      "sha256": "c4d603f31c4c89e56f6d0064958271e2413c1b6b78c86d00a21f932ff17f9144",
+      "files": 714,
+      "start_utc": "2026-11-10T10:57:41.536646+00:00",
+      "end_utc": "2026-11-10T10:57:41.634593+00:00"
+    },
+    "source_after": {
+      "path": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/evidence/source-snapshots/c4d603f31c4c89e56f6d0064958271e2413c1b6b78c86d00a21f932ff17f9144.json",
+      "bytes": 138635,
+      "sha256": "c4d603f31c4c89e56f6d0064958271e2413c1b6b78c86d00a21f932ff17f9144",
+      "files": 714,
+      "start_utc": "2026-11-10T10:57:41.903478+00:00",
+      "end_utc": "2026-11-10T10:57:42.028011+00:00"
+    },
+    "source_bytes_changed_during_run": false,
+    "candidate_files": [
+      {
+        "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+        "bytes": 30424,
+        "sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb"
+      },
+      {
+        "path": "workspaces/univeracademy/tests/membership/protection-contract.test.mjs",
+        "bytes": 38971,
+        "sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111"
+      }
+    ]
+  },
+  "original_red_actual_execution_base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+  "original_red_counts": {
+    "pass_count": 8,
+    "fail_count": 24
+  },
+  "red_green_mapping": [
+    {
+      "id": "F1-reentrant-watermark-rank",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "new_lock_owned": true
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "new_lock_owned": false
+      }
+    },
+    {
+      "id": "F1-reentrant-watermark-same-rank",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "new_lock_owned": true
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "new_lock_owned": false
+      }
+    },
+    {
+      "id": "F1-reentrant-valid-next-rank",
+      "before": {
+        "verdict": "PASS",
+        "expected": "owned reacquisition remains legal; new acquisition must exceed unchanged high watermark"
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": "owned reacquisition remains legal; new acquisition must exceed unchanged high watermark"
+      }
+    },
+    {
+      "id": "F1-reentrant-valid-next-same-rank",
+      "before": {
+        "verdict": "PASS",
+        "expected": "owned reacquisition remains legal; new acquisition must exceed unchanged high watermark"
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": "owned reacquisition remains legal; new acquisition must exceed unchanged high watermark"
+      }
+    },
+    {
+      "id": "F2-callback-commit-gap-query",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "phase": "commit_pending",
+        "modeled_guard": 1,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 1,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F2-callback-commit-gap-reported-wait",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "phase": "commit_pending",
+        "modeled_guard": 1,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 1,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F2-callback-commit-gap-version",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "phase": "commit_pending",
+        "modeled_guard": 1,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 1,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F2-normal-commit-ack-wait-ack",
+      "before": {
+        "verdict": "PASS",
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check",
+        "phase": "released",
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "caller": {
+          "ack": true
+        },
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "new"
+        }
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check",
+        "phase": "released",
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "caller": {
+          "ack": true
+        },
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "new"
+        }
+      }
+    },
+    {
+      "id": "F2-normal-commit-ack-wait-committed-ack-loss",
+      "before": {
+        "verdict": "PASS",
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check",
+        "phase": "discarded",
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "caller": {
+          "outcome": "commit_unknown",
+          "status": 503,
+          "automaticMutationRetry": false
+        },
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "new"
+        }
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check",
+        "phase": "discarded",
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "caller": {
+          "outcome": "commit_unknown",
+          "status": 503,
+          "automaticMutationRetry": false
+        },
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "new"
+        }
+      }
+    },
+    {
+      "id": "F2-normal-commit-ack-wait-uncommitted-ack-loss",
+      "before": {
+        "verdict": "PASS",
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check",
+        "phase": "discarded",
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "caller": {
+          "outcome": "commit_unknown",
+          "status": 503,
+          "automaticMutationRetry": false
+        },
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "old"
+        }
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check",
+        "phase": "discarded",
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "caller": {
+          "outcome": "commit_unknown",
+          "status": 503,
+          "automaticMutationRetry": false
+        },
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "old"
+        }
+      }
+    },
+    {
+      "id": "F3-provider-expiry-first-equality-disabled",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-expiry-first-after-disabled",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-expiry-first-equality-unapproved",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_NOT_APPROVED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-expiry-first-equality-capability",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "CAPABILITY_REQUIRED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-expiry-first-equality-G-hidden",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-expiry-first-equality-H-hidden",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-expiry-first-equality-mapping",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-expiry-first-zero-disabled",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-string",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-undefined",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-null",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-negative",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-fraction",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-NaN",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-Infinity",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-combined-disabled",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-combined-expired-proof",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-combined-capability",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "CAPABILITY_REQUIRED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-provider-invariant-combined-hidden-H",
+      "before": {
+        "verdict": "FAIL",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-original-authority-preserved-fresh-provider-disabled",
+      "before": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-original-authority-preserved-fresh-provider-proof-equality",
+      "before": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    },
+    {
+      "id": "F3-original-authority-preserved-fresh-provider-hidden-H",
+      "before": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      "after": {
+        "verdict": "PASS",
+        "expected": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "phase": "failed",
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    }
+  ],
+  "prior_e8_to_current_d706_case_state_parity": {
+    "cases": 162,
+    "ids_and_order_identical": true,
+    "all_per_case_fields_equal_except": [
+      "started_utc",
+      "finished_utc"
+    ],
+    "prior_raw_original": {
+      "bytes": 575304,
+      "sha256": "3ccfbabe106ea3b4606e28ec18af136f76bfe8531b1d64e451b8b42eb8920889"
+    },
+    "current_raw_original": {
+      "bytes": 575310,
+      "sha256": "96e114c81f57eae31fca6a0f1b81f5ca35e02c98608576369cfffe529011fd25"
+    },
+    "caveat": "Local author comparison; original e8 green raw is omitted as duplicate behavior, retained frozen locally. Independent historical audit needs that original."
+  },
+  "original_130_oracle_parity": {
+    "old_test": {
+      "path": "workspaces/univeracademy/tests/membership/protection-contract.test.mjs",
+      "bytes": 32676,
+      "sha256": "04cecf6e3f0958fab1b02e9fdfdba246eca4a81b05ae498badd3e0c268336be5"
+    },
+    "normalized_recovered_bytes": 32676,
+    "normalized_recovered_sha256": "04cecf6e3f0958fab1b02e9fdfdba246eca4a81b05ae498badd3e0c268336be5",
+    "byte_equal": true,
+    "allowed_test_deltas": [
+      "base metadata f5 to e8",
+      "failure detail recording, no assertion change",
+      "32 new literal review controls"
+    ],
+    "red_before_test_identical_to_final_test": {
+      "bytes": 38971,
+      "sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111"
+    }
+  },
+  "scope": {
+    "bytes": 3470,
+    "sha256": "372ba8ebd718c165a22f3c03becd5ee95ac25089b6c815fbd32f2d01ec4205db"
+  },
+  "replay": {
+    "bytes": 4364,
+    "sha256": "63fc3f1b34736a379e445c1e7f8e44ac898c58f090b8e9f993fcefef66293c40"
+  },
+  "packaging_history": {
+    "id": "PKG-GITMODE-01",
+    "classification": "packaging oracle failure, not source/test failure",
+    "command": [
+      "python",
+      "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/build-reconciliation.py"
+    ],
+    "exit": 1,
+    "observed_utc": "2026-11-10T11:45:31.839706+00:00",
+    "historical_command_UTC": "not captured by the packaging script; observation time is not substituted for run time",
+    "script_before": {
+      "bytes": 12012,
+      "sha256": "1d2d74551789f927767a9ed7f5f4403394408787744121f9038fafe235176cc0"
+    },
+    "failed_expression": "stat.S_IMODE((replay/s['path']).stat().st_mode)==0o644",
+    "actual_candidate_and_replayed_mode": "0600, regular non-executable; normalized Git mode100644",
+    "source_byte_parity": "2/2 matched before assertion failure",
+    "base_721_modes": "0644 and unchanged",
+    "correction": "Validate candidate Git mode by regular-file and executable bits; leave source bytes/modes unchanged. Preserve first partial replay; final replay uses a different directory.",
+    "traceback": "AssertionError at build-reconciliation.py line43 after successful check/apply; before reverse",
+    "initial_partial_replay": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/patch-replay",
+    "missing_initial_details": "First two subprocess UTCs were in memory and were not persisted before the assertion; no exact initial replay timestamp claim."
+  },
+  "pack_policy": "Lossless object dictionary; entire original raw JSON byte sequence reconstructed and hashed. No observed state, assertion, ledger or old e8 label discarded.",
+  "review_relay": {
+    "label": "Relayed coordinator summary, not original QA/architect artifacts",
+    "qa_turn": "01a1c532-70e0-750e-857a-b51f57d07856",
+    "architect_turn": "01a1c52d-e4ac-748b-a86d-a02aed3c86b8",
+    "reported": "QA162+38 and typecheck0 on e8 and d706; bounded architect source review PASS",
+    "reported_index_sha256": "5a7cf9a7ef232be5f074aeafeec50ea93595c54d5853d83a94e0cbe188a50bbd",
+    "original_artifacts_owned_or_read": false,
+    "not_substitute_for_original_report": true
+  },
+  "not_run": [
+    "broad Mini/HTTP/bootstrap suites",
+    "real DB/provider/migration/deploy",
+    "production wiring or physical SQL protection"
+  ],
+  "open": [
+    "R1 integration OPEN",
+    "real-DB/production E2E BLOCKED",
+    "new exact publication approval pending"
+  ],
+  "standalone_pack_reconstruction_commands": [
+    {
+      "command": [
+        "python",
+        "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/reconstruct_case_evidence.py",
+        "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/case-results.pack.json"
+      ],
+      "cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3",
+      "start_utc": "2026-11-10T11:47:16.757474+00:00",
+      "end_utc": "2026-11-10T11:47:16.862998+00:00",
+      "exit": 0,
+      "output": "{\"bytes\": 575310, \"sha256\": \"96e114c81f57eae31fca6a0f1b81f5ca35e02c98608576369cfffe529011fd25\", \"actual_execution_base\": \"d7064e9964f87576f48088234fe361fc314fdbc0\", \"embedded_base_label\": \"e8c742ca518f084ada78f9a905ed65907c60f9b8\", \"cases\": 162, \"pass\": 162, \"fail\": 0, \"verified\": true}\n",
+      "output_sha256": "d199d940f93d11ed436556e3edc2d87c88e003bad1d5af784a41ccf8493ceeb1"
+    },
+    {
+      "command": [
+        "python",
+        "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/reconstruct_case_evidence.py",
+        "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3/evidence/red-before-cases.pack.json"
+      ],
+      "cwd": "/tmp/R1-PROTECTION-01-r2-reconciled-d7064e9-op7fckv3",
+      "start_utc": "2026-11-10T11:47:16.863110+00:00",
+      "end_utc": "2026-11-10T11:47:16.915772+00:00",
+      "exit": 0,
+      "output": "{\"bytes\": 143542, \"sha256\": \"dc2f303f49846325e01b892b7de8068da95cbc3fc96abc57f65a513d2a7291f5\", \"actual_execution_base\": \"e8c742ca518f084ada78f9a905ed65907c60f9b8\", \"embedded_base_label\": \"e8c742ca518f084ada78f9a905ed65907c60f9b8\", \"cases\": 32, \"pass\": 8, \"fail\": 24, \"verified\": true}\n",
+      "output_sha256": "d9ad17fd9f9059d728e80dfe005a3adf8ed6b4b96a854be20cd7bbcec5469f9e"
+    }
+  ]
+}

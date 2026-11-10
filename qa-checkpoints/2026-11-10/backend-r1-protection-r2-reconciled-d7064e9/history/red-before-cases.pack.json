@@ -1,0 +1,2249 @@
+{
+  "schema": "ua-case-object-pack-v1",
+  "serialization": {
+    "encoding": "utf-8",
+    "indent": 2,
+    "ensure_ascii": false,
+    "trailing_lf": true
+  },
+  "original": {
+    "local_authoritative_path": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/evidence/review-red-before-cases.json",
+    "bytes": 143542,
+    "sha256": "dc2f303f49846325e01b892b7de8068da95cbc3fc96abc57f65a513d2a7291f5"
+  },
+  "actual_execution_base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+  "embedded_base_label": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+  "payload": {
+    "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+    "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+    "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "/tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs"
+    ],
+    "case_count": 32,
+    "pass": 8,
+    "fail": 24,
+    "observation_limit": "Synthetic ledger and explicit world operations; no accepted guard/expiry/SQL writer instrumentation, no hidden omission detector.",
+    "results": [
+      {
+        "id": "F1-reentrant-watermark-rank",
+        "gate": "r2-lock-watermark",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.779Z",
+        "finished_utc": "2026-11-10T10:57:41.784Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "ledger": [
+          {
+            "ordinal": 1,
+            "transactionId": "W",
+            "event": "begin"
+          },
+          {
+            "ordinal": 2,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "person",
+              "key": "P"
+            }
+          },
+          {
+            "ordinal": 3,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "attempt",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 4,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "person",
+              "key": "P"
+            }
+          },
+          {
+            "ordinal": 5,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "G"
+            }
+          }
+        ],
+        "new_lock_owned": true,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:378:12\n    at TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:20)\n    at Test.runInAsyncScope (node:async_hooks:227:14)\n    at Test.run (node:internal/test_runner/test:1402:25)\n    at Test.start (node:internal/test_runner/test:1262:17)\n    at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)"
+        }
+      },
+      {
+        "id": "F1-reentrant-watermark-same-rank",
+        "gate": "r2-lock-watermark",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.785Z",
+        "finished_utc": "2026-11-10T10:57:41.785Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "ledger": [
+          {
+            "ordinal": 1,
+            "transactionId": "W",
+            "event": "begin"
+          },
+          {
+            "ordinal": 2,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 3,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "Z"
+            }
+          },
+          {
+            "ordinal": 4,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 5,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "M"
+            }
+          }
+        ],
+        "new_lock_owned": true,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:381:10\n    at TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:20)\n    at Test.runInAsyncScope (node:async_hooks:227:14)\n    at Test.run (node:internal/test_runner/test:1402:25)\n    at Test.processPendingSubtests (node:internal/test_runner/test:974:18)\n    at Test.postRun (node:internal/test_runner/test:1542:19)\n    at Test.run (node:internal/test_runner/test:1467:12)\n    at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)"
+        }
+      },
+      {
+        "id": "F1-reentrant-valid-next-rank",
+        "gate": "r2-lock-watermark",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.785Z",
+        "finished_utc": "2026-11-10T10:57:41.786Z",
+        "verdict": "PASS",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "ledger": [
+          {
+            "ordinal": 1,
+            "transactionId": "W",
+            "event": "begin"
+          },
+          {
+            "ordinal": 2,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "person",
+              "key": "P"
+            }
+          },
+          {
+            "ordinal": 3,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "attempt",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 4,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "person",
+              "key": "P"
+            }
+          },
+          {
+            "ordinal": 5,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "attempt",
+              "key": "B"
+            }
+          }
+        ],
+        "expected": "owned reacquisition remains legal; new acquisition must exceed unchanged high watermark"
+      },
+      {
+        "id": "F1-reentrant-valid-next-same-rank",
+        "gate": "r2-lock-watermark",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.786Z",
+        "finished_utc": "2026-11-10T10:57:41.786Z",
+        "verdict": "PASS",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "ledger": [
+          {
+            "ordinal": 1,
+            "transactionId": "W",
+            "event": "begin"
+          },
+          {
+            "ordinal": 2,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 3,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "Z"
+            }
+          },
+          {
+            "ordinal": 4,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 5,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "ZZ"
+            }
+          }
+        ],
+        "expected": "owned reacquisition remains legal; new acquisition must exceed unchanged high watermark"
+      },
+      {
+        "id": "F2-callback-commit-gap-query",
+        "gate": "r2-commit-freshness",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.786Z",
+        "finished_utc": "2026-11-10T10:57:41.798Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "phase": "commit_pending",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": [
+          {
+            "ordinal": 1,
+            "transactionId": "R",
+            "event": "begin"
+          },
+          {
+            "ordinal": 2,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "identity",
+              "key": "actor"
+            }
+          },
+          {
+            "ordinal": 3,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "person",
+              "key": "target"
+            }
+          },
+          {
+            "ordinal": 4,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "G"
+            }
+          },
+          {
+            "ordinal": 5,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "H"
+            }
+          },
+          {
+            "ordinal": 6,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "version",
+              "key": "V"
+            }
+          },
+          {
+            "ordinal": 7,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "D"
+            }
+          },
+          {
+            "ordinal": 8,
+            "transactionId": "R",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 9,
+            "transactionId": "R",
+            "event": "bindings.reread"
+          },
+          {
+            "ordinal": 10,
+            "transactionId": "R",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 11,
+            "transactionId": "R",
+            "event": "projection.loaded"
+          },
+          {
+            "ordinal": 12,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "assignment",
+              "key": "J"
+            }
+          },
+          {
+            "ordinal": 13,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "gate",
+              "key": "J"
+            }
+          },
+          {
+            "ordinal": 14,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "series",
+              "key": "target/D"
+            }
+          },
+          {
+            "ordinal": 15,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "attempt",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 16,
+            "transactionId": "R",
+            "event": "authority-clock.refresh"
+          },
+          {
+            "ordinal": 17,
+            "transactionId": "R",
+            "event": "seal"
+          },
+          {
+            "ordinal": 18,
+            "transactionId": "R",
+            "event": "modeled.guard"
+          },
+          {
+            "ordinal": 19,
+            "transactionId": "R",
+            "event": "callback.return"
+          },
+          {
+            "ordinal": 20,
+            "transactionId": "R",
+            "event": "statement.start"
+          }
+        ],
+        "modeled_guard": 1,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:399:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F2-callback-commit-gap-reported-wait",
+        "gate": "r2-commit-freshness",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.798Z",
+        "finished_utc": "2026-11-10T10:57:41.801Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "phase": "commit_pending",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": [
+          {
+            "ordinal": 1,
+            "transactionId": "R",
+            "event": "begin"
+          },
+          {
+            "ordinal": 2,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "identity",
+              "key": "actor"
+            }
+          },
+          {
+            "ordinal": 3,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "person",
+              "key": "target"
+            }
+          },
+          {
+            "ordinal": 4,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "G"
+            }
+          },
+          {
+            "ordinal": 5,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "H"
+            }
+          },
+          {
+            "ordinal": 6,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "version",
+              "key": "V"
+            }
+          },
+          {
+            "ordinal": 7,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "D"
+            }
+          },
+          {
+            "ordinal": 8,
+            "transactionId": "R",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 9,
+            "transactionId": "R",
+            "event": "bindings.reread"
+          },
+          {
+            "ordinal": 10,
+            "transactionId": "R",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 11,
+            "transactionId": "R",
+            "event": "projection.loaded"
+          },
+          {
+            "ordinal": 12,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "assignment",
+              "key": "J"
+            }
+          },
+          {
+            "ordinal": 13,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "gate",
+              "key": "J"
+            }
+          },
+          {
+            "ordinal": 14,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "series",
+              "key": "target/D"
+            }
+          },
+          {
+            "ordinal": 15,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "attempt",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 16,
+            "transactionId": "R",
+            "event": "authority-clock.refresh"
+          },
+          {
+            "ordinal": 17,
+            "transactionId": "R",
+            "event": "seal"
+          },
+          {
+            "ordinal": 18,
+            "transactionId": "R",
+            "event": "modeled.guard"
+          },
+          {
+            "ordinal": 19,
+            "transactionId": "R",
+            "event": "callback.return"
+          },
+          {
+            "ordinal": 20,
+            "transactionId": "R",
+            "event": "external.wait"
+          }
+        ],
+        "modeled_guard": 1,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:399:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F2-callback-commit-gap-version",
+        "gate": "r2-commit-freshness",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.801Z",
+        "finished_utc": "2026-11-10T10:57:41.803Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "returned"
+        },
+        "phase": "commit_pending",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": [
+          {
+            "ordinal": 1,
+            "transactionId": "R",
+            "event": "begin"
+          },
+          {
+            "ordinal": 2,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "identity",
+              "key": "actor"
+            }
+          },
+          {
+            "ordinal": 3,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "person",
+              "key": "target"
+            }
+          },
+          {
+            "ordinal": 4,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "G"
+            }
+          },
+          {
+            "ordinal": 5,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "H"
+            }
+          },
+          {
+            "ordinal": 6,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "version",
+              "key": "V"
+            }
+          },
+          {
+            "ordinal": 7,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "D"
+            }
+          },
+          {
+            "ordinal": 8,
+            "transactionId": "R",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 9,
+            "transactionId": "R",
+            "event": "bindings.reread"
+          },
+          {
+            "ordinal": 10,
+            "transactionId": "R",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 11,
+            "transactionId": "R",
+            "event": "projection.loaded"
+          },
+          {
+            "ordinal": 12,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "assignment",
+              "key": "J"
+            }
+          },
+          {
+            "ordinal": 13,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "gate",
+              "key": "J"
+            }
+          },
+          {
+            "ordinal": 14,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "series",
+              "key": "target/D"
+            }
+          },
+          {
+            "ordinal": 15,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "attempt",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 16,
+            "transactionId": "R",
+            "event": "authority-clock.refresh"
+          },
+          {
+            "ordinal": 17,
+            "transactionId": "R",
+            "event": "seal"
+          },
+          {
+            "ordinal": 18,
+            "transactionId": "R",
+            "event": "modeled.guard"
+          },
+          {
+            "ordinal": 19,
+            "transactionId": "R",
+            "event": "callback.return"
+          },
+          {
+            "ordinal": 20,
+            "transactionId": "W",
+            "event": "begin"
+          },
+          {
+            "ordinal": 21,
+            "transactionId": "W",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "OTHER"
+            }
+          },
+          {
+            "ordinal": 22,
+            "transactionId": "W",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 23,
+            "transactionId": "W",
+            "event": "writer.commit-with-gates"
+          },
+          {
+            "ordinal": 24,
+            "transactionId": "W",
+            "event": "commit.ack"
+          }
+        ],
+        "modeled_guard": 1,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   kind: 'returned'\n-   code: 'RESPONSE_INVARIANT_FAILED',\n-   kind: 'threw',\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:399:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F2-normal-commit-ack-wait-ack",
+        "gate": "r2-commit-freshness",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.803Z",
+        "finished_utc": "2026-11-10T10:57:41.806Z",
+        "verdict": "PASS",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "new"
+        },
+        "caller": {
+          "ack": true
+        },
+        "phase": "released",
+        "synthetic_lease_held": false,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": [
+          {
+            "ordinal": 1,
+            "transactionId": "R",
+            "event": "begin"
+          },
+          {
+            "ordinal": 2,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "identity",
+              "key": "actor"
+            }
+          },
+          {
+            "ordinal": 3,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "person",
+              "key": "target"
+            }
+          },
+          {
+            "ordinal": 4,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "G"
+            }
+          },
+          {
+            "ordinal": 5,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "group",
+              "key": "H"
+            }
+          },
+          {
+            "ordinal": 6,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "version",
+              "key": "V"
+            }
+          },
+          {
+            "ordinal": 7,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "demo",
+              "key": "D"
+            }
+          },
+          {
+            "ordinal": 8,
+            "transactionId": "R",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 9,
+            "transactionId": "R",
+            "event": "bindings.reread"
+          },
+          {
+            "ordinal": 10,
+            "transactionId": "R",
+            "event": "statement.start"
+          },
+          {
+            "ordinal": 11,
+            "transactionId": "R",
+            "event": "projection.loaded"
+          },
+          {
+            "ordinal": 12,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "assignment",
+              "key": "J"
+            }
+          },
+          {
+            "ordinal": 13,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "gate",
+              "key": "J"
+            }
+          },
+          {
+            "ordinal": 14,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "series",
+              "key": "target/D"
+            }
+          },
+          {
+            "ordinal": 15,
+            "transactionId": "R",
+            "event": "lock.acquired",
+            "resource": {
+              "kind": "attempt",
+              "key": "A"
+            }
+          },
+          {
+            "ordinal": 16,
+            "transactionId": "R",
+            "event": "authority-clock.refresh"
+          },
+          {
+            "ordinal": 17,
+            "transactionId": "R",
+            "event": "seal"
+          },
+          {
+            "ordinal": 18,
+            "transactionId": "R",
+            "event": "modeled.guard"
+          },
+          {
+            "ordinal": 19,
+            "transactionId": "R",
+            "event": "modeled.flush"
+          },
+          {
+            "ordinal": 20,
+            "transactionId": "R",
+            "event": "callback.return"
+          },
+          {
+            "ordinal": 21,
+            "transactionId": "R",
+            "event": "commit.ack.wait"
+          },
+          {
+            "ordinal": 22,
+            "transactionId": "R",
+            "event": "commit.ack"
+          }
+        ],
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check"
+      },
+      {
+        "id": "F2-normal-commit-ack-wait-committed-ack-loss",
+        "gate": "r2-commit-freshness",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.806Z",
+        "finished_utc": "2026-11-10T10:57:41.808Z",
+        "verdict": "PASS",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "new"
+        },
+        "caller": {
+          "outcome": "commit_unknown",
+          "status": 503,
+          "automaticMutationRetry": false
+        },
+        "phase": "discarded",
+        "synthetic_lease_held": false,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check"
+      },
+      {
+        "id": "F2-normal-commit-ack-wait-uncommitted-ack-loss",
+        "gate": "r2-commit-freshness",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.808Z",
+        "finished_utc": "2026-11-10T10:57:41.810Z",
+        "verdict": "PASS",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "S0": {
+          "value": "old"
+        },
+        "staged": {
+          "value": "new"
+        },
+        "committed": {
+          "value": "old"
+        },
+        "caller": {
+          "outcome": "commit_unknown",
+          "status": 503,
+          "automaticMutationRetry": false
+        },
+        "phase": "discarded",
+        "synthetic_lease_held": false,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 1,
+        "modeled_flush": 1,
+        "expected": "ordinary ACK wait is not a new pre-COMMIT freshness check"
+      },
+      {
+        "id": "F3-provider-expiry-first-equality-disabled",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.810Z",
+        "finished_utc": "2026-11-10T10:57:41.812Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "provider_expires_at": 100,
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'ACCOUNT_DISABLED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'ACCOUNT_DISABLED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-expiry-first-after-disabled",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.812Z",
+        "finished_utc": "2026-11-10T10:57:41.814Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "provider_expires_at": 99,
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'ACCOUNT_DISABLED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'ACCOUNT_DISABLED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-expiry-first-equality-unapproved",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.814Z",
+        "finished_utc": "2026-11-10T10:57:41.816Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_NOT_APPROVED",
+          "status": 403
+        },
+        "provider_expires_at": 100,
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_NOT_APPROVED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_NOT_APPROVED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-expiry-first-equality-capability",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.816Z",
+        "finished_utc": "2026-11-10T10:57:41.818Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "CAPABILITY_REQUIRED",
+          "status": 403
+        },
+        "provider_expires_at": 100,
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'CAPABILITY_REQUIRED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'CAPABILITY_REQUIRED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-expiry-first-equality-G-hidden",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.818Z",
+        "finished_utc": "2026-11-10T10:57:41.820Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "provider_expires_at": 100,
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'NOT_FOUND',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 404\n-   status: 401\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'NOT_FOUND',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 404\n-   status: 401\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-expiry-first-equality-H-hidden",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.820Z",
+        "finished_utc": "2026-11-10T10:57:41.822Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "provider_expires_at": 100,
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'NOT_FOUND',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 404\n-   status: 401\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'NOT_FOUND',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 404\n-   status: 401\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-expiry-first-equality-mapping",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.822Z",
+        "finished_utc": "2026-11-10T10:57:41.825Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "provider_expires_at": 100,
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'RESPONSE_INVARIANT_FAILED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 500\n-   status: 401\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'RESPONSE_INVARIANT_FAILED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 500\n-   status: 401\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-expiry-first-zero-disabled",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.825Z",
+        "finished_utc": "2026-11-10T10:57:41.832Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "provider_expires_at": 0,
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'ACCOUNT_DISABLED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'ACCOUNT_DISABLED',\n-   code: 'STAFF_TOKEN_INVALID',\n    kind: 'threw',\n+   status: 403\n-   status: 401\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-string",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.832Z",
+        "finished_utc": "2026-11-10T10:57:41.835Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "provider_input_representation": "string",
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-undefined",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.835Z",
+        "finished_utc": "2026-11-10T10:57:41.837Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "provider_input_representation": "undefined",
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-null",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.838Z",
+        "finished_utc": "2026-11-10T10:57:41.839Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "provider_input_representation": "null",
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-negative",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.839Z",
+        "finished_utc": "2026-11-10T10:57:41.840Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "provider_input_representation": "negative",
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-fraction",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.840Z",
+        "finished_utc": "2026-11-10T10:57:41.843Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "provider_input_representation": "fraction",
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-NaN",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.843Z",
+        "finished_utc": "2026-11-10T10:57:41.845Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "provider_input_representation": "NaN",
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-Infinity",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.845Z",
+        "finished_utc": "2026-11-10T10:57:41.847Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "provider_input_representation": "Infinity",
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-combined-disabled",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.847Z",
+        "finished_utc": "2026-11-10T10:57:41.849Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'ACCOUNT_DISABLED',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 403\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'ACCOUNT_DISABLED',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 403\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:433:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-combined-expired-proof",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.849Z",
+        "finished_utc": "2026-11-10T10:57:41.851Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'STAFF_TOKEN_INVALID',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 401\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:433:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-combined-capability",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.851Z",
+        "finished_utc": "2026-11-10T10:57:41.855Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "CAPABILITY_REQUIRED",
+          "status": 403
+        },
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'CAPABILITY_REQUIRED',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 403\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'CAPABILITY_REQUIRED',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 403\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:433:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-provider-invariant-combined-hidden-H",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.855Z",
+        "finished_utc": "2026-11-10T10:57:41.858Z",
+        "verdict": "FAIL",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "RESPONSE_INVARIANT_FAILED",
+          "status": 500
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0,
+        "assertion": {
+          "name": "AssertionError",
+          "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'NOT_FOUND',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 404\n-   status: 500\n  }\n",
+          "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  {\n+   code: 'NOT_FOUND',\n-   code: 'RESPONSE_INVARIANT_FAILED',\n    kind: 'threw',\n+   status: 404\n-   status: 500\n  }\n\n    at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)\n    at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:433:10\n    at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)\n    at async Test.run (node:internal/test_runner/test:1409:7)\n    at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)"
+        }
+      },
+      {
+        "id": "F3-original-authority-preserved-fresh-provider-disabled",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.858Z",
+        "finished_utc": "2026-11-10T10:57:41.860Z",
+        "verdict": "PASS",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "ACCOUNT_DISABLED",
+          "status": 403
+        },
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      {
+        "id": "F3-original-authority-preserved-fresh-provider-proof-equality",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.860Z",
+        "finished_utc": "2026-11-10T10:57:41.862Z",
+        "verdict": "PASS",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "STAFF_TOKEN_INVALID",
+          "status": 401
+        },
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      },
+      {
+        "id": "F3-original-authority-preserved-fresh-provider-hidden-H",
+        "gate": "r2-provider-precedence",
+        "base": "e8c742ca518f084ada78f9a905ed65907c60f9b8",
+        "source_sha256": "a6c25ce8201a66883515e79aa7e2f1acb21efa5376e60625d4daea2fa6be9efb",
+        "test_sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+        "started_utc": "2026-11-10T10:57:41.862Z",
+        "finished_utc": "2026-11-10T10:57:41.863Z",
+        "verdict": "PASS",
+        "fault_assertions": [],
+        "layer": "SQL-free synthetic protocol model",
+        "expected": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "actual": {
+          "kind": "threw",
+          "code": "NOT_FOUND",
+          "status": 404
+        },
+        "phase": "failed",
+        "synthetic_lease_held": true,
+        "lockedPersonIds": [
+          "target"
+        ],
+        "ledger": null,
+        "modeled_guard": 0,
+        "modeled_flush": 0
+      }
+    ]
+  },
+  "objects": {
+    "d3aceb27ddfbf766f704fb9389bcfb409202bc70bbfbe96723d296efc9737d3e": [
+      {
+        "ordinal": 1,
+        "transactionId": "R",
+        "event": "begin"
+      },
+      {
+        "ordinal": 2,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "identity",
+          "key": "actor"
+        }
+      },
+      {
+        "ordinal": 3,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "person",
+          "key": "target"
+        }
+      },
+      {
+        "ordinal": 4,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "group",
+          "key": "G"
+        }
+      },
+      {
+        "ordinal": 5,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "group",
+          "key": "H"
+        }
+      },
+      {
+        "ordinal": 6,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "version",
+          "key": "V"
+        }
+      },
+      {
+        "ordinal": 7,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "demo",
+          "key": "D"
+        }
+      },
+      {
+        "ordinal": 8,
+        "transactionId": "R",
+        "event": "statement.start"
+      },
+      {
+        "ordinal": 9,
+        "transactionId": "R",
+        "event": "bindings.reread"
+      },
+      {
+        "ordinal": 10,
+        "transactionId": "R",
+        "event": "statement.start"
+      },
+      {
+        "ordinal": 11,
+        "transactionId": "R",
+        "event": "projection.loaded"
+      },
+      {
+        "ordinal": 12,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "assignment",
+          "key": "J"
+        }
+      },
+      {
+        "ordinal": 13,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "gate",
+          "key": "J"
+        }
+      },
+      {
+        "ordinal": 14,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "series",
+          "key": "target/D"
+        }
+      },
+      {
+        "ordinal": 15,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "attempt",
+          "key": "A"
+        }
+      },
+      {
+        "ordinal": 16,
+        "transactionId": "R",
+        "event": "authority-clock.refresh"
+      },
+      {
+        "ordinal": 17,
+        "transactionId": "R",
+        "event": "seal"
+      },
+      {
+        "ordinal": 18,
+        "transactionId": "R",
+        "event": "modeled.guard"
+      },
+      {
+        "ordinal": 19,
+        "transactionId": "R",
+        "event": "modeled.flush"
+      },
+      {
+        "ordinal": 20,
+        "transactionId": "R",
+        "event": "callback.return"
+      },
+      {
+        "ordinal": 21,
+        "transactionId": "R",
+        "event": "commit.ack.wait"
+      },
+      {
+        "ordinal": 22,
+        "transactionId": "R",
+        "event": "discard.unknown"
+      }
+    ],
+    "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a": [
+      {
+        "ordinal": 1,
+        "transactionId": "R",
+        "event": "begin"
+      },
+      {
+        "ordinal": 2,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "identity",
+          "key": "actor"
+        }
+      },
+      {
+        "ordinal": 3,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "person",
+          "key": "target"
+        }
+      },
+      {
+        "ordinal": 4,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "group",
+          "key": "G"
+        }
+      },
+      {
+        "ordinal": 5,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "group",
+          "key": "H"
+        }
+      },
+      {
+        "ordinal": 6,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "version",
+          "key": "V"
+        }
+      },
+      {
+        "ordinal": 7,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "demo",
+          "key": "D"
+        }
+      },
+      {
+        "ordinal": 8,
+        "transactionId": "R",
+        "event": "statement.start"
+      },
+      {
+        "ordinal": 9,
+        "transactionId": "R",
+        "event": "bindings.reread"
+      },
+      {
+        "ordinal": 10,
+        "transactionId": "R",
+        "event": "statement.start"
+      },
+      {
+        "ordinal": 11,
+        "transactionId": "R",
+        "event": "projection.loaded"
+      },
+      {
+        "ordinal": 12,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "assignment",
+          "key": "J"
+        }
+      },
+      {
+        "ordinal": 13,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "gate",
+          "key": "J"
+        }
+      },
+      {
+        "ordinal": 14,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "series",
+          "key": "target/D"
+        }
+      },
+      {
+        "ordinal": 15,
+        "transactionId": "R",
+        "event": "lock.acquired",
+        "resource": {
+          "kind": "attempt",
+          "key": "A"
+        }
+      },
+      {
+        "ordinal": 16,
+        "transactionId": "R",
+        "event": "authority-clock.refresh"
+      }
+    ]
+  },
+  "references": [
+    [
+      8,
+      "ledger",
+      "d3aceb27ddfbf766f704fb9389bcfb409202bc70bbfbe96723d296efc9737d3e"
+    ],
+    [
+      9,
+      "ledger",
+      "d3aceb27ddfbf766f704fb9389bcfb409202bc70bbfbe96723d296efc9737d3e"
+    ],
+    [
+      10,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      11,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      12,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      13,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      14,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      15,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      16,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      17,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      18,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      19,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      20,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      21,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      22,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      23,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      24,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      25,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      26,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      27,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      28,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      29,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      30,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ],
+    [
+      31,
+      "ledger",
+      "14e0911a1ad1b360052fb40c9a88013d378078d57ba13b5d91db02947d39ae3a"
+    ]
+  ]
+}

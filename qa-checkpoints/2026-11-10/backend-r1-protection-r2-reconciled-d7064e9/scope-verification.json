@@ -1,0 +1,89 @@
+{
+  "candidate": "R1-PROTECTION-01-r2-reconciled-d7064e9",
+  "actual_base": "d7064e9964f87576f48088234fe361fc314fdbc0",
+  "base_tree": "a789b1c6b9256b2a7ff37f40f13c2037d1376c07",
+  "utc": "2026-11-10T11:45:32.541173+00:00",
+  "base_blobs": 721,
+  "preserved_base_blobs_and_modes": 721,
+  "recomputed_base_git_tree": "a789b1c6b9256b2a7ff37f40f13c2037d1376c07",
+  "modified_existing_paths": [],
+  "added_paths": [
+    "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+    "workspaces/univeracademy/tests/membership/protection-contract.test.mjs"
+  ],
+  "unexpected_paths": [],
+  "e8_to_d706_additions": [
+    "qa-checkpoints/2026-11-10/backend-bootstrap-options-01-local-r2/README.md",
+    "qa-checkpoints/2026-11-10/backend-bootstrap-options-01-local-r2/author-options-final.log",
+    "qa-checkpoints/2026-11-10/backend-bootstrap-options-01-local-r2/author-pool-port-regression.log",
+    "qa-checkpoints/2026-11-10/backend-bootstrap-options-01-local-r2/author-sources.frozen.json",
+    "qa-checkpoints/2026-11-10/backend-bootstrap-options-01-local-r2/author-targeted-before.log",
+    "qa-checkpoints/2026-11-10/backend-bootstrap-options-01-local-r2/candidate.patch",
+    "qa-checkpoints/2026-11-10/backend-bootstrap-options-01-local-r2/verification.json",
+    "workspaces/univeracademy/runtime/production-options.mjs",
+    "workspaces/univeracademy/tests/vercel-node/production-options.test.mjs"
+  ],
+  "unchanged_reviewed_candidate_source": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+      "bytes": 30680,
+      "sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+      "git_blob_sha": "ece0e52201765360bef1e757894c6c0c4c095ac2",
+      "mode": "100644",
+      "change": "added"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/protection-contract.test.mjs",
+      "bytes": 38971,
+      "sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+      "git_blob_sha": "731cf1274215e5ffdcbef711ae1685d77d1a8793",
+      "mode": "100644",
+      "change": "added"
+    }
+  ],
+  "frozen_old_packages": {
+    "protection_v1": {
+      "root": "/tmp/univeracademy-r1-protection01-z41mkvrw",
+      "checked_files": 1420,
+      "matches": 1420,
+      "inventory": {
+        "bytes": 5591,
+        "sha256": "e04d2ada2f8ea8f25e7f0d9e34c4811b0aa95d6fc5501affd5d4b6155f99017f"
+      },
+      "selected_files": 13,
+      "selected_bytes": 780126
+    },
+    "protection_r2_e8": {
+      "root": "/tmp/univeracademy-r1-protection01-r2-im_x5bwp",
+      "checked_files": 1454,
+      "matches": 1454,
+      "inventory": {
+        "bytes": 7314,
+        "sha256": "61315bd0ff40d251107a1614660a41f7d94daa992e8f995d29d05b39d0bd6185"
+      },
+      "selected_files": 17,
+      "selected_bytes": 1147284
+    }
+  },
+  "frozen_descriptor": {
+    "bytes": 638241,
+    "sha256": "8cd41c72d84b19bb0062a613bc2faf27f3b66faf4edcfd5c8b8098594bebd4b7"
+  },
+  "older_frozen_package_matches": {
+    "http_v1": 1432,
+    "domain_original": 755,
+    "shared_original": 393,
+    "removal_auth_original": 389,
+    "shared_reconciled": 697
+  },
+  "frozen_HTTP_r2": {
+    "selected_files": 22,
+    "all_hashes_match": true,
+    "inventory": {
+      "bytes": 9404,
+      "sha256": "5235942901feb6752655d65328977047e4fdf5acb4d0a9bc51b9ebc0ca3cbdd0"
+    }
+  },
+  "external_write": false,
+  "verdict": "PASS"
+}

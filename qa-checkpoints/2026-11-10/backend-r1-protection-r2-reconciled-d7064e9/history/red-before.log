@@ -1,0 +1,667 @@
+✖ F1-reentrant-watermark-rank (5.23154ms)
+✖ F1-reentrant-watermark-same-rank (0.554315ms)
+✔ F1-reentrant-valid-next-rank (0.308565ms)
+✔ F1-reentrant-valid-next-same-rank (0.15244ms)
+✖ F2-callback-commit-gap-query (12.052479ms)
+✖ F2-callback-commit-gap-reported-wait (2.723862ms)
+✖ F2-callback-commit-gap-version (2.434392ms)
+✔ F2-normal-commit-ack-wait-ack (2.777364ms)
+✔ F2-normal-commit-ack-wait-committed-ack-loss (2.174085ms)
+✔ F2-normal-commit-ack-wait-uncommitted-ack-loss (1.884278ms)
+✖ F3-provider-expiry-first-equality-disabled (2.03839ms)
+✖ F3-provider-expiry-first-after-disabled (1.728553ms)
+✖ F3-provider-expiry-first-equality-unapproved (1.876286ms)
+✖ F3-provider-expiry-first-equality-capability (2.008295ms)
+✖ F3-provider-expiry-first-equality-G-hidden (1.702004ms)
+✖ F3-provider-expiry-first-equality-H-hidden (2.135727ms)
+✖ F3-provider-expiry-first-equality-mapping (2.794979ms)
+✖ F3-provider-expiry-first-zero-disabled (7.051381ms)
+✖ F3-provider-invariant-string (3.022373ms)
+✖ F3-provider-invariant-undefined (2.179392ms)
+✖ F3-provider-invariant-null (1.423564ms)
+✖ F3-provider-invariant-negative (1.464716ms)
+✖ F3-provider-invariant-fraction (2.20461ms)
+✖ F3-provider-invariant-NaN (2.067784ms)
+✖ F3-provider-invariant-Infinity (2.140534ms)
+✖ F3-provider-invariant-combined-disabled (2.281667ms)
+✖ F3-provider-invariant-combined-expired-proof (2.114865ms)
+✖ F3-provider-invariant-combined-capability (3.918141ms)
+✖ F3-provider-invariant-combined-hidden-H (2.213324ms)
+✔ F3-original-authority-preserved-fresh-provider-disabled (2.015997ms)
+✔ F3-original-authority-preserved-fresh-provider-proof-equality (2.032711ms)
+✔ F3-original-authority-preserved-fresh-provider-hidden-H (0.895879ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 8
+ℹ fail 24
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 211.955246
+
+✖ failing tests:
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F1-reentrant-watermark-rank (5.23154ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   kind: 'returned'
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+  -   kind: 'threw',
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:378:12
+      at TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:20)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'returned' },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F1-reentrant-watermark-same-rank (0.554315ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   kind: 'returned'
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+  -   kind: 'threw',
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:381:10
+      at TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:20)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'returned' },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F2-callback-commit-gap-query (12.052479ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   kind: 'returned'
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+  -   kind: 'threw',
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:399:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'returned' },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F2-callback-commit-gap-reported-wait (2.723862ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   kind: 'returned'
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+  -   kind: 'threw',
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:399:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'returned' },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F2-callback-commit-gap-version (2.434392ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   kind: 'returned'
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+  -   kind: 'threw',
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:399:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'returned' },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-expiry-first-equality-disabled (2.03839ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'ACCOUNT_DISABLED',
+  -   code: 'STAFF_TOKEN_INVALID',
+      kind: 'threw',
+  +   status: 403
+  -   status: 401
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'ACCOUNT_DISABLED', status: 403 },
+    expected: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-expiry-first-after-disabled (1.728553ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'ACCOUNT_DISABLED',
+  -   code: 'STAFF_TOKEN_INVALID',
+      kind: 'threw',
+  +   status: 403
+  -   status: 401
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'ACCOUNT_DISABLED', status: 403 },
+    expected: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-expiry-first-equality-unapproved (1.876286ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_NOT_APPROVED',
+  -   code: 'STAFF_TOKEN_INVALID',
+      kind: 'threw',
+  +   status: 403
+  -   status: 401
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_NOT_APPROVED', status: 403 },
+    expected: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-expiry-first-equality-capability (2.008295ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'CAPABILITY_REQUIRED',
+  -   code: 'STAFF_TOKEN_INVALID',
+      kind: 'threw',
+  +   status: 403
+  -   status: 401
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'CAPABILITY_REQUIRED', status: 403 },
+    expected: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-expiry-first-equality-G-hidden (1.702004ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'NOT_FOUND',
+  -   code: 'STAFF_TOKEN_INVALID',
+      kind: 'threw',
+  +   status: 404
+  -   status: 401
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'NOT_FOUND', status: 404 },
+    expected: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-expiry-first-equality-H-hidden (2.135727ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'NOT_FOUND',
+  -   code: 'STAFF_TOKEN_INVALID',
+      kind: 'threw',
+  +   status: 404
+  -   status: 401
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'NOT_FOUND', status: 404 },
+    expected: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-expiry-first-equality-mapping (2.794979ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'RESPONSE_INVARIANT_FAILED',
+  -   code: 'STAFF_TOKEN_INVALID',
+      kind: 'threw',
+  +   status: 500
+  -   status: 401
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    expected: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-expiry-first-zero-disabled (7.051381ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'ACCOUNT_DISABLED',
+  -   code: 'STAFF_TOKEN_INVALID',
+      kind: 'threw',
+  +   status: 403
+  -   status: 401
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:420:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'ACCOUNT_DISABLED', status: 403 },
+    expected: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-string (3.022373ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_TOKEN_INVALID',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 401
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-undefined (2.179392ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_TOKEN_INVALID',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 401
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-null (1.423564ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_TOKEN_INVALID',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 401
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-negative (1.464716ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_TOKEN_INVALID',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 401
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-fraction (2.20461ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_TOKEN_INVALID',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 401
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-NaN (2.067784ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_TOKEN_INVALID',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 401
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-Infinity (2.140534ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_TOKEN_INVALID',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 401
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:425:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-combined-disabled (2.281667ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'ACCOUNT_DISABLED',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 403
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:433:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'ACCOUNT_DISABLED', status: 403 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-combined-expired-proof (2.114865ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'STAFF_TOKEN_INVALID',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 401
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:433:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'STAFF_TOKEN_INVALID', status: 401 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-combined-capability (3.918141ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'CAPABILITY_REQUIRED',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 403
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:433:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'CAPABILITY_REQUIRED', status: 403 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/protection-contract.test.mjs:59:31
+✖ F3-provider-invariant-combined-hidden-H (2.213324ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   code: 'NOT_FOUND',
+  -   code: 'RESPONSE_INVARIANT_FAILED',
+      kind: 'threw',
+  +   status: 404
+  -   status: 500
+    }
+  
+      at expectedFault (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:372:10)
+      at file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:433:10
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-r1-protection01-r2-im_x5bwp/repo/workspaces/univeracademy/tests/membership/protection-contract.test.mjs:61:14)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { kind: 'threw', code: 'NOT_FOUND', status: 404 },
+    expected: { kind: 'threw', code: 'RESPONSE_INVARIANT_FAILED', status: 500 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
