@@ -1,0 +1,18 @@
+[
+  {
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts",
+    "old_bytes": 7599,
+    "old_sha256": "b0d4dfbcdb789197c078c5055e5dba42353989e8836dcfdfe151d8e4663c11d2",
+    "new_bytes": 7598,
+    "new_sha256": "3477846790c594c6baf96ea5a15a0be83bcde6f33328d57feb5c6917139e4ccb",
+    "only_change": "Remove one trailing empty line; no code/oracle change"
+  },
+  {
+    "path": "workspaces/univeracademy/tests/membership/removal-command.test.mjs",
+    "old_bytes": 39265,
+    "old_sha256": "a6645fdb32fb2460282b9e79dc0255fdfe7aaaba1a3d1ae5d9dbb599db68d926",
+    "new_bytes": 39264,
+    "new_sha256": "c699e80fab5f92482d6399142f40f2aeac3f580b5ba2c6cfcf78bac1c3235de9",
+    "only_change": "Remove one trailing empty line; no code/oracle change"
+  }
+]

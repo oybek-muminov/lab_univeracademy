@@ -1,0 +1,227 @@
+✔ REMOVE-literal-success-full-state (11.049187ms)
+✖ REMOVE-B-ready-future=false (5.224046ms)
+✖ REMOVE-B-ready-future=true (4.189427ms)
+✔ REMOVE-peer-barrier-active (3.722245ms)
+✔ REMOVE-peer-barrier-future-ready (3.647592ms)
+✔ REMOVE-peer-barrier-both (4.675981ms)
+✔ REMOVE-authority-Teacher-own (3.210965ms)
+✔ REMOVE-authority-Admin-own (3.043813ms)
+✔ REMOVE-authority-Owner (3.268832ms)
+✔ REMOVE-authority-Owner-Teacher (3.243624ms)
+✔ REMOVE-authority-Admin-Teacher-all (3.198346ms)
+✔ REMOVE-authority-Teacher-no-cap (2.744322ms)
+✔ REMOVE-authority-Admin-no-cap (2.51735ms)
+✔ REMOVE-authority-Teacher-all-only (3.519048ms)
+✔ REMOVE-authority-Teacher-revoked-grant (2.462787ms)
+✔ REMOVE-authority-Teacher-subject-only (2.542558ms)
+✔ REMOVE-authority-Teacher-content-only (2.47079ms)
+✔ REMOVE-authority-Admin-no-scope (2.321946ms)
+✔ REMOVE-authority-Mixed-no-cap (2.406774ms)
+✔ REMOVE-authority-Other-role (2.482848ms)
+✔ REMOVE-privacy-disabled (2.86887ms)
+✔ REMOVE-privacy-unapproved (2.517321ms)
+✔ REMOVE-privacy-unknown-proof (2.395897ms)
+✔ REMOVE-privacy-missing-group (2.872655ms)
+✔ REMOVE-privacy-missing-student (3.523345ms)
+✔ REMOVE-privacy-disabled-student (2.642008ms)
+✔ REMOVE-privacy-incomplete-student (2.619184ms)
+✔ REMOVE-privacy-wrong-role (2.482297ms)
+✔ REMOVE-privacy-foreign-affinity (2.376669ms)
+✔ REMOVE-privacy-missing-membership (2.33842ms)
+✔ REMOVE-proof-expiry:0 (2.349257ms)
+✔ REMOVE-proof-expiry:1 (2.77627ms)
+✔ REMOVE-capability-before-missing-target:teacher (2.321585ms)
+✔ REMOVE-capability-before-missing-target:admin (2.162687ms)
+✔ REMOVE-CAS-group:-1 (4.247065ms)
+✔ REMOVE-CAS-member:-1 (3.005155ms)
+✔ REMOVE-CAS-group:0 (3.538558ms)
+✔ REMOVE-CAS-member:0 (3.357586ms)
+✔ REMOVE-CAS-group:1 (3.634863ms)
+✔ REMOVE-CAS-member:1 (3.348171ms)
+✔ REMOVE-active-wait-preserves-ready-and-S0 (3.163022ms)
+✔ REMOVE-wait-after-other-expiry-commits-only-Ea (5.06811ms)
+✔ REMOVE-inactive-new-command-conflict (3.077093ms)
+✔ REMOVE-CAS-precedes-inactive-conflict (2.987918ms)
+✖ REMOVE-matching-replay-historical-inactive (2.881098ms)
+✖ REMOVE-replay-later-regrant-preserved (2.978444ms)
+✖ REMOVE-replay-does-not-expire-later-attempt (2.600736ms)
+✔ REMOVE-replay-reauthorize-capability (2.48336ms)
+✔ REMOVE-replay-reauthorize-grant (2.448747ms)
+✔ REMOVE-replay-reauthorize-approval (2.366743ms)
+✔ REMOVE-replay-reauthorize-foreign (2.445832ms)
+✔ REMOVE-replay-reauthorize-expired (2.65034ms)
+✔ REMOVE-key-conflict-precedes-CAS-and-expiry (2.606484ms)
+✔ REMOVE-corruption-IDKEY:-1 (3.256273ms)
+✔ REMOVE-corruption-ORDINARY:-1 (3.538999ms)
+✔ REMOVE-corruption-IDKEY:0 (3.266488ms)
+✔ REMOVE-corruption-ORDINARY:0 (3.2214ms)
+✔ REMOVE-corruption-IDKEY:1 (3.245917ms)
+✔ REMOVE-corruption-ORDINARY:1 (3.31422ms)
+✔ REMOVE-technical-rollback-partial-notification (3.760493ms)
+✔ REMOVE-technical-rollback-partial-barrier (5.760013ms)
+✔ REMOVE-technical-rollback-missing-recovery-anchor (3.231435ms)
+✔ REMOVE-partial-fault-rolls-back-earlier-expiry (3.354751ms)
+✔ REMOVE-transfer-authority-remains-denied (2.347725ms)
+✔ REMOVE-returned-result-does-not-alias-receipt (3.18063ms)
+✔ REMOVE-invalid-body-status (2.600215ms)
+✔ REMOVE-invalid-body-negative-CAS (2.421416ms)
+✔ REMOVE-invalid-body-extra (2.418982ms)
+✔ REMOVE-invalid-body-missing-CAS (2.440304ms)
+ℹ tests 69
+ℹ suites 0
+ℹ pass 64
+ℹ fail 5
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 446.202323
+
+✖ failing tests:
+
+test at tests/membership/removal-command.test.mjs:83:30
+✖ REMOVE-B-ready-future=false (5.224046ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + DOMException [DataCloneError]: #<Object> could not be cloned.
+  +     at new DOMException (node:internal/per_context/domexception:76:18)
+  +     at structuredClone (node:internal/worker/js_transferable:127:26)
+  +     at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts:72:44
+  +     at Array.map (<anonymous>)
+  +     at removeRosterMember (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts:66:73)
+  +     at async run (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:89:12)
+  +     at async file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:95:179
+  +     at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+  +     at async Test.run (node:internal/test_runner/test:1409:7)
+  +     at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  - undefined
+  
+      at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:95:201
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: DataCloneError: #<Object> could not be cloned.
+        at new DOMException (node:internal/per_context/domexception:76:18)
+        at structuredClone (node:internal/worker/js_transferable:127:26)
+        at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts:72:44
+        at Array.map (<anonymous>)
+        at removeRosterMember (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts:66:73)
+        at async run (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:89:12)
+        at async file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:95:179
+        at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+        at async Test.run (node:internal/test_runner/test:1409:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:974:7),
+    expected: undefined,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-command.test.mjs:83:30
+✖ REMOVE-B-ready-future=true (4.189427ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + DOMException [DataCloneError]: #<Object> could not be cloned.
+  +     at new DOMException (node:internal/per_context/domexception:76:18)
+  +     at structuredClone (node:internal/worker/js_transferable:127:26)
+  +     at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts:72:44
+  +     at Array.map (<anonymous>)
+  +     at removeRosterMember (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts:66:73)
+  +     at async run (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:89:12)
+  +     at async file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:95:179
+  +     at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+  +     at async Test.run (node:internal/test_runner/test:1409:7)
+  +     at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  - undefined
+  
+      at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:95:201
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: DataCloneError: #<Object> could not be cloned.
+        at new DOMException (node:internal/per_context/domexception:76:18)
+        at structuredClone (node:internal/worker/js_transferable:127:26)
+        at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts:72:44
+        at Array.map (<anonymous>)
+        at removeRosterMember (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts:66:73)
+        at async run (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:89:12)
+        at async file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:95:179
+        at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+        at async Test.run (node:internal/test_runner/test:1409:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:974:7),
+    expected: undefined,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-command.test.mjs:83:30
+✖ REMOVE-matching-replay-historical-inactive (2.881098ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - {
+  -   kind: 'replayed',
+  -   membership: {
+  -     group_id: '00000000-0000-4000-8000-000000000040',
+  -     group_revision: 5,
+  -     membership_revision: 8,
+  -     revoked_unstarted_count: 2,
+  -     status: 'removed',
+  -     student_id: '00000000-0000-4000-8000-000000000001'
+  -   }
+  - }
+  
+      at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:125:124
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { kind: 'replayed', membership: { student_id: '00000000-0000-4000-8000-000000000001', group_id: '00000000-0000-4000-8000-000000000040', status: 'removed', group_revision: 5, membership_revision: 8, revoked_unstarted_count: 2 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-command.test.mjs:83:30
+✖ REMOVE-replay-later-regrant-preserved (2.978444ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+  + undefined
+  - {
+  -   kind: 'replayed',
+  -   membership: {
+  -     group_id: '00000000-0000-4000-8000-000000000040',
+  -     group_revision: 5,
+  -     membership_revision: 8,
+  -     revoked_unstarted_count: 2,
+  -     status: 'removed',
+  -     student_id: '00000000-0000-4000-8000-000000000001'
+  -   }
+  - }
+  
+      at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:126:363
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { kind: 'replayed', membership: { student_id: '00000000-0000-4000-8000-000000000001', group_id: '00000000-0000-4000-8000-000000000040', status: 'removed', group_revision: 5, membership_revision: 8, revoked_unstarted_count: 2 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/membership/removal-command.test.mjs:83:30
+✖ REMOVE-replay-does-not-expire-later-attempt (2.600736ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'kind')
+      at file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:127:272
+      at async TestContext.<anonymous> (file:///tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy/tests/membership/removal-command.test.mjs:84:6)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

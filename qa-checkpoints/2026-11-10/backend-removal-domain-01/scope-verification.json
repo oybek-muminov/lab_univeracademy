@@ -1,0 +1,44 @@
+{
+  "candidate": "REMOVAL-DOMAIN-01-local-v1",
+  "base_commit": "c458d7b9867323adbd970e5732cad152dab01211",
+  "base_tree": "b6d34db2c9430c36fe5604e9953be9d50497ab50",
+  "utc": "2026-11-10T05:06:45.095643+00:00",
+  "base_blob_count": 674,
+  "final_files": 676,
+  "unchanged_base_files": 672,
+  "modified_base_files": 2,
+  "new_files": 2,
+  "changed_paths": [
+    "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+    "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts",
+    "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-state.ts",
+    "workspaces/univeracademy/tests/membership/removal-command.test.mjs"
+  ],
+  "unexpected_paths": [],
+  "source_lock_snapshot_sha256": "cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee",
+  "frozen_packages_before": {
+    "bytes": 318726,
+    "sha256": "63e4a271331bfefed35fe1c5b1c80201732dc615eda9d7c37db6ec68231bc01e"
+  },
+  "frozen_packages_after": {
+    "bytes": 318726,
+    "sha256": "63e4a271331bfefed35fe1c5b1c80201732dc615eda9d7c37db6ec68231bc01e"
+  },
+  "frozen_packages_unchanged": true,
+  "frozen_counts": {
+    "shared_original": 393,
+    "removal_auth_original": 389,
+    "shared_reconciled": 697
+  },
+  "transfer_branch_byte_identical": true,
+  "transfer_branch": {
+    "base": "c458d7b9867323adbd970e5732cad152dab01211",
+    "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+    "bytes": 582,
+    "sha256": "e15c8e22bfe32867c3112a861468d5359cb98d00616ea32701a31f39966ce68d",
+    "byte_identical": true
+  },
+  "no_HTTP_port_guard_authority_or_Mini_changes": true,
+  "remote_write": false,
+  "verdict": "PASS"
+}

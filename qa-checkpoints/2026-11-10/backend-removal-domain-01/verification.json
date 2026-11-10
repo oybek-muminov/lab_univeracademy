@@ -1,0 +1,669 @@
+{
+  "candidate": "REMOVAL-DOMAIN-01-local-v1",
+  "base_commit": "c458d7b9867323adbd970e5732cad152dab01211",
+  "base_tree": "b6d34db2c9430c36fe5604e9953be9d50497ab50",
+  "claim_layer": "AUTHOR_LOCAL_ONLY_NOT_INDEPENDENT_QA",
+  "source_manifest": {
+    "bytes": 4774,
+    "sha256": "f32b27eb911f89ebea9caa82dbec22e38aee4d19eba4acbc4accddf44f29f63f"
+  },
+  "final_runs": {
+    "membership-frozen": {
+      "candidate": "REMOVAL-DOMAIN-01-local-v1",
+      "base_commit": "c458d7b9867323adbd970e5732cad152dab01211",
+      "base_tree": "b6d34db2c9430c36fe5604e9953be9d50497ab50",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/membership/removal-command.test.mjs",
+        "tests/membership/preflight-adapter.test.mjs",
+        "tests/membership/removal-active.test.mjs",
+        "tests/membership/shared-expiry-invariant.test.mjs"
+      ],
+      "cwd": "/tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-domain01-cprje2tf/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "literal_command": "UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-domain01-cprje2tf/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/membership/removal-command.test.mjs tests/membership/preflight-adapter.test.mjs tests/membership/removal-active.test.mjs tests/membership/shared-expiry-invariant.test.mjs",
+      "start_utc": "2026-11-10T05:01:48.929008+00:00",
+      "end_utc": "2026-11-10T05:01:51.444749+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 487,
+        "pass": 487,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/membership-frozen.log",
+        "bytes": 26244,
+        "sha256": "2fa1597cb9c54b23fd8e81a85a90d88cc729b07f473abfd7461a3fd31b5edd45"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/source-snapshots/cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee.json",
+        "bytes": 118674,
+        "sha256": "cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee",
+        "files": 676,
+        "start_utc": "2026-11-10T05:01:48.877284+00:00",
+        "end_utc": "2026-11-10T05:01:48.928877+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/source-snapshots/cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee.json",
+        "bytes": 118674,
+        "sha256": "cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee",
+        "files": 676,
+        "start_utc": "2026-11-10T05:01:51.444934+00:00",
+        "end_utc": "2026-11-10T05:01:51.500878+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+          "bytes": 3852,
+          "sha256": "8bf5a68911587a16177650087fea108dac32a5aef5bba53cb8250f584da761c5"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts",
+          "bytes": 7598,
+          "sha256": "3477846790c594c6baf96ea5a15a0be83bcde6f33328d57feb5c6917139e4ccb"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-state.ts",
+          "bytes": 5790,
+          "sha256": "b6699ac9973c0054bcf84ccd7437b3f411f66303a288e31a9c657e5ed641a40d"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-command.test.mjs",
+          "bytes": 40020,
+          "sha256": "76d693b6074f1b3e89eac36bbfb05ee65c3ac490754ca2182490f94d58523cc2"
+        }
+      ],
+      "unchanged_base_files": 672
+    },
+    "staff-student-final-bytes": {
+      "candidate": "REMOVAL-DOMAIN-01-local-v1",
+      "base_commit": "c458d7b9867323adbd970e5732cad152dab01211",
+      "base_tree": "b6d34db2c9430c36fe5604e9953be9d50497ab50",
+      "command": [
+        "node",
+        "--unhandled-rejections=strict",
+        "--test",
+        "tests/local-content-pilot.test.mjs",
+        "tests/first-test/http.test.mjs",
+        "tests/persistent-http/http.test.mjs",
+        "tests/enrollment/identity-staff.test.mjs"
+      ],
+      "cwd": "/tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-domain01-cprje2tf/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "literal_command": "UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-domain01-cprje2tf/npm-cache npm_config_update_notifier=false node --unhandled-rejections=strict --test tests/local-content-pilot.test.mjs tests/first-test/http.test.mjs tests/persistent-http/http.test.mjs tests/enrollment/identity-staff.test.mjs",
+      "start_utc": "2026-11-10T05:01:51.735174+00:00",
+      "end_utc": "2026-11-10T05:01:54.224958+00:00",
+      "exit": 0,
+      "counts": {
+        "tests": 39,
+        "pass": 39,
+        "fail": 0,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0
+      },
+      "log": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/staff-student-final-bytes.log",
+        "bytes": 5101,
+        "sha256": "5c76f20434059f20d0a243d01848b23889daa19055b7ad18d4467811cb3cbc7b"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/source-snapshots/cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee.json",
+        "bytes": 118674,
+        "sha256": "cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee",
+        "files": 676,
+        "start_utc": "2026-11-10T05:01:51.678821+00:00",
+        "end_utc": "2026-11-10T05:01:51.735057+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/source-snapshots/cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee.json",
+        "bytes": 118674,
+        "sha256": "cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee",
+        "files": 676,
+        "start_utc": "2026-11-10T05:01:54.225156+00:00",
+        "end_utc": "2026-11-10T05:01:54.273482+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+          "bytes": 3852,
+          "sha256": "8bf5a68911587a16177650087fea108dac32a5aef5bba53cb8250f584da761c5"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts",
+          "bytes": 7598,
+          "sha256": "3477846790c594c6baf96ea5a15a0be83bcde6f33328d57feb5c6917139e4ccb"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-state.ts",
+          "bytes": 5790,
+          "sha256": "b6699ac9973c0054bcf84ccd7437b3f411f66303a288e31a9c657e5ed641a40d"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-command.test.mjs",
+          "bytes": 40020,
+          "sha256": "76d693b6074f1b3e89eac36bbfb05ee65c3ac490754ca2182490f94d58523cc2"
+        }
+      ],
+      "unchanged_base_files": 672
+    },
+    "typecheck-final-bytes": {
+      "candidate": "REMOVAL-DOMAIN-01-local-v1",
+      "base_commit": "c458d7b9867323adbd970e5732cad152dab01211",
+      "base_tree": "b6d34db2c9430c36fe5604e9953be9d50497ab50",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "/tmp/univeracademy-removal-domain01-cprje2tf/repo/workspaces/univeracademy",
+      "environment_overrides": {
+        "UA_REMOVAL_COMMAND_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-command-cases.json",
+        "UA_SHARED_EXPIRY_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-shared-cases.json",
+        "UA_R1_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-adapter-cases.json",
+        "UA_1A_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-membership-traces.json",
+        "UA_R03_TRACE_PATH": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-membership-r03-cases.json",
+        "npm_config_cache": "/tmp/univeracademy-removal-domain01-cprje2tf/npm-cache",
+        "npm_config_update_notifier": "false"
+      },
+      "literal_command": "UA_REMOVAL_COMMAND_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-command-cases.json UA_SHARED_EXPIRY_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-shared-cases.json UA_R1_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-adapter-cases.json UA_1A_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-membership-traces.json UA_R03_TRACE_PATH=/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes-membership-r03-cases.json npm_config_cache=/tmp/univeracademy-removal-domain01-cprje2tf/npm-cache npm_config_update_notifier=false npm run typecheck",
+      "start_utc": "2026-11-10T05:01:54.500491+00:00",
+      "end_utc": "2026-11-10T05:01:56.212020+00:00",
+      "exit": 0,
+      "counts": {},
+      "log": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/typecheck-final-bytes.log",
+        "bytes": 353,
+        "sha256": "e4013abb72157734e39e32f023561333a9b407824cb68b45acb8a18f78d576cc"
+      },
+      "source_before": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/source-snapshots/cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee.json",
+        "bytes": 118674,
+        "sha256": "cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee",
+        "files": 676,
+        "start_utc": "2026-11-10T05:01:54.445140+00:00",
+        "end_utc": "2026-11-10T05:01:54.500384+00:00"
+      },
+      "source_after": {
+        "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/source-snapshots/cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee.json",
+        "bytes": 118674,
+        "sha256": "cdb3c145e1534a60fa02bddbcc0e648b6c96bb9d72772e653b5343616d18d6ee",
+        "files": 676,
+        "start_utc": "2026-11-10T05:01:56.212203+00:00",
+        "end_utc": "2026-11-10T05:01:56.263314+00:00"
+      },
+      "source_bytes_changed_during_run": false,
+      "candidate_files": [
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+          "bytes": 3852,
+          "sha256": "8bf5a68911587a16177650087fea108dac32a5aef5bba53cb8250f584da761c5"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts",
+          "bytes": 7598,
+          "sha256": "3477846790c594c6baf96ea5a15a0be83bcde6f33328d57feb5c6917139e4ccb"
+        },
+        {
+          "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-state.ts",
+          "bytes": 5790,
+          "sha256": "b6699ac9973c0054bcf84ccd7437b3f411f66303a288e31a9c657e5ed641a40d"
+        },
+        {
+          "path": "workspaces/univeracademy/tests/membership/removal-command.test.mjs",
+          "bytes": 40020,
+          "sha256": "76d693b6074f1b3e89eac36bbfb05ee65c3ac490754ca2182490f94d58523cc2"
+        }
+      ],
+      "unchanged_base_files": 672
+    }
+  },
+  "counts": {
+    "new_domain": 117,
+    "accepted_membership": 247,
+    "shared_expiry": 123,
+    "membership_run_total": 487,
+    "staff_student": 39,
+    "total_across_two_runs": 526,
+    "fail": 0,
+    "skip": 0
+  },
+  "case_results": {
+    "bytes": 2965751,
+    "sha256": "6ba642ffe1d8ce13bbe62b83f73829285ba08e5b578fd9738de4a86e36cd949f"
+  },
+  "important_traces": [
+    {
+      "case_id": "REMOVE-literal-success-full-state",
+      "guard_invocations": 1,
+      "effect_invocations": 1,
+      "writes": 27,
+      "events": [
+        "begin",
+        "commit"
+      ],
+      "outcome": {
+        "kind": "removed",
+        "membership": {
+          "student_id": "00000000-0000-4000-8000-000000000001",
+          "group_id": "00000000-0000-4000-8000-000000000040",
+          "status": "removed",
+          "group_revision": 5,
+          "membership_revision": 8,
+          "revoked_unstarted_count": 2
+        }
+      },
+      "ledger": [
+        "clock.after-lock",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "receipt.lookup:00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "guard.enter",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "write:set:/audit/1",
+        "write:set:/audit/length"
+      ],
+      "staged_equals_S0": false,
+      "committed_equals_S0": false
+    },
+    {
+      "case_id": "REMOVE-partial-fault-restores-ready-right",
+      "guard_invocations": 1,
+      "effect_invocations": 1,
+      "writes": 15,
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "Error",
+        "message": "SYNTHETIC_PARTIAL_EFFECT"
+      },
+      "ledger": [
+        "clock.after-lock",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "receipt.lookup:00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "guard.enter",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/recoveryRevocations",
+        "write:set:/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/recoveryState",
+        "write:set:/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/recovery",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status"
+      ],
+      "staged_equals_S0": false,
+      "committed_equals_S0": true
+    },
+    {
+      "case_id": "REMOVE-partial-fault-rolls-back-earlier-expiry",
+      "guard_invocations": 1,
+      "effect_invocations": 2,
+      "writes": 19,
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "Error",
+        "message": "SYNTHETIC_PARTIAL_EFFECT"
+      },
+      "ledger": [
+        "clock.after-lock",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "receipt.lookup:00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "guard.enter",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/attempts/00000000-0000-4000-8000-000000000900",
+        "write:set:/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+        "effect.enter",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status"
+      ],
+      "staged_equals_S0": false,
+      "committed_equals_S0": true
+    },
+    {
+      "case_id": "REMOVE-final-writer-rollback:receipt",
+      "guard_invocations": 1,
+      "effect_invocations": 1,
+      "writes": 25,
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "Error",
+        "message": "SYNTHETIC_PARTIAL_EFFECT"
+      },
+      "ledger": [
+        "clock.after-lock",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "receipt.lookup:00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "guard.enter",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001"
+      ],
+      "staged_equals_S0": false,
+      "committed_equals_S0": true
+    },
+    {
+      "case_id": "REMOVE-final-writer-rollback:audit",
+      "guard_invocations": 1,
+      "effect_invocations": 1,
+      "writes": 26,
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "Error",
+        "message": "SYNTHETIC_PARTIAL_EFFECT"
+      },
+      "ledger": [
+        "clock.after-lock",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "receipt.lookup:00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "guard.enter",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status",
+        "write:set:/notifications/unstarted/status",
+        "write:set:/approvals/old/status",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000011/reviewGate/barrier_revision",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000012/reviewGate/barrier_revision",
+        "write:set:/receipts/00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "write:set:/audit/1"
+      ],
+      "staged_equals_S0": false,
+      "committed_equals_S0": true
+    },
+    {
+      "case_id": "REMOVE-final-writer-rollback:arbitrary409",
+      "guard_invocations": 1,
+      "effect_invocations": 1,
+      "writes": 12,
+      "events": [
+        "begin",
+        "rollback"
+      ],
+      "outcome": {
+        "name": "Error",
+        "code": "SYNTHETIC_TECHNICAL_409",
+        "status": 409,
+        "message": "SYNTHETIC_PARTIAL_EFFECT"
+      },
+      "ledger": [
+        "clock.after-lock",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "receipt.lookup:00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "guard.enter",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000010/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000011/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/membershipEpoch",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000012/rostered",
+        "write:set:/student/grants/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000013/membershipEpoch",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/active",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/revision",
+        "write:set:/memberships/00000000-0000-4000-8000-000000000001/epoch",
+        "write:set:/student/people/00000000-0000-4000-8000-000000000001/profile/active_group_id",
+        "write:set:/groups/00000000-0000-4000-8000-000000000040/revision",
+        "effect.enter",
+        "write:set:/notifications/started/status"
+      ],
+      "staged_equals_S0": false,
+      "committed_equals_S0": true
+    },
+    {
+      "case_id": "REMOVE-call-order-replay",
+      "guard_invocations": 0,
+      "effect_invocations": 0,
+      "writes": 0,
+      "events": [
+        "begin",
+        "commit"
+      ],
+      "outcome": {
+        "kind": "replayed",
+        "membership": {
+          "student_id": "00000000-0000-4000-8000-000000000001",
+          "group_id": "00000000-0000-4000-8000-000000000040",
+          "status": "removed",
+          "group_revision": 5,
+          "membership_revision": 8,
+          "revoked_unstarted_count": 2
+        }
+      },
+      "ledger": [
+        "clock.after-lock",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "receipt.lookup:00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001"
+      ],
+      "staged_equals_S0": true,
+      "committed_equals_S0": true
+    },
+    {
+      "case_id": "REMOVE-inactive-active-precedence:0",
+      "guard_invocations": 1,
+      "effect_invocations": 1,
+      "writes": 7,
+      "events": [
+        "begin",
+        "commit"
+      ],
+      "outcome": {
+        "kind": "denied",
+        "code": "MEMBERSHIP_STATE_CONFLICT"
+      },
+      "ledger": [
+        "clock.after-lock",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "receipt.lookup:00000000-0000-4000-8000-000000000501/PUT//admin/groups/00000000-0000-4000-8000-000000000040/members/remove-0001",
+        "guard.enter",
+        "current-staff.read",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/attempts/00000000-0000-4000-8000-000000000900",
+        "write:set:/student/series/00000000-0000-4000-8000-000000000001/00000000-0000-4000-8000-000000000020/officialAttemptId",
+        "effect.enter",
+        "target.people.read:00000000-0000-4000-8000-000000000001",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/eligible_unresolved_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/active_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/recovery_ready_count",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_complete",
+        "write:set:/student/assignments/00000000-0000-4000-8000-000000000010/reviewGate/barrier_revision"
+      ],
+      "staged_equals_S0": false,
+      "committed_equals_S0": false
+    }
+  ],
+  "oracle_decisions": {
+    "inactive": "Accepted guard fully runs first (context, maintenance, CAS); recognized CAS wins, then inactive conflict before active wait. No guard edit.",
+    "replay": "Reauthorize original G and current affinity H under removal-specific Owner/Admin/explicit Teacher authority. Matching historical receipt before new-command G==H, CAS or expiry. No role substitution.",
+    "notifications": "Removal cancels every target old-epoch queued notice, including completed/historical assignments outside barrier set. Original transfer block byte-identical.",
+    "policy_B": "Successful removal revokes ready/future-ready current eligibility with window/anchor/generation/old-epoch revocation history. Wait/denial/replay preserve rights. Count2 refers only assignment grants."
+  },
+  "literal_oracle": "Known fixture changes assigned explicitly. Expected ordinary/expiry/result/epoch/receipt/audit/barrier states do not call candidate scoring, guard, canonicalization or reconcile helpers.",
+  "instrumentation": {
+    "direct_guard": "Debugger breakpoint at accepted removal-specific identity-first entry; accepted guard SHA remains c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b.",
+    "effect_entry": "Debugger breakpoint at reconcileMembershipEffects first statement.",
+    "writes": "Recording Proxy observes reachable JS set/define/delete attempts; ledger records clock, staff/target reads, receipt lookup, guard/effect entry and writes.",
+    "clone_boundary": "Harness-only registered-proxy unwrap before real native structuredClone; unknown proxies and functions still throw. Three separate native/plain controls use unmodified native clone. No candidate behavior is mocked.",
+    "limits": "Recording transaction double is not PostgreSQL durability, SQL/protection/RLS or live provider evidence; async precise coverage entries are not direct guard invocation counts. Native/plain controls do not instrument writes."
+  },
+  "first_failed_run": {
+    "path": "domain-01-run.json",
+    "classification": "5 harness failures (64 PASS); original log/trace/meta remain unchanged. Three production files equal first corrected run; new native controls/calibration added.",
+    "log": {
+      "bytes": 13367,
+      "sha256": "a419c769913e57424b34c88a6f4e2b95923d9795bd6e40b841255e9a8cf7594a"
+    },
+    "metadata": {
+      "bytes": 4071,
+      "sha256": "dae4e9eb5f6ca15c525d18fdbfd12c44266a219bb548cf7cd01ed445f7b685a9"
+    },
+    "mapping": {
+      "bytes": 23837,
+      "sha256": "1c10bce79b4b4ab6be3e46e8e86bd5cd59c72387a375fd1d850c2666ded774d0"
+    }
+  },
+  "nonfinal_runs": "domain-02..05 and earlier membership-final/staff-student-frozen/typecheck-frozen logs retain actual source bindings. Only final_runs above provide the final-byte claim. Later rerun was justified by EOF normalization and valid epoch-bound replay fixture refinement.",
+  "replay": {
+    "path": "replay-verification.json",
+    "bytes": 4064,
+    "sha256": "cf652adeaeec63d0bb496a28b73cc56edb3e408b8ee3125d0c0b3a60b31ab037"
+  },
+  "scope": {
+    "path": "scope-verification.json",
+    "bytes": 1711,
+    "sha256": "6fc47bdadf91fe195917d166179e2b009fb8dde5c83bccf13647e75175006d5c"
+  },
+  "remaining": {
+    "independent_QA": "PENDING for this new candidate",
+    "real_SQL_DB_RLS_provider": "NOT_RUN",
+    "R1_integration": "OPEN",
+    "removal_HTTP_DB_E2E": "BLOCKED",
+    "Mini_QA": "NOT_RUN; no repin",
+    "upload": "NOT_ATTEMPTED; no approval"
+  }
+}

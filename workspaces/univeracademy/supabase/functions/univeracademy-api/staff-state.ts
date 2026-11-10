@@ -34,6 +34,7 @@ export type MembershipChange = {
   oldEpoch: number; newEpoch: number; revokedAssignmentIds: string[]; now: number;
 };
 export type MembershipEffect = { kind: "transferred"; change: MembershipChange } |
+  { kind: "removed"; change: Omit<MembershipChange, "toGroupId"> } |
   { kind: "elapsed"; studentId: string; assignmentIds: string[]; demoIds: string[]; now: number };
 export type StaffState = {
   student: StudentState;

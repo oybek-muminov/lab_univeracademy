@@ -7,6 +7,15 @@ import type { MembershipEffect, StaffState } from "./staff-state.ts";
 // actual protected participant/recovery set and commit every change atomically.
 export async function reconcileMembershipEffects(state: StaffState, effect: MembershipEffect): Promise<void> {
   const s = state.student;
+  if (effect.kind === "removed") {
+    const c = effect.change;
+    for (const notification of Object.values(state.notifications))
+      if (notification.studentId === c.studentId && notification.epoch === c.oldEpoch && notification.status === "queued")
+        notification.status = "cancelled";
+    for (const approval of Object.values(state.approvals))
+      if (approval.studentId === c.studentId && approval.epoch === c.oldEpoch && approval.status === "pending")
+        approval.status = "stale";
+  }
   if (effect.kind === "transferred") {
     const c = effect.change;
     for (const notification of Object.values(state.notifications))
@@ -17,11 +26,12 @@ export async function reconcileMembershipEffects(state: StaffState, effect: Memb
       if (approval.studentId === c.studentId && approval.epoch === c.oldEpoch && approval.status === "pending")
         approval.status = "stale";
   }
-  const now = effect.kind === "transferred" ? effect.change.now : effect.now;
+  const now = effect.kind === "elapsed" ? effect.now : effect.change.now;
   for (const assignment of Object.values(s.assignments)) {
     const id = assignment.admission.assignmentId;
-    const affected = effect.kind === "transferred" ? effect.change.revokedAssignmentIds.includes(id) :
-      effect.assignmentIds.includes(id) || effect.demoIds.includes(assignment.published.demoId);
+    const affected = effect.kind === "elapsed" ?
+      effect.assignmentIds.includes(id) || effect.demoIds.includes(assignment.published.demoId) :
+      effect.change.revokedAssignmentIds.includes(id);
     if (!affected) continue;
     const unresolved = new Set<string>(), active = new Set<string>(), ready = new Set<string>();
     for (const [personId, grants] of Object.entries(s.grants)) {

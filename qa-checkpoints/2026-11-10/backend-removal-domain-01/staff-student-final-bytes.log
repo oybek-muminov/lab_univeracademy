@@ -1,0 +1,47 @@
+✔ empty storage creates an unprivileged student through HTTP; production constructor reads profile/empty exams after restart (85.996498ms)
+✔ invalid/expired queued login and a write failure leave no person, membership, replay or family behind (28.171424ms)
+✔ concurrent first logins create one canonical person; same initData is consumed once and only one fresh family stays active (34.785178ms)
+✔ unknown first-login COMMIT is never ACKed or auto-retried; fresh launch recovers the canonical identity (43.826498ms)
+✔ Qadam uniqueness retries collision without a seeded user or overwrite and exhausts only the configured bound (15.205678ms)
+✔ existing disabled or non-student identity is not recreated, enabled or silently granted the student role (34.179812ms)
+✔ staff authority comes from current normalized rows, never JWT metadata or a cached owner projection (58.770649ms)
+✔ group/subject/all-scope and Teacher approval readers reflect current revocation; roster stays independent (27.175804ms)
+✔ current mapping/access/approval/account/session revocation fails closed even with the same signed staff JWT (50.173336ms)
+✔ relational first test: fresh registration, Teacher question/duration/publish, Admin roster/assignment, student save/resume/result/history survive restart (241.141061ms)
+✔ draft question/metadata failures roll back revision, authored row, receipt and audit (199.066703ms)
+✔ membership failures roll back group/member revisions, epoch, person group, receipt and audit (200.131615ms)
+✔ assignment/grant/receipt/audit are atomic and retry never duplicates the grant (229.094922ms)
+✔ staff unknown COMMIT returns503, never ACKs/retries; same original command recovers exactly once (100.595573ms)
+✔ concurrent local draft CAS has one effect; published version is frozen and old receipt replay cannot edit it (50.228098ms)
+✔ Admin A test-only assignment succeeds, roster-only assignment fails, revoked/scope-invalid receipt replay has no effect (80.623843ms)
+✔ Teacher approval is current and private questions are not loaded after revoked approval (22.09277ms)
+✔ resource lock waits refresh DB clock, staff session and permission before private domain reads (63.907148ms)
+✔ assignment stale membership cannot grant; unsupported transfer never falls back to cached/RAM staff state (52.839796ms)
+✔ explicit multi-student grants are atomic; another member receives no implicit assignment (94.530395ms)
+✔ new HTTP publication, scoped Admin assignment, save/clear/resume/submit/result/history use no seed published version (155.760927ms)
+✔ Admin A remains independent of roster, with current capability/group/subject and revoked-replay checks on the new publication (79.36744ms)
+✔ new content routes retain Owner/approved-subject Teacher scope while Admin A grants assignment only (12.911684ms)
+✔ same-key publication/assignment retries use immutable snapshots and do not reapply authored changes (31.004149ms)
+✔ publish/assignment race never exposes a draft or partial snapshot; identical assignment can retry after publish (24.526655ms)
+✔ assignment commit failure rolls back snapshot/grants; lost ACK retries recover exactly one committed assignment (36.050269ms)
+✔ newly published active attempt blocks transfer before deadline, expires at equality and keeps answers/result/history (26.058672ms)
+✔ unstarted future recovery on the new published test is cancelled by transfer while exact history and receipt replay survive (26.383661ms)
+✔ start/transfer race for the newly published assignment has one serialized winner and no migrated running attempt (24.59658ms)
+✔ missing authoritative demo metadata or mismatched published identity cannot create a grant or substitute old content (26.956935ms)
+✔ HTTP login/profile -> new published exam/start -> save/clear -> separate process resume -> submit/result/history persists exact state (376.945311ms)
+✔ HTTP expiry at deadline commits ordinary+terminal state before409 and survives server restart (36.047334ms)
+✔ HTTP failed write and unknown COMMIT never ACK; reconciliation preserves committed revisions without reapplying command (39.844908ms)
+✔ HTTP new login replaces the old family while answer, deadline and membership persist; bad login and old refresh cannot revoke it (38.02604ms)
+✔ production rejects missing storage/auth/policy and explicit contract-double kind; staff without ports remains unavailable (18.662253ms)
+✔ invalid bearer never falls back to valid logout body; refresh reuse revokes only its own family across HTTP (28.028338ms)
+✔ configured staff HTTP verifies real offline JWT, current scoped capability and required live session under the storage lock (43.021201ms)
+✔ staff liveness/configuration/revocation and post-lock expiry fail closed; transport malformation remains400 (24.234475ms)
+✔ HTTP access uses current membership epoch and keeps foreign attempts hidden without changing immutable data (21.11005ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2452.20895

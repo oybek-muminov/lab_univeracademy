@@ -1,0 +1,112 @@
+{
+  "candidate": "REMOVAL-DOMAIN-01-local-v1",
+  "base_commit": "c458d7b9867323adbd970e5732cad152dab01211",
+  "base_tree": "b6d34db2c9430c36fe5604e9953be9d50497ab50",
+  "patch": {
+    "path": "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/candidate.patch",
+    "bytes": 51915,
+    "sha256": "6ecce43656795a2724e2533b7ee49b874c3b21c6858cca68f67af7ea1158a978"
+  },
+  "replay_cwd": "/tmp/univeracademy-removal-domain01-cprje2tf/patch-replay",
+  "distinct_from_test_cwd": true,
+  "sequential_after_typecheck": true,
+  "commands": [
+    {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=error-all",
+        "--check",
+        "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/candidate.patch"
+      ],
+      "cwd": "/tmp/univeracademy-removal-domain01-cprje2tf/patch-replay",
+      "start_utc": "2026-11-10T05:04:09.957171+00:00",
+      "end_utc": "2026-11-10T05:04:09.959474+00:00",
+      "exit": 0,
+      "output": "",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--whitespace=error-all",
+        "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/candidate.patch"
+      ],
+      "cwd": "/tmp/univeracademy-removal-domain01-cprje2tf/patch-replay",
+      "start_utc": "2026-11-10T05:04:09.959485+00:00",
+      "end_utc": "2026-11-10T05:04:09.961548+00:00",
+      "exit": 0,
+      "output": "",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "--check",
+        "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/candidate.patch"
+      ],
+      "cwd": "/tmp/univeracademy-removal-domain01-cprje2tf/patch-replay",
+      "start_utc": "2026-11-10T05:04:09.961778+00:00",
+      "end_utc": "2026-11-10T05:04:09.963403+00:00",
+      "exit": 0,
+      "output": "",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "/tmp/univeracademy-removal-domain01-cprje2tf/evidence/candidate.patch"
+      ],
+      "cwd": "/tmp/univeracademy-removal-domain01-cprje2tf/patch-replay",
+      "start_utc": "2026-11-10T05:04:09.963414+00:00",
+      "end_utc": "2026-11-10T05:04:09.965260+00:00",
+      "exit": 0,
+      "output": "",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "applied": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+      "bytes": 3852,
+      "sha256": "8bf5a68911587a16177650087fea108dac32a5aef5bba53cb8250f584da761c5"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts",
+      "bytes": 7598,
+      "sha256": "3477846790c594c6baf96ea5a15a0be83bcde6f33328d57feb5c6917139e4ccb"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-state.ts",
+      "bytes": 5790,
+      "sha256": "b6699ac9973c0054bcf84ccd7437b3f411f66303a288e31a9c657e5ed641a40d"
+    },
+    {
+      "path": "workspaces/univeracademy/tests/membership/removal-command.test.mjs",
+      "bytes": 40020,
+      "sha256": "76d693b6074f1b3e89eac36bbfb05ee65c3ac490754ca2182490f94d58523cc2"
+    }
+  ],
+  "reversed_existing": [
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-effects.ts",
+      "bytes": 3347,
+      "sha256": "e83249cec808cda4c3a66fb8bbd0dd327195737444a686eb8893391da92dd407"
+    },
+    {
+      "path": "workspaces/univeracademy/supabase/functions/univeracademy-api/staff-state.ts",
+      "bytes": 5721,
+      "sha256": "1b7fe85fe33f91e9be623cf716a6d6967f2291ddd73edca1bd6fa6972ddaa69b"
+    }
+  ],
+  "reversed_absent": [
+    "workspaces/univeracademy/supabase/functions/univeracademy-api/membership-removal.ts",
+    "workspaces/univeracademy/tests/membership/removal-command.test.mjs"
+  ],
+  "verdict": "PASS"
+}
