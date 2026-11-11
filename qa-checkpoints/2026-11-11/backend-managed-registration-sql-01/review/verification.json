@@ -1,0 +1,99 @@
+{
+  "format": "UA_MANAGED_REGISTRATION_SQL_STATIC_REVIEW_V1",
+  "status": "HOLD_TWO_INTEGRATION_GATES_NOT_COMPILED_NOT_EXECUTED",
+  "recorded_utc_after_test": "2026-11-11T22:36:33Z",
+  "source_base": {
+    "application": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "latest_accepted_application_overlay": "9a5679712b838a9ede1136926770a7914c3203bf",
+    "SQL_A": {
+      "repository": "oybek-muminov/lab_univeracademy",
+      "commit": "036beb26e7a6940827daa8691bc04f0326c7df6f",
+      "path": "qa-checkpoints/2026-11-11/architect-local-http-pg-flow01/bootstrap.review.sql",
+      "bytes": 34366,
+      "sha256": "3a0c4b7b121dab0d765a7096cf0212eea605847f6481d0508cd837b7defca9c4"
+    },
+    "activation_r3": {
+      "repository": "oybek-muminov/lab_univeracademy",
+      "commit": "4924d64333a4348bfcfa2e632cb6a1d8ccaae6b3",
+      "path": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r3/review/first-student-trusted-server.activation.review.sql",
+      "bytes": 60365,
+      "sha256": "165711ecb98d46b0aea87253b172e9c535d53090626f6574d106ae34643be52d"
+    }
+  },
+  "derivation": {
+    "bootstrap": "Three marked additive blocks, exact unified diff; removing additions restores original34366 bytes/hash. All30 schema tables and existing definitions unchanged.",
+    "registration": "Additive delta only; original activation unchanged; exactly4 column grants and4 RLS policies. All original schema/check/trigger/helper code unchanged.",
+    "new_schema_objects": {
+      "tables": 0,
+      "roles": 0,
+      "functions": 0,
+      "triggers": 0,
+      "policies": 4
+    },
+    "new_runtime_column_grants": [
+      "people INSERT(id,telegram_id,qadam_id,enabled,roles,profile)",
+      "memberships INSERT(person_id,active,epoch,revision,affinity_group_id)",
+      "clerk_identities INSERT(issuer,subject,person_id,enabled)",
+      "people UPDATE(profile)"
+    ],
+    "seeds": 0
+  },
+  "author_tests": {
+    "tool": "Python3.12.14 standard library",
+    "command": "python review/test_sql_derivations.py --activation-input inputs/activation.r3.frozen.sql --auth-source /workspace/ua-cloudflare-api-r2-hypy0wtq/repo/supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts --domain-source /workspace/ua-cloudflare-api-r2-hypy0wtq/repo/supabase/functions/univeracademy-api/storage/clerk-domain.ts -v",
+    "cwd": "/workspace/ua-managed-registration-01-20261111",
+    "exit": 0,
+    "tests": 11,
+    "passed": 11,
+    "failed": 0,
+    "observed_output_summary": "Ran 11 tests in 0.003s; OK",
+    "scope": "Static source preservation/shape/order checks only. No SQL parse, compilation, RLS evaluation, DB or real HTTP execution."
+  },
+  "integration_holds": [
+    {
+      "id": "MANAGED_RUNTIME_CREATOR_ADMIN_GATE",
+      "status": "OPEN_REQUIRES_ARCHITECT_DECISION",
+      "evidence": "Pinned PostgreSQL17.11 user.c creates implicit creator ADMIN TRUE/INHERIT FALSE/SET FALSE from bootstrap grantor. Activation r3 rejects ANY membership involving ua_runtime. Explicit owner self-grant/revoke does not remove this implicit membership. No grantor assumption, privilege escalation, CASCADE or silent activation-preflight relaxation implemented.",
+      "recommendation": "Independently review narrowly pinned creator-ADMIN-only exception (no SET/INHERIT/runtime authority) versus separately approved privileged bootstrap/removal path."
+    },
+    {
+      "id": "PROFILE_LEGACY_AUTH_PHASE",
+      "status": "OPEN_REQUIRES_NARROW_APPLICATION_SOURCE_CORRECTION",
+      "evidence": {
+        "file": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "bytes": 12978,
+        "sha256": "a251fafaad42995e298a9a1c62bec4ee37e6889d9ea68aeac2faaffbbea5c8ef",
+        "lines": "92-101",
+        "finding": "PATCH /me legacy perform keeps auth phase and lacks bound Clerk context before authRows.flush. New domain-only profile policy correctly denies this path."
+      },
+      "recommendation": "Authorize/lock/current-Clerk-validate profile mutation and enter domain with derived Clerk context before flush; retain final earliest-expiry/commit guards. No auth-phase write fallback."
+    }
+  ],
+  "not_run": [
+    "PostgreSQL parser/compilation/execution",
+    "Database or primary/provider reads/writes",
+    "RLS and real HTTP negative/positive cases enumerated in README",
+    "Corrected application profile source or activation-preflight code",
+    "SQL activation or executable run-packet composition",
+    "Dependency installation, credentials, deploy, upload or branch creation"
+  ],
+  "independent_acceptance": "NOT_REVIEWED;11 author static passes do not establish actual SQL/operator/runtime acceptance.",
+  "future_publication": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/managed-registration-sql-01-20261111",
+    "branch_absent_at_read": true,
+    "parent": "4924d64333a4348bfcfa2e632cb6a1d8ccaae6b3",
+    "parent_tree": "657dd9e450942137b78d3460ce46b8be782453ee",
+    "prefix": "qa-checkpoints/2026-11-11/backend-managed-registration-sql-01/",
+    "requires_separate_approval": true
+  },
+  "official_sources": [
+    "https://www.postgresql.org/docs/17/sql-grant.html",
+    "https://www.postgresql.org/docs/17/sql-revoke.html",
+    "https://www.postgresql.org/docs/17/role-membership.html",
+    "https://www.postgresql.org/docs/17/runtime-config-client.html#GUC-CREATEROLE-SELF-GRANT",
+    "https://www.postgresql.org/docs/17/sql-createpolicy.html",
+    "https://raw.githubusercontent.com/postgres/postgres/REL_17_11/src/backend/commands/user.c"
+  ],
+  "privacy": "SQL/source metadata only; no secret, credential, student/person/session data or connection read; no other worker workspace dependency."
+}

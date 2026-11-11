@@ -1,0 +1,76 @@
+--- frozen/bootstrap.review.sql
++++ review/bootstrap-managed-operator.review.sql
+@@ -8,11 +8,40 @@
+ END $review_guard$;
+ 
+ BEGIN;
++-- BEGIN MANAGED-OPERATOR PREFLIGHT ADDITION
++-- Inactive derivative: no SQL has been compiled or executed by this owner.
++-- The existing review guard and terminal ROLLBACK remain unchanged.
++-- Empty createrole_self_grant preserves PostgreSQL's implicit ADMIN-only grants;
++-- no operator attribute, server setting, or permanent runtime authority changes.
++DO $bootstrap_operator$ BEGIN
++  IF current_user IS DISTINCT FROM session_user
++    OR NOT EXISTS(SELECT 1 FROM pg_catalog.pg_roles WHERE rolname=current_user AND rolcreaterole AND NOT rolsuper)
++    OR current_setting('createrole_self_grant') IS DISTINCT FROM ''
++    OR NOT pg_catalog.has_database_privilege(current_user,current_database(),'CREATE') THEN
++    RAISE EXCEPTION 'MANAGED_BOOTSTRAP_OPERATOR_REQUIRED' USING ERRCODE='42501';
++  END IF;
++END $bootstrap_operator$;
++-- END MANAGED-OPERATOR PREFLIGHT ADDITION
+ -- The future migration operator must have reviewed CREATE ROLE and SET ROLE
+ -- authority. Neither role is a login, API role, or a credential-bearing account.
+ -- Fail on collisions; do not adopt or overwrite an existing role/schema.
+ CREATE ROLE ua_owner NOLOGIN NOINHERIT NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS;
+ CREATE ROLE ua_runtime NOLOGIN NOINHERIT NOSUPERUSER NOCREATEDB NOCREATEROLE NOREPLICATION NOBYPASSRLS;
++-- BEGIN MANAGED-OPERATOR OWNER WINDOW ADDITION
++-- Attribute this temporary membership to the actual creating operator, not to
++-- an assumed managed/bootstrap superuser. ADMIN is not added by this grant.
++GRANT ua_owner TO CURRENT_USER WITH ADMIN FALSE, INHERIT TRUE, SET TRUE GRANTED BY CURRENT_USER;
++DO $bootstrap_owner_ready$ BEGIN
++  IF NOT pg_catalog.pg_has_role(current_user,'ua_owner','SET')
++    OR NOT pg_catalog.pg_has_role(current_user,'ua_owner','USAGE')
++    OR NOT EXISTS(SELECT 1 FROM pg_catalog.pg_auth_members m
++      WHERE m.roleid='ua_owner'::regrole AND m.member=current_user::regrole
++        AND m.grantor=current_user::regrole AND NOT m.admin_option AND m.inherit_option AND m.set_option)
++    OR pg_catalog.pg_has_role('ua_runtime','ua_owner','MEMBER') THEN
++    RAISE EXCEPTION 'TEMPORARY_OWNER_AUTHORITY_MISSING' USING ERRCODE='42501';
++  END IF;
++END $bootstrap_owner_ready$;
++-- END MANAGED-OPERATOR OWNER WINDOW ADDITION
+ CREATE SCHEMA ua_private AUTHORIZATION ua_owner;
+ SET LOCAL ROLE ua_owner;
+ SET LOCAL search_path = pg_catalog, ua_private;
+@@ -494,4 +523,32 @@
+ -- No public schema changes, managed-schema writes, extension install, provider
+ -- actions, credential, seed, runtime activation, DELETE, TRUNCATE or CASCADE.
+ -- Even after removing the guard, this review artifact ends with ROLLBACK.
++-- BEGIN MANAGED-OPERATOR OWNER CLEANUP ADDITION
++SET LOCAL ROLE NONE;
++-- A future separately approved single transaction may insert the exact reviewed
++-- activation and registration bodies HERE, before this membership is revoked.
++-- No such bodies are included or executed by this baseline-only derivative.
++-- Standalone r3 activation still needs its owner-authority prerequisite, and
++-- its no-runtime-membership check conflicts with the implicit creator ADMIN
++-- grant. This artifact does not relax that unresolved activation prerequisite.
++REVOKE ua_owner FROM CURRENT_USER GRANTED BY CURRENT_USER RESTRICT;
++DO $bootstrap_owner_closed$ BEGIN
++  IF current_user IS DISTINCT FROM session_user
++    OR pg_catalog.pg_has_role(current_user,'ua_owner','SET')
++    OR pg_catalog.pg_has_role(current_user,'ua_owner','USAGE')
++    OR EXISTS(SELECT 1 FROM pg_catalog.pg_auth_members m
++      WHERE m.roleid='ua_owner'::regrole AND m.member=current_user::regrole
++        AND m.grantor=current_user::regrole)
++    OR pg_catalog.pg_has_role(current_user,'ua_runtime','SET')
++    OR pg_catalog.pg_has_role(current_user,'ua_runtime','USAGE')
++    OR pg_catalog.pg_has_role('ua_runtime','ua_owner','MEMBER')
++    OR EXISTS(SELECT 1 FROM pg_catalog.pg_roles
++      WHERE rolname IN ('ua_owner','ua_runtime')
++        AND (rolsuper OR rolbypassrls OR rolcanlogin OR rolinherit OR rolcreaterole OR rolcreatedb OR rolreplication)) THEN
++    RAISE EXCEPTION 'TEMPORARY_OWNER_AUTHORITY_SURVIVED' USING ERRCODE='42501';
++  END IF;
++END $bootstrap_owner_closed$;
++-- Implicit creator ADMIN-only grants are not temporary SET/INHERIT privileges.
++-- Their removal is not claimed; their activation-r3 conflict is an open gate.
++-- END MANAGED-OPERATOR OWNER CLEANUP ADDITION
+ ROLLBACK;

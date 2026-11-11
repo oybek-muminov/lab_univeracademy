@@ -1,0 +1,60 @@
+{
+  "format": "UA_MANAGED_REGISTRATION_SQL_REVIEW_PUBLICATION_V1",
+  "status": "INACTIVE_STATIC_ONLY_HOLD",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/managed-registration-sql-01-20261111",
+  "parent": "4924d64333a4348bfcfa2e632cb6a1d8ccaae6b3",
+  "parent_tree": "657dd9e450942137b78d3460ce46b8be782453ee",
+  "prefix": "qa-checkpoints/2026-11-11/backend-managed-registration-sql-01/",
+  "files": [
+    {
+      "path": "review/README.md",
+      "bytes": 10202,
+      "sha256": "1c7c57cb2e7a98b137c2582080638f27b2902e6c430e369c3e9b206142ca0b3c",
+      "mode": "100644"
+    },
+    {
+      "path": "review/bootstrap-managed-operator.diff",
+      "bytes": 4565,
+      "sha256": "e4ad21f347b5b5ff6495a39d5d171d2e380bbd6b47f9cd20fe294a27b799a15f",
+      "mode": "100644"
+    },
+    {
+      "path": "review/bootstrap-managed-operator.review.sql",
+      "bytes": 37906,
+      "sha256": "582b15c700bb9641a8247159e58ed82e0ad442c8b3fab443a12f71ce6313a1f7",
+      "mode": "100644"
+    },
+    {
+      "path": "review/clerk-registration.delta.review.sql",
+      "bytes": 12176,
+      "sha256": "8ae3afbd90b5e079dbf5b35513414263cf3174f8547fc27c3ac717a801e738ae",
+      "mode": "100644"
+    },
+    {
+      "path": "review/test_sql_derivations.py",
+      "bytes": 8342,
+      "sha256": "677bdfd782d57a31579c7a733be6c3cfc318d7a7ab77b1e8da75a8a9ab35cd7f",
+      "mode": "100644"
+    },
+    {
+      "path": "review/verification.json",
+      "bytes": 5675,
+      "sha256": "89e8dfd3382c894ae54fc9182fd11d6397eefe7996829d0f0822ee22c323f4cd",
+      "mode": "100644"
+    }
+  ],
+  "payload_bytes": 78866,
+  "inventory_encoding": "UTF8 compact sorted-key JSON of path-sorted file rows with bytes,mode,path,sha256; no LF",
+  "inventory_sha256": "a386dca742936252a95fe070a30d5b535ad8843722ee2581a094b8a8cb1333d8",
+  "excluded": [
+    "inputs/",
+    "derive.py",
+    "full app source",
+    "frozen original copies",
+    "private run packets"
+  ],
+  "approval_required": true,
+  "actual_SQL_execution": "NOT_RUN",
+  "independent_acceptance": "PENDING"
+}
