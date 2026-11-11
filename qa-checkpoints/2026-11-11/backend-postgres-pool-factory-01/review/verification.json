@@ -1,0 +1,207 @@
+{
+  "format": "UA-PRIVATE-POSTGRES-POOL-FACTORY-AUTHOR-VERIFICATION-v1",
+  "status": "LOCAL_AUTHOR_PASS_INDEPENDENT_IMPLEMENTATION_REVIEW_PENDING",
+  "utc": "2026-11-11T16:01:10.370740+00:00",
+  "application_base": {
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "backend_overlays": [
+    {
+      "commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+      "tree": "e5d482497a224d100d1bf6beedc66cd0fb7225b5",
+      "manifest": {
+        "bytes": 9641,
+        "sha256": "58fcac2b8f6bfef64ea414f2df48e8fa7e30e7bbceb94aa67b81f5026bfdfedf"
+      }
+    },
+    {
+      "commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+      "tree": "52fa0e104c6c644f32991267bffd6730ea32279a",
+      "manifest": {
+        "bytes": 6267,
+        "sha256": "5e7720b5a2d243deb2bd7d6b238689186052fd4011d1851f9ebd63d387409cba"
+      }
+    }
+  ],
+  "mini_overlay": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "commit": "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+    "tree": "29758acf5874959e9dc990744d7403f47379cb70",
+    "parent": "dc2bf835c7eee35e2471b2c14764957131543cfd",
+    "prefix": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/",
+    "manifest": {
+      "path": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/MANIFEST.json",
+      "bytes": 20409,
+      "sha256": "ae7b3e84dfe2ce78de4a06671ef4dee5c69bc535c6d4e3a8f4e780cc1ea0e208"
+    }
+  },
+  "guard_overlay": {
+    "commit": "ea0c3cd9c41a465bd5e5205b91f0141710a435fa",
+    "tree": "00f263839018ce126ae9c76f79af8697f0355873"
+  },
+  "assembly": {
+    "accepted_files": 279,
+    "candidate_files": 281,
+    "delta": "exactly_two_additions",
+    "existing_files_changed": 0,
+    "selected_closure": {
+      "paths": 119,
+      "bytes": 2135406
+    },
+    "selected_manifest": {
+      "path": "apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json",
+      "bytes": 34681,
+      "sha256": "fa30bc581d9f3708d766f98415957afd613e0919ec85d5860b96aebcc299dbb5"
+    },
+    "own_full_identity_receipt": {
+      "bytes": 50424,
+      "sha256": "25de414634912e00df8da4ad2ac76ff0ac7f59d03666d60fa78e43f81d58c8b6"
+    },
+    "receipt_note": "Local full receipt is retained. Reviewers reproduce from pinned immutable source manifests; no other owner workspace is a dependency."
+  },
+  "files": [
+    {
+      "path": "runtime/postgres-pool-factory.mjs",
+      "mode": "100644",
+      "bytes": 4920,
+      "sha256": "250d0eaac3b48833a8599070f346ea6aa746b40790f3740e7539f1a0c6c2034b"
+    },
+    {
+      "path": "tests/vercel-node/postgres-pool-factory.test.mjs",
+      "mode": "100644",
+      "bytes": 20244,
+      "sha256": "9445e70dd533eb0a6e6c57884e6fbd6d2111a0766f798a288c83ca9459b154d6"
+    }
+  ],
+  "tests": {
+    "focused": {
+      "command": [
+        "node",
+        "--test",
+        "tests/vercel-node/postgres-pool-factory.test.mjs"
+      ],
+      "cwd": "/workspace/ua-postgres-pool-factory-01-t9tibgb3/repo",
+      "utc_start": "2026-11-11T15:58:11.252762+00:00",
+      "utc_end": "2026-11-11T15:58:11.663721+00:00",
+      "exit": 0,
+      "runtime": "v24.22.1",
+      "log_bytes": 7692,
+      "log_sha256": "ad938504efb118a3617f9d4e169dd7f7e1c8b8816334c00fb2fc91573b134d31",
+      "passed": 110,
+      "failed": 0,
+      "log_path": "review/focused.final.log"
+    },
+    "regressions": {
+      "command": [
+        "node",
+        "--test",
+        "tests/vercel-node/pool-port.test.mjs",
+        "tests/vercel-node/production-options.test.mjs"
+      ],
+      "cwd": "/workspace/ua-postgres-pool-factory-01-t9tibgb3/repo",
+      "utc_start": "2026-11-11T15:50:08.085730+00:00",
+      "utc_end": "2026-11-11T15:50:08.537965+00:00",
+      "exit": 0,
+      "runtime": "v24.22.1",
+      "output": {
+        "path": "regressions.log",
+        "bytes": 7645,
+        "sha256": "842277ab9d1a85d2db125facb30b944e8de1a058ddc4e14e76ea2cf5fe5b3130"
+      },
+      "scope": "offline existing inert fake tests only; no SQL sent to any database",
+      "passed": 114,
+      "failed": 0,
+      "log_path": "review/regressions.log",
+      "timing": "Executed before implementation; all original dependencies remain exact final bytes."
+    },
+    "syntax": [
+      {
+        "command": [
+          "node",
+          "--check",
+          "runtime/postgres-pool-factory.mjs"
+        ],
+        "cwd": "/workspace/ua-postgres-pool-factory-01-t9tibgb3/repo",
+        "utc": "2026-11-11T15:58:58.177403+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "tests/vercel-node/postgres-pool-factory.test.mjs"
+        ],
+        "cwd": "/workspace/ua-postgres-pool-factory-01-t9tibgb3/repo",
+        "utc": "2026-11-11T15:58:58.225137+00:00",
+        "exit": 0,
+        "output": ""
+      }
+    ],
+    "semantic_root": "NOT_RUN: matching TypeScript5.9.3 absent in this owner copy",
+    "Mini_suites": "NOT_RUN: accepted suites not repeated"
+  },
+  "factory_policy": {
+    "input_fields": [
+      "host",
+      "port",
+      "database",
+      "user",
+      "password",
+      "ca"
+    ],
+    "ssl": "internally constructed ca plus rejectUnauthorized:true, normal pg DNS hostname verification",
+    "host_scope": "DNS only; IP/socket forms require separately reviewed adapter",
+    "ca": "Parseable CA PEM bundle; external trust approval/provisioning remains composition-owner responsibility",
+    "max": 1,
+    "min": 0,
+    "connectionTimeoutMillis": 5000,
+    "idleTimeoutMillis": 10000,
+    "PG_environment": "Reject names beginning PG; never read/log/clear values",
+    "idle_error": "Lifetime listener closes new acquisitions; pending client discarded once; existing checked-out work unchanged",
+    "shutdown": "Owner drains requests, awaits one cached close promise/end invocation; failures/uncertainty do not become success"
+  },
+  "covered_cases": [
+    "invalid/missing/unknown/inherited/getter/proxy configuration before construction",
+    "caller TLS/URI/callback precedence attempts rejected",
+    "PG name contamination including empty value and throwing value getter",
+    "no constructor connection/query/probe; calibrated network tripwires",
+    "sanitized constructor/acquisition/idle/shutdown failures and logging tripwires",
+    "single-client parameterization/name stripping and one release/discard",
+    "idle and close versus pending acquisition races; one disposal even if it throws",
+    "successful, pending, synchronous-throw, asynchronous-rejection and unconfirmed end results",
+    "existing final-commit guard and commit_unknown503 without retry"
+  ],
+  "security_review": {
+    "selected_material": "synthetic test credentials/actor ID and public Node bundled CA only; no real credentials, private keys, environment values or student records",
+    "automatic_or_manual": "Source/config/log paths reviewed locally; generic canaries are intentionally synthetic",
+    "publication": "NOT_RUN; no remote mutation"
+  },
+  "not_run": [
+    "real pg driver or TLS handshake",
+    "DB/SQL/RLS/authority/runtime/provider/integration/durability",
+    "root semantic TypeScript check",
+    "Mini suites",
+    "publication",
+    "backup"
+  ],
+  "remaining_prerequisites": [
+    "independent exact source review",
+    "matching root semantic compiler/dependencies in separately approved owner environment",
+    "supported SQL-callable Ed25519 verifier decision, later exact driver/private bootstrap and authorized runtime tests"
+  ],
+  "denied_pending_uncertain_operations": {
+    "denied": [],
+    "pending": [],
+    "uncertain": []
+  },
+  "official_sources": [
+    "https://node-postgres.com/features/ssl",
+    "https://node-postgres.com/apis/pool",
+    "https://raw.githubusercontent.com/brianc/node-postgres/pg@8.16.3/packages/pg/lib/connection-parameters.js",
+    "https://raw.githubusercontent.com/brianc/node-postgres/pg@8.16.3/packages/pg/lib/connection.js",
+    "https://raw.githubusercontent.com/nodejs/node/v24.11.0/lib/_tls_wrap.js",
+    "https://raw.githubusercontent.com/nodejs/node/v24.11.0/lib/net.js"
+  ]
+}

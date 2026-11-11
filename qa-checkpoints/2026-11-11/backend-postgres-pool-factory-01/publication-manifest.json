@@ -1,0 +1,77 @@
+{
+  "format": "UA-PRIVATE-POSTGRES-POOL-FACTORY-LAB-PROPOSAL-v1",
+  "status": "LOCAL_AUTHOR_PASS_ONLY_NOT_PUBLISHED_INDEPENDENT_REVIEW_PENDING",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/postgres-pool-factory-01-20261111",
+  "lab_parent": {
+    "commit": "ea0c3cd9c41a465bd5e5205b91f0141710a435fa",
+    "tree": "00f263839018ce126ae9c76f79af8697f0355873"
+  },
+  "checkpoint": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01/",
+  "application_base": {
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "assembly_order": [
+    "de2adf base270",
+    "80ee858 Backend15",
+    "3f6e3a6 Backend5",
+    "1273852 Mini2",
+    "ea0c3cd9 guard3"
+  ],
+  "files": [
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01/review/README.md",
+      "mode": "100644",
+      "bytes": 4870,
+      "sha256": "1ddeb12f24b77fe9375dd0211ccc681e2b1b6f468441dc7c96cdb203303eaeea"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01/review/focused.final.log",
+      "mode": "100644",
+      "bytes": 7692,
+      "sha256": "ad938504efb118a3617f9d4e169dd7f7e1c8b8816334c00fb2fc91573b134d31"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01/review/regressions.log",
+      "mode": "100644",
+      "bytes": 7645,
+      "sha256": "842277ab9d1a85d2db125facb30b944e8de1a058ddc4e14e76ea2cf5fe5b3130"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01/review/verification.json",
+      "mode": "100644",
+      "bytes": 8075,
+      "sha256": "1932f2a2b7b3caa618ada31aeddd7b5dc80afe929ae9d5e17d97a9e4c5c1651d"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01/runtime/postgres-pool-factory.mjs",
+      "mode": "100644",
+      "bytes": 4920,
+      "sha256": "250d0eaac3b48833a8599070f346ea6aa746b40790f3740e7539f1a0c6c2034b"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01/tests/vercel-node/postgres-pool-factory.test.mjs",
+      "mode": "100644",
+      "bytes": 20244,
+      "sha256": "9445e70dd533eb0a6e6c57884e6fbd6d2111a0766f798a288c83ca9459b154d6"
+    }
+  ],
+  "payload_file_count": 6,
+  "payload_bytes": 53446,
+  "payload_inventory_sha256": "6bdb44ab304235cd73e9feb2bfc166bb484bfe99f924338d033e5cf794fbd6b9",
+  "payload_inventory_recipe": "SHA256 of UTF8 JSON [{destination,bytes,sha256}], destination sorted, json.dumps(sort_keys=True,separators=(comma,colon)), no final newline",
+  "self_pin": "Exact byte count/SHA256 supplied externally; no internal self hash",
+  "author_tests": {
+    "focused": 110,
+    "regressions": 114,
+    "syntax": 2,
+    "semantic_root": "NOT_RUN"
+  },
+  "source_delta": "Exactly two additions; all279 accepted application files and119 selected closure paths/2135406 bytes unchanged",
+  "dependencies": "Existing Node24 builtins plus exact accepted source assembly; no npm dependency needed for the listed inert tests",
+  "data_screen": "Synthetic fixtures and public bundled CA only; no real credentials/environment values/student data",
+  "publication_gate": "Separate exact user approval required; branch absence and exact parent must be freshly rechecked immediately before any write",
+  "omitted": "Duplicate patch/archive/transport/base/dependency copies; reviewers derive diff from the two additions against the pinned immutable assembly",
+  "limits": "No real driver/TLS/DB/authority/provider/runtime/semantic typecheck or independent implementation acceptance; default bootstrap remains undefined503"
+}
