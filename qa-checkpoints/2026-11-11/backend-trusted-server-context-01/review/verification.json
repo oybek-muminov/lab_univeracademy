@@ -1,0 +1,517 @@
+{
+  "format": "UA-TRUSTED-SERVER-CONTEXT-SOURCE-REVIEW-v1",
+  "status": "AUTHOR_OFFLINE_PASS_INDEPENDENT_SOURCE_SQL_REVIEW_PENDING",
+  "recorded_utc": "2026-11-11T17:51:29.400592+00:00",
+  "application_base": {
+    "file_count": 281,
+    "bytes": 3571902,
+    "accepted_assembly_order": [
+      {
+        "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+        "repository": "oybek-muminov/UniverAcademy",
+        "kind": "whole accepted application source"
+      },
+      {
+        "commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+        "repository": "oybek-muminov/lab_univeracademy",
+        "prefix": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/",
+        "application_files_only": 15,
+        "exclude": "review, evidence and publication manifests are not application source"
+      },
+      {
+        "commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+        "repository": "oybek-muminov/lab_univeracademy",
+        "prefix": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/",
+        "application_files_only": 5,
+        "exclude": "review, evidence and publication manifests are not application source"
+      },
+      {
+        "commit": "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+        "repository": "oybek-muminov/lab_univeracademy",
+        "prefix": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/",
+        "application_files_only": 2,
+        "exclude": "review, evidence and publication manifests are not application source"
+      },
+      {
+        "commit": "ea0c3cd9c41a465bd5e5205b91f0141710a435fa",
+        "repository": "oybek-muminov/lab_univeracademy",
+        "prefix": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/",
+        "application_files_only": 3,
+        "exclude": "review, evidence and publication manifests are not application source"
+      },
+      {
+        "commit": "e0ad56dfda167a34eb4e4dd2e74b2d700808b49e",
+        "repository": "oybek-muminov/lab_univeracademy",
+        "prefix": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01/",
+        "application_files_only": 2,
+        "exclude": "review, evidence and publication manifests are not application source"
+      },
+      {
+        "commit": "d33088c5403fe78fd342f16d8dc05ba30a4b5d64",
+        "repository": "oybek-muminov/lab_univeracademy",
+        "prefix": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/",
+        "application_files_only": 2,
+        "exclude": "review, evidence and publication manifests are not application source"
+      }
+    ],
+    "inventory_recipe": "SHA256 UTF8 json.dumps(sorted path/bytes/sha256 rows, sort_keys=True,separators=(comma,colon)); no LF",
+    "inventory_sha256": "3812f609792a596d7b672c9a00a683ffa60ca1fa8ad2c744f4f165ebec6971c9"
+  },
+  "future_lab_target": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/trusted-server-context-01-20261111",
+    "parent": "d33088c5403fe78fd342f16d8dc05ba30a4b5d64",
+    "parent_tree": "5dd532f3d56e57f66e523939df364fb99fe7a8a2",
+    "prefix": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/",
+    "read_only_preproposal_check": "branch and prefix absent; source parent branch and root tree exact",
+    "write_status": "NOT_AUTHORIZED_NOT_ATTEMPTED"
+  },
+  "source_verification": {
+    "application_files": 283,
+    "unchanged_originals": 272,
+    "delta": [
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+        "bytes": 23067,
+        "sha256": "3a90df4cdb0f106ff7ec84413a4fe6f5569315fdf466557cf3e9f3b5eacb42a0",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 22634,
+          "sha256": "02de46baf1ec90442bfb958c264f4192948afe08c9c2b4e3e2a767eac2b445d2"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "bytes": 12978,
+        "sha256": "a251fafaad42995e298a9a1c62bec4ee37e6889d9ea68aeac2faaffbbea5c8ef",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 12856,
+          "sha256": "70b4a038642e4e92f53dd0bd8daf8b1de3108f4e698e4031e5eea5ac4727296a"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+        "bytes": 9696,
+        "sha256": "306fa158dafe2108b94b42ed3e152820f852a22e633f6bd76ab0301509f9cfd6",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 9620,
+          "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+        "bytes": 10298,
+        "sha256": "d1826ecb8082bbc93260ab0e13375524a828fbdc83e518f0d3e9eceb690ff20c",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 10068,
+          "sha256": "fe8022c4d48f76d90240669bfd1899df77ceccccc0aede9323a9c429c475cc4d"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+        "bytes": 5469,
+        "sha256": "3a612ea3f5dfc5bb79dd9d3b3f2955dcb5b0e3c1cdd6d4f03f2dea17a0d09d20",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 4619,
+          "sha256": "a8082c1a95534e5dbdedc5086ecae48b243b0d1cfdc68acf25dabfbc7197464a"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/trusted-server-context.ts",
+        "bytes": 3434,
+        "sha256": "5d34a1b02896f3465501391ddc0b5f16ec2ecd9528a2cf02b8a332e8da2c5ace",
+        "kind": "added"
+      },
+      {
+        "path": "tests/backend/student-prepared/memory-pool.mjs",
+        "bytes": 8971,
+        "sha256": "0ede9e037c97a2b36d569d52c56434309ae1efb86e6c95f0154e5460f4ac710e",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 8125,
+          "sha256": "e86bad4d27fc376b876a40c70c0d914f0427262987f0505dcd8a36fa34c689f4"
+        }
+      },
+      {
+        "path": "tests/backend/student-prepared/trusted-server-context.test.mjs",
+        "bytes": 18121,
+        "sha256": "11347c2f53d3c5bfe1e075e8a34754efac262f5871b1566a24ae06d22a22902f",
+        "kind": "added"
+      },
+      {
+        "path": "tests/clerk-auth/scoped-store.test.mjs",
+        "bytes": 14810,
+        "sha256": "e6cadda0c3bd454f1a65bae5f01edb64ca5b5d51a92a45b6fdaafcd5a276366c",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 14224,
+          "sha256": "e301a111d26b64fc2de1bdb9d62a9c0f3308d4c7401c351ea828cfc7bfe52c64"
+        }
+      },
+      {
+        "path": "tests/vercel-node/pool-port.test.mjs",
+        "bytes": 3833,
+        "sha256": "493899b7c65dae3a4146a9999a8ff4e5948c550e513b25b89c5ac958f1721a9d",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 3692,
+          "sha256": "8cad9affbcab42ca1daa74da7153de4f8b3d44b443120f199fb4df96216c98a2"
+        }
+      },
+      {
+        "path": "tests/vercel-node/postgres-pool-factory.test.mjs",
+        "bytes": 30151,
+        "sha256": "0c40ca1e4f1130cd30cb683aa870df84871706b544a28f9c0c54bfc6cb1aa801",
+        "kind": "modified",
+        "preimage": {
+          "bytes": 30053,
+          "sha256": "2198b4f2b86a7baba71317ad49d29cd11d6a36447996a33fe0f55d5ba1062ed3"
+        }
+      }
+    ],
+    "inactive_SQL": {
+      "path": "review/first-student-trusted-server.activation.review.sql",
+      "bytes": 56366,
+      "sha256": "322cfca8728ee6fe739bc99cf82f13632a45461b89850cfe85826dca27d5d387",
+      "scope": "inactive text only; NOT_COMPILED/NOT_RUN"
+    },
+    "syntax": [
+      {
+        "command": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts"
+        ],
+        "utc": "2026-11-11T17:44:13.476755+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/storage/clerk-domain.ts"
+        ],
+        "utc": "2026-11-11T17:44:13.520823+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+        ],
+        "utc": "2026-11-11T17:44:13.568868+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/storage/prepared-student.ts"
+        ],
+        "utc": "2026-11-11T17:44:13.603029+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/storage/student-scope.ts"
+        ],
+        "utc": "2026-11-11T17:44:13.645201+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/storage/trusted-server-context.ts"
+        ],
+        "utc": "2026-11-11T17:44:13.678118+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "tests/backend/student-prepared/memory-pool.mjs"
+        ],
+        "utc": "2026-11-11T17:44:13.714866+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "tests/backend/student-prepared/trusted-server-context.test.mjs"
+        ],
+        "utc": "2026-11-11T17:44:13.749507+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "tests/clerk-auth/scoped-store.test.mjs"
+        ],
+        "utc": "2026-11-11T17:44:13.782950+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "tests/vercel-node/pool-port.test.mjs"
+        ],
+        "utc": "2026-11-11T17:44:13.811357+00:00",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "tests/vercel-node/postgres-pool-factory.test.mjs"
+        ],
+        "utc": "2026-11-11T17:44:13.839275+00:00",
+        "exit": 0,
+        "output": ""
+      }
+    ],
+    "selected_manifest_unchanged": {
+      "bytes": 34681,
+      "sha256": "fa30bc581d9f3708d766f98415957afd613e0919ec85d5860b96aebcc299dbb5"
+    },
+    "selected_count": 119,
+    "selected_bytes": 2135406,
+    "expected_stale_pins": [
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+        "expected": {
+          "bytes": 22634,
+          "sha256": "02de46baf1ec90442bfb958c264f4192948afe08c9c2b4e3e2a767eac2b445d2"
+        },
+        "actual": {
+          "bytes": 23067,
+          "sha256": "3a90df4cdb0f106ff7ec84413a4fe6f5569315fdf466557cf3e9f3b5eacb42a0"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "expected": {
+          "bytes": 12856,
+          "sha256": "70b4a038642e4e92f53dd0bd8daf8b1de3108f4e698e4031e5eea5ac4727296a"
+        },
+        "actual": {
+          "bytes": 12978,
+          "sha256": "a251fafaad42995e298a9a1c62bec4ee37e6889d9ea68aeac2faaffbbea5c8ef"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+        "expected": {
+          "bytes": 9620,
+          "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f"
+        },
+        "actual": {
+          "bytes": 9696,
+          "sha256": "306fa158dafe2108b94b42ed3e152820f852a22e633f6bd76ab0301509f9cfd6"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+        "expected": {
+          "bytes": 10068,
+          "sha256": "fe8022c4d48f76d90240669bfd1899df77ceccccc0aede9323a9c429c475cc4d"
+        },
+        "actual": {
+          "bytes": 10298,
+          "sha256": "d1826ecb8082bbc93260ab0e13375524a828fbdc83e518f0d3e9eceb690ff20c"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+        "expected": {
+          "bytes": 4619,
+          "sha256": "a8082c1a95534e5dbdedc5086ecae48b243b0d1cfdc68acf25dabfbc7197464a"
+        },
+        "actual": {
+          "bytes": 5469,
+          "sha256": "3a612ea3f5dfc5bb79dd9d3b3f2955dcb5b0e3c1cdd6d4f03f2dea17a0d09d20"
+        }
+      },
+      {
+        "path": "tests/backend/student-prepared/memory-pool.mjs",
+        "expected": {
+          "bytes": 8125,
+          "sha256": "e86bad4d27fc376b876a40c70c0d914f0427262987f0505dcd8a36fa34c689f4"
+        },
+        "actual": {
+          "bytes": 8971,
+          "sha256": "0ede9e037c97a2b36d569d52c56434309ae1efb86e6c95f0154e5460f4ac710e"
+        }
+      },
+      {
+        "path": "tests/clerk-auth/scoped-store.test.mjs",
+        "expected": {
+          "bytes": 14224,
+          "sha256": "e301a111d26b64fc2de1bdb9d62a9c0f3308d4c7401c351ea828cfc7bfe52c64"
+        },
+        "actual": {
+          "bytes": 14810,
+          "sha256": "e6cadda0c3bd454f1a65bae5f01edb64ca5b5d51a92a45b6fdaafcd5a276366c"
+        }
+      },
+      {
+        "path": "tests/vercel-node/pool-port.test.mjs",
+        "expected": {
+          "bytes": 3692,
+          "sha256": "8cad9affbcab42ca1daa74da7153de4f8b3d44b443120f199fb4df96216c98a2"
+        },
+        "actual": {
+          "bytes": 3833,
+          "sha256": "493899b7c65dae3a4146a9999a8ff4e5948c550e513b25b89c5ac958f1721a9d"
+        }
+      }
+    ],
+    "new_unpinned_application_paths": [
+      "supabase/functions/univeracademy-api/storage/trusted-server-context.ts",
+      "tests/backend/student-prepared/trusted-server-context.test.mjs"
+    ],
+    "semantic_root": "NOT_RUN: matching TypeScript5.9.3 absent",
+    "tsc_on_path": null,
+    "local_typescript_package": false,
+    "sql": "NOT_COMPILED/NOT_RUN",
+    "cloudflare": "NOT_TESTED; no Worker bootstrap or driver compatibility implied"
+  },
+  "tests": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/backend/student-prepared/trusted-server-context.test.mjs"
+      ],
+      "cwd": "/workspace/ua-trusted-server-context-01-x6dzss5f/repo",
+      "utc_start": "2026-11-11T17:41:13.467681+00:00",
+      "utc_end": "2026-11-11T17:41:13.838687+00:00",
+      "exit": 0,
+      "log": "focused.final.log",
+      "log_bytes": 4150,
+      "log_sha256": "5c4e73f8a1ef9b3a9b965e56fcd8ccc482902bc937d5f2239e6d15f96bf8b322"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/backend/student-prepared/flow.test.mjs",
+        "tests/backend/student-prepared/clerk.test.mjs",
+        "tests/backend/student-prepared/routing-receipts.test.mjs",
+        "tests/clerk-auth/scoped-store.test.mjs",
+        "tests/vercel-node/pool-port.test.mjs",
+        "tests/vercel-node/production-options.test.mjs",
+        "tests/vercel-node/postgres-pool-factory.test.mjs"
+      ],
+      "cwd": "/workspace/ua-trusted-server-context-01-x6dzss5f/repo",
+      "utc_start": "2026-11-11T17:41:13.838753+00:00",
+      "utc_end": "2026-11-11T17:41:14.701323+00:00",
+      "exit": 0,
+      "log": "regressions.final.log",
+      "log_bytes": 21111,
+      "log_sha256": "19de4b89e45d68b4b143cabcf96dd0e0682630682a6757060e239e8683c437e1"
+    }
+  ],
+  "test_counts": {
+    "focused": 37,
+    "regressions": 288,
+    "total": 325,
+    "failed": 0
+  },
+  "test_runtime": {
+    "node": "v24.22.1",
+    "external_dependencies_for_listed_tests": [],
+    "semantic_TypeScript_5_9_3": "NOT_RUN: not installed in this owner environment"
+  },
+  "preservation": {
+    "unchanged_original_files": 272,
+    "modified_original_files": 9,
+    "new_application_files": 2,
+    "candidate_application_files": 283,
+    "Mini_UI_contracts_and_guard_code_manifests": "unchanged",
+    "production_pool_r2": "unchanged; only its fake test SQL recognizer was adapted",
+    "default_api_bootstrap": "unchanged configuration:undefined; API remains closed503",
+    "frozen_sql_inputs": [
+      {
+        "identity": "frozen SQL A bootstrap.review.sql",
+        "bytes": 34366,
+        "sha256": "3a0c4b7b121dab0d765a7096cf0212eea605847f6481d0508cd837b7defca9c4"
+      },
+      {
+        "identity": "frozen SQL B postapply-catalog.review.sql",
+        "bytes": 25379,
+        "sha256": "6fab5ae262dd2b6f3314bf7962c3d667d901abd26d32061d80a2987c7fac2b36"
+      }
+    ]
+  },
+  "context_boundary": {
+    "kind": "CONVENTIONAL_TRUSTED_SERVER_ASSERTION",
+    "keys": [
+      "ua.phase",
+      "ua.person_id",
+      "ua.person_ids",
+      "ua.clerk_issuer",
+      "ua.clerk_subject",
+      "ua.telegram_id"
+    ],
+    "reset": "six parameterized transaction-local set_config calls in one query immediately after each BEGIN",
+    "phases": [
+      "deny",
+      "auth",
+      "domain",
+      "exchange"
+    ],
+    "not": "independent authentication against possession of DB credentials"
+  },
+  "scope_notes": [
+    "clerk-domain.ts has its own BEGIN in the hint locator and therefore needs the same reset/auth lifetime; this is the one extra adapter beyond the original four-file list",
+    "The inactive SQL is a derivative, not an edit to SQL A/B, and changes helper ownership/security/RLS catalog identities",
+    "General first-identity provisioning and identity reassignment remain unavailable under the first-pilot grants; disabled mapping rejects before provisioning",
+    "Matching fake-constructor/unit tests do not prove PostgreSQL syntax, ACL/RLS behavior, real-driver behavior or Cloudflare compatibility"
+  ],
+  "not_run": [
+    "SQL compilation/execution",
+    "PostgreSQL positive/cross-person RLS and invariants",
+    "real driver/TLS/DB",
+    "root semantic TypeScript5.9.3",
+    "Cloudflare Worker transport/Node compatibility/Hyperdrive/Clerk integration",
+    "primary/provider/activation/deployment",
+    "backup"
+  ],
+  "remaining_prerequisites": [
+    "Independent exact candidate source/SQL review and separately approved lab publication",
+    "Matching semantic compiler check",
+    "Separately reviewed SQL compilation/run packet with exact frozen SQL A dependency, helper role/ownership/SET ROLE operator authority, synthetic fixtures and target/limits/cleanup approval",
+    "Real restricted-role HTTP-to-PostgreSQL two-actor positive/negative flow including same-answer UPDATE, stale denial and final expiry/commit guards",
+    "Separate Cloudflare composition/bootstrap/driver decision; existing Node/Vercel entrypoint is not a Workers deployment"
+  ],
+  "privacy": "Selected source and logs reviewed for real credentials/private keys/personal or student data; only synthetic fixture identifiers and public provenance are included; no environment values read",
+  "denied_pending_uncertain_actions": {
+    "denied": [],
+    "uncertain": [],
+    "pending": [
+      "publication requires separate exact approval; no external write attempted"
+    ]
+  }
+}

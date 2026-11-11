@@ -1,0 +1,120 @@
+{
+  "format": "UA-LAB-PUBLICATION-MANIFEST-v1",
+  "status": "LOCAL_AUTHOR_CANDIDATE_INDEPENDENT_REVIEW_PENDING_NO_PUBLICATION_AUTHORIZED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/trusted-server-context-01-20261111",
+  "sole_parent": "d33088c5403fe78fd342f16d8dc05ba30a4b5d64",
+  "parent_tree": "5dd532f3d56e57f66e523939df364fb99fe7a8a2",
+  "prefix": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/",
+  "main_application_source_base": "de2adf023428a374f075faa421ece9e1deafaf36",
+  "accepted_application_assembly": {
+    "files": 281,
+    "bytes": 3571902,
+    "last_overlay": "d33088c5403fe78fd342f16d8dc05ba30a4b5d64"
+  },
+  "payload_file_count": 16,
+  "payload_bytes": 246831,
+  "payload_inventory_sha256": "2863aeb99733860c14dacef19148751cc5ce2a02875f5f252ffd07276bb394e6",
+  "inventory_recipe": "UTF8 json.dumps([{destination,bytes,sha256},...],sort_keys=True,separators=(comma,colon)); rows sorted destination; no LF",
+  "files": [
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/review/README.md",
+      "bytes": 5492,
+      "sha256": "d4ae47a714828d259d49b32a0767a00efd11ad2a21301e42a44e3c2075b896c4",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/review/first-student-trusted-server.activation.review.sql",
+      "bytes": 56366,
+      "sha256": "322cfca8728ee6fe739bc99cf82f13632a45461b89850cfe85826dca27d5d387",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/review/focused.final.log",
+      "bytes": 4150,
+      "sha256": "5c4e73f8a1ef9b3a9b965e56fcd8ccc482902bc937d5f2239e6d15f96bf8b322",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/review/regressions.final.log",
+      "bytes": 21111,
+      "sha256": "19de4b89e45d68b4b143cabcf96dd0e0682630682a6757060e239e8683c437e1",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/review/verification.json",
+      "bytes": 18884,
+      "sha256": "6946354a3a4fca920cb6f1ee21284e398b2c682cd3c41016dc57c6d810b5f8f4",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "bytes": 23067,
+      "sha256": "3a90df4cdb0f106ff7ec84413a4fe6f5569315fdf466557cf3e9f3b5eacb42a0",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "bytes": 12978,
+      "sha256": "a251fafaad42995e298a9a1c62bec4ee37e6889d9ea68aeac2faaffbbea5c8ef",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+      "bytes": 9696,
+      "sha256": "306fa158dafe2108b94b42ed3e152820f852a22e633f6bd76ab0301509f9cfd6",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "bytes": 10298,
+      "sha256": "d1826ecb8082bbc93260ab0e13375524a828fbdc83e518f0d3e9eceb690ff20c",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "bytes": 5469,
+      "sha256": "3a612ea3f5dfc5bb79dd9d3b3f2955dcb5b0e3c1cdd6d4f03f2dea17a0d09d20",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/supabase/functions/univeracademy-api/storage/trusted-server-context.ts",
+      "bytes": 3434,
+      "sha256": "5d34a1b02896f3465501391ddc0b5f16ec2ecd9528a2cf02b8a332e8da2c5ace",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/tests/backend/student-prepared/memory-pool.mjs",
+      "bytes": 8971,
+      "sha256": "0ede9e037c97a2b36d569d52c56434309ae1efb86e6c95f0154e5460f4ac710e",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/tests/backend/student-prepared/trusted-server-context.test.mjs",
+      "bytes": 18121,
+      "sha256": "11347c2f53d3c5bfe1e075e8a34754efac262f5871b1566a24ae06d22a22902f",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/tests/clerk-auth/scoped-store.test.mjs",
+      "bytes": 14810,
+      "sha256": "e6cadda0c3bd454f1a65bae5f01edb64ca5b5d51a92a45b6fdaafcd5a276366c",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/tests/vercel-node/pool-port.test.mjs",
+      "bytes": 3833,
+      "sha256": "493899b7c65dae3a4146a9999a8ff4e5948c550e513b25b89c5ac958f1721a9d",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/tests/vercel-node/postgres-pool-factory.test.mjs",
+      "bytes": 30151,
+      "sha256": "0c40ca1e4f1130cd30cb683aa870df84871706b544a28f9c0c54bfc6cb1aa801",
+      "mode": "100644"
+    }
+  ],
+  "self_pin": "This manifest is excluded from payload inventory; use its separately reported external byte count and SHA256",
+  "scope": "11 application overlay files + inactive SQL review text + README/verification + two original author logs; no source archive, patch, transport or dependencies",
+  "application_tests": "37 focused +288 regression author offline PASS; SQL/DB/semantic/Cloudflare NOT_RUN/NOT_TESTED"
+}

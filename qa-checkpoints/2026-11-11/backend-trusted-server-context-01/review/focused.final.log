@@ -1,0 +1,45 @@
+✔ each BEGIN resets all six keys before auth work, on the same client and using only local parameterized values (5.61868ms)
+✔ missing JS scope and premature domain/exchange transitions deny before SQL access (1.232646ms)
+✔ invalid participant scope [] denies before person-context query (0.54085ms)
+✔ invalid participant scope ["00000000-0000-4000-8000-000000000002","00000000-0000-4000-8000-000000000001"] denies before person-context query (0.407821ms)
+✔ invalid participant scope ["00000000-0000-4000-8000-000000000001","00000000-0000-4000-8000-000000000001"] denies before person-context query (0.425197ms)
+✔ invalid participant scope ["AAAAAAAA-AAAA-4AAA-8AAA-AAAAAAAAAAAA"] denies before person-context query (0.343104ms)
+✔ invalid participant scope ["00000000-0000-4000-8000-000000000001\n"] denies before person-context query (0.383514ms)
+✔ invalid participant scope [null] denies before person-context query (0.37408ms)
+✔ invalid participant scope [null] denies before person-context query (0.376985ms)
+✔ invalid locator digest  rejects before lookup (0.552778ms)
+✔ invalid locator digest AAAAAAAA rejects before lookup (0.204717ms)
+✔ invalid locator digest aaaaaaaa rejects before lookup (0.141062ms)
+✔ invalid locator digest 00000000 rejects before lookup (0.216665ms)
+✔ locator absent cannot become authority (0.886938ms)
+✔ locator duplicate cannot become authority (0.318457ms)
+✔ locator invalid UUID cannot become authority (0.350835ms)
+✔ locator extra data cannot become authority (0.456814ms)
+✔ person helper must return the complete exact requested set [] (0.524075ms)
+✔ person helper must return the complete exact requested set [{"id":"00000000-0000-4000-8000-000000000002"}] (1.300027ms)
+✔ person helper must return the complete exact requested set [{"id":"00000000-0000-4000-8000-000000000001"},{"id":"00000000-0000-4000-8000-000000000001"}] (0.250245ms)
+✔ failure at ua_context_reset rolls back, closes scope, and the next pooled request resets again (0.598767ms)
+✔ failure at ua_context_phase rolls back, closes scope, and the next pooled request resets again (0.252698ms)
+✔ failure at ua_people_context rolls back, closes scope, and the next pooled request resets again (0.221622ms)
+✔ failure at ua_people_lock rolls back, closes scope, and the next pooled request resets again (0.257586ms)
+✔ failure at ua_clock rolls back, closes scope, and the next pooled request resets again (0.334231ms)
+✔ rollback failure discards once; COMMIT uncertainty stays503/commit_unknown without retry (0.468362ms)
+✔ compatibility proof locator resets its own BEGIN and rolls back before releasing the same client (34.042805ms)
+✔ disabled mapping is not absence: no provisioning, person lock, liveness or domain work (1.677031ms)
+✔ authoritative absence remains distinct; source can propose a new ID but this pilot SQL grants no provisioning (3.641053ms)
+✔ Clerk proof, identity advisory lock, mapping helper, person helper and current authorization precede exchange (7.938449ms)
+✔ malformed mapping helper output denies before allocation [{"person_id":"00000000-0000-4000-8000-000000000001","enabled":"true"}] (0.372518ms)
+✔ malformed mapping helper output denies before allocation [{"person_id":"00000000-0000-4000-8000-000000000001","enabled":true,"extra":1}] (0.40761ms)
+✔ malformed mapping helper output denies before allocation [{"person_id":"00000000-0000-4000-8000-000000000001","enabled":true},{"person_id":"00000000-0000-4000-8000-000000000002","enabled":true}] (0.256594ms)
+✔ client identity/phase headers cannot override the authoritative person hint; domain follows locks and authentication reads (11.065463ms)
+✔ failed current authorization never enters domain or reads private assignments (2.108398ms)
+✔ expiry at the domain-phase statement still denies before the first private domain read (1.927988ms)
+✔ inactive SQL text retains guard/rollback, exact three helpers, locked NOLOGIN owners and complete invariant-read scope (1.899065ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 311.854619
