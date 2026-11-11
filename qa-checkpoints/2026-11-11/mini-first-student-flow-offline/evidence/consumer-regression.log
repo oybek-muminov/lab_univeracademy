@@ -1,0 +1,46 @@
+✔ pending answer is not confirmed; clearing uses the next revision (1094.469393ms)
+✔ lost save acknowledgement requires a read before another save or submit (1088.809615ms)
+✔ CAS conflict preserves both intents until explicit selection at fresh revision (1264.691779ms)
+✔ new generation drops the old unsent draft and answers (1266.868333ms)
+✔ failed read blocks writes; local clock never declares a terminal result (1083.512846ms)
+✔ uncertain submit retains its key, blocks edits and resolves with the same key (1452.231856ms)
+✔ current and history carry the selected assignment and reject cross-assignment content (1447.1634ms)
+✔ all lifecycle states are distinct; ready/cancelled/lapsed do not fetch or invent a result (2356.173098ms)
+✔ ready recovery only starts after explicit confirmation (1087.451628ms)
+✔ reload reads authoritative state and restores an uncertain submit key without replaying edits (1811.680903ms)
+✔ server Retry-After delays explicit retry; auth and scope errors conceal protected content (3801.059492ms)
+✔ ordinary result does not wait for, add or inherit a nullable bonus (1809.733302ms)
+✔ missing ordinary at terminal completion is an invariant error rather than a zero or calculating result (1268.499509ms)
+✔ reload either resumes a committed start or retries an unconfirmed start with the same key (2533.40955ms)
+✔ actual production connection uses Backend constructor/flags and server title without inventing a group (70.151625ms)
+✔ normal start affordance follows server admission and normal-use metadata (11.553902ms)
+✔ recovery start affordance uses only server snapshot window, including closed original admission (3.459735ms)
+✔ same configured API media maps while an unreviewed external media origin fails closed (5.477907ms)
+✔ production connection rejects local_fixture mode rather than falling back to local constructor (0.271863ms)
+✔ local UI adapter keeps its own runtime local_fixture mode boundary (0.192092ms)
+✔ profile preserves authoritative registration and leading-zero display ID; no session/staff fields escape (2.386842ms)
+✔ metadata requires assignment/start permission context and never invents a group or admission rule (0.965359ms)
+✔ question order follows frozen display positions and rich blocks remain structured and input remains unchanged (1.013543ms)
+✔ all seven lifecycle projections preserve server deadline/current generation without copying successor content (0.983577ms)
+✔ ACK mapping preserves clear null and revision; wrong question or revision zero is not a successful save (0.254718ms)
+✔ wrong scope, stale active generation, duplicate positions and invalid answer membership fail closed (0.57806ms)
+✔ terminal content and active content without a deadline cannot be rendered as a valid attempt (0.428823ms)
+✔ ordinary is independent of nullable bonus and canonical server display strings are preserved (0.566642ms)
+✔ student display1 precision is strict while percentages retain2dp (0.434481ms)
+✔ double-rounding traps and totals above30 retain server display without browser policy (0.34819ms)
+✔ server midpoint and tiny-positive displays survive result and bonus mapping without arithmetic (0.19741ms)
+✔ display localization is lexical, retains precision and rejects trailing line terminators (7.629841ms)
+✔ missing or malformed server display never falls back to approximate numbers (0.456464ms)
+✔ history retains canonical displays and can localize repeatedly without changing attribution (0.658262ms)
+✔ ordinary null is independent of cancellation; terminal history requires an ordinary result (0.404085ms)
+✔ result scope and malformed numeric values fail without creating a zero result or a review grant (0.376724ms)
+✔ cancelled predecessor bonus remains historical; successor has no inherited result or invented history identity (0.292845ms)
+✔ unknown private fields do not reach UI projections and no media fetch is performed by mapping (0.605401ms)
+ℹ tests 38
+ℹ suites 0
+ℹ pass 38
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 23571.392243

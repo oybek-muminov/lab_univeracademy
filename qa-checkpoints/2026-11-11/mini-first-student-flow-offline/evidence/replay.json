@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "name": "forward",
+      "command": [
+        "patch",
+        "--batch",
+        "-p1",
+        "-d",
+        "/workspace/mini-first-flow-replay-33jw1yzx",
+        "-i",
+        "/workspace/mini-first-student-flow-evidence-20261111/candidate.patch"
+      ],
+      "exit_code": 0,
+      "log_sha256": "7e255a495c12d6b3e253698512c6b9052d68e484150f1d49e3c89c16012bf234"
+    },
+    {
+      "name": "reverse",
+      "command": [
+        "patch",
+        "--batch",
+        "-p1",
+        "-d",
+        "/workspace/mini-first-flow-replay-33jw1yzx",
+        "-R",
+        "-i",
+        "/workspace/mini-first-student-flow-evidence-20261111/candidate.patch"
+      ],
+      "exit_code": 0,
+      "log_sha256": "7e255a495c12d6b3e253698512c6b9052d68e484150f1d49e3c89c16012bf234"
+    }
+  ],
+  "forward_bytes_match": true,
+  "reverse_restores_absence": true
+}

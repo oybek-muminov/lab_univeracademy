@@ -1,0 +1,374 @@
+{
+  "schema": "univeracademy-mini-first-student-flow-lab-proposal/v1",
+  "status": "PROPOSAL_ONLY_UNAPPROVED_NO_UPLOAD_OR_BRANCH_WRITE",
+  "target": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "new_branch": "mini/first-student-flow-offline-20261111",
+    "parent_ref": "main",
+    "parent_commit": "dc2bf835c7eee35e2471b2c14764957131543cfd",
+    "parent_tree": "b7e046ebfd1157b9812516d3f1e88316c5f43010",
+    "checkpoint": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline",
+    "read_only_checked_utc": "2026-11-11 13:02:12 UTC",
+    "branch_absence": "GET exact Git ref returned 404 NOT_FOUND",
+    "checkpoint_absence": "GET contents at exact parent returned 404 NOT_FOUND",
+    "note": "Parent is the lab default main archive. It is not the project source base, the working qa/current-flow branch or the historical comparator commit.",
+    "required_before_future_write": "Separate exact user approval; freshly verify parent, branch/checkpoint absence and every approved byte/hash/path before any write."
+  },
+  "source_base": {
+    "repository": "oybek-muminov/UniverAcademy",
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552",
+    "https": "https://github.com/oybek-muminov/UniverAcademy/commit/de2adf023428a374f075faa421ece9e1deafaf36",
+    "count": 270,
+    "bytes": 3396211,
+    "mode": "100644",
+    "overlay_count": 2,
+    "overlay_bytes": 26731,
+    "resulting_count": 272,
+    "resulting_bytes": 3422942,
+    "all_270_originals_rehashed_unchanged_in_candidate_and_frozen_source": true,
+    "canonical_and_owner_client_types_unchanged": true,
+    "UI_design_entry_style_assets_unchanged": true
+  },
+  "scope": {
+    "files_besides_this_manifest": [
+      {
+        "group": "source",
+        "local_source": "/workspace/mini-first-student-flow-20261111/apps/mini-app/tests/first-student-flow.offline.test.mjs",
+        "destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/apps/mini-app/tests/first-student-flow.offline.test.mjs",
+        "mode": "100644",
+        "bytes": 12179,
+        "sha256": "8d4d6d74f254324fc5ce1cf878bd013a09552626bbe7691777e088ad7454b5f0"
+      },
+      {
+        "group": "source",
+        "local_source": "/workspace/mini-first-student-flow-20261111/apps/mini-app/tests/fixtures/first-student-flow.offline.json",
+        "destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/apps/mini-app/tests/fixtures/first-student-flow.offline.json",
+        "mode": "100644",
+        "bytes": 14552,
+        "sha256": "4a218b7e8e24b743d781549bb9be61fe08cdea3ad9544c88490ff25f1a5a8652"
+      },
+      {
+        "group": "original_evidence",
+        "local_source": "/workspace/mini-first-student-flow-evidence-20261111/commands.jsonl",
+        "destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/evidence/commands.jsonl",
+        "mode": "100644",
+        "bytes": 1936,
+        "sha256": "70189ff01324e4bb85c7ae88e8af16d45bf0f9ea94fcbeb4a910f7faa27f305e"
+      },
+      {
+        "group": "original_evidence",
+        "local_source": "/workspace/mini-first-student-flow-evidence-20261111/scenario-initial.log",
+        "destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/evidence/scenario-initial.log",
+        "mode": "100644",
+        "bytes": 410,
+        "sha256": "27f5269d584e4645b4b5445f10b77489df58368219aed9b5650f37b0c02c81fc"
+      },
+      {
+        "group": "original_evidence",
+        "local_source": "/workspace/mini-first-student-flow-evidence-20261111/consumer-regression.log",
+        "destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/evidence/consumer-regression.log",
+        "mode": "100644",
+        "bytes": 4126,
+        "sha256": "936dd4fda17f7639f072536ffb87ac5bbf2b20676c3b780a36328dbc400a9ceb"
+      },
+      {
+        "group": "original_evidence",
+        "local_source": "/workspace/mini-first-student-flow-evidence-20261111/mini-check.log",
+        "destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/evidence/mini-check.log",
+        "mode": "100644",
+        "bytes": 263,
+        "sha256": "ddc260d0ab04bbc1803bbc81e1bcac17f9e8e36dc769870e80d1e19c71bdab0b"
+      },
+      {
+        "group": "original_evidence",
+        "local_source": "/workspace/mini-first-student-flow-evidence-20261111/replay.json",
+        "destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/evidence/replay.json",
+        "mode": "100644",
+        "bytes": 877,
+        "sha256": "2df61014da5c99056137a967ac3b55615fcbd2c56ede549cbdb71189b639b39d"
+      },
+      {
+        "group": "original_evidence",
+        "local_source": "/workspace/mini-first-student-flow-evidence-20261111/forward-replay.log",
+        "destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/evidence/forward-replay.log",
+        "mode": "100644",
+        "bytes": 145,
+        "sha256": "7e255a495c12d6b3e253698512c6b9052d68e484150f1d49e3c89c16012bf234"
+      }
+    ],
+    "manifest_destination": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/MANIFEST.json",
+    "count_including_manifest": 9,
+    "all_remote_modes": "100644",
+    "manifest_pin": "The exact raw manifest byte count and SHA256 are supplied externally in the coordinator proposal inventory. A self hash is intentionally not embedded. The external inventory is not selected for publication."
+  },
+  "original_evidence": {
+    "commands": "Original commands.jsonl records exact command, author cwd, UTC, exit and log size/hash for 3 new tests, 38 regression tests, Mini check and accepted-source guard.",
+    "guard_empty_log": "accepted-source-guard.log is zero bytes; its exit0 and empty-content SHA256 are already present in commands.jsonl, so the empty file is omitted.",
+    "replay_dedup": "forward-replay.log and reverse-replay.log are byte-identical (145 bytes, SHA256 7e255a495c12d6b3e253698512c6b9052d68e484150f1d49e3c89c16012bf234). Publish only the original forward log; replay.json retains both original executions and hashes.",
+    "historical_patch_not_selected": {
+      "bytes": 27901,
+      "sha256": "5be8a46f73adbce630edb1dbe8a8c815d6cba50326e97dfa8b5356537949b85e",
+      "reason": "Duplicate source transport. Reviewer reconstructs it from the two exact files when checking the original patch replay."
+    }
+  },
+  "reviewer_application": [
+    "Prepare your own exact immutable UniverAcademy source copy at de2adf023428a374f075faa421ece9e1deafaf36, tree bc891240798d9bf56ee52c4a0f0ecede8ed33552; verify all270 paths/modes/bytes against that commit. Do not execute tests in the lab archive/checkpoint layout.",
+    "Validate the externally pinned raw MANIFEST.json, then validate each selected payload size/SHA256. Source paths are under this checkpoint preserving apps/mini-app/tests/...; no sources are copied from the lab parent into the project base.",
+    "Confirm both new source paths are absent in your exact base. Copy only these two source files to the same project-root-relative paths, mode100644, in a disposable source copy. Never copy evidence or MANIFEST.json into the application source.",
+    "Use already prepared pinned dependencies. If tooling is missing, report the prerequisite; no install/download is authorized by this proposal.",
+    "Run the commands below from that project source root. Original author cwd values in command/replay records are provenance, not paths to access on another worker.",
+    "For replay, reconstruct the original source-only patch deterministically from the two exact UTF-8 source files in the listed order using the recipe below. Its27901-byte SHA256 must match the recorded pin. Apply it forward and reverse in a disposable directory; verify exact two-file hashes after forward and absence after reverse. This is a reviewer reproduction instruction, not a new author test result."
+  ],
+  "commands": [
+    [
+      "node",
+      "--test",
+      "apps/mini-app/tests/first-student-flow.offline.test.mjs"
+    ],
+    [
+      "node",
+      "--test",
+      "apps/mini-app/tests/flow.test.mjs",
+      "apps/mini-app/tests/wire-map.test.mjs",
+      "apps/mini-app/tests/production-owner-port.test.mjs"
+    ],
+    [
+      "npm",
+      "--prefix",
+      "apps/mini-app",
+      "run",
+      "check"
+    ],
+    [
+      "node",
+      "apps/mini-app/tests/verify-backend-targets.mjs"
+    ]
+  ],
+  "command_environment": {
+    "cwd": "own exact project source copy with two-file overlay",
+    "optional": "STUDENT_FLOW_EVIDENCE_DIR may point to your own existing outside-source evidence directory; it emits two synthetic observation records, with no network use.",
+    "network": "No live provider/API/DB/HTTP server; the new tests inject a scripted fetcher and mock global native fetch to throw."
+  },
+  "replay_recipe": {
+    "source_order": [
+      "apps/mini-app/tests/first-student-flow.offline.test.mjs",
+      "apps/mini-app/tests/fixtures/first-student-flow.offline.json"
+    ],
+    "encoding": "UTF-8; retain original newlines",
+    "per_file_prefix": "diff --git a/{path} b/{path}\nnew file mode 100644\n",
+    "per_file_diff": "Python difflib.unified_diff([], source_text.splitlines(keepends=True), fromfile=\"/dev/null\", tofile=\"b/\"+path); append each yielded line unchanged.",
+    "join": "Concatenate prefix and diff for each source in source_order, without additional separators.",
+    "forward": [
+      "patch",
+      "--batch",
+      "-p1",
+      "-d",
+      "OWN_DISPOSABLE_DIRECTORY",
+      "-i",
+      "OWN_RECONSTRUCTED_PATCH"
+    ],
+    "reverse": [
+      "patch",
+      "--batch",
+      "-p1",
+      "-d",
+      "OWN_DISPOSABLE_DIRECTORY",
+      "-R",
+      "-i",
+      "OWN_RECONSTRUCTED_PATCH"
+    ],
+    "original_author_result": "Both exits0, forward exact source bytes, reverse restores absence, as recorded in original replay.json."
+  },
+  "dependencies": {
+    "node": "Author observed v24.22.1; Node24 native TypeScript erasure and node:test required.",
+    "mini": "Use unchanged apps/mini-app/package.json and package-lock.json from exact base: TypeScript7.0.2, @types/react19.3.0, @types/react-dom19.3.0; declared React/react-dom19.3.1, Clerk/react6.18.6 and Vite8.3.6 remain pinned.",
+    "validator": "Existing tests/backend/validator/tooling installation: ajv8.20.0 and ajv-formats3.0.1, enforced by accepted base validator code. Existing view-builder/ajv-config are imported from the exact source base.",
+    "other": "Python3 standard library for patch reconstruction; patch utility for replay. No package or lock modification.",
+    "author_setup": "Existing own-environment prepared dependency directories were reused via symlinks; no install/download was performed."
+  },
+  "author_results_only": {
+    "new_tests": 3,
+    "consumer_regression_tests": 38,
+    "all_pass": true,
+    "mini_typecheck_exit": 0,
+    "accepted_source_guard_exit": 0,
+    "forward_reverse_replay": "PASS",
+    "flow": "launch -> start -> valid save revision0/ACK1 -> same question valid save revision1/ACK2 -> stale revision1 denied409 -> submit -> result; both existing Telegram and Clerk launch seams, scripted responses only.",
+    "fixture": "Four distinct ordered options, a valid private correctOptionId and ordered selections; same question has one consumer answer key.",
+    "old_wire_fixture": "Original wire.json retains historical280503... metadata; new fixture independently pins current f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28 contract.",
+    "source_contract_status": "Generated source still declares PROVISIONAL / NOT ACCEPTED; alignment is not blanket API acceptance."
+  },
+  "limits": [
+    "Author-only offline results; no independent acceptance of these two additions is claimed.",
+    "No database row/update/uniqueness/transaction, SQL, real auth/provider, runtime/controller/cleanup or production claim.",
+    "No real user/student data, secrets or actual provider proofs; fixtures use synthetic identities/options/session strings.",
+    "Registered/granted student and published/open quiz are scenario preconditions. Backend auth/context + HTTP composition and approved real endpoint/auth handoff remain real-API prerequisites.",
+    "No candidate changes, new tests, runtime run, upload, remote branch/Git write, PR, merge, install, UI change or deployment in proposal preparation.",
+    "Mini TypeScript7.0.2 check does not prove root Backend semantic checking pinned to TypeScript5.9.3; root typecheck was NOT_RUN in this author task."
+  ],
+  "excluded": [
+    "candidate.patch and all patch/archive/transport duplicates",
+    "candidate-manifest.json, original INDEX.json and full base/preservation inventories (duplicate source-base data)",
+    "accepted-source-guard.log (empty)",
+    "reverse-replay.log (duplicate of included forward log)",
+    "clerk.observations.json and telegram.observations.json (optional detail; source+scenario log suffice to reproduce)",
+    "run-offline.py and flow-contract-map.json (original commands and this manifest provide needed instructions)",
+    "all previous or other-owner packages/evidence"
+  ],
+  "toolchain_accounting": {
+    "preparation": "Read-only clarification from frozen command logs, source package/lock/config and existing resolved compiler files. No compiler/runtime/test command was rerun.",
+    "source_pin_files": {
+      "root_package": {
+        "source_base_relative_path": "package.json",
+        "bytes": 1744,
+        "sha256": "05bd3c8c58e5e898b577ca3106b8a77d018ef01a39d9975e5551453f507436a4"
+      },
+      "root_lock": {
+        "source_base_relative_path": "package-lock.json",
+        "bytes": 19609,
+        "sha256": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222"
+      },
+      "mini_package": {
+        "source_base_relative_path": "apps/mini-app/package.json",
+        "bytes": 2116,
+        "sha256": "a3a1094919d8d730651a66011c58923856d04c6f7eb84dd99f309b3e6f83ebe5"
+      },
+      "mini_lock": {
+        "source_base_relative_path": "apps/mini-app/package-lock.json",
+        "bytes": 42432,
+        "sha256": "e0d11ceeccc2325066fa02d61e7b6ecffde79f7e675b0080facc4675f87bf059"
+      },
+      "mini_tsconfig": {
+        "source_base_relative_path": "apps/mini-app/tsconfig.json",
+        "bytes": 375,
+        "sha256": "86ccd56cd605e3df25f579b47a5a50662406cbd2cb4ae5bafb50b888ef7d9dab"
+      },
+      "validator_package": {
+        "source_base_relative_path": "tests/backend/validator/tooling/package.json",
+        "bytes": 76,
+        "sha256": "83086e236c60ca828b6d118d35f55c5834cc70e3b5d5cb8dfc8d628ffcd21149"
+      },
+      "validator_lock": {
+        "source_base_relative_path": "tests/backend/validator/tooling/package-lock.json",
+        "bytes": 2789,
+        "sha256": "bf49238f558d7a6f85562a52998e31f105f9e69e66892f785da9ab8cfca9bdf7"
+      }
+    },
+    "node_runtime": {
+      "author_observed_version": "v24.22.1",
+      "evidence_limit": "Observed in the author preparation shell output before tests. Original commands.jsonl and test logs do not separately capture process.version for each child; no new runtime version probe was executed for this clarification.",
+      "tests_execution": "node --test uses Node24 native TypeScript type erasure for imported .ts source; no tsc semantic checking is performed by that mechanism."
+    },
+    "mini_compiler": {
+      "installed_package_version": "7.0.2",
+      "declared_and_locked_version": "7.0.2",
+      "package_pin_refs": [
+        "mini_package",
+        "mini_lock"
+      ],
+      "installed_package_json": {
+        "bytes": 3087,
+        "sha256": "3722b30210616a13a3213ded11575ba6b2dbab10c32a5ef67afca8513e27017e"
+      },
+      "bin_relative_path": "apps/mini-app/node_modules/.bin/tsc",
+      "bin_resolved_author_path": "/workspace/main-clean-guard-01-r2-candidate-20261110/apps/mini-app/node_modules/typescript/bin/tsc",
+      "bin_identity": {
+        "bytes": 44,
+        "sha256": "2219f428a7e55aaf1f7ad85b9b0f0cf5078aeb76ccc9a7c6036c92d48f492ffd"
+      },
+      "selection": "npm --prefix apps/mini-app run check runs script tsc --noEmit with Mini node_modules/.bin first. The existing Mini-local binary/package is distinct from root TypeScript.",
+      "version_evidence_limit": "No tsc --version banner was recorded in the original run. Version7.0.2 is the installed package metadata plus matching accepted Mini package/lock and resolved binary, not a newly executed version check.",
+      "config_pin_ref": "mini_tsconfig",
+      "config_scope": {
+        "include": [
+          "src"
+        ],
+        "strict": true,
+        "noEmit": true,
+        "skipLibCheck": true,
+        "target": "ES2022",
+        "module": "ESNext",
+        "moduleResolution": "Bundler",
+        "jsx": "react-jsx",
+        "types": [
+          "vite/client"
+        ]
+      },
+      "scope_limit": "Mini source under tsconfig include src; the new .mjs tests are executed by Node, not semantically checked by this tsc command."
+    },
+    "root_backend_compiler": {
+      "declared_locked_and_installed_version": "5.9.3",
+      "package_pin_refs": [
+        "root_package",
+        "root_lock"
+      ],
+      "installed_package_json": {
+        "bytes": 3620,
+        "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+      },
+      "bin_relative_path": "node_modules/.bin/tsc",
+      "bin_resolved_author_path": "/workspace/main-clean-guard-01-r2-candidate-20261110/node_modules/typescript/bin/tsc",
+      "bin_identity": {
+        "bytes": 45,
+        "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0"
+      },
+      "author_task_execution": "NOT_RUN",
+      "root_script": "npm run typecheck",
+      "root_configuration": "Root package.json scripts.typecheck supplies explicit --strict, --noEmit, target es2023, module esnext, moduleResolution bundler, allowImportingTsExtensions, lib es2023/dom/dom.iterable and Backend/API-client/storage path inputs.",
+      "scope_limit": "No root Backend semantic typecheck result is claimed for this two-file author task. Mini check, Node tests and source digest guard do not establish it."
+    },
+    "per_author_check": [
+      {
+        "record": "scenario-initial",
+        "result": "3 tests PASS",
+        "runtime": "Node v24.22.1, node --test, native TS erasure",
+        "compiler": "No tsc semantic compiler invoked",
+        "pin_refs": [
+          "validator_package",
+          "validator_lock"
+        ],
+        "validator": "Existing accepted view-builder/ajv-config plus ajv8.20.0 and ajv-formats3.0.1; input schema pinned by STUDENT_CONTRACT_SHA256."
+      },
+      {
+        "record": "consumer-regression",
+        "result": "38 tests PASS",
+        "runtime": "Node v24.22.1, node --test, native TS erasure",
+        "compiler": "No tsc semantic compiler invoked",
+        "pin_refs": [
+          "mini_package",
+          "mini_lock"
+        ],
+        "scope": "Flow, wire-map and production-owner-port tests only; no Backend semantic compilation."
+      },
+      {
+        "record": "mini-check",
+        "result": "exit0",
+        "runtime": "Node v24.22.1; npm11.9.0 indicated by retained mini-check.log npm notice",
+        "compiler": "Mini-local TypeScript7.0.2 package; npm script tsc --noEmit",
+        "pin_refs": [
+          "mini_package",
+          "mini_lock",
+          "mini_tsconfig"
+        ],
+        "scope": "Mini semantic check under include src and skipLibCheck:true. Root Backend typecheck NOT_RUN."
+      },
+      {
+        "record": "accepted-source-guard",
+        "result": "exit0",
+        "runtime": "Node v24.22.1 executing the accepted .mjs guard",
+        "compiler": "None",
+        "scope": "Read-only source byte/size/hash, manifest and owner-copy integrity. Not a TypeScript semantic check."
+      },
+      {
+        "record": "forward/reverse replay",
+        "result": "both exits0, exact file bytes forward, absence restored reverse",
+        "runtime": "Python3 standard library difflib for author patch preparation; system patch executable for forward/reverse application",
+        "compiler": "None",
+        "version_evidence_limit": "Original replay record does not capture exact Python or patch versions; they remain unrecorded rather than inferred or rerun."
+      }
+    ],
+    "root_backend_semantic_typecheck": "NOT_RUN_IN_THIS_AUTHOR_TASK",
+    "no_rerun_install_or_candidate_change": true
+  }
+}
