@@ -1,0 +1,21 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts
+
+23067 !== 22634
+
+    at file:///workspace/ua-cloudflare-api-01-4porczzh/repo/apps/mini-app/tests/verify-backend-targets.mjs:525:10
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 23067,
+  expected: 22634,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.22.1

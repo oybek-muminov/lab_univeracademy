@@ -1,0 +1,73 @@
+{
+  "format": "UA-LAB-PUBLICATION-MANIFEST-v1",
+  "status": "LOCAL_CLOUDFLARE_SOURCE_AUTHOR_CANDIDATE_NO_UPLOAD_AUTHORIZED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/cloudflare-api-01-20261111",
+  "sole_parent": "8be232eff22c2608b55f7f5513d8752a0307977a",
+  "parent_tree": "ab1a7fea70f03474eb17ef2b33f817f7067d1e4d",
+  "prefix": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/",
+  "accepted_application_base": "de2adf023428a374f075faa421ece9e1deafaf36 plus accepted application-only overlays through77e04d13d38054135d0520a04a01c7ff9012bde8",
+  "payload_file_count": 9,
+  "payload_bytes": 99867,
+  "payload_inventory_sha256": "d011b74509c4c25854e6547a7eff1836970113306e59efbcabc0a92bad80848a",
+  "inventory_recipe": "SHA256 UTF8 compact sorted-key JSON [{destination,bytes,sha256},...], rows sorted destination, no LF; excludes manifest",
+  "files": [
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/review/focused.final.log",
+      "bytes": 8694,
+      "sha256": "f60478b1848c73420ac2ec0e2d40dc1d1bb109bf2dfda0274d73c75d55ad58fd",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/review/guard.expected-stale.log",
+      "bytes": 688,
+      "sha256": "aaafce26b588cfb7df9b29912e8a1955a9f98d24a2a183beb3c7cce829c0d4f5",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/review/regressions.final.log",
+      "bytes": 25150,
+      "sha256": "ed7b6490618827a4e8a8fd37da21f9ad98a919f1a308d892c5c448215f9dc883",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/review/verification.json",
+      "bytes": 18172,
+      "sha256": "b238bf1e1378f576bf770b2c36ab0abd04e2ba4c8dc3ed8808db9afb6226cf67",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/runtime/clerk-worker-bindings.mjs",
+      "bytes": 6712,
+      "sha256": "f46043e9f14ba43a485170607e529b238c39cb79a173a804648f6c35330272ae",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/runtime/cloudflare-api.mjs",
+      "bytes": 2937,
+      "sha256": "d8f3fd25adff52d3170fd9bb0a91b7a64e87e05e9a2bb57dba37f180adadf64f",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/runtime/cloudflare-postgres.mjs",
+      "bytes": 4340,
+      "sha256": "377ecdb75cc2c79654747407ad4644832c71a0c0c5536456b5eeb8ae927a89a8",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/tests/cloudflare/api-postgres.test.mjs",
+      "bytes": 20769,
+      "sha256": "84b69064540c44e924567e15989599398ea3b0920041d6bc619048748111dceb",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/tests/cloudflare/clerk-worker-bindings.test.mjs",
+      "bytes": 12405,
+      "sha256": "60b265b706fa1c6e647af03fea7ac40cc09faee3fd28a3af88d5b39178cc4cc0",
+      "mode": "100644"
+    }
+  ],
+  "self_pin": "Use independently selected external byte count/SHA256; manifest is excluded from its own inventory",
+  "scope": "Five source/test additions, verification and three original author logs. No patch/archive/full base/SQL duplicate/dependencies/extra source.",
+  "results": "415 author PASS;1 JOSE integration NOT_RUN; guard remains preexisting stale FAIL; no real runtime/SQL/provider/deployment acceptance"
+}

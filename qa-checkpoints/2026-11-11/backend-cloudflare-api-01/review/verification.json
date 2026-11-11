@@ -1,0 +1,361 @@
+{
+  "format": "UA-CLOUDFLARE-API-LOCAL-SOURCE-REVIEW-v1",
+  "status": "AUTHOR_OFFLINE_PASS_WITH_ONE_EXPLICIT_DEPENDENCY_SKIP_INDEPENDENT_REVIEW_PENDING",
+  "accepted_application_base": {
+    "source_commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "accepted_chain": [
+      "de2adf023428a374f075faa421ece9e1deafaf36",
+      "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+      "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+      "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+      "ea0c3cd9c41a465bd5e5205b91f0141710a435fa",
+      "e0ad56dfda167a34eb4e4dd2e74b2d700808b49e",
+      "d33088c5403fe78fd342f16d8dc05ba30a4b5d64",
+      "77e04d13d38054135d0520a04a01c7ff9012bde8"
+    ],
+    "last_application_overlay": "77e04d13d38054135d0520a04a01c7ff9012bde8",
+    "file_count": 283,
+    "bytes": 3596839,
+    "inventory_recipe": "SHA256 UTF8 json.dumps(sorted path/bytes/sha256 rows,sort_keys=True,separators=(comma,colon)); no LF",
+    "inventory_sha256": "1543e3ab1639a185d3384d59f1a2e9688a9880de74dc65fee6dbe5266e0da964",
+    "reconstruction": "Use the exact accepted application source and application-only immutable lab overlays. Never treat the lab repository tree/review files as an application checkout."
+  },
+  "five_additions": [
+    {
+      "path": "runtime/cloudflare-api.mjs",
+      "bytes": 2937,
+      "sha256": "d8f3fd25adff52d3170fd9bb0a91b7a64e87e05e9a2bb57dba37f180adadf64f"
+    },
+    {
+      "path": "runtime/cloudflare-postgres.mjs",
+      "bytes": 4340,
+      "sha256": "377ecdb75cc2c79654747407ad4644832c71a0c0c5536456b5eeb8ae927a89a8"
+    },
+    {
+      "path": "runtime/clerk-worker-bindings.mjs",
+      "bytes": 6712,
+      "sha256": "f46043e9f14ba43a485170607e529b238c39cb79a173a804648f6c35330272ae"
+    },
+    {
+      "path": "tests/cloudflare/api-postgres.test.mjs",
+      "bytes": 20769,
+      "sha256": "84b69064540c44e924567e15989599398ea3b0920041d6bc619048748111dceb"
+    },
+    {
+      "path": "tests/cloudflare/clerk-worker-bindings.test.mjs",
+      "bytes": 12405,
+      "sha256": "60b265b706fa1c6e647af03fea7ac40cc09faee3fd28a3af88d5b39178cc4cc0"
+    }
+  ],
+  "preservation": {
+    "unchanged_accepted_application_files": 283,
+    "candidate_files": 288,
+    "modified_or_removed_originals": 0,
+    "Mini_UI_contracts_guard_manifests_Node_TLS_factory_default_api_bootstrap": "UNCHANGED",
+    "corrected_inactive_SQL": {
+      "commit": "8be232eff22c2608b55f7f5513d8752a0307977a",
+      "path": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/first-student-trusted-server.activation.review.sql",
+      "bytes": 60363,
+      "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd"
+    },
+    "sealed_run_packet": "036beb26e7a6940827daa8691bc04f0326c7df6f; not read, changed or executed"
+  },
+  "interfaces": {
+    "runtime/cloudflare-api.mjs": "createCloudflareApi({apiOrigin,allowedOrigins,Client,postgres,configuration}) -> {fetch(request)}. configuration is trusted existing production HttpConfiguration without storage; storage is always supplied by the request-owned port. No default export/activation, HTTP headers or env configuration reader.",
+    "runtime/cloudflare-postgres.mjs": "createCloudflarePostgres(trustedClientConstructor,{connectionString},{signal}) -> {pool,close}. Intended prepared Hyperdrive string has explicit host/port/database/user/password and no query overrides. No config/environment values loaded. Ambient PG names are rejected immediately at the only lazy constructor boundary. One Client per request, at most one checkout, sequential reuse within that request only, no replacement/retry. Caller awaits cached close; pending/rejected/non-Promise end is never reported as successful closure.",
+    "runtime/clerk-worker-bindings.mjs": "createClerkWorkerBindings({issuer,secretKey,transport,now,timeoutMs,maxResponseBytes,signal?}) -> existing ClerkProviderBindings +close; createClerkWorkerAdapter(settings,options) asynchronously imports/reuses accepted createClerkProviderAdapter and JOSE. Only fixed session/user BAPI endpoints and issuer JWKS are read using injected Web transport; mandatory raw fields map to the exact camelCase model with no defaults.",
+    "cancellation": "Request abort combined into existing Clerk liveness options. Per-binding/read cancellation reaches injected transport and body reader. JWKS preserves existing JOSE/adapter signals and timeout; future composition should create per-request Clerk bindings with request.signal when full request lifetime cancellation is required. No global fetch mutation or verifier substitute."
+  },
+  "http_behavior": "Reuses createVercelNodeFunction only as its existing pure Web Request/Response/CORS/64KiB transport. This file imports no Node listener or Vercel platform SDK. Historic filename/header does not constitute a Vercel deployment. Cloudflare no-store header added. Missing configuration remains503; private Client is lazy and closed before a successful response is returned.",
+  "author_tests": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/cloudflare/api-postgres.test.mjs",
+        "tests/cloudflare/clerk-worker-bindings.test.mjs"
+      ],
+      "cwd": "/workspace/ua-cloudflare-api-01-4porczzh/repo",
+      "utc_start": "2026-11-11T20:03:35.213912+00:00",
+      "utc_end": "2026-11-11T20:03:35.693656+00:00",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "focused.final.log",
+      "bytes": 8694,
+      "sha256": "f60478b1848c73420ac2ec0e2d40dc1d1bb109bf2dfda0274d73c75d55ad58fd"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/backend/student-prepared/flow.test.mjs",
+        "tests/backend/student-prepared/clerk.test.mjs",
+        "tests/backend/student-prepared/routing-receipts.test.mjs",
+        "tests/backend/student-prepared/trusted-server-context.test.mjs",
+        "tests/clerk-auth/scoped-store.test.mjs",
+        "tests/vercel-node/pool-port.test.mjs",
+        "tests/vercel-node/production-options.test.mjs",
+        "tests/vercel-node/postgres-pool-factory.test.mjs"
+      ],
+      "cwd": "/workspace/ua-cloudflare-api-01-4porczzh/repo",
+      "utc_start": "2026-11-11T20:03:35.693998+00:00",
+      "utc_end": "2026-11-11T20:03:36.687565+00:00",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "regressions.final.log",
+      "bytes": 25150,
+      "sha256": "ed7b6490618827a4e8a8fd37da21f9ad98a919f1a308d892c5c448215f9dc883"
+    },
+    {
+      "command": [
+        "node",
+        "apps/mini-app/tests/verify-backend-targets.mjs"
+      ],
+      "cwd": "/workspace/ua-cloudflare-api-01-4porczzh/repo",
+      "utc_start": "2026-11-11T20:03:36.687925+00:00",
+      "utc_end": "2026-11-11T20:03:36.740409+00:00",
+      "exit": 1,
+      "expected_exit": 1,
+      "log": "guard.expected-stale.log",
+      "bytes": 688,
+      "sha256": "aaafce26b588cfb7df9b29912e8a1955a9f98d24a2a183beb3c7cce829c0d4f5"
+    }
+  ],
+  "final_counts": {
+    "focused_tests": 91,
+    "focused_pass": 90,
+    "focused_fail": 0,
+    "focused_skipped": 1,
+    "focused_skip": "NOT_RUN real accepted JOSE/provider integration because jose6.2.15 is absent; no install authorized",
+    "existing_regressions": 325,
+    "existing_pass": 325,
+    "existing_fail": 0,
+    "total_pass": 415,
+    "new_source_syntax": 5
+  },
+  "focused_coverage": [
+    "Inert construction; private option/getter failures; temporal PG contamination with zero value reads; unnamed parameterized statements; checkout cap; no cross-request Client reuse",
+    "Idempotent discard/end-once, pending connection/close races, synchronous/asynchronous/non-Promise end failures; cancellation and late replies; idle errors; no constructor/SQL retry",
+    "Web CORS/origin/raw-body bounds and sanitized errors; missing bindings503; full fake-driver student GET/start/save/update/stale/submit/result flow; retained deadline/generation",
+    "Clerk revoked/disabled/expired current authorization before domain reads, shortened earliest expiry at final boundary, HTTP abort propagated to provider liveness, commit_unknown503 without ACK/retry",
+    "Fixed Clerk endpoints, raw mandatory account/session fields, no model defaults or liveness cache, response size/MIME/UTF8/JSON/status/redirect checks, cancellation/timeout/body disposal, pinned JWKS/no bearer forwarding",
+    "No new listener, global fetch replacement, Node SDK binding or default deployment export"
+  ],
+  "initial_author_check_correction": "After adding Clerk calibration to the inert SQL-text dispatcher, one native-person abort trigger no longer matched its duplicate accepted label. The focused rerun failed1 test (200 vs503) because the injection did not fire. The new test now triggers on both exact accepted labels sharing identical SQL text; production checks were not weakened. Failed logs retained locally, not duplicated in this minimal review package.",
+  "syntax": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "runtime/cloudflare-api.mjs"
+      ],
+      "utc": "2026-11-11T20:04:40.907327+00:00",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "runtime/cloudflare-postgres.mjs"
+      ],
+      "utc": "2026-11-11T20:04:40.939826+00:00",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "runtime/clerk-worker-bindings.mjs"
+      ],
+      "utc": "2026-11-11T20:04:40.976292+00:00",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/cloudflare/api-postgres.test.mjs"
+      ],
+      "utc": "2026-11-11T20:04:41.013910+00:00",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/cloudflare/clerk-worker-bindings.test.mjs"
+      ],
+      "utc": "2026-11-11T20:04:41.040995+00:00",
+      "exit": 0,
+      "output": ""
+    }
+  ],
+  "dependencies": {
+    "author_node": "v24.22.1",
+    "new_injected_offline_tests": "Node built-ins + exact accepted application files; no external installation",
+    "real_production_driver": "pg8.16.3, injected Client; not installed or pinned into package/lock by this slice",
+    "existing_jose": "6.2.15, already pinned in unchanged root package/lock; not installed here",
+    "new_Clerk_SDK_dependency": "NONE; Node worker_threads/filesystem SDK binding not imported",
+    "root_semantic": {
+      "status": "NOT_RUN",
+      "tsc": null,
+      "local_package": false
+    },
+    "real_provider_adapter_JOSE_test": "Included but explicitly skipped until the already-pinned package is available; missing dependency demonstrably returns503"
+  },
+  "guard": {
+    "status": "FAIL_PREEXISTING_STALE_PINS_NOT_REPINNED",
+    "selected_count": 119,
+    "preexisting_stale_pins": [
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+        "expected": {
+          "bytes": 22634,
+          "sha256": "02de46baf1ec90442bfb958c264f4192948afe08c9c2b4e3e2a767eac2b445d2"
+        },
+        "actual": {
+          "bytes": 23067,
+          "sha256": "3a90df4cdb0f106ff7ec84413a4fe6f5569315fdf466557cf3e9f3b5eacb42a0"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "expected": {
+          "bytes": 12856,
+          "sha256": "70b4a038642e4e92f53dd0bd8daf8b1de3108f4e698e4031e5eea5ac4727296a"
+        },
+        "actual": {
+          "bytes": 12978,
+          "sha256": "a251fafaad42995e298a9a1c62bec4ee37e6889d9ea68aeac2faaffbbea5c8ef"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+        "expected": {
+          "bytes": 9620,
+          "sha256": "fca20362989fe6abecabcff80ffd7787fc6e573379268a7af6236e141856f96f"
+        },
+        "actual": {
+          "bytes": 9696,
+          "sha256": "306fa158dafe2108b94b42ed3e152820f852a22e633f6bd76ab0301509f9cfd6"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+        "expected": {
+          "bytes": 10068,
+          "sha256": "fe8022c4d48f76d90240669bfd1899df77ceccccc0aede9323a9c429c475cc4d"
+        },
+        "actual": {
+          "bytes": 10298,
+          "sha256": "d1826ecb8082bbc93260ab0e13375524a828fbdc83e518f0d3e9eceb690ff20c"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+        "expected": {
+          "bytes": 4619,
+          "sha256": "a8082c1a95534e5dbdedc5086ecae48b243b0d1cfdc68acf25dabfbc7197464a"
+        },
+        "actual": {
+          "bytes": 5469,
+          "sha256": "3a612ea3f5dfc5bb79dd9d3b3f2955dcb5b0e3c1cdd6d4f03f2dea17a0d09d20"
+        }
+      },
+      {
+        "path": "tests/backend/student-prepared/memory-pool.mjs",
+        "expected": {
+          "bytes": 8125,
+          "sha256": "e86bad4d27fc376b876a40c70c0d914f0427262987f0505dcd8a36fa34c689f4"
+        },
+        "actual": {
+          "bytes": 8971,
+          "sha256": "0ede9e037c97a2b36d569d52c56434309ae1efb86e6c95f0154e5460f4ac710e"
+        }
+      },
+      {
+        "path": "tests/clerk-auth/scoped-store.test.mjs",
+        "expected": {
+          "bytes": 14224,
+          "sha256": "e301a111d26b64fc2de1bdb9d62a9c0f3308d4c7401c351ea828cfc7bfe52c64"
+        },
+        "actual": {
+          "bytes": 14810,
+          "sha256": "e6cadda0c3bd454f1a65bae5f01edb64ca5b5d51a92a45b6fdaafcd5a276366c"
+        }
+      },
+      {
+        "path": "tests/vercel-node/pool-port.test.mjs",
+        "expected": {
+          "bytes": 3692,
+          "sha256": "8cad9affbcab42ca1daa74da7153de4f8b3d44b443120f199fb4df96216c98a2"
+        },
+        "actual": {
+          "bytes": 3833,
+          "sha256": "493899b7c65dae3a4146a9999a8ff4e5948c550e513b25b89c5ac958f1721a9d"
+        }
+      }
+    ],
+    "new_files_outside_selected_closure": [
+      "runtime/cloudflare-api.mjs",
+      "runtime/cloudflare-postgres.mjs",
+      "runtime/clerk-worker-bindings.mjs",
+      "tests/cloudflare/api-postgres.test.mjs",
+      "tests/cloudflare/clerk-worker-bindings.test.mjs"
+    ],
+    "first_diagnostic": "BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts (23067 vs22634)",
+    "interpretation": "No accepted base file changed in this slice. The old guard is still stale against the trusted-server overlay itself. This failure is not relabeled PASS, and the old closure does not accept the new five files."
+  },
+  "reproduction": {
+    "assembly": "Reconstruct accepted283 files through77e04d13 from pinned application source/overlays; apply only these five additions under their relative paths. Keep lab reports out of application source.",
+    "focused": "From application root: node --test tests/cloudflare/api-postgres.test.mjs tests/cloudflare/clerk-worker-bindings.test.mjs . Expect90 pass/1 explicitly skipped with no installed jose; if exact jose6.2.15 is present, real crypto test runs and missing-library test is skipped instead.",
+    "existing_regression_SQL_text_dependency": "For existing trusted-server-context.test.mjs only, place the already published60363-byte corrected SQL at <work>/review/first-student-trusted-server.activation.review.sql with the application at <work>/repo. Fetch its immutable8be232e source and verify e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd. No SQL is parsed, compiled or executed. This existing dependency is not duplicated in this package.",
+    "commands": "Exact argv/cwd/UTC/exit and original output hashes are above. Historical owner cwd paths are provenance only, not required resources. No other agent filesystem is a dependency."
+  },
+  "future_deployment_gates": [
+    "Independent exact source review and separately approved publication",
+    "Actual pg8.16.3 +jose6.2.15 Workers packaging/runtime check",
+    "Cloudflare nodejs_compat and compatibility date2026-11-11 are design inputs only; no Wrangler/default Worker config was added",
+    "Hyperdrive caching disabled; origin TLS verification and private credentials/role bindings must be configured and reviewed separately",
+    "Clerk live JWT exchange/liveness and request lifetime integration; no provider call performed",
+    "Separately approved SQL/helper/RLS integration and real HTTP-to-PostgreSQL test packet, including managed operator and two-actor oracles"
+  ],
+  "not_run": [
+    "Real Workers/wrangler packaging or execution",
+    "Actual pg/TLS/Hyperdrive/DB connections or SQL",
+    "Live Clerk/JWKS/provider endpoints",
+    "Semantic TypeScript5.9.3 (compiler absent)",
+    "Existing listener-based Web adapter integration suite requiring JOSE/runtime listeners; shared Web behavior is exercised through the new inert tests instead",
+    "Install/download, default activation, main/remote branch/upload/PR/merge/deploy, bot/UI/provider/configuration/backup actions"
+  ],
+  "privacy": "Selected source/logs contain only synthetic fixtures, inert connection-string placeholders and public provenance. No real credentials, personal/student data or environment values were inspected or included.",
+  "remote_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/cloudflare-api-01-20261111",
+    "parent": "8be232eff22c2608b55f7f5513d8752a0307977a",
+    "parent_tree": "ab1a7fea70f03474eb17ef2b33f817f7067d1e4d",
+    "prefix": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/",
+    "read_only_check_utc": "2026-11-11 20:05:42 UTC",
+    "branch_and_prefix_absent": true,
+    "write_status": "NOT_AUTHORIZED_NOT_ATTEMPTED"
+  },
+  "official_references": [
+    "https://developers.cloudflare.com/hyperdrive/examples/connect-to-postgres/postgres-drivers-and-libraries/node-postgres/",
+    "https://developers.cloudflare.com/hyperdrive/get-started/",
+    "https://clerk.com/docs/reference/backend/sessions/get-session",
+    "https://clerk.com/docs/reference/backend/types/backend-user"
+  ],
+  "denied_pending_uncertain": {
+    "denied": [],
+    "uncertain": [],
+    "pending": [
+      "Independent candidate review",
+      "JOSE and semantic/real runtime gates stated above",
+      "Separate exact publication approval"
+    ]
+  }
+}
