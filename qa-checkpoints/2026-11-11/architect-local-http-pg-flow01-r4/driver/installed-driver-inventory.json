@@ -1,0 +1,795 @@
+{
+  "files": [
+    {
+      "bytes": 4884,
+      "mode": "0o600",
+      "path": ".package-lock.json",
+      "sha256": "220b3ebe93a409456ebc4497a40d8007635341b66a407a47037acdd7980ae0cf"
+    },
+    {
+      "bytes": 1077,
+      "mode": "0o600",
+      "path": "pg/LICENSE",
+      "sha256": "192b8f5c96900f04a1271dec39688655d7416c1c6ea84a508e18b50d2b6751f3"
+    },
+    {
+      "bytes": 4316,
+      "mode": "0o600",
+      "path": "pg/README.md",
+      "sha256": "25e19d878c5a492023778a2596e8e26d76fc3e2b97a9582d4bdde675b8932408"
+    },
+    {
+      "bytes": 579,
+      "mode": "0o600",
+      "path": "pg/esm/index.mjs",
+      "sha256": "5ef4d06556eeb775987759c2c09229dca2139421ee40e819b566612db2b4a8dc"
+    },
+    {
+      "bytes": 18759,
+      "mode": "0o600",
+      "path": "pg/lib/client.js",
+      "sha256": "7e6ba79fe6bc1db15ec66ce67cd0f96b6b27c300ccec45911dc15f5121f709f4"
+    },
+    {
+      "bytes": 5248,
+      "mode": "0o600",
+      "path": "pg/lib/connection-parameters.js",
+      "sha256": "db77bac013bfb5faae661d3056f3fbc49f5bae60334f60b149de0c271a9d9725"
+    },
+    {
+      "bytes": 5175,
+      "mode": "0o600",
+      "path": "pg/lib/connection.js",
+      "sha256": "2069c662af9de8a708105f304a0e674a9766478da8250b416f5f3ee9ae0f4d99"
+    },
+    {
+      "bytes": 4096,
+      "mode": "0o600",
+      "path": "pg/lib/crypto/cert-signatures.js",
+      "sha256": "206ec95c51012b73fe15d549b24db2acab969271e971940a0b79cfdcf830755b"
+    },
+    {
+      "bytes": 7423,
+      "mode": "0o600",
+      "path": "pg/lib/crypto/sasl.js",
+      "sha256": "37206f4af85a0bf9973089c06ce54456938c3c74c9d4e65507053b8afd468889"
+    },
+    {
+      "bytes": 1215,
+      "mode": "0o600",
+      "path": "pg/lib/crypto/utils-legacy.js",
+      "sha256": "f453cc172ad7e9dbb6e09b3cb48d267113e5128d834e6ae2519d7e2d9fde0fa6"
+    },
+    {
+      "bytes": 2649,
+      "mode": "0o600",
+      "path": "pg/lib/crypto/utils-webcrypto.js",
+      "sha256": "a849cfe22d7590d79ddee76c8d7a058e2b67360a0d76683275d34133e5637117"
+    },
+    {
+      "bytes": 341,
+      "mode": "0o600",
+      "path": "pg/lib/crypto/utils.js",
+      "sha256": "a7d537da58f9ebc65dee84789ed5fa4175c6961c5be4a4dbb62b67d99c9c1213"
+    },
+    {
+      "bytes": 2426,
+      "mode": "0o600",
+      "path": "pg/lib/defaults.js",
+      "sha256": "8bb1781954cb7695e1e1bf7200aa29327ad0e135c877d1a82878858b123ced31"
+    },
+    {
+      "bytes": 1728,
+      "mode": "0o600",
+      "path": "pg/lib/index.js",
+      "sha256": "a012ecbe7fdefed8d2b36c3658e33dc4c291d0bb60df18d382300061211052b7"
+    },
+    {
+      "bytes": 8066,
+      "mode": "0o600",
+      "path": "pg/lib/native/client.js",
+      "sha256": "c900e47be3da1cb8b35a7e0cf1e51a7065f85cbbe505103c833d770cf574f5d5"
+    },
+    {
+      "bytes": 50,
+      "mode": "0o600",
+      "path": "pg/lib/native/index.js",
+      "sha256": "99fb61cb78a6d78b7a5fc0b9ac264ad58272af48be4bc50bfdb948b1342e3292"
+    },
+    {
+      "bytes": 4757,
+      "mode": "0o600",
+      "path": "pg/lib/native/query.js",
+      "sha256": "e17221776993847901de73de28690aebc1e5ed1151b115bc8d84cc10cddf4ae4"
+    },
+    {
+      "bytes": 7314,
+      "mode": "0o600",
+      "path": "pg/lib/query.js",
+      "sha256": "dea8044d70531cd16e514ecddbe44cdd65b4315a02287958d5ecfd0ebcd70ded"
+    },
+    {
+      "bytes": 2812,
+      "mode": "0o600",
+      "path": "pg/lib/result.js",
+      "sha256": "2e9dfbbb89c84cfdb1977a1503f2ddd265ed2f943f8dc3957dc0db193ee81488"
+    },
+    {
+      "bytes": 2132,
+      "mode": "0o600",
+      "path": "pg/lib/stream.js",
+      "sha256": "0bd4001775301604ddf7c94152e05f6f30a9354876717bdae2ab636d00eb12ba"
+    },
+    {
+      "bytes": 770,
+      "mode": "0o600",
+      "path": "pg/lib/type-overrides.js",
+      "sha256": "47cb7f7bc6a6e1b1d4dc7c92bacacb436f12e99242b77da8391fd5b71991d2a5"
+    },
+    {
+      "bytes": 5642,
+      "mode": "0o600",
+      "path": "pg/lib/utils.js",
+      "sha256": "a109ef3b3a7572e8523b937ae0c100be72d4f36d1d3d4c7032e1ef0abaf92e38"
+    },
+    {
+      "bytes": 1667,
+      "mode": "0o600",
+      "path": "pg/package.json",
+      "sha256": "f7b678a8055c234669e8dd272dd624771e29d9f0e3a3353f15c3005ab1a5fd29"
+    },
+    {
+      "bytes": 1082,
+      "mode": "0o600",
+      "path": "pg-connection-string/LICENSE",
+      "sha256": "2244b5486c4427001b6756a87b9a297d427c111dcc3ba64a097492a8979c23d0"
+    },
+    {
+      "bytes": 4933,
+      "mode": "0o600",
+      "path": "pg-connection-string/README.md",
+      "sha256": "97e40f360095a019a1a588ca237462a7118d2e9d1fa4985314b0ea4c445df470"
+    },
+    {
+      "bytes": 336,
+      "mode": "0o600",
+      "path": "pg-connection-string/esm/index.mjs",
+      "sha256": "e5af439889cb873c459670b82503c7b0480c7055843c6482242e50282f76b1ee"
+    },
+    {
+      "bytes": 911,
+      "mode": "0o600",
+      "path": "pg-connection-string/index.d.ts",
+      "sha256": "7d0021e828e9649bff9ddaccc3a8f1cc373810822d444f88b3939fccd6ee8cb8"
+    },
+    {
+      "bytes": 6265,
+      "mode": "0o600",
+      "path": "pg-connection-string/index.js",
+      "sha256": "828725a64dd8b736563bb36782646ff6002703207f6b905359b4e6140dd0dae0"
+    },
+    {
+      "bytes": 1375,
+      "mode": "0o600",
+      "path": "pg-connection-string/package.json",
+      "sha256": "cb6a56ff8e49fea4df1512d8129db95a0229193eba6850619be15c001853594e"
+    },
+    {
+      "bytes": 750,
+      "mode": "0o600",
+      "path": "pg-int8/LICENSE",
+      "sha256": "4e8e87ccdfc7e4b47fd89015f78468aa53b6bf43ab6e6e12d43e8f55294911de"
+    },
+    {
+      "bytes": 389,
+      "mode": "0o600",
+      "path": "pg-int8/README.md",
+      "sha256": "d77eaaca16d1fe569ee6dc87d340d2fa6d14438652618a8cf20382e16648244a"
+    },
+    {
+      "bytes": 1572,
+      "mode": "0o600",
+      "path": "pg-int8/index.js",
+      "sha256": "f991b0a41119bce0efbb471275dbd02de31a79fe6f87f8f5e5678e373a0f1627"
+    },
+    {
+      "bytes": 475,
+      "mode": "0o600",
+      "path": "pg-int8/package.json",
+      "sha256": "147155887a41bb6f69ff98b3dde827b7e6a8214c3a71938da4babf8e12adff2e"
+    },
+    {
+      "bytes": 1073,
+      "mode": "0o600",
+      "path": "pg-pool/LICENSE",
+      "sha256": "4f15ee7fc2a72082859d7e0d12dfa4bcdd70b1c744ad3850d07780730ac08557"
+    },
+    {
+      "bytes": 13956,
+      "mode": "0o600",
+      "path": "pg-pool/README.md",
+      "sha256": "8efbcc24ec311ab1e96154afce063fb6f4b0690f4d61128bcade50675e535300"
+    },
+    {
+      "bytes": 125,
+      "mode": "0o600",
+      "path": "pg-pool/esm/index.mjs",
+      "sha256": "521c8058172944cb9ceaee95073b49950a3906f91263303837e89f9ee346e81e"
+    },
+    {
+      "bytes": 13417,
+      "mode": "0o600",
+      "path": "pg-pool/index.js",
+      "sha256": "e362a6ffacb7544389b17984c6c0e3205c58e870d5ee8c86b388cc630a662427"
+    },
+    {
+      "bytes": 1052,
+      "mode": "0o600",
+      "path": "pg-pool/package.json",
+      "sha256": "13a179c9059b252496bf0a132fd720946372b15ede91f97d9b0ca55cdf2b625d"
+    },
+    {
+      "bytes": 1077,
+      "mode": "0o600",
+      "path": "pg-protocol/LICENSE",
+      "sha256": "192b8f5c96900f04a1271dec39688655d7416c1c6ea84a508e18b50d2b6751f3"
+    },
+    {
+      "bytes": 150,
+      "mode": "0o600",
+      "path": "pg-protocol/README.md",
+      "sha256": "163df61eaa9f5337d5c0fcb3c0f15207f91a208dbd12ed26582bfc1e9bd59180"
+    },
+    {
+      "bytes": 11,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/b.d.ts",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "bytes": 636,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/b.js",
+      "sha256": "a1024bdec7246a732be4713a3d3326258732971363ac234d4c1709fe54b48be1"
+    },
+    {
+      "bytes": 792,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/b.js.map",
+      "sha256": "7088732cf16dfe50f60a9e459171cec3d6bc6309483486fa2105d5f926d9ce85"
+    },
+    {
+      "bytes": 396,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/buffer-reader.d.ts",
+      "sha256": "ed0ab65d6257e36b916b18a497643a9b78de447e3a7af7c1f91e1474ccb8e943"
+    },
+    {
+      "bytes": 1639,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/buffer-reader.js",
+      "sha256": "ee648594694b9fa7a65c6300bf316869a82711f225bf42daf84da15f528cd8f4"
+    },
+    {
+      "bytes": 1747,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/buffer-reader.js.map",
+      "sha256": "ff6ebc4854cc9a1b79fb22e0cb339a50875715f61c49751cbf5a42122b38e246"
+    },
+    {
+      "bytes": 441,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/buffer-writer.d.ts",
+      "sha256": "ed359de1e527dedeed1ea1985b4db6e48f69c92f00083af8cce7ddb77b16ab12"
+    },
+    {
+      "bytes": 2772,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/buffer-writer.js",
+      "sha256": "64a7904c3ff4e778d624426c2f78ab54c46df63091a75a41cfbc430a3c600ac8"
+    },
+    {
+      "bytes": 3087,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/buffer-writer.js.map",
+      "sha256": "bb956e31d4c0028d82d3b9b5cf66f5110fcf55d377042f54695fff36061f7778"
+    },
+    {
+      "bytes": 11,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/inbound-parser.test.d.ts",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "bytes": 19234,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/inbound-parser.test.js",
+      "sha256": "caa80515ef21dead1a985560664adc58687d616046a09f24004fdd318dd4ecd7"
+    },
+    {
+      "bytes": 14688,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/inbound-parser.test.js.map",
+      "sha256": "5590c9482277ce5d49cd5ceb8912da69408167f41fdb1a6b86eacafb73239722"
+    },
+    {
+      "bytes": 302,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/index.d.ts",
+      "sha256": "0dfe35191a04e8f9dc7caeb9f52f2ee07402736563d12cbccd15fb5f31ac877f"
+    },
+    {
+      "bytes": 791,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/index.js",
+      "sha256": "b1af1a8b96887bb4df5611e3e648f2d753051ccc18d1d983ee6da83479f70971"
+    },
+    {
+      "bytes": 522,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/index.js.map",
+      "sha256": "c83132d7a1ded851de8eba034cb8ef9e483700ba54fcfa69bcc1d23c31d347ea"
+    },
+    {
+      "bytes": 6103,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/messages.d.ts",
+      "sha256": "17230b34bb564a3a2e36f9d3985372ccab4ad1722df2c43f7c5c2b553f68e5db"
+    },
+    {
+      "bytes": 4973,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/messages.js",
+      "sha256": "dfd22ad639f3030b41617ff0ee201ece7cdbce4adb7e1aae7978541b1384cd31"
+    },
+    {
+      "bytes": 3383,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/messages.js.map",
+      "sha256": "811fb02046104bfd60c5478bab3e491e8f9eb88602a17ca47f5ae69c72580dd9"
+    },
+    {
+      "bytes": 11,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/outbound-serializer.test.d.ts",
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "bytes": 11065,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/outbound-serializer.test.js",
+      "sha256": "a6806571d41fa3f9bd1c557ff522e50b20b96596fbebe4614cea7c255cc7c01f"
+    },
+    {
+      "bytes": 10276,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/outbound-serializer.test.js.map",
+      "sha256": "39483226b60b19c0bf02d5b412542af869c38cc45c2a4fea88727d937ddda816"
+    },
+    {
+      "bytes": 1242,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/parser.d.ts",
+      "sha256": "9b4f7ff9681448c72abe38ea8eefd7ffe0c3aefe495137f02012a08801373f71"
+    },
+    {
+      "bytes": 13824,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/parser.js",
+      "sha256": "dff10e15ac457e6ba1c522489e69ee1bed5aa7f2f416df219c673c979a099b22"
+    },
+    {
+      "bytes": 11246,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/parser.js.map",
+      "sha256": "6142293319195fcb20cfb4472658a33c2be323c46a161ede5c7b978b7bc292e0"
+    },
+    {
+      "bytes": 1273,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/serializer.d.ts",
+      "sha256": "6e5c9272f6b3783be7bdddaf207cccdb8e033be3d14c5beacc03ae9d27d50929"
+    },
+    {
+      "bytes": 6937,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/serializer.js",
+      "sha256": "8ac7c902efc4a8221a08704cbe9e049367678ca6fccf2807dd34742117638efb"
+    },
+    {
+      "bytes": 7124,
+      "mode": "0o600",
+      "path": "pg-protocol/dist/serializer.js.map",
+      "sha256": "71e9cecd7cf42974947f1e0f315402b9bf5821e807b10a9a85f4180d869e039c"
+    },
+    {
+      "bytes": 325,
+      "mode": "0o600",
+      "path": "pg-protocol/esm/index.js",
+      "sha256": "0f6c279f5e18cbc73dd3eab808e6eaa9621ddd3511197da2e67106fdd0b2b3b2"
+    },
+    {
+      "bytes": 1102,
+      "mode": "0o600",
+      "path": "pg-protocol/package.json",
+      "sha256": "dd7cbb1ddc3eb921ec0af4647f43b08f84f1de2938d5050c11cf5c2305988acb"
+    },
+    {
+      "bytes": 473,
+      "mode": "0o600",
+      "path": "pg-protocol/src/b.ts",
+      "sha256": "eb585946649fd05e86397b77be4a9d00c225d2222cbc356d725afe11ea8ab265"
+    },
+    {
+      "bytes": 1440,
+      "mode": "0o600",
+      "path": "pg-protocol/src/buffer-reader.ts",
+      "sha256": "80a39b189a5ff22d29ecbb1403829758fde0a15dd86711ddbe69ed94fb629f7d"
+    },
+    {
+      "bytes": 2503,
+      "mode": "0o600",
+      "path": "pg-protocol/src/buffer-writer.ts",
+      "sha256": "e8f350f8d8c21cae20fab518a7f2b0554685b04acc2a57ee1ad2c1db5b539409"
+    },
+    {
+      "bytes": 15158,
+      "mode": "0o600",
+      "path": "pg-protocol/src/inbound-parser.test.ts",
+      "sha256": "023229ef9ab845ef6bafaf96ebbb3b3fe25d00e9be3feed2d9eae33d5275a431"
+    },
+    {
+      "bytes": 443,
+      "mode": "0o600",
+      "path": "pg-protocol/src/index.ts",
+      "sha256": "a7acc3e9fd87b531b93012b3d4d3af0cb1ec88bc4f29ba76b4af9d3d6dde927a"
+    },
+    {
+      "bytes": 6458,
+      "mode": "0o600",
+      "path": "pg-protocol/src/messages.ts",
+      "sha256": "98ceb278f736325f847a0c8326aae46f2573f2a750b056d5061ae0d00714cd2d"
+    },
+    {
+      "bytes": 8562,
+      "mode": "0o600",
+      "path": "pg-protocol/src/outbound-serializer.test.ts",
+      "sha256": "2f99dbbb68b1624dd419c66f07740a7efd7be6366b480e44bce9e9808e3edf44"
+    },
+    {
+      "bytes": 13469,
+      "mode": "0o600",
+      "path": "pg-protocol/src/parser.ts",
+      "sha256": "c1f673d6950f6b2de4619410d4c77c77206d4069cef3808e8576fccc11417106"
+    },
+    {
+      "bytes": 7193,
+      "mode": "0o600",
+      "path": "pg-protocol/src/serializer.ts",
+      "sha256": "aa2dd58a140de1b6395a15a0d29060d33aab503a9e0c820faef62e8e38536a99"
+    },
+    {
+      "bytes": 1727,
+      "mode": "0o600",
+      "path": "pg-protocol/src/testing/buffer-list.ts",
+      "sha256": "01bce658cf7fbb2c03ebb4c3d7e729389d6b3c9edb3cbfc2e1864f2a76647a00"
+    },
+    {
+      "bytes": 4360,
+      "mode": "0o600",
+      "path": "pg-protocol/src/testing/test-buffers.ts",
+      "sha256": "556522ba2930a51c27b1ad945a6308f3a4d6b4f449a0f9d90e8bc631f9eb8536"
+    },
+    {
+      "bytes": 24,
+      "mode": "0o600",
+      "path": "pg-protocol/src/types/chunky.d.ts",
+      "sha256": "a184faa9f71c372f3c5ee7ba28fc96e852fbaa2460cffd5c5ad291bd31cbd50d"
+    },
+    {
+      "bytes": 83,
+      "mode": "0o600",
+      "path": "pg-types/.travis.yml",
+      "sha256": "b09d0d2ec01d004669d7ff94f5fc91f380e88faece76226c7c72b0a99751dc36"
+    },
+    {
+      "bytes": 232,
+      "mode": "0o600",
+      "path": "pg-types/Makefile",
+      "sha256": "f8ef5d631da574fb89632ac2664fdab6150b122f06b700d95c98b247bce56257"
+    },
+    {
+      "bytes": 3831,
+      "mode": "0o600",
+      "path": "pg-types/README.md",
+      "sha256": "ecda9bca71d3f0cee4e600d1dd2bef336213f39ef2e8fca6a1a1c1c8723f643a"
+    },
+    {
+      "bytes": 2627,
+      "mode": "0o600",
+      "path": "pg-types/index.d.ts",
+      "sha256": "f60e3e3060207ac982da13363181fd7ee4beecc19a7c569f0d6bb034331066c2"
+    },
+    {
+      "bytes": 1214,
+      "mode": "0o600",
+      "path": "pg-types/index.js",
+      "sha256": "ece6d549270ba55d08126b10c9997324d808ee828ef00dad236e84e54d9d556d"
+    },
+    {
+      "bytes": 759,
+      "mode": "0o600",
+      "path": "pg-types/index.test-d.ts",
+      "sha256": "da9b9d37dce95816b504a3b7577135a6060b1ba8053f0a643786ed672488bbdd"
+    },
+    {
+      "bytes": 208,
+      "mode": "0o600",
+      "path": "pg-types/lib/arrayParser.js",
+      "sha256": "cad20b20e6312125b45f74480eba3ef46b456997da4f53bbec56356d66edd730"
+    },
+    {
+      "bytes": 6063,
+      "mode": "0o600",
+      "path": "pg-types/lib/binaryParsers.js",
+      "sha256": "4b0105414068ea96450ef0d420db9449c00c565c5894683955af15bf94075fb9"
+    },
+    {
+      "bytes": 1564,
+      "mode": "0o600",
+      "path": "pg-types/lib/builtins.js",
+      "sha256": "09213197e4b44012e4c83669aa80884a189e90c777ddfef1f44c90c412167354"
+    },
+    {
+      "bytes": 5367,
+      "mode": "0o600",
+      "path": "pg-types/lib/textParsers.js",
+      "sha256": "bd811a530000508b6b90c1db462078e122f0404769d73f57ad41fe90aca159bd"
+    },
+    {
+      "bytes": 973,
+      "mode": "0o600",
+      "path": "pg-types/package.json",
+      "sha256": "3ec0293cb38cc8d9475e3eb32ac5f19d195bf9fccc8b19a0714e6ecd6e7c2cf0"
+    },
+    {
+      "bytes": 644,
+      "mode": "0o600",
+      "path": "pg-types/test/index.js",
+      "sha256": "903e76e7cd794c5f7918b67847e3790f4c582948eaf75ab9fd43d62278b44bc3"
+    },
+    {
+      "bytes": 11731,
+      "mode": "0o600",
+      "path": "pg-types/test/types.js",
+      "sha256": "b813a6ece808d40094bac1770d4d35cb0e17ae70a4236cc5c93846d72c08c159"
+    },
+    {
+      "bytes": 3294,
+      "mode": "0o600",
+      "path": "pgpass/README.md",
+      "sha256": "62549909404b5a0dcb2b4b74c9a930baf8095dbcfa1543c4ffc79378acd22b57"
+    },
+    {
+      "bytes": 5488,
+      "mode": "0o600",
+      "path": "pgpass/lib/helper.js",
+      "sha256": "28d823dcde115f31848ba93d9cb55ba20089ac701b6a38b228d185d96df4f1b5"
+    },
+    {
+      "bytes": 467,
+      "mode": "0o600",
+      "path": "pgpass/lib/index.js",
+      "sha256": "cc95b8ef6c32a9afdc48b85a5e7128d5e29567f8ded02d9bf7acd27c3d870c39"
+    },
+    {
+      "bytes": 1074,
+      "mode": "0o600",
+      "path": "pgpass/package.json",
+      "sha256": "d75240eb4fe759c10db9f903838275348676a8bdc1f329e20a833713cd7c99bd"
+    },
+    {
+      "bytes": 131,
+      "mode": "0o600",
+      "path": "postgres-array/index.d.ts",
+      "sha256": "5e5cd3ad9676e8fa514b66502e5d132c537a9d78a849874c4b2d6f59aaff5acf"
+    },
+    {
+      "bytes": 2320,
+      "mode": "0o600",
+      "path": "postgres-array/index.js",
+      "sha256": "807ba580ed423e518672c27b4022a56acb693be04349733ffc1fe6f324fbcee2"
+    },
+    {
+      "bytes": 1111,
+      "mode": "0o600",
+      "path": "postgres-array/license",
+      "sha256": "f057f36739d53d228a746de4440c1e0c644ecde06d6beab45337d39c9d12a393"
+    },
+    {
+      "bytes": 649,
+      "mode": "0o600",
+      "path": "postgres-array/package.json",
+      "sha256": "dcd6a505fcbc032b409ee2838ab2c776dea3a9cfe02b736364b6cb82a946665f"
+    },
+    {
+      "bytes": 692,
+      "mode": "0o600",
+      "path": "postgres-array/readme.md",
+      "sha256": "d6b0e269174660704b3d72438334a52d2bcb2f353a3354f3c7cd65771e27c0de"
+    },
+    {
+      "bytes": 823,
+      "mode": "0o600",
+      "path": "postgres-bytea/index.js",
+      "sha256": "b555719ba77bf6c8037c44a8104173007165553279a2143b5a736694597c06e0"
+    },
+    {
+      "bytes": 1111,
+      "mode": "0o600",
+      "path": "postgres-bytea/license",
+      "sha256": "f057f36739d53d228a746de4440c1e0c644ecde06d6beab45337d39c9d12a393"
+    },
+    {
+      "bytes": 617,
+      "mode": "0o600",
+      "path": "postgres-bytea/package.json",
+      "sha256": "f1fd05e490d8f63389ab689e242e7eedb79a2498b8ef8dc3ca1851ea22d9e5cc"
+    },
+    {
+      "bytes": 504,
+      "mode": "0o600",
+      "path": "postgres-bytea/readme.md",
+      "sha256": "24d2c6e5bc32e86c9263af0d8ca2e5217a43565a311942888ba979fd5b0ed550"
+    },
+    {
+      "bytes": 2676,
+      "mode": "0o600",
+      "path": "postgres-date/index.js",
+      "sha256": "9a09e3ec0775237576b1f6ff0fba0ed6171235aeded635a42c174b517e34cb1a"
+    },
+    {
+      "bytes": 1111,
+      "mode": "0o600",
+      "path": "postgres-date/license",
+      "sha256": "f057f36739d53d228a746de4440c1e0c644ecde06d6beab45337d39c9d12a393"
+    },
+    {
+      "bytes": 607,
+      "mode": "0o600",
+      "path": "postgres-date/package.json",
+      "sha256": "03f9edefa96697072075e02df045cc61ed4ca2f8dfffb1ff87f4070bc3404151"
+    },
+    {
+      "bytes": 1521,
+      "mode": "0o600",
+      "path": "postgres-date/readme.md",
+      "sha256": "ac45d399addd5e87db86d35adf84755bceadb0aee2360daeffd7af2d4ab41472"
+    },
+    {
+      "bytes": 422,
+      "mode": "0o600",
+      "path": "postgres-interval/index.d.ts",
+      "sha256": "71f9db35d9032bee846bafdf29caf0229ce594495f6c6457e65276afe962dc8a"
+    },
+    {
+      "bytes": 3413,
+      "mode": "0o600",
+      "path": "postgres-interval/index.js",
+      "sha256": "836fe0a39e52f051d62583d8375d3b270b4cb93dd026b125438a89e5a0258c41"
+    },
+    {
+      "bytes": 1111,
+      "mode": "0o600",
+      "path": "postgres-interval/license",
+      "sha256": "f057f36739d53d228a746de4440c1e0c644ecde06d6beab45337d39c9d12a393"
+    },
+    {
+      "bytes": 666,
+      "mode": "0o600",
+      "path": "postgres-interval/package.json",
+      "sha256": "cc3056db105e66c9128cb8a387cda782d5f1ae9281be90de0b8d26a90af89c57"
+    },
+    {
+      "bytes": 1115,
+      "mode": "0o600",
+      "path": "postgres-interval/readme.md",
+      "sha256": "f5399e5250a2cc93245d874dbfe3527e5845119a65b80ea13cbb66ccf913818e"
+    },
+    {
+      "bytes": 764,
+      "mode": "0o600",
+      "path": "split2/LICENSE",
+      "sha256": "c372ef2fa1dfcb124ed807609751e75e3a009f108c5724916b489288fcb88a0c"
+    },
+    {
+      "bytes": 3381,
+      "mode": "0o600",
+      "path": "split2/README.md",
+      "sha256": "7369c93bb01adc348ccdd1ac052880cc7d06e39a4a037c6a3f15175c3a6f0a64"
+    },
+    {
+      "bytes": 472,
+      "mode": "0o600",
+      "path": "split2/bench.js",
+      "sha256": "de9eadc4133f88e9991f504899c47ef841ee923576dba2a8e50dc34a1d48692e"
+    },
+    {
+      "bytes": 3764,
+      "mode": "0o600",
+      "path": "split2/index.js",
+      "sha256": "842471719e0e901e01ae1a1d3a6a4d1ff3e36747a7f50d5644f09d1d595c1857"
+    },
+    {
+      "bytes": 1113,
+      "mode": "0o600",
+      "path": "split2/package.json",
+      "sha256": "87b734c3087c8d9ed5d76d1bff00db30f960831ba8705dd18d73b180d08d2140"
+    },
+    {
+      "bytes": 7925,
+      "mode": "0o600",
+      "path": "split2/test.js",
+      "sha256": "de9619b9670887b6d1ed959287b96b46334cd9a6be21487c8a715afad90eade8"
+    },
+    {
+      "bytes": 545,
+      "mode": "0o600",
+      "path": "xtend/.jshintrc",
+      "sha256": "da3531289454b9a256c622c1a74771440d4f0e57092262902cefbc6830ec3a7c"
+    },
+    {
+      "bytes": 1078,
+      "mode": "0o600",
+      "path": "xtend/LICENSE",
+      "sha256": "82e67379203d5794e7c44549847d8d64ae6904591381682360470898bd306821"
+    },
+    {
+      "bytes": 726,
+      "mode": "0o600",
+      "path": "xtend/README.md",
+      "sha256": "fe5fb4d83470799709c32207fc1fff3e522070b2c625a9818f191125406cd360"
+    },
+    {
+      "bytes": 384,
+      "mode": "0o600",
+      "path": "xtend/immutable.js",
+      "sha256": "04986f168b8f16f4f25237d0608cdf57b6ca14f100fed62c0295bda2559ab24b"
+    },
+    {
+      "bytes": 369,
+      "mode": "0o600",
+      "path": "xtend/mutable.js",
+      "sha256": "71a38649c77408217483f81f55daee1d6646d6c670e3d034a4482cb3453886e9"
+    },
+    {
+      "bytes": 1056,
+      "mode": "0o600",
+      "path": "xtend/package.json",
+      "sha256": "b02ffef8cda96c5c3ee00a00390e63f608362c2ddfb3ed754e181d013a45d48a"
+    },
+    {
+      "bytes": 2307,
+      "mode": "0o600",
+      "path": "xtend/test.js",
+      "sha256": "4a7a6d3aade85095607c4aa3bd99f74fa6adaa69058d156677ad7756955e80f6"
+    }
+  ],
+  "npm_scripts": "DISABLED",
+  "optional_pg_cloudflare_and_pg_native": "OMITTED",
+  "packages": {
+    "pg": "8.16.3",
+    "pg-connection-string": "2.9.1",
+    "pg-int8": "1.0.1",
+    "pg-pool": "3.10.1",
+    "pg-protocol": "1.10.3",
+    "pg-types": "2.2.0",
+    "pgpass": "1.0.5",
+    "postgres-array": "2.0.0",
+    "postgres-bytea": "1.0.0",
+    "postgres-date": "1.0.7",
+    "postgres-interval": "1.2.0",
+    "split2": "4.2.0",
+    "xtend": "4.0.2"
+  }
+}

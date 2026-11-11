@@ -1,0 +1,174 @@
+{
+  "format": "LOCAL_HTTP_PG_FLOW01_PREPARATION_V1",
+  "runnable": true,
+  "authorization": "NO_EXECUTION_APPROVAL_AT_PREPARATION; exact external approval remains required",
+  "pending": [],
+  "root": "/tmp/ua-http-pg17-flow01-attempt03-20261111",
+  "dependencies": "/tmp/ua-http-pg17-driver01-attempt02-20261111",
+  "source": "/tmp/ua-trusted-context-architect-review-juYqvOhv/repo",
+  "database": "ua_flow01",
+  "admin_user": "ua_flow_admin",
+  "runtime_user": "ua_flow_client",
+  "port": 55473,
+  "uid": 1000,
+  "gid": 1000,
+  "os_peer_user": "agent",
+  "node_version": "v24.22.1",
+  "npm_version": "11.9.0",
+  "postgres_version": "17.11",
+  "binaries": {
+    "initdb": {
+      "path": "/tmp/ua-pg17-tools-0pziy673/pg/bin/initdb",
+      "bytes": 215040,
+      "sha256": "3da43c38a691b214cf47bba682371002ba39aa71473bc428ae24b7ad11c0b3d0"
+    },
+    "postgres": {
+      "path": "/tmp/ua-pg17-tools-0pziy673/pg/bin/postgres",
+      "bytes": 10958064,
+      "sha256": "4529d668353b47aa7397ee88e8b958b4a71bd11947fbe7d2646030d9d64c9cad"
+    },
+    "pg_ctl": {
+      "path": "/tmp/ua-pg17-tools-0pziy673/pg/bin/pg_ctl",
+      "bytes": 89776,
+      "sha256": "524ce60ad16d890ff3d7a6be80a4f93313a81b99cc4419c1869818f1bb6ff662"
+    },
+    "pg_controldata": {
+      "path": "/tmp/ua-pg17-tools-0pziy673/pg/bin/pg_controldata",
+      "bytes": 74328,
+      "sha256": "1a74edc2ecc0b7855f36f21f3cc79b082bf08e7bfd64143eb1270111e9bbdca9"
+    },
+    "psql": {
+      "path": "/tmp/ua-pg17-tools-0pziy673/pg/bin/psql",
+      "bytes": 604592,
+      "sha256": "9f7570279c500670ec529197bb99363d7e23b913b15bc8f9dae7547e90bcac7c"
+    },
+    "node": {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+      "bytes": 126939688,
+      "sha256": "61ab14cd750fc24d5db53490ec5fc40f756e4b6e136b78cf7004265471d9bd1d"
+    },
+    "npm_cli": {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/lib/node_modules/npm/bin/npm-cli.js",
+      "bytes": 54,
+      "sha256": "8e5f6f3429f8cdbe693cdc29904e9d5a7b127a494bd15c804bd54c7403bfcbe7"
+    },
+    "python": {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "bytes": 30894944,
+      "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+    }
+  },
+  "schema": {
+    "original": "bootstrap.review.sql",
+    "original_bytes": 34366,
+    "original_sha256": "3a0c4b7b121dab0d765a7096cf0212eea605847f6481d0508cd837b7defca9c4",
+    "guard": "DO $review_guard$ BEGIN\n  RAISE EXCEPTION 'REVIEW_ONLY_DB_BOOTSTRAP_01_NOT_AUTHORIZED_FOR_APPLICATION';\nEND $review_guard$;\n",
+    "derived_bytes": 34294,
+    "derived_sha256": "bd3d7c05acc2aa6f9d07885075a2f7482e31c7fa46d580d4d3207978bfcf5efb"
+  },
+  "activation": {
+    "status": "PINNED_SOURCE_EXTERNAL_REVIEW_GATE",
+    "path": "corrected-activation.review.sql",
+    "bytes": 60365,
+    "sha256": "165711ecb98d46b0aea87253b172e9c535d53090626f6574d106ae34643be52d",
+    "guard": "DO $review_guard$ BEGIN\n  RAISE EXCEPTION 'REVIEW_ONLY_FIRST_STUDENT_TRUSTED_SERVER_NOT_AUTHORIZED';\nEND $review_guard$;\n",
+    "derived_bytes": 60296,
+    "derived_sha256": "368697df769a3a9dc52d5697c1af0b664903a9fa77bf2b89f590a47a93ba48e9",
+    "operator_contract_status": "EXACT_PUBLISHED_CONTRACT_REVIEWED",
+    "operator_role": "ua_flow_operator",
+    "repository": "oybek-muminov/lab_univeracademy",
+    "commit": "4924d64333a4348bfcfa2e632cb6a1d8ccaae6b3",
+    "tree": "657dd9e450942137b78d3460ce46b8be782453ee",
+    "publication_manifest_sha256": "dcdac653b1ce210aa26728602defdb7db4297909df090a18441fdf72e4ae3f64",
+    "review_scope": "Architect exact two-parenthesis source/data acceptance; original operator/grant/RLS contract unchanged. Independent SQL and packet QA plus existing bounded user authorization are external execution gates; SQL compilation/execution NOT_RUN for this source."
+  },
+  "limits": {
+    "install_seconds": 180,
+    "run_seconds": 240,
+    "init_seconds": 60,
+    "start_seconds": 30,
+    "sql_seconds": 90,
+    "flow_seconds": 120,
+    "stop_seconds": 30,
+    "single_command_stream_bytes": 1048576,
+    "all_evidence_bytes": 8388608,
+    "runtime_disk_bytes": 268435456,
+    "driver_disk_bytes": 134217728,
+    "concurrency": 1,
+    "pool_max": 1,
+    "postgres_connections": 6,
+    "statement_ms": 5000,
+    "lock_ms": 2000,
+    "idle_transaction_ms": 15000,
+    "http_ms": 10000,
+    "expiry_http_ms": 16000,
+    "expiry_wait_ms": 12020,
+    "node_heap_MiB": 128,
+    "poll_seconds": 0.1,
+    "connect_seconds": 5
+  },
+  "fixture": {
+    "people": 2,
+    "questions": 2,
+    "options_each": 4,
+    "initial_rows": 14,
+    "initial_counts": {
+      "groups": 1,
+      "people": 2,
+      "memberships": 2,
+      "demos": 1,
+      "test_versions": 1,
+      "assignments": 1,
+      "grants": 1,
+      "student_families": 2,
+      "student_access": 3
+    },
+    "synthetic_identity": "seeded opaque Telegram-family session, no Telegram or Clerk login",
+    "expected_created_flow_rows": 6
+  },
+  "coverage_limits": [
+    "No primary/provider credentials or connection",
+    "No Cloudflare/Hyperdrive or Clerk/Telegram integration",
+    "No production TLS factory use or alteration",
+    "No commit fault injection, crash durability, concurrency/load or managed-operator apply proof"
+  ],
+  "cleanup": "Successful run only, exact runtime root once after verified stop and durable intent; fail/unknown retains or reports partial state without retry. Dependencies/evidence/source/tools retained.",
+  "external_gates": [
+    "User approval for exact lab publication",
+    "Independent QA of exact published packet",
+    "Explicit user approval of exact install/run/cleanup manifest"
+  ],
+  "revision_of_manifest_sha256": "3f27734811803662336ee5c202d51055afc9a4ae933e08498536132bed27756d",
+  "publication_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "architect/local-http-pg-flow01-20261111",
+    "parent": "8be232eff22c2608b55f7f5513d8752a0307977a",
+    "prefix": "qa-checkpoints/2026-11-11/architect-local-http-pg-flow01/",
+    "write_status": "NOT_AUTHORIZED_NOT_ATTEMPTED"
+  },
+  "runtime_readiness": false,
+  "source_acceptance": {
+    "kind": "SOURCE_OFFLINE_ONLY_NOT_RUNTIME",
+    "application_commit": "77e04d13d38054135d0520a04a01c7ff9012bde8",
+    "SQL_correction_commit": "8be232eff22c2608b55f7f5513d8752a0307977a",
+    "architect_P2_CTX_01": "CLOSED_SOURCE_ONLY",
+    "QA_P2_CTX_01": "CLOSED_STATIC_SOURCE_TEXT",
+    "QA_report_sha256": "40251d2ff85ea8be25af48cab1c67c93212ff1134a5b929b309de3123e0b31c6",
+    "QA_index_sha256": "288e78ae914aefb56ee41fd92d7f962b5cb8e095a82647b9af21674d2268875e",
+    "QA_original_application_tests_and_TypeScript": "337-test/TS source acceptance retained, not rerun for SQL-only correction",
+    "old_selected_guard_pins_stale": 8
+  },
+  "driver_reuse": {
+    "mode": "VERIFIED_READ_ONLY_REUSE_NO_INSTALL",
+    "inventory": {
+      "path": "driver/installed-driver-inventory.json",
+      "bytes": 23985,
+      "sha256": "57afe588217490869b9d30906e63c5d93e8a958a4e8bc6e828af74aa79d21e48"
+    },
+    "source_run_packet_commit": "aa2eeeb8204a2e15194d4c6c618b15babba0754e",
+    "source_run_manifest_sha256": "a73c90224479a5f51a7928203f38329a6e90ea0b3f914d859661eb2430bd0f3d",
+    "source_observation": "Successful npm13-package install in retained attempt02; observed129-file inventory, a pinned input rather than a new attestation.",
+    "install": "NOT_RUN_NO_NPM_DOWNLOAD_NETWORK",
+    "preservation": "No driver/cache/config write/chmod/deletion; read-only preflight and post-flow exact identity checks. Old cluster and failed prefixes never adopted or cleaned."
+  }
+}
