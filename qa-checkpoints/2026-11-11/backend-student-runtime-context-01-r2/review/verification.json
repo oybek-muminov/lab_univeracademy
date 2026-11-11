@@ -1,0 +1,316 @@
+{
+  "format": "UA-STUDENT-RUNTIME-CORRECTION-R2-VERIFICATION-v1",
+  "status": "AUTHOR_OFFLINE_PASS_INDEPENDENT_REVIEW_PENDING",
+  "application_base": {
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "published_overlay_base": {
+    "commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+    "tree": "e5d482497a224d100d1bf6beedc66cd0fb7225b5",
+    "manifest": {
+      "bytes": 9641,
+      "sha256": "58fcac2b8f6bfef64ea414f2df48e8fa7e30e7bbceb94aa67b81f5026bfdfedf"
+    }
+  },
+  "node": "v24.22.1",
+  "files": [
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "change": "modified",
+      "bytes": 15562,
+      "sha256": "b6a7ef7a9b2c8ec0956dd8fafd15e4359db12bb36932e11476d486f09189f275"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/configured-http.ts",
+      "change": "modified",
+      "bytes": 9359,
+      "sha256": "582819b9a2218d804b8015861405e19b60fe08d440201cf245f266befc6f2c8f"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "change": "modified",
+      "bytes": 12856,
+      "sha256": "70b4a038642e4e92f53dd0bd8daf8b1de3108f4e698e4031e5eea5ac4727296a"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "change": "modified",
+      "bytes": 10068,
+      "sha256": "fe8022c4d48f76d90240669bfd1899df77ceccccc0aede9323a9c429c475cc4d"
+    },
+    {
+      "path": "tests/backend/student-prepared/routing-receipts.test.mjs",
+      "change": "added",
+      "bytes": 10342,
+      "sha256": "4a6e879e393d1bdf5b8425f305e6641af6aa0902c73396e1a8f49cbfd741aa46"
+    }
+  ],
+  "total_source_bytes": 58187,
+  "checks": {
+    "new_targeted_tests": 18,
+    "unsupported_request_matrix_cases": 40,
+    "lease_cases": 5,
+    "lease_cases_cover": [
+      "shortened expiry exceeded",
+      "shortened expiry equality",
+      "shortened unexpired positive",
+      "no extension by a later longer expiry",
+      "stable unexpired positive"
+    ],
+    "published_regressions": 141,
+    "final_tests": 159,
+    "final_pass": 159,
+    "final_fail": 0,
+    "red_calibration": {
+      "source": "exact published overlay plus accepted base; identical final test",
+      "tests": 18,
+      "pass": 5,
+      "fail": 13
+    },
+    "lease_isolation_calibration": {
+      "source": "exact superseded two-fix candidate plus corrected final test",
+      "tests": 18,
+      "pass": 16,
+      "fail": 2,
+      "evidence": {
+        "bytes": 5483,
+        "sha256": "c66ab3dc51e49d2f1d014e803fb5e026fd410ea9d55f8309e97394a852c25371"
+      }
+    },
+    "syntax_files": 5,
+    "patch_replay_steps": 4,
+    "patch_replay": "PASS"
+  },
+  "commands": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "tests/backend/student-prepared/routing-receipts.test.mjs"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline",
+      "started_utc": "2026-11-11T13:54:27.812138+00:00",
+      "finished_utc": "2026-11-11T13:54:28.372606+00:00",
+      "exit": 1,
+      "output": {
+        "path": "red-before.final.log",
+        "bytes": 13243,
+        "sha256": "430e4d1ce07209b44a9eeef594894b72b26d452092424b9cd583c2cd54153f77"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/repo",
+      "started_utc": "2026-11-11T13:54:28.372926+00:00",
+      "finished_utc": "2026-11-11T13:54:28.377743+00:00",
+      "exit": 0,
+      "output": {
+        "path": "node-version.log",
+        "bytes": 9,
+        "sha256": "249baf635bb43877fcb9422efa1a4904b702d0ddf14d3949b7cd0950d5229c81"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "tests/backend/student-prepared/flow.test.mjs",
+        "tests/backend/student-prepared/clerk.test.mjs",
+        "tests/backend/student-prepared/routing-receipts.test.mjs",
+        "tests/vercel-node/production-options.test.mjs"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/repo",
+      "started_utc": "2026-11-11T13:54:28.377879+00:00",
+      "finished_utc": "2026-11-11T13:54:29.300738+00:00",
+      "exit": 0,
+      "output": {
+        "path": "offline.final.log",
+        "bytes": 28018,
+        "sha256": "aa7084b6fc340949796ec8c2ebd105af3340c09e01f0dad0c6354154f59ca72d"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/clerk-http.ts"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/repo",
+      "started_utc": "2026-11-11T13:54:29.321816+00:00",
+      "finished_utc": "2026-11-11T13:54:29.353213+00:00",
+      "exit": 0,
+      "output": {
+        "path": "syntax-clerk-http.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/configured-http.ts"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/repo",
+      "started_utc": "2026-11-11T13:54:29.353514+00:00",
+      "finished_utc": "2026-11-11T13:54:29.383929+00:00",
+      "exit": 0,
+      "output": {
+        "path": "syntax-configured-http.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/storage/clerk-domain.ts"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/repo",
+      "started_utc": "2026-11-11T13:54:29.384262+00:00",
+      "finished_utc": "2026-11-11T13:54:29.412543+00:00",
+      "exit": 0,
+      "output": {
+        "path": "syntax-clerk-domain.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/storage/prepared-student.ts"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/repo",
+      "started_utc": "2026-11-11T13:54:29.412842+00:00",
+      "finished_utc": "2026-11-11T13:54:29.442420+00:00",
+      "exit": 0,
+      "output": {
+        "path": "syntax-prepared-student.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/backend/student-prepared/routing-receipts.test.mjs"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/repo",
+      "started_utc": "2026-11-11T13:54:29.442715+00:00",
+      "finished_utc": "2026-11-11T13:54:29.473980+00:00",
+      "exit": 0,
+      "output": {
+        "path": "syntax-routing-receipts.test.mjs.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/workspace/ua-student-runtime-context-r2-9v6b1sbh/evidence/revision.patch"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/patch-replay",
+      "started_utc": "2026-11-11T13:54:29.488887+00:00",
+      "finished_utc": "2026-11-11T13:54:29.491727+00:00",
+      "exit": 0,
+      "output": {
+        "path": "patch-forward-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "/workspace/ua-student-runtime-context-r2-9v6b1sbh/evidence/revision.patch"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/patch-replay",
+      "started_utc": "2026-11-11T13:54:29.492084+00:00",
+      "finished_utc": "2026-11-11T13:54:29.494364+00:00",
+      "exit": 0,
+      "output": {
+        "path": "patch-forward.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "--check",
+        "/workspace/ua-student-runtime-context-r2-9v6b1sbh/evidence/revision.patch"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/patch-replay",
+      "started_utc": "2026-11-11T13:54:29.504794+00:00",
+      "finished_utc": "2026-11-11T13:54:29.507333+00:00",
+      "exit": 0,
+      "output": {
+        "path": "patch-reverse-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "/workspace/ua-student-runtime-context-r2-9v6b1sbh/evidence/revision.patch"
+      ],
+      "cwd": "/workspace/ua-student-runtime-context-r2-9v6b1sbh/patch-replay",
+      "started_utc": "2026-11-11T13:54:29.507656+00:00",
+      "finished_utc": "2026-11-11T13:54:29.510310+00:00",
+      "exit": 0,
+      "output": {
+        "path": "patch-reverse.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "patch": {
+    "bytes": 19643,
+    "sha256": "89cb1d90d98e40d7014211a434206e400323a91847c5c5f271d06999b438ac40"
+  },
+  "preservation": {
+    "published_application_files_exact": 275,
+    "unchanged_revision_composition_files": 271,
+    "published_payload_files_exact": 22,
+    "published_payload_bytes": 195133,
+    "UI_contracts_SQL_dependencies_changed": false,
+    "superseded_two_fix_proposal_retained": true
+  },
+  "corrections": [
+    "Reject unsupported method/path combinations before native/Clerk legacy domain loading; preserve supported routing and CORS",
+    "Canonicalize only captured route UUIDs for receipt identity; preserve opaque key and existing separator format",
+    "Bind every validated provider expiry to one shared request/commit guard using minimum expiry; equality is expired and later longer values never extend the guard"
+  ],
+  "limits": [
+    "No demonstrated response disclosure or successful unauthorized write in the original method-routing finding",
+    "Implemented legacy operations retain their existing adapters; no broader authority redesign",
+    "Initial test-only separator and initial-attempt-revision assumptions corrected against accepted code; logs retained; no implementation altered to satisfy those incorrect expectations",
+    "No semantic typecheck: matching root tsc is unavailable; no installs",
+    "No PostgreSQL/SQL/RLS/provider/browser/controller/cleanup execution; no activation or deployment",
+    "Signed DB verifier, concrete pool/bootstrap and broader runtime gates remain HOLD",
+    "Mini target manifest/source guard/UI untouched; reviewed exact-hash handoff remains pending",
+    "This is author evidence, not independent acceptance"
+  ],
+  "denied": [],
+  "uncertain": []
+}

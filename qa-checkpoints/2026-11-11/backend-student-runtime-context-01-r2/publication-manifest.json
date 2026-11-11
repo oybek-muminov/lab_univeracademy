@@ -1,0 +1,162 @@
+{
+  "format": "UA-STUDENT-RUNTIME-R2-PUBLICATION-v1",
+  "status": "PROPOSAL_ONLY_AUTHOR_OFFLINE_PASS_INDEPENDENT_HOLD",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/student-runtime-context-01-r2-20261111",
+  "checkpoint": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/",
+  "lab_parent": {
+    "branch": "backend/student-runtime-context-01-20261111",
+    "commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+    "tree": "e5d482497a224d100d1bf6beedc66cd0fb7225b5"
+  },
+  "application_base": {
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "published_overlay_base": {
+    "commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+    "tree": "e5d482497a224d100d1bf6beedc66cd0fb7225b5",
+    "manifest": {
+      "bytes": 9641,
+      "sha256": "58fcac2b8f6bfef64ea414f2df48e8fa7e30e7bbceb94aa67b81f5026bfdfedf"
+    }
+  },
+  "reconstruction": "accepted base ->15 original published overlay files ->5 r2 overlay files; lab tree is not application base",
+  "metadata_recorded_utc": "2026-11-11T13:56:25.289451+00:00",
+  "branch_absent_at_read": true,
+  "checkpoint_absent_at_parent": true,
+  "files": [
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/review/README.md",
+      "bytes": 5786,
+      "sha256": "1a491473633b7904ba3a45bc0c337e711a6c31740de6398fe7cfa31c2768c7b1",
+      "role": "review_instructions"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/review/offline.final.log",
+      "bytes": 28018,
+      "sha256": "aa7084b6fc340949796ec8c2ebd105af3340c09e01f0dad0c6354154f59ca72d",
+      "role": "original_author_evidence"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/review/red-before.log",
+      "bytes": 13243,
+      "sha256": "430e4d1ce07209b44a9eeef594894b72b26d452092424b9cd583c2cd54153f77",
+      "role": "original_author_evidence"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/review/verification.json",
+      "bytes": 11079,
+      "sha256": "cca45a97ad34b75f0e75de84256fdbf5e30019b9bd17e9b4c592e0586000e350",
+      "role": "original_author_evidence"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 15562,
+      "sha256": "b6a7ef7a9b2c8ec0956dd8fafd15e4359db12bb36932e11476d486f09189f275",
+      "role": "revision_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/supabase/functions/univeracademy-api/configured-http.ts",
+      "bytes": 9359,
+      "sha256": "582819b9a2218d804b8015861405e19b60fe08d440201cf245f266befc6f2c8f",
+      "role": "revision_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "bytes": 12856,
+      "sha256": "70b4a038642e4e92f53dd0bd8daf8b1de3108f4e698e4031e5eea5ac4727296a",
+      "role": "revision_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "bytes": 10068,
+      "sha256": "fe8022c4d48f76d90240669bfd1899df77ceccccc0aede9323a9c429c475cc4d",
+      "role": "revision_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/tests/backend/student-prepared/routing-receipts.test.mjs",
+      "bytes": 10342,
+      "sha256": "4a6e879e393d1bdf5b8425f305e6641af6aa0902c73396e1a8f49cbfd741aa46",
+      "role": "revision_overlay"
+    }
+  ],
+  "payload_files": 9,
+  "payload_bytes": 116313,
+  "payload_inventory": {
+    "encoding": "UTF8 compact sorted-key JSON of files, no final LF",
+    "bytes": 2124,
+    "sha256": "51b1144d242cd9bc09d2922074831f3bdaa89d8dd5116d9cd17969f6e2b69df7"
+  },
+  "self_identity": "EXTERNAL_MANIFEST_BYTES_SHA256_ONLY",
+  "author_checks": {
+    "new_targeted_tests": 18,
+    "unsupported_request_matrix_cases": 40,
+    "lease_cases": 5,
+    "lease_cases_cover": [
+      "shortened expiry exceeded",
+      "shortened expiry equality",
+      "shortened unexpired positive",
+      "no extension by a later longer expiry",
+      "stable unexpired positive"
+    ],
+    "published_regressions": 141,
+    "final_tests": 159,
+    "final_pass": 159,
+    "final_fail": 0,
+    "red_calibration": {
+      "source": "exact published overlay plus accepted base; identical final test",
+      "tests": 18,
+      "pass": 5,
+      "fail": 13
+    },
+    "lease_isolation_calibration": {
+      "source": "exact superseded two-fix candidate plus corrected final test",
+      "tests": 18,
+      "pass": 16,
+      "fail": 2,
+      "evidence": {
+        "bytes": 5483,
+        "sha256": "c66ab3dc51e49d2f1d014e803fb5e026fd410ea9d55f8309e97394a852c25371"
+      }
+    },
+    "syntax_files": 5,
+    "patch_replay_steps": 4,
+    "patch_replay": "PASS"
+  },
+  "source_delta_files": 5,
+  "source_delta_bytes": 58187,
+  "preservation": {
+    "published_application_files_exact": 275,
+    "unchanged_revision_composition_files": 271,
+    "published_payload_files_exact": 22,
+    "published_payload_bytes": 195133,
+    "UI_contracts_SQL_dependencies_changed": false,
+    "superseded_two_fix_proposal_retained": true
+  },
+  "readiness": {
+    "runtime": false,
+    "primary_apply_activation": "HOLD",
+    "independent_review": "PENDING",
+    "addendum_pin": "UNVERIFIED_NOT_REPAIRED",
+    "Mini_target_manifest": "UNCHANGED_AWAITING_REVIEWED_HASH_HANDOFF"
+  },
+  "screen": {
+    "real_credentials_personal_student_data_hits": 0,
+    "synthetic_identifiers_only": true
+  },
+  "omitted_but_retained": [
+    "duplicate full patch",
+    "zero-byte syntax/replay logs",
+    "base275-file composition inventory",
+    "duplicate command journal",
+    "intermediate test-draft logs",
+    "superseded unsubmitted two-fix proposal and isolated lease-calibration log"
+  ],
+  "excluded_actions": [
+    "no upload/branch write/PR/main change",
+    "no dependency installation",
+    "no DB/provider/credential/settings/SQL/runtime activation/cleanup",
+    "no Mini UI/contract/manifest/guard modification"
+  ]
+}

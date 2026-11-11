@@ -1,0 +1,326 @@
+TAP version 13
+# Subtest: native current unsupported requests do not fall through to private loading
+not ok 1 - native current unsupported requests do not fall through to private loading
+  ---
+  duration_ms: 55.73913
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:42:72'
+  failureType: 'testCodeFailure'
+  error: |-
+    POST /exams private read
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:46:12)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: native revoked unsupported requests do not fall through to private loading
+not ok 2 - native revoked unsupported requests do not fall through to private loading
+  ---
+  duration_ms: 10.060283
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:42:72'
+  failureType: 'testCodeFailure'
+  error: |-
+    POST /exams private read
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:46:12)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: clerk current unsupported requests do not fall through to private loading
+not ok 3 - clerk current unsupported requests do not fall through to private loading
+  ---
+  duration_ms: 17.636538
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:42:72'
+  failureType: 'testCodeFailure'
+  error: |-
+    POST /exams private read
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:46:12)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: clerk revoked unsupported requests do not fall through to private loading
+not ok 4 - clerk revoked unsupported requests do not fall through to private loading
+  ---
+  duration_ms: 4.283635
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:42:72'
+  failureType: 'testCodeFailure'
+  error: |-
+    POST /exams private read
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:46:12)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: native supported GET retains revoked-session authorization before private reads
+ok 5 - native supported GET retains revoked-session authorization before private reads
+  ---
+  duration_ms: 5.340526
+  type: 'test'
+  ...
+# Subtest: clerk supported GET retains revoked-session authorization before private reads
+ok 6 - clerk supported GET retains revoked-session authorization before private reads
+  ---
+  duration_ms: 3.040996
+  type: 'test'
+  ...
+# Subtest: native lower start and canonical replay preserve exact opaque key
+not ok 7 - native lower start and canonical replay preserve exact opaque key
+  ---
+  duration_ms: 34.946198
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:54:79'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    500 !== 200
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 200
+  actual: 500
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:63:105)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: native mixed start and canonical replay preserve exact opaque key
+not ok 8 - native mixed start and canonical replay preserve exact opaque key
+  ---
+  duration_ms: 3.579817
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:54:79'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"status":500,"error":{"code":"RESPONSE_INVARIANT_FAILED","message":"RESPONSE_INVARIANT_FAILED","request_id":"abcdefab-cdef-4abc-8def-aaaaaaaaaaa1"}}
+    
+    500 !== 200
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 200
+  actual: 500
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:57:125)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: clerk lower start and canonical replay preserve exact opaque key
+not ok 9 - clerk lower start and canonical replay preserve exact opaque key
+  ---
+  duration_ms: 21.45301
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:54:79'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    500 !== 200
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 200
+  actual: 500
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:63:105)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: clerk mixed start and canonical replay preserve exact opaque key
+not ok 10 - clerk mixed start and canonical replay preserve exact opaque key
+  ---
+  duration_ms: 4.086689
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:54:79'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"status":500,"error":{"code":"RESPONSE_INVARIANT_FAILED","message":"RESPONSE_INVARIANT_FAILED","request_id":"abcdefab-cdef-4abc-8def-aaaaaaaaaaa1"}}
+    
+    500 !== 200
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 200
+  actual: 500
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:57:125)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: native mixed-case submit and lower/upper replays do not duplicate writes
+not ok 11 - native mixed-case submit and lower/upper replays do not duplicate writes
+  ---
+  duration_ms: 6.338136
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:67:38'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"status":500,"error":{"code":"RESPONSE_INVARIANT_FAILED","message":"RESPONSE_INVARIANT_FAILED","request_id":"abcdefab-cdef-4abc-8def-aaaaaaaaaaa4"}}
+    
+    500 !== 200
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 200
+  actual: 500
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:69:105)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: clerk mixed-case submit and lower/upper replays do not duplicate writes
+not ok 12 - clerk mixed-case submit and lower/upper replays do not duplicate writes
+  ---
+  duration_ms: 12.845124
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:67:38'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"status":500,"error":{"code":"RESPONSE_INVARIANT_FAILED","message":"RESPONSE_INVARIANT_FAILED","request_id":"abcdefab-cdef-4abc-8def-aaaaaaaaaaa4"}}
+    
+    500 !== 200
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 200
+  actual: 500
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:69:105)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: CORS preflight and headers remain intact when the actual method is rejected
+not ok 13 - CORS preflight and headers remain intact when the actual method is rejected
+  ---
+  duration_ms: 6.395413
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:74:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    401 !== 404
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 404
+  actual: 401
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:78:100)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: Clerk lease shortened expiry before commit
+not ok 14 - Clerk lease shortened expiry before commit
+  ---
+  duration_ms: 12.156627
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:86:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"status":200,"data":{"question_id":"00000000-0000-4000-8000-000000000100","selected_option_id":"00000000-0000-4000-8000-000000000200","revision":1,"saved_at":"2026-11-05T12:00:00.000Z","series_state_revision":2}}
+    
+    200 !== 401
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 401
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:91:33)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: Clerk lease shortened expiry equality boundary
+not ok 15 - Clerk lease shortened expiry equality boundary
+  ---
+  duration_ms: 6.797218
+  type: 'test'
+  location: '/workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:86:3'
+  failureType: 'testCodeFailure'
+  error: |-
+    {"status":200,"data":{"question_id":"00000000-0000-4000-8000-000000000100","selected_option_id":"00000000-0000-4000-8000-000000000200","revision":1,"saved_at":"2026-11-05T12:00:00.000Z","series_state_revision":2}}
+    
+    200 !== 401
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 401
+  actual: 200
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/ua-student-runtime-context-r2-9v6b1sbh/red-baseline/tests/backend/student-prepared/routing-receipts.test.mjs:91:33)
+    async Test.run (node:internal/test_runner/test:1409:7)
+    async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+  ...
+# Subtest: Clerk lease shortened but still unexpired
+ok 16 - Clerk lease shortened but still unexpired
+  ---
+  duration_ms: 6.616936
+  type: 'test'
+  ...
+# Subtest: Clerk lease later longer value cannot extend first expiry
+ok 17 - Clerk lease later longer value cannot extend first expiry
+  ---
+  duration_ms: 15.41167
+  type: 'test'
+  ...
+# Subtest: Clerk lease normal unexpired authority
+ok 18 - Clerk lease normal unexpired authority
+  ---
+  duration_ms: 7.849571
+  type: 'test'
+  ...
+1..18
+# tests 18
+# suites 0
+# pass 5
+# fail 13
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 496.634089
