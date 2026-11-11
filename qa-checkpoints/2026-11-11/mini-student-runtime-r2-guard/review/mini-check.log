@@ -1,0 +1,4 @@
+
+> @univeracademy/mini-app@0.0.0 check
+> tsc --noEmit
+

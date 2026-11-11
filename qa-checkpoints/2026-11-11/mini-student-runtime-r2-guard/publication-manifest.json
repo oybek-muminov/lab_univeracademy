@@ -1,0 +1,267 @@
+{
+  "format": "UA-MINI-ASSEMBLY-GUARD-R2-LAB-PROPOSAL-v1",
+  "status": "LOCAL_AUTHOR_PASS_ONLY_NOT_UPLOADED_INDEPENDENT_GUARD_REVIEW_PENDING",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "mini/student-runtime-r2-guard-20261111",
+  "lab_parent": {
+    "commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+    "tree": "52fa0e104c6c644f32991267bffd6730ea32279a"
+  },
+  "checkpoint": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/",
+  "read_only_parent_branch_absence_and_checkpoint_absence_checked_utc": "2026-11-11 14:43:30 UTC",
+  "application_base": {
+    "repository": "oybek-muminov/UniverAcademy",
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "assembly_order": [
+    "exact application base270",
+    "original Backend15 at80ee858",
+    "r2 delta5 at3f6e3a6: exactly four checked preimage replacements plus previously absent routing test",
+    "unchanged Mini2 at1273852",
+    "this exact three-file guard overlay"
+  ],
+  "source_provenance": {
+    "active_r2_checkpoint": {
+      "source_repository": "oybek-muminov/lab_univeracademy",
+      "source_commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+      "source_tree": "52fa0e104c6c644f32991267bffd6730ea32279a"
+    },
+    "backend_external_pins": [
+      {
+        "repository": "oybek-muminov/lab_univeracademy",
+        "commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+        "tree": "e5d482497a224d100d1bf6beedc66cd0fb7225b5",
+        "parent": "d54d19cb9ba78a13187362afdb2178e90430cefe",
+        "prefix": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/",
+        "manifest": {
+          "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/publication-manifest.json",
+          "bytes": 9641,
+          "sha256": "58fcac2b8f6bfef64ea414f2df48e8fa7e30e7bbceb94aa67b81f5026bfdfedf"
+        }
+      },
+      {
+        "repository": "oybek-muminov/lab_univeracademy",
+        "commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+        "tree": "52fa0e104c6c644f32991267bffd6730ea32279a",
+        "parent": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+        "prefix": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/",
+        "manifest": {
+          "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/publication-manifest.json",
+          "bytes": 6267,
+          "sha256": "5e7720b5a2d243deb2bd7d6b238689186052fd4011d1851f9ebd63d387409cba"
+        }
+      }
+    ],
+    "mini_external_pin": {
+      "repository": "oybek-muminov/lab_univeracademy",
+      "commit": "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+      "tree": "29758acf5874959e9dc990744d7403f47379cb70",
+      "parent": "dc2bf835c7eee35e2471b2c14764957131543cfd",
+      "prefix": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/",
+      "manifest": {
+        "path": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/MANIFEST.json",
+        "bytes": 20409,
+        "sha256": "ae7b3e84dfe2ce78de4a06671ef4dee5c69bc535c6d4e3a8f4e780cc1ea0e208"
+      }
+    }
+  },
+  "selected_authority": {
+    "manifest_application_path": "apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json",
+    "manifest_bytes": 34681,
+    "manifest_sha256": "fa30bc581d9f3708d766f98415957afd613e0919ec85d5860b96aebcc299dbb5",
+    "targets": 119,
+    "target_bytes": 2135406,
+    "format_version": 2,
+    "layout": "main-root",
+    "BACKEND_SOURCE_COMMIT": "Active corrected lab3f6e3a6 checkpoint provenance; no assembled Git commit/tree is asserted."
+  },
+  "files": [
+    {
+      "group": "source",
+      "local_source": "/workspace/mini-assembly-guard-r2-candidate-20261111/apps/mini-app/tests/verify-backend-targets.mjs",
+      "destination": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/apps/mini-app/tests/verify-backend-targets.mjs",
+      "mode": "100644",
+      "bytes": 27743,
+      "sha256": "f8ae0419643d12ce6ef32f1bb2e303725ffd6b341a4a0efcd23d7024ef282b23"
+    },
+    {
+      "group": "source",
+      "local_source": "/workspace/mini-assembly-guard-r2-candidate-20261111/apps/mini-app/tests/current-flow-guard.test.mjs",
+      "destination": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/apps/mini-app/tests/current-flow-guard.test.mjs",
+      "mode": "100644",
+      "bytes": 29740,
+      "sha256": "5a51d532092c20caa2b6e75e99da212317b27a7f1effe8a7dc1ed39b1864c709"
+    },
+    {
+      "group": "source",
+      "local_source": "/workspace/mini-assembly-guard-r2-candidate-20261111/apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json",
+      "destination": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json",
+      "mode": "100644",
+      "bytes": 34681,
+      "sha256": "fa30bc581d9f3708d766f98415957afd613e0919ec85d5860b96aebcc299dbb5"
+    },
+    {
+      "group": "evidence",
+      "local_source": "/workspace/mini-assembly-guard-r2-evidence-20261111/author-verification.json",
+      "destination": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/review/author-verification.json",
+      "mode": "100644",
+      "bytes": 30550,
+      "sha256": "8cd6ce03ea83c04fa52849366469d2a7ceee88ff3c2563f1ceeb0c37f5b673fc"
+    },
+    {
+      "group": "evidence",
+      "local_source": "/workspace/mini-assembly-guard-r2-evidence-20261111/guard-suite.log",
+      "destination": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/review/guard-suite.log",
+      "mode": "100644",
+      "bytes": 49540,
+      "sha256": "20042d468f3308069f7dc9caeb97f116e8e77904472a11192d88f95e2cd7e46c"
+    },
+    {
+      "group": "evidence",
+      "local_source": "/workspace/mini-assembly-guard-r2-evidence-20261111/coverage-with-tests.json",
+      "destination": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/review/coverage-with-tests.json",
+      "mode": "100644",
+      "bytes": 59898,
+      "sha256": "8ce5077a998bcc46a3e16e32291012470ba463defb39083deb12f3092064e172"
+    },
+    {
+      "group": "evidence",
+      "local_source": "/workspace/mini-assembly-guard-r2-evidence-20261111/mini-offline.log",
+      "destination": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/review/mini-offline.log",
+      "mode": "100644",
+      "bytes": 409,
+      "sha256": "db978b13c73b081c61041a849e25a1e0c6c1b8d23f60761ac40bf3a8cfd7d333"
+    },
+    {
+      "group": "evidence",
+      "local_source": "/workspace/mini-assembly-guard-r2-evidence-20261111/mini-check.log",
+      "destination": "qa-checkpoints/2026-11-11/mini-student-runtime-r2-guard/review/mini-check.log",
+      "mode": "100644",
+      "bytes": 55,
+      "sha256": "15aeb9b755ea1bd3c3a1b38cd14e45f8d2bb0cd4bed9c2a296f63605a5a9023c"
+    }
+  ],
+  "payload_file_count": 8,
+  "payload_bytes": 232616,
+  "publication_manifest_self_pin": "External raw bytes/SHA256 only; this manifest is the ninth selected file. External proposal inventory is excluded from upload.",
+  "author_results": {
+    "pristine_guard_exit": 0,
+    "guard_suite": 538,
+    "guard_suite_pass": 538,
+    "positive": 1,
+    "negatives": 537,
+    "test_only_rebound_metadata_shape_probes": 69,
+    "selected_targets_each_missing_size_hash": 119,
+    "historical_preparation_records": 2,
+    "calibrations": 3,
+    "defective_original_exact_targets_rejected": 4,
+    "mini_offline": 3,
+    "mini_offline_pass": 3,
+    "mini_typecheck": "Mini installed TypeScript7.0.2, check exit0; root Backend TypeScript5.9.3 semantic check was not rerun by this author",
+    "public_guard_API_source_commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+    "root_Backend_semantic_typecheck": "NOT_RUN_BY_THIS_AUTHOR"
+  },
+  "static_coverage": {
+    "seeds": 67,
+    "nodes": 71,
+    "edges": 241,
+    "unresolved": [],
+    "unpinned": [],
+    "guard_consumers": 13,
+    "independent_expected_targets": 119,
+    "independent_expected_bytes": 2135406
+  },
+  "whole_tree": {
+    "accepted_base_files": 270,
+    "Backend_assembly_files": 276,
+    "combined_before_guard_files": 278,
+    "changed_new_application_paths": 18,
+    "after_guard_files": 279,
+    "after_guard_bytes": 3535521,
+    "guard_delta_files": 3,
+    "guard_delta_bytes": 92164,
+    "all_other_paths_modes_historical_manifests_UI_contracts_owner_clients_locks_unchanged": true,
+    "extra_path_unapproved_byte_mode_deletion_gate_probes": 4,
+    "forward_reverse_exact_parity_steps": 2,
+    "selected_guard_is_not_whole_tree_or_self_authentication": true,
+    "full_local_proof": {
+      "bytes": 105645,
+      "sha256": "02e3d0eafd54cd6028e1471588387d889279c1d30664f0764cd6eeb70d8cb14c"
+    }
+  },
+  "immutable_source_mode_proof": [
+    {
+      "layer": "mini",
+      "commit": "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+      "checkpoint_tree": "2233fcdaf1c3255d8ff93f856b3245ca994e8182",
+      "verified_source_files": 2,
+      "mode": "100644",
+      "manifest_git_blob": "76c0db78e199852a2be575a41be5390733627d23",
+      "manifest_bytes": 20409
+    },
+    {
+      "layer": "r2",
+      "commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+      "checkpoint_tree": "1ffe4f679221244805b8584e38154632aeb896c9",
+      "verified_source_files": 5,
+      "mode": "100644",
+      "manifest_git_blob": "b60927270f25e0286f43ff5427e054ecf2b5ec8d",
+      "manifest_bytes": 6267
+    },
+    {
+      "layer": "original",
+      "commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+      "checkpoint_tree": "82027b2ad121c507751c3d2c3ffc82246856a3c5",
+      "verified_source_files": 15,
+      "mode": "100644",
+      "manifest_git_blob": "a6cc10f4e5654e264b8536fc87643ad5b1bd917c",
+      "manifest_bytes": 9641
+    }
+  ],
+  "review_instructions": [
+    "Verify this raw publication manifest against its external byte/SHA256 pin, then verify all eight payload rows and mode100644. No existing lab/application path is overwritten by this checkpoint publication proposal.",
+    "Reconstruct the reviewer-owned application copy from exact de2adf base, two ordered Backend layers and the unchanged Mini layer, using one-to-one mappings/preimage pins in the new v2 assembly manifest. Only its three source rows are then applied at preserved application-relative paths. Do not execute in the lab checkpoint directory.",
+    "Do not copy lab review files or external publication manifests into application source. Keep all previous manifests and the two published Mini source files byte-identical. No invented assembled commit or tree is used.",
+    "Independently derive expected119 paths from immutable prior111 plus actual accepted overlay destinations, import/worker/test closure and package/schema inputs; do not trust the candidate manifest as the source of its own expected set.",
+    "Run exact commands/cwd adaptations recorded in author-verification.json with matching already installed dependencies. Missing tooling is a blocker, not install approval.",
+    "Pristine guard must pass before the negative matrix. Every119 selected target gets missing/size/hash faults with deliberate-path diagnostics. Rebound metadata/shape probes modify only an isolated copied guard digest literal; production contains no runtime override.",
+    "Independently calibrate copied harnesses: no-op guard and wrong-diagnostic guard must fail after a pristine positive; injected oldAttempts preparation failure must fail before its negative child executes. Reproduce the four defective-original substitutions from exact lab80ee858 source preimages and require their own target diagnostic.",
+    "Whole-tree proof is separate: exact278 assembled inputs plus only two modified guard/test files and one added active manifest. Reject extra paths, changes to unapproved bytes/modes or omissions. Independently apply/reverse a source-only diff to prove exact279/278 parity."
+  ],
+  "toolchain": {
+    "author_node": "Node24 (same prepared environment, prior observed v24.22.1); tests use native TypeScript erasure, not semantic compilation.",
+    "Mini_check": "npm --prefix apps/mini-app run check uses installed Mini-local TypeScript7.0.2 and accepted Mini tsconfig include src/skipLibCheck:true.",
+    "root_Backend_typecheck": "TypeScript5.9.3 NOT_RUN_BY_THIS_AUTHOR; separately relayed independent Backend r2 QA semantic checks passed. Do not infer it from Mini check.",
+    "dependency_policy": "Only existing own-environment matching installations reused. No install/download/update."
+  },
+  "relayed_independent_Backend_QA": {
+    "status": "PASS_SOURCE_OFFLINE_ALL_THREE_P2_CLOSED",
+    "source": "coordinator message; not a new author run",
+    "report_sha256": "3e8b09536622219818651d5125651e787657b9737c95d301bc7146ffd2106a2d",
+    "Backend_tests": 159,
+    "independent_probes": 26,
+    "combined_Mini": 3
+  },
+  "limits": [
+    "Selected-target guard does not authenticate its own code or detect arbitrary unreferenced extra source; whole-tree delta proof is separate.",
+    "Metadata validation is exercised only after a copied test guard literal is rebound; production has no configurable authority or bypass.",
+    "No whole-tree assembled Git commit/tree is invented. Top-level source and BACKEND_SOURCE_COMMIT identify active corrected r2 lab checkpoint.",
+    "No DB/provider/SQL/real authentication/runtime activation or G01-G11 readiness claim.",
+    "No upload, branch/PR/main change, package installation or evidence cleanup; published Mini sources and all historical manifests unchanged.",
+    "Independent acceptance of this new three-file Mini guard candidate is pending. Backend r2 source/offline acceptance does not establish real DB/provider/runtime readiness; G01-G11 holds remain.",
+    "No PR#1/main/lab branch update, upload, merge, deployment, settings/credential/DB/provider/SQL action or runtime activation is approved by this proposal."
+  ],
+  "omitted_retained_local": {
+    "duplicate_candidate_patch": {
+      "bytes": 72384,
+      "sha256": "014465666fae70f0241b02ae32c6c1af38c93a1b5ee1a2033da9a47560bcf915"
+    },
+    "full_guard_control_trace": {
+      "bytes": 186961,
+      "sha256": "16612c144905e53b8c6c74f35fcbf927071195d2d951a6113979cbb25d270d81"
+    },
+    "all_other_evidence": "Original local proofs, source download identities, calibration helpers/raw logs and full whole-tree snapshots remain unchanged locally; selected source/test code and included review records support independent reproduction."
+  },
+  "publication_gate": "Separate exact user approval and fresh parent/branch/checkpoint/byte/hash verification required before any remote write."
+}

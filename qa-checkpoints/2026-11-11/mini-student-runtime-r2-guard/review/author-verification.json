@@ -1,0 +1,675 @@
+{
+  "status": "LOCAL_AUTHOR_PASS_INDEPENDENT_MINI_GUARD_REVIEW_PENDING",
+  "source_inventory": [
+    {
+      "path": "apps/mini-app/tests/verify-backend-targets.mjs",
+      "local_source": "/workspace/mini-assembly-guard-r2-candidate-20261111/apps/mini-app/tests/verify-backend-targets.mjs",
+      "change": "modified",
+      "mode": "100644",
+      "bytes": 27743,
+      "sha256": "f8ae0419643d12ce6ef32f1bb2e303725ffd6b341a4a0efcd23d7024ef282b23"
+    },
+    {
+      "path": "apps/mini-app/tests/current-flow-guard.test.mjs",
+      "local_source": "/workspace/mini-assembly-guard-r2-candidate-20261111/apps/mini-app/tests/current-flow-guard.test.mjs",
+      "change": "modified",
+      "mode": "100644",
+      "bytes": 29740,
+      "sha256": "5a51d532092c20caa2b6e75e99da212317b27a7f1effe8a7dc1ed39b1864c709"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json",
+      "local_source": "/workspace/mini-assembly-guard-r2-candidate-20261111/apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json",
+      "change": "added",
+      "mode": "100644",
+      "bytes": 34681,
+      "sha256": "fa30bc581d9f3708d766f98415957afd613e0919ec85d5860b96aebcc299dbb5"
+    }
+  ],
+  "source_files": 3,
+  "source_bytes": 92164,
+  "assembly": {
+    "application_base": {
+      "repository": "oybek-muminov/UniverAcademy",
+      "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+      "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+    },
+    "backend_original": {
+      "repository": "oybek-muminov/lab_univeracademy",
+      "commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+      "tree": "e5d482497a224d100d1bf6beedc66cd0fb7225b5",
+      "parent": "d54d19cb9ba78a13187362afdb2178e90430cefe",
+      "prefix": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/",
+      "manifest": {
+        "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/publication-manifest.json",
+        "bytes": 9641,
+        "sha256": "58fcac2b8f6bfef64ea414f2df48e8fa7e30e7bbceb94aa67b81f5026bfdfedf"
+      },
+      "files": [
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/api/index.mjs",
+          "application_path": "api/index.mjs",
+          "mode": "100644",
+          "bytes": 777,
+          "sha256": "7b597deacd99170bcae296871da9d535acbb832272419a79ef9c1f60a60b6728",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 616,
+            "sha256": "e8c6699dbfac16771857c2b684b1198ac53950cf71469149200b619fb9412a4b"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/runtime/production-entry.mjs",
+          "application_path": "runtime/production-entry.mjs",
+          "mode": "100644",
+          "bytes": 619,
+          "sha256": "2f7d95aacd75e889b60c596d840e4e5f7b8109421c7deedc4d3180a381b5f50f",
+          "preimage": null
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/runtime/production-options.mjs",
+          "application_path": "runtime/production-options.mjs",
+          "mode": "100644",
+          "bytes": 7634,
+          "sha256": "1224e4af8bede15d922a770f2bbe858a6807865c3cd7eaf9eb4177fd9a02c803",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 7544,
+            "sha256": "251a124def286b6b42f11602cdaf79fd73d42f1b696eba89e6d9697169937989"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/clerk-auth.ts",
+          "application_path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+          "mode": "100644",
+          "bytes": 5065,
+          "sha256": "94dd8154b8d74f17e8e17a97944e6e8b9a6d107d0abf1c1cf69a18e82f86dcb8",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 4980,
+            "sha256": "278d4d6deaaf9a9b53e1fa1feb6f677b29b81761b6c3eb3f85a3b80cf31f3565"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/clerk-http.ts",
+          "application_path": "supabase/functions/univeracademy-api/clerk-http.ts",
+          "mode": "100644",
+          "bytes": 15369,
+          "sha256": "5dc5792ec73947cee6eee9121a33961e3c6fcc26e115ba35010b1404f09bd13c",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 15215,
+            "sha256": "79fade5bdc4bb4e9ccbf09b2cf7de3101a7a11406457e4bbcb361074dbfc85e0"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/configured-http.ts",
+          "application_path": "supabase/functions/univeracademy-api/configured-http.ts",
+          "mode": "100644",
+          "bytes": 9271,
+          "sha256": "93359265ae5c2f1ba8b553a3fd8149e5ef845d0a7d7a6d893263baccc22a83f1",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 8697,
+            "sha256": "3ab2e3c9393080c41347bf98f1e83d1a0a1ca3b64dbc847bf6a2c9d52ef7c708"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/staff-jwt.ts",
+          "application_path": "supabase/functions/univeracademy-api/staff-jwt.ts",
+          "mode": "100644",
+          "bytes": 3624,
+          "sha256": "090b6811c4010c58b0cd9f14999cc0657b8385fba6ee1f6be838e6cfe49b1635",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 3535,
+            "sha256": "6b28fe7ab3c08a6f4c6b6867dd353a98dc397afd006236a510324c9e4cc3fc1b"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+          "application_path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+          "mode": "100644",
+          "bytes": 12544,
+          "sha256": "0ada748497502ca288a66201bd8e906d3481e4d3a021608df3d1f0bd6547bfb8",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 10501,
+            "sha256": "8d2f69c9a4a970c85ff2594fa23cd8cd7441d0ae3b74ee265919381f2d44ea77"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/prepared-student.ts",
+          "application_path": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+          "mode": "100644",
+          "bytes": 9365,
+          "sha256": "9d365eade712d4149387c54e034f3f4b6f0b6522b0c09e2f86ca823442491171",
+          "preimage": null
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+          "application_path": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+          "mode": "100644",
+          "bytes": 13877,
+          "sha256": "7e374d1cd2891f056475141ceadca733a1a96f75e6a0c35190e6fd69b58d8f6e",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 13250,
+            "sha256": "a6a97239245a086d5e6c51fbb6ddd9977b2e781b5ef92071d89bbfd71a909595"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/student-scope.ts",
+          "application_path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+          "mode": "100644",
+          "bytes": 4619,
+          "sha256": "a8082c1a95534e5dbdedc5086ecae48b243b0d1cfdc68acf25dabfbc7197464a",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 3575,
+            "sha256": "263238b744240af6e62cfd14c6dc00943bf840f7fe9c6e2ed18acbd914dd38bd"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/backend/student-prepared/clerk.test.mjs",
+          "application_path": "tests/backend/student-prepared/clerk.test.mjs",
+          "mode": "100644",
+          "bytes": 5153,
+          "sha256": "4c61142f45ed932a7b886f29861d07089e562c0824ad3c819676d7ca0933860f",
+          "preimage": null
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/backend/student-prepared/flow.test.mjs",
+          "application_path": "tests/backend/student-prepared/flow.test.mjs",
+          "mode": "100644",
+          "bytes": 12102,
+          "sha256": "74ef69ef91852ad9c28f827588af5b9330b43dde3550e778b7bd0803cdd3f818",
+          "preimage": null
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/backend/student-prepared/memory-pool.mjs",
+          "application_path": "tests/backend/student-prepared/memory-pool.mjs",
+          "mode": "100644",
+          "bytes": 8125,
+          "sha256": "e86bad4d27fc376b876a40c70c0d914f0427262987f0505dcd8a36fa34c689f4",
+          "preimage": null
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/vercel-node/production-options.test.mjs",
+          "application_path": "tests/vercel-node/production-options.test.mjs",
+          "mode": "100644",
+          "bytes": 22292,
+          "sha256": "09bb7e0face5e6bea69166de0c792f57fbb4c4da7f51e218ae82266c464e3769",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 21924,
+            "sha256": "052e7e8aa70519c35d03d2de7d673db3737b4bcfd9858ae351ee2761ae0fc2ac"
+          }
+        }
+      ]
+    },
+    "backend_r2": {
+      "repository": "oybek-muminov/lab_univeracademy",
+      "commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+      "tree": "52fa0e104c6c644f32991267bffd6730ea32279a",
+      "parent": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+      "prefix": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/",
+      "manifest": {
+        "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/publication-manifest.json",
+        "bytes": 6267,
+        "sha256": "5e7720b5a2d243deb2bd7d6b238689186052fd4011d1851f9ebd63d387409cba"
+      },
+      "files": [
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/supabase/functions/univeracademy-api/clerk-http.ts",
+          "application_path": "supabase/functions/univeracademy-api/clerk-http.ts",
+          "mode": "100644",
+          "bytes": 15562,
+          "sha256": "b6a7ef7a9b2c8ec0956dd8fafd15e4359db12bb36932e11476d486f09189f275",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 15369,
+            "sha256": "5dc5792ec73947cee6eee9121a33961e3c6fcc26e115ba35010b1404f09bd13c"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/supabase/functions/univeracademy-api/configured-http.ts",
+          "application_path": "supabase/functions/univeracademy-api/configured-http.ts",
+          "mode": "100644",
+          "bytes": 9359,
+          "sha256": "582819b9a2218d804b8015861405e19b60fe08d440201cf245f266befc6f2c8f",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 9271,
+            "sha256": "93359265ae5c2f1ba8b553a3fd8149e5ef845d0a7d7a6d893263baccc22a83f1"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+          "application_path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+          "mode": "100644",
+          "bytes": 12856,
+          "sha256": "70b4a038642e4e92f53dd0bd8daf8b1de3108f4e698e4031e5eea5ac4727296a",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 12544,
+            "sha256": "0ada748497502ca288a66201bd8e906d3481e4d3a021608df3d1f0bd6547bfb8"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/supabase/functions/univeracademy-api/storage/prepared-student.ts",
+          "application_path": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+          "mode": "100644",
+          "bytes": 10068,
+          "sha256": "fe8022c4d48f76d90240669bfd1899df77ceccccc0aede9323a9c429c475cc4d",
+          "preimage": {
+            "mode": "100644",
+            "bytes": 9365,
+            "sha256": "9d365eade712d4149387c54e034f3f4b6f0b6522b0c09e2f86ca823442491171"
+          }
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01-r2/tests/backend/student-prepared/routing-receipts.test.mjs",
+          "application_path": "tests/backend/student-prepared/routing-receipts.test.mjs",
+          "mode": "100644",
+          "bytes": 10342,
+          "sha256": "4a6e879e393d1bdf5b8425f305e6641af6aa0902c73396e1a8f49cbfd741aa46",
+          "preimage": null
+        }
+      ]
+    },
+    "mini": {
+      "repository": "oybek-muminov/lab_univeracademy",
+      "commit": "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+      "tree": "29758acf5874959e9dc990744d7403f47379cb70",
+      "parent": "dc2bf835c7eee35e2471b2c14764957131543cfd",
+      "prefix": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/",
+      "manifest": {
+        "path": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/MANIFEST.json",
+        "bytes": 20409,
+        "sha256": "ae7b3e84dfe2ce78de4a06671ef4dee5c69bc535c6d4e3a8f4e780cc1ea0e208"
+      },
+      "files": [
+        {
+          "source_path": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/apps/mini-app/tests/first-student-flow.offline.test.mjs",
+          "application_path": "apps/mini-app/tests/first-student-flow.offline.test.mjs",
+          "mode": "100644",
+          "bytes": 12179,
+          "sha256": "8d4d6d74f254324fc5ce1cf878bd013a09552626bbe7691777e088ad7454b5f0",
+          "preimage": null
+        },
+        {
+          "source_path": "qa-checkpoints/2026-11-11/mini-first-student-flow-offline/apps/mini-app/tests/fixtures/first-student-flow.offline.json",
+          "application_path": "apps/mini-app/tests/fixtures/first-student-flow.offline.json",
+          "mode": "100644",
+          "bytes": 14552,
+          "sha256": "4a218b7e8e24b743d781549bb9be61fe08cdea3ad9544c88490ff25f1a5a8652",
+          "preimage": null
+        }
+      ]
+    },
+    "baseline_files": 278,
+    "changed_new_application_paths": 18,
+    "candidate_files": 279,
+    "candidate_bytes": 3535521
+  },
+  "active_manifest": {
+    "active_manifest": "apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json",
+    "manifest_bytes": 34681,
+    "manifest_sha256": "fa30bc581d9f3708d766f98415957afd613e0919ec85d5860b96aebcc299dbb5",
+    "source_commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+    "target_count": 119,
+    "target_bytes": 2135406
+  },
+  "tests": {
+    "pristine_guard_exit": 0,
+    "guard_suite": 538,
+    "guard_suite_pass": 538,
+    "positive": 1,
+    "negatives": 537,
+    "test_only_rebound_metadata_shape_probes": 69,
+    "selected_targets_each_missing_size_hash": 119,
+    "historical_preparation_records": 2,
+    "calibrations": 3,
+    "defective_original_exact_targets_rejected": 4,
+    "mini_offline": 3,
+    "mini_offline_pass": 3,
+    "mini_typecheck": "Mini installed TypeScript7.0.2, check exit0; root Backend TypeScript5.9.3 semantic check was not rerun by this author",
+    "public_guard_API_source_commit": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+    "root_Backend_semantic_typecheck": "NOT_RUN_BY_THIS_AUTHOR"
+  },
+  "coverage": {
+    "seeds": 67,
+    "nodes": 71,
+    "edges": 241,
+    "unresolved": [],
+    "unpinned": [],
+    "guard_consumers": 13,
+    "independent_expected_targets": 119,
+    "independent_expected_bytes": 2135406
+  },
+  "commands": [
+    {
+      "name": "pristine-guard",
+      "command": [
+        "node",
+        "apps/mini-app/tests/verify-backend-targets.mjs"
+      ],
+      "cwd": "/workspace/mini-assembly-guard-r2-candidate-20261111",
+      "started_utc": "2026-11-11T14:37:29.988552+00:00",
+      "finished_utc": "2026-11-11T14:37:30.109295+00:00",
+      "exit_code": 0,
+      "log": "/workspace/mini-assembly-guard-r2-evidence-20261111/pristine-guard.log",
+      "log_bytes": 0,
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "mini-check",
+      "command": [
+        "npm",
+        "--prefix",
+        "apps/mini-app",
+        "run",
+        "check"
+      ],
+      "cwd": "/workspace/mini-assembly-guard-r2-candidate-20261111",
+      "started_utc": "2026-11-11T14:37:38.614639+00:00",
+      "finished_utc": "2026-11-11T14:37:39.514121+00:00",
+      "exit_code": 0,
+      "log": "/workspace/mini-assembly-guard-r2-evidence-20261111/mini-check.log",
+      "log_bytes": 55,
+      "log_sha256": "15aeb9b755ea1bd3c3a1b38cd14e45f8d2bb0cd4bed9c2a296f63605a5a9023c"
+    },
+    {
+      "name": "coverage",
+      "command": [
+        "node",
+        "/workspace/mini-assembly-guard-r2-evidence-20261111/verify-coverage.mjs"
+      ],
+      "cwd": "/workspace/mini-assembly-guard-r2-candidate-20261111",
+      "started_utc": "2026-11-11T14:37:38.586421+00:00",
+      "finished_utc": "2026-11-11T14:37:39.554803+00:00",
+      "exit_code": 0,
+      "log": "/workspace/mini-assembly-guard-r2-evidence-20261111/coverage.log",
+      "log_bytes": 129,
+      "log_sha256": "cc429d9656449029cc058bb79ec12fb5e765d8c3d569dccc4ccd6bea6a77584c"
+    },
+    {
+      "name": "mini-offline",
+      "command": [
+        "node",
+        "--test",
+        "apps/mini-app/tests/first-student-flow.offline.test.mjs"
+      ],
+      "cwd": "/workspace/mini-assembly-guard-r2-candidate-20261111",
+      "started_utc": "2026-11-11T14:37:38.564828+00:00",
+      "finished_utc": "2026-11-11T14:37:39.868347+00:00",
+      "exit_code": 0,
+      "log": "/workspace/mini-assembly-guard-r2-evidence-20261111/mini-offline.log",
+      "log_bytes": 409,
+      "log_sha256": "db978b13c73b081c61041a849e25a1e0c6c1b8d23f60761ac40bf3a8cfd7d333"
+    },
+    {
+      "name": "guard-suite",
+      "command": [
+        "node",
+        "--test",
+        "apps/mini-app/tests/current-flow-guard.test.mjs"
+      ],
+      "cwd": "/workspace/mini-assembly-guard-r2-candidate-20261111",
+      "started_utc": "2026-11-11T14:37:38.587395+00:00",
+      "finished_utc": "2026-11-11T14:38:20.068044+00:00",
+      "exit_code": 0,
+      "log": "/workspace/mini-assembly-guard-r2-evidence-20261111/guard-suite.log",
+      "log_bytes": 49540,
+      "log_sha256": "20042d468f3308069f7dc9caeb97f116e8e77904472a11192d88f95e2cd7e46c"
+    },
+    {
+      "name": "coverage-with-tests",
+      "command": [
+        "node",
+        "/workspace/mini-assembly-guard-r2-evidence-20261111/verify-coverage-with-tests.mjs"
+      ],
+      "cwd": "/workspace/mini-assembly-guard-r2-candidate-20261111",
+      "started_utc": "2026-11-11T14:40:11.345342+00:00",
+      "finished_utc": "2026-11-11T14:40:12.033439+00:00",
+      "exit_code": 0,
+      "log": "/workspace/mini-assembly-guard-r2-evidence-20261111/coverage-with-tests.log",
+      "log_bytes": 129,
+      "log_sha256": "26f0a6139c744109b2d6ff5ff10e4c652c1e162fac3803a069c6d29a987c407f"
+    },
+    {
+      "name": "public-api",
+      "command": [
+        "node",
+        "--input-type=module",
+        "-e",
+        "import { BACKEND_SOURCE_COMMIT } from \"./apps/mini-app/tests/verify-backend-targets.mjs\"; if (BACKEND_SOURCE_COMMIT !== \"3f6e3a6bf1a6c2e96fca02aef06712a5d6924391\") throw Error(\"WRONG_PROVENANCE\"); console.log(JSON.stringify({BACKEND_SOURCE_COMMIT}));"
+      ],
+      "cwd": "/workspace/mini-assembly-guard-r2-candidate-20261111",
+      "started_utc": "2026-11-11T14:40:12.218819+00:00",
+      "finished_utc": "2026-11-11T14:40:12.275635+00:00",
+      "exit_code": 0,
+      "log": "/workspace/mini-assembly-guard-r2-evidence-20261111/public-api.log",
+      "log_bytes": 69,
+      "log_sha256": "08a2129227c60eab05d5968720557f882f95c93de3427f75037d5052eb899830"
+    }
+  ],
+  "calibration_results": {
+    "calibrations": [
+      {
+        "kind": "no-op",
+        "command": [
+          "node",
+          "--test",
+          "--test-name-pattern=current guard accepts all 119|same-size corruption of new attempts bytes is rejected",
+          "apps/mini-app/tests/current-flow-guard.test.mjs"
+        ],
+        "cwd": "/workspace/mini-repin-r2-probe-ph3mr6m9",
+        "started_utc": "2026-11-11T14:39:00.047725+00:00",
+        "exit_code": 1,
+        "expected_harness_failure": true,
+        "positive_control_passed": true,
+        "negative_success_records": 0,
+        "log": "calibration-no-op.log",
+        "log_sha256": "0df267328b488511e4a294f11ec0a0d0a975a35c220824e8283b643f9588e061",
+        "trace_sha256": "7cf2a8b0bf3f91a12a7508da4c97243c0a2f8c124e496ae9a0e8be204b54f059"
+      },
+      {
+        "kind": "wrong-diagnostic",
+        "command": [
+          "node",
+          "--test",
+          "--test-name-pattern=current guard accepts all 119|same-size corruption of new attempts bytes is rejected",
+          "apps/mini-app/tests/current-flow-guard.test.mjs"
+        ],
+        "cwd": "/workspace/mini-repin-r2-probe-_vrkbu64",
+        "started_utc": "2026-11-11T14:39:00.454205+00:00",
+        "exit_code": 1,
+        "expected_harness_failure": true,
+        "positive_control_passed": true,
+        "negative_success_records": 0,
+        "log": "calibration-wrong-diagnostic.log",
+        "log_sha256": "bab1d4a9f0e3e990b2337d72dadc546f457bb099c338b5be54559c784d6d1662",
+        "trace_sha256": "7cf2a8b0bf3f91a12a7508da4c97243c0a2f8c124e496ae9a0e8be204b54f059"
+      },
+      {
+        "kind": "preparation-failure",
+        "command": [
+          "node",
+          "--test",
+          "--test-name-pattern=current guard accepts all 119|historical attempts padded to new length is rejected",
+          "apps/mini-app/tests/current-flow-guard.test.mjs"
+        ],
+        "cwd": "/workspace/mini-repin-r2-probe-joyl6ay0",
+        "started_utc": "2026-11-11T14:39:00.803333+00:00",
+        "exit_code": 1,
+        "expected_harness_failure": true,
+        "positive_control_passed": true,
+        "negative_success_records": 0,
+        "log": "calibration-preparation-failure.log",
+        "log_sha256": "fb6e7f71df203b4a612592d316b16552da023bbf9947c6893bf53f7684e2085f",
+        "trace_sha256": "7cf2a8b0bf3f91a12a7508da4c97243c0a2f8c124e496ae9a0e8be204b54f059"
+      }
+    ],
+    "defective_original_exact_source_rejections": [
+      {
+        "target": "supabase/functions/univeracademy-api/clerk-http.ts",
+        "substituted_commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+        "substituted_source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/clerk-http.ts",
+        "substituted_bytes": 15369,
+        "substituted_sha256": "5dc5792ec73947cee6eee9121a33961e3c6fcc26e115ba35010b1404f09bd13c",
+        "exit_code": 1,
+        "diagnostic": "BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/clerk-http.ts",
+        "log": "defective-original-clerk-http.ts.log",
+        "log_sha256": "d982e31ffa8978acefc0efe30c87ae1fce829f5ec524045550f3f239381dd0a9"
+      },
+      {
+        "target": "supabase/functions/univeracademy-api/configured-http.ts",
+        "substituted_commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+        "substituted_source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/configured-http.ts",
+        "substituted_bytes": 9271,
+        "substituted_sha256": "93359265ae5c2f1ba8b553a3fd8149e5ef845d0a7d7a6d893263baccc22a83f1",
+        "exit_code": 1,
+        "diagnostic": "BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/configured-http.ts",
+        "log": "defective-original-configured-http.ts.log",
+        "log_sha256": "6c668899066ab69352d9e4fd8a0b465e7f3d0789a8705e7cb1be53794a937afb"
+      },
+      {
+        "target": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "substituted_commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+        "substituted_source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "substituted_bytes": 12544,
+        "substituted_sha256": "0ada748497502ca288a66201bd8e906d3481e4d3a021608df3d1f0bd6547bfb8",
+        "exit_code": 1,
+        "diagnostic": "BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "log": "defective-original-clerk-domain.ts.log",
+        "log_sha256": "eadcb2a66f1e4b5e50ce67f809b3080127aeaaff8fe7b760056e5a3b85d8bd85"
+      },
+      {
+        "target": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+        "substituted_commit": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+        "substituted_source_path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/prepared-student.ts",
+        "substituted_bytes": 9365,
+        "substituted_sha256": "9d365eade712d4149387c54e034f3f4b6f0b6522b0c09e2f86ca823442491171",
+        "exit_code": 1,
+        "diagnostic": "BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/storage/prepared-student.ts",
+        "log": "defective-original-prepared-student.ts.log",
+        "log_sha256": "58d3c29a020419325bab8688544de695893a9e3af65051d81ef70d2292dcbc1a"
+      }
+    ],
+    "limit": "Disposable guards/test copies only. No production bypass or runtime action."
+  },
+  "replay": [
+    {
+      "name": "forward",
+      "command": [
+        "patch",
+        "--batch",
+        "--fuzz=0",
+        "-p1",
+        "-d",
+        "/workspace/mini-repin-r2-replay-ka4h1fn4",
+        "-i",
+        "/workspace/mini-assembly-guard-r2-evidence-20261111/candidate.patch"
+      ],
+      "cwd": "/workspace/mini-repin-r2-replay-ka4h1fn4",
+      "started_utc": "2026-11-11T14:42:30.114075+00:00",
+      "exit_code": 0,
+      "exact_tree_parity": true,
+      "log_sha256": "0ebaeb439b0749f4b1193f6b4b1eedc07a9b3bb49531f40816ca0132df8d0fc0"
+    },
+    {
+      "name": "reverse",
+      "command": [
+        "patch",
+        "--batch",
+        "--fuzz=0",
+        "-p1",
+        "-d",
+        "/workspace/mini-repin-r2-replay-ka4h1fn4",
+        "-R",
+        "-i",
+        "/workspace/mini-assembly-guard-r2-evidence-20261111/candidate.patch"
+      ],
+      "cwd": "/workspace/mini-repin-r2-replay-ka4h1fn4",
+      "started_utc": "2026-11-11T14:42:30.141243+00:00",
+      "exit_code": 0,
+      "exact_tree_parity": true,
+      "log_sha256": "0ebaeb439b0749f4b1193f6b4b1eedc07a9b3bb49531f40816ca0132df8d0fc0"
+    }
+  ],
+  "whole_tree_proof": {
+    "files": 279,
+    "allowed_delta": [
+      "apps/mini-app/tests/verify-backend-targets.mjs",
+      "apps/mini-app/tests/current-flow-guard.test.mjs",
+      "apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json"
+    ],
+    "unapproved_path_byte_mode_deletion_probes": [
+      {
+        "kind": "extra-path",
+        "rejected_by": "whole-tree exact path/bytes/SHA256/mode comparison",
+        "target": "apps/mini-app/src/unapproved-extra.ts",
+        "observed_unapproved_delta": [
+          "apps/mini-app/src/unapproved-extra.ts"
+        ]
+      },
+      {
+        "kind": "unapproved-byte",
+        "rejected_by": "whole-tree exact path/bytes/SHA256/mode comparison",
+        "target": "apps/mini-app/src/style.css",
+        "observed_unapproved_delta": [
+          "apps/mini-app/src/style.css"
+        ]
+      },
+      {
+        "kind": "unapproved-mode",
+        "rejected_by": "whole-tree exact path/bytes/SHA256/mode comparison",
+        "target": "apps/mini-app/src/style.css",
+        "observed_unapproved_delta": [
+          "apps/mini-app/src/style.css"
+        ]
+      },
+      {
+        "kind": "missing-path",
+        "rejected_by": "whole-tree exact path/bytes/SHA256/mode comparison",
+        "target": "apps/mini-app/src/style.css",
+        "observed_unapproved_delta": [
+          "apps/mini-app/src/style.css"
+        ]
+      }
+    ]
+  },
+  "controls_trace": {
+    "mode": "100600",
+    "bytes": 186961,
+    "sha256": "16612c144905e53b8c6c74f35fcbf927071195d2d951a6113979cbb25d270d81"
+  },
+  "patch": {
+    "mode": "100600",
+    "bytes": 72384,
+    "sha256": "014465666fae70f0241b02ae32c6c1af38c93a1b5ee1a2033da9a47560bcf915"
+  },
+  "relayed_Backend_independent_QA": {
+    "status": "PASS_SOURCE_OFFLINE_ALL_THREE_P2_CLOSED",
+    "source": "coordinator message; not a new author run",
+    "report_sha256": "3e8b09536622219818651d5125651e787657b9737c95d301bc7146ffd2106a2d",
+    "Backend_tests": 159,
+    "independent_probes": 26,
+    "combined_Mini": 3
+  },
+  "reproduction": [
+    "Own exact de2adf application copy -> original15 mapping at80ee858 -> r2delta5 at3f6e3a6, permitting exactly four checked preimage replacements and one absent new routing test -> unchanged Mini2 at1273852 -> this three-file guard overlay.",
+    "External lab manifests and source blobs must match their pinned bytes/SHA256; reports/manifests/evidence are not copied into application source.",
+    "Expected119 list derives from prior immutable111 target paths union actual accepted overlay mappings, not from candidate manifest. AST import/worker audit independently scans actual API/runtime/client and prepared-test source.",
+    "Use matching already installed tooling only. Run exact commands from own application copy; author local paths in records are provenance, not permission to access another worker."
+  ],
+  "limits": [
+    "Selected-target guard does not authenticate its own code or detect arbitrary unreferenced extra source; whole-tree delta proof is separate.",
+    "Metadata validation is exercised only after a copied test guard literal is rebound; production has no configurable authority or bypass.",
+    "No whole-tree assembled Git commit/tree is invented. Top-level source and BACKEND_SOURCE_COMMIT identify active corrected r2 lab checkpoint.",
+    "No DB/provider/SQL/real authentication/runtime activation or G01-G11 readiness claim.",
+    "No upload, branch/PR/main change, package installation or evidence cleanup; published Mini sources and all historical manifests unchanged."
+  ]
+}

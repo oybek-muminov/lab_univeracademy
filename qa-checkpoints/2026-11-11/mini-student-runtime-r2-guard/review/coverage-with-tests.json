@@ -1,0 +1,1462 @@
+{
+  "captured_at_utc": "2026-11-11T14:40:12.022Z",
+  "seed_basis": "Actual accepted API/runtime/client source directories, independently of candidate manifest",
+  "seeds": [
+    "supabase/functions/univeracademy-api/attempts.ts",
+    "supabase/functions/univeracademy-api/clerk-auth.ts",
+    "supabase/functions/univeracademy-api/clerk-http.ts",
+    "supabase/functions/univeracademy-api/clerk-provider.ts",
+    "supabase/functions/univeracademy-api/configured-http.ts",
+    "supabase/functions/univeracademy-api/fault.ts",
+    "supabase/functions/univeracademy-api/individual-points.ts",
+    "supabase/functions/univeracademy-api/membership-activity.ts",
+    "supabase/functions/univeracademy-api/membership-effects.ts",
+    "supabase/functions/univeracademy-api/membership-preflight.ts",
+    "supabase/functions/univeracademy-api/membership-removal-http.ts",
+    "supabase/functions/univeracademy-api/membership-removal.ts",
+    "supabase/functions/univeracademy-api/ordinary.ts",
+    "supabase/functions/univeracademy-api/pilot-provisioning.ts",
+    "supabase/functions/univeracademy-api/removal-authority.ts",
+    "supabase/functions/univeracademy-api/staff-content.ts",
+    "supabase/functions/univeracademy-api/staff-http.ts",
+    "supabase/functions/univeracademy-api/staff-json.ts",
+    "supabase/functions/univeracademy-api/staff-jwt.ts",
+    "supabase/functions/univeracademy-api/staff-state.ts",
+    "supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+    "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+    "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+    "supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+    "supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+    "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+    "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+    "supabase/functions/univeracademy-api/storage/session-rows.ts",
+    "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+    "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+    "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+    "supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+    "supabase/functions/univeracademy-api/storage/student-scope.ts",
+    "supabase/functions/univeracademy-api/storage/transaction-pool-port.ts",
+    "supabase/functions/univeracademy-api/student-http.ts",
+    "supabase/functions/univeracademy-api/student-state.ts",
+    "supabase/functions/univeracademy-api/student-wire.ts",
+    "supabase/functions/univeracademy-api/telegram.ts",
+    "runtime/clerk-review-server.mjs",
+    "runtime/clerk-sdk-bindings.mjs",
+    "runtime/clerk-sdk-worker.mjs",
+    "runtime/configured-server.mjs",
+    "runtime/content-pilot-driver.mjs",
+    "runtime/content-pilot-lab.mjs",
+    "runtime/content-pilot-server.mjs",
+    "runtime/local-cors.mjs",
+    "runtime/local-lab.mjs",
+    "runtime/local-server.mjs",
+    "runtime/node-request-abort.mjs",
+    "runtime/production-entry.mjs",
+    "runtime/production-options.mjs",
+    "runtime/ungrouped-driver.mjs",
+    "runtime/ungrouped-fixture.mjs",
+    "runtime/ungrouped-lab.mjs",
+    "runtime/ungrouped-server.mjs",
+    "runtime/vercel-node.mjs",
+    "packages/api-client/staff-openapi.json",
+    "packages/api-client/staff-types.d.ts",
+    "packages/api-client/student-client.ts",
+    "packages/api-client/student-openapi.json",
+    "packages/api-client/student-types.d.ts",
+    "api/index.mjs",
+    "tests/backend/student-prepared/clerk.test.mjs",
+    "tests/backend/student-prepared/flow.test.mjs",
+    "tests/backend/student-prepared/memory-pool.mjs",
+    "tests/backend/student-prepared/routing-receipts.test.mjs",
+    "tests/vercel-node/production-options.test.mjs"
+  ],
+  "api_ts": 38,
+  "runtime_mjs": 18,
+  "api_client_artifacts": 5,
+  "nodes": [
+    "api/index.mjs",
+    "contracts/review-only.openapi.json",
+    "packages/api-client/staff-openapi.json",
+    "packages/api-client/staff-types.d.ts",
+    "packages/api-client/student-client.ts",
+    "packages/api-client/student-openapi.json",
+    "packages/api-client/student-types.d.ts",
+    "runtime/clerk-review-server.mjs",
+    "runtime/clerk-sdk-bindings.mjs",
+    "runtime/clerk-sdk-worker.mjs",
+    "runtime/configured-server.mjs",
+    "runtime/content-pilot-driver.mjs",
+    "runtime/content-pilot-lab.mjs",
+    "runtime/content-pilot-server.mjs",
+    "runtime/local-cors.mjs",
+    "runtime/local-lab.mjs",
+    "runtime/local-server.mjs",
+    "runtime/node-request-abort.mjs",
+    "runtime/production-entry.mjs",
+    "runtime/production-options.mjs",
+    "runtime/ungrouped-driver.mjs",
+    "runtime/ungrouped-fixture.mjs",
+    "runtime/ungrouped-lab.mjs",
+    "runtime/ungrouped-server.mjs",
+    "runtime/vercel-node.mjs",
+    "supabase/functions/univeracademy-api/attempts.ts",
+    "supabase/functions/univeracademy-api/clerk-auth.ts",
+    "supabase/functions/univeracademy-api/clerk-http.ts",
+    "supabase/functions/univeracademy-api/clerk-provider.ts",
+    "supabase/functions/univeracademy-api/configured-http.ts",
+    "supabase/functions/univeracademy-api/fault.ts",
+    "supabase/functions/univeracademy-api/individual-points.ts",
+    "supabase/functions/univeracademy-api/membership-activity.ts",
+    "supabase/functions/univeracademy-api/membership-effects.ts",
+    "supabase/functions/univeracademy-api/membership-preflight.ts",
+    "supabase/functions/univeracademy-api/membership-removal-http.ts",
+    "supabase/functions/univeracademy-api/membership-removal.ts",
+    "supabase/functions/univeracademy-api/ordinary.ts",
+    "supabase/functions/univeracademy-api/pilot-provisioning.ts",
+    "supabase/functions/univeracademy-api/removal-authority.ts",
+    "supabase/functions/univeracademy-api/staff-content.ts",
+    "supabase/functions/univeracademy-api/staff-http.ts",
+    "supabase/functions/univeracademy-api/staff-json.ts",
+    "supabase/functions/univeracademy-api/staff-jwt.ts",
+    "supabase/functions/univeracademy-api/staff-state.ts",
+    "supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+    "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+    "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+    "supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+    "supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+    "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+    "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+    "supabase/functions/univeracademy-api/storage/session-rows.ts",
+    "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+    "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+    "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+    "supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+    "supabase/functions/univeracademy-api/storage/student-scope.ts",
+    "supabase/functions/univeracademy-api/storage/transaction-pool-port.ts",
+    "supabase/functions/univeracademy-api/student-http.ts",
+    "supabase/functions/univeracademy-api/student-state.ts",
+    "supabase/functions/univeracademy-api/student-wire.ts",
+    "supabase/functions/univeracademy-api/telegram.ts",
+    "tests/backend/http-fixture.ts",
+    "tests/backend/staff-fixture.ts",
+    "tests/backend/student-prepared/clerk.test.mjs",
+    "tests/backend/student-prepared/flow.test.mjs",
+    "tests/backend/student-prepared/memory-pool.mjs",
+    "tests/backend/student-prepared/routing-receipts.test.mjs",
+    "tests/clerk-auth/fixture.mjs",
+    "tests/vercel-node/production-options.test.mjs"
+  ],
+  "edges": [
+    {
+      "from": "tests/vercel-node/production-options.test.mjs",
+      "specifier": "../../runtime/local-cors.mjs",
+      "to": "runtime/local-cors.mjs"
+    },
+    {
+      "from": "tests/vercel-node/production-options.test.mjs",
+      "specifier": "../../runtime/production-options.mjs",
+      "to": "runtime/production-options.mjs"
+    },
+    {
+      "from": "tests/vercel-node/production-options.test.mjs",
+      "specifier": "../../supabase/functions/univeracademy-api/fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "runtime/production-options.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "runtime/production-options.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "runtime/production-options.mjs",
+      "specifier": "./local-cors.mjs",
+      "to": "runtime/local-cors.mjs"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-state.ts",
+      "specifier": "./attempts.ts",
+      "to": "supabase/functions/univeracademy-api/attempts.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-state.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-state.ts",
+      "specifier": "./ordinary.ts",
+      "to": "supabase/functions/univeracademy-api/ordinary.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/ordinary.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/attempts.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/attempts.ts",
+      "specifier": "./ordinary.ts",
+      "to": "supabase/functions/univeracademy-api/ordinary.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/routing-receipts.test.mjs",
+      "specifier": "../../../runtime/production-entry.mjs",
+      "to": "runtime/production-entry.mjs"
+    },
+    {
+      "from": "tests/backend/student-prepared/routing-receipts.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/configured-http.ts",
+      "to": "supabase/functions/univeracademy-api/configured-http.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/routing-receipts.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/routing-receipts.test.mjs",
+      "specifier": "../http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/routing-receipts.test.mjs",
+      "specifier": "./memory-pool.mjs",
+      "to": "tests/backend/student-prepared/memory-pool.mjs"
+    },
+    {
+      "from": "tests/backend/student-prepared/memory-pool.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/attempt-rows.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/memory-pool.mjs",
+      "specifier": "../http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "tests/backend/http-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "tests/backend/http-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/ordinary.ts",
+      "to": "supabase/functions/univeracademy-api/ordinary.ts"
+    },
+    {
+      "from": "tests/backend/http-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/student-http.ts",
+      "to": "supabase/functions/univeracademy-api/student-http.ts"
+    },
+    {
+      "from": "tests/backend/http-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "tests/backend/http-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/student-wire.ts",
+      "to": "supabase/functions/univeracademy-api/student-wire.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-wire.ts",
+      "specifier": "./attempts.ts",
+      "to": "supabase/functions/univeracademy-api/attempts.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-wire.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-wire.ts",
+      "specifier": "./ordinary.ts",
+      "to": "supabase/functions/univeracademy-api/ordinary.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-wire.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-http.ts",
+      "specifier": "./attempts.ts",
+      "to": "supabase/functions/univeracademy-api/attempts.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-http.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-http.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-http.ts",
+      "specifier": "./student-wire.ts",
+      "to": "supabase/functions/univeracademy-api/student-wire.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/student-http.ts",
+      "specifier": "./telegram.ts",
+      "to": "supabase/functions/univeracademy-api/telegram.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/telegram.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+      "specifier": "../attempts.ts",
+      "to": "supabase/functions/univeracademy-api/attempts.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+      "specifier": "../ordinary.ts",
+      "to": "supabase/functions/univeracademy-api/ordinary.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./clerk-http.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-http.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./membership-effects.ts",
+      "to": "supabase/functions/univeracademy-api/membership-effects.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./staff-http.ts",
+      "to": "supabase/functions/univeracademy-api/staff-http.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./staff-jwt.ts",
+      "to": "supabase/functions/univeracademy-api/staff-jwt.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./storage/clerk-domain.ts",
+      "to": "supabase/functions/univeracademy-api/storage/clerk-domain.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./storage/postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./storage/prepared-student.ts",
+      "to": "supabase/functions/univeracademy-api/storage/prepared-student.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./storage/staff-access-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./storage/staff-first-test-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./storage/student-http-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/student-http-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./storage/student-identity-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/student-identity-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./storage/student-scope.ts",
+      "to": "supabase/functions/univeracademy-api/storage/student-scope.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./student-http.ts",
+      "to": "supabase/functions/univeracademy-api/student-http.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/configured-http.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "specifier": "../student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "specifier": "../telegram.ts",
+      "to": "supabase/functions/univeracademy-api/telegram.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+      "specifier": "../student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+      "specifier": "../telegram.ts",
+      "to": "supabase/functions/univeracademy-api/telegram.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "specifier": "../student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "specifier": "./attempt-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/attempt-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "specifier": "../staff-json.ts",
+      "to": "supabase/functions/univeracademy-api/staff-json.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "specifier": "../staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "specifier": "../student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "specifier": "./attempt-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/attempt-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-state.ts",
+      "specifier": "../../../packages/api-client/staff-types.d.ts",
+      "to": "packages/api-client/staff-types.d.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-state.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-state.ts",
+      "specifier": "./ordinary.ts",
+      "to": "supabase/functions/univeracademy-api/ordinary.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-state.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-json.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+      "specifier": "../staff-jwt.ts",
+      "to": "supabase/functions/univeracademy-api/staff-jwt.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+      "specifier": "../staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-jwt.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-jwt.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-jwt.ts",
+      "specifier": "./storage/postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "specifier": "../student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "specifier": "./student-http-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/student-http-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "specifier": "./student-scope.ts",
+      "to": "supabase/functions/univeracademy-api/storage/student-scope.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "../clerk-auth.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-auth.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "../clerk-http.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-http.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "../staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "../student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "./clerk-auth-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "./prepared-student.ts",
+      "to": "supabase/functions/univeracademy-api/storage/prepared-student.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "./staff-access-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "./staff-first-test-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "./student-http-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/student-http-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "./student-identity-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/student-identity-rows.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "specifier": "./student-scope.ts",
+      "to": "supabase/functions/univeracademy-api/storage/student-scope.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "specifier": "../clerk-auth.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-auth.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "specifier": "../clerk-http.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-http.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "specifier": "../student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "specifier": "./clerk-auth.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-auth.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "specifier": "./membership-effects.ts",
+      "to": "supabase/functions/univeracademy-api/membership-effects.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "specifier": "./staff-http.ts",
+      "to": "supabase/functions/univeracademy-api/staff-http.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "specifier": "./student-http.ts",
+      "to": "supabase/functions/univeracademy-api/student-http.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "specifier": "./student-wire.ts",
+      "to": "supabase/functions/univeracademy-api/student-wire.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-http.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-http.ts",
+      "specifier": "./membership-activity.ts",
+      "to": "supabase/functions/univeracademy-api/membership-activity.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-http.ts",
+      "specifier": "./pilot-provisioning.ts",
+      "to": "supabase/functions/univeracademy-api/pilot-provisioning.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-http.ts",
+      "specifier": "./staff-content.ts",
+      "to": "supabase/functions/univeracademy-api/staff-content.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-http.ts",
+      "specifier": "./staff-json.ts",
+      "to": "supabase/functions/univeracademy-api/staff-json.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-http.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-http.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-content.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-content.ts",
+      "specifier": "./individual-points.ts",
+      "to": "supabase/functions/univeracademy-api/individual-points.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-content.ts",
+      "specifier": "./ordinary.ts",
+      "to": "supabase/functions/univeracademy-api/ordinary.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/staff-content.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/individual-points.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/individual-points.ts",
+      "specifier": "./ordinary.ts",
+      "to": "supabase/functions/univeracademy-api/ordinary.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/pilot-provisioning.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/pilot-provisioning.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/pilot-provisioning.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-activity.ts",
+      "specifier": "./attempts.ts",
+      "to": "supabase/functions/univeracademy-api/attempts.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-activity.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-activity.ts",
+      "specifier": "./membership-effects.ts",
+      "to": "supabase/functions/univeracademy-api/membership-effects.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-activity.ts",
+      "specifier": "./removal-authority.ts",
+      "to": "supabase/functions/univeracademy-api/removal-authority.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-activity.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-activity.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/removal-authority.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/removal-authority.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-effects.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-effects.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-effects.ts",
+      "specifier": "./student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "runtime/production-entry.mjs",
+      "specifier": "./production-options.mjs",
+      "to": "runtime/production-options.mjs"
+    },
+    {
+      "from": "runtime/production-entry.mjs",
+      "specifier": "./vercel-node.mjs",
+      "to": "runtime/vercel-node.mjs"
+    },
+    {
+      "from": "runtime/vercel-node.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/configured-http.ts",
+      "to": "supabase/functions/univeracademy-api/configured-http.ts"
+    },
+    {
+      "from": "runtime/vercel-node.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "runtime/vercel-node.mjs",
+      "specifier": "./local-cors.mjs",
+      "to": "runtime/local-cors.mjs"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../../../api/index.mjs",
+      "to": "api/index.mjs"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../../../runtime/production-entry.mjs",
+      "to": "runtime/production-entry.mjs"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../../../runtime/production-options.mjs",
+      "to": "runtime/production-options.mjs"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/configured-http.ts",
+      "to": "supabase/functions/univeracademy-api/configured-http.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+      "to": "supabase/functions/univeracademy-api/storage/attempt-rows.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "to": "supabase/functions/univeracademy-api/storage/prepared-student.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "../http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/flow.test.mjs",
+      "specifier": "./memory-pool.mjs",
+      "to": "tests/backend/student-prepared/memory-pool.mjs"
+    },
+    {
+      "from": "api/index.mjs",
+      "specifier": "../runtime/production-entry.mjs",
+      "to": "runtime/production-entry.mjs"
+    },
+    {
+      "from": "api/index.mjs",
+      "specifier": "../runtime/vercel-node.mjs",
+      "to": "runtime/vercel-node.mjs"
+    },
+    {
+      "from": "tests/backend/student-prepared/clerk.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/configured-http.ts",
+      "to": "supabase/functions/univeracademy-api/configured-http.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/clerk.test.mjs",
+      "specifier": "../../../supabase/functions/univeracademy-api/student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/clerk.test.mjs",
+      "specifier": "../http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "tests/backend/student-prepared/clerk.test.mjs",
+      "specifier": "./memory-pool.mjs",
+      "to": "tests/backend/student-prepared/memory-pool.mjs"
+    },
+    {
+      "from": "packages/api-client/student-client.ts",
+      "specifier": "./student-types.d.ts",
+      "to": "packages/api-client/student-types.d.ts"
+    },
+    {
+      "from": "runtime/ungrouped-server.mjs",
+      "specifier": "./local-server.mjs",
+      "to": "runtime/local-server.mjs"
+    },
+    {
+      "from": "runtime/ungrouped-server.mjs",
+      "specifier": "./ungrouped-lab.mjs",
+      "to": "runtime/ungrouped-lab.mjs"
+    },
+    {
+      "from": "runtime/ungrouped-lab.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/staff-http.ts",
+      "to": "supabase/functions/univeracademy-api/staff-http.ts"
+    },
+    {
+      "from": "runtime/ungrouped-lab.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "runtime/ungrouped-lab.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/student-http.ts",
+      "to": "supabase/functions/univeracademy-api/student-http.ts"
+    },
+    {
+      "from": "runtime/ungrouped-lab.mjs",
+      "specifier": "../tests/backend/http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "runtime/ungrouped-lab.mjs",
+      "specifier": "../tests/backend/staff-fixture.ts",
+      "to": "tests/backend/staff-fixture.ts"
+    },
+    {
+      "from": "runtime/ungrouped-lab.mjs",
+      "specifier": "./local-lab.mjs",
+      "to": "runtime/local-lab.mjs"
+    },
+    {
+      "from": "runtime/ungrouped-lab.mjs",
+      "specifier": "./ungrouped-fixture.mjs",
+      "to": "runtime/ungrouped-fixture.mjs"
+    },
+    {
+      "from": "runtime/ungrouped-fixture.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/pilot-provisioning.ts",
+      "to": "supabase/functions/univeracademy-api/pilot-provisioning.ts"
+    },
+    {
+      "from": "runtime/ungrouped-fixture.mjs",
+      "specifier": "../tests/backend/http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "runtime/ungrouped-fixture.mjs",
+      "specifier": "../tests/backend/staff-fixture.ts",
+      "to": "tests/backend/staff-fixture.ts"
+    },
+    {
+      "from": "tests/backend/staff-fixture.ts",
+      "specifier": "../../contracts/review-only.openapi.json",
+      "to": "contracts/review-only.openapi.json"
+    },
+    {
+      "from": "tests/backend/staff-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "tests/backend/staff-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/membership-effects.ts",
+      "to": "supabase/functions/univeracademy-api/membership-effects.ts"
+    },
+    {
+      "from": "tests/backend/staff-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/staff-http.ts",
+      "to": "supabase/functions/univeracademy-api/staff-http.ts"
+    },
+    {
+      "from": "tests/backend/staff-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "tests/backend/staff-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/student-http.ts",
+      "to": "supabase/functions/univeracademy-api/student-http.ts"
+    },
+    {
+      "from": "tests/backend/staff-fixture.ts",
+      "specifier": "../../supabase/functions/univeracademy-api/student-state.ts",
+      "to": "supabase/functions/univeracademy-api/student-state.ts"
+    },
+    {
+      "from": "tests/backend/staff-fixture.ts",
+      "specifier": "./http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "runtime/local-lab.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/student-http.ts",
+      "to": "supabase/functions/univeracademy-api/student-http.ts"
+    },
+    {
+      "from": "runtime/local-lab.mjs",
+      "specifier": "../tests/backend/http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "runtime/local-server.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "runtime/local-server.mjs",
+      "specifier": "./local-lab.mjs",
+      "to": "runtime/local-lab.mjs"
+    },
+    {
+      "from": "runtime/local-server.mjs",
+      "specifier": "./node-request-abort.mjs",
+      "to": "runtime/node-request-abort.mjs"
+    },
+    {
+      "from": "runtime/ungrouped-driver.mjs",
+      "specifier": "./ungrouped-fixture.mjs",
+      "to": "runtime/ungrouped-fixture.mjs"
+    },
+    {
+      "from": "runtime/content-pilot-server.mjs",
+      "specifier": "./content-pilot-lab.mjs",
+      "to": "runtime/content-pilot-lab.mjs"
+    },
+    {
+      "from": "runtime/content-pilot-server.mjs",
+      "specifier": "./ungrouped-server.mjs",
+      "to": "runtime/ungrouped-server.mjs"
+    },
+    {
+      "from": "runtime/content-pilot-lab.mjs",
+      "specifier": "../tests/backend/http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "runtime/content-pilot-lab.mjs",
+      "specifier": "../tests/backend/staff-fixture.ts",
+      "to": "tests/backend/staff-fixture.ts"
+    },
+    {
+      "from": "runtime/content-pilot-lab.mjs",
+      "specifier": "./ungrouped-lab.mjs",
+      "to": "runtime/ungrouped-lab.mjs"
+    },
+    {
+      "from": "runtime/content-pilot-driver.mjs",
+      "specifier": "./content-pilot-lab.mjs",
+      "to": "runtime/content-pilot-lab.mjs"
+    },
+    {
+      "from": "runtime/configured-server.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/configured-http.ts",
+      "to": "supabase/functions/univeracademy-api/configured-http.ts"
+    },
+    {
+      "from": "runtime/configured-server.mjs",
+      "specifier": "./local-cors.mjs",
+      "to": "runtime/local-cors.mjs"
+    },
+    {
+      "from": "runtime/configured-server.mjs",
+      "specifier": "./node-request-abort.mjs",
+      "to": "runtime/node-request-abort.mjs"
+    },
+    {
+      "from": "runtime/clerk-sdk-bindings.mjs",
+      "specifier": "../supabase/functions/univeracademy-api/fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "runtime/clerk-sdk-bindings.mjs",
+      "specifier": "./clerk-sdk-worker.mjs",
+      "to": "runtime/clerk-sdk-worker.mjs"
+    },
+    {
+      "from": "runtime/clerk-review-server.mjs",
+      "specifier": "../packages/api-client/student-client.ts",
+      "to": "packages/api-client/student-client.ts"
+    },
+    {
+      "from": "runtime/clerk-review-server.mjs",
+      "specifier": "../tests/backend/http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "runtime/clerk-review-server.mjs",
+      "specifier": "../tests/clerk-auth/fixture.mjs",
+      "to": "tests/clerk-auth/fixture.mjs"
+    },
+    {
+      "from": "runtime/clerk-review-server.mjs",
+      "specifier": "./local-cors.mjs",
+      "to": "runtime/local-cors.mjs"
+    },
+    {
+      "from": "runtime/clerk-review-server.mjs",
+      "specifier": "./local-server.mjs",
+      "to": "runtime/local-server.mjs"
+    },
+    {
+      "from": "tests/clerk-auth/fixture.mjs",
+      "specifier": "../../packages/api-client/student-client.ts",
+      "to": "packages/api-client/student-client.ts"
+    },
+    {
+      "from": "tests/clerk-auth/fixture.mjs",
+      "specifier": "../../supabase/functions/univeracademy-api/clerk-auth.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-auth.ts"
+    },
+    {
+      "from": "tests/clerk-auth/fixture.mjs",
+      "specifier": "../../supabase/functions/univeracademy-api/clerk-http.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-http.ts"
+    },
+    {
+      "from": "tests/clerk-auth/fixture.mjs",
+      "specifier": "../../supabase/functions/univeracademy-api/fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "tests/clerk-auth/fixture.mjs",
+      "specifier": "../backend/http-fixture.ts",
+      "to": "tests/backend/http-fixture.ts"
+    },
+    {
+      "from": "tests/clerk-auth/fixture.mjs",
+      "specifier": "../backend/staff-fixture.ts",
+      "to": "tests/backend/staff-fixture.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/transaction-pool-port.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/session-rows.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/session-rows.ts",
+      "specifier": "./postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+      "specifier": "../removal-authority.ts",
+      "to": "supabase/functions/univeracademy-api/removal-authority.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+      "specifier": "../staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+      "specifier": "../attempts.ts",
+      "to": "supabase/functions/univeracademy-api/attempts.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+      "specifier": "../fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+      "specifier": "../staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal.ts",
+      "specifier": "./membership-activity.ts",
+      "to": "supabase/functions/univeracademy-api/membership-activity.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal.ts",
+      "specifier": "./membership-effects.ts",
+      "to": "supabase/functions/univeracademy-api/membership-effects.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal.ts",
+      "specifier": "./removal-authority.ts",
+      "to": "supabase/functions/univeracademy-api/removal-authority.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "specifier": "./membership-removal.ts",
+      "to": "supabase/functions/univeracademy-api/membership-removal.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "specifier": "./removal-authority.ts",
+      "to": "supabase/functions/univeracademy-api/removal-authority.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "specifier": "./staff-json.ts",
+      "to": "supabase/functions/univeracademy-api/staff-json.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-preflight.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-preflight.ts",
+      "specifier": "./membership-activity.ts",
+      "to": "supabase/functions/univeracademy-api/membership-activity.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-preflight.ts",
+      "specifier": "./removal-authority.ts",
+      "to": "supabase/functions/univeracademy-api/removal-authority.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-preflight.ts",
+      "specifier": "./staff-state.ts",
+      "to": "supabase/functions/univeracademy-api/staff-state.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-preflight.ts",
+      "specifier": "./storage/membership-preflight-port.ts",
+      "to": "supabase/functions/univeracademy-api/storage/membership-preflight-port.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/membership-preflight.ts",
+      "specifier": "./storage/postgres-transaction.ts",
+      "to": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-provider.ts",
+      "specifier": "./clerk-auth.ts",
+      "to": "supabase/functions/univeracademy-api/clerk-auth.ts"
+    },
+    {
+      "from": "supabase/functions/univeracademy-api/clerk-provider.ts",
+      "specifier": "./fault.ts",
+      "to": "supabase/functions/univeracademy-api/fault.ts"
+    }
+  ],
+  "unresolved": [],
+  "unpinned": [],
+  "target_count": 119,
+  "target_bytes": 2135406,
+  "all_exact_seed_digests_match": true,
+  "source_limit": "Backend API/runtime/client AST closure plus independently selected test/input union; Mini consumer dependencies retain exact base bytes, not implied to be selected targets.",
+  "embedded_guard_path_set_matches_independent_seed": true,
+  "ownerCopies": [
+    {
+      "canonical": "packages/api-client/student-client.ts",
+      "copy": "apps/mini-app/src/owner-client/student-client.ts",
+      "path": "packages/api-client/student-client.ts",
+      "bytes": 8952,
+      "sha256": "61cf1d2d0681f3bf25a610c73eff7470159bca45679c5def42101e9a58017494"
+    },
+    {
+      "canonical": "packages/api-client/student-types.d.ts",
+      "copy": "apps/mini-app/src/owner-client/student-types.d.ts",
+      "path": "packages/api-client/student-types.d.ts",
+      "bytes": 48905,
+      "sha256": "bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc"
+    }
+  ],
+  "schema_validator_generator_inputs": [
+    "contracts/review-only.openapi.json",
+    "contracts/clerk-auth.proposal.patch.json",
+    "contracts/clerk-review.openapi.json",
+    "tests/backend/validator/ajv-config.cjs",
+    "tests/backend/validator/base-ajv-config.cjs",
+    "tests/backend/validator/view-builder.cjs",
+    "tests/backend/validator/tooling/package.json",
+    "tests/backend/validator/tooling/package-lock.json",
+    "package.json",
+    "package-lock.json",
+    "tools/generate-staff-contract.py"
+  ],
+  "package_scripts": {
+    "package.json": {
+      "start": "node runtime/configured-server.mjs",
+      "test": "node --test tests/local-content-pilot.test.mjs",
+      "test:backend-flow": "node --test tests/local-content-pilot.test.mjs",
+      "setup:validator": "npm ci --ignore-scripts --prefix tests/backend/validator/tooling",
+      "typecheck": "tsc --noEmit --allowImportingTsExtensions --target es2023 --module esnext --moduleResolution bundler --lib es2023,dom,dom.iterable --strict supabase/functions/univeracademy-api/*.ts packages/api-client/student-client.ts supabase/functions/univeracademy-api/storage/*.ts",
+      "generate:staff-schema": "python3 tools/generate-staff-contract.py",
+      "generate:staff-types": "openapi-typescript packages/api-client/staff-openapi.json -o packages/api-client/staff-types.d.ts",
+      "test:storage-auth": "node --test tests/storage-auth/*.test.mjs",
+      "test:persistent-http": "node --test tests/persistent-http/*.test.mjs",
+      "start:local-ram": "node runtime/content-pilot-server.mjs",
+      "test:production-client": "node --test tests/enrollment/production-client.test.mjs",
+      "test:enrollment-staff": "node --test tests/enrollment/identity-staff.test.mjs",
+      "test:first-test": "node --test tests/first-test/*.test.mjs",
+      "test:vercel-node": "node --test tests/vercel-node/*.test.mjs",
+      "test:clerk-auth": "node --test tests/clerk-auth/*.test.mjs"
+    },
+    "apps/mini-app/package.json": {
+      "dev": "vite --host 127.0.0.1",
+      "dev:auth-prototype": "vite --host 127.0.0.1 --mode auth_prototype",
+      "test:auth-prototype": "node --test tests/common-entry-prototype.test.mjs",
+      "test:auth-prototype-browser": "node tests/common-entry-browser.mjs",
+      "check": "tsc --noEmit",
+      "test": "node --test tests/*.test.mjs",
+      "test:current-flow": "node tests/current-flow-driver.mjs",
+      "test:current-flow-guard": "node --test tests/current-flow-guard.test.mjs",
+      "test:bootstrap": "node --test tests/telegram-bootstrap.test.mjs",
+      "test:production-runtime": "node --test tests/production-runtime.test.mjs",
+      "test:production-entry": "node tests/production-entry-browser.mjs",
+      "test:production-build": "node tests/production-entry-browser.mjs --production-gates",
+      "test:common-build": "node tests/production-entry-browser.mjs --common-gates",
+      "test:clerk-sdk": "node --unhandled-rejections=strict --test tests/clerk-sdk-adapter.test.mjs tests/common-production-runtime.test.mjs",
+      "test:clerk-sdk-browser": "node tests/clerk-sdk-browser.mjs",
+      "test:clerk-react-browser": "node tests/clerk-react-browser.mjs",
+      "build": "tsc --noEmit && vite build",
+      "build:demo": "tsc --noEmit && vite build --mode demo --outDir dist-demo",
+      "test:clerk-prebuilt": "node --unhandled-rejections=strict --test tests/clerk-prebuilt-session.test.mjs",
+      "test:clerk-prebuilt-browser": "node tests/clerk-prebuilt-browser.mjs",
+      "test:clerk-load": "node --unhandled-rejections=strict --test tests/clerk-load-promise.test.mjs",
+      "test:clerk-load-browser": "node tests/clerk-load-browser.mjs",
+      "test:clerk-empty-socket": "node tests/clerk-load-browser.mjs --empty-socket"
+    },
+    "apps/landing/package.json": {
+      "dev": "vite --host 127.0.0.1 --port 4173 --strictPort",
+      "build": "tsc --noEmit && vite build",
+      "typecheck": "tsc --noEmit",
+      "test": "node --test tests/*.test.mjs"
+    }
+  },
+  "guard_importing_consumers": [
+    "apps/mini-app/tests/browser-active-ui-driver.mjs",
+    "apps/mini-app/tests/browser-http-driver.mjs",
+    "apps/mini-app/tests/clerk-prebuilt-browser.mjs",
+    "apps/mini-app/tests/clerk-prebuilt-session.test.mjs",
+    "apps/mini-app/tests/clerk-react-browser.mjs",
+    "apps/mini-app/tests/clerk-review-browser.mjs",
+    "apps/mini-app/tests/clerk-review-entry.test.mjs",
+    "apps/mini-app/tests/clerk-sdk-browser.mjs",
+    "apps/mini-app/tests/common-production-runtime.test.mjs",
+    "apps/mini-app/tests/current-flow-driver.mjs",
+    "apps/mini-app/tests/http-integration.test.mjs",
+    "apps/mini-app/tests/numeric-lab.mjs",
+    "apps/mini-app/tests/production-connection-http.test.mjs"
+  ],
+  "excluded_historical_inputs": [
+    "contracts/roster-return-policy.proposal.patch.json",
+    "tools/generate-clerk-review.py"
+  ],
+  "runtime_limit": "Static imports and pins are not SQL/provider/removal execution. Current-flow is loopback memory fixture."
+}
