@@ -1,0 +1,133 @@
+{
+  "format": "UA_LOCAL_HTTP_PG_FLOW01_CANDIDATE_MANIFEST_V1",
+  "status": "INPUT_COMPLETE_SOURCE_REVIEW_CANDIDATE_NO_EXECUTION_APPROVAL",
+  "revision_of_manifest_sha256": "a8adf885a5ae37f5f0cdfa7f6df8eec30925ecf9c22b4f455aa5ed336e978f20",
+  "payload_count": 12,
+  "payload_bytes": 225798,
+  "files": [
+    {
+      "path": "SCOPE.md",
+      "bytes": 14883,
+      "sha256": "95fb1923cabc46cf4d84d4e35bdaa7b7f9c8857a8dc74a4ac9850cd57ea2e645",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "activation.local.diff",
+      "bytes": 865,
+      "sha256": "e2bc4380fdbdb3d6026c62435005a437069e3b3f428932d4d6975deb18c5c672",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "bootstrap.local.diff",
+      "bytes": 846,
+      "sha256": "cd22b5b894fdcd5de5c43993634094a86166b33d6338360a76923f0512cf9fac",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "bootstrap.review.sql",
+      "bytes": 34366,
+      "sha256": "3a0c4b7b121dab0d765a7096cf0212eea605847f6481d0508cd837b7defca9c4",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "corrected-activation.review.sql",
+      "bytes": 60363,
+      "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "driver/package-lock.json",
+      "bytes": 5325,
+      "sha256": "2b86adb724d7750e9a4684851e7698fe85b6c88d7285580accc2d791595be5c0",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "driver/package.json",
+      "bytes": 129,
+      "sha256": "a4ed531067c50678b51e650fe3d88abe1ffc57077fba512e0a45d5e351cf7cc9",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "flow.mjs",
+      "bytes": 14322,
+      "sha256": "5882ab4fc5eebf3626a849212c1afeb1afdb9b55b6ff474d3daa1d9dab15e089",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "plan.json",
+      "bytes": 7576,
+      "sha256": "08b06a46be012987670fa6c9aa46bf7abf2edba5589d15b1249d141d28fbdd79",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "run.py",
+      "bytes": 25038,
+      "sha256": "7e10af2004016d709688285173112ffd238e2c7847565a7dc3d18f841d3fec8a",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "seed.mjs",
+      "bytes": 5509,
+      "sha256": "b2cd44768d3dab2fb5805f21ac390448a89b6ffd4edbf66b6947ef820893d456",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "source-inventory.json",
+      "bytes": 56576,
+      "sha256": "ec61cc00950b339a3fd3c3094131797dd7df301cdae8bc6500037ab28969f206",
+      "publication_mode": "100644"
+    }
+  ],
+  "publication_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "architect/local-http-pg-flow01-r3-20261111",
+    "parent": "2c5f14d00347268ac613562627825069625d5fda",
+    "prefix": "qa-checkpoints/2026-11-11/architect-local-http-pg-flow01-r3/",
+    "write_status": "NOT_AUTHORIZED_NOT_ATTEMPTED",
+    "changed_paths": [
+      "SCOPE.md",
+      "plan.json",
+      "run.py",
+      "packet.sha256.json"
+    ]
+  },
+  "prepared_UTC": "2026-11-11T21:01:39.729820+00:00",
+  "preparation_checks": {
+    "controller_AST_parse": "PASS_NOT_INVOKED",
+    "Node_syntax_checks": {
+      "flow.mjs": 0,
+      "seed.mjs": 0
+    },
+    "ordinary_text_replay_steps_exit0": 8,
+    "SQL_parsing_compilation_execution": "NOT_RUN",
+    "driver_install_NPM_CI": "NOT_RUN",
+    "controller_harness_seed": "NOT_RUN",
+    "source_files_preserved": 283,
+    "runtime_and_dependency_roots_absent": true,
+    "old11_file_seal_preserved": true,
+    "prior_preparation_results": "Carried historical original-packet preparation results; unchanged inputs are not rerun.",
+    "P2_PKT_01_text_AST": "Distinct exclusive-created zero-byte user.npmrc/global.npmrc, mode0600; environment references checked; controller not invoked.",
+    "network_amendment": "AST/reference/hash checks only. Existing inherited-route registry metadata HEAD200/TLS verify0; no npm rerun/download or candidate execution.",
+    "fresh_attempt_roots": "Attempt02 runtime/dependency and r3 assembled packet roots absent; prior failed prefix/evidence preserved."
+  },
+  "self_excluded": true,
+  "external_gate": "Exact approved lab publication, independent QA and then explicit user install/run/cleanup approval are still required; input completeness is not permission.",
+  "published_packet_base": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "commit": "036beb26e7a6940827daa8691bc04f0326c7df6f",
+    "tree": "5e6e40143ae8e9c502ae99b52d96e738d631bdaf",
+    "prefix": "qa-checkpoints/2026-11-11/architect-local-http-pg-flow01/",
+    "manifest_bytes": 3597,
+    "manifest_sha256": "b022a29100e7b2723dd9eccbf683b882922d040685d0fcf0ea4e4d218ba40f8c"
+  },
+  "ordered_prior_packet_amendments": [
+    {
+      "repository": "oybek-muminov/lab_univeracademy",
+      "commit": "2c5f14d00347268ac613562627825069625d5fda",
+      "tree": "2ec51d0a2a36f542d13053fd610dc98d382bc76b",
+      "prefix": "qa-checkpoints/2026-11-11/architect-local-http-pg-flow01-r2/",
+      "manifest_bytes": 4369,
+      "manifest_sha256": "a8adf885a5ae37f5f0cdfa7f6df8eec30925ecf9c22b4f455aa5ed336e978f20"
+    }
+  ]
+}
