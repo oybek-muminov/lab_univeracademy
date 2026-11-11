@@ -1,0 +1,75 @@
+{
+  "status": "LOCAL_UNAPPROVED_STATELESS_GREETING_PILOT",
+  "scope": "Stateless launcher; duplicate greetings permitted; delivery unconfirmed; no identity or business state changes.",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "proposed_branch": "bot/start-clerk-stateless-20261111",
+  "expected_parent": "dc2bf835c7eee35e2471b2c14764957131543cfd",
+  "prefix": "qa-checkpoints/2026-11-11/bot-start-clerk-stateless/",
+  "application_base": {
+    "repository": "oybek-muminov/UniverAcademy",
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "source_mapping": [
+    {
+      "path": "apps/telegram-bot/src/worker.mjs",
+      "mode": "100644",
+      "bytes": 7664,
+      "sha256": "76bdd10f1982eb09e36f656bbadbe516b7f7f4bd713ff66c3cc430f821204bd7",
+      "application_path": "apps/telegram-bot/src/worker.mjs"
+    },
+    {
+      "path": "apps/telegram-bot/tests/worker.test.mjs",
+      "mode": "100644",
+      "bytes": 15213,
+      "sha256": "aa1f07c9128ca4922b7c8faaad381742f4aa8f469f1cf558dc2aaf9e25cc960a",
+      "application_path": "apps/telegram-bot/tests/worker.test.mjs"
+    },
+    {
+      "path": "apps/telegram-bot/wrangler.json",
+      "mode": "100644",
+      "bytes": 189,
+      "sha256": "1ce095d94863005739f9c093b548da5bd690d6c4c1a9b69a94630f5b8c45ee5f",
+      "application_path": "apps/telegram-bot/wrangler.json"
+    }
+  ],
+  "apply": "Reconstruct exact270-file UniverAcademy de2adf base, then add ONLY the3 source mappings. Review files and manifest stay in lab, not application source. Prior inbox-based candidate remains frozen, not selected.",
+  "payload_files_excluding_this_manifest": [
+    {
+      "path": "apps/telegram-bot/src/worker.mjs",
+      "mode": "100644",
+      "bytes": 7664,
+      "sha256": "76bdd10f1982eb09e36f656bbadbe516b7f7f4bd713ff66c3cc430f821204bd7"
+    },
+    {
+      "path": "apps/telegram-bot/tests/worker.test.mjs",
+      "mode": "100644",
+      "bytes": 15213,
+      "sha256": "aa1f07c9128ca4922b7c8faaad381742f4aa8f469f1cf558dc2aaf9e25cc960a"
+    },
+    {
+      "path": "apps/telegram-bot/wrangler.json",
+      "mode": "100644",
+      "bytes": 189,
+      "sha256": "1ce095d94863005739f9c093b548da5bd690d6c4c1a9b69a94630f5b8c45ee5f"
+    },
+    {
+      "path": "review/author-verification.json",
+      "mode": "100644",
+      "bytes": 9819,
+      "sha256": "90e6fdda684442c09664cbe0e29bde308337594474c3cca40b30692f394313f5"
+    },
+    {
+      "path": "review/offline-tests.log",
+      "mode": "100644",
+      "bytes": 9453,
+      "sha256": "959a1059ede57fd44d009ed2be8e714f29d3aa52a1c98bbe326bc394869127dd"
+    }
+  ],
+  "payload_count": 5,
+  "payload_bytes": 42338,
+  "publication_count_including_manifest": 6,
+  "external_pin": "This manifest is excluded from its own hash list; complete6-file bytes/hashes and own manifest pin are in external proposal-inventory.json, not uploaded.",
+  "author_result": "139/139 offline tests;2 syntax checks0; zero storage/outbound calls;270 originals preserved; forward/reverse PASS. Independent review, real Worker/browser/provider/delivery NOT_RUN.",
+  "future_prerequisites": "New exact publication approval; fresh branch/parent/prefix/source checks. Separate deploy/config/webhook approval and fresh runtime-state verification required; no durable storage or bot-token dependency in this stateless launcher."
+}

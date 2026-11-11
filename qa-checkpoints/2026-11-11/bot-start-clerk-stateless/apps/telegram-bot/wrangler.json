@@ -1,0 +1,8 @@
+{
+  "name": "univeracademy-bot",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-11-11",
+  "vars": {
+    "AUTH_SIGN_IN_URL": "https://quick-zebra-3590.accounts.dev/sign-in"
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "status": "AUTHOR_OFFLINE_PASS; STATELESS_GREETING_ONLY; INDEPENDENT_REVIEW_PENDING; NOT_DEPLOYED",
+  "created_utc": "2026-11-11T20:42:23.598361+00:00",
+  "scope": "Stateless launcher; duplicate greetings permitted; delivery unconfirmed; no identity or business state changes.",
+  "application_base": {
+    "repository": "oybek-muminov/UniverAcademy",
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "candidate_root": "/workspace/bot-start-clerk-stateless-20261111",
+  "source_files": [
+    {
+      "path": "apps/telegram-bot/src/worker.mjs",
+      "mode": "100644",
+      "bytes": 7664,
+      "sha256": "76bdd10f1982eb09e36f656bbadbe516b7f7f4bd713ff66c3cc430f821204bd7"
+    },
+    {
+      "path": "apps/telegram-bot/tests/worker.test.mjs",
+      "mode": "100644",
+      "bytes": 15213,
+      "sha256": "aa1f07c9128ca4922b7c8faaad381742f4aa8f469f1cf558dc2aaf9e25cc960a"
+    },
+    {
+      "path": "apps/telegram-bot/wrangler.json",
+      "mode": "100644",
+      "bytes": 189,
+      "sha256": "1ce095d94863005739f9c093b548da5bd690d6c4c1a9b69a94630f5b8c45ee5f"
+    }
+  ],
+  "revision": {
+    "v1_to_stateless_changed_paths": [
+      "apps/telegram-bot/src/worker.mjs",
+      "apps/telegram-bot/tests/worker.test.mjs"
+    ],
+    "config_unchanged": true,
+    "initial_candidate_evidence_and_proposal_preserved": {
+      "/workspace/bot-start-clerk-20261111": 273,
+      "/workspace/bot-start-clerk-evidence-20261111": 10,
+      "/workspace/bot-start-clerk-lab-proposal-20261111": 6
+    },
+    "retained_security_helpers_exact": {
+      "json": {
+        "bytes": 365,
+        "sha256": "d3e370cb329f4d29ebf23ec64c89558b167e07dae9fdb3a1dcef518e875b8aa6"
+      },
+      "authenticate": {
+        "bytes": 587,
+        "sha256": "60dca9461d5e394d319cf67d57d4027eceda177af280a1aba87d21fe1386d8e2"
+      },
+      "readAuthUrl": {
+        "bytes": 776,
+        "sha256": "d96a43c53bf892c217279135f17a262fa2ccaa0bb1e2ee6fc7a517c042d24afd"
+      },
+      "deadline": {
+        "bytes": 271,
+        "sha256": "79348500aabba9ba48b40ca65ff9f46ddb6f412f892891c9ad1c3c3673acdd32"
+      },
+      "readJson": {
+        "bytes": 979,
+        "sha256": "296a5366c0492196ee4ef29ebb26b23a9a06633b8fe11f5b2358d37086491ca9"
+      },
+      "validateUpdate": {
+        "bytes": 598,
+        "sha256": "71264d1b15a1b6c9d33cd7f2f321f2b7aacc5b92faa8c7230d477f7dbf7e4361"
+      },
+      "recipient": {
+        "bytes": 935,
+        "sha256": "12a940008aedfe1cd4714817ca0e2ab351e6e1a144e59d706832e27fc957a001"
+      }
+    },
+    "scope_document": "/workspace/bot-start-clerk-stateless-evidence-20261111/PILOT-SCOPE.md"
+  },
+  "behavior": {
+    "bot": "@univeracademybot",
+    "route": "POST /telegram/webhook",
+    "eligible": "Authenticated validated private-human /start; positive from.id equals chat.id, is_bot exactly false; forwarded/business/guest/sender_chat contexts ignored",
+    "response": "HTTP200 JSON: method=sendMessage, validated private chat_id, fixed short greeting/login explanation, one inline web_app button: Kirish / Ro‘yxatdan o‘tish",
+    "auth_url": "https://quick-zebra-3590.accounts.dev/sign-in",
+    "auth_url_source": "Only validated server configuration AUTH_SIGN_IN_URL; coordinator-provided verified Clerk development destination. No request URL/ID/bearer/linking payload interpolation.",
+    "unsupported": "HTTP200 empty body, no action; malformed recognized update400/422; wrong secret401; unsafe config503",
+    "required_runtime_inputs": [
+      "TELEGRAM_WEBHOOK_SECRET via private secret configuration",
+      "AUTH_SIGN_IN_URL via server configuration, current dev URL in wrangler.json"
+    ],
+    "removed": [
+      "TELEGRAM_INBOX dependency/claim/complete",
+      "TELEGRAM_BOT_TOKEN requirement or read",
+      "Direct outbound sendMessage request and provider receipt handling",
+      "All storage/dedupe/delivery state"
+    ],
+    "bounds": "Secret verification before body; exact HTTPS method/path/no query/hash; JSON UTF-8 only; max65536 actual bytes; whole body5000ms deadline; bounded strict shape/private-human checks; static redacted errors; no application logs",
+    "limits": [
+      "Telegram executes the webhook-reply method, if accepted; handler receives no method result/delivery confirmation",
+      "Repeated and concurrent update_id intentionally produce duplicate identical greetings; no exactly-once or delivered claim",
+      "No identity/contact/session/business state changes; no auth/linking or business replay policy changed",
+      "User click required; opening Clerk page does not prove WebView/Google/signup/login compatibility",
+      "Clerk development destination/methods are not production auth acceptance"
+    ]
+  },
+  "contract_boundary": {
+    "unchanged_path": "contracts/clerk-review.openapi.json",
+    "unchanged_sha256": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28",
+    "decision": "Architect-authorized stateless greeting-only pilot, separate from stateful Backend /api/v1/internal/telegram/updates. Durable replay/contact/auth/linking protections remain unchanged. This is not a new Backend API implementation or an amendment to its contract."
+  },
+  "tests": {
+    "node": "v24.22.1",
+    "dependencies": "No dependencies installed/added. Native node:test/assert, Request/Response/Web Crypto; source module has no imports.",
+    "passed": 139,
+    "failed": 0,
+    "skipped": 0,
+    "application_outbound_calls": 0,
+    "storage_calls": 0,
+    "coverage": "Pristine exact webhook reply first; sequential/concurrent/re-instantiated duplicate acceptance; empty unsupported ACK; poisoned env permits only2 config reads; global outbound fetch blocked; no update/header/payload-derived URL; all prior request/auth/shape/private/context/URL security negatives retained; actual hung-body5000ms deadline; static secret/error redaction",
+    "retired_v1_controls": "Token/inbox/provider-result/persistence/send-timeout controls retired with removed functionality; replaced with stateless duplicate/no-effect/no-storage/no-outbound tests. No skipped cases or relabelled dedupe passes.",
+    "commands": [
+      {
+        "name": "syntax-source",
+        "argv": [
+          "node",
+          "--check",
+          "apps/telegram-bot/src/worker.mjs"
+        ],
+        "cwd": "/workspace/bot-start-clerk-stateless-20261111",
+        "started_utc": "2026-11-11T20:39:55.455793+00:00",
+        "ended_utc": "2026-11-11T20:39:55.494056+00:00",
+        "exit_code": 0,
+        "log": "/workspace/bot-start-clerk-stateless-evidence-20261111/syntax-source.log",
+        "log_bytes": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "syntax-tests",
+        "argv": [
+          "node",
+          "--check",
+          "apps/telegram-bot/tests/worker.test.mjs"
+        ],
+        "cwd": "/workspace/bot-start-clerk-stateless-20261111",
+        "started_utc": "2026-11-11T20:39:55.494333+00:00",
+        "ended_utc": "2026-11-11T20:39:55.520735+00:00",
+        "exit_code": 0,
+        "log": "/workspace/bot-start-clerk-stateless-evidence-20261111/syntax-tests.log",
+        "log_bytes": 0,
+        "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "offline-tests",
+        "argv": [
+          "node",
+          "--test",
+          "apps/telegram-bot/tests/worker.test.mjs"
+        ],
+        "cwd": "/workspace/bot-start-clerk-stateless-20261111",
+        "started_utc": "2026-11-11T20:39:55.520936+00:00",
+        "ended_utc": "2026-11-11T20:40:00.892111+00:00",
+        "exit_code": 0,
+        "log": "/workspace/bot-start-clerk-stateless-evidence-20261111/offline-tests.log",
+        "log_bytes": 9453,
+        "log_sha256": "959a1059ede57fd44d009ed2be8e714f29d3aa52a1c98bbe326bc394869127dd"
+      }
+    ],
+    "wrangler_path": null,
+    "not_run": [
+      "Wrangler/Miniflare/Cloudflare runtime; Wrangler absent, installation not authorized",
+      "Real Telegram getMe/getWebhookInfo/setWebhook/sendMessage or existing Worker runtime checks",
+      "Real Clerk/browser/WebView/signup/login/OAuth/delivery or application E2E",
+      "Backend/Mini/Landing suites: existing source unchanged, not claimed rerun"
+    ]
+  },
+  "preservation": {
+    "base_files": 270,
+    "base_bytes": 3396211,
+    "base_mismatches": 0,
+    "base_metadata_sha256": "9e176ac2111545613e8151628560e668e4d1a1a0342e1c3d56c3a3fdc9e7ebb9",
+    "result_files": 273,
+    "result_bytes": 3419277,
+    "result_metadata_sha256": "14bfda1886d720cb88fb078307311e9155c2fffcea7116c5c1fba30a75ddb76f",
+    "metadata_format": "UTF-8 JSON sorted keys, compact separators; path-sorted path/mode/bytes/sha256 rows",
+    "all_modes": "100644",
+    "additions": 3,
+    "overwrites": 0,
+    "deletions": 0,
+    "replay": "Isolated forward exact273-file parity and reverse exact270-file restoration PASS",
+    "unchanged": "Existing Mini UI/style/entry/assets/client/types, Backend/stateful replay/auth/linking/SQL, root and app configs/locks, Landing and18 main originals"
+  },
+  "source_provenance": "Own original Worker candidate revised in separate local copy; user Cloudflare personal test source not copied or modified; no other agent environment accessed",
+  "runtime_state": "Existing Cloudflare deployment/webhook state not probed or changed; freshly verify nonsecret runtime state before any future approved deployment",
+  "references": [
+    "https://core.telegram.org/bots/api#making-requests-when-getting-updates",
+    "https://core.telegram.org/bots/api#inlinekeyboardbutton"
+  ],
+  "publication": "Local proposal only, no approval. No remote/Git write, upload, deploy, webhook/account/configuration change, credential use/generation, install or provider/DB contact."
+}
