@@ -1,0 +1,19 @@
+✔ the deliberate review guard and transaction still enclose every temporary privilege (1.661532ms)
+✔ ua_access_locator_owner receives CREATE only inside the ownership-transfer window (0.306492ms)
+✔ ua_person_lock_owner receives CREATE only inside the ownership-transfer window (1.456103ms)
+✔ ua_clerk_lock_owner receives CREATE only inside the ownership-transfer window (0.19956ms)
+✔ ua_invariant_owner receives CREATE only inside the ownership-transfer window (0.213302ms)
+✔ non-superuser operator prerequisites are checked before role creation, without mutating them (0.255585ms)
+✔ temporary operator membership is self-granted with exact options and its exact grantor is revoked (1.170213ms)
+✔ transfer and cleanup postconditions reject missing authority or any surviving CREATE, SET or inherited access (0.375616ms)
+✔ the four helper owners and runtime retain their final restricted attributes and visibility (0.412812ms)
+✔ all three helper bodies and all original scoped grants/policy definitions are unchanged (1.164003ms)
+✔ the source records superuser masking and the limited implicit ADMIN membership honestly (0.161514ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 129.099237

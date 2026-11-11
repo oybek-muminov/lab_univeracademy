@@ -1,0 +1,205 @@
+✖ the deliberate review guard and transaction still enclose every temporary privilege (2.113994ms)
+✖ ua_access_locator_owner receives CREATE only inside the ownership-transfer window (6.364845ms)
+✖ ua_person_lock_owner receives CREATE only inside the ownership-transfer window (0.631681ms)
+✖ ua_clerk_lock_owner receives CREATE only inside the ownership-transfer window (0.282695ms)
+✖ ua_invariant_owner receives CREATE only inside the ownership-transfer window (0.569858ms)
+✖ non-superuser operator prerequisites are checked before role creation, without mutating them (0.191188ms)
+✖ temporary operator membership is self-granted with exact options and its exact grantor is revoked (0.261815ms)
+✖ transfer and cleanup postconditions reject missing authority or any surviving CREATE, SET or inherited access (0.473553ms)
+✔ the four helper owners and runtime retain their final restricted attributes and visibility (0.653644ms)
+✔ all three helper bodies and all original scoped grants/policy definitions are unchanged (1.323013ms)
+✖ the source records superuser masking and the limited implicit ADMIN membership honestly (0.310548ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 2
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 177.549119
+
+✖ failing tests:
+
+test at review/activation-ownership.test.mjs:15:1
+✖ the deliberate review guard and transaction still enclose every temporary privilege (2.113994ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:19:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review/activation-ownership.test.mjs:23:27
+✖ ua_access_locator_owner receives CREATE only inside the ownership-transfer window (6.364845ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(grant>begin&&grant<firstTransfer&&revoke>lastTransfer&&revoke<rollback)
+  
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:28:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at review/activation-ownership.test.mjs:23:27
+✖ ua_person_lock_owner receives CREATE only inside the ownership-transfer window (0.631681ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(grant>begin&&grant<firstTransfer&&revoke>lastTransfer&&revoke<rollback)
+  
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:28:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at review/activation-ownership.test.mjs:23:27
+✖ ua_clerk_lock_owner receives CREATE only inside the ownership-transfer window (0.282695ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(grant>begin&&grant<firstTransfer&&revoke>lastTransfer&&revoke<rollback)
+  
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:28:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at review/activation-ownership.test.mjs:23:27
+✖ ua_invariant_owner receives CREATE only inside the ownership-transfer window (0.569858ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(grant>begin&&grant<firstTransfer&&revoke>lastTransfer&&revoke<rollback)
+  
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:28:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at review/activation-ownership.test.mjs:31:1
+✖ non-superuser operator prerequisites are checked before role creation, without mutating them (0.191188ms)
+  AssertionError [ERR_ASSERTION]: current_user IS DISTINCT FROM session_user
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:33:335)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at review/activation-ownership.test.mjs:37:1
+✖ temporary operator membership is self-granted with exact options and its exact grantor is revoked (0.261815ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 2
+  
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:40:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 2,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at review/activation-ownership.test.mjs:46:1
+✖ transfer and cleanup postconditions reject missing authority or any surviving CREATE, SET or inherited access (0.473553ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(sql.includes(block))
+  
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:47:76)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at review/activation-ownership.test.mjs:70:1
+✖ the source records superuser masking and the limited implicit ADMIN membership honestly (0.310548ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(sql.includes('A true cluster superuser bypasses'))
+  
+      at TestContext.<anonymous> (file:///workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/activation-ownership.test.mjs:71:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

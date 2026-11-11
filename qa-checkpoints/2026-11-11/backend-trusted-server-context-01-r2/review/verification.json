@@ -1,0 +1,162 @@
+{
+  "format": "UA-TRUSTED-SERVER-SQL-OWNERSHIP-R2-v1",
+  "status": "LOCAL_AUTHOR_SOURCE_TEXT_PASS_INDEPENDENT_REVIEW_PENDING",
+  "finding": "P2-CTX-01",
+  "published_preimage": {
+    "commit": "77e04d13d38054135d0520a04a01c7ff9012bde8",
+    "tree": "374fc20613e52417d9cc07f32ffcceb64acce2f3",
+    "path": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01/review/first-student-trusted-server.activation.review.sql",
+    "bytes": 56366,
+    "sha256": "322cfca8728ee6fe739bc99cf82f13632a45461b89850cfe85826dca27d5d387"
+  },
+  "candidate_sql": {
+    "bytes": 60363,
+    "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd"
+  },
+  "local_diff_scope": [
+    "Only inactive SQL text changed: non-superuser operator prerequisites, temporary schema CREATE to four new helper owners, attributable self-granted operator SET/INHERIT, exact revoke and postconditions",
+    "One new standalone Node source/text test; all283 application files unchanged",
+    "All three helper function bodies, original scoped data grants and CREATE POLICY definitions unchanged; no RLS weakening or ua_runtime LOGIN/membership/CREATE",
+    "Original17-file package, frozen SQL A/B, pool and Mini/guard bytes unchanged"
+  ],
+  "preservation": {
+    "application_files": 283,
+    "application_inventory_recipe": "SHA256 UTF8 compact sorted-key JSON of sorted path/bytes/sha256 rows, no LF",
+    "application_inventory_sha256": "1543e3ab1639a185d3384d59f1a2e9688a9880de74dc65fee6dbe5266e0da964",
+    "published_package_files_unchanged": 17,
+    "frozen_sql_A": {
+      "bytes": 34366,
+      "sha256": "3a0c4b7b121dab0d765a7096cf0212eea605847f6481d0508cd837b7defca9c4"
+    },
+    "frozen_sql_B": {
+      "bytes": 25379,
+      "sha256": "6fab5ae262dd2b6f3314bf7962c3d667d901abd26d32061d80a2987c7fac2b36"
+    },
+    "helper_bodies_sha256": "db7ec9840020c174be099120d3ec24143982c794c53bf99116fbf1957fe0aa4d",
+    "original_scoped_grants_and_policies_sha256": "8ba163fca3ff72fd11f87271fa7489b9a6fc2a0ebb259c7d956e35633a79d717"
+  },
+  "operator_contract": {
+    "required_before_changes": [
+      "current_user=session_user",
+      "Non-superuser CREATEROLE operator",
+      "Existing inherited ua_owner privileges and SET ROLE ua_owner authority; schema owned by ua_owner",
+      "createrole_self_grant empty; checked only, never configured",
+      "Four new helper role names absent; CREATE ROLE does not adopt existing roles"
+    ],
+    "window": "Schema CREATE only to the four new helper owners; operator self-membership explicitly ADMIN FALSE, INHERIT TRUE, SET TRUE GRANTED BY CURRENT_USER; no runtime ownership role grant",
+    "cleanup": "REVOKE schema CREATE and self-granted memberships GRANTED BY CURRENT_USER RESTRICT immediately after all9 ownership transfers, before runtime policy section; postconditions reject surviving effective CREATE/SET/INHERIT or runtime helper membership",
+    "implicit_admin_boundary": "PostgreSQL automatically grants ADMIN OPTION to a non-superuser creator. That pre-existing CREATE ROLE behavior is not expanded or removed: with empty createrole_self_grant it carries no SET/INHERIT. Only the separately attributable temporary self-grant is revoked. Trusted DDL administrator remains outside the application threat boundary.",
+    "why_superuser_masks": "A true cluster superuser bypasses function ownership/SET-role/schema-CREATE checks, so its success cannot establish managed-operator compatibility. The new source precondition rejects a superuser validation path.",
+    "atomicity": "Original deliberate exception guard, BEGIN and terminal ROLLBACK retained. Temporary grants and cleanup are in the same transaction. This remains an inactive review artifact, not an executable apply packet."
+  },
+  "author_runtime": "Node v24.22.1; built-ins only; no external dependencies",
+  "tests": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "review/activation-ownership.test.mjs"
+      ],
+      "cwd": "/workspace/ua-trusted-server-context-sql-r2-su6i0a31",
+      "utc_start": "2026-11-11T18:19:00.424488+00:00",
+      "utc_end": "2026-11-11T18:19:00.641076+00:00",
+      "exit": 0,
+      "log": "focused.final.log",
+      "bytes": 1271,
+      "sha256": "2279000cd4d963a2978b822c44984cd78c9da3d65075857ed191bef9c442dcf9"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/backend/student-prepared/trusted-server-context.test.mjs"
+      ],
+      "cwd": "/workspace/ua-trusted-server-context-sql-r2-su6i0a31/repo",
+      "utc_start": "2026-11-11T18:19:00.641525+00:00",
+      "utc_end": "2026-11-11T18:19:00.997757+00:00",
+      "exit": 0,
+      "log": "context-regression.final.log",
+      "bytes": 4148,
+      "sha256": "081ae8feb187741a9ae63b25d313703d55c92829221701ff8d96b5dcf455c9d7"
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "review/activation-ownership.test.mjs"
+      ],
+      "cwd": "/workspace/ua-trusted-server-context-sql-r2-su6i0a31",
+      "utc_start": "2026-11-11T18:19:00.998406+00:00",
+      "utc_end": "2026-11-11T18:19:01.024499+00:00",
+      "exit": 0,
+      "log": "syntax.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "red_before": {
+    "command": [
+      "node",
+      "--test",
+      "review/activation-ownership.test.mjs"
+    ],
+    "cwd": "/workspace/ua-trusted-server-context-sql-r2-su6i0a31",
+    "utc_start": "2026-11-11T18:18:07.735126+00:00",
+    "utc_end": "2026-11-11T18:18:07.991588+00:00",
+    "exit": 1,
+    "log": "red-before.log",
+    "bytes": 9815,
+    "sha256": "3c29d6b1593f39a56e5883200b08bef1e5785b007d28659531bab774f5a17a95",
+    "scope": "source text assertions against exact published preimage SQL; no SQL compiled/executed",
+    "tests": 11,
+    "pass": 2,
+    "fail": 9,
+    "interpretation": "Nine SOURCE/TEXT acceptance failures on exact published preimage, not PostgreSQL execution failures"
+  },
+  "final_counts": {
+    "new_source_text": 11,
+    "existing_context_regression": 37,
+    "pass": 48,
+    "fail": 0
+  },
+  "reproduction": {
+    "text_only": "node --test review/activation-ownership.test.mjs (from checkpoint root; sibling review SQL required)",
+    "existing_context": "Reconstruct exact283 application source from approved base/overlays through77e04d13, at <work>/repo. Place revised SQL at <work>/review/first-student-trusted-server.activation.review.sql; from repo run node --test tests/backend/student-prepared/trusted-server-context.test.mjs",
+    "red_before": "Stage this same new text test beside the exact56366-byte original SQL from pinned77e04d13 checkpoint; expect11 tests,2pass/9fail,exit1. Never execute the supplied SQL.",
+    "syntax": "node --check review/activation-ownership.test.mjs",
+    "source_inputs": "Immutable published lab source and exact accepted application base; no dependency on another owner workspace or these historical cwd paths"
+  },
+  "remote_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/trusted-server-context-01-r2-20261111",
+    "parent": "77e04d13d38054135d0520a04a01c7ff9012bde8",
+    "parent_tree": "374fc20613e52417d9cc07f32ffcceb64acce2f3",
+    "prefix": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/",
+    "read_only_check_utc": "2026-11-11 18:19:50 UTC",
+    "branch_and_prefix_absent": true,
+    "write": "NOT_AUTHORIZED_NOT_ATTEMPTED"
+  },
+  "official_basis": [
+    "https://www.postgresql.org/docs/17/sql-alterfunction.html",
+    "https://www.postgresql.org/docs/17/sql-set-role.html",
+    "https://www.postgresql.org/docs/17/sql-grant.html",
+    "https://www.postgresql.org/docs/17/sql-revoke.html",
+    "https://www.postgresql.org/docs/17/runtime-config-client.html#GUC-CREATEROLE-SELF-GRANT"
+  ],
+  "not_run": [
+    "SQL parsing/compilation/execution",
+    "Non-superuser managed-operator role/grant/revoke execution",
+    "Actual driver/TLS/DB and positive/cross-person RLS",
+    "Semantic compiler: no TypeScript source changed",
+    "Provider/Cloudflare/bootstrap/activation/install/upload/backup"
+  ],
+  "review_status": "Architect original TypeScript scoped PASS was relayed; original SQL P2 remains the reason for this revision. Independent QA original-candidate execution is still pending; no independent PASS is claimed for r2.",
+  "denied_pending_uncertain": {
+    "denied": [],
+    "uncertain": [],
+    "pending": [
+      "Independent exact source/SQL review",
+      "Separately approved publication and any later SQL run packet; actual operator capability remains unverified"
+    ]
+  }
+}

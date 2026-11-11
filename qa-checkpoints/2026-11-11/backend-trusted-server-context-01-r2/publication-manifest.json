@@ -1,0 +1,54 @@
+{
+  "format": "UA-LAB-PUBLICATION-MANIFEST-v1",
+  "status": "LOCAL_SQL_TEXT_CORRECTION_AUTHOR_ONLY_NO_UPLOAD_AUTHORIZED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/trusted-server-context-01-r2-20261111",
+  "sole_parent": "77e04d13d38054135d0520a04a01c7ff9012bde8",
+  "parent_tree": "374fc20613e52417d9cc07f32ffcceb64acce2f3",
+  "prefix": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/",
+  "payload_files": 6,
+  "payload_bytes": 90399,
+  "payload_inventory_sha256": "cad5e7ed123ab5c410a0fd91ab7e254f0c63d2ab474ce47d34e7611c1a4a611c",
+  "inventory_recipe": "SHA256 UTF8 compact sorted-key JSON [{destination,bytes,sha256},...], sorted destination, no LF; excludes manifest",
+  "files": [
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/activation-ownership.test.mjs",
+      "bytes": 6224,
+      "sha256": "eca7719921daae6c6f4a81222518708edceedf7f38688e0a3e3e05e7cf822809",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/context-regression.final.log",
+      "bytes": 4148,
+      "sha256": "081ae8feb187741a9ae63b25d313703d55c92829221701ff8d96b5dcf455c9d7",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/first-student-trusted-server.activation.review.sql",
+      "bytes": 60363,
+      "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/focused.final.log",
+      "bytes": 1271,
+      "sha256": "2279000cd4d963a2978b822c44984cd78c9da3d65075857ed191bef9c442dcf9",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/red-before.log",
+      "bytes": 9815,
+      "sha256": "3c29d6b1593f39a56e5883200b08bef1e5785b007d28659531bab774f5a17a95",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/verification.json",
+      "bytes": 8578,
+      "sha256": "530c1200d8ca98c23e58f3ddd9ce2bfb70505571015c3ac49ad96ce941f54172",
+      "mode": "100644"
+    }
+  ],
+  "scope": "Inactive SQL + standalone source/text test + verification + three original author logs; no application files, duplicate diff/patch/archive/dependencies",
+  "self_pin": "Select external byte count and SHA256 independently; this manifest does not pin itself",
+  "runtime": "NOT_COMPILED/NOT_RUN; local text tests only; no upload authorized"
+}
