@@ -1,0 +1,100 @@
+{
+  "format": "UA-STUDENT-PREPARED-LOCAL-CANDIDATE-v1",
+  "source_commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+  "source_tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552",
+  "owner": "Backend",
+  "status": "AUTHOR_OFFLINE_TESTED_NOT_INDEPENDENTLY_REVIEWED",
+  "files": [
+    {
+      "path": "api/index.mjs",
+      "change": "modified",
+      "bytes": 777,
+      "sha256": "7b597deacd99170bcae296871da9d535acbb832272419a79ef9c1f60a60b6728"
+    },
+    {
+      "path": "runtime/production-entry.mjs",
+      "change": "added",
+      "bytes": 619,
+      "sha256": "2f7d95aacd75e889b60c596d840e4e5f7b8109421c7deedc4d3180a381b5f50f"
+    },
+    {
+      "path": "runtime/production-options.mjs",
+      "change": "modified",
+      "bytes": 7634,
+      "sha256": "1224e4af8bede15d922a770f2bbe858a6807865c3cd7eaf9eb4177fd9a02c803"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "change": "modified",
+      "bytes": 5065,
+      "sha256": "94dd8154b8d74f17e8e17a97944e6e8b9a6d107d0abf1c1cf69a18e82f86dcb8"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "change": "modified",
+      "bytes": 15369,
+      "sha256": "5dc5792ec73947cee6eee9121a33961e3c6fcc26e115ba35010b1404f09bd13c"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/configured-http.ts",
+      "change": "modified",
+      "bytes": 9271,
+      "sha256": "93359265ae5c2f1ba8b553a3fd8149e5ef845d0a7d7a6d893263baccc22a83f1"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-jwt.ts",
+      "change": "modified",
+      "bytes": 3624,
+      "sha256": "090b6811c4010c58b0cd9f14999cc0657b8385fba6ee1f6be838e6cfe49b1635"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "change": "modified",
+      "bytes": 12544,
+      "sha256": "0ada748497502ca288a66201bd8e906d3481e4d3a021608df3d1f0bd6547bfb8"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "change": "added",
+      "bytes": 9365,
+      "sha256": "9d365eade712d4149387c54e034f3f4b6f0b6522b0c09e2f86ca823442491171"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "change": "modified",
+      "bytes": 13877,
+      "sha256": "7e374d1cd2891f056475141ceadca733a1a96f75e6a0c35190e6fd69b58d8f6e"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "change": "modified",
+      "bytes": 4619,
+      "sha256": "a8082c1a95534e5dbdedc5086ecae48b243b0d1cfdc68acf25dabfbc7197464a"
+    },
+    {
+      "path": "tests/backend/student-prepared/clerk.test.mjs",
+      "change": "added",
+      "bytes": 5153,
+      "sha256": "4c61142f45ed932a7b886f29861d07089e562c0824ad3c819676d7ca0933860f"
+    },
+    {
+      "path": "tests/backend/student-prepared/flow.test.mjs",
+      "change": "added",
+      "bytes": 12102,
+      "sha256": "74ef69ef91852ad9c28f827588af5b9330b43dde3550e778b7bd0803cdd3f818"
+    },
+    {
+      "path": "tests/backend/student-prepared/memory-pool.mjs",
+      "change": "added",
+      "bytes": 8125,
+      "sha256": "e86bad4d27fc376b876a40c70c0d914f0427262987f0505dcd8a36fa34c689f4"
+    },
+    {
+      "path": "tests/vercel-node/production-options.test.mjs",
+      "change": "modified",
+      "bytes": 22292,
+      "sha256": "09bb7e0face5e6bea69166de0c792f57fbb4c4da7f51e218ae82266c464e3769"
+    }
+  ],
+  "total_bytes": 130436
+}

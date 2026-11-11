@@ -1,0 +1,229 @@
+{
+  "format": "UA-STUDENT-RUNTIME-LAB-PUBLICATION-v1",
+  "status": "PROPOSED_ONLY_NOT_UPLOADED_AUTHOR_OFFLINE_PASS_INDEPENDENT_REVIEW_PENDING",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/student-runtime-context-01-20261111",
+  "lab_parent": {
+    "branch": "qa/current-flow-20261106",
+    "commit": "d54d19cb9ba78a13187362afdb2178e90430cefe",
+    "tree": "99f467391e0f68bf1ff31f398bc83b3969a04df2"
+  },
+  "checkpoint": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/",
+  "application_source_base": {
+    "repository": "oybek-muminov/UniverAcademy",
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "mode": "one_commit_additions_only_preserve_existing_lab_files_and_branches",
+  "metadata_check_recorded_utc": "2026-11-11T13:06:47.957219+00:00",
+  "branch_absent_at_read": true,
+  "checkpoint_absent_at_parent": true,
+  "files": [
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/api/index.mjs",
+      "bytes": 777,
+      "sha256": "7b597deacd99170bcae296871da9d535acbb832272419a79ef9c1f60a60b6728",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/review/README.md",
+      "bytes": 5492,
+      "sha256": "6833f125e3a0f8db42a46603778baef3b3f79a9b4cf48cab5de913d2f4e2222f",
+      "role": "review_instructions"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/review/REPORT.md",
+      "bytes": 6517,
+      "sha256": "8dedbc151291b26ea779cd3c942871eb81ac172ebfc3cd601e36943aa9de23d9",
+      "role": "original_author_evidence"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/review/candidate-inventory.json",
+      "bytes": 3447,
+      "sha256": "8d9d2a12975556e739ec345b38f09ed9c7551e23c61a9ab549117f2b3143f933",
+      "role": "original_author_evidence"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/review/offline.final.log",
+      "bytes": 24390,
+      "sha256": "59234a893f00579ee33a08edd616a7cbbed79410e1b2f63086ddaa2842e713a8",
+      "role": "original_author_evidence"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/review/remote-source-identity.json",
+      "bytes": 329,
+      "sha256": "564e89caef02bda9ddba22731299601f2963c11c273b96cc96d40e935244a94e",
+      "role": "original_author_evidence"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/review/verification.json",
+      "bytes": 14881,
+      "sha256": "1c638ff42c7f321f9a15223adb88086fa6e4ea5225190033a713fcf60c8fd7a2",
+      "role": "original_author_evidence"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/runtime/production-entry.mjs",
+      "bytes": 619,
+      "sha256": "2f7d95aacd75e889b60c596d840e4e5f7b8109421c7deedc4d3180a381b5f50f",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/runtime/production-options.mjs",
+      "bytes": 7634,
+      "sha256": "1224e4af8bede15d922a770f2bbe858a6807865c3cd7eaf9eb4177fd9a02c803",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/clerk-auth.ts",
+      "bytes": 5065,
+      "sha256": "94dd8154b8d74f17e8e17a97944e6e8b9a6d107d0abf1c1cf69a18e82f86dcb8",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 15369,
+      "sha256": "5dc5792ec73947cee6eee9121a33961e3c6fcc26e115ba35010b1404f09bd13c",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/configured-http.ts",
+      "bytes": 9271,
+      "sha256": "93359265ae5c2f1ba8b553a3fd8149e5ef845d0a7d7a6d893263baccc22a83f1",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/staff-jwt.ts",
+      "bytes": 3624,
+      "sha256": "090b6811c4010c58b0cd9f14999cc0657b8385fba6ee1f6be838e6cfe49b1635",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "bytes": 12544,
+      "sha256": "0ada748497502ca288a66201bd8e906d3481e4d3a021608df3d1f0bd6547bfb8",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "bytes": 9365,
+      "sha256": "9d365eade712d4149387c54e034f3f4b6f0b6522b0c09e2f86ca823442491171",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "bytes": 13877,
+      "sha256": "7e374d1cd2891f056475141ceadca733a1a96f75e6a0c35190e6fd69b58d8f6e",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "bytes": 4619,
+      "sha256": "a8082c1a95534e5dbdedc5086ecae48b243b0d1cfdc68acf25dabfbc7197464a",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/backend/student-prepared/clerk.test.mjs",
+      "bytes": 5153,
+      "sha256": "4c61142f45ed932a7b886f29861d07089e562c0824ad3c819676d7ca0933860f",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/backend/student-prepared/flow.test.mjs",
+      "bytes": 12102,
+      "sha256": "74ef69ef91852ad9c28f827588af5b9330b43dde3550e778b7bd0803cdd3f818",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/backend/student-prepared/memory-pool.mjs",
+      "bytes": 8125,
+      "sha256": "e86bad4d27fc376b876a40c70c0d914f0427262987f0505dcd8a36fa34c689f4",
+      "role": "candidate_overlay"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/vercel-node/production-options.test.mjs",
+      "bytes": 22292,
+      "sha256": "09bb7e0face5e6bea69166de0c792f57fbb4c4da7f51e218ae82266c464e3769",
+      "role": "candidate_overlay"
+    }
+  ],
+  "payload_file_count": 21,
+  "payload_bytes": 185492,
+  "payload_inventory": {
+    "serialization": "UTF8 json.dumps(files,sort_keys=True,separators=(comma,colon)); no final LF",
+    "bytes": 4861,
+    "sha256": "acc85637b7c909ffeca2c3297921b6c1133c058f757ea20234dab401bbd0b157"
+  },
+  "manifest_self_pin": "EXTERNAL_SHA256_AND_BYTES_ONLY; not included in files or payload totals",
+  "base_dependency": "reviewer-owned exact accepted application base plus the 15-path overlay; lab parent is not application base",
+  "author_tests": {
+    "runtime": "Node v24.22.1",
+    "command": "node --test --test-reporter=tap tests/backend/student-prepared/flow.test.mjs tests/backend/student-prepared/clerk.test.mjs tests/vercel-node/production-options.test.mjs",
+    "utc": "2026-11-11T12:53:51.955496+00:00",
+    "exit": 0,
+    "total": 141,
+    "pass": 141,
+    "fail": 0,
+    "new_focused": 30,
+    "composition_checks": 111,
+    "external_dependencies_for_this_command": [],
+    "rerun_for_publication_proposal": false
+  },
+  "not_run": [
+    "semantic TypeScript typecheck",
+    "AJV contract validation",
+    "successful full JOSE JWT exchange",
+    "real Clerk/provider/driver/TLS",
+    "browser or listening server",
+    "PostgreSQL/SQL/RLS/concurrency/durability",
+    "primary apply/activation"
+  ],
+  "addendum_pin": {
+    "status": "UNVERIFIED",
+    "carried_summary_hex_length": 62,
+    "authoritative_identity_recovered": false,
+    "observed_only": {
+      "bytes": 32391,
+      "sha256": "06b611e412bb158c2d8d2d2e7d10da7dd06e66762f922e1c8fbd380ade62751c"
+    },
+    "selected_for_publication": false,
+    "required_for_141_tests": false,
+    "no_repair_or_promotion": true
+  },
+  "scope": {
+    "runtime_readiness": false,
+    "primary_apply_activation": "HOLD",
+    "G01_G11": "OPEN",
+    "UI_and_API_contracts_unchanged": true
+  },
+  "screen": {
+    "selected_bytes_inspected": true,
+    "real_credential_personal_student_data_hits": 0,
+    "explicit_synthetic_identifiers_and_canaries_only": true,
+    "patterns": [
+      "private_key",
+      "github_token",
+      "live_secret",
+      "database_credential_dsn",
+      "jwt_literal",
+      "email_address"
+    ],
+    "reviewed_false_positive": [
+      {
+        "path": "qa-checkpoints/2026-11-11/backend-student-runtime-context-01/tests/vercel-node/production-options.test.mjs",
+        "line": 160,
+        "category": "email_address",
+        "match_sha256": "378a21ca79770a5d6ad4adbb40579f0b9af72177d9ab19c2845dafef893b4c55",
+        "classification": "synthetic .invalid URL userinfo negative fixture; no real address or credential"
+      }
+    ]
+  },
+  "omitted_but_retained": [
+    "duplicate full patch",
+    "encoded transports and archives",
+    "duplicate command journal",
+    "zero-byte syntax/replay output logs",
+    "Node version log already quoted in verification",
+    "full original source/tool/vendor/input bundles",
+    "failed intermediate test-expectation log"
+  ]
+}

@@ -1,0 +1,400 @@
+{
+  "status": "AUTHOR_OFFLINE_PASS",
+  "source_commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+  "source_tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552",
+  "node_version": "v24.22.1",
+  "tests": {
+    "new_focused": 30,
+    "production_options_checks": 111,
+    "retained_composition_regressions": 109,
+    "new_student_only_composition_cases": 2,
+    "superseded_missing_staff_denial_cases": 2,
+    "total": 141,
+    "pass": 141,
+    "fail": 0
+  },
+  "commands": [
+    {
+      "command": [
+        "node",
+        "--version"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:51.945045+00:00",
+      "finished_utc": "2026-11-11T12:53:51.955319+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/node-version.log",
+        "bytes": 9,
+        "sha256": "249baf635bb43877fcb9422efa1a4904b702d0ddf14d3949b7cd0950d5229c81"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "tests/backend/student-prepared/flow.test.mjs",
+        "tests/backend/student-prepared/clerk.test.mjs",
+        "tests/vercel-node/production-options.test.mjs"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:51.955496+00:00",
+      "finished_utc": "2026-11-11T12:53:52.524657+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/offline.final.log",
+        "bytes": 24390,
+        "sha256": "59234a893f00579ee33a08edd616a7cbbed79410e1b2f63086ddaa2842e713a8"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "api/index.mjs"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.525114+00:00",
+      "finished_utc": "2026-11-11T12:53:52.548871+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-api_index.mjs.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "runtime/production-entry.mjs"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.549132+00:00",
+      "finished_utc": "2026-11-11T12:53:52.571163+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-runtime_production-entry.mjs.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "runtime/production-options.mjs"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.571447+00:00",
+      "finished_utc": "2026-11-11T12:53:52.597860+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-runtime_production-options.mjs.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/clerk-auth.ts"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.598119+00:00",
+      "finished_utc": "2026-11-11T12:53:52.623884+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-supabase_functions_univeracademy-api_clerk-auth.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/clerk-http.ts"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.624146+00:00",
+      "finished_utc": "2026-11-11T12:53:52.649393+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-supabase_functions_univeracademy-api_clerk-http.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/configured-http.ts"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.649671+00:00",
+      "finished_utc": "2026-11-11T12:53:52.672513+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-supabase_functions_univeracademy-api_configured-http.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/staff-jwt.ts"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.672801+00:00",
+      "finished_utc": "2026-11-11T12:53:52.699895+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-supabase_functions_univeracademy-api_staff-jwt.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/storage/clerk-domain.ts"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.700205+00:00",
+      "finished_utc": "2026-11-11T12:53:52.721967+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-supabase_functions_univeracademy-api_storage_clerk-domain.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/storage/prepared-student.ts"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.722491+00:00",
+      "finished_utc": "2026-11-11T12:53:52.744900+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-supabase_functions_univeracademy-api_storage_prepared-student.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/storage/student-http-rows.ts"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.745250+00:00",
+      "finished_utc": "2026-11-11T12:53:52.770900+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-supabase_functions_univeracademy-api_storage_student-http-rows.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "supabase/functions/univeracademy-api/storage/student-scope.ts"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.771254+00:00",
+      "finished_utc": "2026-11-11T12:53:52.801104+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-supabase_functions_univeracademy-api_storage_student-scope.ts.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/backend/student-prepared/clerk.test.mjs"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.801558+00:00",
+      "finished_utc": "2026-11-11T12:53:52.825665+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-tests_backend_student-prepared_clerk.test.mjs.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/backend/student-prepared/flow.test.mjs"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.826015+00:00",
+      "finished_utc": "2026-11-11T12:53:52.852897+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-tests_backend_student-prepared_flow.test.mjs.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/backend/student-prepared/memory-pool.mjs"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.853507+00:00",
+      "finished_utc": "2026-11-11T12:53:52.879275+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-tests_backend_student-prepared_memory-pool.mjs.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/vercel-node/production-options.test.mjs"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/repo",
+      "started_utc": "2026-11-11T12:53:52.879778+00:00",
+      "finished_utc": "2026-11-11T12:53:52.910147+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/syntax-tests_vercel-node_production-options.test.mjs.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--check",
+        "/workspace/ua-student-context-http-01-f5os9ffn/evidence/candidate.patch"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/patch-replay",
+      "started_utc": "2026-11-11T12:53:52.924126+00:00",
+      "finished_utc": "2026-11-11T12:53:52.928194+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/patch-forward-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "/workspace/ua-student-context-http-01-f5os9ffn/evidence/candidate.patch"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/patch-replay",
+      "started_utc": "2026-11-11T12:53:52.928545+00:00",
+      "finished_utc": "2026-11-11T12:53:52.931411+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/patch-forward.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "--check",
+        "/workspace/ua-student-context-http-01-f5os9ffn/evidence/candidate.patch"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/patch-replay",
+      "started_utc": "2026-11-11T12:53:52.940015+00:00",
+      "finished_utc": "2026-11-11T12:53:52.942243+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/patch-reverse-check.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "command": [
+        "git",
+        "apply",
+        "--reverse",
+        "/workspace/ua-student-context-http-01-f5os9ffn/evidence/candidate.patch"
+      ],
+      "cwd": "/workspace/ua-student-context-http-01-f5os9ffn/patch-replay",
+      "started_utc": "2026-11-11T12:53:52.942547+00:00",
+      "finished_utc": "2026-11-11T12:53:52.945092+00:00",
+      "exit": 0,
+      "output": {
+        "path": "/workspace/ua-student-context-http-01-f5os9ffn/evidence/patch-reverse.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "candidate_inventory": {
+    "bytes": 3447,
+    "sha256": "8d9d2a12975556e739ec345b38f09ed9c7551e23c61a9ab549117f2b3143f933"
+  },
+  "patch": {
+    "bytes": 59916,
+    "sha256": "86370c465d64b7bc4752fd08de2539be88e4e5d4fcff864beee9884a335ae627"
+  },
+  "preservation": {
+    "frozen_source_blobs_exact": 270,
+    "candidate_modified_originals": 10,
+    "candidate_additions": 5,
+    "candidate_unchanged_originals": 260,
+    "ui_source_unchanged": true,
+    "indexed_frozen_artifacts_exact": 19,
+    "activation_addendum_observed": {
+      "bytes": 32391,
+      "sha256": "06b611e412bb158c2d8d2d2e7d10da7dd06e66762f922e1c8fbd380ade62751c"
+    },
+    "activation_addendum_pin_status": "NOT_REVERIFIED: carried summary digest has 62 hex characters; not used as an acceptance pin. File read only, no mutation.",
+    "forward_reverse_replay": "PASS"
+  },
+  "not_run": [
+    "TypeScript semantic typecheck (no installed typescript/tsc)",
+    "JOSE JWT exchange/signature validation (pinned jose unavailable)",
+    "AJV contract validation (pinned ajv unavailable)",
+    "Real Clerk/provider/driver/TLS integration",
+    "PostgreSQL/SQL/RLS, concurrency, durability",
+    "Server listener, browser UI, real application test",
+    "Primary DB inspect/apply/activation; G01-G11 remain open"
+  ],
+  "excluded_actions": [
+    "no download/install",
+    "no DB/provider/socket/network runtime",
+    "no SQL/controller/cleanup execution",
+    "no GitHub write/upload/branch/PR/merge/deploy",
+    "no other owner workspace access"
+  ],
+  "independent_review": "PENDING",
+  "earlier_test_expectation_corrections": "Two assertions corrected after reading accepted code: /me loads auth only (no attempt record to mutate); score response has no lifecycle status field. Failed log retained."
+}

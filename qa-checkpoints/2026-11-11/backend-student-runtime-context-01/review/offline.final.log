@@ -1,0 +1,856 @@
+TAP version 13
+# Subtest: known Clerk app session passes current identity/fence/provider before domain reads and same-answer UPDATE
+ok 1 - known Clerk app session passes current identity/fence/provider before domain reads and same-answer UPDATE
+  ---
+  duration_ms: 167.948592
+  type: 'test'
+  ...
+# Subtest: missing binding fails closed before exam/answer load
+ok 2 - missing binding fails closed before exam/answer load
+  ---
+  duration_ms: 2.240525
+  type: 'test'
+  ...
+# Subtest: missing provenance fails closed before exam/answer load
+ok 3 - missing provenance fails closed before exam/answer load
+  ---
+  duration_ms: 1.833723
+  type: 'test'
+  ...
+# Subtest: missing fence fails closed before exam/answer load
+ok 4 - missing fence fails closed before exam/answer load
+  ---
+  duration_ms: 1.65276
+  type: 'test'
+  ...
+# Subtest: retired fence fails closed before exam/answer load
+ok 5 - retired fence fails closed before exam/answer load
+  ---
+  duration_ms: 2.039362
+  type: 'test'
+  ...
+# Subtest: disabled identity fails closed before exam/answer load
+ok 6 - disabled identity fails closed before exam/answer load
+  ---
+  duration_ms: 1.497145
+  type: 'test'
+  ...
+# Subtest: provider revoked fails closed before exam/answer load
+ok 7 - provider revoked fails closed before exam/answer load
+  ---
+  duration_ms: 3.002412
+  type: 'test'
+  ...
+# Subtest: wrong issuer fails closed before exam/answer load
+ok 8 - wrong issuer fails closed before exam/answer load
+  ---
+  duration_ms: 1.750036
+  type: 'test'
+  ...
+# Subtest: provider lease expiration during a private read cannot commit
+ok 9 - provider lease expiration during a private read cannot commit
+  ---
+  duration_ms: 2.005711
+  type: 'test'
+  ...
+# Subtest: missing JWT library or malformed JWT cannot become a session
+ok 10 - missing JWT library or malformed JWT cannot become a session
+  ---
+  duration_ms: 3.111367
+  type: 'test'
+  ...
+# Subtest: launch + all required GETs + INSERT, same-answer UPDATE, stale denial, submit/result
+ok 11 - launch + all required GETs + INSERT, same-answer UPDATE, stale denial, submit/result
+  ---
+  duration_ms: 144.2874
+  type: 'test'
+  ...
+# Subtest: revocation after locator but before lock rejects before private reads
+ok 12 - revocation after locator but before lock rejects before private reads
+  ---
+  duration_ms: 5.876562
+  type: 'test'
+  ...
+# Subtest: expiry after locator but before lock rejects before private reads
+ok 13 - expiry after locator but before lock rejects before private reads
+  ---
+  duration_ms: 2.52932
+  type: 'test'
+  ...
+# Subtest: supersession after locator but before lock rejects before private reads
+ok 14 - supersession after locator but before lock rejects before private reads
+  ---
+  duration_ms: 2.479976
+  type: 'test'
+  ...
+# Subtest: disabled account after locator but before lock rejects before private reads
+ok 15 - disabled account after locator but before lock rejects before private reads
+  ---
+  duration_ms: 2.969233
+  type: 'test'
+  ...
+# Subtest: removed student role after locator but before lock rejects before private reads
+ok 16 - removed student role after locator but before lock rejects before private reads
+  ---
+  duration_ms: 2.980791
+  type: 'test'
+  ...
+# Subtest: locator redirection cannot become another person authority
+ok 17 - locator redirection cannot become another person authority
+  ---
+  duration_ms: 3.094692
+  type: 'test'
+  ...
+# Subtest: known own positive, cross-person attempt read/write/result stay 404
+ok 18 - known own positive, cross-person attempt read/write/result stay 404
+  ---
+  duration_ms: 10.974947
+  type: 'test'
+  ...
+# Subtest: broker single-use/forged receiver/lifetime and no raw client callback
+ok 19 - broker single-use/forged receiver/lifetime and no raw client callback
+  ---
+  duration_ms: 4.898549
+  type: 'test'
+  ...
+# Subtest: abort at ua_http_assignments cannot ACK
+ok 20 - abort at ua_http_assignments cannot ACK
+  ---
+  duration_ms: 9.988377
+  type: 'test'
+  ...
+# Subtest: abort at ua_answer_cas cannot ACK
+ok 21 - abort at ua_answer_cas cannot ACK
+  ---
+  duration_ms: 9.518969
+  type: 'test'
+  ...
+# Subtest: COMMIT before ACK stays commit_unknown/503 without retry
+ok 22 - COMMIT before ACK stays commit_unknown/503 without retry
+  ---
+  duration_ms: 3.440853
+  type: 'test'
+  ...
+# Subtest: COMMIT after ACK stays commit_unknown/503 without retry
+ok 23 - COMMIT after ACK stays commit_unknown/503 without retry
+  ---
+  duration_ms: 2.880078
+  type: 'test'
+  ...
+# Subtest: production composition accepts student-only prepared ports; admin remains unavailable
+ok 24 - production composition accepts student-only prepared ports; admin remains unavailable
+  ---
+  duration_ms: 8.169607
+  type: 'test'
+  ...
+# Subtest: unwired default and caller trusted flags cannot activate anything
+ok 25 - unwired default and caller trusted flags cannot activate anything
+  ---
+  duration_ms: 3.712432
+  type: 'test'
+  ...
+# Subtest: GET capability cannot flush an unrelated attempt mutation
+ok 26 - GET capability cannot flush an unrelated attempt mutation
+  ---
+  duration_ms: 7.791877
+  type: 'test'
+  ...
+# Subtest: idempotent start/submit replay and expiry materialization preserve accepted semantics
+ok 27 - idempotent start/submit replay and expiry materialization preserve accepted semantics
+  ---
+  duration_ms: 13.812057
+  type: 'test'
+  ...
+# Subtest: captured request cannot be rebound by mutating original headers
+ok 28 - captured request cannot be rebound by mutating original headers
+  ---
+  duration_ms: 5.660497
+  type: 'test'
+  ...
+# Subtest: invalid asynchronous bound guard cannot authorize private reads or commit
+ok 29 - invalid asynchronous bound guard cannot authorize private reads or commit
+  ---
+  duration_ms: 3.244317
+  type: 'test'
+  ...
+# Subtest: request target and body prevent callback writing another question
+ok 30 - request target and body prevent callback writing another question
+  ---
+  duration_ms: 9.075681
+  type: 'test'
+  ...
+# Subtest: prepared native options preserve explicit values without executing bindings
+ok 31 - prepared native options preserve explicit values without executing bindings
+  ---
+  duration_ms: 3.825492
+  type: 'test'
+  ...
+# Subtest: prepared clerk options preserve explicit values without executing bindings
+ok 32 - prepared clerk options preserve explicit values without executing bindings
+  ---
+  duration_ms: 0.532872
+  type: 'test'
+  ...
+# Subtest: custom native loader/flusher and resolver remain opaque prepared ports
+ok 33 - custom native loader/flusher and resolver remain opaque prepared ports
+  ---
+  duration_ms: 0.500874
+  type: 'test'
+  ...
+# Subtest: class pool prototype method is accepted without construction or connect
+ok 34 - class pool prototype method is accepted without construction or connect
+  ---
+  duration_ms: 0.421074
+  type: 'test'
+  ...
+# Subtest: Clerk no-audience policy and optional explicit legacy Telegram binding are preserved
+ok 35 - Clerk no-audience policy and optional explicit legacy Telegram binding are preserved
+  ---
+  duration_ms: 0.497379
+  type: 'test'
+  ...
+# Subtest: plain data may use null prototypes; omitted optional bindings are not invented
+ok 36 - plain data may use null prototypes; omitted optional bindings are not invented
+  ---
+  duration_ms: 0.515136
+  type: 'test'
+  ...
+# Subtest: copied settings remain stable after caller mutation while pool and functions stay opaque
+ok 37 - copied settings remain stable after caller mutation while pool and functions stay opaque
+  ---
+  duration_ms: 0.625442
+  type: 'test'
+  ...
+# Subtest: fails closed: mode missing
+ok 38 - fails closed: mode missing
+  ---
+  duration_ms: 1.28814
+  type: 'test'
+  ...
+# Subtest: fails closed: local mode
+ok 39 - fails closed: local mode
+  ---
+  duration_ms: 0.449256
+  type: 'test'
+  ...
+# Subtest: fails closed: unknown mode
+ok 40 - fails closed: unknown mode
+  ---
+  duration_ms: 0.673415
+  type: 'test'
+  ...
+# Subtest: fails closed: storage missing
+ok 41 - fails closed: storage missing
+  ---
+  duration_ms: 0.419382
+  type: 'test'
+  ...
+# Subtest: fails closed: contract double
+ok 42 - fails closed: contract double
+  ---
+  duration_ms: 0.408105
+  type: 'test'
+  ...
+# Subtest: fails closed: storage factory
+ok 43 - fails closed: storage factory
+  ---
+  duration_ms: 0.343026
+  type: 'test'
+  ...
+# Subtest: fails closed: pool missing
+ok 44 - fails closed: pool missing
+  ---
+  duration_ms: 0.3716
+  type: 'test'
+  ...
+# Subtest: fails closed: pool factory
+ok 45 - fails closed: pool factory
+  ---
+  duration_ms: 0.316767
+  type: 'test'
+  ...
+# Subtest: fails closed: pool Promise
+ok 46 - fails closed: pool Promise
+  ---
+  duration_ms: 0.487404
+  type: 'test'
+  ...
+# Subtest: fails closed: pool malformed
+ok 47 - fails closed: pool malformed
+  ---
+  duration_ms: 0.375005
+  type: 'test'
+  ...
+# Subtest: fails closed: clock missing
+ok 48 - fails closed: clock missing
+  ---
+  duration_ms: 0.376277
+  type: 'test'
+  ...
+# Subtest: fails closed: clock scalar
+ok 49 - fails closed: clock scalar
+  ---
+  duration_ms: 0.340684
+  type: 'test'
+  ...
+# Subtest: fails closed: bot token missing
+ok 50 - fails closed: bot token missing
+  ---
+  duration_ms: 0.370759
+  type: 'test'
+  ...
+# Subtest: fails closed: bot token empty
+ok 51 - fails closed: bot token empty
+  ---
+  duration_ms: 0.344169
+  type: 'test'
+  ...
+# Subtest: fails closed: staff validator missing
+ok 52 - fails closed: staff validator missing
+  ---
+  duration_ms: 1.587762
+  type: 'test'
+  ...
+# Subtest: fails closed: staff ID factory missing
+ok 53 - fails closed: staff ID factory missing
+  ---
+  duration_ms: 0.256477
+  type: 'test'
+  ...
+# Subtest: fails closed: staff liveness missing
+ok 54 - fails closed: staff liveness missing
+  ---
+  duration_ms: 0.290618
+  type: 'test'
+  ...
+# Subtest: fails closed: JWT missing
+ok 55 - fails closed: JWT missing
+  ---
+  duration_ms: 0.205229
+  type: 'test'
+  ...
+# Subtest: fails closed: JWT issuer
+ok 56 - fails closed: JWT issuer
+  ---
+  duration_ms: 0.234744
+  type: 'test'
+  ...
+# Subtest: fails closed: JWT audience
+ok 57 - fails closed: JWT audience
+  ---
+  duration_ms: 0.248524
+  type: 'test'
+  ...
+# Subtest: fails closed: JWT algorithms missing
+ok 58 - fails closed: JWT algorithms missing
+  ---
+  duration_ms: 0.188544
+  type: 'test'
+  ...
+# Subtest: fails closed: JWT algorithm empty
+ok 59 - fails closed: JWT algorithm empty
+  ---
+  duration_ms: 0.231148
+  type: 'test'
+  ...
+# Subtest: fails closed: JWT symmetric algorithm
+ok 60 - fails closed: JWT symmetric algorithm
+  ---
+  duration_ms: 0.229476
+  type: 'test'
+  ...
+# Subtest: fails closed: JWT keys missing
+ok 61 - fails closed: JWT keys missing
+  ---
+  duration_ms: 0.188223
+  type: 'test'
+  ...
+# Subtest: fails closed: JWT clock missing
+ok 62 - fails closed: JWT clock missing
+  ---
+  duration_ms: 0.25229
+  type: 'test'
+  ...
+# Subtest: fails closed: resolver invalid
+ok 63 - fails closed: resolver invalid
+  ---
+  duration_ms: 0.193531
+  type: 'test'
+  ...
+# Subtest: fails closed: domain invalid
+ok 64 - fails closed: domain invalid
+  ---
+  duration_ms: 0.229516
+  type: 'test'
+  ...
+# Subtest: fails closed: relational with loader
+ok 65 - fails closed: relational with loader
+  ---
+  duration_ms: 0.337548
+  type: 'test'
+  ...
+# Subtest: fails closed: relational with flusher
+ok 66 - fails closed: relational with flusher
+  ---
+  duration_ms: 0.467154
+  type: 'test'
+  ...
+# Subtest: fails closed: custom loader missing
+ok 67 - fails closed: custom loader missing
+  ---
+  duration_ms: 0.363217
+  type: 'test'
+  ...
+# Subtest: fails closed: custom flusher missing
+ok 68 - fails closed: custom flusher missing
+  ---
+  duration_ms: 0.326402
+  type: 'test'
+  ...
+# Subtest: fails closed: policy missing
+ok 69 - fails closed: policy missing
+  ---
+  duration_ms: 0.375836
+  type: 'test'
+  ...
+# Subtest: fails closed: policy new-login missing
+ok 70 - fails closed: policy new-login missing
+  ---
+  duration_ms: 0.339231
+  type: 'test'
+  ...
+# Subtest: fails closed: policy keep sessions
+ok 71 - fails closed: policy keep sessions
+  ---
+  duration_ms: 0.304629
+  type: 'test'
+  ...
+# Subtest: fails closed: policy family relationship
+ok 72 - fails closed: policy family relationship
+  ---
+  duration_ms: 0.275785
+  type: 'test'
+  ...
+# Subtest: fails closed: policy zero max age
+ok 73 - fails closed: policy zero max age
+  ---
+  duration_ms: 0.281104
+  type: 'test'
+  ...
+# Subtest: fails closed: policy zero access
+ok 74 - fails closed: policy zero access
+  ---
+  duration_ms: 0.369407
+  type: 'test'
+  ...
+# Subtest: fails closed: policy zero attempts
+ok 75 - fails closed: policy zero attempts
+  ---
+  duration_ms: 0.295155
+  type: 'test'
+  ...
+# Subtest: fails closed: policy unsafe number
+ok 76 - fails closed: policy unsafe number
+  ---
+  duration_ms: 0.366522
+  type: 'test'
+  ...
+# Subtest: fails closed: policy negative tombstone
+ok 77 - fails closed: policy negative tombstone
+  ---
+  duration_ms: 0.317939
+  type: 'test'
+  ...
+# Subtest: fails closed: numeric presentation missing
+ok 78 - fails closed: numeric presentation missing
+  ---
+  duration_ms: 0.31838
+  type: 'test'
+  ...
+# Subtest: fails closed: numeric policy missing
+ok 79 - fails closed: numeric policy missing
+  ---
+  duration_ms: 0.364058
+  type: 'test'
+  ...
+# Subtest: fails closed: numeric policy empty
+ok 80 - fails closed: numeric policy empty
+  ---
+  duration_ms: 0.54445
+  type: 'test'
+  ...
+# Subtest: fails closed: numeric toFiniteNumber
+ok 81 - fails closed: numeric toFiniteNumber
+  ---
+  duration_ms: 0.321724
+  type: 'test'
+  ...
+# Subtest: fails closed: numeric toDisplayString
+ok 82 - fails closed: numeric toDisplayString
+  ---
+  duration_ms: 0.287663
+  type: 'test'
+  ...
+# Subtest: fails closed: numeric toStudentPointsDisplayString
+ok 83 - fails closed: numeric toStudentPointsDisplayString
+  ---
+  duration_ms: 0.274353
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: ambiguous native staff
+ok 84 - Clerk fails closed: ambiguous native staff
+  ---
+  duration_ms: 0.426122
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: staff validator missing
+ok 85 - Clerk fails closed: staff validator missing
+  ---
+  duration_ms: 0.376317
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: staff ID factory missing
+ok 86 - Clerk fails closed: staff ID factory missing
+  ---
+  duration_ms: 0.376747
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: verifier missing
+ok 87 - Clerk fails closed: verifier missing
+  ---
+  duration_ms: 0.311629
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: liveness missing
+ok 88 - Clerk fails closed: liveness missing
+  ---
+  duration_ms: 0.336236
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: issuer localhost
+ok 89 - Clerk fails closed: issuer localhost
+  ---
+  duration_ms: 0.424229
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: issuer with path
+ok 90 - Clerk fails closed: issuer with path
+  ---
+  duration_ms: 0.433483
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: parties empty
+ok 91 - Clerk fails closed: parties empty
+  ---
+  duration_ms: 0.351409
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: parties duplicate
+ok 92 - Clerk fails closed: parties duplicate
+  ---
+  duration_ms: 0.261384
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: party wildcard
+ok 93 - Clerk fails closed: party wildcard
+  ---
+  duration_ms: 0.202846
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: keys missing
+ok 94 - Clerk fails closed: keys missing
+  ---
+  duration_ms: 0.227773
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: clock missing
+ok 95 - Clerk fails closed: clock missing
+  ---
+  duration_ms: 0.231568
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: audience missing
+ok 96 - Clerk fails closed: audience missing
+  ---
+  duration_ms: 0.295655
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: audience undecided
+ok 97 - Clerk fails closed: audience undecided
+  ---
+  duration_ms: 0.207323
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: audience empty
+ok 98 - Clerk fails closed: audience empty
+  ---
+  duration_ms: 0.188874
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: no-audience ambiguous
+ok 99 - Clerk fails closed: no-audience ambiguous
+  ---
+  duration_ms: 0.25887
+  type: 'test'
+  ...
+# Subtest: Clerk fails closed: legacy token invalid
+ok 100 - Clerk fails closed: legacy token invalid
+  ---
+  duration_ms: 0.17906
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects origin missing
+ok 101 - public/private boundary rejects origin missing
+  ---
+  duration_ms: 0.228655
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects origin HTTP
+ok 102 - public/private boundary rejects origin HTTP
+  ---
+  duration_ms: 0.14616
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects origin credentials
+ok 103 - public/private boundary rejects origin credentials
+  ---
+  duration_ms: 0.183707
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects origin path
+ok 104 - public/private boundary rejects origin path
+  ---
+  duration_ms: 0.153972
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects origins missing
+ok 105 - public/private boundary rejects origins missing
+  ---
+  duration_ms: 0.151267
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects origins wildcard
+ok 106 - public/private boundary rejects origins wildcard
+  ---
+  duration_ms: 0.204679
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects origins localhost
+ok 107 - public/private boundary rejects origins localhost
+  ---
+  duration_ms: 0.167172
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects configuration missing
+ok 108 - public/private boundary rejects configuration missing
+  ---
+  duration_ms: 0.189816
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects unknown root binding
+ok 109 - public/private boundary rejects unknown root binding
+  ---
+  duration_ms: 0.1726
+  type: 'test'
+  ...
+# Subtest: public/private boundary rejects unknown config binding
+ok 110 - public/private boundary rejects unknown config binding
+  ---
+  duration_ms: 0.169826
+  type: 'test'
+  ...
+# Subtest: factories, Promises, thenables, accessors, proxies and coercion hooks are never evaluated
+ok 111 - factories, Promises, thenables, accessors, proxies and coercion hooks are never evaluated
+  ---
+  duration_ms: 1.822997
+  type: 'test'
+  ...
+# Subtest: partial arrays, extended arrays, symbols and non-data configuration records fail closed
+ok 112 - partial arrays, extended arrays, symbols and non-data configuration records fail closed
+  ---
+  duration_ms: 0.625472
+  type: 'test'
+  ...
+# Subtest: array keys: canonical indexes 0, 1 and 10 remain valid for public origins
+ok 113 - array keys: canonical indexes 0, 1 and 10 remain valid for public origins
+  ---
+  duration_ms: 0.480364
+  type: 'test'
+  ...
+# Subtest: array keys: canonical indexes 0, 1 and 10 remain valid for native algorithms
+ok 114 - array keys: canonical indexes 0, 1 and 10 remain valid for native algorithms
+  ---
+  duration_ms: 0.183346
+  type: 'test'
+  ...
+# Subtest: array keys: canonical indexes 0, 1 and 10 remain valid for clerk parties
+ok 115 - array keys: canonical indexes 0, 1 and 10 remain valid for clerk parties
+  ---
+  duration_ms: 0.190467
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "00" is rejected
+ok 116 - array keys: extra noncanonical own key "00" is rejected
+  ---
+  duration_ms: 0.503849
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "01" is rejected
+ok 117 - array keys: extra noncanonical own key "01" is rejected
+  ---
+  duration_ms: 0.572473
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "+0" is rejected
+ok 118 - array keys: extra noncanonical own key "+0" is rejected
+  ---
+  duration_ms: 0.466813
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "-0" is rejected
+ok 119 - array keys: extra noncanonical own key "-0" is rejected
+  ---
+  duration_ms: 0.342736
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0.0" is rejected
+ok 120 - array keys: extra noncanonical own key "0.0" is rejected
+  ---
+  duration_ms: 0.451851
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0e0" is rejected
+ok 121 - array keys: extra noncanonical own key "0e0" is rejected
+  ---
+  duration_ms: 0.31149
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key " 0" is rejected
+ok 122 - array keys: extra noncanonical own key " 0" is rejected
+  ---
+  duration_ms: 0.436918
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0 " is rejected
+ok 123 - array keys: extra noncanonical own key "0 " is rejected
+  ---
+  duration_ms: 0.337178
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0\\n" is rejected
+ok 124 - array keys: extra noncanonical own key "0\\n" is rejected
+  ---
+  duration_ms: 0.389787
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0\\r" is rejected
+ok 125 - array keys: extra noncanonical own key "0\\r" is rejected
+  ---
+  duration_ms: 1.569535
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0\\r\\n" is rejected
+ok 126 - array keys: extra noncanonical own key "0\\r\\n" is rejected
+  ---
+  duration_ms: 0.422486
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0 " is rejected
+ok 127 - array keys: extra noncanonical own key "0 " is rejected
+  ---
+  duration_ms: 0.40486
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0 " is rejected
+ok 128 - array keys: extra noncanonical own key "0 " is rejected
+  ---
+  duration_ms: 0.335395
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0\\nx" is rejected
+ok 129 - array keys: extra noncanonical own key "0\\nx" is rejected
+  ---
+  duration_ms: 0.344309
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "0\\u0000" is rejected
+ok 130 - array keys: extra noncanonical own key "0\\u0000" is rejected
+  ---
+  duration_ms: 0.326632
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "-1" is rejected
+ok 131 - array keys: extra noncanonical own key "-1" is rejected
+  ---
+  duration_ms: 0.361295
+  type: 'test'
+  ...
+# Subtest: array keys: extra noncanonical own key "4294967295" is rejected
+ok 132 - array keys: extra noncanonical own key "4294967295" is rejected
+  ---
+  duration_ms: 0.384248
+  type: 'test'
+  ...
+# Subtest: array keys: trailing-line-terminator accessors are rejected without reading them
+ok 133 - array keys: trailing-line-terminator accessors are rejected without reading them
+  ---
+  duration_ms: 1.871639
+  type: 'test'
+  ...
+# Subtest: array keys: array proxies are rejected without executing traps
+ok 134 - array keys: array proxies are rejected without executing traps
+  ---
+  duration_ms: 0.593264
+  type: 'test'
+  ...
+# Subtest: assembly makes no network or Worker calls; tripwires have positive calibration
+ok 135 - assembly makes no network or Worker calls; tripwires have positive calibration
+  ---
+  duration_ms: 4.29513
+  type: 'test'
+  ...
+# Subtest: assembly never logs configuration on success or failure
+ok 136 - assembly never logs configuration on success or failure
+  ---
+  duration_ms: 0.562367
+  type: 'test'
+  ...
+# Subtest: public OPTIONS success remains separate from private API readiness
+ok 137 - public OPTIONS success remains separate from private API readiness
+  ---
+  duration_ms: 45.11483
+  type: 'test'
+  ...
+# Subtest: explicit empty browser allowlist denies browser origins without inventing an auth profile
+ok 138 - explicit empty browser allowlist denies browser origins without inventing an auth profile
+  ---
+  duration_ms: 3.477258
+  type: 'test'
+  ...
+# Subtest: new assembler has only pure imports and no default entry or environment binding
+ok 139 - new assembler has only pure imports and no default entry or environment binding
+  ---
+  duration_ms: 0.872524
+  type: 'test'
+  ...
+# Subtest: student-only native composition needs no staff validator or writer
+ok 140 - student-only native composition needs no staff validator or writer
+  ---
+  duration_ms: 0.186741
+  type: 'test'
+  ...
+# Subtest: student-only clerk composition needs no staff validator or writer
+ok 141 - student-only clerk composition needs no staff validator or writer
+  ---
+  duration_ms: 0.103697
+  type: 'test'
+  ...
+1..141
+# tests 141
+# suites 0
+# pass 141
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 507.198077
