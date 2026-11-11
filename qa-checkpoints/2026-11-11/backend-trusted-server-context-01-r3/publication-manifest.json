@@ -1,0 +1,30 @@
+{
+  "format": "UA-LAB-PUBLICATION-MANIFEST-v1",
+  "status": "LOCAL_SQL_SYNTAX_ONLY_SOURCE_REVIEW_NO_UPLOAD_AUTHORIZED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/trusted-server-context-01-r3-20261111",
+  "sole_parent": "8be232eff22c2608b55f7f5513d8752a0307977a",
+  "parent_tree": "ab1a7fea70f03474eb17ef2b33f817f7067d1e4d",
+  "prefix": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r3/",
+  "payload_files": 2,
+  "payload_bytes": 66945,
+  "payload_inventory_sha256": "6182b2457a1d19e6253bada11fa73090fbdeade8c4808cad9458623a23906902",
+  "inventory_recipe": "SHA256 UTF8 compact sorted-key JSON [{destination,bytes,sha256},...], sorted destination, no LF; excludes manifest",
+  "files": [
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r3/review/first-student-trusted-server.activation.review.sql",
+      "bytes": 60365,
+      "sha256": "165711ecb98d46b0aea87253b172e9c535d53090626f6574d106ae34643be52d",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r3/review/verification.json",
+      "bytes": 6580,
+      "sha256": "c23df95cdb8c42543f02c3679d18870a1ab0958ac35ccdcb6be0209ae1ef7856",
+      "mode": "100644"
+    }
+  ],
+  "self_pin": "Select independently reported external manifest byte count/SHA256",
+  "scope": "One corrected SQL +verification with exact command/output/diff; no duplicate patch/log/source archive/dependencies or application change",
+  "sql": "NOT_COMPILED_NOT_EXECUTED"
+}

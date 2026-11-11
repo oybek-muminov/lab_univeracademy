@@ -1,0 +1,81 @@
+{
+  "format": "UA-TRUSTED-SERVER-SQL-R3-CASE-EXPRESSION-FIX-v1",
+  "status": "LOCAL_STATIC_CHECK_PASS_SQL_ACCEPTANCE_NOT_RUN",
+  "published_preimage": {
+    "commit": "8be232eff22c2608b55f7f5513d8752a0307977a",
+    "tree": "ab1a7fea70f03474eb17ef2b33f817f7067d1e4d",
+    "path": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/first-student-trusted-server.activation.review.sql",
+    "bytes": 60363,
+    "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd"
+  },
+  "corrected_source": {
+    "path": "review/first-student-trusted-server.activation.review.sql",
+    "bytes": 60365,
+    "sha256": "165711ecb98d46b0aea87253b172e9c535d53090626f6574d106ae34643be52d"
+  },
+  "exact_diff": {
+    "line_1_based": 133,
+    "function": "ua_private.lock_people(uuid[])",
+    "before": "IS DISTINCT FROM CASE WHEN cardinality(p_person_ids)=1 THEN p_person_ids[1]::text ELSE '' END",
+    "after": "IS DISTINCT FROM (CASE WHEN cardinality(p_person_ids)=1 THEN p_person_ids[1]::text ELSE '' END)",
+    "byte_delta": 2,
+    "scope": "One pair of grouping parentheses only; every other byte equals the reviewed original"
+  },
+  "related_pattern_review": {
+    "CASE_expressions_in_entire_file": 1,
+    "same_unparenthesized_pattern_remaining": 0,
+    "other_source_changes": 0
+  },
+  "preserved": "All role/operator prerequisites, temporary ownership grants/revokes, RLS policies, helper SQL behavior, transaction/review guard/ROLLBACK, accepted application source and frozen SQL A/B remain unchanged. No published artifact or Architect environment accessed or modified.",
+  "checks": {
+    "command": [
+      "python3",
+      "-c",
+      "from pathlib import Path\nimport sys,hashlib,re,json\nold=Path(sys.argv[1]).read_bytes();new=Path(sys.argv[2]).read_bytes();sha=lambda b:hashlib.sha256(b).hexdigest()\nneedle=b\"IS DISTINCT FROM CASE WHEN cardinality(p_person_ids)=1 THEN p_person_ids[1]::text ELSE '' END\"\nreplacement=b\"IS DISTINCT FROM (CASE WHEN cardinality(p_person_ids)=1 THEN p_person_ids[1]::text ELSE '' END)\"\nassert (len(old),sha(old))==(60363,\"e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd\"),\"PREIMAGE_IDENTITY\"\nassert old.count(needle)==1 and new==old.replace(needle,replacement,1),\"EXACT_SINGLE_REPLACEMENT\"\nassert len(new)==len(old)+2 and new.replace(replacement,needle,1)==old,\"ONLY_TWO_PARENTHESES\"\nassert len(re.findall(rb\"\\bCASE\\b\",old))==len(re.findall(rb\"\\bCASE\\b\",new))==1 and b\"IS DISTINCT FROM CASE\" not in new,\"ALL_RELATED_CASE_PATTERNS\"\na=old.splitlines();b=new.splitlines();assert len(a)==len(b) and [i+1 for i,(x,y) in enumerate(zip(a,b)) if x!=y]==[133],\"ONLY_LINE133\"\nassert new.startswith(old[:old.index(b\"CREATE FUNCTION ua_private.lock_people\")]) and new[new.index(b\"END $fn$;\",new.index(b\"CREATE FUNCTION ua_private.lock_people\")):]==old[old.index(b\"END $fn$;\",old.index(b\"CREATE FUNCTION ua_private.lock_people\")):],\"SURROUNDING_SOURCE_UNCHANGED\"\nprint(json.dumps({\"checks\":6,\"pass\":6,\"fail\":0,\"changed_line\":133,\"case_expressions_in_file\":1,\"candidate_bytes\":len(new),\"candidate_sha256\":sha(new),\"sql_compilation_execution\":\"NOT_RUN\"},sort_keys=True))\n",
+      "/workspace/ua-trusted-server-context-sql-r2-su6i0a31/review/first-student-trusted-server.activation.review.sql",
+      "/workspace/ua-trusted-server-context-sql-r3-9szc9wl7/review/first-student-trusted-server.activation.review.sql"
+    ],
+    "cwd": "/workspace",
+    "utc_start": "2026-11-11T21:41:28.044475+00:00",
+    "utc_end": "2026-11-11T21:41:28.069577+00:00",
+    "exit": 0,
+    "output": "{\"candidate_bytes\": 60365, \"candidate_sha256\": \"165711ecb98d46b0aea87253b172e9c535d53090626f6574d106ae34643be52d\", \"case_expressions_in_file\": 1, \"changed_line\": 133, \"checks\": 6, \"fail\": 0, \"pass\": 6, \"sql_compilation_execution\": \"NOT_RUN\"}\n",
+    "output_bytes": 242,
+    "output_sha256": "18a13e1a85cf2c3cc6889b68aa55331389f035d3fd1ba8a6e75022a609478e0c",
+    "scope": "Byte/text checks only; no SQL parser/compiler/server invoked"
+  },
+  "reproduce": "Use Python3 standard library. Execute command[2] as python3 -c source with argv1 pointing to your own exact published r2 SQL and argv2 pointing to this candidate; cwd paths in the recorded command are author provenance only. No server/parser/compiler is invoked.",
+  "validation_boundary": [
+    "These six checks verify exact input identity, exactly two inserted bytes, one changed line and exhaustive matching CASE pattern count; they are not SQL compilation or runtime tests.",
+    "Original r2 whole-helper-body byte checksum necessarily changes because the source gains parentheses. No old checksum/canonical baseline or existing test is silently repinned. The full-file exact-transform check is the new source-preservation evidence.",
+    "No unchanged application suites or unrelated models were rerun for this syntax-only correction.",
+    "Architect owns the next reviewed/pinned isolated execution packet. Its installed driver, cluster and evidence were not accessed; the corrected source needs independent review and actual PostgreSQL validation."
+  ],
+  "prior_execution_relay": "Coordinator reported attempt02 passed non-superuser operator prerequisites, then activation exited3 at this CASE/IF syntax before seed/HTTP. Exact owned postmaster stopped; cluster/dependencies/evidence retained. This is relayed original-attempt evidence, not new execution in this source task.",
+  "future_lab_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/trusted-server-context-01-r3-20261111",
+    "sole_parent": "8be232eff22c2608b55f7f5513d8752a0307977a",
+    "parent_tree": "ab1a7fea70f03474eb17ef2b33f817f7067d1e4d",
+    "prefix": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r3/",
+    "read_only_check_utc": "2026-11-11 21:41:58 UTC",
+    "branch_and_prefix_absent": true,
+    "write_status": "NOT_AUTHORIZED_NOT_ATTEMPTED"
+  },
+  "not_run": [
+    "PostgreSQL syntax compilation or execution of corrected SQL",
+    "Seed/HTTP/RLS/role/helper acceptance",
+    "Installation/cluster start/provider/credential/settings/cleanup action",
+    "Upload/remote branch/main/PR/merge/deployment"
+  ],
+  "official_reference": "https://www.postgresql.org/docs/17/plpgsql-expressions.html",
+  "denied_pending_uncertain": {
+    "denied": [],
+    "uncertain": [],
+    "pending": [
+      "Independent source review",
+      "Separate publication approval",
+      "Architect corrected-packet execution; actual PostgreSQL acceptance NOT_RUN"
+    ]
+  }
+}
