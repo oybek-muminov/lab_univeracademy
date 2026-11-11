@@ -1,0 +1,73 @@
+
+// Inert analogue of pg8.16.3 newClient's `new this.Client(this.options)`.
+// No real driver is imported. A queued replacement constructs after connect()
+// has returned, just as pg-pool's release/pulse path can do.
+function lazyDriverDouble() {
+  const state={realConstructors:0,connects:0,valueReads:0,releases:[],pending:[],held:false};
+  class Client extends EventEmitter {
+    constructor() {
+      super();state.realConstructors++;
+      // This is always inside a synthetic process.env object in these tests.
+      // Models pg's PGOPTIONS fallback; never accesses inherited real values.
+      void process.env.PGOPTIONS;
+    }
+    connect(callback){queueMicrotask(()=>callback());}
+    query(){return Promise.resolve({rows:[],rowCount:0});}
+    end(callback){callback?.();}
+  }
+  class Pool extends EventEmitter {
+    constructor(config){super();this.config=config;this.Client=config.Client??Client;}
+    connect(){
+      state.connects++;
+      return new Promise((resolve,reject)=>{
+        const request={resolve,reject};
+        if(state.held)state.pending.push(request);else this.construct(request);
+      });
+    }
+    construct(request){
+      // Deliberately no constructor try/catch, matching the reviewed pg path.
+      const client=new this.Client(this.config);state.held=true;
+      client.connect(error=>{
+        if(error){state.held=false;request.reject(error);return;}
+        client.release=discard=>{
+          state.releases.push(discard);state.held=false;
+          const next=state.pending.shift();if(next)queueMicrotask(()=>this.construct(next));
+        };
+        request.resolve(client);
+      });
+    }
+    end(){return Promise.resolve();}
+  }
+  return{Pool,Client,state};
+}
+async function syntheticEnvironment(work) {
+  const original=Object.getOwnPropertyDescriptor(process,"env"),env=Object.create(null);
+  Object.defineProperty(process,"env",{value:env,configurable:true,writable:true,enumerable:true});
+  try{return await work(env);}finally{Object.defineProperty(process,"env",original);}
+}
+for(const throwing of [false,true])test(`lazy constructor boundary rejects post-factory PGOPTIONS before value read (${throwing?"throwing getter":"empty value"})`,async()=>{
+  await syntheticEnvironment(async env=>{
+    const {Pool,state}=lazyDriverDouble(),resource=make(Pool);
+    Object.defineProperty(env,"PGOPTIONS",{enumerable:true,get(){state.valueReads++;if(throwing)throw Error("synthetic unread value");return"";}});
+    const outcome=await resource.pool.connect().then(client=>({client}),error=>({error}));
+    if(outcome.client)outcome.client.release(true);
+    await resource.close();
+    assert.equal(state.valueReads,0,"PG value must never be read");
+    assert.equal(state.realConstructors,0,"real driver constructor must never run");
+    assert.ok(outcome.error,"post-factory contamination must reject");unavailable(outcome.error);
+  });
+});
+test("lazy constructor boundary rejects queued replacement contamination after connect entered clean",async()=>{
+  await syntheticEnvironment(async env=>{
+    const {Pool,state}=lazyDriverDouble(),resource=make(Pool),first=await resource.pool.connect();
+    assert.equal(state.realConstructors,1);const pending=resource.pool.connect().then(client=>({client}),error=>({error}));
+    assert.equal(state.pending.length,1);
+    Object.defineProperty(env,"PGOPTIONS",{enumerable:true,get(){state.valueReads++;return"";}});
+    first.release(true);const outcome=await pending;if(outcome.client)outcome.client.release(true);
+    await resource.close();
+    assert.equal(state.valueReads,0,"queued construction must not read PG values");
+    assert.equal(state.realConstructors,1,"queued replacement must not construct a real client");
+    assert.ok(outcome.error,"queued contaminated replacement must reject");unavailable(outcome.error);
+    assert.deepEqual(state.releases,[true]);
+  });
+});

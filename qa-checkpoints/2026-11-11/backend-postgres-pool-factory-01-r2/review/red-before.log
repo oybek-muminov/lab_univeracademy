@@ -1,0 +1,70 @@
+✖ lazy constructor boundary rejects post-factory PGOPTIONS before value read (empty value) (7.419375ms)
+✖ lazy constructor boundary rejects post-factory PGOPTIONS before value read (throwing getter) (2.033499ms)
+✖ lazy constructor boundary rejects queued replacement contamination after connect entered clean (0.992519ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 199.578072
+
+✖ failing tests:
+
+test at tests/vercel-node/postgres-pool-factory.test.mjs:340:36
+✖ lazy constructor boundary rejects post-factory PGOPTIONS before value read (empty value) (7.419375ms)
+  AssertionError [ERR_ASSERTION]: PG value must never be read
+  
+  1 !== 0
+  
+      at file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:347:12
+      at async syntheticEnvironment (file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:338:14)
+      at async TestContext.<anonymous> (file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:341:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/vercel-node/postgres-pool-factory.test.mjs:340:36
+✖ lazy constructor boundary rejects post-factory PGOPTIONS before value read (throwing getter) (2.033499ms)
+  AssertionError [ERR_ASSERTION]: PG value must never be read
+  
+  1 !== 0
+  
+      at file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:347:12
+      at async syntheticEnvironment (file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:338:14)
+      at async TestContext.<anonymous> (file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:341:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/vercel-node/postgres-pool-factory.test.mjs:352:1
+✖ lazy constructor boundary rejects queued replacement contamination after connect entered clean (0.992519ms)
+  AssertionError [ERR_ASSERTION]: queued construction must not read PG values
+  
+  1 !== 0
+  
+      at file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:360:12
+      at async syntheticEnvironment (file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:338:14)
+      at async TestContext.<anonymous> (file:///workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo/tests/vercel-node/postgres-pool-factory.test.mjs:353:3)
+      at async Test.run (node:internal/test_runner/test:1409:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,88 @@
+{
+  "format": "UA-PRIVATE-POOL-FACTORY-R2-LAB-PROPOSAL-v1",
+  "status": "LOCAL_AUTHOR_PASS_NOT_PUBLISHED_INDEPENDENT_REVIEW_PENDING",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/postgres-pool-factory-01-r2-20261111",
+  "lab_parent": {
+    "commit": "e0ad56dfda167a34eb4e4dd2e74b2d700808b49e",
+    "tree": "01c47df72b8f8c844fec95502b43c35a974c965e",
+    "manifest": {
+      "bytes": 3670,
+      "sha256": "acbec5ea75a9c8ebbccd508d039fa351ba09aabea57cbdc981176cb783587eaf"
+    }
+  },
+  "checkpoint": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/",
+  "application_base": {
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "application_delta": "Exactly two replacements atop original281; all279 other application files and selected119-path/2135406-byte closure unchanged",
+  "files": [
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/review/README.md",
+      "mode": "100644",
+      "bytes": 4562,
+      "sha256": "2141e7c9667522d2261357ad6433a7c98cf143cbe5c0f63218d82911ea84711d"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/review/focused.final.log",
+      "mode": "100644",
+      "bytes": 8766,
+      "sha256": "06b8c148986a5b0782ae87d21f85dc6a14ebff3398b5f4d045b66bb00fa4f76a"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/review/red-before.append.txt",
+      "mode": "100644",
+      "bytes": 3876,
+      "sha256": "71b59e09575a70fc44632afe951795c814bf2edf6eba560c49c35b57b0ea52a5"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/review/red-before.log",
+      "mode": "100644",
+      "bytes": 3406,
+      "sha256": "dcd95489d1473c86712cf95fb4463279c4b3e8a1bca783793ffd861fa1347966"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/review/regressions.final.log",
+      "mode": "100644",
+      "bytes": 7651,
+      "sha256": "e937eb10b7742319d0376967b810de7d47bb08704c3ae00b27a86e1bd36a11ad"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/review/verification.json",
+      "mode": "100644",
+      "bytes": 8560,
+      "sha256": "4ecdb0e2d0e75e5f0722104de1375df8b1d4e49270597fbcd8235a9aab5c94f3"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/runtime/postgres-pool-factory.mjs",
+      "mode": "100644",
+      "bytes": 6328,
+      "sha256": "a5512fc40d586cbe3ec1297abbc264803fd7f04961299ebcf09c072e90486259"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-postgres-pool-factory-01-r2/tests/vercel-node/postgres-pool-factory.test.mjs",
+      "mode": "100644",
+      "bytes": 30053,
+      "sha256": "2198b4f2b86a7baba71317ad49d29cd11d6a36447996a33fe0f55d5ba1062ed3"
+    }
+  ],
+  "payload_file_count": 8,
+  "payload_bytes": 73202,
+  "payload_inventory_sha256": "46381dfbe6203bd47f92da1919beda08e8d18aec2f2ee74adeedc5a66d2dfd62",
+  "inventory_recipe": "UTF8 JSON [{destination,bytes,sha256}] in destination order, sort_keys=True,separators=(comma,colon), no final LF",
+  "manifest_self_pin": "Externally supplied bytes/SHA256; not self-pinned",
+  "author_results": {
+    "red_before": "0PASS/3FAIL expected against exact original",
+    "focused_final": "119PASS/0FAIL",
+    "regressions_final": "114PASS/0FAIL",
+    "syntax": "2PASS",
+    "semantic_root": "NOT_RUN"
+  },
+  "test_dependencies": "Existing Node24 builtins and exact pinned281-file assembly; no package installation required for recorded inert tests",
+  "red_replay_inputs": "review/red-before.append.txt plus original e0ad56df focused-test bytes; hashes and exact command in verification.json/README",
+  "data_screen": "Synthetic fixtures and public bundled CA only; no actual credentials or student data",
+  "scope_limit": "No real driver/TLS/DB/authority/provider/runtime or independent implementation acceptance. Bootstrap remains undefined503.",
+  "publication_gate": "Separate exact user approval and fresh parent/branch/prefix/hash checks required; no upload authorized",
+  "omitted": "Full patch, duplicate original110-test file, transports, archives, full base, dependencies and unrelated evidence"
+}

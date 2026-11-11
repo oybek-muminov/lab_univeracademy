@@ -1,0 +1,218 @@
+{
+  "format": "UA-PRIVATE-POOL-FACTORY-R2-AUTHOR-VERIFICATION-v1",
+  "status": "LOCAL_AUTHOR_PASS_INDEPENDENT_REVISION_REVIEW_PENDING",
+  "utc": "2026-11-11T16:31:24.644179+00:00",
+  "application_base": {
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "accepted_assembly_order": [
+    "de2adf023428a374f075faa421ece9e1deafaf36",
+    "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+    "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+    "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+    "ea0c3cd9c41a465bd5e5205b91f0141710a435fa"
+  ],
+  "published_preimage": {
+    "commit": "e0ad56dfda167a34eb4e4dd2e74b2d700808b49e",
+    "tree": "01c47df72b8f8c844fec95502b43c35a974c965e",
+    "manifest": {
+      "bytes": 3670,
+      "sha256": "acbec5ea75a9c8ebbccd508d039fa351ba09aabea57cbdc981176cb783587eaf"
+    }
+  },
+  "source_delta": [
+    {
+      "path": "runtime/postgres-pool-factory.mjs",
+      "preimage": {
+        "bytes": 4920,
+        "sha256": "250d0eaac3b48833a8599070f346ea6aa746b40790f3740e7539f1a0c6c2034b"
+      },
+      "final": {
+        "bytes": 6328,
+        "sha256": "a5512fc40d586cbe3ec1297abbc264803fd7f04961299ebcf09c072e90486259"
+      }
+    },
+    {
+      "path": "tests/vercel-node/postgres-pool-factory.test.mjs",
+      "preimage": {
+        "bytes": 20244,
+        "sha256": "9445e70dd533eb0a6e6c57884e6fbd6d2111a0766f798a288c83ca9459b154d6"
+      },
+      "final": {
+        "bytes": 30053,
+        "sha256": "2198b4f2b86a7baba71317ad49d29cd11d6a36447996a33fe0f55d5ba1062ed3"
+      }
+    }
+  ],
+  "preservation": {
+    "application_files": 281,
+    "other_application_files_unchanged": 279,
+    "selected_closure": {
+      "paths": 119,
+      "bytes": 2135406
+    },
+    "original_published_candidate_and_evidence_unchanged": true,
+    "guards_pins_package_lock_default_bootstrap_changed": false
+  },
+  "decision": {
+    "interface": "createPostgresPool(Pool, Client, options)",
+    "connection_fields": [
+      "host",
+      "port",
+      "database",
+      "user",
+      "password",
+      "ca"
+    ],
+    "internal_Pool_option": "Client: GuardedClient; own data identity required before exposing resource",
+    "checks": "PG names at initial construction, acquisition entry and immediately before every real Client constructor",
+    "guard_failure": "Latch unavailable; construct no real Client; return private inert EventEmitter failure client; asynchronously invoke connect callback with fixed sanitized error",
+    "constructor_exception": "No raw throw through queue; no retained private cause; same failure-client path",
+    "global_mutation": "None; no pg.defaults/environment/constructor mutation by the factory",
+    "preserved": [
+      "CA/TLS strictness and DNS identity scope",
+      "max1/min0/connection5000ms/idle10000ms",
+      "idle lifetime listener",
+      "existing checked-out transaction and final-commit semantics",
+      "pending idle/close acquisition discard once",
+      "end-once cached close and commit_unknown503"
+    ]
+  },
+  "tests": {
+    "runtime": "v24.22.1",
+    "red_before": {
+      "command": [
+        "node",
+        "--test",
+        "--test-name-pattern=lazy constructor boundary",
+        "tests/vercel-node/postgres-pool-factory.test.mjs"
+      ],
+      "cwd": "/workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo",
+      "utc_start": "2026-11-11T16:22:10.466678+00:00",
+      "utc_end": "2026-11-11T16:22:10.743660+00:00",
+      "exit": 1,
+      "factory_preimage_sha256": "250d0eaac3b48833a8599070f346ea6aa746b40790f3740e7539f1a0c6c2034b",
+      "log_bytes": 3406,
+      "log_sha256": "dcd95489d1473c86712cf95fb4463279c4b3e8a1bca783793ffd861fa1347966",
+      "scope": "Three new inert cases on unchanged published factory; no driver/network/SQL",
+      "focused_test": {
+        "bytes": 24120,
+        "sha256": "a08a2ceadce735012fd779ba697a42bf6cb6a88ec6927d36fa9bc76eac2c14b2",
+        "retained_as": "red-before.test.mjs"
+      },
+      "passed": 0,
+      "failed": 3,
+      "factory": "unchanged published preimage",
+      "append": {
+        "bytes": 3876,
+        "sha256": "71b59e09575a70fc44632afe951795c814bf2edf6eba560c49c35b57b0ea52a5"
+      },
+      "replay": "Original published focused test bytes plus append reproduces exact retained24120-byte test; select lazy constructor boundary pattern",
+      "note": "Red test used original two-argument API. Final tests use approved three-argument API; captured red bytes are distinct and explicitly pinned."
+    },
+    "focused_final": {
+      "command": [
+        "node",
+        "--test",
+        "tests/vercel-node/postgres-pool-factory.test.mjs"
+      ],
+      "cwd": "/workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo",
+      "utc_start": "2026-11-11T16:27:45.929312+00:00",
+      "utc_end": "2026-11-11T16:27:46.532328+00:00",
+      "exit": 0,
+      "log_bytes": 8766,
+      "log_sha256": "06b8c148986a5b0782ae87d21f85dc6a14ebff3398b5f4d045b66bb00fa4f76a",
+      "passed": 119,
+      "failed": 0,
+      "source_identities": [
+        {
+          "path": "runtime/postgres-pool-factory.mjs",
+          "bytes": 6328,
+          "sha256": "a5512fc40d586cbe3ec1297abbc264803fd7f04961299ebcf09c072e90486259"
+        },
+        {
+          "path": "tests/vercel-node/postgres-pool-factory.test.mjs",
+          "bytes": 30053,
+          "sha256": "2198b4f2b86a7baba71317ad49d29cd11d6a36447996a33fe0f55d5ba1062ed3"
+        }
+      ],
+      "log": "review/focused.final.log"
+    },
+    "regressions_and_syntax": [
+      {
+        "command": [
+          "node",
+          "--test",
+          "tests/vercel-node/pool-port.test.mjs",
+          "tests/vercel-node/production-options.test.mjs"
+        ],
+        "cwd": "/workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo",
+        "utc_start": "2026-11-11T16:28:55.982087+00:00",
+        "utc_end": "2026-11-11T16:28:56.394859+00:00",
+        "exit": 0,
+        "output_bytes": 7651,
+        "output_sha256": "e937eb10b7742319d0376967b810de7d47bb08704c3ae00b27a86e1bd36a11ad",
+        "output": "regressions.final.log"
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "runtime/postgres-pool-factory.mjs"
+        ],
+        "cwd": "/workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo",
+        "utc_start": "2026-11-11T16:28:56.395015+00:00",
+        "utc_end": "2026-11-11T16:28:56.424884+00:00",
+        "exit": 0,
+        "output_bytes": 0,
+        "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output": ""
+      },
+      {
+        "command": [
+          "node",
+          "--check",
+          "tests/vercel-node/postgres-pool-factory.test.mjs"
+        ],
+        "cwd": "/workspace/ua-postgres-pool-factory-r2-wz7bbx3i/repo",
+        "utc_start": "2026-11-11T16:28:56.424987+00:00",
+        "utc_end": "2026-11-11T16:28:56.459125+00:00",
+        "exit": 0,
+        "output_bytes": 0,
+        "output_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "output": ""
+      }
+    ],
+    "regression_passed": 114,
+    "regression_failed": 0,
+    "semantic_root": "NOT_RUN: matching TypeScript5.9.3 absent in this owner copy",
+    "Mini_and_comparator": "NOT_RUN: accepted unrelated suites not repeated"
+  },
+  "original_QA_relay": {
+    "scope": "Original e0ad56df only; not revision acceptance",
+    "report_sha256": "800b44e8cdb8b3d25db8da6d138b0ec5884c4c2f465bd62521263a57b22742f0",
+    "reported": "Same P2; 110 focused,114 regressions,38 probes, two syntax, root5.9.3 and unchanged119-path guard passed; temporal control1PASS/acceptance3FAIL",
+    "evidence_boundary": "Coordinator relay; no other agent workspace accessed"
+  },
+  "privacy": "Only synthetic fixtures, names/value-read counters and public Node bundled CA; no actual credentials, secrets, student records or provider data",
+  "not_run": [
+    "real pg driver or TLS handshake",
+    "DB/SQL/authority/provider/runtime/activation/concurrency/durability",
+    "root semantic TypeScript check on this candidate",
+    "Mini/comparator suites",
+    "publication",
+    "backup"
+  ],
+  "remaining_prerequisites": [
+    "Independent exact revision review",
+    "Own semantic compiler prerequisite remains absent",
+    "Supported SQL-callable Ed25519 decision and later approved driver/private bootstrap/runtime work"
+  ],
+  "denied_pending_uncertain_actions": {
+    "denied": [],
+    "pending": [],
+    "uncertain": []
+  },
+  "official_source": "https://raw.githubusercontent.com/brianc/node-postgres/pg@8.16.3/packages/pg-pool/index.js"
+}
