@@ -1,0 +1,130 @@
+{
+  "format": "UA-CATALOG-COMPARATOR-LAB-PUBLICATION-v1",
+  "status": "PROPOSED_FOR_USER_APPROVAL_NOT_PUBLISHED",
+  "candidate_status": "AUTHOR_TESTED_532_PASS_PENDING_INDEPENDENT_COMPARATOR_REVIEW",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "proposed_branch": "backend/catalog-comparator-01-20261111",
+  "lab_parent_commit": "d54d19cb9ba78a13187362afdb2178e90430cefe",
+  "lab_parent_tree": "99f467391e0f68bf1ff31f398bc83b3969a04df2",
+  "main_source_base_commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+  "main_source_base_tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552",
+  "review_root": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01",
+  "mutation_scope": "ADD_ONLY_UNDER_REVIEW_ROOT_NO_MAIN_HISTORY_IMPORT_NO_QA_BRANCH_UPDATE",
+  "files": [
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/review/README.md",
+      "bytes": 8429,
+      "sha256": "094da1baf8f4385473cee2db9b0337f5de44fcd632c11977b9e20191086c58ab",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/review/context.historical.json",
+      "bytes": 2924,
+      "sha256": "a21885c11851626031ce9b470907be39d9fd7ffaa94b7f6804085210ef8b59be",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/review/input-receipt.json",
+      "bytes": 6078,
+      "sha256": "c5deea588ee69b2f1c30d4d606401b7b60702aa3a73aad695ce460507a194be3",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/review/offline.final.log",
+      "bytes": 53911,
+      "sha256": "9d86389e239c5e0968ccc7155173a6d81889b848bb066ffb9ac4c93088cb35f6",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/review/provenance/DECISION.md",
+      "bytes": 12229,
+      "sha256": "dbdfbe0cca0668224f971ec7b2deddc8813c74f42686fbd1f42d287ba2dcfa0b",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/review/provenance/WITNESS.json",
+      "bytes": 39356,
+      "sha256": "bb078466198b609dd5d7466e84cac963ff21e91b52e6b89d40bd13fba9a7c5f2",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/review/sealed-inputs.historical.json",
+      "bytes": 1969,
+      "sha256": "28df67976ee793a0c0489f482061ffc3f91e87cdf95988d111a7dd77d5203ae9",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/review/verification.json",
+      "bytes": 11565,
+      "sha256": "e821ee5fdcf9077d25c29021f54c48d11815204f179f38be26b25fda9fc0a02f",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/tests/backend/db-bootstrap/catalog-baseline.pg17.11.json",
+      "bytes": 543099,
+      "sha256": "7471e498e5bbb2d0668c2a0d6a47aa2fae6eb6e0c19a04a53807d6ab0f4ea106",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/tests/backend/db-bootstrap/compare_catalog.py",
+      "bytes": 29331,
+      "sha256": "280f6cc609e0f94e0fbb97db296c2a269d46f286235ddfd7c9d3878a678e5a58",
+      "git_mode": "100644"
+    },
+    {
+      "path": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01/tests/backend/db-bootstrap/test_compare_catalog.py",
+      "bytes": 33333,
+      "sha256": "30b4018d98a53f63e3aeae47376c38ab9c07cca12cc2761c15182c327ec629fb",
+      "git_mode": "100644"
+    }
+  ],
+  "payload_totals": {
+    "files": 11,
+    "bytes": 742224
+  },
+  "inventory_self_excluded": true,
+  "inventory_external_sha256_required": true,
+  "offline_tests": {
+    "working_directory": "qa-checkpoints/2026-11-11/backend-catalog-comparator-01",
+    "command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/backend/db-bootstrap",
+      "-p",
+      "test_compare_catalog.py",
+      "-v"
+    ],
+    "dependencies": "Python standard library only; author Python 3.12.14; three candidate files sufficient; no installed application, collector, DB, external fixture, network or secret required",
+    "author_run": {
+      "tests": 532,
+      "skips": 0,
+      "exit": 0,
+      "start_utc": "2026-11-11T11:16:27.003135+00:00",
+      "end_utc": "2026-11-11T11:16:38.685789+00:00"
+    },
+    "evidence": "review/verification.json binds exact executable, cwd, environment, Python/platform, before/after source hashes and review/offline.final.log; these retain original historical local paths, not runtime dependencies"
+  },
+  "provenance": {
+    "baseline_contents": "Expected observation and source structural objects, all 115 hashes and 131 required NULL slots, typed SQL B projection, original SQL B wire text, capture-local map/deduction labels, SQL/capture/canonical/context identities and excluded graph scope",
+    "witness_bytes": "Two original independently reviewed witness/decision files are included; their acceptance does not accept this new comparator candidate",
+    "external_pin_selection": "Baseline, context and sealed-input manifest hashes are author proposals. Independent reviewer/operator selection of externally pinned bytes remains required; consumer does not authenticate approvers",
+    "historical_result": {
+      "status": "NOT_READY",
+      "reason": "DEFAULT_ACL_ROLE_NAME_WITNESS_MISSING",
+      "comparison_performed": false,
+      "total_mismatch_count": null,
+      "runtime_readiness": false
+    },
+    "historical_wording": "Owner-filtered default-ACL scope plus numeric self-grant pattern; no observed 16388-to-role-name mapping",
+    "synthetic_boundary": "Private test-only root, always SYNTHETIC/runtime_readiness=false; inaccessible through public compare caller flags; not a Python sandbox",
+    "not_duplicated": "Full patch, encoded transport, old 11-file transfer inventory, redundant source-manifest, parsed data already in baseline, vendor/build/controller trees, main source/history",
+    "not_present_in_lab_parent": "None of the 17 original input blobs matched the 754 lab parent blobs. Selected witness originals are included here. Other originals are identified in review/input-receipt.json and baseline/context bindings, not falsely claimed present",
+    "outside_this_review": "Re-deriving historical PostgreSQL capture provenance requires original collector queries, packet manifest/plan/config, journal/probe/ledger, tool-setup evidence and canonical derivation; accepted SQL A/B and full archive/tool manifest are separate reviewed provenance. They are not unit-test dependencies and are not independently re-authenticated by this candidate; request separate exact publication scope if that review is required",
+    "data_scope": "Source code, catalog metadata, synthetic unit fixtures and author logs; no real application/student rows or secret credentials selected"
+  },
+  "limits": "No upload approval, new runtime or SQL/DB/provider/collector/controller/cleanup execution; no readiness promotion. SQL B false; primary apply/activation and G01-G11 HOLD/open."
+}

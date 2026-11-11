@@ -1,0 +1,175 @@
+{
+  "format": "BACKEND_VERIFIED_DATA_RECEIPT-v1",
+  "utc": "2026-11-11T10:53:58.261066+00:00",
+  "main_parts": [
+    {
+      "part": 1,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-01.txt",
+      "bytes": 6000,
+      "sha256": "f12bb9a31a84dea34605eb01614ea143a23d7c07e4460df5537f285ded1aa15e"
+    },
+    {
+      "part": 2,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-02.txt",
+      "bytes": 6000,
+      "sha256": "63f569d85e6d1ec46d8cc363276150e476efaee579a694202bc7ad39b4733702"
+    },
+    {
+      "part": 3,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-03.second-transcription.txt",
+      "bytes": 6000,
+      "sha256": "2cb51c15e3c38749d8ac8bd6fb4375f31612926f3cf31ff4a3ff4c1931f1b106"
+    },
+    {
+      "part": 4,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-04.source-retranscription.txt",
+      "bytes": 6000,
+      "sha256": "49a378b2480a86c8ac0987abf58d1a12407d22b344ab42ba318d350ccd9c0c54"
+    },
+    {
+      "part": 5,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-05.source-retranscription.txt",
+      "bytes": 6000,
+      "sha256": "06f85668b37ad40dcb3b1c90853f57211bc784baa1aa3087b4974838ace3e723"
+    },
+    {
+      "part": 6,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-06.relay-replacement.txt",
+      "bytes": 6000,
+      "sha256": "522fb22602d09c98f06ffdf51d6a31a308f9493a56809b3466f3975092e51b2c"
+    },
+    {
+      "part": 7,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-07.txt",
+      "bytes": 6000,
+      "sha256": "4004a5c02bb9b4398023b9acd515d5ecad3ffac0dfee0ea85635b08b89f00715"
+    },
+    {
+      "part": 8,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-08.txt",
+      "bytes": 6000,
+      "sha256": "af0732c952069730f8f0df60d0031dbf0062c8f379739a56197539fbe12b8483"
+    },
+    {
+      "part": 9,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-09.source-retranscription.txt",
+      "bytes": 6000,
+      "sha256": "5dbc287b7cb44e66a10736810f62918f60b86bad057c6ceb8561f0a36002d15e"
+    },
+    {
+      "part": 10,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-10.source-retranscription.txt",
+      "bytes": 6000,
+      "sha256": "143ce9242c816e1de0b83a638169e70a75fe9a8fa1b85d3c628a2932cc04b226"
+    },
+    {
+      "part": 11,
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/input-part-11.txt",
+      "bytes": 2908,
+      "sha256": "8056976379d8c0624fdf83e3c4e15cea6e6754b9e08d9f5c999e11fb0d9ff946"
+    }
+  ],
+  "main_metadata_manifest": {
+    "bytes": 1658,
+    "sha256": "35d4cde4e78bdc32b5c92867bf422d7c64b6804fad9ad8c66ffa9005ad571dca"
+  },
+  "main_originals": [
+    {
+      "path": "observation/raw-snapshot.stdout",
+      "bytes": 70830,
+      "sha256": "c0c563909fed8b7656f95bb19297c56a6c0cb7fc7f7acf5d12f002f17447de3e"
+    },
+    {
+      "path": "observation/candidate-pins.json",
+      "bytes": 93956,
+      "sha256": "a0d15e8ab1fcbe4e604eff3424c44873200daa828e07246bb17a49f7009059ef"
+    },
+    {
+      "path": "expected/structural-expectations.json",
+      "bytes": 37999,
+      "sha256": "c1d405f3664a385e0e7d2b1028e4d5961c9ac37b8150dbf8db604f7246f4d6d0"
+    },
+    {
+      "path": "collector/snapshot.local.sql",
+      "bytes": 14989,
+      "sha256": "7d86fca3961fcd8e7b94e9367878e89e1cbd0d589b3d241943203763695751cb"
+    },
+    {
+      "path": "canonical/CANONICAL48.json",
+      "bytes": 29149,
+      "sha256": "92fbb7ea22ee41e1b9927aa23e9ef52790c99ecd3ed50a58da9e41718df02c0c"
+    },
+    {
+      "path": "packet/packet.sha256.json",
+      "bytes": 2553,
+      "sha256": "6b120889687298145ac14b175780ee4d4902607296c63eff0032467637671cdf"
+    },
+    {
+      "path": "packet/plan.json",
+      "bytes": 10415,
+      "sha256": "0252e10c6f322431a18e6af3bbd3f09de88f650b2a5a20cc07f55a6ab1086bd3"
+    },
+    {
+      "path": "packet/postgresql.conf",
+      "bytes": 1066,
+      "sha256": "ea61c7bafb0594ff1617c533e95a3619d51e33a9244d3600a9abb1069d9a1ad5"
+    },
+    {
+      "path": "evidence/journal.jsonl",
+      "bytes": 24270,
+      "sha256": "a2e59fda6a52542863b64c04d5c2f596d7e36d035ccfd99b4fd2526f06be8984"
+    },
+    {
+      "path": "evidence/03-identity.stdout",
+      "bytes": 114,
+      "sha256": "93d1db4ea96362b7452a0fecf06da548a9cd98eee27be358bb723f9b9d0a3422"
+    },
+    {
+      "path": "evidence/observed-resource-ledger.json",
+      "bytes": 359,
+      "sha256": "aacd903633dc545800f5fce035a7065466bbcea9385abdf9a981fb4c57f87012"
+    },
+    {
+      "path": "tools/result.json",
+      "bytes": 5200,
+      "sha256": "7bcf4a0f05c5d31988a192fb585fb73c738d3677e26d03ece39484d71f659bf0"
+    },
+    {
+      "path": "tools/commands.json",
+      "bytes": 9840,
+      "sha256": "9bceaaab34cb16b19e7ff374c3fe8cb5104421c7ee3e0d8e93ee64c33f81ec57"
+    }
+  ],
+  "main_original_bytes": 300740,
+  "raw_pretty_json_value_equal": true,
+  "supplement_originals": [
+    {
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/originals/collector/catalog.local.sql",
+      "bytes": 25385,
+      "sha256": "d1dfa5116af7fd8f2b08a98121d2549e294bb98723ee922bf8f3731164d56ef2"
+    },
+    {
+      "path": "/workspace/backend-catalog-input-review-4n2p_nfk/originals/observation/sqlb-raw.stdout",
+      "bytes": 45460,
+      "sha256": "de197371d5f2fab38f32b3a46c54bcf5ae91136b4fd0940b0130a9b0b98e4068"
+    }
+  ],
+  "witness_originals": [
+    {
+      "path": "/workspace/backend-catalog-witness-review-k0e_5r3t/WITNESS.json",
+      "bytes": 39356,
+      "sha256": "bb078466198b609dd5d7466e84cac963ff21e91b52e6b89d40bd13fba9a7c5f2"
+    },
+    {
+      "path": "/workspace/backend-catalog-witness-review-k0e_5r3t/DECISION.md",
+      "bytes": 12229,
+      "sha256": "dbdfbe0cca0668224f971ec7b2deddc8813c74f42686fbd1f42d287ba2dcfa0b"
+    }
+  ],
+  "input15_count": 15,
+  "input15_bytes": 371585,
+  "with_witness_count": 17,
+  "with_witness_bytes": 423170,
+  "supplied_code_or_sql_executed": false,
+  "failed_transcriptions_preserved": true
+}

@@ -1,0 +1,314 @@
+{
+  "task": "DB-BOOTSTRAP-OFFLINE-COMPARATOR-01",
+  "utc": "2026-11-11T11:24:48.113972+00:00",
+  "base": {
+    "commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552"
+  },
+  "final_run": {
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/backend/db-bootstrap",
+      "-p",
+      "test_compare_catalog.py",
+      "-v"
+    ],
+    "cwd": "/workspace/ua-catalog-comparator-01-dac6iwgs/repo",
+    "environment": {
+      "PATH": "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+      "LC_ALL": "C",
+      "TZ": "UTC",
+      "PYTHONHASHSEED": "0",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONUTF8": "1"
+    },
+    "start_utc": "2026-11-11T11:16:27.003135+00:00",
+    "end_utc": "2026-11-11T11:16:38.685789+00:00",
+    "exit": 0,
+    "tests": 532,
+    "duration_seconds": 11.569,
+    "skips": 0,
+    "before": [
+      {
+        "path": "tests/backend/db-bootstrap/catalog-baseline.pg17.11.json",
+        "bytes": 543099,
+        "sha256": "7471e498e5bbb2d0668c2a0d6a47aa2fae6eb6e0c19a04a53807d6ab0f4ea106",
+        "mode": "0o600"
+      },
+      {
+        "path": "tests/backend/db-bootstrap/compare_catalog.py",
+        "bytes": 29331,
+        "sha256": "280f6cc609e0f94e0fbb97db296c2a269d46f286235ddfd7c9d3878a678e5a58",
+        "mode": "0o600"
+      },
+      {
+        "path": "tests/backend/db-bootstrap/test_compare_catalog.py",
+        "bytes": 33333,
+        "sha256": "30b4018d98a53f63e3aeae47376c38ab9c07cca12cc2761c15182c327ec629fb",
+        "mode": "0o600"
+      }
+    ],
+    "after": [
+      {
+        "path": "tests/backend/db-bootstrap/catalog-baseline.pg17.11.json",
+        "bytes": 543099,
+        "sha256": "7471e498e5bbb2d0668c2a0d6a47aa2fae6eb6e0c19a04a53807d6ab0f4ea106",
+        "mode": "0o600"
+      },
+      {
+        "path": "tests/backend/db-bootstrap/compare_catalog.py",
+        "bytes": 29331,
+        "sha256": "280f6cc609e0f94e0fbb97db296c2a269d46f286235ddfd7c9d3878a678e5a58",
+        "mode": "0o600"
+      },
+      {
+        "path": "tests/backend/db-bootstrap/test_compare_catalog.py",
+        "bytes": 33333,
+        "sha256": "30b4018d98a53f63e3aeae47376c38ab9c07cca12cc2761c15182c327ec629fb",
+        "mode": "0o600"
+      }
+    ],
+    "source_bytes_unchanged": true,
+    "log": {
+      "bytes": 53911,
+      "sha256": "9d86389e239c5e0968ccc7155173a6d81889b848bb066ffb9ac4c93088cb35f6"
+    },
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "scope": "new offline comparator tests only; no SQL/DB/provider/controller or supplied script executed"
+  },
+  "scope": {
+    "base_commit": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "base_tree": "bc891240798d9bf56ee52c4a0f0ecede8ed33552",
+    "base_blobs_and_git_modes_preserved": 270,
+    "physical_modes_and_hashes_equal_own_accepted_source": true,
+    "baseline_source_copy_preserved": true,
+    "new_paths": [
+      {
+        "path": "tests/backend/db-bootstrap/catalog-baseline.pg17.11.json",
+        "bytes": 543099,
+        "sha256": "7471e498e5bbb2d0668c2a0d6a47aa2fae6eb6e0c19a04a53807d6ab0f4ea106",
+        "physical_mode": "0o600",
+        "git_mode": "100644"
+      },
+      {
+        "path": "tests/backend/db-bootstrap/compare_catalog.py",
+        "bytes": 29331,
+        "sha256": "280f6cc609e0f94e0fbb97db296c2a269d46f286235ddfd7c9d3878a678e5a58",
+        "physical_mode": "0o600",
+        "git_mode": "100644"
+      },
+      {
+        "path": "tests/backend/db-bootstrap/test_compare_catalog.py",
+        "bytes": 33333,
+        "sha256": "30b4018d98a53f63e3aeae47376c38ab9c07cca12cc2761c15182c327ec629fb",
+        "physical_mode": "0o600",
+        "git_mode": "100644"
+      }
+    ],
+    "unexpected_paths": [],
+    "frozen_inventories": [
+      {
+        "inventory": "/tmp/univeracademy-db-bootstrap01-uv9oyxx3/artifact-inventory.json",
+        "bytes": 5500,
+        "sha256": "1d8a7d05f9c6262179a066ed6b38965c66efec98520b3028e3eda50e99476eca",
+        "all_rows_exact": true,
+        "rows": 19
+      },
+      {
+        "inventory": "/tmp/univeracademy-db-bootstrap01-sqlb-r2/review-artifact-inventory.json",
+        "bytes": 6195,
+        "sha256": "306ca31ffedaad910da218415dc020e80c34136cac2683107ca705e251e154c2",
+        "all_rows_exact": true,
+        "rows": 18
+      },
+      {
+        "inventory": "/tmp/univeracademy-db-bootstrap01-sqlb-amendment-01/artifact-inventory.json",
+        "bytes": 1793,
+        "sha256": "d597f46a103d19176beef42bfc1e3eb9a01b5a1b99c495d632af8d2bb8bf6e60",
+        "all_rows_exact": true,
+        "rows": 8
+      }
+    ],
+    "received_originals_unchanged": 17,
+    "original_input_total_bytes": 423170,
+    "no_SQL_DB_provider_Git_or_remote_action": true
+  },
+  "replay": {
+    "patch": {
+      "bytes": 625129,
+      "sha256": "afc086d41be2d349a2a531c884ad7a66b2691c4bf08b5bf60b9d42149c17ef0a"
+    },
+    "steps": [
+      {
+        "command": [
+          "patch",
+          "--batch",
+          "-p1",
+          "--dry-run",
+          "--forward",
+          "-i",
+          "/workspace/ua-catalog-comparator-01-dac6iwgs/evidence/candidate.patch"
+        ],
+        "cwd": "/workspace/ua-catalog-comparator-01-dac6iwgs/replay-verified",
+        "start_utc": "2026-11-11T11:19:32.091123+00:00",
+        "end_utc": "2026-11-11T11:19:32.102705+00:00",
+        "exit": 0,
+        "output": "checking file tests/backend/db-bootstrap/catalog-baseline.pg17.11.json\nchecking file tests/backend/db-bootstrap/compare_catalog.py\nchecking file tests/backend/db-bootstrap/test_compare_catalog.py\n"
+      },
+      {
+        "command": [
+          "patch",
+          "--batch",
+          "-p1",
+          "--forward",
+          "-i",
+          "/workspace/ua-catalog-comparator-01-dac6iwgs/evidence/candidate.patch"
+        ],
+        "cwd": "/workspace/ua-catalog-comparator-01-dac6iwgs/replay-verified",
+        "start_utc": "2026-11-11T11:19:32.102777+00:00",
+        "end_utc": "2026-11-11T11:19:32.111958+00:00",
+        "exit": 0,
+        "output": "patching file tests/backend/db-bootstrap/catalog-baseline.pg17.11.json\npatching file tests/backend/db-bootstrap/compare_catalog.py\npatching file tests/backend/db-bootstrap/test_compare_catalog.py\n"
+      },
+      {
+        "command": [
+          "patch",
+          "--batch",
+          "-p1",
+          "--dry-run",
+          "--reverse",
+          "-i",
+          "/workspace/ua-catalog-comparator-01-dac6iwgs/evidence/candidate.patch"
+        ],
+        "cwd": "/workspace/ua-catalog-comparator-01-dac6iwgs/replay-verified",
+        "start_utc": "2026-11-11T11:19:32.136692+00:00",
+        "end_utc": "2026-11-11T11:19:32.144045+00:00",
+        "exit": 0,
+        "output": "checking file tests/backend/db-bootstrap/catalog-baseline.pg17.11.json\nchecking file tests/backend/db-bootstrap/compare_catalog.py\nchecking file tests/backend/db-bootstrap/test_compare_catalog.py\n"
+      },
+      {
+        "command": [
+          "patch",
+          "--batch",
+          "-p1",
+          "--reverse",
+          "-i",
+          "/workspace/ua-catalog-comparator-01-dac6iwgs/evidence/candidate.patch"
+        ],
+        "cwd": "/workspace/ua-catalog-comparator-01-dac6iwgs/replay-verified",
+        "start_utc": "2026-11-11T11:19:32.144081+00:00",
+        "end_utc": "2026-11-11T11:19:32.153788+00:00",
+        "exit": 0,
+        "output": "patching file tests/backend/db-bootstrap/catalog-baseline.pg17.11.json\npatching file tests/backend/db-bootstrap/compare_catalog.py\npatching file tests/backend/db-bootstrap/test_compare_catalog.py\n"
+      }
+    ],
+    "forward_blob_count": 273,
+    "reverse_blob_count": 270,
+    "forward_new_bytes_and_Git_modes_exact": true,
+    "base_270_blobs_Git_modes_and_physical_modes_exact_both_directions": true,
+    "local_new_source_physical_mode": "0o600",
+    "patch_new_physical_mode": "0o644",
+    "both_represent_git_mode": "100644",
+    "Git_metadata_used": false,
+    "SQL_executed": false,
+    "prior_harness_failure": {
+      "status": "HARNESS_ASSERTION_FAILURE_NOT_PRODUCT_TEST_FAILURE",
+      "wrapper_exit": 1,
+      "stage": "after local forward patch, comparing newly created physical modes",
+      "expected_local_source_mode": "0o600",
+      "observed_patch_created_mode": "0o644",
+      "all_three_new_bytes_exact": true,
+      "new_git_modes": "100644 in both copies",
+      "original_failed_copy_preserved": "/workspace/ua-catalog-comparator-01-dac6iwgs/replay",
+      "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 48, in <module>\nAssertionError\n",
+      "correction": "Verify declared Git mode for new additions; retain exact physical-mode parity for all 270 pre-existing files. No candidate byte change."
+    }
+  },
+  "original_record_identities": {
+    "offline.final.run.json": {
+      "bytes": 2379,
+      "sha256": "920cebac5c168cf41779867b40691b8579e379da59d4255270c4993979b88142"
+    },
+    "scope-verification.json": {
+      "bytes": 1995,
+      "sha256": "50e0f14d536f19acb3382bf03100c260e6f02946d5ac4ca06b40e1d6bd4d9169"
+    },
+    "replay-verification.json": {
+      "bytes": 3791,
+      "sha256": "9638a80722180f0037b7c9137395fd50b0587bbbf6bde9c2cdf6fd015b7faefc"
+    },
+    "history/initial-run.json": {
+      "bytes": 1273,
+      "sha256": "9c8ca3aee209821a31a094ee7b0f5cb07175267e702b48537e876b3861d6113b"
+    },
+    "history/replay.initial-harness.json": {
+      "bytes": 690,
+      "sha256": "ffd2b2a9a10aeed59e0650d73108057c40c65de396a0a185526843e06a83e9a0"
+    }
+  },
+  "initial_run": {
+    "command": [
+      "env",
+      "PYTHONDONTWRITEBYTECODE=1",
+      "PYTHONHASHSEED=0",
+      "LC_ALL=C",
+      "TZ=UTC",
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/backend/db-bootstrap",
+      "-p",
+      "test_compare_catalog.py",
+      "-v"
+    ],
+    "cwd": "/workspace/ua-catalog-comparator-01-dac6iwgs/repo",
+    "exit": 0,
+    "tests": 498,
+    "result": "PASS",
+    "log": {
+      "bytes": 49845,
+      "sha256": "2929c7df8bb2a8997b4d97945a2d45e8548f9f99cc729201e0d87efba16d3be0"
+    },
+    "source_binding": [
+      {
+        "path": "tests/backend/db-bootstrap/catalog-baseline.pg17.11.json",
+        "bytes": 543099,
+        "sha256": "7471e498e5bbb2d0668c2a0d6a47aa2fae6eb6e0c19a04a53807d6ab0f4ea106"
+      },
+      {
+        "path": "tests/backend/db-bootstrap/compare_catalog.py",
+        "bytes": 28007,
+        "sha256": "dd9657ca71d6f660046edd6fabbc1ca9bb129223c53894f0e4db153c0c1a3d35"
+      },
+      {
+        "path": "tests/backend/db-bootstrap/test_compare_catalog.py",
+        "bytes": 24610,
+        "sha256": "22fc388b4a8d69912a14d3f497ce09b12f2db66141f9c3736fbe246fac8bed9c"
+      }
+    ],
+    "binding_observation": "Fingerprints recorded after the completed initial run; no source edit occurred while it ran. Final run will have explicit before/after fingerprints."
+  },
+  "candidate_bytes_changed_after_final_tests": false,
+  "only_new_offline_suite_run": true,
+  "no_SQL_DB_controller_provider_cleanup_or_real_fixture_run": true,
+  "historical_result": {
+    "status": "NOT_READY",
+    "classification": "HISTORICAL_REPLAY",
+    "comparison_performed": false,
+    "total_mismatch_count": null,
+    "runtime_readiness": false,
+    "reason": "DEFAULT_ACL_ROLE_NAME_WITNESS_MISSING"
+  },
+  "independent_candidate_review": "PENDING",
+  "SQL_B_readiness": false,
+  "primary_apply_activation": "HOLD_G01_G11_OPEN"
+}
