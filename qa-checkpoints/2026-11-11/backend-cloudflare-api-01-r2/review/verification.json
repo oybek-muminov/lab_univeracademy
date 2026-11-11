@@ -1,0 +1,275 @@
+{
+  "format": "UA-CLOUDFLARE-API-R2-NARROW-CORRECTION-v1",
+  "status": "LOCAL_AUTHOR_PASS_ONE_EXPLICIT_JOSE_SKIP_INDEPENDENT_R2_REVIEW_PENDING",
+  "findings": [
+    "P2-CF-01",
+    "P2-CF-02"
+  ],
+  "published_preimage": {
+    "commit": "5689c7f2e7c9a2010177422130527f446a10d095",
+    "tree": "4bd182ba23dfe53e99da02d28a0f8dd001632bdb",
+    "prefix": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01/",
+    "files": 10,
+    "bytes": 103427,
+    "manifest": {
+      "bytes": 3560,
+      "sha256": "5bf098a0474428f2406d6851c57b62f65bec62328261e8fdcecee8658ad58ce6"
+    }
+  },
+  "application_base": {
+    "source_base": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "accepted_overlay_through": "5689c7f2e7c9a2010177422130527f446a10d095",
+    "file_count": 288,
+    "bytes": 3644002,
+    "inventory_recipe": "SHA256 UTF8 compact sorted-key JSON of sorted path/bytes/sha256 rows; no LF",
+    "inventory_sha256": "02edf04ae0b52025fa323271b4d9db6372f23dcb20d305bb4b027df71f02344b",
+    "reconstruction": "Accepted application-only source through77e04d13 plus original five Cloudflare additions at5689c7f2; never use the laboratory tree/reports as application source"
+  },
+  "exact_delta": [
+    {
+      "path": "runtime/cloudflare-api.mjs",
+      "bytes": 4957,
+      "sha256": "1cc68417cf8467aca34f5e0d3a3709fe2ddd5310a009c51a1db380f02de8e96a",
+      "preimage": {
+        "bytes": 2937,
+        "sha256": "d8f3fd25adff52d3170fd9bb0a91b7a64e87e05e9a2bb57dba37f180adadf64f"
+      }
+    },
+    {
+      "path": "tests/cloudflare/api-postgres.test.mjs",
+      "bytes": 26817,
+      "sha256": "11f7b05be24daca3e395db2e6ec730f1c246d6e8c947cc4698e8175624be15f5",
+      "preimage": {
+        "bytes": 20769,
+        "sha256": "84b69064540c44e924567e15989599398ea3b0920041d6bc619048748111dceb"
+      }
+    }
+  ],
+  "preservation": {
+    "unchanged_originals": 286,
+    "application_files": 288,
+    "added_or_removed_application_files": 0,
+    "published_10_files": "UNCHANGED",
+    "shared_Web_transport_and_CORS": "UNCHANGED",
+    "Cloudflare_PostgreSQL_and_Clerk_modules": "UNCHANGED",
+    "Node_TLS_Mini_bot_UI_contracts_guard_code_manifests": "UNCHANGED",
+    "SQL_and_run_packet": "Corrected8be232e inactive SQL dependency exact; sealed036beb26 unchanged/not executed; no SQL file in this overlay"
+  },
+  "implementation": {
+    "P2-CF-01": "The API wrapper owns a lazy zero-read-ahead bridge reader for the original request body. Abort or shared-consumer cancellation invokes source cancel once and releases that reader; EOF releases without cancellation. Both abort and final cleanup use the same idempotent close. A rejecting/pending underlying cancel hook cannot retain the lock or expose a successful ACK. The existing shared transport still enforces all raw-byte and64KiB/content-length checks. No SQL retry/disposal path changed.",
+    "P2-CF-02": "Both API-construction and owned-client disposal fallback503 paths now apply existing public HTTPS origin validation and withPublicCors. Allowed origins retain ACAO, Vary, expose-header/cache behavior; foreign origins and spoofed public request URLs remain rejected, and invalid public settings cannot authorize an origin. No caller/private/error value is echoed."
+  },
+  "author_runtime": "Node v24.22.1; no new dependencies installed",
+  "red_replay": {
+    "command": [
+      "node",
+      "--test",
+      "--test-name-pattern=P2-CF-",
+      "tests/cloudflare/api-postgres.test.mjs"
+    ],
+    "cwd": "/workspace/ua-cloudflare-api-r2-hypy0wtq/red-replay/repo",
+    "utc_start": "2026-11-11T20:49:35.661124+00:00",
+    "utc_end": "2026-11-11T20:49:35.993946+00:00",
+    "exit": 1,
+    "log": "red-before.log",
+    "bytes": 2651,
+    "sha256": "138acf31115c5023b476eab8fd46eb40702cffaa3d1edfe536afb95e87c6e898",
+    "test": {
+      "bytes": 26817,
+      "sha256": "11f7b05be24daca3e395db2e6ec730f1c246d6e8c947cc4698e8175624be15f5"
+    },
+    "api_preimage": {
+      "bytes": 2937,
+      "sha256": "d8f3fd25adff52d3170fd9bb0a91b7a64e87e05e9a2bb57dba37f180adadf64f"
+    },
+    "scope": "Three exact final targeted tests on frozen published API; separate local red copy; no SQL/DB/provider execution",
+    "tests": 3,
+    "pass": 0,
+    "fail": 3,
+    "note": "Exact final targeted test file replayed against frozen original API in a separate owner-local copy. This final same-test-source replay happened after green testing; timestamps are actual, not represented as chronological pre-implementation execution."
+  },
+  "initial_red_before_implementation": {
+    "command": [
+      "node",
+      "--test",
+      "--test-name-pattern=P2-CF-",
+      "tests/cloudflare/api-postgres.test.mjs"
+    ],
+    "cwd": "/workspace/ua-cloudflare-api-r2-hypy0wtq/repo",
+    "utc_start": "2026-11-11T20:45:15.484908+00:00",
+    "utc_end": "2026-11-11T20:45:15.750824+00:00",
+    "exit": 1,
+    "log": "red-before.log",
+    "bytes": 2618,
+    "sha256": "3e0aa6583f5a72dc6fd0aa06410af8a432a703e8d23b2070def40f8e70ae59e2",
+    "test_sha256": "e41ff0bd88752f6bfad3ce36aa22c6e09908676c9cf63ab300d400056c0a2c99",
+    "source": "Exact published API; pending-read control explicitly verifies original body locked before abort",
+    "tests": 3,
+    "pass": 0,
+    "fail": 3,
+    "log_storage": "Original log retained locally; final same-test-source red replay is the minimal published red-before.log"
+  },
+  "early_targeted_green": {
+    "command": [
+      "node",
+      "--test",
+      "--test-name-pattern=P2-CF-",
+      "tests/cloudflare/api-postgres.test.mjs"
+    ],
+    "cwd": "/workspace/ua-cloudflare-api-r2-hypy0wtq/repo",
+    "utc_start": "2026-11-11T20:46:01.517910+00:00",
+    "utc_end": "2026-11-11T20:46:01.893998+00:00",
+    "exit": 0,
+    "log": "targeted.green.log",
+    "bytes": 423,
+    "sha256": "c733be7a4246e266d7920cf08fe963d9a9ad7d8b940efa99e78102d142bc1503",
+    "tests": 3,
+    "pass": 3,
+    "fail": 0,
+    "log_storage": "Retained locally; complete final focused output below covers all three target cases"
+  },
+  "final_tests": [
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/cloudflare/api-postgres.test.mjs",
+        "tests/cloudflare/clerk-worker-bindings.test.mjs"
+      ],
+      "cwd": "/workspace/ua-cloudflare-api-r2-hypy0wtq/repo",
+      "utc_start": "2026-11-11T20:47:54.524096+00:00",
+      "utc_end": "2026-11-11T20:47:55.142577+00:00",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "focused.final.log",
+      "bytes": 9508,
+      "sha256": "fe788cd71e7e7672edf1db08b675f1a8d0b43cad3434a14d9d543140fde798cc"
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/backend/student-prepared/flow.test.mjs",
+        "tests/backend/student-prepared/clerk.test.mjs",
+        "tests/backend/student-prepared/routing-receipts.test.mjs",
+        "tests/backend/student-prepared/trusted-server-context.test.mjs",
+        "tests/clerk-auth/scoped-store.test.mjs",
+        "tests/vercel-node/pool-port.test.mjs",
+        "tests/vercel-node/production-options.test.mjs",
+        "tests/vercel-node/postgres-pool-factory.test.mjs"
+      ],
+      "cwd": "/workspace/ua-cloudflare-api-r2-hypy0wtq/repo",
+      "utc_start": "2026-11-11T20:47:55.142922+00:00",
+      "utc_end": "2026-11-11T20:47:56.267326+00:00",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "regressions.final.log",
+      "bytes": 25158,
+      "sha256": "078b147e8b30e037cdbc2e70830d08e45d84e3eab58b6b8a9f965083aeb96f4f"
+    }
+  ],
+  "final_counts": {
+    "focused_tests": 99,
+    "focused_pass": 98,
+    "focused_fail": 0,
+    "focused_skipped": 1,
+    "skip": "Real JOSE integration NOT_RUN here because jose6.2.15 is absent",
+    "regressions": 325,
+    "regression_pass": 325,
+    "regression_fail": 0,
+    "total_pass": 423,
+    "changed_source_syntax": 2
+  },
+  "focused_controls": [
+    "Pending body read demonstrably locked before abort ->503/cancel1/unlocked/client-construction0",
+    "Underlying source cancel rejection or never-settling hook still releases lock; repeated abort does not repeat cancel",
+    "Missing private binding and rejecting client end ->sanitized503 with valid-origin CORS; owned client end exactly once",
+    "Both fallback modes reject foreign origins and spoofed public URL; no-Origin requests receive no ACAO; valid preflight204 retained",
+    "Denied preflight method matches unchanged shared-transport control:403 retaining the already allowlisted origin; this does not allow its method",
+    "CORS rejection never acquires or reads the source body",
+    "All previous body-limit, source-error400, full student flow, current authorization, earliest-expiry, same-answer UPDATE, stale409, request/Clerk cancellation, disposal and commit_unknown503 tests retained"
+  ],
+  "author_control_adjustment": "Two new negative controls initially assumed denied preflight methods should remove valid-origin ACAO. The unchanged shared transport showed its established403 response retains the valid origin header. Those controls were corrected to compare against that exact existing control; none of the three confirmed P2 acceptance expectations were weakened.",
+  "syntax": [
+    {
+      "command": [
+        "node",
+        "--check",
+        "runtime/cloudflare-api.mjs"
+      ],
+      "utc": "2026-11-11T20:49:35.994567+00:00",
+      "exit": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "node",
+        "--check",
+        "tests/cloudflare/api-postgres.test.mjs"
+      ],
+      "utc": "2026-11-11T20:49:36.022860+00:00",
+      "exit": 0,
+      "output": ""
+    }
+  ],
+  "guard": {
+    "status": "FAIL_PREEXISTING_STALE_PINS_NOT_WEAKENED",
+    "record": {
+      "command": [
+        "node",
+        "apps/mini-app/tests/verify-backend-targets.mjs"
+      ],
+      "cwd": "/workspace/ua-cloudflare-api-r2-hypy0wtq/repo",
+      "utc_start": "2026-11-11T20:47:56.268901+00:00",
+      "utc_end": "2026-11-11T20:47:56.325185+00:00",
+      "exit": 1,
+      "expected_exit": 1,
+      "log": "guard.expected-stale.log",
+      "bytes": 688,
+      "sha256": "874f054d5ee90a7a063120bc6505be7cbbdee190fbab54a07d1a9934456db80f"
+    },
+    "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts\n\n23067 !== 22634\n\n    at file:///workspace/ua-cloudflare-api-r2-hypy0wtq/repo/apps/mini-app/tests/verify-backend-targets.mjs:525:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 23067,\n  expected: 22634,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n",
+    "storage": "Exact log bytes embedded as UTF8 output here rather than a redundant separate publication file",
+    "first_diagnostic": "BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts,23067 vs22634"
+  },
+  "local_semantic_and_JOSE": {
+    "TypeScript5_9_3": "NOT_RUN locally; compiler absent and no TS edits",
+    "JOSE6_2_15": "Real integration NOT_RUN locally; no verifier substitute",
+    "original_independent_QA_relay": "QA reported original5689c7f2 assembly415PASS/1SKIP,5syntaxPASS,TS5.9.3PASS,actualJOSEofflinePASS and5/8independent probesPASS with the two P2s. This is original-candidate evidence, not independent r2 acceptance."
+  },
+  "reproduction": {
+    "setup": "Use your own exact accepted288-file assembly through5689c7f2, then overlay these two revised application files preserving paths. All other files stay pinned. No other agent workspace is a dependency.",
+    "red": "In a separate copy use the new final api-postgres.test.mjs with original API2937 bytes/SHA256d8f3fd25adff52d3170fd9bb0a91b7a64e87e05e9a2bb57dba37f180adadf64f. Run node --test --test-name-pattern=P2-CF- tests/cloudflare/api-postgres.test.mjs; expect3FAIL/exit1. Never replace the frozen original source.",
+    "green": "From the corrected application root run exact recorded focused/regression argv. Focused tests need Node24 built-ins only; exact JOSE, when already available, enables the real integration branch instead of the missing-JOSE branch.",
+    "unchanged_SQL_text_dependency": "Existing context regression reads sibling <work>/review/first-student-trusted-server.activation.review.sql with application at <work>/repo. Use already published8be232e exact60363-byte file/SHA256e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd. This is text data only, not compiled/executed and not duplicated here.",
+    "log_paths": "Actual author cwd/UTC/exit/output identities are retained; local cwd names are provenance only, not required resources"
+  },
+  "future_lab_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/cloudflare-api-01-r2-20261111",
+    "parent": "5689c7f2e7c9a2010177422130527f446a10d095",
+    "parent_tree": "4bd182ba23dfe53e99da02d28a0f8dd001632bdb",
+    "prefix": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01-r2/",
+    "read_only_check_utc": "2026-11-11 20:50:13 UTC",
+    "branch_and_prefix_absent": true,
+    "write": "NOT_AUTHORIZED_NOT_ATTEMPTED"
+  },
+  "not_run": [
+    "Actual Workers packaging/runtime",
+    "Real driver/TLS/Hyperdrive/DB/SQL",
+    "Live Clerk/provider/network tests",
+    "New semantic compiler or dependency installation",
+    "Main/remote branch/upload/PR/merge/deployment",
+    "Bot/Mini UI or SQL packet change"
+  ],
+  "privacy": "Only synthetic fixtures, fixed test placeholders and public provenance; no real credentials/student/personal data or environment values inspected/included",
+  "denied_pending_uncertain": {
+    "denied": [],
+    "uncertain": [],
+    "pending": [
+      "Independent exact r2 source/execution review",
+      "Separate exact laboratory publication approval",
+      "Existing real runtime/provider/SQL gates remain separate; this correction does not block QA A/run-packet approval"
+    ]
+  }
+}

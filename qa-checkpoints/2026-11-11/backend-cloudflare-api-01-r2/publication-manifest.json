@@ -1,0 +1,54 @@
+{
+  "format": "UA-LAB-PUBLICATION-MANIFEST-v1",
+  "status": "LOCAL_CLOUDFLARE_R2_AUTHOR_CORRECTION_NO_UPLOAD_AUTHORIZED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/cloudflare-api-01-r2-20261111",
+  "sole_parent": "5689c7f2e7c9a2010177422130527f446a10d095",
+  "parent_tree": "4bd182ba23dfe53e99da02d28a0f8dd001632bdb",
+  "prefix": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01-r2/",
+  "payload_files": 6,
+  "payload_bytes": 83147,
+  "payload_inventory_sha256": "664fa31b52a827004333d6f69f56ed21cf85cb8066f400fa5228087fa54f4a0c",
+  "inventory_recipe": "SHA256 UTF8 compact sorted-key JSON [{destination,bytes,sha256},...], sorted destination, no LF; excludes manifest",
+  "files": [
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01-r2/review/focused.final.log",
+      "bytes": 9508,
+      "sha256": "fe788cd71e7e7672edf1db08b675f1a8d0b43cad3434a14d9d543140fde798cc",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01-r2/review/red-before.log",
+      "bytes": 2651,
+      "sha256": "138acf31115c5023b476eab8fd46eb40702cffaa3d1edfe536afb95e87c6e898",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01-r2/review/regressions.final.log",
+      "bytes": 25158,
+      "sha256": "078b147e8b30e037cdbc2e70830d08e45d84e3eab58b6b8a9f965083aeb96f4f",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01-r2/review/verification.json",
+      "bytes": 14056,
+      "sha256": "d231157c20a77af6193e032b18de2f542225c72a708a925d787c6dc25a57f7be",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01-r2/runtime/cloudflare-api.mjs",
+      "bytes": 4957,
+      "sha256": "1cc68417cf8467aca34f5e0d3a3709fe2ddd5310a009c51a1db380f02de8e96a",
+      "mode": "100644"
+    },
+    {
+      "destination": "qa-checkpoints/2026-11-11/backend-cloudflare-api-01-r2/tests/cloudflare/api-postgres.test.mjs",
+      "bytes": 26817,
+      "sha256": "11f7b05be24daca3e395db2e6ec730f1c246d6e8c947cc4698e8175624be15f5",
+      "mode": "100644"
+    }
+  ],
+  "self_pin": "Select the externally reported manifest byte count and SHA256 independently",
+  "scope": "Two revised application files +verification +three original author logs; no duplicate patch/archive/base/SQL/dependencies",
+  "results": "423 author PASS;1 realJOSE SKIP; old guard remainsFAIL; no independent r2/runtime/SQL acceptance"
+}
