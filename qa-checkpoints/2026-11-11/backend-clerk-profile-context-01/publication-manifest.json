@@ -1,0 +1,77 @@
+{
+  "format": "UA_PROFILE_CONTEXT_CREATOR_ADMIN_PUBLICATION_V1",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/clerk-profile-context-01-20261111",
+  "parent": "ff75be9908bf5b29f64c0c067b631b8161d688c7",
+  "parent_tree": "513b336a1bf8de3b71f0618d81b72bac1f56eafc",
+  "prefix": "qa-checkpoints/2026-11-11/backend-clerk-profile-context-01/",
+  "approval_required": true,
+  "status": "AUTHOR_OFFLINE_CHECKED_PENDING_INDEPENDENT_REVIEW",
+  "files": [
+    {
+      "path": "review/README.md",
+      "bytes": 5700,
+      "sha256": "096a9db45223cd0aca39ecdd66eed242219fc27e07f69330788269d6621637a6",
+      "mode": "100644"
+    },
+    {
+      "path": "review/activation-creator-admin.diff",
+      "bytes": 2155,
+      "sha256": "37bc075ea80ae8297de8ee4c00f07cd261db6b0e2e01d8dd5840bc5a6d3c3705",
+      "mode": "100644"
+    },
+    {
+      "path": "review/author-checks.log",
+      "bytes": 41824,
+      "sha256": "98cee99e9789a915982b1438001edc69677e10e3522f1a47b2b3de2062f4d6e0",
+      "mode": "100644"
+    },
+    {
+      "path": "review/check_activation_derivative.py",
+      "bytes": 3648,
+      "sha256": "52cb2dce2e0cb09382cac4e1e4a670bfb2a78a98a6710e8608f396ae732d1739",
+      "mode": "100644"
+    },
+    {
+      "path": "review/first-student-trusted-server.activation.creator-admin.review.sql",
+      "bytes": 61385,
+      "sha256": "3c4ae9ddd436807329d9db298eda42ef9a34af715d74c8d3ded71c1602d4fae4",
+      "mode": "100644"
+    },
+    {
+      "path": "review/runtime-creator-membership.cases.json",
+      "bytes": 4469,
+      "sha256": "0921b6f2c65aeae842bf73cde64e55de75b504789ee973bc7cccbf06009ba827",
+      "mode": "100644"
+    },
+    {
+      "path": "review/verification.json",
+      "bytes": 6882,
+      "sha256": "b89963a2f5beeac20817bc601bc84e2e20afd994d55e617af26d6b0a755a1de1",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "bytes": 16559,
+      "sha256": "b1bf90035b45e5d9f0b42ce268a1aae759ea3b922db45cff03dd63c8baa3c2d1",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/backend/student-prepared/profile-context.test.mjs",
+      "bytes": 23611,
+      "sha256": "5c2141b15c40896bd2163f470624dab5af67bb956ebe2e8ab7765eb000e52b72",
+      "mode": "100644"
+    }
+  ],
+  "payload_bytes": 166233,
+  "inventory_encoding": "UTF8 compact sorted-key JSON path-sorted rows with bytes,mode,path,sha256;no LF",
+  "inventory_sha256": "814bede42bd29f80cc7ce534ef37ea0f7487e2a3c10bea25b291c722bf3c77b3",
+  "excluded": [
+    "evidence/",
+    "derive_activation.py",
+    "red/",
+    "all other app files",
+    "frozen SQL copies"
+  ],
+  "SQL_execution": "NOT_RUN"
+}

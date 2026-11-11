@@ -1,0 +1,163 @@
+{
+  "format": "UA_PROFILE_CONTEXT_CREATOR_ADMIN_CANDIDATE_V1",
+  "status": "AUTHOR_OFFLINE_CHECKED_PENDING_INDEPENDENT_REVIEW",
+  "recorded_utc": "2026-11-11T23:01:07.342415+00:00",
+  "application_base": {
+    "main": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "accepted_full_assembly_final_overlay": "9a5679712b838a9ede1136926770a7914c3203bf",
+    "files": 288,
+    "bytes": 3652070
+  },
+  "application_delta": {
+    "modified": [
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "bytes": 16559,
+        "sha256": "b1bf90035b45e5d9f0b42ce268a1aae759ea3b922db45cff03dd63c8baa3c2d1",
+        "preimage": {
+          "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+          "bytes": 12978,
+          "sha256": "a251fafaad42995e298a9a1c62bec4ee37e6889d9ea68aeac2faaffbbea5c8ef"
+        }
+      }
+    ],
+    "added": [
+      {
+        "path": "tests/backend/student-prepared/profile-context.test.mjs",
+        "bytes": 23611,
+        "sha256": "5c2141b15c40896bd2163f470624dab5af67bb956ebe2e8ab7765eb000e52b72"
+      }
+    ],
+    "unchanged_originals": 287,
+    "files": 289,
+    "bytes": 3679262
+  },
+  "author_tests": [
+    {
+      "argv": [
+        "node",
+        "--test",
+        "tests/backend/student-prepared/profile-context.test.mjs"
+      ],
+      "cwd": "/workspace/ua-clerk-profile-context-01-20261111/repo",
+      "start": "2026-11-11T22:59:21.982319+00:00",
+      "end": "2026-11-11T22:59:22.428633+00:00",
+      "exit": 0,
+      "expected_exit": 0,
+      "log": "profile.final.log",
+      "bytes": 2990,
+      "sha256": "7c514a4d579530d51b0499be4b97edf16f6653f583bf4104d342acf8b7d385a7"
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "tests/backend/student-prepared/flow.test.mjs",
+        "tests/backend/student-prepared/clerk.test.mjs",
+        "tests/backend/student-prepared/routing-receipts.test.mjs",
+        "tests/backend/student-prepared/trusted-server-context.test.mjs",
+        "tests/clerk-auth/scoped-store.test.mjs",
+        "tests/vercel-node/pool-port.test.mjs",
+        "tests/vercel-node/production-options.test.mjs",
+        "tests/vercel-node/postgres-pool-factory.test.mjs",
+        "tests/cloudflare/api-postgres.test.mjs",
+        "tests/cloudflare/clerk-worker-bindings.test.mjs"
+      ],
+      "cwd": "/workspace/ua-clerk-profile-context-01-20261111/repo",
+      "start": "2026-11-11T22:55:09.762941+00:00",
+      "end": "2026-11-11T22:55:11.344439+00:00",
+      "exit": 0,
+      "log": "regressions.final.log",
+      "bytes": 34547,
+      "sha256": "653ed75b2bf6b666463be71f9020bce5d30d75034dab573c872c9b3905fff371"
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-name-pattern=opaque profile saves|core callback stays auth",
+        "tests/backend/student-prepared/profile-context.test.mjs"
+      ],
+      "cwd": "/workspace/ua-clerk-profile-context-01-20261111/red",
+      "start": "2026-11-11T22:59:22.429032+00:00",
+      "end": "2026-11-11T22:59:22.681391+00:00",
+      "exit": 1,
+      "expected_exit": 1,
+      "log": "red-before.log",
+      "bytes": 2621,
+      "sha256": "abf79bc3713cb4749788a1aaff24ab9613ad1b99ad733ed76eab31256174d68f"
+    }
+  ],
+  "counts": {
+    "focused_pass": 36,
+    "regression_pass": 423,
+    "regression_skip": 1,
+    "red_control_failures_expected": 2,
+    "changed_file_syntax_pass": 2,
+    "activation_static_pass": 6,
+    "membership_SQL_cases_prepared_NOT_RUN": 11
+  },
+  "static_activation": {
+    "input_commit": "4924d64333a4348bfcfa2e632cb6a1d8ccaae6b3",
+    "input_bytes": 60365,
+    "input_sha256": "165711ecb98d46b0aea87253b172e9c535d53090626f6574d106ae34643be52d",
+    "command": [
+      "python",
+      "review/check_activation_derivative.py",
+      "--activation-input",
+      "/workspace/ua-trusted-server-context-sql-r3-9szc9wl7/review/first-student-trusted-server.activation.review.sql",
+      "-v"
+    ],
+    "exit": 0,
+    "checks": 6,
+    "scope": "Static source/shape preservation only.11 membership cases and all PostgreSQL execution NOT_RUN."
+  },
+  "guard": {
+    "status": "FAIL_PREEXISTING_STALE_PINS_NOT_WEAKENED",
+    "first": "clerk-auth-rows.ts23067 vs22634",
+    "record": {
+      "argv": [
+        "node",
+        "apps/mini-app/tests/verify-backend-targets.mjs"
+      ],
+      "exit": 1,
+      "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: BACKEND_TARGET_SIZE_MISMATCH: supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts\n\n23067 !== 22634\n\n    at file:///workspace/ua-clerk-profile-context-01-20261111/repo/apps/mini-app/tests/verify-backend-targets.mjs:525:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 23067,\n  expected: 22634,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+    }
+  },
+  "semantic": "TypeScript5.9.3 NOT_RUN locally; absent, no install",
+  "JOSE": "Real6.2.15 integration NOT_RUN locally; explicit skip only, no substitute",
+  "runtime": "Node24.22.1/Python3.12.14; existing tools only",
+  "safety_boundaries": [
+    "PATCH /me only; core callback stays auth before setters",
+    "Persisted exact proof/family/binding from locked pre-mutation snapshot",
+    "Current person/identity/fence/provider checks; earliest lease and synchronous final commit guard",
+    "No identity/roles/qadam/group/non-profile changes",
+    "Registration/relogin remains exchange; GET/refresh/logout original path controls PASS",
+    "No new contract/config/Worker/pool/dependency/SQL activation change"
+  ],
+  "frozen_publication": {
+    "commit": "ff75be9908bf5b29f64c0c067b631b8161d688c7",
+    "files": 7,
+    "bytes": 80918,
+    "manifest_sha256": "3f785ec95cd58073593399817110cf14ce77ff77f6fc195da27872bcd32e046b",
+    "preserved": true
+  },
+  "main_promotion_inventory_preserved": true,
+  "not_run": [
+    "SQL compilation/evaluation/installation",
+    "Non-owner real RLS/HTTP/DB/TLS tests",
+    "Live Clerk/Worker/Hyperdrive",
+    "Semantic compiler",
+    "New source publication/deploy/primary or provider action"
+  ],
+  "independent_acceptance": "PENDING; no author test is independent acceptance",
+  "future_lab_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/clerk-profile-context-01-20261111",
+    "parent": "ff75be9908bf5b29f64c0c067b631b8161d688c7",
+    "parent_tree": "513b336a1bf8de3b71f0618d81b72bac1f56eafc",
+    "prefix": "qa-checkpoints/2026-11-11/backend-clerk-profile-context-01/",
+    "approval_required": true
+  },
+  "privacy": "Only source and synthetic test fixtures. No credential/person/student data or other worker workspace."
+}

@@ -1,0 +1,197 @@
+{
+  "format": "SYNTHETIC_CATALOG_ACCEPTANCE_CASES_NOT_EXECUTED",
+  "fixture_operator_oid": 50001,
+  "fixture_runtime_oid": 50002,
+  "required_bootstrap_oid": 10,
+  "cases": [
+    {
+      "name": "exact_creator_admin_only",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        }
+      ],
+      "accept": true
+    },
+    {
+      "name": "missing_creator_row",
+      "rows": [],
+      "accept": false
+    },
+    {
+      "name": "wrong_member",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50003,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        }
+      ],
+      "accept": false
+    },
+    {
+      "name": "wrong_grantor",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 50003,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        }
+      ],
+      "accept": false
+    },
+    {
+      "name": "admin_false",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 10,
+          "admin_option": false,
+          "inherit_option": false,
+          "set_option": false
+        }
+      ],
+      "accept": false
+    },
+    {
+      "name": "inherit_true",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": true,
+          "set_option": false
+        }
+      ],
+      "accept": false
+    },
+    {
+      "name": "set_true",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": true
+        }
+      ],
+      "accept": false
+    },
+    {
+      "name": "extra_runtime_role_member",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        },
+        {
+          "roleid": 50002,
+          "member": 50003,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        }
+      ],
+      "accept": false
+    },
+    {
+      "name": "runtime_as_member_only",
+      "rows": [
+        {
+          "roleid": 50003,
+          "member": 50002,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        }
+      ],
+      "accept": false
+    },
+    {
+      "name": "runtime_as_member_plus_creator",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        },
+        {
+          "roleid": 50003,
+          "member": 50002,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        }
+      ],
+      "accept": false
+    },
+    {
+      "name": "duplicate_metadata_rows",
+      "rows": [
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        },
+        {
+          "roleid": 50002,
+          "member": 50001,
+          "grantor": 10,
+          "admin_option": true,
+          "inherit_option": false,
+          "set_option": false
+        }
+      ],
+      "accept": false
+    }
+  ],
+  "catalog_witness_negatives": [
+    "operator_name_not_postgres",
+    "operator_oid_not_current_user",
+    "current_user_not_session_user",
+    "operator_superuser",
+    "operator_lacks_createrole",
+    "operator_lacks_bypassrls",
+    "bootstrap_oid_not_10",
+    "bootstrap_name_not_supabase_admin",
+    "bootstrap_not_superuser",
+    "runtime_missing",
+    "runtime_LOGIN",
+    "runtime_BYPASSRLS",
+    "runtime_INHERIT",
+    "runtime_SUPERUSER",
+    "runtime_CREATEROLE",
+    "runtime_CREATEDB",
+    "runtime_REPLICATION"
+  ],
+  "status": "Expected decisions only; actual PostgreSQL evaluation NOT_RUN;50001/50002/50003 are explicit synthetic fixture IDs, not primary OID mappings."
+}

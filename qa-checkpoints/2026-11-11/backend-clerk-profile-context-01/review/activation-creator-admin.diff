@@ -1,0 +1,29 @@
+--- activation-r3.review.sql
++++ review/first-student-trusted-server.activation.creator-admin.review.sql
+@@ -35,9 +35,24 @@
+ END $transfer_operator$;
+ -- Operator must have reviewed authority to create roles/functions/policies and assign
+ -- ownership; no existing role/object is adopted. Runtime stays nonowner/NOLOGIN.
+-DO $roles$ BEGIN
++DO $roles$
++DECLARE operator_oid oid; bootstrap_oid oid; runtime_oid oid;
++BEGIN
++  -- Separate derivative of activation r3: only the reviewed implicit creator
++  -- ADMIN-only membership is allowed. Both identities must match catalog
++  -- witnesses; these values are not inferred from object names or client flags.
++  SELECT r.oid INTO STRICT operator_oid FROM pg_catalog.pg_roles r
++    WHERE r.rolname='postgres' AND r.oid=current_user::regrole
++      AND current_user=session_user AND NOT r.rolsuper AND r.rolcreaterole AND r.rolbypassrls;
++  SELECT r.oid INTO STRICT bootstrap_oid FROM pg_catalog.pg_roles r
++    WHERE r.oid=10 AND r.rolname='supabase_admin' AND r.rolsuper;
++  SELECT r.oid INTO STRICT runtime_oid FROM pg_catalog.pg_roles r WHERE r.rolname='ua_runtime';
+   IF NOT EXISTS(SELECT 1 FROM pg_catalog.pg_roles WHERE rolname='ua_runtime' AND NOT rolsuper AND NOT rolbypassrls AND NOT rolcanlogin AND NOT rolinherit AND NOT rolcreaterole AND NOT rolcreatedb AND NOT rolreplication)
+-    OR EXISTS(SELECT 1 FROM pg_catalog.pg_auth_members m JOIN pg_catalog.pg_roles r ON r.oid=m.member OR r.oid=m.roleid WHERE r.rolname='ua_runtime') THEN
++    OR (SELECT count(*) FROM pg_catalog.pg_auth_members m WHERE m.roleid=runtime_oid OR m.member=runtime_oid)<>1
++    OR EXISTS(SELECT 1 FROM pg_catalog.pg_auth_members m WHERE m.member=runtime_oid)
++    OR NOT EXISTS(SELECT 1 FROM pg_catalog.pg_auth_members m
++      WHERE m.roleid=runtime_oid AND m.member=operator_oid AND m.grantor=bootstrap_oid
++        AND m.admin_option AND NOT m.inherit_option AND NOT m.set_option) THEN
+     RAISE EXCEPTION 'UNEXPECTED_RUNTIME_ROLE_OR_MEMBERSHIP';
+   END IF;
+   IF (SELECT count(*) FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='ua_private' AND c.relkind='r')<>30
