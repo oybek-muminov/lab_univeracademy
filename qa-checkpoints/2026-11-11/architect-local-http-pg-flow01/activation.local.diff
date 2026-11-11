@@ -1,0 +1,19 @@
+--- a/corrected-activation.review.sql
++++ b/activation.local.sql
+@@ -7,9 +7,7 @@
+ -- No credentials, LOGIN membership, signature extension, service_role or BYPASSRLS.
+ -- A future packet needs exact SQL/source/policy review, operator authority, current
+ -- preflight, compilation and positive/negative RLS tests plus separate run approval.
+-DO $review_guard$ BEGIN
+-  RAISE EXCEPTION 'REVIEW_ONLY_FIRST_STUDENT_TRUSTED_SERVER_NOT_AUTHORIZED';
+-END $review_guard$;
++-- DISPOSABLE LOCAL RUN ONLY: reviewed guard removal.
+ BEGIN;
+ SET LOCAL search_path = pg_catalog, ua_private;
+ SET LOCAL lock_timeout = '5s';
+@@ -318,4 +316,4 @@
+ -- triggers stay enabled. Unlisted tables/commands keep default deny.
+ -- This artifact is inactive even if its guard were removed. Do not substitute it
+ -- for an independently reviewed, approved executable packet.
+-ROLLBACK;
++COMMIT;

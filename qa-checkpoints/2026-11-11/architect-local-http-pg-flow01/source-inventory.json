@@ -1,0 +1,1713 @@
+{
+  "format": "EXACT_APPLICATION_ASSEMBLY_283_V1",
+  "main_base": "de2adf023428a374f075faa421ece9e1deafaf36",
+  "ordered_lab_overlays": [
+    "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+    "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+    "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+    "ea0c3cd9c41a465bd5e5205b91f0141710a435fa",
+    "e0ad56dfda167a34eb4e4dd2e74b2d700808b49e",
+    "d33088c5403fe78fd342f16d8dc05ba30a4b5d64",
+    "77e04d13d38054135d0520a04a01c7ff9012bde8"
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 129,
+      "sha256": "097feb641242962c9e67425524efc1194e67aa5f435077d0afacfb5fa8b14a4d",
+      "mode": "0o644"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 2082,
+      "sha256": "5738424ad379ea2c275e99382ba30028e37c43361f9a9f957bf99cd01863d15a",
+      "mode": "0o644"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1429,
+      "sha256": "777c89264ee96d4c905e45dd07c42bbfa5f4ad63e6250c45d8aa7154de3f40e9",
+      "mode": "0o644"
+    },
+    {
+      "path": "api/index.mjs",
+      "bytes": 777,
+      "sha256": "7b597deacd99170bcae296871da9d535acbb832272419a79ef9c1f60a60b6728",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/.gitignore",
+      "bytes": 42,
+      "sha256": "05585fc7c0929a92b1a6a369dec8a6a22401a3caed0b8e495163c265fdf08792",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/README.md",
+      "bytes": 656,
+      "sha256": "b38c732474c07878b245abbc4eef3a9ae1e71201db2cb6d9e20b4c3c75e4b03a",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/THIRD_PARTY_LICENSE_SHADCN.md",
+      "bytes": 1063,
+      "sha256": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/components.json",
+      "bytes": 319,
+      "sha256": "c27b0de0000b43c4c7e63c374a50e573de75c1be5f3e36c0d694886fda392db0",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/index.html",
+      "bytes": 779,
+      "sha256": "0e372b56df4f218c1fb97df3eedbd2e117a484dbf0631e3a439ba10c16c08b8b",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/package-lock.json",
+      "bytes": 106576,
+      "sha256": "d4837e59e801b3e2d48ae3cdc3f05d6fa3cbd35c7d66ed83b6dae568fc0984be",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/package.json",
+      "bytes": 1026,
+      "sha256": "4be01e7b4613f5195f8f70205002fc8cf00ed95bee9bb05301b9721fea799344",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/public/brand/favicon-512.png",
+      "bytes": 107372,
+      "sha256": "913b648ffda7407ec7946d1902cd52358368dad8dbc65d537289991ef081d03d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/public/brand/mobile-learning.svg",
+      "bytes": 1402,
+      "sha256": "18c6df36e5ad7b06ed6eca19827b6f58a5a6b3d21e36398daea0bd3dc0782dbc",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/public/brand/qadam-staircase-book.png",
+      "bytes": 277561,
+      "sha256": "723c69e503d2e239311db88cfcca656f7c2f22b37f7b32fe04828fe6d09f0e25",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/public/brand/subjects-atlas.svg",
+      "bytes": 2852,
+      "sha256": "ab8758d84a4af38c80f198db45af84b33ecfe71d62d8332aa97f154c472b91df",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/public/brand/subjects-spectrum.svg",
+      "bytes": 1771,
+      "sha256": "dcb2f8fffbb0ccf81cb1a65838323b481f11d2d97d425ac57244822bc3a0179c",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/MobileNavigation.tsx",
+      "bytes": 3776,
+      "sha256": "19ddd5e5b7ddb11e307b80acd07c39f018a102e478e93f18a6301796a7c11d6d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/MobileStairs.tsx",
+      "bytes": 1154,
+      "sha256": "dc4683a486635afec731d810002bf56030f3c88840d8233ddbb19c9c2580cd74",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/Road.tsx",
+      "bytes": 4584,
+      "sha256": "dd9c64f458047745f4640ebc379b68bc6a833d145c9951bf61da1dbe902a42ee",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/SubjectArt.tsx",
+      "bytes": 2862,
+      "sha256": "90c1d9134d66e70b72e3e8cf7cd914eafe25cc58766775ee0e053b4fca981bef",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/Subjects.tsx",
+      "bytes": 8303,
+      "sha256": "ad1bebfc6a020cfff31e7c901df9be12148ab2027bbf38b3aaea94ef3c6645e2",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/components/ui/accordion.tsx",
+      "bytes": 2015,
+      "sha256": "00dd6eef660f08ce85154106fa0fa4d943ed699c5ca7b06bb08732978bcebb49",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/components/ui/badge.tsx",
+      "bytes": 1140,
+      "sha256": "dab689d836ad3292b41e7f4986b4e68e5d45c6903e4aeaae8972a82d4aebec29",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/components/ui/button.tsx",
+      "bytes": 1902,
+      "sha256": "c2b999a96781e6c932632bd089095368e973bf5602e1b1a62156b7d2b43f1e84",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/components/ui/card.tsx",
+      "bytes": 1828,
+      "sha256": "525c4bb2c051987be64df0e92e1d90174912b219bf541e24ffbc4a3406de49e8",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/components/ui/dialog.tsx",
+      "bytes": 3850,
+      "sha256": "d0e94d5bb26085b2707174fe9452ff6a566599466025c8e2318a3ea7ab00c99f",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/components/ui/sheet.tsx",
+      "bytes": 4281,
+      "sha256": "389aea04d3a2d84db4644bab9b5bfce3e12c2dc19e7a2024f6fd40a5bfcfd1f6",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/index.css",
+      "bytes": 41952,
+      "sha256": "f57dfe8aa7dfb801b14251b1abea490d9227e370104441a4036b8d1909ec660d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/lib/utils.ts",
+      "bytes": 166,
+      "sha256": "0c97f5ec0478867d5369a4369f811e1b779c7f2548f671ef252f1503a6392d9d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/main.tsx",
+      "bytes": 9419,
+      "sha256": "9df237b9f615fb7a2338b61bc643769e977dc34a367232ce83c6d1bad4b93d30",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/src/useStackedSections.ts",
+      "bytes": 6092,
+      "sha256": "ef328d83d56bed90030b3c96fb8b83fbe3c35b69d1bb4d1fc1148b0901b50b7e",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/content.test.mjs",
+      "bytes": 6881,
+      "sha256": "2dc59a2874a48491f65b1de9d945eff61efbd9710435a87179372b273defdf67",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/desktop-dialog-map.test.mjs",
+      "bytes": 768,
+      "sha256": "f13b301376d7000fda24927ce73c1f0eb3345ed8041bea55697a3d22f193e38e",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/desktop-height.test.mjs",
+      "bytes": 1383,
+      "sha256": "e8f7f8089bef571eeaefa9b02fb703e58ee8c6b4a4b5399af8f0964a0c99153d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/editorial-dialog.test.mjs",
+      "bytes": 1005,
+      "sha256": "f37f423b2a8f9296fcde11b6f621521576042a2750d56fbf978debb9a467e7ae",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/mobile-reference.test.mjs",
+      "bytes": 5889,
+      "sha256": "e00ce873b6ce2689fc3062e84418e433ca8879cff17bab39a6243252b77fa7f2",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/mobile-sheet.test.mjs",
+      "bytes": 650,
+      "sha256": "8a4fbcd246828b3eddcac540473bf7d04eb5f38a9c9b8ac71f3f9ab32fe5ec65",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/mobile.test.mjs",
+      "bytes": 2500,
+      "sha256": "2de5a03b72adc91412e996c6f022b4184a5d980cc95977ee66f9b853668b0be9",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/scope.test.mjs",
+      "bytes": 1829,
+      "sha256": "a5790074988220ead3be3c338c78a5a5b0996d700d5381df767e6d1a1bc529df",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/subject-stage-icons.test.mjs",
+      "bytes": 647,
+      "sha256": "a672d12c14a307f4215f3726e5746cc725124f30fb78366784c71555fcb9abb6",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tests/subjects.test.mjs",
+      "bytes": 2752,
+      "sha256": "aaec669a326146f4515214d036e359895196725a203539dc9738aeb9416a6081",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/tsconfig.json",
+      "bytes": 409,
+      "sha256": "83eb3c5e867167759b622873e2a79de005caf0856e219df32a1cc24ffd456759",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/landing/vite.config.ts",
+      "bytes": 345,
+      "sha256": "db653fe6635ab0eedcee40573ef619af40ded929e87bd550b336afb6bef608e6",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/.gitignore",
+      "bytes": 70,
+      "sha256": "64454e0e0058cdbcf162740323917d39031f616131fbaa1568a4f9026ba22d71",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/README.md",
+      "bytes": 675,
+      "sha256": "12a84c56559d54a89b317c7521af35ef3975e807d561c4fcef2db8ef37218612",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/index.html",
+      "bytes": 443,
+      "sha256": "ce7d1edfc92a76a921a409160204f56db60105b2a15b8f6441477b7d1563147d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/package-lock.json",
+      "bytes": 42432,
+      "sha256": "e0d11ceeccc2325066fa02d61e7b6ecffde79f7e675b0080facc4675f87bf059",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/package.json",
+      "bytes": 2116,
+      "sha256": "a3a1094919d8d730651a66011c58923856d04c6f7eb84dd99f309b3e6f83ebe5",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/production.env.example",
+      "bytes": 820,
+      "sha256": "6c8467c1502c1fe0a77d3a43e1af4adca728959c326ae2f0b319ab4c9d11ad07",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/auth-prototype-env.d.ts",
+      "bytes": 122,
+      "sha256": "33caa9d1817b64bb5094302b3c3dd2e396a83147059c9a454220196ad98322ea",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/clerk-app-session.ts",
+      "bytes": 2315,
+      "sha256": "a1d00af08b738a7d18ed6040a6ebcb408534ac4e521e5381b5768806d304d59d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/clerk-prebuilt-entry.tsx",
+      "bytes": 3789,
+      "sha256": "be3c0dc5f7f28217432827c925703f563661d2749ffb50a6092eb51e883832fc",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/clerk-prebuilt-session.ts",
+      "bytes": 1513,
+      "sha256": "6cf3a8809c2db65f9a93e3f57a885f56b872aa64505c268842fd2529eaa4f21d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/clerk-review-entry.ts",
+      "bytes": 1020,
+      "sha256": "ee6cf2fb20c49203bfe303532829be7be23c0383c92b1c89e9c00f572a41a730",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/clerk-sdk-adapter.ts",
+      "bytes": 7438,
+      "sha256": "b6cc5384ed70df445ba27f1a76b39405e6a6c16617bd6f967ace5ddd95c60684",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/common-backup-entry.tsx",
+      "bytes": 2179,
+      "sha256": "e07931a5dd0e7356fe5b520a0f4a7d65bea40eb46f6827533eac6071a41a5dbd",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/common-entry-demo.ts",
+      "bytes": 1935,
+      "sha256": "c1d8d4e9e17324edfdc15cc261ce2cf102d29b299c015ab795cc738cac2f7d2b",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/common-entry-prototype.css",
+      "bytes": 1304,
+      "sha256": "a44bad58fcdb90d9c8b8d5262c98c559c3099ec59644e2b026aa089f823334d1",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/common-entry-prototype.ts",
+      "bytes": 907,
+      "sha256": "2fb9ef7de54c37452813dcccf074873881afe282631450d6ed13456b273d7aee",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/common-entry-prototype.tsx",
+      "bytes": 5303,
+      "sha256": "55a572356bb65ee2f249a55b2eb28ba06bd0995389c0ec01ac3be289d63e4b82",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/common-production-entry.tsx",
+      "bytes": 6017,
+      "sha256": "81359bc781cb4278b8f0a8c8b723adc4bb7233b7df7b304c2bf5a25073731de6",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/common-production-runtime.ts",
+      "bytes": 2547,
+      "sha256": "db9e5c5ef70a3149863b7741033519baf1d5ff14f41246b402ce2096ffcc95e2",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/common-sign-in-view.tsx",
+      "bytes": 3858,
+      "sha256": "69458469ac42f1a13035263b203183426418ebb795ae573c143f69c53419e2b5",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/demo-port.ts",
+      "bytes": 8014,
+      "sha256": "69bd43b728d491f316532a26960ea0ab4d22cf11cea5ca96a219ce5163287a6d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/demo.tsx",
+      "bytes": 2230,
+      "sha256": "1abe861de816335acdb85f66b5f23cddad15dca7f0964c4c89c81711ddc9be92",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/display.ts",
+      "bytes": 1583,
+      "sha256": "4d230dbd83d4f797f68d5ff8976cd332a3b6b3ff86ae6f7f35335cb6809588e6",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/flow.ts",
+      "bytes": 11933,
+      "sha256": "221fd761a980e6f6e9cd50b8d2bbb81e3ec84a54421ac058d6af8178d3ae44bf",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/local-http.tsx",
+      "bytes": 2127,
+      "sha256": "edc3ad739134d3f1d2038d2cf85af5935654cb73e35af89ea21e677cf3a01c89",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/local-owner-port.ts",
+      "bytes": 402,
+      "sha256": "7407e00f6ce5c3333ca07180b2d03b90d118ebcb05ae969c1420a48a7ea6094f",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/main.tsx",
+      "bytes": 1397,
+      "sha256": "eca147a3f4e3e1f1556402221cff58d339567a2edfdbfec7c8a30863b7586287",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/owner-client/student-client.ts",
+      "bytes": 8952,
+      "sha256": "61cf1d2d0681f3bf25a610c73eff7470159bca45679c5def42101e9a58017494",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/owner-client/student-types.d.ts",
+      "bytes": 48905,
+      "sha256": "bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/owner-port.ts",
+      "bytes": 8375,
+      "sha256": "aea4712724f4c9ac2d7006b6f2812f375bda7fe1ff90ce9a6a8cfdab9412d0b9",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/production-connection.ts",
+      "bytes": 2459,
+      "sha256": "fae2470b79995be98e4ed96ac5457a2dd141466127d559bf8a96e0780f378265",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/production-entry.tsx",
+      "bytes": 2784,
+      "sha256": "a726d8c85d8956d289370eddbd62bf2b4b152bbb6e3c0318f8579c322a8bece5",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/production-runtime.ts",
+      "bytes": 3579,
+      "sha256": "b0c70d9426ec7a0cdacda47b991bbc86ce410e9e0bd0ca93047d03eb8ea54fda",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/sign-in-controller.ts",
+      "bytes": 9238,
+      "sha256": "d8ff17a8074648d8f4e93448913d162d719d97fac324fbc5afe50396a35de2a1",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/student-app.tsx",
+      "bytes": 16011,
+      "sha256": "2db277621a20c2b556dc56f111f7f479707d3950470ba49d54356770cfbe0c90",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/style.css",
+      "bytes": 10751,
+      "sha256": "b83824edd59f779f483adc3fe9c31c969fd385a46c470e540c428131665ad793",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/telegram-bootstrap.ts",
+      "bytes": 9374,
+      "sha256": "492988f7bee8e5e4fc57ecf2feef7fe11bff62d4ba83286920b96ec79a67f67c",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/transport.ts",
+      "bytes": 15791,
+      "sha256": "5375c2a31330f506c81f624b0ac0d8ee12987e31d5087fb54880c672895556f7",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/src/wire-map.ts",
+      "bytes": 9274,
+      "sha256": "6af2f6c1df81aeaa5f01768b4ac5a3a02e7ef62a5a21c40d5e353163e2789548",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-active-ui-driver.mjs",
+      "bytes": 1655,
+      "sha256": "8bf7cce53cfb6a6e173809b7e1c17f75d752cc8049267f4c0e0d69b2d7e30364",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-active-ui.py",
+      "bytes": 8643,
+      "sha256": "d6ba27d741695fb1927c5bb7393b4c42dd9a1ddceab875499439a634bd202d0c",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-http-driver.mjs",
+      "bytes": 2860,
+      "sha256": "3e85b0269aa5c2b2727dbfce0d9550c2b611e72135d2ade27cc0bf16d619225c",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-http.py",
+      "bytes": 5033,
+      "sha256": "7142d7cacfd8456455b2aa8cea7f1ce0ec13b74ce9bd6623736046f9935e7c34",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-numeric.py",
+      "bytes": 3870,
+      "sha256": "cdac2e941f23c7a2e9cf4e917415ecfc2b257629f77fb24a7dac7e56c6c3abd6",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/browser-smoke.py",
+      "bytes": 7090,
+      "sha256": "75b44b8b356b517c381b78b8206dd5684c52577c4fc9a3e16e82b5bd91eeddb4",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/check-wire-fixtures.py",
+      "bytes": 1501,
+      "sha256": "8dad65b65bd2a23f73e83794c31b2016568b7b9e3ceb0bd91bde9d74b3ff7b35",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-load-browser.mjs",
+      "bytes": 2261,
+      "sha256": "49b56cbbb23a23fc159c4149dc376dcfc08a2742ced309f2dee06f5f1f477706",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-load-browser.py",
+      "bytes": 5078,
+      "sha256": "12bcaee62d88fb07ebe2a457f86bdf3855b1a38c24823d950b4eead4a42dfaab",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-load-promise.test.mjs",
+      "bytes": 2057,
+      "sha256": "39b758c70e89d17a75635f7c728b472e69c0c446f9e0833484fafb92cdba2adb",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-load.fixture.html",
+      "bytes": 249,
+      "sha256": "52267f2a7cd24ec84971da6e72503bba32bfdfdf353ac2c18d26997a541c4f6f",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-load.fixture.mjs",
+      "bytes": 294,
+      "sha256": "7a4e73a048129fcd3a727d7a70d98884cb5a4fa9aa53461040c3e5c74839a1cc",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-prebuilt-browser.mjs",
+      "bytes": 1426,
+      "sha256": "43bae212363f1a72d03e1222f128e73c478e37cd62890a17b06ef2a871348c20",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-prebuilt-browser.py",
+      "bytes": 9291,
+      "sha256": "4ff89c3a61ac830f8ddc3811459b4acb8693253a2d533050cafff234896d6fbf",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-prebuilt-session.test.mjs",
+      "bytes": 7218,
+      "sha256": "0c9e2d0107e5fea8c7d5dbdaff3f78c313d4b9283a255de643bd20f002ff02b3",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-prebuilt.fixture.html",
+      "bytes": 345,
+      "sha256": "4aac86ba3b840c95a874bb71350ee8261d2c02f84d9de1cb27013b799d2a1287",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-prebuilt.fixture.mjs",
+      "bytes": 4333,
+      "sha256": "79c413cbd755b34d534ac8f7ab1b8a54c2868abe77c9b82194bddbcc8a6963ca",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-react-browser.mjs",
+      "bytes": 1464,
+      "sha256": "88f896bd09e7854b79647441839d09e3665b27dd0805cd2e5add77cb22dad495",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-react-browser.py",
+      "bytes": 7628,
+      "sha256": "c8019a37b80aec77bace7bf1ada7fc34efe1674cc1bf107c0e307ff9c1ce7bb6",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-react.fixture.html",
+      "bytes": 329,
+      "sha256": "aee2688a4df76d1f0821f23d0a35661a564685596cac4a1c430cf7ed3b29b223",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-react.fixture.mjs",
+      "bytes": 3679,
+      "sha256": "9290553faf0a2bf1cf5ad458ee9ca07bffaaa0528ce1a2d701e758242fb36859",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-review-browser.mjs",
+      "bytes": 1537,
+      "sha256": "0e1c6190aa713bf023de38fce6e578661fe38541a7c020527fa3b54f21d3a80e",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-review-browser.py",
+      "bytes": 11978,
+      "sha256": "494efcd52d6a5206cfa5c5b1243a3f1f81d5361b6bc2d8f7a583625e42ed1007",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-review-entry.test.mjs",
+      "bytes": 13711,
+      "sha256": "fa9781f23e351098e888ffd2459afcb6f166c5c6d6b09db3d0c136aade6c21b0",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-review.fixture.html",
+      "bytes": 285,
+      "sha256": "7936b10dd8f12c406d3eb77771ce4623a83727199b042816362b9d5dc078fa6e",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-review.fixture.mjs",
+      "bytes": 1654,
+      "sha256": "fc072ab655bdf7a610a0099e959929310e395be394e8ba1dd13f8616f817bf31",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-sdk-adapter.test.mjs",
+      "bytes": 8343,
+      "sha256": "7dd551fb3326fc463d3baad6f7f1edde8eaad9a3ea21eb66a2beab0252a30790",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-sdk-browser.mjs",
+      "bytes": 1394,
+      "sha256": "5d6cdb222c342b7e22047e0eb1e7f30941bbd4c0e27a32a7e30c2d0f87671777",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-sdk-browser.py",
+      "bytes": 9796,
+      "sha256": "3098c5ebb41221653adc938bed07ec799e9e5eb661167e3cc28225ca531be5b9",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-sdk.fixture.html",
+      "bytes": 279,
+      "sha256": "2945b012a506c02a1cf4de55c12f6563e27855f83b6eb2817536f0b5b2b570ff",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-sdk.fixture.mjs",
+      "bytes": 2137,
+      "sha256": "55aaf5bfcf2e9d18d36ad003c91af9cd8dd007f40ff2a0503cb26c9c9882a0d0",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/common-entry-browser.mjs",
+      "bytes": 2066,
+      "sha256": "40387c8b5b0962e721e444b6833bcc1ecadd4e5a02e81625a1de4f28902f78a0",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/common-entry-browser.py",
+      "bytes": 6863,
+      "sha256": "93667ecd13e53de9c82f0a95f485eb58f6d2dd330c471d2690f0ec6add6b9dc9",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/common-entry-prototype.test.mjs",
+      "bytes": 10823,
+      "sha256": "b157161935542e31e3ed5a70aba9fe16e113f2bb814a667931e8d65de52db2e7",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/common-entry.fixture.html",
+      "bytes": 240,
+      "sha256": "8599407e3aa68532bc9ccbea0f656214e8b930946da552fb78ece3923b0c22e9",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/common-entry.fixture.mjs",
+      "bytes": 807,
+      "sha256": "60695ea7ff25bb49bfc149c0030b2fa461b74af6a620076e28b55cc4205a325b",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/common-production-runtime.test.mjs",
+      "bytes": 10165,
+      "sha256": "149a584f75c84b3a4758235dde745903938bd77f62f60f00047bf202554fd6b4",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/current-flow-browser.py",
+      "bytes": 11287,
+      "sha256": "8e39e045a116e8c6caf5cb5edbc99feed441d6be33f03ac092a3be316fa1ff1d",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/current-flow-driver.mjs",
+      "bytes": 6606,
+      "sha256": "430074287ba7f66ae39c8bd69cac9c548edf9815d275e26eb53c82390eea5b1a",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/current-flow-guard.test.mjs",
+      "bytes": 29740,
+      "sha256": "5a51d532092c20caa2b6e75e99da212317b27a7f1effe8a7dc1ed39b1864c709",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/display-localization.test.mjs",
+      "bytes": 2881,
+      "sha256": "249599a29d1e21a60bae56c8ce0943e7bad1136638d35abf5f56f4e536cf50c8",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/first-student-flow.offline.test.mjs",
+      "bytes": 12179,
+      "sha256": "8d4d6d74f254324fc5ce1cf878bd013a09552626bbe7691777e088ad7454b5f0",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/attempts-8a750ee.ts.txt",
+      "bytes": 9616,
+      "sha256": "b4bc54e39fef6799b6ff83a4be3c474471afd2e4c76e888767e999064a4d9e20",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/backend-d54d19c-clean-manifest.json",
+      "bytes": 19964,
+      "sha256": "e3a6e0c368b957cd243fe9b2dedc7786d34d451d76737cd8542fbb6b198d0fd4",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/backend-d54d19c-manifest.json",
+      "bytes": 42473,
+      "sha256": "5372551a2ca45bb2505a4f198445e9867273411b74ce998c4611851c1cb2005e",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/backend-student-runtime-r2-3f6e3a6-assembly-manifest.json",
+      "bytes": 34681,
+      "sha256": "fa30bc581d9f3708d766f98415957afd613e0919ec85d5860b96aebcc299dbb5",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/clerk-sdk.fixture.mjs",
+      "bytes": 2580,
+      "sha256": "d26c48301e6116796b1fc2127560fdcac8545c435881893e3486e32eed623996",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/first-student-flow.offline.json",
+      "bytes": 14552,
+      "sha256": "4a218b7e8e24b743d781549bb9be61fe08cdea3ad9544c88490ff25f1a5a8652",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/fixtures/wire.json",
+      "bytes": 24296,
+      "sha256": "203ff687f78fb428ec027ad338f5d63b6c2437f86259db3b6e99f98ca563c3e8",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/flow.test.mjs",
+      "bytes": 11194,
+      "sha256": "a70b4e5b414ac0b1f464c6883d01d35050c72256505cacd76942869df6b98977",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/http-integration.test.mjs",
+      "bytes": 11355,
+      "sha256": "0642e72d9091605931a3d722f3367e909b73c56ba380ae8d58abc87cfcc1a914",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/logout-receipt.test.mjs",
+      "bytes": 10288,
+      "sha256": "3a285651a38744b71330db6ba23e2fbc47b4fc77b3bf0c6a4f0ba58403d996c3",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/numeric-lab.mjs",
+      "bytes": 994,
+      "sha256": "fd4bbe45a044ff3e538f58cfecfb01ee3e90dd0b860c8896e07643a950dc989c",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/production-connection-http.test.mjs",
+      "bytes": 4057,
+      "sha256": "f84b44b20328d8469e2a1014f6497c0e2d8c168f657415b96ec80cf4b9084fc4",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/production-entry-browser.mjs",
+      "bytes": 4181,
+      "sha256": "21926816fa1aa8ba84e46696e698cb120cde531eb4a71768f5a13c5f41fe30a4",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/production-entry-browser.py",
+      "bytes": 12835,
+      "sha256": "64b53831b887c996ca90d3bca43e8e3e4ede29ec2975828657fa9741f0da4ceb",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/production-entry.fixture.html",
+      "bytes": 244,
+      "sha256": "545e5515d6120d9ff13d97f5e0e03f179186904c305dfe828f8934c56edc56a8",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/production-entry.fixture.mjs",
+      "bytes": 4940,
+      "sha256": "32f09dc81250ca59adf48d0c42bb26eaa2a807f0c0cd486767b40f02dede3d5b",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/production-owner-port.test.mjs",
+      "bytes": 4720,
+      "sha256": "029027d91c37b6bab91b3ff6340042406ca13be4e3c6b4d3833e7be5dc8ff456",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/production-runtime.test.mjs",
+      "bytes": 5885,
+      "sha256": "9a96c62141cdf9d65295ecd62d185115037d1ff81a017820b508636b7d993f06",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/receipt-sync-hook.test.mjs",
+      "bytes": 6696,
+      "sha256": "e0bda0da820678aedc1e47e6504c1c667539466df6c45ec8b67766d1e30f92a2",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/telegram-bootstrap.test.mjs",
+      "bytes": 18774,
+      "sha256": "6282dc11a6f68a8fabab1a2cad3e6656148aef4b710f8d9c063f75c067ba57a3",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/transport.test.mjs",
+      "bytes": 12953,
+      "sha256": "4b01393bf07510abbaf65c2d4031a9dc6b07b2915850ddce9448a46e65084817",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/verify-backend-targets.mjs",
+      "bytes": 27743,
+      "sha256": "f8ae0419643d12ce6ef32f1bb2e303725ffd6b341a4a0efcd23d7024ef282b23",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tests/wire-map.test.mjs",
+      "bytes": 14901,
+      "sha256": "5aa42380edff07f3bbcf5cbfb73e2d797028078691fff573ed397812a1290576",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tools/clerk-load-promise-fix.mjs",
+      "bytes": 1319,
+      "sha256": "45be30aeec7dc8ec1c0c869da187f251fcf40f2413bdf5b2db955f8d4549fb07",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/tsconfig.json",
+      "bytes": 375,
+      "sha256": "86ccd56cd605e3df25f579b47a5a50662406cbd2cb4ae5bafb50b888ef7d9dab",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/mini-app/vite.config.ts",
+      "bytes": 1217,
+      "sha256": "df00cc8cbb680b41d8c96ea1bc29268b04c99f65e2281f8631de26c364a0914f",
+      "mode": "0o644"
+    },
+    {
+      "path": "apps/panel/README.md",
+      "bytes": 761,
+      "sha256": "b3388b3e5993e13f29c543c76fbed550bfdaac1ed433e4a8e8f1add24ca8165f",
+      "mode": "0o644"
+    },
+    {
+      "path": "contracts/clerk-auth.proposal.patch.json",
+      "bytes": 7354,
+      "sha256": "7ca7874a07960e9e5a32332d6e51e56b0affaee0224d8d8ffefb36a83f2ea019",
+      "mode": "0o644"
+    },
+    {
+      "path": "contracts/clerk-review.openapi.json",
+      "bytes": 433064,
+      "sha256": "f6226aa1cea63ae1fbc603b80aed9232bc4dd5213c4cc081cc13300ee0179b28",
+      "mode": "0o644"
+    },
+    {
+      "path": "contracts/review-only.openapi.json",
+      "bytes": 430120,
+      "sha256": "9c7518f887aafacc5cf53b73d33a87d42b11a9fcd46730185b39360e62fe3bb4",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/README.md",
+      "bytes": 652,
+      "sha256": "e25137d8649604a311e867908918969d248a2a1e5c3554fac567c6c27b0af6cd",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/api/README.md",
+      "bytes": 2324,
+      "sha256": "fd3537a3d3686667e3a394d4946a6b257bd8d5b8465f85436af931afaf5d7964",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 3807,
+      "sha256": "afb422be35cd03bdc0e19a89d5d4aa9cb1e572c89a0e930f7de1d10c20ab8574",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/ownership.md",
+      "bytes": 2514,
+      "sha256": "95d0d092dc81bbc982e0c91208b3f45c27e84df1d088bc80f0e9e8cc774f657d",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/pilot-acceptance.md",
+      "bytes": 2572,
+      "sha256": "0c04be357a0b778fbbb4faa5032bfb4216535a9626d75f36d02a783805fa2c0a",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/source-status.md",
+      "bytes": 2659,
+      "sha256": "697f27ff9ca5e54fe0aa5fb5300d42e60507515b3bb4b5507597562e28dba03c",
+      "mode": "0o644"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 19609,
+      "sha256": "62c3094c5ff8b464aaa86836c83e3dd455f193d58a4296d08274d5a0d2772222",
+      "mode": "0o644"
+    },
+    {
+      "path": "package.json",
+      "bytes": 1744,
+      "sha256": "05bd3c8c58e5e898b577ca3106b8a77d018ef01a39d9975e5551453f507436a4",
+      "mode": "0o644"
+    },
+    {
+      "path": "packages/api-client/README.md",
+      "bytes": 540,
+      "sha256": "bd06fb239184ca41a7b5a6aaffe583de974112b488f9a3b3e40a28438d70b8d1",
+      "mode": "0o644"
+    },
+    {
+      "path": "packages/api-client/staff-openapi.json",
+      "bytes": 46045,
+      "sha256": "a1bdcd4e7177388e6eb0cf77bdde00a4a962ca7ac13fb921277f863ea0acacff",
+      "mode": "0o644"
+    },
+    {
+      "path": "packages/api-client/staff-types.d.ts",
+      "bytes": 28222,
+      "sha256": "669f574310968bb85565cedf11e3f44963438908dcd9294d60a854a02a1a9731",
+      "mode": "0o644"
+    },
+    {
+      "path": "packages/api-client/student-client.ts",
+      "bytes": 8952,
+      "sha256": "61cf1d2d0681f3bf25a610c73eff7470159bca45679c5def42101e9a58017494",
+      "mode": "0o644"
+    },
+    {
+      "path": "packages/api-client/student-openapi.json",
+      "bytes": 86307,
+      "sha256": "5bb3f266acd8f699ff10df8ef0522852b5d7657af0df349f95d7ac52440020cb",
+      "mode": "0o644"
+    },
+    {
+      "path": "packages/api-client/student-types.d.ts",
+      "bytes": 48905,
+      "sha256": "bc658b13af2d2a75fb88af415637d4c4a63e33c3767f00120242099c86c637cc",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/clerk-review-server.mjs",
+      "bytes": 2390,
+      "sha256": "04941545a0f98e4fb0f52c490af3129c7fbbe44720b7ee6b199dc6dfed24db16",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/clerk-sdk-bindings.mjs",
+      "bytes": 6984,
+      "sha256": "fc8d588919e598ba599c4c724bd2cf12ae61bc38e9a5af18a5420adc44bb4ef7",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/clerk-sdk-worker.mjs",
+      "bytes": 2062,
+      "sha256": "75aef2bbd53a86920d1a1786745ce33545627e147a1a8b6a5b3b95dd08e0604f",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/configured-server.mjs",
+      "bytes": 2957,
+      "sha256": "a8d50828f7ee85b1b5624d939020dd847a696c49b3ad8f294ca616805772affe",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/content-pilot-driver.mjs",
+      "bytes": 3294,
+      "sha256": "a118db0f7531e4005edd8388e93a25cfe2952cb223e80a752a6ddd617543466e",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/content-pilot-lab.mjs",
+      "bytes": 2068,
+      "sha256": "4bda938261a208c9c632022a86a31e447c56e4cb38e4e209401d1c8e3b14cfee",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/content-pilot-server.mjs",
+      "bytes": 653,
+      "sha256": "13174482a20e214d52a1e0f12033d6f609b85497cf83ae714fef945df6114c91",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/local-cors.mjs",
+      "bytes": 3289,
+      "sha256": "c8c7cf03b13c0b86723a64732098fe19e9fa1daa26bbcf085b64baf4d7d995c2",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/local-lab.mjs",
+      "bytes": 2154,
+      "sha256": "5cc1443c0fc9e0b23a50ee8e9ca195e47f2a041099ea6feeeaf3bfbc0bd87830",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/local-server.mjs",
+      "bytes": 3505,
+      "sha256": "3b27100d39d89fbffdec938ffc5c4dbbdd2d1110ab71db604b055089ed081062",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/node-request-abort.mjs",
+      "bytes": 642,
+      "sha256": "3511ce2225a1b8fb22e3c7723aa5e9913d9bed1e713e8c5daecfaed02d8bcbe8",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/postgres-pool-factory.mjs",
+      "bytes": 6328,
+      "sha256": "a5512fc40d586cbe3ec1297abbc264803fd7f04961299ebcf09c072e90486259",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/production-entry.mjs",
+      "bytes": 619,
+      "sha256": "2f7d95aacd75e889b60c596d840e4e5f7b8109421c7deedc4d3180a381b5f50f",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/production-options.mjs",
+      "bytes": 7634,
+      "sha256": "1224e4af8bede15d922a770f2bbe858a6807865c3cd7eaf9eb4177fd9a02c803",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/ungrouped-driver.mjs",
+      "bytes": 2282,
+      "sha256": "3a2ec8f1608c498b98de8e02abb5908839db51f8f13e5f95312c5dcfe5b8dab4",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/ungrouped-fixture.mjs",
+      "bytes": 1753,
+      "sha256": "12efbe082d9db82749f2185db7f9284a51fb3e6b830aa015a5fd80e3188b5c08",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/ungrouped-lab.mjs",
+      "bytes": 3494,
+      "sha256": "93abc2e195f37268eb0c9ccb990601c6612ae5ccd52c547fd370f44f03a1aa38",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/ungrouped-server.mjs",
+      "bytes": 774,
+      "sha256": "3b6e687b1415dd0fd877e3589f3386fc8d07e421da000e04713e28d7b6a74611",
+      "mode": "0o644"
+    },
+    {
+      "path": "runtime/vercel-node.mjs",
+      "bytes": 4161,
+      "sha256": "eb95ef50e999b44403f20fa2bdd51923443f1ef6038f60c7588bda1820537171",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/README.md",
+      "bytes": 999,
+      "sha256": "bb1299c3d66790fa4aa298ae8dc34fa97946d3880c12611ba9a7cdb2d91d08fd",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/attempts.ts",
+      "bytes": 9727,
+      "sha256": "b95d33d535d37ee1beeef6123985771b5c05e921ed3a4f9e0694eafaea381721",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "bytes": 5065,
+      "sha256": "94dd8154b8d74f17e8e17a97944e6e8b9a6d107d0abf1c1cf69a18e82f86dcb8",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 15562,
+      "sha256": "b6a7ef7a9b2c8ec0956dd8fafd15e4359db12bb36932e11476d486f09189f275",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-provider.ts",
+      "bytes": 10057,
+      "sha256": "06a295c8a0fe24fd8815ebd1f35ae2e77a4895635ab7f5df2a9576926720739b",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/configured-http.ts",
+      "bytes": 9359,
+      "sha256": "582819b9a2218d804b8015861405e19b60fe08d440201cf245f266befc6f2c8f",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/fault.ts",
+      "bytes": 422,
+      "sha256": "e405799dd809d8118f764e8fea8361f9117e2635b37e3afce93d63e64cafed8f",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/individual-points.ts",
+      "bytes": 729,
+      "sha256": "49f7108ad311b45b8491fa932eefff04ec4a4422969f17b84b522ea68ee1b8c2",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/membership-activity.ts",
+      "bytes": 7617,
+      "sha256": "c4149e06a68778b39bd2e229188605d84fc4dda756dc5fc95016259a9226eb6b",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/membership-effects.ts",
+      "bytes": 3852,
+      "sha256": "8bf5a68911587a16177650087fea108dac32a5aef5bba53cb8250f584da761c5",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/membership-preflight.ts",
+      "bytes": 7061,
+      "sha256": "17b49301bca7ae3e79d5436dba281f0263c05e819754ad71522190a90e14c4bf",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/membership-removal-http.ts",
+      "bytes": 5504,
+      "sha256": "66a13bd5396ea3f79b18fb5aa2345e8e978fd6878f8aabcf952303452287730b",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/membership-removal.ts",
+      "bytes": 7598,
+      "sha256": "3477846790c594c6baf96ea5a15a0be83bcde6f33328d57feb5c6917139e4ccb",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/ordinary.ts",
+      "bytes": 2889,
+      "sha256": "acd083fa6874fb4c8dfd8ec7551c9b12842dca1c07c970a8c7f0f5988cf1fd52",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/pilot-provisioning.ts",
+      "bytes": 9741,
+      "sha256": "c7967d846727e2ad00ae386654d07caf81de3b7b273b57ef4832c49a22c53cd3",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/removal-authority.ts",
+      "bytes": 812,
+      "sha256": "cc1739e0fe87e1aa88f964bdbd1e9562a3781df902a0486e5fe29ab3c1e44cd7",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-content.ts",
+      "bytes": 5127,
+      "sha256": "913a89409e68425ff664def9c76f9be80478cd47f50e4144cff21a0547d49e0e",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-http.ts",
+      "bytes": 16079,
+      "sha256": "76dab2bc435a9d79a6983ec47c3800876856daeed3a806f45a7b33c8a65bb4e2",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-json.ts",
+      "bytes": 1615,
+      "sha256": "8d93c68cce2dcdaf68ad96bf8f710d3f0a379e7db62db642583dd23218089b9d",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-jwt.ts",
+      "bytes": 3624,
+      "sha256": "090b6811c4010c58b0cd9f14999cc0657b8385fba6ee1f6be838e6cfe49b1635",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/staff-state.ts",
+      "bytes": 5790,
+      "sha256": "b6699ac9973c0054bcf84ccd7437b3f411f66303a288e31a9c657e5ed641a40d",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/attempt-rows.ts",
+      "bytes": 8740,
+      "sha256": "aab9cb3964cbb9ecc196a0400790395c1512f4418d6ce85df29117f0cb15e010",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "bytes": 23067,
+      "sha256": "3a90df4cdb0f106ff7ec84413a4fe6f5569315fdf466557cf3e9f3b5eacb42a0",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "bytes": 12978,
+      "sha256": "a251fafaad42995e298a9a1c62bec4ee37e6889d9ea68aeac2faaffbbea5c8ef",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/membership-preflight-port.ts",
+      "bytes": 15991,
+      "sha256": "6eab8c2c749616d1b1b9c4e5c17fabe73de3f7ad07e9455f3328210eedc315fc",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/membership-protection-contract.ts",
+      "bytes": 30680,
+      "sha256": "ad4486106fb32ef8ee50e8db151549726bc8fa36b16a21396d7d02d1921d2ed8",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/postgres-transaction.ts",
+      "bytes": 9696,
+      "sha256": "306fa158dafe2108b94b42ed3e152820f852a22e633f6bd76ab0301509f9cfd6",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/prepared-student.ts",
+      "bytes": 10298,
+      "sha256": "d1826ecb8082bbc93260ab0e13375524a828fbdc83e518f0d3e9eceb690ff20c",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/session-rows.ts",
+      "bytes": 6717,
+      "sha256": "492d043bbe322752a8ef3e2a5abd2daf1d117068fc00c74d0f9ec73143f5916b",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/staff-access-rows.ts",
+      "bytes": 3744,
+      "sha256": "cec02c6a6392c51fdcd004189fbcb504d1a48efbf20e5f6b2af912f5244ab700",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/staff-first-test-rows.ts",
+      "bytes": 15858,
+      "sha256": "744a44d3504b9b98b24e9b42fcd2f602c28869479e984166f02de22af2df95d9",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-http-rows.ts",
+      "bytes": 13877,
+      "sha256": "7e374d1cd2891f056475141ceadca733a1a96f75e6a0c35190e6fd69b58d8f6e",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-identity-rows.ts",
+      "bytes": 3051,
+      "sha256": "ba1c07668261045f555dc2110d51eee6f74f37b19711416b13428a9068f05070",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "bytes": 5469,
+      "sha256": "3a612ea3f5dfc5bb79dd9d3b3f2955dcb5b0e3c1cdd6d4f03f2dea17a0d09d20",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/transaction-pool-port.ts",
+      "bytes": 1102,
+      "sha256": "79b9dcf8a9c27ef1ccc3f86a9233e8988731e17b2d9bdd330e3aa3872f084153",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/trusted-server-context.ts",
+      "bytes": 3434,
+      "sha256": "5d34a1b02896f3465501391ddc0b5f16ec2ecd9528a2cf02b8a332e8da2c5ace",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-http.ts",
+      "bytes": 17650,
+      "sha256": "32bc06bab2e7422544ee5b0f5831330755c8befaa579d8d7e5fee1b0db24cee0",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-state.ts",
+      "bytes": 7532,
+      "sha256": "208f220a3b72a572a37ab0ffba6763193b67beb3732aebe521f2295039333f72",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/student-wire.ts",
+      "bytes": 9974,
+      "sha256": "a43b5e043ca19c2e45cf83e1b76dddf0a89422633eeb2eefa19e647a847699af",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/telegram.ts",
+      "bytes": 3303,
+      "sha256": "415f843c5139285cbe3a4338072e05e50d33bebcbee3059362a3118281b8a3b3",
+      "mode": "0o644"
+    },
+    {
+      "path": "supabase/migrations/README.md",
+      "bytes": 635,
+      "sha256": "b1d5b845b715b16a8e65759bb3c31977f7779d7a81249aa416049d9a9b5cd8df",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/README.md",
+      "bytes": 559,
+      "sha256": "d949e91b19a682078b134f127b994a041c3e494d69f069869acfa6f7fd5a6cb6",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/http-fixture.ts",
+      "bytes": 7081,
+      "sha256": "b3593fb05cc32f6edf876c2120c24934338f2fbc3f3e8f658c666cbd8e2841d1",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/staff-fixture.ts",
+      "bytes": 8646,
+      "sha256": "e173224b8d323b983e6510ec1cbddd3a108d79e72056a133a38a3fa9bda0814e",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/student-prepared/clerk.test.mjs",
+      "bytes": 5153,
+      "sha256": "4c61142f45ed932a7b886f29861d07089e562c0824ad3c819676d7ca0933860f",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/student-prepared/flow.test.mjs",
+      "bytes": 12102,
+      "sha256": "74ef69ef91852ad9c28f827588af5b9330b43dde3550e778b7bd0803cdd3f818",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/student-prepared/memory-pool.mjs",
+      "bytes": 8971,
+      "sha256": "0ede9e037c97a2b36d569d52c56434309ae1efb86e6c95f0154e5460f4ac710e",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/student-prepared/routing-receipts.test.mjs",
+      "bytes": 10342,
+      "sha256": "4a6e879e393d1bdf5b8425f305e6641af6aa0902c73396e1a8f49cbfd741aa46",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/student-prepared/trusted-server-context.test.mjs",
+      "bytes": 18121,
+      "sha256": "11347c2f53d3c5bfe1e075e8a34754efac262f5871b1566a24ae06d22a22902f",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/validator/ajv-config.cjs",
+      "bytes": 2461,
+      "sha256": "55865a95c45cab29495f77cbc41fb4cdfc94f83960ce6168a838c2e64f800253",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/validator/base-ajv-config.cjs",
+      "bytes": 2044,
+      "sha256": "74ef231957dc1b528f73ea61206a890d8c1fa16a9d97bca42bc8195b285ff774",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/validator/tooling/package-lock.json",
+      "bytes": 2789,
+      "sha256": "bf49238f558d7a6f85562a52998e31f105f9e69e66892f785da9ab8cfca9bdf7",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/validator/tooling/package.json",
+      "bytes": 76,
+      "sha256": "83086e236c60ca828b6d118d35f55c5834cc70e3b5d5cb8dfc8d628ffcd21149",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/backend/validator/view-builder.cjs",
+      "bytes": 10788,
+      "sha256": "0c12d242980b3899a4ded8bb8072ad8cf512170098ee8dd6e639198cd9833303",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/contract.test.mjs",
+      "bytes": 2639,
+      "sha256": "d1450ed5ddc892b42eea52aec84ee32c8fd9721b895ed97afb9337fd6689eb99",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/domain-executor.mjs",
+      "bytes": 4815,
+      "sha256": "78bf1357f8876a1d8dc59caca9ca235761d552f9f9ddacc9794bba9d5a55a757",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/domain-http.test.mjs",
+      "bytes": 13849,
+      "sha256": "24b8aef28ab138f65fecde222945ad8769635555c64925aeac16bf8886a18678",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/family-context.test.mjs",
+      "bytes": 5841,
+      "sha256": "20977f27a559fb9b2a80f21899208c660dadbaac65ac80aabdf54d3894fae7ec",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/fixture.mjs",
+      "bytes": 5634,
+      "sha256": "1dae0182015c155aec6da31e88e1f51dc75d15e3d777c1df1ddc6c485bda8d11",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/http.test.mjs",
+      "bytes": 12183,
+      "sha256": "db182096422e367993ba15f34d3a412bf65a1b269f1a4f4954dd7436c13a3a59",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/provider-adapter.test.mjs",
+      "bytes": 21868,
+      "sha256": "29587109cb40ce005417bee69a14eca9c9426e063b51ca159c682f040dc40aee",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/review-listener.test.mjs",
+      "bytes": 11215,
+      "sha256": "040c085d8649094e0ff18d8c00c6ec72d385461787dc55af548fcbbe04a0ff1f",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/review-types.test.ts",
+      "bytes": 689,
+      "sha256": "81fffa224c5f3b27a0d56ee5c3e25f91475a0cc14a0c28a13fb594b40bedd534",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/scoped-store.test.mjs",
+      "bytes": 14810,
+      "sha256": "e6cadda0c3bd454f1a65bae5f01edb64ca5b5d51a92a45b6fdaafcd5a276366c",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/sdk-binding.test.mjs",
+      "bytes": 8171,
+      "sha256": "6e42092ca6ada3590b5a9b517e376cc72ab19474c35e50d34d5bf7f65b3a362f",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/sdk-cancel.test.mjs",
+      "bytes": 10469,
+      "sha256": "0cd4918952b587929d0e4e446b5e1d7a4772ec039d7f401c23e34d99f5293c42",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/staff-parallel.test.mjs",
+      "bytes": 3798,
+      "sha256": "bfa54cb9f778a5202705e415f92d25497640f8847acc963182064c6ef8328a45",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/tcp-cancel.test.mjs",
+      "bytes": 6661,
+      "sha256": "89ff63e911cd10816cdfc2d33cfa5f7f57556fc476edd8817727fe605b469ffe",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/clerk-auth/verifier.test.mjs",
+      "bytes": 4509,
+      "sha256": "73dc09ba11d9598b3e00daaf6b8b24b9468b32d6ad6ed17bc600677f579a8628",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/e2e/README.md",
+      "bytes": 521,
+      "sha256": "f95d9095183d7d7b1b31258c8b565faa4058031b849824ab412e5fc5739c6c7d",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/enrollment/identity-staff.test.mjs",
+      "bytes": 15670,
+      "sha256": "ed14bfbd5f231463ebf2376304add8b6226645db3a4d811855a9b355e2335c0a",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/enrollment/production-client.test.mjs",
+      "bytes": 4808,
+      "sha256": "4bbe5b112b5b81f738760748dee7aa25cf141e2ab990e16aaeb06bc4b5861165",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/first-test/cors.test.mjs",
+      "bytes": 3479,
+      "sha256": "ef4ea2228157b718baa7f580bfe07403139a6d5294ed4609278dd0e3352eb6f1",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/first-test/executor.mjs",
+      "bytes": 3803,
+      "sha256": "6734a0d8221092978b7676bd4835e03124ffe18b11c323523348ec8cbef7520e",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/first-test/fixture.mjs",
+      "bytes": 7281,
+      "sha256": "6e9c113a2d754fcdf5ca54e382b949e21859beb61a77016bdebaab0be7f4f35f",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/first-test/http.test.mjs",
+      "bytes": 13002,
+      "sha256": "c1b72ff57078ca3edaff572cf9282f4a69da65a7fbe7e9c2741bc3a4daa32f57",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/load/README.md",
+      "bytes": 972,
+      "sha256": "000a1b707b3a0a15c2d9e1b3d091b4e4f9af4beee4d52ece0b23202a9536b0a6",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/local-content-pilot.test.mjs",
+      "bytes": 19865,
+      "sha256": "74c29b5306d0e09ec0efcda48afac04684230ef4347339617657de7daa190f2b",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/membership/preflight-adapter.test.mjs",
+      "bytes": 52377,
+      "sha256": "9b989fd50294146601f4176b45bb4f0f3ed5d20b0d122d3aa98dc4880dbbc6d7",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/membership/protection-contract.test.mjs",
+      "bytes": 38971,
+      "sha256": "a1f0014d99ab4ec898d3331622d2eff3c09ab5c3fb8427cae890d53cc497a111",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/membership/protection-postgres-transaction.test.mjs",
+      "bytes": 33274,
+      "sha256": "49db7421e71cd71966bbf1bd24e952539b8f5062f0621fd349db38f22eca6beb",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/membership/removal-active.test.mjs",
+      "bytes": 35811,
+      "sha256": "853da6086e13bad983176eb1febb2f78176f619b8732b292329e471cb6aedb44",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/membership/removal-command.test.mjs",
+      "bytes": 40020,
+      "sha256": "76d693b6074f1b3e89eac36bbfb05ee65c3ac490754ca2182490f94d58523cc2",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/membership/removal-http.test.mjs",
+      "bytes": 47840,
+      "sha256": "e5a392c95f6838d54037a8dce5db42ba0b8267ab9e89d452cd3bf1260bd2e160",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/membership/shared-expiry-invariant.test.mjs",
+      "bytes": 18548,
+      "sha256": "9de546a587d6b3aac367f9f17db704c9d54c318694c58c89cfbf6963abc3ab68",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/persistent-http/executor.mjs",
+      "bytes": 7574,
+      "sha256": "ad86e0734e7e7cc19c310300f8417cde07c2d17c763b85a61714a7ae299f6cc6",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/persistent-http/http.test.mjs",
+      "bytes": 17759,
+      "sha256": "ad3c1b5a1865b62c20cebc3769a7cc16f74eff45a019edb2dfc21b1335c1c260",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/storage-auth/disk-executor.mjs",
+      "bytes": 7084,
+      "sha256": "4103509484ffcbd1f04b4924e9e99380ce60e206ae60de6c955f49657e8f8690",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/storage-auth/staff-jwt.test.mjs",
+      "bytes": 4981,
+      "sha256": "801baa55d2c706c5d266e88e59c4a2c4489fcd30b0e588720b32fa18e36a24d3",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/storage-auth/storage.test.mjs",
+      "bytes": 12570,
+      "sha256": "9f2729b65a61ab0f3b3a0436e8df6620474da009427651e092b65d2b9491bc22",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/vercel-node/adapter.test.mjs",
+      "bytes": 11454,
+      "sha256": "a3c38ef203b6fdd39ae9cbdcebecd1dc5bf20744b9104d4f0cd075819a3d9629",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/vercel-node/pool-port.test.mjs",
+      "bytes": 3833,
+      "sha256": "493899b7c65dae3a4146a9999a8ff4e5948c550e513b25b89c5ac958f1721a9d",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/vercel-node/postgres-pool-factory.test.mjs",
+      "bytes": 30151,
+      "sha256": "0c40ca1e4f1130cd30cb683aa870df84871706b544a28f9c0c54bfc6cb1aa801",
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/vercel-node/production-options.test.mjs",
+      "bytes": 22292,
+      "sha256": "09bb7e0face5e6bea69166de0c792f57fbb4c4da7f51e218ae82266c464e3769",
+      "mode": "0o644"
+    },
+    {
+      "path": "tools/generate-staff-contract.py",
+      "bytes": 2125,
+      "sha256": "aa5bc79040dbdc9eeb7b9b211bb8ff57c8c21adc9aa2e4a62eed3e6dcc29dc3e",
+      "mode": "0o644"
+    },
+    {
+      "path": "vercel.json",
+      "bytes": 163,
+      "sha256": "29c44dcff6c14b92cdd84a68afaba6dae869577dfceba54dfd911eb2d9427148",
+      "mode": "0o644"
+    }
+  ]
+}

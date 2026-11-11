@@ -1,0 +1,19 @@
+--- a/bootstrap.review.sql
++++ b/bootstrap.local.sql
+@@ -3,9 +3,7 @@
+ -- No statement in this file has been executed against PostgreSQL.
+ -- This deliberate guard must remain in the review artifact. A future executable
+ -- package needs separate review, a new byte/hash identity and exact approval.
+-DO $review_guard$ BEGIN
+-  RAISE EXCEPTION 'REVIEW_ONLY_DB_BOOTSTRAP_01_NOT_AUTHORIZED_FOR_APPLICATION';
+-END $review_guard$;
++-- DISPOSABLE LOCAL RUN ONLY: reviewed guard removal.
+ 
+ BEGIN;
+ -- The future migration operator must have reviewed CREATE ROLE and SET ROLE
+@@ -494,4 +492,4 @@
+ -- No public schema changes, managed-schema writes, extension install, provider
+ -- actions, credential, seed, runtime activation, DELETE, TRUNCATE or CASCADE.
+ -- Even after removing the guard, this review artifact ends with ROLLBACK.
+-ROLLBACK;
++COMMIT;

@@ -1,0 +1,105 @@
+{
+  "format": "UA_LOCAL_HTTP_PG_FLOW01_CANDIDATE_MANIFEST_V1",
+  "status": "INPUT_COMPLETE_SOURCE_REVIEW_CANDIDATE_NO_EXECUTION_APPROVAL",
+  "revision_of_manifest_sha256": "3f27734811803662336ee5c202d51055afc9a4ae933e08498536132bed27756d",
+  "payload_count": 12,
+  "payload_bytes": 220225,
+  "files": [
+    {
+      "path": "SCOPE.md",
+      "bytes": 12345,
+      "sha256": "e65c9f188244e1db9081f189b7802b55e6a880ee562392eb940194e6fedbb7b2",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "activation.local.diff",
+      "bytes": 865,
+      "sha256": "e2bc4380fdbdb3d6026c62435005a437069e3b3f428932d4d6975deb18c5c672",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "bootstrap.local.diff",
+      "bytes": 846,
+      "sha256": "cd22b5b894fdcd5de5c43993634094a86166b33d6338360a76923f0512cf9fac",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "bootstrap.review.sql",
+      "bytes": 34366,
+      "sha256": "3a0c4b7b121dab0d765a7096cf0212eea605847f6481d0508cd837b7defca9c4",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "corrected-activation.review.sql",
+      "bytes": 60363,
+      "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "driver/package-lock.json",
+      "bytes": 5325,
+      "sha256": "2b86adb724d7750e9a4684851e7698fe85b6c88d7285580accc2d791595be5c0",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "driver/package.json",
+      "bytes": 129,
+      "sha256": "a4ed531067c50678b51e650fe3d88abe1ffc57077fba512e0a45d5e351cf7cc9",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "flow.mjs",
+      "bytes": 14322,
+      "sha256": "5882ab4fc5eebf3626a849212c1afeb1afdb9b55b6ff474d3daa1d9dab15e089",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "plan.json",
+      "bytes": 6620,
+      "sha256": "b034942e3cfb8a3acea55082c64f92ee2eafe3bed1e79df6b7219663d8378b52",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "run.py",
+      "bytes": 22959,
+      "sha256": "0684f57914b7beacfa5fc575ec5f9329581404dbe10211b4b5b205a8100ff128",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "seed.mjs",
+      "bytes": 5509,
+      "sha256": "b2cd44768d3dab2fb5805f21ac390448a89b6ffd4edbf66b6947ef820893d456",
+      "publication_mode": "100644"
+    },
+    {
+      "path": "source-inventory.json",
+      "bytes": 56576,
+      "sha256": "ec61cc00950b339a3fd3c3094131797dd7df301cdae8bc6500037ab28969f206",
+      "publication_mode": "100644"
+    }
+  ],
+  "publication_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "architect/local-http-pg-flow01-20261111",
+    "parent": "8be232eff22c2608b55f7f5513d8752a0307977a",
+    "prefix": "qa-checkpoints/2026-11-11/architect-local-http-pg-flow01/",
+    "write_status": "NOT_AUTHORIZED_NOT_ATTEMPTED"
+  },
+  "prepared_UTC": "2026-11-11T18:49:04.534203+00:00",
+  "preparation_checks": {
+    "controller_AST_parse": "PASS_NOT_INVOKED",
+    "Node_syntax_checks": {
+      "flow.mjs": 0,
+      "seed.mjs": 0
+    },
+    "ordinary_text_replay_steps_exit0": 8,
+    "SQL_parsing_compilation_execution": "NOT_RUN",
+    "driver_install_NPM_CI": "NOT_RUN",
+    "controller_harness_seed": "NOT_RUN",
+    "source_files_preserved": 283,
+    "runtime_and_dependency_roots_absent": true,
+    "old11_file_seal_preserved": true
+  },
+  "self_excluded": true,
+  "external_gate": "Exact approved lab publication, independent QA and then explicit user install/run/cleanup approval are still required; input completeness is not permission."
+}
