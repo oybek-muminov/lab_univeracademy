@@ -1,0 +1,140 @@
+{
+  "status": "FROZEN_LOCAL_PROPOSAL_ONLY; NO_PUBLICATION_APPROVAL",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "mini/clerk-profile-completion-20261111",
+  "expected_parent": "dc2bf835c7eee35e2471b2c14764957131543cfd",
+  "prefix": "qa-checkpoints/2026-11-11/mini-clerk-profile-completion/",
+  "source_boundaries": {
+    "application_base": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "Backend_original": "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+    "Backend_r2": "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+    "Mini_offline_overlay": "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+    "Mini_guard_overlay": "ea0c3cd9c41a465bd5e5205b91f0141710a435fa",
+    "excluded": "Unpublished earlier assessment test, current Backend prefill/Postgres work, bot promotion and personal Worker are not mixed in"
+  },
+  "source_mapping": [
+    {
+      "checkpoint_relative_path": "apps/mini-app/src/sign-in-controller.ts",
+      "application_path": "apps/mini-app/src/sign-in-controller.ts",
+      "mode": "100644",
+      "bytes": 10107,
+      "sha256": "60d3302ba8699f4bbc73dcca9bd11715bb2834fef1c8e8d1c44f503e349ce77a",
+      "change": "modified",
+      "expected_preimage": {
+        "mode": "100644",
+        "bytes": 9238,
+        "sha256": "d8ff17a8074648d8f4e93448913d162d719d97fac324fbc5afe50396a35de2a1"
+      }
+    },
+    {
+      "checkpoint_relative_path": "apps/mini-app/src/student-app.tsx",
+      "application_path": "apps/mini-app/src/student-app.tsx",
+      "mode": "100644",
+      "bytes": 16118,
+      "sha256": "25b833df7e1ac277ff5a712e20dc61b731d0e4c21f637da403daf7c534dbdd08",
+      "change": "modified",
+      "expected_preimage": {
+        "mode": "100644",
+        "bytes": 16011,
+        "sha256": "2db277621a20c2b556dc56f111f7f479707d3950470ba49d54356770cfbe0c90"
+      }
+    },
+    {
+      "checkpoint_relative_path": "apps/mini-app/tests/clerk-profile-completion-browser.mjs",
+      "application_path": "apps/mini-app/tests/clerk-profile-completion-browser.mjs",
+      "mode": "100644",
+      "bytes": 3056,
+      "sha256": "adde679b440ebf6b5de9fa9d627227cc20d4e8a5e5744e4a5cae4ebe72e7f34b",
+      "change": "added",
+      "expected_preimage": null
+    },
+    {
+      "checkpoint_relative_path": "apps/mini-app/tests/clerk-profile-completion-browser.py",
+      "application_path": "apps/mini-app/tests/clerk-profile-completion-browser.py",
+      "mode": "100644",
+      "bytes": 6296,
+      "sha256": "33e0f95b1eddd85e46ee1c6772561a7df95ac30899ecd9b0e36483e5f94bc618",
+      "change": "added",
+      "expected_preimage": null
+    },
+    {
+      "checkpoint_relative_path": "apps/mini-app/tests/clerk-profile-completion.test.mjs",
+      "application_path": "apps/mini-app/tests/clerk-profile-completion.test.mjs",
+      "mode": "100644",
+      "bytes": 11538,
+      "sha256": "93e69a00fc355692606bb75b100eeb7e6e6c4537a05a48f4f81b77913b1a41f9",
+      "change": "added",
+      "expected_preimage": null
+    }
+  ],
+  "apply": "Reconstruct accepted279-file assembly from the listed immutable main/lab inputs. Replace ONLY2 matching preimages and add ONLY3 absent test files. Do not copy review files, manifest, historical artifacts or build outputs into project source. No invented assembled Git SHA.",
+  "payload_files_excluding_this_manifest": [
+    {
+      "path": "apps/mini-app/src/sign-in-controller.ts",
+      "bytes": 10107,
+      "sha256": "60d3302ba8699f4bbc73dcca9bd11715bb2834fef1c8e8d1c44f503e349ce77a",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/mini-app/src/student-app.tsx",
+      "bytes": 16118,
+      "sha256": "25b833df7e1ac277ff5a712e20dc61b731d0e4c21f637da403daf7c534dbdd08",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-profile-completion-browser.mjs",
+      "bytes": 3056,
+      "sha256": "adde679b440ebf6b5de9fa9d627227cc20d4e8a5e5744e4a5cae4ebe72e7f34b",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-profile-completion-browser.py",
+      "bytes": 6296,
+      "sha256": "33e0f95b1eddd85e46ee1c6772561a7df95ac30899ecd9b0e36483e5f94bc618",
+      "mode": "100644"
+    },
+    {
+      "path": "apps/mini-app/tests/clerk-profile-completion.test.mjs",
+      "bytes": 11538,
+      "sha256": "93e69a00fc355692606bb75b100eeb7e6e6c4537a05a48f4f81b77913b1a41f9",
+      "mode": "100644"
+    },
+    {
+      "path": "review/author-verification.json",
+      "bytes": 12760,
+      "sha256": "2015d3a1b821b5bafcfd488bc8f57ccad18f0372ada2c3f3e178fdf3a93f20d4",
+      "mode": "100644"
+    },
+    {
+      "path": "review/mini-build.log",
+      "bytes": 898,
+      "sha256": "d672912cbd3fc57ce3f183cb3ad9a699e3e85a913aa0629002db4224397a044e",
+      "mode": "100644"
+    },
+    {
+      "path": "review/mini-check.log",
+      "bytes": 263,
+      "sha256": "ddc260d0ab04bbc1803bbc81e1bcac17f9e8e36dc769870e80d1e19c71bdab0b",
+      "mode": "100644"
+    },
+    {
+      "path": "review/mini-unit.log",
+      "bytes": 75861,
+      "sha256": "994ae8f11d14c08cf1a2abaf5d4fca8f7ba54583ad28549b2160bb4bef15a715",
+      "mode": "100644"
+    },
+    {
+      "path": "review/profile-browser.log",
+      "bytes": 5117,
+      "sha256": "0033fd83b0f8765f3b3e6994fe5c1da1e4ef39ae98e7ebacb420342dfec8ad54",
+      "mode": "100644"
+    }
+  ],
+  "payload_count_excluding_manifest": 10,
+  "payload_bytes_excluding_manifest": 142014,
+  "publication_count_including_manifest": 11,
+  "external_manifest_pin": "Own bytes/SHA256 and exact whole selection are recorded in external proposal-inventory.json, excluded from upload.",
+  "author_result": "812/812 Mini unit tests incl25 new; guard/check/build exit0; synthetic browser9/9; forward/reverse replay PASS;277 baseline files unchanged.",
+  "scope_limit": "Synthetic server-profile prefill precondition only; independent review and exact new Backend verified-prefill combined test pending. No real provider/DB/production/login/WebView claim.",
+  "approval_boundary": "No upload, Git branch/commit, main/PR change, deploy/webhook/settings/credential/provider/DB/installation authorized by preparation. Fresh parent/branch/prefix/source checks needed after future exact approval."
+}
