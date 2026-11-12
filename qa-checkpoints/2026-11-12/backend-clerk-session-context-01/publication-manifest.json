@@ -1,0 +1,92 @@
+{
+  "format": "UA_LAB_PUBLICATION_MANIFEST_V1",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/clerk-session-context-01-20261112",
+  "parent": "d14dd93ca4f043510306f2de1d9a73b8cbdae210",
+  "parent_tree": "b7070e5cc8f0b026c2e9e6e1a49adb824884843c",
+  "prefix": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/",
+  "branch_prefix_absent": true,
+  "verified_parent": true,
+  "source_base": {
+    "main": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "names_r2": "d14dd93ca4f043510306f2de1d9a73b8cbdae210",
+    "files": 289,
+    "bytes": 3699598
+  },
+  "candidate_status": "AUTHOR_OFFLINE_CHECKS_ONLY / SQL_NOT_RUN",
+  "payload_inventory_format": "UTF8 sorted relative-path rows: SHA256 SPACE decimal-bytes SPACE full-destination LF",
+  "payload_inventory_sha256": "8fe27f87034149197938f72d52af6c16e01e0d27891d655d74675a540b6f3d25",
+  "files": [
+    {
+      "path": "review/README.md",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/review/README.md",
+      "bytes": 9592,
+      "sha256": "6225f6d2787f9ddd3f9fbbd0dd42501a4a0926ad563cce1be3dbeccebb3bdc3e",
+      "mode": "100644"
+    },
+    {
+      "path": "review/author-checks.log",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/review/author-checks.log",
+      "bytes": 52413,
+      "sha256": "2b1febcb8303af32527243bb583f11aac6b3b49d0cf41e944a70e0156f857d34",
+      "mode": "100644"
+    },
+    {
+      "path": "review/first-student-refresh-locator.review.sql",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/review/first-student-refresh-locator.review.sql",
+      "bytes": 6679,
+      "sha256": "17375fa7f170f18af2a3fe029255dde687023c8bd4aabf5a5f44f408ff9ba28c",
+      "mode": "100644"
+    },
+    {
+      "path": "review/verification.json",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/review/verification.json",
+      "bytes": 10263,
+      "sha256": "f7ff8333b2c4b22b07b07c228b56a3af08c41b1f94cf2b5b9f55c16763b27ec5",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 16987,
+      "sha256": "807193614bc61ce9a7f28971f67dc9b23bb9365ba442506ff70207e2b032704a",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+      "bytes": 27800,
+      "sha256": "3c7e160bf776791d294e2aa7a639cff6817d2f9a094d401b8f66679fddbf4a98",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+      "bytes": 22736,
+      "sha256": "58da6081b71cef7aba1c28e88a5314be13cc68575d38f30332aa81320b1072da",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/supabase/functions/univeracademy-api/storage/student-scope.ts",
+      "bytes": 7108,
+      "sha256": "e79872af89c0d677b9ef46376fefda33e713a1c22045970040e540aa004dddda",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/backend/student-prepared/profile-context.test.mjs",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/tests/backend/student-prepared/profile-context.test.mjs",
+      "bytes": 24941,
+      "sha256": "f19df9458cacbe2f28deea2754eff5e936a9a5242fe16f3861782599a5538898",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/backend/student-prepared/session-context.test.mjs",
+      "destination": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/tests/backend/student-prepared/session-context.test.mjs",
+      "bytes": 38088,
+      "sha256": "0e4fe93deecc4320d998579e23869f8a39f35d0f5e40dad71f727cc8286a82b4",
+      "mode": "100644"
+    }
+  ],
+  "payload_bytes": 216607
+}

@@ -1,0 +1,280 @@
+{
+  "format": "UA_CLERK_SESSION_CONTEXT_REVIEW_V1",
+  "utc": "2026-11-12T08:01:48.770665+00:00",
+  "status": "AUTHOR_OFFLINE_CHECKS_ONLY",
+  "runtime_readiness": false,
+  "publication": "NOT_AUTHORIZED",
+  "base": {
+    "main": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "names_r2": "d14dd93ca4f043510306f2de1d9a73b8cbdae210",
+    "files": 289,
+    "bytes": 3699598
+  },
+  "delta": {
+    "replaced": [
+      {
+        "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+        "bytes": 16987,
+        "sha256": "807193614bc61ce9a7f28971f67dc9b23bb9365ba442506ff70207e2b032704a",
+        "preimage": {
+          "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+          "bytes": 16636,
+          "sha256": "ad142552c53c8ca208845d0a03057ec0c4a62dfa0326d89661e5f768c8f6274a"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+        "bytes": 27800,
+        "sha256": "3c7e160bf776791d294e2aa7a639cff6817d2f9a094d401b8f66679fddbf4a98",
+        "preimage": {
+          "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+          "bytes": 23067,
+          "sha256": "3a90df4cdb0f106ff7ec84413a4fe6f5569315fdf466557cf3e9f3b5eacb42a0"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+        "bytes": 22736,
+        "sha256": "58da6081b71cef7aba1c28e88a5314be13cc68575d38f30332aa81320b1072da",
+        "preimage": {
+          "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+          "bytes": 16559,
+          "sha256": "b1bf90035b45e5d9f0b42ce268a1aae759ea3b922db45cff03dd63c8baa3c2d1"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+        "bytes": 7108,
+        "sha256": "e79872af89c0d677b9ef46376fefda33e713a1c22045970040e540aa004dddda",
+        "preimage": {
+          "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+          "bytes": 5469,
+          "sha256": "3a612ea3f5dfc5bb79dd9d3b3f2955dcb5b0e3c1cdd6d4f03f2dea17a0d09d20"
+        }
+      },
+      {
+        "path": "tests/backend/student-prepared/profile-context.test.mjs",
+        "bytes": 24941,
+        "sha256": "f19df9458cacbe2f28deea2754eff5e936a9a5242fe16f3861782599a5538898",
+        "preimage": {
+          "path": "tests/backend/student-prepared/profile-context.test.mjs",
+          "bytes": 24424,
+          "sha256": "ded0f2bc163c0159acd92de5ce3507b33fb4ca6088725bc3968f9d39e4b80b53"
+        }
+      }
+    ],
+    "added": [
+      {
+        "path": "tests/backend/student-prepared/session-context.test.mjs",
+        "bytes": 38088,
+        "sha256": "0e4fe93deecc4320d998579e23869f8a39f35d0f5e40dad71f727cc8286a82b4"
+      }
+    ],
+    "unchanged": 284,
+    "files": 290,
+    "bytes": 3751103
+  },
+  "checks": [
+    {
+      "name": "red-controls",
+      "metadata": {
+        "argv": [
+          "node",
+          "--test",
+          "tests/backend/student-prepared/session-context.test.mjs"
+        ],
+        "cwd": "/workspace/ua-clerk-session-context-01-20261112/red",
+        "start": "2026-11-12T07:55:30.611226+00:00",
+        "end": "2026-11-12T07:55:30.981669+00:00",
+        "exit": 1,
+        "expected_exit": 1,
+        "note": "Two real behavioral controls on frozen source, recognizing old direct locator text; no new-only helper import"
+      },
+      "log_bytes": 1910,
+      "log_sha256": "7f7eea29182d653522bb9e4da196dbd64d2f81d22b06265acedfc9e2aeaae0a0",
+      "output_range": [
+        22,
+        1932
+      ]
+    },
+    {
+      "name": "focused",
+      "metadata": {
+        "argv": [
+          "node",
+          "--test",
+          "tests/backend/student-prepared/session-context.test.mjs",
+          "tests/backend/student-prepared/profile-context.test.mjs"
+        ],
+        "cwd": "/workspace/ua-clerk-session-context-01-20261112/repo",
+        "start": "2026-11-12T08:01:06.962814+00:00",
+        "end": "2026-11-12T08:01:07.705469+00:00",
+        "exit": 0,
+        "tests": 113,
+        "pass": 113,
+        "fail": 0,
+        "skipped": 0
+      },
+      "log_bytes": 9091,
+      "log_sha256": "e9f5796c38eecd4820b09894d7e43a5340915222fe59e390769c729e9c40c228",
+      "output_range": [
+        1949,
+        11040
+      ]
+    },
+    {
+      "name": "regressions",
+      "metadata": {
+        "argv": [
+          "node",
+          "--test",
+          "tests/backend/student-prepared/flow.test.mjs",
+          "tests/backend/student-prepared/clerk.test.mjs",
+          "tests/backend/student-prepared/routing-receipts.test.mjs",
+          "tests/backend/student-prepared/trusted-server-context.test.mjs",
+          "tests/vercel-node/pool-port.test.mjs",
+          "tests/vercel-node/production-options.test.mjs",
+          "tests/vercel-node/postgres-pool-factory.test.mjs",
+          "tests/cloudflare/api-postgres.test.mjs",
+          "tests/cloudflare/clerk-worker-bindings.test.mjs",
+          "tests/clerk-auth/scoped-store.test.mjs"
+        ],
+        "cwd": "/workspace/ua-clerk-session-context-01-20261112/repo",
+        "start": "2026-11-12T08:01:07.706892+00:00",
+        "end": "2026-11-12T08:01:08.994582+00:00",
+        "exit": 0,
+        "tests": 475,
+        "pass": 474,
+        "fail": 0,
+        "skipped": 1
+      },
+      "log_bytes": 39976,
+      "log_sha256": "a2c04c4786b44242a06bcd7a5381b09dddfc5ce412d7f8c28c1078b3c85cec92",
+      "output_range": [
+        11061,
+        51037
+      ]
+    },
+    {
+      "name": "syntax",
+      "metadata": [
+        {
+          "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+          "exit": 0,
+          "output": ""
+        },
+        {
+          "path": "supabase/functions/univeracademy-api/storage/clerk-auth-rows.ts",
+          "exit": 0,
+          "output": ""
+        },
+        {
+          "path": "supabase/functions/univeracademy-api/storage/clerk-domain.ts",
+          "exit": 0,
+          "output": ""
+        },
+        {
+          "path": "supabase/functions/univeracademy-api/storage/student-scope.ts",
+          "exit": 0,
+          "output": ""
+        },
+        {
+          "path": "tests/backend/student-prepared/profile-context.test.mjs",
+          "exit": 0,
+          "output": ""
+        },
+        {
+          "path": "tests/backend/student-prepared/session-context.test.mjs",
+          "exit": 0,
+          "output": ""
+        }
+      ],
+      "log_bytes": 689,
+      "log_sha256": "201fa988f2ab24e7d83d269f59bb82c47bb0ae9c063d84985ca311cae17e4b16",
+      "output_range": [
+        51053,
+        51742
+      ]
+    },
+    {
+      "name": "guard",
+      "metadata": {
+        "argv": [
+          "node",
+          "apps/mini-app/tests/verify-backend-targets.mjs"
+        ],
+        "exit": 1,
+        "start": "2026-11-12T07:55:55.613768+00:00",
+        "output": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: BACKEND_TARGET_SIZE_MISMATCH: runtime/clerk-sdk-worker.mjs\n\n2133 !== 2062\n\n    at file:///workspace/ua-clerk-session-context-01-20261112/repo/apps/mini-app/tests/verify-backend-targets.mjs:525:10\n    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)\n    at async node:internal/modules/esm/loader:647:26\n    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {\n  generatedMessage: false,\n  code: 'ERR_ASSERTION',\n  actual: 2133,\n  expected: 2062,\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.22.1\n"
+      },
+      "log_bytes": 656,
+      "log_sha256": "10354dd018d10197044d57cbda369e680621b4f586ca603bd26daf1e1914e514",
+      "output_range": [
+        51757,
+        52413
+      ]
+    }
+  ],
+  "tooling": {
+    "node": "24.22.1",
+    "typescript": "NOT_RUN: 5.9.3 compiler absent",
+    "jose": "NOT_RUN: 6.2.15 absent; actual JWT integration not claimed",
+    "ajv": "NOT_RUN: 8.20.0 absent",
+    "clerk_sdk": "NOT_RUN: @clerk/backend absent",
+    "installation": false,
+    "sql_execution": false,
+    "provider_calls": false,
+    "uploads": false
+  },
+  "failures_retained": {
+    "initial_broad_attempt": {
+      "tests": 465,
+      "passed": 451,
+      "failed": 13,
+      "skipped": 1,
+      "failures": {
+        "tombstone_snapshot_order": "FIXED; final focused PASS",
+        "missing_SQL_text": "Restored exact e7929b6c source; final context regression PASS",
+        "AJV_load": 1,
+        "JOSE_load": 10
+      }
+    },
+    "earlier_red_harness_setup": "new-only import failed, then no tests selected; neither is behavioral red evidence; preserved locally",
+    "early_focused": "New statement recognizer setup failures and tombstone comparison fixed; all logs retained",
+    "guard": "FAIL unchanged stale runtime/clerk-sdk-worker.mjs 2133 vs2062; no repin"
+  },
+  "inactive_sql": {
+    "path": "review/first-student-refresh-locator.review.sql",
+    "bytes": 6679,
+    "sha256": "17375fa7f170f18af2a3fe029255dde687023c8bd4aabf5a5f44f408ff9ba28c",
+    "execution": "NOT_RUN",
+    "review": "PENDING",
+    "terminal": "ROLLBACK"
+  },
+  "dependencies": [
+    {
+      "path": "../review/first-student-trusted-server.activation.review.sql",
+      "commit": "8be232eff22c2608b55f7f5513d8752a0307977a",
+      "lab_path": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/first-student-trusted-server.activation.review.sql",
+      "bytes": 60363,
+      "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd",
+      "usage": "unchanged test-only source-text dependency; not executed or duplicated"
+    }
+  ],
+  "publication_proposal": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/clerk-session-context-01-20261112",
+    "parent": "d14dd93ca4f043510306f2de1d9a73b8cbdae210",
+    "parent_tree": "b7070e5cc8f0b026c2e9e6e1a49adb824884843c",
+    "prefix": "qa-checkpoints/2026-11-12/backend-clerk-session-context-01/",
+    "branch_prefix_absent": true,
+    "verified_parent": true
+  },
+  "boundaries": {
+    "original_source_289_files_unchanged": true,
+    "application_original_paths_unchanged": 284,
+    "Mini_UI_bot_pool_entry_guards_SQL_compositions_unchanged": true,
+    "metadata_locks_separate": true,
+    "no_real_credentials_or_student_data": true
+  }
+}
