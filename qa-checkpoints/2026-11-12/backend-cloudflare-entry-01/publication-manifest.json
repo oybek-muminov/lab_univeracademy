@@ -1,0 +1,64 @@
+{
+  "format": "UA_CLOUDFLARE_ENTRY_PUBLICATION_V1",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/cloudflare-entry-01-20261112",
+  "parent": "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+  "parent_tree": "a10d05f9afa1037d685f2e0d289952732838578a",
+  "prefix": "qa-checkpoints/2026-11-12/backend-cloudflare-entry-01/",
+  "approval_required": true,
+  "status": "AUTHOR_OFFLINE_CHECKED_PENDING_INDEPENDENT_REVIEW",
+  "application_base": "de2adf023428a374f075faa421ece9e1deafaf36",
+  "accepted_source_overlay": "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+  "application_delta": "Exactly3 additions;289 unchanged originals",
+  "files": [
+    {
+      "path": "review/README.md",
+      "bytes": 9763,
+      "sha256": "15dea5a754cec20a00862293e1bae8613d7ab8a238992cd755ab0cb83e26e665",
+      "mode": "100644"
+    },
+    {
+      "path": "review/author-checks.log",
+      "bytes": 44532,
+      "sha256": "c976a92c2863450fb0da03f45a14b7775bee3c80f9dd3e19f916b12fc621d8fb",
+      "mode": "100644"
+    },
+    {
+      "path": "review/verification.json",
+      "bytes": 12276,
+      "sha256": "c301f138cf015f7e0528352f81e8e208c50b137280ee174a1465cc3a13a3415d",
+      "mode": "100644"
+    },
+    {
+      "path": "runtime/cloudflare-entry.mjs",
+      "bytes": 6466,
+      "sha256": "38c85a1f9ff53febc7f9c7aee3966b4417dce8f38f32fb73e1d639b290071813",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/cloudflare/entry.test.mjs",
+      "bytes": 20737,
+      "sha256": "d0d7c120819a95e22082673b0a3f1bf934f4bcdeca34d1ec771d5f2f0571cdb5",
+      "mode": "100644"
+    },
+    {
+      "path": "wrangler.api.jsonc",
+      "bytes": 657,
+      "sha256": "1d41cf35c8509b9bf59253bb2c5c6b5d89ca57a4bc3baa09a3c68cf9e0f87c0a",
+      "mode": "100644"
+    }
+  ],
+  "payload_bytes": 94431,
+  "inventory_encoding": "UTF8 compact sorted-key JSON path-sorted rows with bytes,mode,path,sha256;no LF",
+  "inventory_sha256": "a9f9340976b1bfd196e886afef092ff9326ec5e85a315275e6b68a0aac910729",
+  "excluded": [
+    "evidence/",
+    "full patch/archive",
+    "frozen name package",
+    "original SQL text dependency",
+    "dependencies",
+    "private run packet",
+    "external PROPOSAL.json"
+  ],
+  "activation": "No upload/installation/DB/provider/SQL/deploy authorized or performed"
+}

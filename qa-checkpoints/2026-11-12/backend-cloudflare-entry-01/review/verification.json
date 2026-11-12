@@ -1,0 +1,305 @@
+{
+  "format": "UA_CLOUDFLARE_ENTRY_VERIFICATION_V1",
+  "status": "AUTHOR_OFFLINE_CHECKED_PENDING_INDEPENDENT_REVIEW",
+  "recorded_utc": "2026-11-12T00:08:43.457020+00:00",
+  "application_base": {
+    "main": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "lab_source_overlays_in_order": [
+      "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+      "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+      "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+      "ea0c3cd9c41a465bd5e5205b91f0141710a435fa",
+      "e0ad56dfda167a34eb4e4dd2e74b2d700808b49e",
+      "d33088c5403fe78fd342f16d8dc05ba30a4b5d64",
+      "77e04d13d38054135d0520a04a01c7ff9012bde8",
+      "5689c7f2e7c9a2010177422130527f446a10d095",
+      "9a5679712b838a9ede1136926770a7914c3203bf",
+      "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9"
+    ],
+    "files": 289,
+    "bytes": 3679262,
+    "name_package_integrated": false
+  },
+  "source_boundary": {
+    "base_files": 289,
+    "base_bytes": 3679262,
+    "unchanged": 289,
+    "additions": [
+      {
+        "path": "runtime/cloudflare-entry.mjs",
+        "bytes": 6466,
+        "sha256": "38c85a1f9ff53febc7f9c7aee3966b4417dce8f38f32fb73e1d639b290071813"
+      },
+      {
+        "path": "tests/cloudflare/entry.test.mjs",
+        "bytes": 20737,
+        "sha256": "d0d7c120819a95e22082673b0a3f1bf934f4bcdeca34d1ec771d5f2f0571cdb5"
+      },
+      {
+        "path": "wrangler.api.jsonc",
+        "bytes": 657,
+        "sha256": "1d41cf35c8509b9bf59253bb2c5c6b5d89ca57a4bc3baa09a3c68cf9e0f87c0a"
+      }
+    ],
+    "candidate_files": 292,
+    "candidate_bytes": 3707122
+  },
+  "scope": [
+    "Exactly3 additions;289 accepted files unchanged",
+    "Default Worker Web fetch;lazy pg Client;request-scoped Clerk resources;accepted createCloudflareApi/transaction adapter reused",
+    "Explicit private bindings,existing public CORS and session validators;no headers/body/env function registration",
+    "Registration-only route allowlist;GET/exams calls real authorized handler and returns nonempty fixture data in unit check;no canned list",
+    "Scoring seam fixed503 with no invented numbers/test fixture in Worker",
+    "End/Clerk close awaited before ACK;sanitized503 and no automatic retry on COMMIT/disposal failure",
+    "No Node SDK,HTTP listener,browser configuration,default credentials,import-time connection or globally cached client",
+    "wrangler.api.jsonc only separate proposedAPI/date2026-11-11/nodejs_compat;no live bindings/account/routes/ID",
+    "Frozen name package remains unreviewed and separate;no SQL/source package modification"
+  ],
+  "author_tests": {
+    "focused_pass": 42,
+    "focused_skip": 1,
+    "regression_pass": 459,
+    "regression_skip": 1,
+    "total_node_pass": 501,
+    "syntax_pass": 2,
+    "syntax_commands": [
+      {
+        "argv": [
+          "node",
+          "--check",
+          "runtime/cloudflare-entry.mjs"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "node",
+          "--check",
+          "tests/cloudflare/entry.test.mjs"
+        ],
+        "exit": 0
+      }
+    ],
+    "initial_failure": "First run33PASS/1FAIL;test used response.id instead of existing assignment_id;corrected assertion only",
+    "integration_boundary": "Trusted synthetic provider port and constructors;real bounded Worker Web transport,configured handler,transaction/auth/context paths. Not JWT/provider/driver/RLS evidence."
+  },
+  "author_log": {
+    "path": "review/author-checks.log",
+    "bytes": 44532,
+    "sha256": "c976a92c2863450fb0da03f45a14b7775bee3c80f9dd3e19f916b12fc621d8fb",
+    "sections": [
+      {
+        "argv": [
+          "node",
+          "--test",
+          "tests/cloudflare/entry.test.mjs"
+        ],
+        "cwd": "/workspace/ua-cloudflare-entry-01-20261111/repo",
+        "start": "2026-11-12T00:08:18.072155+00:00",
+        "end": "2026-11-12T00:08:18.589194+00:00",
+        "exit": 0,
+        "bytes": 4229,
+        "sha256": "314895b3bcfbbbf53a3d20b89a176c98e9d5ceacb4e2825416cee4e72cc48c2d",
+        "log": "entry.final.log",
+        "tests": 43,
+        "pass": 42,
+        "fail": 0,
+        "skipped": 1,
+        "raw_output_offset": 414,
+        "raw_output_bytes": 4229,
+        "raw_output_sha256": "314895b3bcfbbbf53a3d20b89a176c98e9d5ceacb4e2825416cee4e72cc48c2d"
+      },
+      {
+        "argv": [
+          "node",
+          "--test",
+          "tests/backend/student-prepared/flow.test.mjs",
+          "tests/backend/student-prepared/clerk.test.mjs",
+          "tests/backend/student-prepared/routing-receipts.test.mjs",
+          "tests/backend/student-prepared/trusted-server-context.test.mjs",
+          "tests/backend/student-prepared/profile-context.test.mjs",
+          "tests/clerk-auth/scoped-store.test.mjs",
+          "tests/vercel-node/pool-port.test.mjs",
+          "tests/vercel-node/production-options.test.mjs",
+          "tests/vercel-node/postgres-pool-factory.test.mjs",
+          "tests/cloudflare/api-postgres.test.mjs",
+          "tests/cloudflare/clerk-worker-bindings.test.mjs"
+        ],
+        "cwd": "/workspace/ua-cloudflare-entry-01-20261111/repo",
+        "start": "2026-11-12T00:03:17.872443+00:00",
+        "end": "2026-11-12T00:03:19.490397+00:00",
+        "exit": 0,
+        "bytes": 37404,
+        "sha256": "c5e13c13b6ec89c360518bbca597850543726d5f20a14ba33dec5b33c91430ba",
+        "log": "regressions.final.log",
+        "tests": 460,
+        "pass": 459,
+        "fail": 0,
+        "skipped": 1,
+        "raw_output_offset": 5596,
+        "raw_output_bytes": 37404,
+        "raw_output_sha256": "c5e13c13b6ec89c360518bbca597850543726d5f20a14ba33dec5b33c91430ba"
+      },
+      {
+        "log": "syntax.log",
+        "record": [
+          {
+            "argv": [
+              "node",
+              "--check",
+              "runtime/cloudflare-entry.mjs"
+            ],
+            "exit": 0
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "tests/cloudflare/entry.test.mjs"
+            ],
+            "exit": 0
+          }
+        ],
+        "raw_output_offset": 43172,
+        "raw_output_bytes": 73,
+        "raw_output_sha256": "2fa7e2e30410b9a45a1fe80ba377eb5a67ef8a96da5fdccf8c058025cb25ccaf"
+      },
+      {
+        "log": "dependencies.log",
+        "record": {
+          "argv": [
+            "node",
+            "--input-type=module",
+            "-e",
+            "for(const name of ['pg','pg-cloudflare','jose','typescript','wrangler']){try{console.log(name+': '+import.meta.resolve(name));}catch{console.log(name+': ABSENT');}}"
+          ],
+          "exit": 0,
+          "output": "pg: ABSENT\npg-cloudflare: ABSENT\njose: ABSENT\ntypescript: ABSENT\nwrangler: ABSENT\n",
+          "tsc": null
+        },
+        "raw_output_offset": 43612,
+        "raw_output_bytes": 82,
+        "raw_output_sha256": "c8d858f7a425d551ad7288cd0d9efcb137d0ce13a93b2ff7b344f4ddb5d1de41"
+      },
+      {
+        "log": "guard.log",
+        "record": {
+          "argv": [
+            "node",
+            "apps/mini-app/tests/verify-backend-targets.mjs"
+          ],
+          "exit": 1,
+          "first": "clerk-auth-rows.ts23067 versus22634"
+        },
+        "raw_output_offset": 43841,
+        "raw_output_bytes": 690,
+        "raw_output_sha256": "f238ba81db5b138acf334e6d625446a7dadd677df9853812844891b49871c19f"
+      }
+    ]
+  },
+  "unrun": {
+    "actual_Clerk_provider_entry": "NOT_RUN:jose6.2.15 absent;focused conditional opaque-session provider-adapter test skipped",
+    "real_JOSE_signature_regression": "NOT_RUN:existing conditional regression skipped",
+    "root_semantic_TypeScript": "NOT_RUN:TypeScript5.9.3 absent;root command also does not check this new mjs entry;bundle review needed",
+    "Wrangler_dry_run_bundle": "NOT_RUN:Wrangler/pg/pg-cloudflare/jose absent;no installation approved",
+    "real_Worker_driver_TLS_DB_SQL_provider": "NOT_RUN"
+  },
+  "dependency_preflight": {
+    "argv": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "for(const name of ['pg','pg-cloudflare','jose','typescript','wrangler']){try{console.log(name+': '+import.meta.resolve(name));}catch{console.log(name+': ABSENT');}}"
+    ],
+    "exit": 0,
+    "output": "pg: ABSENT\npg-cloudflare: ABSENT\njose: ABSENT\ntypescript: ABSENT\nwrangler: ABSENT\n",
+    "tsc": null
+  },
+  "runtime": {
+    "node": "v24.22.1",
+    "python": "Python 3.12.14"
+  },
+  "guard": {
+    "status": "FAIL_PREEXISTING_STALE_PINS_NOT_WEAKENED",
+    "first": "storage/clerk-auth-rows.ts23067 vs22634",
+    "exit": 1,
+    "new_entry_paths_in_current119_path_closure": false
+  },
+  "regression_external_text_dependency": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "commit": "8be232eff22c2608b55f7f5513d8752a0307977a",
+    "path": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/first-student-trusted-server.activation.review.sql",
+    "reproduction_location": "../review/first-student-trusted-server.activation.review.sql",
+    "bytes": 60363,
+    "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd",
+    "SQL_executed": false
+  },
+  "preservation": {
+    "frozen_name_publication": {
+      "files": 15,
+      "bytes": 183609,
+      "manifest_sha256": "0d11351d4ba139a59c1e784f4cfca79c6a694cb1c8684d246d02728dbe542ebc"
+    },
+    "all_original_app_files": 289,
+    "original_package_lock_Mini_UI_guards_bot_historical_api_index_existing_adapters": true,
+    "original_SQL_and_published_evidence": true
+  },
+  "later_dependency_proposal": {
+    "production_pins": {
+      "pg": "8.16.3",
+      "pg-cloudflare": "1.2.7",
+      "jose": "6.2.15 existing unchanged"
+    },
+    "source_manifest_facts": {
+      "pg_optional_dependency": "pg-cloudflare ^1.2.7",
+      "pg_cloudflare_release_version": "1.2.7",
+      "exports_condition": "workerd",
+      "retained_Node_only_13_package_closure": "omits pg-cloudflare;not Workers closure proof"
+    },
+    "package_and_lock": "Future separately approved package.json+package-lock.json derivative with complete registry/resolved/integrity closure;do not omit optional pg-cloudflare or fabricate entries",
+    "Wrangler_tool_pin": "NOT_SELECTED/NOT_INSTALLED;exact approved version/tool lock/download scope still needed",
+    "bundle_command": [
+      "wrangler",
+      "deploy",
+      "--dry-run",
+      "--config",
+      "wrangler.api.jsonc",
+      "--outdir",
+      "<owned-output>"
+    ],
+    "bundle_review": [
+      "workerd export resolution",
+      "pg-cloudflare/cloudflare:sockets",
+      "dynamic pg import resolution",
+      "TS stripping/nodejs compatibility",
+      "no NodeSDK/worker_threads/fs/test fixture imported"
+    ],
+    "official_sources": [
+      "https://developers.cloudflare.com/hyperdrive/examples/connect-to-postgres/postgres-drivers-and-libraries/node-postgres/",
+      "https://raw.githubusercontent.com/brianc/node-postgres/pg@8.16.3/packages/pg/package.json",
+      "https://raw.githubusercontent.com/brianc/node-postgres/pg@8.16.3/packages/pg-cloudflare/package.json"
+    ]
+  },
+  "later_action_gates": [
+    "Independent review and separately approved source publication",
+    "Reviewed dependency installation,lock/tool pin and actual Wrangler dry-run bundle",
+    "Hyperdrive cachingOFF and origin TLS verified",
+    "Dedicated non-owner/NOBYPASSRLS DB identity,reviewed grants/RLS/schema/SQL permissions",
+    "Private Clerk/API/frontend/CORS bindings and actual liveness/session/issuer validation",
+    "Separate guarded-source re-pin,Worker deployment and registration test approval"
+  ],
+  "privacy": "Source and synthetic offline data only,no real credentials/person/student data or execution packet;raw logs retain dummy DSNs from accepted negative tests",
+  "future_publication": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/cloudflare-entry-01-20261112",
+    "parent": "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+    "parent_tree": "a10d05f9afa1037d685f2e0d289952732838578a",
+    "prefix": "qa-checkpoints/2026-11-12/backend-cloudflare-entry-01/",
+    "approval_required": true,
+    "branch_absence_verified": true,
+    "prefix_absence_verified_on_parent": true,
+    "parent_tree_complete": true,
+    "read_only_checked_utc": "2026-11-12T00:07:08.273271+00:00"
+  },
+  "independent_acceptance": "PENDING"
+}
