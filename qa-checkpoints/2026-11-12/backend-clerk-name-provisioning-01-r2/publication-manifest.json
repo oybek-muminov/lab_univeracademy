@@ -1,0 +1,89 @@
+{
+  "format": "UA_CLERK_NAMES_PRESERVATION_R2_PUBLICATION_V1",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/clerk-name-provisioning-01-r2-20261112",
+  "parent": "88a523bd813e44350a5b2005a813e2f5830ea89d",
+  "parent_tree": "5a3bec075fccaa30b0179d4106d5b3a240d3e0cd",
+  "prefix": "qa-checkpoints/2026-11-12/backend-clerk-name-provisioning-01-r2/",
+  "approval_required": true,
+  "status": "AUTHOR_OFFLINE_CHECKED_PENDING_INDEPENDENT_REVIEW",
+  "application_base": "de2adf023428a374f075faa421ece9e1deafaf36",
+  "published_source_overlay": "88a523bd813e44350a5b2005a813e2f5830ea89d",
+  "application_delta": "7 replacements:4 source/3 test;282 other originals unchanged;no new app path",
+  "files": [
+    {
+      "path": "review/README.md",
+      "bytes": 6939,
+      "sha256": "82e2d0d17e0aeb91fc6046412d97f04dab6897382fc3732b7eee4b899428797a",
+      "mode": "100644"
+    },
+    {
+      "path": "review/author-checks.log",
+      "bytes": 52591,
+      "sha256": "293ac84b1cdbcf34cc7f602d5684d3ffd75d39135230e948b6462ec48c1ed161",
+      "mode": "100644"
+    },
+    {
+      "path": "review/verification.json",
+      "bytes": 16287,
+      "sha256": "73c4370c0a942e7d3125b36ec87d63273b95e223d06a237122855f101622dc9d",
+      "mode": "100644"
+    },
+    {
+      "path": "runtime/clerk-worker-bindings.mjs",
+      "bytes": 6933,
+      "sha256": "31d44b3103a4fb5426fe113a71c620a25a8367dcaacf15e7ebd9b982ad9ad88c",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "bytes": 6833,
+      "sha256": "092ba3179c74b6c96d96d28bc215dc44bca2f5e11026b22598bd82819b4bc527",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 16636,
+      "sha256": "ad142552c53c8ca208845d0a03057ec0c4a62dfa0326d89661e5f768c8f6274a",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-provider.ts",
+      "bytes": 10205,
+      "sha256": "e14fd79fa83a5a874ef2d6c338cb210bbd44e9ca1b5bc8024f40933c4a8ee20a",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/backend/student-prepared/profile-context.test.mjs",
+      "bytes": 24424,
+      "sha256": "ded0f2bc163c0159acd92de5ce3507b33fb4ca6088725bc3968f9d39e4b80b53",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/clerk-auth/scoped-store.test.mjs",
+      "bytes": 22487,
+      "sha256": "1e5280ac00ded86d510b3a908b87337fc387f6ff7f003bd2905c554546594a82",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/cloudflare/clerk-worker-bindings.test.mjs",
+      "bytes": 20727,
+      "sha256": "514687b02f84b0247bd65fade4d62445f4e82e6d87c91d1ed529621423078360",
+      "mode": "100644"
+    }
+  ],
+  "payload_bytes": 184062,
+  "inventory_encoding": "UTF8 compact sorted-key JSON path-sorted rows with bytes,mode,path,sha256;no LF",
+  "inventory_sha256": "3d5bc735734e88c41332facdcc3234b4fd836ca860fae2a8933566abc7cd04f2",
+  "excluded": [
+    "evidence/",
+    "red/",
+    "full source patch/archive",
+    "original SQL/test dependency copies",
+    "dependencies",
+    "Worker-entry proposal",
+    "external PROPOSAL.json",
+    "private execution packets"
+  ],
+  "activation": "No upload,install,SQL,DB,provider or deployment authorized/performed"
+}

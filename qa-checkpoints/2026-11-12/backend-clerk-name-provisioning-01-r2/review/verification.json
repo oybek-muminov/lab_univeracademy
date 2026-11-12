@@ -1,0 +1,443 @@
+{
+  "format": "UA_CLERK_NAMES_PRESERVATION_R2_VERIFICATION_V1",
+  "status": "AUTHOR_OFFLINE_CHECKED_PENDING_INDEPENDENT_REVIEW",
+  "recorded_utc": "2026-11-12T01:18:52.923913+00:00",
+  "finding": "P2-NAMES-01:optional display data must not affect common liveness or existing-user login/profile authority",
+  "application_base": {
+    "main": "de2adf023428a374f075faa421ece9e1deafaf36",
+    "source_overlays_in_order": [
+      "80ee858fefde0b1d3d08b7ef3c07d780b7e41ea3",
+      "3f6e3a6bf1a6c2e96fca02aef06712a5d6924391",
+      "1273852e29919f18aaecbe0c2b439fcd3153ff9e",
+      "ea0c3cd9c41a465bd5e5205b91f0141710a435fa",
+      "e0ad56dfda167a34eb4e4dd2e74b2d700808b49e",
+      "d33088c5403fe78fd342f16d8dc05ba30a4b5d64",
+      "77e04d13d38054135d0520a04a01c7ff9012bde8",
+      "5689c7f2e7c9a2010177422130527f446a10d095",
+      "9a5679712b838a9ede1136926770a7914c3203bf",
+      "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+      "88a523bd813e44350a5b2005a813e2f5830ea89d"
+    ],
+    "published_name_overlay": "88a523bd813e44350a5b2005a813e2f5830ea89d",
+    "files": 289,
+    "bytes": 3693661,
+    "base_name_status": "Published original has confirmedP2/HOLD;this derivative is not accepted merely by inheriting that input"
+  },
+  "application_boundary": {
+    "base_files": 289,
+    "base_bytes": 3693661,
+    "unchanged_files": 282,
+    "changed": [
+      {
+        "path": "runtime/clerk-worker-bindings.mjs",
+        "bytes": 6933,
+        "sha256": "31d44b3103a4fb5426fe113a71c620a25a8367dcaacf15e7ebd9b982ad9ad88c",
+        "preimage": {
+          "path": "runtime/clerk-worker-bindings.mjs",
+          "bytes": 6876,
+          "sha256": "a13482e0425d4394a8f762f43b3e78640b0bebfa6b24f3690931c7379e978347"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+        "bytes": 6833,
+        "sha256": "092ba3179c74b6c96d96d28bc215dc44bca2f5e11026b22598bd82819b4bc527",
+        "preimage": {
+          "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+          "bytes": 6164,
+          "sha256": "29d459d8475de5fcb8cfa554725f50e645d892699c3fd5905ffabce6a34f96ea"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+        "bytes": 16636,
+        "sha256": "ad142552c53c8ca208845d0a03057ec0c4a62dfa0326d89661e5f768c8f6274a",
+        "preimage": {
+          "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+          "bytes": 16213,
+          "sha256": "bc157e81dac875e0e3c727b58bc9c245299a2cbcda8c5f53c8786659281f7fe9"
+        }
+      },
+      {
+        "path": "supabase/functions/univeracademy-api/clerk-provider.ts",
+        "bytes": 10205,
+        "sha256": "e14fd79fa83a5a874ef2d6c338cb210bbd44e9ca1b5bc8024f40933c4a8ee20a",
+        "preimage": {
+          "path": "supabase/functions/univeracademy-api/clerk-provider.ts",
+          "bytes": 10242,
+          "sha256": "7ccc63cb292848e155d1532794c42de9cf11f0160f629c33188d0a1dff16674e"
+        }
+      },
+      {
+        "path": "tests/backend/student-prepared/profile-context.test.mjs",
+        "bytes": 24424,
+        "sha256": "ded0f2bc163c0159acd92de5ce3507b33fb4ca6088725bc3968f9d39e4b80b53",
+        "preimage": {
+          "path": "tests/backend/student-prepared/profile-context.test.mjs",
+          "bytes": 23611,
+          "sha256": "5c2141b15c40896bd2163f470624dab5af67bb956ebe2e8ab7765eb000e52b72"
+        }
+      },
+      {
+        "path": "tests/clerk-auth/scoped-store.test.mjs",
+        "bytes": 22487,
+        "sha256": "1e5280ac00ded86d510b3a908b87337fc387f6ff7f003bd2905c554546594a82",
+        "preimage": {
+          "path": "tests/clerk-auth/scoped-store.test.mjs",
+          "bytes": 21556,
+          "sha256": "066bc1eb3a8aea90848cf06cc66773eae5c421e0380b12dd90bf7b82344ce8c9"
+        }
+      },
+      {
+        "path": "tests/cloudflare/clerk-worker-bindings.test.mjs",
+        "bytes": 20727,
+        "sha256": "514687b02f84b0247bd65fade4d62445f4e82e6d87c91d1ed529621423078360",
+        "preimage": {
+          "path": "tests/cloudflare/clerk-worker-bindings.test.mjs",
+          "bytes": 17646,
+          "sha256": "9ad37d4725de8747e8b94510d23852381e73d78ca959be9dbaa2cac7a108ab17"
+        }
+      }
+    ],
+    "candidate_files": 289,
+    "candidate_bytes": 3699598
+  },
+  "correction": [
+    "Common guard preserves identity/status/account/session/expiry checks;numeric projection never reads display fields",
+    "Projection copied synchronously in checked frame;no added await over mutable security fields",
+    "Worker/model/provider retains only2 raw display fields;no unconditional display validation or normalization",
+    "Only locked authoritative absence selects creation-specific validation before person/member/identity mutation;disabled mapping remains existing",
+    "Existing stored/edited names,UUID,roles,qadam/group unchanged on relogin;ordinary GET/PATCH liveness ignores provider display data",
+    "New valid/partial/null/missing-name behavior and strict100-code-point/invalid-type/NUL/surrogate rejection retained;initial registration remains incomplete",
+    "No client claims/name/email/metadata for identity or authority;no new endpoints,SQL/roles,SDK,dependency,Mini/Worker-entry/guard changes"
+  ],
+  "author_tests": {
+    "focused_pass": 148,
+    "focused_skip": 1,
+    "regression_pass": 363,
+    "total_node_pass": 511,
+    "red_control_failures_expected": 4,
+    "syntax_pass": 7,
+    "syntax_commands": [
+      {
+        "argv": [
+          "node",
+          "--check",
+          "runtime/clerk-worker-bindings.mjs"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/clerk-auth.ts"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/clerk-http.ts"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "node",
+          "--check",
+          "supabase/functions/univeracademy-api/clerk-provider.ts"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "node",
+          "--check",
+          "tests/backend/student-prepared/profile-context.test.mjs"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "node",
+          "--check",
+          "tests/clerk-auth/scoped-store.test.mjs"
+        ],
+        "exit": 0
+      },
+      {
+        "argv": [
+          "node",
+          "--check",
+          "tests/cloudflare/clerk-worker-bindings.test.mjs"
+        ],
+        "exit": 0
+      }
+    ],
+    "red_reproduction": "Own exact published88a523bd app copy;only final3 test files overlaid;4 acceptance controls FAIL before correction and PASS in final focused suite",
+    "synthetic_boundary": "Inert SQL dispatchers and trusted synthetic liveness ports;not provider/JWT/SQL/RLS integration evidence"
+  },
+  "author_log": {
+    "path": "review/author-checks.log",
+    "bytes": 52591,
+    "sha256": "293ac84b1cdbcf34cc7f602d5684d3ffd75d39135230e948b6462ec48c1ed161",
+    "sections": [
+      {
+        "argv": [
+          "node",
+          "--test",
+          "--test-name-pattern=P2-NAMES-01",
+          "tests/cloudflare/clerk-worker-bindings.test.mjs",
+          "tests/clerk-auth/scoped-store.test.mjs",
+          "tests/backend/student-prepared/profile-context.test.mjs"
+        ],
+        "cwd": "/workspace/ua-clerk-name-preservation-r2-20261112/red",
+        "start": "2026-11-12T01:17:02.977630+00:00",
+        "end": "2026-11-12T01:17:03.987170+00:00",
+        "exit": 1,
+        "expected_exit": 1,
+        "bytes": 5269,
+        "sha256": "773fee34832f68e0da555a5c822a6d91d986b757e5bee36e4fd17e44953c3be5",
+        "log": "red-before.final.log",
+        "tests": 4,
+        "pass": 0,
+        "fail": 4,
+        "skipped": 0,
+        "raw_output_offset": 600,
+        "raw_output_bytes": 5269,
+        "raw_output_sha256": "773fee34832f68e0da555a5c822a6d91d986b757e5bee36e4fd17e44953c3be5"
+      },
+      {
+        "argv": [
+          "node",
+          "--test",
+          "tests/cloudflare/clerk-worker-bindings.test.mjs",
+          "tests/clerk-auth/scoped-store.test.mjs",
+          "tests/backend/student-prepared/profile-context.test.mjs"
+        ],
+        "cwd": "/workspace/ua-clerk-name-preservation-r2-20261112/repo",
+        "start": "2026-11-12T01:17:02.976973+00:00",
+        "end": "2026-11-12T01:17:04.298513+00:00",
+        "exit": 0,
+        "expected_exit": 0,
+        "bytes": 14122,
+        "sha256": "65e52d37f3c15bbe3e8ddd1e4e1786ed2e2a854c4bf963a02f15a9c769087e5f",
+        "log": "focused.final.log",
+        "tests": 149,
+        "pass": 148,
+        "fail": 0,
+        "skipped": 1,
+        "raw_output_offset": 6435,
+        "raw_output_bytes": 14122,
+        "raw_output_sha256": "65e52d37f3c15bbe3e8ddd1e4e1786ed2e2a854c4bf963a02f15a9c769087e5f"
+      },
+      {
+        "argv": [
+          "node",
+          "--test",
+          "tests/backend/student-prepared/flow.test.mjs",
+          "tests/backend/student-prepared/clerk.test.mjs",
+          "tests/backend/student-prepared/routing-receipts.test.mjs",
+          "tests/backend/student-prepared/trusted-server-context.test.mjs",
+          "tests/vercel-node/pool-port.test.mjs",
+          "tests/vercel-node/production-options.test.mjs",
+          "tests/vercel-node/postgres-pool-factory.test.mjs",
+          "tests/cloudflare/api-postgres.test.mjs"
+        ],
+        "cwd": "/workspace/ua-clerk-name-preservation-r2-20261112/repo",
+        "start": "2026-11-12T01:17:02.977392+00:00",
+        "end": "2026-11-12T01:17:04.843555+00:00",
+        "exit": 0,
+        "expected_exit": 0,
+        "bytes": 28980,
+        "sha256": "90df2eadc33efa64ba2f112937bc70b82d37cbfcefdaec5bf7b2e5d001c760a5",
+        "log": "regressions.final.log",
+        "tests": 363,
+        "pass": 363,
+        "fail": 0,
+        "skipped": 0,
+        "raw_output_offset": 21385,
+        "raw_output_bytes": 28980,
+        "raw_output_sha256": "90df2eadc33efa64ba2f112937bc70b82d37cbfcefdaec5bf7b2e5d001c760a5"
+      },
+      {
+        "log": "syntax.log",
+        "record": [
+          {
+            "argv": [
+              "node",
+              "--check",
+              "runtime/clerk-worker-bindings.mjs"
+            ],
+            "exit": 0
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "supabase/functions/univeracademy-api/clerk-auth.ts"
+            ],
+            "exit": 0
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "supabase/functions/univeracademy-api/clerk-http.ts"
+            ],
+            "exit": 0
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "supabase/functions/univeracademy-api/clerk-provider.ts"
+            ],
+            "exit": 0
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "tests/backend/student-prepared/profile-context.test.mjs"
+            ],
+            "exit": 0
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "tests/clerk-auth/scoped-store.test.mjs"
+            ],
+            "exit": 0
+          },
+          {
+            "argv": [
+              "node",
+              "--check",
+              "tests/cloudflare/clerk-worker-bindings.test.mjs"
+            ],
+            "exit": 0
+          }
+        ],
+        "raw_output_offset": 51035,
+        "raw_output_bytes": 376,
+        "raw_output_sha256": "f58672dcafdeb7fe0c734e3978b6c398a9216155f245458de8eae2ee9dbcfb38"
+      },
+      {
+        "log": "dependencies.log",
+        "record": {
+          "argv": [
+            "node",
+            "--input-type=module",
+            "-e",
+            "for(const name of ['jose','@clerk/backend','typescript']){try{console.log(name+': '+import.meta.resolve(name));}catch{console.log(name+': ABSENT');}}"
+          ],
+          "exit": 0,
+          "output": "jose: ABSENT\n@clerk/backend: ABSENT\ntypescript: ABSENT\n",
+          "tsc": null
+        },
+        "raw_output_offset": 51734,
+        "raw_output_bytes": 55,
+        "raw_output_sha256": "c9e6fab9398849d5e027b17d14900185e51287cb9540df54280f5f4268c4ea07"
+      },
+      {
+        "log": "guard.log",
+        "record": {
+          "argv": [
+            "node",
+            "apps/mini-app/tests/verify-backend-targets.mjs"
+          ],
+          "exit": 1,
+          "first": "clerk-sdk-worker.mjs2133 vs2062"
+        },
+        "raw_output_offset": 51932,
+        "raw_output_bytes": 658,
+        "raw_output_sha256": "23a8c220141dbabc0f357e7ef05457537cad4597ab1c9dd70c8a9e60182f1a84"
+      }
+    ]
+  },
+  "unrun": {
+    "real_provider_and_valid_JWT_relogin": "NOT_RUN:jose6.2.15 absent;conditional real-adapter/JOSE/HTTP case extended for malformed/overlong names and saved Edited/Platform profile",
+    "root_semantic_TypeScript": "NOT_RUN:TypeScript5.9.3 absent",
+    "SDK_integration": "NOT_RUN:@clerk/backend3.27.0 and jose6.2.15 absent;SDK source and tests unchanged",
+    "SQL_DB_TLS_Workers_live_Clerk": "NOT_RUN;not authorized"
+  },
+  "dependency_preflight": {
+    "argv": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "for(const name of ['jose','@clerk/backend','typescript']){try{console.log(name+': '+import.meta.resolve(name));}catch{console.log(name+': ABSENT');}}"
+    ],
+    "exit": 0,
+    "output": "jose: ABSENT\n@clerk/backend: ABSENT\ntypescript: ABSENT\n",
+    "tsc": null
+  },
+  "runtime": {
+    "node": "v24.22.1",
+    "python": "Python 3.12.14"
+  },
+  "guard": {
+    "status": "FAIL_PRIOR_STALE_PINS_UNCHANGED",
+    "first": "runtime/clerk-sdk-worker.mjs2133 vs2062",
+    "exit": 1
+  },
+  "SQL_preserved": {
+    "commit": "88a523bd813e44350a5b2005a813e2f5830ea89d",
+    "path": "qa-checkpoints/2026-11-11/backend-clerk-name-provisioning-01/review/clerk-registration.names.delta.review.sql",
+    "bytes": 12794,
+    "sha256": "331b42435ac4efc3c0e37a9fe49b8c0d68402f875df851967c25d4e44aafc223",
+    "change_needed": false,
+    "source_compatibility": "All NEW insertion data remains validated string0..100 with incomplete profile;no UPDATE/grant/context predicates changed",
+    "SQL_executed": false
+  },
+  "regression_external_text_dependency": {
+    "commit": "8be232eff22c2608b55f7f5513d8752a0307977a",
+    "path": "qa-checkpoints/2026-11-11/backend-trusted-server-context-01-r2/review/first-student-trusted-server.activation.review.sql",
+    "reproduction_location": "../review/first-student-trusted-server.activation.review.sql",
+    "bytes": 60363,
+    "sha256": "e7929b6c36e3d251c62177c76d69a9071fe35f0f6845585bc26aff21485e2dbd",
+    "SQL_executed": false
+  },
+  "preservation": {
+    "original15_file_name_package": {
+      "files": 15,
+      "bytes": 183609,
+      "manifest": {
+        "bytes": 4257,
+        "sha256": "0d11351d4ba139a59c1e784f4cfca79c6a694cb1c8684d246d02728dbe542ebc"
+      },
+      "all_payload_files_rechecked": true
+    },
+    "unapproved7_file_Worker_entry_package": {
+      "files": 7,
+      "bytes": 96704,
+      "manifest": {
+        "bytes": 2273,
+        "sha256": "df9fe37b3c5b174f375726ad25764ab4e502540a4a09fae9ceda198edcdf1e43"
+      },
+      "all_payload_files_rechecked": true,
+      "included": false
+    },
+    "all289_original_app_paths_retained": true,
+    "unchanged_files": 282,
+    "Mini_UI_contracts_roles_SQL_package_lock_NodeSDK_pool_guards_unchanged": true
+  },
+  "privacy": "Only source/synthetic fixtures and original author output;dummy negative-test DSNs retained,no real credentials/person/student data or private execution packet",
+  "future_publication": {
+    "repository": "oybek-muminov/lab_univeracademy",
+    "branch": "backend/clerk-name-provisioning-01-r2-20261112",
+    "parent": "88a523bd813e44350a5b2005a813e2f5830ea89d",
+    "parent_tree": "5a3bec075fccaa30b0179d4106d5b3a240d3e0cd",
+    "prefix": "qa-checkpoints/2026-11-12/backend-clerk-name-provisioning-01-r2/",
+    "approval_required": true,
+    "branch_absence_verified": true,
+    "prefix_absence_verified_on_parent": true,
+    "parent_tree_complete": true,
+    "read_only_checked_utc": "2026-11-12T01:18:52.924106+00:00"
+  },
+  "independent_acceptance": "PENDING"
+}
