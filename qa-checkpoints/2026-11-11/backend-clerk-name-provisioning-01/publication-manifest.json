@@ -1,0 +1,119 @@
+{
+  "format": "UA_CLERK_NAME_PROVISIONING_PUBLICATION_V1",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "backend/clerk-name-provisioning-01-20261111",
+  "parent": "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+  "parent_tree": "a10d05f9afa1037d685f2e0d289952732838578a",
+  "prefix": "qa-checkpoints/2026-11-11/backend-clerk-name-provisioning-01/",
+  "mode": "100644",
+  "approval_required": true,
+  "branch_absence_checked": true,
+  "prefix_absence_checked_on_parent": true,
+  "parent_tree_truncated": false,
+  "read_only_checked_utc": "2026-11-11T23:39:43.502440+00:00",
+  "status": "AUTHOR_OFFLINE_CHECKED_PENDING_INDEPENDENT_REVIEW",
+  "application_base": "de2adf023428a374f075faa421ece9e1deafaf36",
+  "application_overlay_base": "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+  "application_files": "8 replacements:5 source,3 test;281 unchanged originals",
+  "SQL": "One inactive3-predicate registration derivative;not compiled/executed",
+  "files": [
+    {
+      "path": "review/README.md",
+      "bytes": 8013,
+      "sha256": "17ac7a8b39f3af576b669a2cf7189f33b69bbaae46d1a132fd6d32c44e2d5370",
+      "mode": "100644"
+    },
+    {
+      "path": "review/author-checks.log",
+      "bytes": 46623,
+      "sha256": "6796a065098edca0d70afc4e00a23b466428ef584cf4989a524057b7280a1c7e",
+      "mode": "100644"
+    },
+    {
+      "path": "review/check_registration_names.py",
+      "bytes": 4549,
+      "sha256": "e7114c672071c5aa48ac2c8c698eeb27c328364a450ce3f9a8e3e768c15cab30",
+      "mode": "100644"
+    },
+    {
+      "path": "review/clerk-registration.names.delta.review.sql",
+      "bytes": 12794,
+      "sha256": "331b42435ac4efc3c0e37a9fe49b8c0d68402f875df851967c25d4e44aafc223",
+      "mode": "100644"
+    },
+    {
+      "path": "review/registration-names.diff",
+      "bytes": 2281,
+      "sha256": "864da8a79b534729f576fab4a210a40a440e9fc7cdd69ae511f4cffcf8f0bf65",
+      "mode": "100644"
+    },
+    {
+      "path": "review/verification.json",
+      "bytes": 15849,
+      "sha256": "695cf4729298fa6356681b77705cc877dcabbf48667f8d316ccad3aa59b18eb9",
+      "mode": "100644"
+    },
+    {
+      "path": "runtime/clerk-sdk-worker.mjs",
+      "bytes": 2133,
+      "sha256": "6737caf6d35f9f92e8331047be6b9a8bba9af217a855204ffc54bbcdaeac6fc1",
+      "mode": "100644"
+    },
+    {
+      "path": "runtime/clerk-worker-bindings.mjs",
+      "bytes": 6876,
+      "sha256": "a13482e0425d4394a8f762f43b3e78640b0bebfa6b24f3690931c7379e978347",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-auth.ts",
+      "bytes": 6164,
+      "sha256": "29d459d8475de5fcb8cfa554725f50e645d892699c3fd5905ffabce6a34f96ea",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-http.ts",
+      "bytes": 16213,
+      "sha256": "bc157e81dac875e0e3c727b58bc9c245299a2cbcda8c5f53c8786659281f7fe9",
+      "mode": "100644"
+    },
+    {
+      "path": "supabase/functions/univeracademy-api/clerk-provider.ts",
+      "bytes": 10242,
+      "sha256": "7ccc63cb292848e155d1532794c42de9cf11f0160f629c33188d0a1dff16674e",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/clerk-auth/scoped-store.test.mjs",
+      "bytes": 21556,
+      "sha256": "066bc1eb3a8aea90848cf06cc66773eae5c421e0380b12dd90bf7b82344ce8c9",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/clerk-auth/sdk-binding.test.mjs",
+      "bytes": 8413,
+      "sha256": "7d24fe7d284857203ad9923592d90832a85380d1c4e329dfdf478ef217d165ba",
+      "mode": "100644"
+    },
+    {
+      "path": "tests/cloudflare/clerk-worker-bindings.test.mjs",
+      "bytes": 17646,
+      "sha256": "9ad37d4725de8747e8b94510d23852381e73d78ca959be9dbaa2cac7a108ab17",
+      "mode": "100644"
+    }
+  ],
+  "payload_bytes": 179352,
+  "inventory_encoding": "UTF8 compact sorted-key JSON path-sorted rows with bytes,mode,path,sha256;no LF",
+  "inventory_sha256": "3e930fc438f79ed953c9acdf64d32d3a388ff78a90f6b6f5b186fbfbe58590cf",
+  "excluded": [
+    "evidence/",
+    "inputs/",
+    "full application archive/patch",
+    "original frozen SQL copies",
+    "external PROPOSAL.json",
+    "dependencies",
+    "private execution packets"
+  ],
+  "SQL_execution": "NOT_RUN",
+  "real_JOSE_SDK_semantic_checks": "NOT_RUN:dependencies absent;no install"
+}

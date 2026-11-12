@@ -1,0 +1,41 @@
+--- frozen/clerk-registration.delta.review.sql
++++ review/clerk-registration.names.delta.review.sql
+@@ -53,8 +53,13 @@
+   AND id::text = current_setting('ua.person_id',true)
+   AND telegram_id IS NULL AND enabled AND roles = ARRAY['student']::text[]
+   AND qadam_id IS NOT NULL AND qadam_id ~ '^[0-9]{10}$'
+-  AND profile = jsonb_build_object('person_id',id::text,'first_name','','last_name','',
++  AND profile = jsonb_build_object('person_id',id::text,
++    'first_name',profile->>'first_name','last_name',profile->>'last_name',
+     'roles',to_jsonb(roles),'registration_complete',false,'active_group_id',NULL,'qadam_id',qadam_id)
++  AND jsonb_typeof(profile->'first_name') = 'string'
++  AND jsonb_typeof(profile->'last_name') = 'string'
++  AND char_length(profile->>'first_name') BETWEEN 0 AND 100
++  AND char_length(profile->>'last_name') BETWEEN 0 AND 100
+ );
+ 
+ GRANT INSERT(person_id,active,epoch,revision,affinity_group_id) ON ua_private.memberships TO ua_runtime;
+@@ -75,7 +80,10 @@
+       AND p.telegram_id IS NULL AND p.enabled AND p.roles = ARRAY['student']::text[]
+       AND p.profile->'registration_complete' = 'false'::jsonb
+       AND p.profile->'active_group_id' = 'null'::jsonb
+-      AND p.profile->>'first_name' = '' AND p.profile->>'last_name' = ''
++      AND jsonb_typeof(p.profile->'first_name') = 'string'
++      AND jsonb_typeof(p.profile->'last_name') = 'string'
++      AND char_length(p.profile->>'first_name') BETWEEN 0 AND 100
++      AND char_length(p.profile->>'last_name') BETWEEN 0 AND 100
+   )
+ );
+ 
+@@ -101,7 +109,10 @@
+       AND p.telegram_id IS NULL AND p.enabled AND p.roles = ARRAY['student']::text[]
+       AND p.profile->'registration_complete' = 'false'::jsonb
+       AND p.profile->'active_group_id' = 'null'::jsonb
+-      AND p.profile->>'first_name' = '' AND p.profile->>'last_name' = ''
++      AND jsonb_typeof(p.profile->'first_name') = 'string'
++      AND jsonb_typeof(p.profile->'last_name') = 'string'
++      AND char_length(p.profile->>'first_name') BETWEEN 0 AND 100
++      AND char_length(p.profile->>'last_name') BETWEEN 0 AND 100
+   )
+   AND EXISTS(SELECT 1 FROM ua_private.memberships m WHERE m.person_id = clerk_identities.person_id
+     AND NOT m.active AND m.epoch = 0 AND m.revision = 0 AND m.affinity_group_id IS NULL)
