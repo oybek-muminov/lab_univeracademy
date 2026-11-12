@@ -1,0 +1,32 @@
+{
+  "status": "LOCAL_INACTIVE_REVIEW_READY",
+  "checked_utc_after": "2026-11-11T23:36:11.204548+00:00",
+  "source_commit": "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+  "source_bytes": 61385,
+  "source_sha256": "3c4ae9ddd436807329d9db298eda42ef9a34af715d74c8d3ded71c1602d4fae4",
+  "source_preservation": "Removing exactly two marked blocks restores every accepted source byte; complete unified diff independently regenerated exactly.",
+  "static_checks": {
+    "argv": [
+      "python3",
+      "check_owner_window.py",
+      "--source",
+      "/tmp/ua-profile-context-architect-ressbjxz/review/first-student-trusted-server.activation.creator-admin.review.sql",
+      "-v"
+    ],
+    "exit": 0,
+    "passed": 7,
+    "failed": 0,
+    "tool_chunk_id": "f4ee77",
+    "scope": "Text/data preservation and ordering only; no SQL parsing/evaluation/compilation."
+  },
+  "transaction": "Original guard plus one BEGIN and terminal ROLLBACK retained; no COMMIT.",
+  "authority": "Reject pre-existing owner SET/USAGE or unexpected membership; grant ADMIN FALSE/INHERIT TRUE/SET TRUE with explicit CURRENT_USER grantor; exact REVOKE with RESTRICT; verify self-grant gone, no owner/runtime SET/USAGE, exact ADMIN-only creator row retained.",
+  "registration_name_delta": "NOT_INCLUDED_PENDING_BACKEND",
+  "SQL_DB_provider_credentials_install_upload_deploy": "NOT_RUN",
+  "installed_primary_baseline": "UNCHANGED_NO_NEW_DB_CALLS",
+  "next_gates": [
+    "Independent exact wrapper review through separately authorized lab exchange",
+    "Final name-prefill registration input and exact reviewed composition/executable hashes",
+    "Fresh target/operator/catalog/hook checks and explicit execution instruction for approved final scope"
+  ]
+}

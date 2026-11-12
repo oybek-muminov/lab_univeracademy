@@ -1,0 +1,62 @@
+{
+  "format": "UA_ACTIVATION_OWNER_WINDOW_REVIEW_PUBLICATION_V1",
+  "status": "LOCAL_PROPOSAL_PUBLICATION_NOT_AUTHORIZED",
+  "repository": "oybek-muminov/lab_univeracademy",
+  "branch": "architect/activation-owner-window-01-20261111",
+  "parent": "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+  "parent_tree": "a10d05f9afa1037d685f2e0d289952732838578a",
+  "prefix": "qa-checkpoints/2026-11-11/architect-activation-owner-window-01/",
+  "files": [
+    {
+      "path": "activation.owner-window.diff",
+      "bytes": 4116,
+      "sha256": "7561d6559331d06fe6290d9d084447a0c7c3526f55eaf82543f47f5385c97b97",
+      "mode": "100644",
+      "classification": "derivation_evidence"
+    },
+    {
+      "path": "activation.owner-window.review.sql",
+      "bytes": 64724,
+      "sha256": "fe668a1c8b30306c89bd9cc97f65a266d87b8a0f2014a4364cc1ce3318db3b20",
+      "mode": "100644",
+      "classification": "inactive_sql_source"
+    },
+    {
+      "path": "check_owner_window.py",
+      "bytes": 4794,
+      "sha256": "b140544bc1a63f2eddae0c8cfc838fac101acb4bfec9b071b6a827060893c05e",
+      "mode": "100644",
+      "classification": "offline_check_source"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1725,
+      "sha256": "c040b55103cd28c6928c868d9f0ad2fb9b82ddc24434ce7fef446e0c2717c37b",
+      "mode": "100644",
+      "classification": "author_static_evidence"
+    }
+  ],
+  "payload_count": 4,
+  "payload_bytes": 75359,
+  "inventory_sha256": "0c1697aaeebf2734b80255a0bd01f4c07cd3dec28bc54513798863084803cac2",
+  "inventory_recipe": "UTF8 compact sorted-key JSON of path-sorted files rows, including classification,bytes,mode,path,sha256; no LF",
+  "source_input": {
+    "commit": "04ef1ddd0316ec9f03a09eec14feae3a326aa1c9",
+    "path": "qa-checkpoints/2026-11-11/backend-clerk-profile-context-01/review/first-student-trusted-server.activation.creator-admin.review.sql",
+    "bytes": 61385,
+    "sha256": "3c4ae9ddd436807329d9db298eda42ef9a34af715d74c8d3ded71c1602d4fae4"
+  },
+  "scope": "Two marked temporary-owner blocks only; original guard, one transaction, terminal ROLLBACK and all accepted helper/grant/policy bytes retained. No name-registration composition, credentials or runtime action.",
+  "checks": "7/7 local data-only checks PASS; SQL parse/compile/evaluation NOT_RUN; independent review pending.",
+  "reproduce_from_prefix": "python3 check_owner_window.py --source ../backend-clerk-profile-context-01/review/first-student-trusted-server.activation.creator-admin.review.sql -v",
+  "exclusions": [
+    "SCOPE.md",
+    "prior artifact-inventory.json",
+    "accepted source copy",
+    "application/runtime source",
+    "name-registration delta",
+    "database evidence or data"
+  ],
+  "self_excluded": true,
+  "prepared_utc": "2026-11-11T23:40:36.911509+00:00"
+}
